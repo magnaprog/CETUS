@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "bundle_type": "anonymous_rps_review_data",
+  "catalogs": {
+    "earth": {
+      "filename": "earth_catalog.json",
+      "sha256": "6185fab2b731ef74d64216cf04dee563656030cb4ac66d6771d10413dccaf3df"
+    },
+    "titan": {
+      "filename": "titan_catalog.json",
+      "sha256": "6fe39b659d0840e15b062c95d405f3cd9b34790303a97fa8c8206528c6a3754d"
+    },
+    "venus": {
+      "filename": "venus_catalog.json",
+      "sha256": "b4bc10e58d4812c090ef4cabba45c75735430525aadaf34f6c84dce2257706b8"
+    }
+  },
+  "results": {
+    "final_results_index": "results/final_results.json",
+    "aggregate_files": [
+      "baseline_results.json",
+      "coral_results.json",
+      "finetuning_results.json",
+      "probing_cv_results.json",
+      "label_efficiency_croma_results.json",
+      "label_efficiency_dinov2_results.json",
+      "label_efficiency_dofa_results.json",
+      "label_efficiency_random_init_results.json"
+    ],
+    "supplementary_result_files": [
+      "selk_relative_uncertainty_results.json",
+      "venus_domain_gap.json"
+    ],
+    "omitted_per_tile_keys": [
+      "labels",
+      "predictions",
+      "probabilities",
+      "tile_ids"
+    ],
+    "label_efficiency_split": [
+      "label_efficiency_croma_results.json",
+      "label_efficiency_dinov2_results.json",
+      "label_efficiency_dofa_results.json",
+      "label_efficiency_random_init_results.json"
+    ],
+    "max_file_bytes": 8000000,
+    "encoding": "minified JSON with equivalent noninteger number lexemes"
+  },
+  "tiles": {
+    "included": false,
+    "integrity_fields": {
+      "earth": "sha256",
+      "titan": "tile_sha256",
+      "venus": "tile_sha256"
+    }
+  }
+}

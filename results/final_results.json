@@ -1,0 +1,41 @@
+{
+  "family_files": {
+    "baseline_results.json": {
+      "sha256": "9e518d551b9489c52d78d4993a7e01335773a2f01e6de7a881c443070661f25c"
+    },
+    "coral_results.json": {
+      "sha256": "a5d2e576c741e089d767db6fc7620a27d512db91978cc9c587138ad806b04cee"
+    },
+    "finetuning_results.json": {
+      "sha256": "bb6f958fa1d29eb37040231d603be4b384eba230e0b4750c2d483705af06048f"
+    },
+    "probing_cv_results.json": {
+      "sha256": "f45e7ec914cd79ff22f7c30e8011195e5ef91821f59d4b7e43b2404c48b52fa6"
+    },
+    "selk_relative_uncertainty_results.json": {
+      "sha256": "b039a98e9e59b7f0dcd26177d297586ea2e4df96399f25071df527846e0d6b87"
+    },
+    "venus_domain_gap.json": {
+      "sha256": "7695ff6ff711d79483ef8c086902f9e3abe14d3958ff086cdb0930202f09204f"
+    },
+    "label_efficiency_croma_results.json": {
+      "sha256": "069f61d7bae2ebbfc173bc63568632255926c443544aec411cc05186ec845730"
+    },
+    "label_efficiency_dinov2_results.json": {
+      "sha256": "8bb7252c735591bc5294c896c099dde5de6c39901516ac26d4c8df757931f46b"
+    },
+    "label_efficiency_dofa_results.json": {
+      "sha256": "b702ccd05371ff0fbb268d3935e05156593f046ef2f1443acb742f8825050c77"
+    },
+    "label_efficiency_random_init_results.json": {
+      "sha256": "daf48936103c244cc46d32f1ff5e37a8b6cabc39bbc3ea7f67a8c199796a7815"
+    }
+  },
+  "protocol": {
+    "ci95": "two-sided Student-t interval over five fold estimates",
+    "fold_count": 5,
+    "primary_uncertainty_unit": "spatial fold",
+    "seed_role": "within-fold optimization replicate"
+  },
+  "schema_version": "1.0.0"
+}
