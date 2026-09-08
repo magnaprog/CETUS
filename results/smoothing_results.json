@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "experiment_description": "Gaussian smoothing of normalized Earth images at the output grid, with transfer and Earth-validation accuracy.",
+  "experiment_description": "Gaussian smoothing of normalized Earth images at the output grid, with transfer and Earth validation macro recall.",
   "source_filenames": [
     "ml_croma.json",
     "ml_dinov2.json",
@@ -17,7 +17,7 @@
     "smoothing": "Variant sigma values are Gaussian standard deviations in output-grid pixels, applied after normalization with nearest boundary handling. Smoothing follows grid formation; multilooking averages looks before grid formation.",
     "texture": "lag1 averages horizontal and vertical lag-1 correlations; lapvar_norm is Laplacian variance divided by image variance. Both are dimensionless and mix scene texture with speckle. They do not estimate the equivalent number of looks.",
     "texture_sampling": "texture_stats uses up to 250 training tiles per domain, with sampling seed 0. sigma_match uses up to 150 Earth training tiles with sampling seed 0. best_lag1 and best_lapvar select the closest tested sigma. The best_* fields select among sampled scales.",
-    "texture_selection": "earth and titan are retained from texture_stats.json; its coarse sweep and matched_sigma are omitted. sigma_match.json is retained in full and supplies the finer sweep.",
+    "texture_selection": "earth and titan are retained from texture_stats.json. Its coarse sweep and matched_sigma are omitted. The sigma_match object contains all of sigma_match.json and supplies the finer sweep.",
     "mmd": "mmd stores a single MMD^2 estimate. For the paper's repeated estimates, match model, variant, and fold to mmd_repeated in preprocessing_mmd_results.json.",
     "baseline_feat_maxdiff": "Maximum absolute difference between re-extracted baseline features and cached baseline Earth training features.",
     "row_key": [

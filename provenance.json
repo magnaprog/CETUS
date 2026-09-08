@@ -51,7 +51,7 @@
       "preprocessing_mmd_results.json",
       "source_site_sensitivity_results.json"
     ],
-    "experiment_export": "Existing experiment records are grouped by analysis. Finite numerical values are preserved. Undefined per-class recall is stored as null. Each file lists its source filenames and any selected fields.",
+    "experiment_export": "Existing experiment records are grouped by analysis. Finite numerical values are preserved. In display_rendering_results.json, undefined Hummocky recall is stored as null. Each file lists its source filenames. Where an export selects part of a source object, its metadata identifies retained and omitted fields.",
     "omission_scope": "omitted_per_tile_keys applies to aggregate_files, not the catalogs, Selk records, or added experiment files.",
     "max_file_bytes": 8000000,
     "encoding": "Original aggregate JSON files are compacted for distribution. Added experiment files use indented JSON."

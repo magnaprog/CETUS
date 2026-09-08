@@ -13,7 +13,7 @@
     "standard_deviation": "source_supported_macro_std is the sample standard deviation across probe seeds (ddof=1). Fold variability is calculated separately.",
     "seed_values": "Macro recall for each probe seed, in the original recorded order.",
     "training_budget": "n records the training-count setting. n_requested=-1 selects the full Titan training fold, whose size is recorded in n.",
-    "evaluation": "Macro accuracy over the classes supported by the Earth training pool.",
+    "evaluation": "Macro recall over the classes supported by the Earth training pool.",
     "row_key": [
       "fold",
       "model",

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "experiment_description": "MMD^2 estimates for preprocessing comparisons with per-call median bandwidths and a separate fixed-bandwidth comparison.",
+  "experiment_description": "MMD^2 estimates for preprocessing comparisons. Each call uses its median bandwidth. A separate comparison holds bandwidth fixed.",
   "source_filenames": [
     "mmdc_croma.json",
     "mmdc_dinov2.json",
@@ -15,8 +15,8 @@
     "mmd_fixed.py"
   ],
   "metadata": {
-    "repeated_bandwidth_records": "mmd_single stores a single MMD^2 estimate. mmd_repeated stores the paper's repeated MMD^2 estimate from 100 deterministic equal-size resamples per fold, as described in recompute_mmd.py. The default bandwidth is recalculated for each call.",
-    "fixed_bandwidth_records": "mmd_free_bandwidth and mmd_fixed_bandwidth are repeated-estimator means. gamma_fixed is estimated once per model using baseline Earth and fold-0 Titan test features, then held fixed across variants and folds.",
+    "repeated_bandwidth_records": "mmd_single stores a single MMD^2 estimate. mmd_repeated stores the paper's repeated MMD^2 estimate from 100 deterministic equal-size resamples per fold, as described in recompute_mmd.py. For display DN conditions, these values use feature arrays generated separately from arrays used to produce display_rendering_results.json. The default bandwidth is recalculated for each call.",
+    "fixed_bandwidth_records": "mmd_free_bandwidth and mmd_fixed_bandwidth are means from the repeated estimator. gamma_fixed is estimated once per model using baseline Earth features and Titan test features from fold 0, then held fixed across variants and folds.",
     "deduplication": "15 overlapping baseline records from mmdc and mmdts were asserted identical in every field before deduplication. Fixed-bandwidth records remain separate.",
     "row_key": [
       "model",

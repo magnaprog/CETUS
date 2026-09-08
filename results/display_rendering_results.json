@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "experiment_description": "Earth-to-Titan transfer after alternative Earth display-DN rendering and normalization.",
+  "experiment_description": "Earth-to-Titan transfer after alternative Earth display DN rendering and normalization.",
   "source_filenames": [
     "dn_croma.json",
     "dn_dinov2.json",
@@ -20,9 +20,9 @@
       "Craters"
     ],
     "missing_values": "Undefined Hummocky recall is stored as null in per_class[2]; all 60 values were NaN in the source. A null denotes an undefined value.",
-    "mmd": "mmd stores a single MMD^2 estimate. For the paper's repeated estimates, match model, variant, and fold to mmd_repeated in preprocessing_mmd_results.json.",
-    "variant_caution": "The wider stretch in displaydn_wide changes the normalization endpoints. quantization_results.json contains the fixed-endpoint quantization control.",
-    "baseline_feat_maxdiff": "Maximum absolute difference between re-extracted baseline features and cached baseline Earth training features.",
+    "mmd": "mmd stores a single MMD^2 estimate from this transfer run. preprocessing_mmd_results.json contains repeated MMD^2 estimates from separately regenerated Earth renderings. Matching model, variant, and fold identifies the same named condition, not the same feature array.",
+    "variant_caution": "The standard and wider display DN renderings have the same effective dB percentile endpoints after percentile normalization. They differ in the number of gray levels before normalization. quantization_results.json holds the original Earth normalization endpoints fixed while changing bit depth.",
+    "baseline_feat_maxdiff": "Maximum absolute difference between baseline features extracted in this run and cached Earth training features.",
     "row_key": [
       "model",
       "variant",

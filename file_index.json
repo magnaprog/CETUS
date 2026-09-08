@@ -28,13 +28,14 @@
       "source product identifiers and hashes",
       "tile identifiers and hashes",
       "split assignments and policies",
-      "fold-level result summaries"
+      "fold-level result summaries",
+      "sampled training tile IDs in label-efficiency records"
     ],
-    "omitted_from_results": [
-      "per-tile predictions",
-      "per-tile probabilities",
-      "per-tile tile_ids",
-      "per-tile labels"
+    "omitted_per_tile_keys_from_aggregate_result_files": [
+      "labels",
+      "predictions",
+      "probabilities",
+      "tile_ids"
     ]
   },
   "files": {
@@ -43,12 +44,12 @@
       "bytes": 1886
     },
     "FILES.md": {
-      "sha256": "b6c31f3bd6203c0620c9dead2e2e24fd8f8517dd504cc5795e124a75a2a5937c",
-      "bytes": 9448
+      "sha256": "e39541d49d64bc01f3e756753a0bee7563fe865f299f5217decce15c18d670c6",
+      "bytes": 9881
     },
     "README.md": {
-      "sha256": "6dc3d64d76217f0afadf4ee778042a60a32ee75fb8ea4ba2c2d18ddc39abd6b4",
-      "bytes": 2141
+      "sha256": "661d39d6ea7d0908d328bb3b469d5bcc80a04dcae7604685348684edbd66e12c",
+      "bytes": 2265
     },
     "THIRD_PARTY_NOTICES.md": {
       "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da",
@@ -67,27 +68,27 @@
       "bytes": 1200879
     },
     "provenance.json": {
-      "sha256": "26bcde0701a073b05443fa90144a43ece15115f621fe10f82c497dc482fa472f",
-      "bytes": 2352
+      "sha256": "79fdc74af472677d16abb62cd28dd22ad71080afd698e11bc93e9a4343458e05",
+      "bytes": 2464
     },
     "results/baseline_results.json": {
       "sha256": "9e518d551b9489c52d78d4993a7e01335773a2f01e6de7a881c443070661f25c",
       "bytes": 364687
     },
     "results/constrained_training_results.json": {
-      "sha256": "f4274792604334eed65f291ed48a09bffdc87bc4210b6205970e38bd672a982b",
-      "bytes": 74499
+      "sha256": "f5bba4e7f55343ab0327d8662508c60570c43b7710444c3780aaaa50eed3bb31",
+      "bytes": 74497
     },
     "results/coral_results.json": {
       "sha256": "a5d2e576c741e089d767db6fc7620a27d512db91978cc9c587138ad806b04cee",
       "bytes": 150275
     },
     "results/display_rendering_results.json": {
-      "sha256": "edcfd1088b5eae30fb20947306414ea17960c2107e25c9aa0c4c14ea71039ebf",
-      "bytes": 26402
+      "sha256": "08526aad9569914fa8d2988d8dc8033b866384585a045017612d4bfcc8f58fdd",
+      "bytes": 26663
     },
     "results/final_results.json": {
-      "sha256": "4e4e09fb3337f54127d6951378e674776f1c26edd830516e5a91c357d50f93d3",
+      "sha256": "23273489fadc6078d6f12e7eb32f16b7002dd917d703656de53a6856848be9ca",
       "bytes": 2335
     },
     "results/finetuning_results.json": {
@@ -111,8 +112,8 @@
       "bytes": 3561189
     },
     "results/preprocessing_mmd_results.json": {
-      "sha256": "a60fdfadc418ba8f6905936e79b2ca56dd3ec2b2370fd6152573997f7ffca048",
-      "bytes": 54861
+      "sha256": "f8b8624dbc51c1b1d579decaa8198e11deba006845a237ba960ef6a66fdda1c0",
+      "bytes": 55032
     },
     "results/probing_cv_results.json": {
       "sha256": "f45e7ec914cd79ff22f7c30e8011195e5ef91821f59d4b7e43b2404c48b52fa6",
@@ -123,20 +124,20 @@
       "bytes": 12018
     },
     "results/selk_relative_uncertainty_results.json": {
-      "sha256": "b039a98e9e59b7f0dcd26177d297586ea2e4df96399f25071df527846e0d6b87",
-      "bytes": 20606
+      "sha256": "a45603b7d8107b23ba0df2be895449386d2504e7437bb0a22291a85303c34c5b",
+      "bytes": 20689
     },
     "results/smoothing_results.json": {
-      "sha256": "9be925109ab4af475ff97f1510000d5e9aa43a3255c93f1850167475af0b2311",
-      "bytes": 26237
+      "sha256": "10d0e72493d2858277d5e00cfa12e79d5f39c777028c4b0fb61fa4c50ece9ed5",
+      "bytes": 26260
     },
     "results/source_site_sensitivity_results.json": {
       "sha256": "1bd5cc968257006f798dc5926a7cd419853bdec847bbd31db29e0dda12f486e6",
       "bytes": 35165
     },
     "results/venus_domain_gap.json": {
-      "sha256": "7695ff6ff711d79483ef8c086902f9e3abe14d3958ff086cdb0930202f09204f",
-      "bytes": 41611
+      "sha256": "11acbe92fd2a6275846c1ca0d28b26b8c4a8b45d05c8e95b135b8b7f62dd5ea9",
+      "bytes": 41619
     },
     "splits/earth_loso_arctic_thermokarst.json": {
       "sha256": "93722003e558555a0e811d33b6846f7a64f9d85ea21063e8d8311a866f6ad793",

@@ -6,7 +6,7 @@ each spatial fold. The paper reports the mean and sample standard
 deviation across the five fold means. Paired two-sided t-tests use the
 five paired fold means. In `results/final_results.json`, `protocol.ci95`
 stores a text description of the confidence-interval method. For repeated
-MMD estimates, `ci95` instead gives the 2.5th and 97.5th percentiles of the
+MMD^2 estimates, `ci95` instead gives the 2.5th and 97.5th percentiles of the
 resampled values, describing variation across those samples.
 
 ## Catalogs
@@ -49,14 +49,14 @@ catalog and maps every tile ID to train, val, test, or selk_holdout.
   transfer. Of the 398 tiles, 352 are used for transfer training.
   Earth validation holds out whole source products.
 - `splits/earth_loso_*.json`: 13 files named after the morphological
-  analog sites. Each holds out one site. A separate MMD check holds out
+  analog sites. Each holds out one site. A separate MMD^2 check holds out
   one Earth source site at a time.
 
 ## Results
 
-Fold summaries keep means, sample standard deviations, and values for
-each fold. Prediction arrays for each tile were dropped so each file
-stays under 8 MB. The Selk file still has scores for all 65 tiles.
+Aggregate result files keep fold means, sample standard deviations, and
+values for each fold. They omit per-tile prediction arrays to stay under
+8 MB. The Selk file retains per-tile records for all 65 tiles.
 
 - `results/probing_cv_results.json`: DINOv2, DOFA, CROMA, and Random
   Init. We keep encoder weights unchanged. Linear classifier and cosine
@@ -82,46 +82,51 @@ stays under 8 MB. The Selk file still has scores for all 65 tiles.
   weights. The appendix comparison that uses 352 Titan training tiles
   uses class weights on those subsets.
 - `results/venus_domain_gap.json`: squared maximum mean discrepancy
-  (MMD^2) among Earth, Venus, and Titan. Venus is unlabeled. The MMD
-  statistics report MMD^2 even where summary strings say MMD. Other
-  fields contain frequencies, sample counts, kernel parameters, and
-  A-distance. Its comparison pool includes all Earth tiles and differs
-  from the Earth training pool used for transfer classification.
+  (MMD^2) among Earth, Venus, and Titan. Venus is unlabeled. Each summary
+  reports MMD^2. Other fields contain frequencies, sample counts, kernel
+  parameters, and
+  A-distance. Its comparison pool includes all Earth tiles and all
+  Titan tiles outside Selk. Its Earth pool differs from the Earth training
+  pool used for transfer classification.
 - `results/selk_relative_uncertainty_results.json`: 65 Selk tiles. Mean
   entropy is 0.963, mean classifier disagreement is 0.250, and the
-  combined score has a mean of 0.525. These scores describe uncertainty
-  and disagreement in terrain predictions, relative to the Selk
-  evaluation set and the 15 classifiers. Hazard assessment and
-  operational planning are outside their scope. A high score can reflect
-  ambiguity in the expert map, gradual boundaries between terrain
-  classes, image contents, or model error.
+  combined score has a mean of 0.525. These rankings measure relative
+  uncertainty and disagreement in terrain predictions within the Selk
+  holdout, using 15 classifiers. They do not establish scientific or
+  operational priorities. A high score can reflect ambiguity in the expert
+  map, gradual boundaries between terrain classes, image contents, or model
+  error.
 - `results/final_results.json`: SHA-256 values for the result files,
-  the number of folds, the role of random seeds, and the confidence-interval
-  method.
+  the number of folds, the role of random seeds, and the method used for
+  confidence intervals.
 
 ## Additional experiment records
 
 These files contain existing measurements for the paper's training and
 preprocessing comparisons. Recall values are fractions; multiply by 100
 for percentages. A difference between recall fractions must also be
-multiplied by 100 to obtain percentage points. Match records across
-files using model, fold, and experimental condition.
+multiplied by 100 to obtain percentage points. Use model, fold, and
+experimental condition to locate related records. Read each file's
+metadata before combining values across files.
 
-- `results/constrained_training_results.json`: within-Titan training
-  with uniform or stratified sampling at several tile counts, including
-  352. Records retain the training-count settings and the five seed
-  scores. The reported recall covers the five Earth-supported classes.
-  This is separate from the unweighted six-class label-efficiency curves.
+- `results/constrained_training_results.json`: training on Titan with
+  uniform or stratified sampling at several tile counts, including 352.
+  Records retain training count settings and the five seed scores. The
+  reported recall covers the five classes supported by Earth transfer data.
+  This comparison is separate from unweighted label-efficiency curves for six
+  classes.
 - `results/display_rendering_results.json`: transfer recall for the
-  original Earth preprocessing and the display-DN renderings. Undefined
-  Hummocky recall is stored as `null`. Retained `mmd` values use a single
-  estimate; the paper's repeated MMD estimates are in
-  `preprocessing_mmd_results.json`.
+  original Earth preprocessing and the display DN renderings. Undefined
+  Hummocky recall is stored as `null`. Its `mmd` values are single
+  estimates from the same feature extractions as transfer recall.
+  `preprocessing_mmd_results.json` contains the paper's repeated MMD^2
+  estimates from separately regenerated Earth renderings for the same
+  named conditions.
 - `results/quantization_results.json`: transfer recall after changing
   the number of gray levels while retaining the original normalization
   endpoints. Its `mmd` values use repeated estimation.
 - `results/smoothing_results.json`: transfer recall and Earth validation
-  recall for output-grid smoothing conditions, including smoothing
+  recall for smoothing conditions on the output grid, including smoothing
   combined with display rendering. Earth validation uses a fixed split;
   repeated entries across Titan folds are not independent measurements.
   The file also includes image texture statistics and the finer smoothing
@@ -129,16 +134,19 @@ files using model, fold, and experimental condition.
   output grid is not a simulation of multilooking.
 - `results/preprocessing_mmd_results.json`: MMD^2 measurements for the
   preprocessing comparisons. Use `mmd_repeated` for the paper's repeated
-  estimates. A separate set of records compares re-estimated bandwidths
-  with a fixed bandwidth. Keep these estimators separate when computing
-  changes from the baseline.
+  estimates. Display DN MMD^2 values use Earth feature arrays generated
+  separately from arrays used to produce `display_rendering_results.json`.
+  Matching keys identify conditions, not shared arrays. A separate set of
+  records compares
+  re-estimated bandwidths with a fixed bandwidth. Keep these estimators
+  separate when computing changes from the baseline.
 - `results/source_site_sensitivity_results.json`: transfer recall after
   omitting one Earth training site at a time. `NONE` identifies the full
   source pool. Records include training counts and whether a class was
   lost. Average over Titan folds for each omitted site before calculating
-  the spread across sites. This describes sensitivity to source-site
-  omission. A jackknife standard error and the standard deviation across
-  Titan folds are different statistics.
+  the spread across sites. This measures sensitivity to omitting Earth
+  source sites. A jackknife standard error and the standard deviation
+  across Titan folds are different statistics.
 
 ### Finding evidence for the paper
 
@@ -153,7 +161,7 @@ files using model, fold, and experimental condition.
   files above, with repeated and fixed-bandwidth MMD^2 records in
   `preprocessing_mmd_results.json` where applicable.
 - Sensitivity of transfer recall to Earth source composition:
-  `source_site_sensitivity_results.json`. The MMD site-omission analysis
+  `source_site_sensitivity_results.json`. The MMD^2 site-omission analysis
   is separate and remains in `probing_cv_results.json`.
 - Alignment, fine-tuning, learning curves, Venus, and Selk: the result
   files described in the preceding section.
