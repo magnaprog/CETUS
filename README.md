@@ -1,8 +1,10 @@
 # CETUS
 
 Cross-domain Evaluation of Earth-to-Titan Transfer Using SAR (CETUS). Catalog
-metadata, spatial folds, and result summaries for the Representations for
-Physical Sciences workshop at NeurIPS 2026.
+metadata, split definitions, and result summaries for the Representations
+for the Physical Sciences workshop at NeurIPS 2026. These files support
+inspection of the reported analyses; rerunning the benchmark also requires
+the tile arrays, model weights, and code.
 
 CETUS asks whether representations with encoder weights unchanged support
 terrain map classification on Titan, whether a classifier trained on Earth
@@ -10,8 +12,8 @@ remains useful on Titan, and whether smaller global differences between Earth
 and Titan representations improve that transfer. The catalogs cover 11,371
 labeled Titan tiles, 398 labeled Earth tiles, and 2,945 unlabeled Venus tiles,
 each 45 km by 45 km at 128 by 128 pixels. Join catalogs, splits, and Selk
-records by tile ID. Titan tiles are 8 bit display digital numbers after
-logarithmic stretching.
+records by tile ID. Titan tiles contain uncalibrated 8-bit display digital
+numbers after logarithmic stretching.
 
 ## Contents
 
@@ -22,10 +24,11 @@ logarithmic stretching.
   `earth_transfer_grouped_validation.json`, and 13 Earth files named after the
   morphological analog sites. Each file records the SHA-256 of the matching
   catalog.
-- `results/`: fold summaries, and Venus and Selk summaries. The curve of
-  macro recall versus the number of labeled Titan training tiles is split
-  by model so each file stays under 8 MB. `final_results.json` records hashes
-  of these files.
+- `results/`: fold summaries, Venus and Selk summaries, and records for
+  constrained training, preprocessing, and Earth-site sensitivity. The
+  curve of macro recall versus the number of labeled Titan training tiles
+  is split by model so each file stays under 8 MB. `final_results.json`
+  records hashes of the result files.
 - `DATA_LICENSES.md` and `THIRD_PARTY_NOTICES.md`: source terms, including the
   required VIMS+ISS BSD 3-Clause notice.
 - `FILES.md`: file guide.

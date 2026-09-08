@@ -29,6 +29,24 @@
     },
     "label_efficiency_random_init_results.json": {
       "sha256": "daf48936103c244cc46d32f1ff5e37a8b6cabc39bbc3ea7f67a8c199796a7815"
+    },
+    "constrained_training_results.json": {
+      "sha256": "f4274792604334eed65f291ed48a09bffdc87bc4210b6205970e38bd672a982b"
+    },
+    "display_rendering_results.json": {
+      "sha256": "edcfd1088b5eae30fb20947306414ea17960c2107e25c9aa0c4c14ea71039ebf"
+    },
+    "preprocessing_mmd_results.json": {
+      "sha256": "a60fdfadc418ba8f6905936e79b2ca56dd3ec2b2370fd6152573997f7ffca048"
+    },
+    "quantization_results.json": {
+      "sha256": "83720e1e8e95bb7fc2f854ab712e9116d9821b7a442a400f56425c995a8105f6"
+    },
+    "smoothing_results.json": {
+      "sha256": "9be925109ab4af475ff97f1510000d5e9aa43a3255c93f1850167475af0b2311"
+    },
+    "source_site_sensitivity_results.json": {
+      "sha256": "1bd5cc968257006f798dc5926a7cd419853bdec847bbd31db29e0dda12f486e6"
     }
   },
   "protocol": {

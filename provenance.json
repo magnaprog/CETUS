@@ -43,8 +43,18 @@
       "label_efficiency_dofa_results.json",
       "label_efficiency_random_init_results.json"
     ],
+    "experiment_files": [
+      "constrained_training_results.json",
+      "display_rendering_results.json",
+      "quantization_results.json",
+      "smoothing_results.json",
+      "preprocessing_mmd_results.json",
+      "source_site_sensitivity_results.json"
+    ],
+    "experiment_export": "Existing experiment records are grouped by analysis. Finite numerical values are preserved. Undefined per-class recall is stored as null. Each file lists its source filenames and any selected fields.",
+    "omission_scope": "omitted_per_tile_keys applies to aggregate_files, not the catalogs, Selk records, or added experiment files.",
     "max_file_bytes": 8000000,
-    "encoding": "minified JSON with equivalent noninteger number lexemes"
+    "encoding": "Original aggregate JSON files are compacted for distribution. Added experiment files use indented JSON."
   },
   "tiles": {
     "included": false,
