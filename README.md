@@ -1,42 +1,46 @@
 # CETUS
 
-Cross-domain Evaluation of Earth-to-Titan Transfer Using SAR (CETUS). This
-review package contains catalog metadata, split definitions, and result
-summaries for the Representations for the Physical Sciences workshop at
-NeurIPS 2026. Tiles, model checkpoint files, extracted embeddings, and
-analysis code are not included.
+Cross-domain Evaluation of Earth-to-Titan Transfer Using SAR. This private
+repository contains scientific metadata and results. Software export is pending.
+Image tiles, raw source products, encoder weights, embeddings, and analysis code
+are not included. There is no public tile-archive endpoint or project archive DOI.
 
-CETUS asks whether representations with encoder weights unchanged support
-terrain map classification on Titan, whether a classifier trained on Earth
-remains useful on Titan, and whether smaller global differences between Earth
-and Titan representations improve that transfer. The catalogs cover 11,371
-labeled Titan tiles, 398 labeled Earth tiles, and 2,945 unlabeled Venus tiles,
-each 45 km by 45 km at 128 by 128 pixels. Join catalogs, splits, and Selk
-records by tile ID. Titan tiles contain uncalibrated 8-bit display digital
-numbers after logarithmic stretching.
+The September 29 correction separates two dataset identities:
 
-## Contents
+| Contents | Status and population |
+| --- | --- |
+| Root `catalogs/`, `splits/`, and `results/` | Historical v1: 11,371 Titan tiles, 398 Earth tiles, and 2,945 unlabeled Venus tiles. Original scientific payloads remain unchanged for existing links. Results describe the retained v1 population and its known limitations. |
+| [Original review bundle](release/v1-review-20260908/README.md) | All 46 files from the September 8 repository tree, preserved byte-for-byte with their original index and checksums. Historical descriptions in that snapshot are superseded by the correction notice. |
+| [Repaired Titan package](release/longitude-review-20260929/README.md) | 23,380 Titan tiles, including 140 Craters; five contiguous geographic folds; verified frozen DINOv2, DOFA, CROMA, and RandomInit probe/kNN results with predictions and counts. Earth transfer and repaired fine-tuning are not included. |
 
-- `catalogs/`: Earth, Titan, and Venus catalog metadata. Local paths were
-  removed. Earth tile records retain source product IDs. Titan and Venus name
-  source products in catalog metadata, and product hashes appear where supplied.
-  Tile records retain tile IDs, tile hashes, labels, and summary statistics.
-- `splits/`: 19 split files joined by tile ID. Five Titan spatial folds,
-  `earth_transfer_grouped_validation.json`, and 13 Earth files named after the
-  morphological analog sites. Each file records the SHA-256 of the matching
-  catalog.
-- `results/`: fold summaries, Venus and Selk summaries, and records for
-  constrained training, preprocessing, and recall after omitting each
-  Earth source site. The curve of macro recall versus the number of labeled
-  Titan training tiles
-  is split by model so each file stays under 8 MB. `final_results.json`
-  records hashes of the result files.
-- `DATA_LICENSES.md` and `THIRD_PARTY_NOTICES.md`: source terms, including the
-  required VIMS+ISS BSD 3-Clause notice.
-- `FILES.md`: file guide.
-- `provenance.json`: catalog hashes and which result keys were dropped.
-- `file_index.json` and `SHA256SUMS`: file list and hashes.
+Read [CORRECTIONS.md](CORRECTIONS.md) before interpreting the historical
+results. The v1 longitude sampler omitted valid western terrain. The repair
+retains original pixels, adds 12,009 tile IDs, and changes 15 retained labels.
+Catalog and split hashes identify the correct track; joining by tile ID alone
+across versions can mix labels. Both population and partition design change in
+the repaired evaluation, so score differences cannot isolate either change.
 
-Check hashes with `sha256sum -c SHA256SUMS`. `file_index.json` lists
-hashes for every file except itself and `SHA256SUMS`. The checksum file
-also covers `file_index.json`.
+Earth source labels still require expert review. Wadi Rum tiles came from
+Egypt; some Plains footprints are offshore, and Earth training/validation
+footprints overlap. Historical source-cap and preprocessing controls remain
+sensitivity analyses. This package assigns no new Earth labels.
+
+The repaired evaluation includes all 100 probe heads and 20 kNN evaluations.
+Its [prediction arrays](release/longitude-review-20260929/results/predictions.json.gz)
+and [metrics](release/longitude-review-20260929/results/frozen_results.json)
+allow reconstruction of confusion matrices, per-class scores, fold means, and
+sample standard deviations. These checks do not rerun model inference or
+establish independent geological truth. Fine-tuning results at the root belong
+to historical v1; no completed repaired fine-tuning experiment is claimed here.
+
+[FILES.md](FILES.md) explains the root historical files. Source terms remain in
+[DATA_LICENSES.md](DATA_LICENSES.md) and
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), including the VIMS+ISS notice.
+Those terms do not imply that a processed image archive has been published.
+
+Run `sha256sum -c SHA256SUMS` from the repository root to check the entire
+current tree. Each versioned package also has its own `SHA256SUMS`, checked
+from that package's directory. At each level, `file_index.json` covers all
+payload files except itself and `SHA256SUMS`; the checksum list also covers
+`file_index.json`. Git internals are excluded. The root index distinguishes
+the historical root catalogs from the repaired catalog.

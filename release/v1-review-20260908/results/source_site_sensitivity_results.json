@@ -1,0 +1,1584 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_description": "Earth-to-Titan transfer sensitivity to omitting one Earth training site at a time.",
+  "source_filenames": [
+    "sitejack_a.json",
+    "sitejack_b.json",
+    "sitejack_c.json",
+    "exp_sitejack.py"
+  ],
+  "metadata": {
+    "accuracy": "Macro recall is averaged over the probe seeds and stored as a fraction. The records omit seed identifiers.",
+    "evaluation": "Titan evaluation remains restricted to the original full Earth training pool support, including when omission removes a training class.",
+    "dropped_site": "Existing source site names are preserved verbatim; NONE means no site was dropped.",
+    "n_train": "Number of Earth training tiles retained after site omission.",
+    "note": "class_lost means the retained training pool has fewer classes than the original pool; ok means no class was lost.",
+    "row_key": [
+      "fold",
+      "model",
+      "dropped_site"
+    ]
+  },
+  "records": [
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.2486418041161874
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.24843660292901276
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.21261054859451942
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.2514531941808982
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.23758648372500363
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.24969335376830631
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.25344730696248724
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.2574929450688464
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.24947379944533649
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.24891950080280253
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.2492126453559091
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.2273311681992896
+    },
+    {
+      "fold": 0,
+      "model": "dinov2",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.24743164014985647
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.25513912042549813
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.25038850776042426
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.24995288176652403
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.26297669952139147
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.2564780913018205
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.25342793471051733
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.24905120138691492
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.24910800574637584
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25649775804274955
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25615038910954224
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.2679449151999836
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.22738488682661256
+    },
+    {
+      "fold": 0,
+      "model": "dofa",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.2584686830197666
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.3614187325707349
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.37465248382231303
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.34625235911264074
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.36170058411244865
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.36101538512753933
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.3674699109106879
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.36617860883415665
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.3341505594009839
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.31717397511440254
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.38006455710140924
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.35847427830999185
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.3724115380774224
+    },
+    {
+      "fold": 0,
+      "model": "croma",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.34384806162245496
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.24651310080220662
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.2458810466261344
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.21181093470790527
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.24677303991498226
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.23556023049885058
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.24692433011693096
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.24777514119528843
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.2490128908041196
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.24714139527772083
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.24743398487760074
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.23620483103577122
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.23294740073108106
+    },
+    {
+      "fold": 1,
+      "model": "dinov2",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.24784977583032936
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.252801803059644
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.24069543322303702
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.24190834658095003
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.2572787205943529
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.24184469319705548
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.24968622410365823
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.24755685733639465
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.25210189721561144
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25888637599923514
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.2616470967986104
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.25809897478477445
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.23326779691230315
+    },
+    {
+      "fold": 1,
+      "model": "dofa",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.2436433553973488
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.32022922005247845
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.35603156056996094
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.24456403413401734
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.3097654370488728
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.3253539332368591
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.331377208666823
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.3339006905621694
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.31432925001736933
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.3391504503416357
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.3784047088519523
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.3146568800898968
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.337905462876085
+    },
+    {
+      "fold": 1,
+      "model": "croma",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.11997241509837528
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.24782258064516127
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.24811973263586165
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.19524671963503368
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.25396090704216084
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.2362503632664923
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.24956335367625687
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.2507679453647196
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.25294609125254286
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.2500864574251671
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.24798314443475733
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.23975951758209826
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.2306734960767219
+    },
+    {
+      "fold": 2,
+      "model": "dinov2",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.24990773031095612
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.27296608881207945
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.2725982601591245
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.2656389351215661
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.2720731934821787
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.25035880867741045
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.27995037376654097
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.27686569292014374
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.2452927901329987
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.27848640980257694
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.27595922650241744
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.2725923492782669
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.26100884680248965
+    },
+    {
+      "fold": 2,
+      "model": "dofa",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.27086195333149854
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.27172237830439516
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.2799562435228899
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.2057296817715964
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.27808684121299376
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.27132592106009407
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.27606319028306026
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.2775374934804355
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.2524065733005286
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.18237644274392215
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.289944034454236
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.27289004714055354
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.2656662135605141
+    },
+    {
+      "fold": 2,
+      "model": "croma",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.18417294009791807
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.25673414031745373
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.2575332334200701
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.21081936789435524
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.2575474971900943
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.2427535218558406
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.2587828996741054
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.25995715543917997
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.26018264634915356
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.2568851148556706
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25874195604113637
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.24934759784639118
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.23768730269359617
+    },
+    {
+      "fold": 3,
+      "model": "dinov2",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.2578672258242844
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.2436696670487793
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.2382068553774091
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.2547077135934002
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.2622501931615746
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.23468956297186944
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.24166903150729846
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.24398927803596893
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.2582291966787337
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.2506193669362647
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25155743636511496
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.24427573362162555
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.23150917276295604
+    },
+    {
+      "fold": 3,
+      "model": "dofa",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.24174009941742414
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.3065561666232385
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.3229984146137884
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.3362249766944162
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.28706319918941425
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.30442125251050245
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.3083402474732294
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.3123605315498688
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.29398577442069923
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.33241485474277377
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.38230067230292153
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.29850803638052414
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.32203313480802204
+    },
+    {
+      "fold": 3,
+      "model": "croma",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.37291225837767766
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.2542196951921702
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.25509071822131607
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.2176165830738757
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.25214219735646226
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.2484935516234213
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.2566045831748883
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.2571049189435558
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.2511499335205008
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.2566273588086011
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25167968613046166
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.25910509559293515
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.24144187021799346
+    },
+    {
+      "fold": 4,
+      "model": "dinov2",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.2567632372414648
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.24794984604166864
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.2455403043763198
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.2557990521982366
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.2635388227771538
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.22455067250578065
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.2525289246502747
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.2496273004566895
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.21024980747546831
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25270675332661063
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.25041320937720124
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.2700840567867073
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.22904274608508932
+    },
+    {
+      "fold": 4,
+      "model": "dofa",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.26034319750332274
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "NONE",
+      "n_train": 352,
+      "note": "ok",
+      "macro_mean": 0.35596180254448656
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "arctic_thermokarst",
+      "n_train": 336,
+      "note": "class_lost",
+      "macro_mean": 0.36783669911081984
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "arctic_tundra",
+      "n_train": 275,
+      "note": "ok",
+      "macro_mean": 0.3788185503178586
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "atacama_channels",
+      "n_train": 333,
+      "note": "ok",
+      "macro_mean": 0.3106798475789228
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "desert_pavement",
+      "n_train": 335,
+      "note": "ok",
+      "macro_mean": 0.35286837708868585
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "grand_erg_oriental",
+      "n_train": 338,
+      "note": "ok",
+      "macro_mean": 0.3594416923427336
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "icelandic_sandur",
+      "n_train": 337,
+      "note": "ok",
+      "macro_mean": 0.3578835675868371
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "madagascar_tsingy",
+      "n_train": 342,
+      "note": "ok",
+      "macro_mean": 0.3406473629716912
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "manicouagan",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.35128434763911354
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "mistastin",
+      "n_train": 348,
+      "note": "ok",
+      "macro_mean": 0.3834521542520523
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "namib_sand_sea",
+      "n_train": 305,
+      "note": "ok",
+      "macro_mean": 0.354939171196908
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "rub_al_khali",
+      "n_train": 239,
+      "note": "ok",
+      "macro_mean": 0.3531608531735962
+    },
+    {
+      "fold": 4,
+      "model": "croma",
+      "dropped_site": "wadi_rum",
+      "n_train": 336,
+      "note": "ok",
+      "macro_mean": 0.3853905544927172
+    }
+  ]
+}

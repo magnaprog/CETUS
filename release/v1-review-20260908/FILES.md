@@ -1,13 +1,3 @@
-# Current file guide
-
-Root `catalogs/`, `splits/`, and `results/` retain historical v1 data. The
-following original guide describes only those files. Read [CORRECTIONS.md](CORRECTIONS.md)
-for known errors and limitations. The [repaired Titan package](release/longitude-review-20260929/README.md)
-has a separate catalog, splits, predictions, metrics, and index. The
-[September 8 snapshot](release/v1-review-20260908/README.md) preserves all 46 original files.
-
----
-
 # File guide
 
 Join catalogs, splits, and Selk records by tile ID. For the primary
