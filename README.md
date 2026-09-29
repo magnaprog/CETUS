@@ -1,9 +1,17 @@
 # CETUS
 
 Cross-domain Evaluation of Earth-to-Titan Transfer Using SAR. This private
-repository contains scientific metadata and results. Software export is pending.
-Image tiles, raw source products, encoder weights, embeddings, and analysis code
-are not included. There is no public tile-archive endpoint or project archive DOI.
+repository contains scientific metadata, results and the frozen Titan evaluation
+source. [SOFTWARE.md](SOFTWARE.md) describes installation, required assets and
+commands. Image tiles, raw source products, encoder weights and embeddings are
+supplied separately. There is no public tile-archive endpoint or project archive DOI.
+
+The software preserves scientific source from development commit `a9c17ad`.
+Its CPU tests cover normalization, cache checks, model identity and a small
+synthetic evaluation. Full inference through this checkout remains a release
+acceptance task. The [export manifest](SOFTWARE_EXPORT.json) records source
+hashes. This source package currently supports frozen Titan evaluation;
+classical baselines and adaptation need separate public protocols.
 
 The September 29 correction separates two dataset identities:
 
@@ -39,7 +47,7 @@ to historical v1; no completed repaired fine-tuning experiment is claimed here.
 Those terms do not imply that a processed image archive has been published.
 
 Run `sha256sum -c SHA256SUMS` from the repository root to check the entire
-current tree. Each versioned package also has its own `SHA256SUMS`, checked
+versioned payload. Ignored environments and local outputs are excluded. Each versioned package also has its own `SHA256SUMS`, checked
 from that package's directory. At each level, `file_index.json` covers all
 payload files except itself and `SHA256SUMS`; the checksum list also covers
 `file_index.json`. Git internals are excluded. The root index distinguishes
