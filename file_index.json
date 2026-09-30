@@ -22,8 +22,8 @@
       "sha256": "ec8637baf02e0e8b290c4073f0491c2d292ac649a4d9979abfd55fa40c69d493"
     },
     ".github/workflows/release-inventory.yml": {
-      "bytes": 3646,
-      "sha256": "151554bb21828e20b3946d564a4b0757ce2ef10973b583f8f6f52f4631c4ca63"
+      "bytes": 3667,
+      "sha256": "433abe7d3fd3c9f329827a5b972d40966a0a5ac3b90b4885e4485fd15b90720f"
     },
     ".gitignore": {
       "bytes": 79,

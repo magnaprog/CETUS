@@ -46,8 +46,6 @@ jobs:
       OPENBLAS_NUM_THREADS: "1"
       NUMEXPR_NUM_THREADS: "1"
       MPLBACKEND: Agg
-      MPLCONFIGDIR: ${{ runner.temp }}/cetus-matplotlib
-      TMPDIR: ${{ runner.temp }}/cetus-temporary
       # Native export identity also verified by the completed independent rebuild.
       ACCEPTANCE_SHA: 7340fcc5d1fdc52b27ff3c0385d86669df97345897f95efa92bcb795dba5ba03
     steps:
@@ -64,6 +62,9 @@ jobs:
             -r release/longitude-adaptation-controls-20260930/code/requirements.txt
           "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -m pip check
       - name: Verify and rebuild saved prediction package
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/cetus-matplotlib
+          TMPDIR: ${{ runner.temp }}/cetus-temporary
         run: |
           [[ "$ACCEPTANCE_SHA" =~ ^[0-9a-f]{64}$ ]]
           mkdir -p "$MPLCONFIGDIR" "$TMPDIR"
