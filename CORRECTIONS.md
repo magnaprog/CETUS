@@ -55,13 +55,19 @@ records the source window. Existing catalog coordinates and arrays are retained
 as historical outputs. That correction does not explain the large offshore
 locations, change terrain labels, or repair old split overlap.
 
-**Model conditioning and incomplete experiments.** The original v1 probe
+**Model conditioning and evaluation scope.** The original v1 probe
 extraction used DOFA's numeric SAR identifier 13.78 for both domains. Earth
 uses 5.405 under the convention in the authors' [repository example](https://github.com/zhu-xlab/DOFA/blob/73ff5c0721da322689ae890bed5b4efd78935f47/README.md). Their [paper's version 2, Appendix D](https://arxiv.org/html/2403.15356v2#A4) instead gives 3.75 for Sentinel-1. The released checkpoint contains no identifier history, so that pretraining detail remains unresolved. Independently generated preprocessing control arrays need separate provenance checks. The repaired within-Titan
 evaluation uses 13.78 and records encoder revisions, checkpoint hashes and
-normalization. It does not correct Earth transfer. Repaired fine-tuning is
-excluded from this package; completion requires separate validation of all
-75 planned fits before a subsequent release can claim those results.
+normalization. It does not correct Earth transfer. The repaired frozen package
+keeps its original scope. A separate
+[adaptation and training-substitution package](release/longitude-adaptation-controls-20260930/README.md)
+contains the completed 75 repaired fits, checkpoint-replay evidence and the
+SGD and common LR substitution controls. Root v1 results and both repaired
+parent packages retain their existing bytes. These comparisons describe
+complete recipes and training membership changes; they do not isolate a
+causal effect of unfreezing or spatial leakage. The root README supplies the
+separate package acceptance identity.
 
 **Historical figure index.** A separate earlier software-side v1 artifact
 index retained the figure-manifest digest
@@ -71,5 +77,8 @@ after the distributed manifest changed to
 This stale nested entry is distinct from the valid checksum chain of the
 46-file review bundle preserved here. Frozen bytes are not rewritten.
 
-This branch prepares a private data-only correction. It does not publish image
-tiles, provide runnable software, register a DOI, or change repository visibility.
+The repository includes frozen evaluation source and CPU reconstruction code
+for the sibling result package. The forty-job frozen replay completed with
+verification against native arrays and predictions; SOFTWARE.md records its
+source and report identity. Tiles, weights and raw products remain separately
+supplied. These additions do not register a DOI or change repository visibility.

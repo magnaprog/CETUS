@@ -35,3 +35,44 @@ jobs:
               assert index['files'][name]['sha256'] == record['sha256'], f'Source export differs: {name}'
           print(f'Validated {len(index["files"])} index entries and source identity')
           PY
+
+  saved-prediction-reconstruction:
+    runs-on: ubuntu-24.04
+    env:
+      CUDA_VISIBLE_DEVICES: ""
+      PYTHONDONTWRITEBYTECODE: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      NUMEXPR_NUM_THREADS: "1"
+      MPLBACKEND: Agg
+      MPLCONFIGDIR: ${{ runner.temp }}/cetus-matplotlib
+      TMPDIR: ${{ runner.temp }}/cetus-temporary
+      # Native export identity also verified by the completed independent rebuild.
+      ACCEPTANCE_SHA: 7340fcc5d1fdc52b27ff3c0385d86669df97345897f95efa92bcb795dba5ba03
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - name: Install pinned CPU reconstruction dependencies
+        run: |
+          python -c 'import sys; assert sys.version_info[:3] == (3, 12, 3)'
+          python -m venv "$RUNNER_TEMP/cetus-reconstruction-venv"
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -m pip install \
+            --only-binary=:all: --require-hashes \
+            -r release/longitude-adaptation-controls-20260930/code/requirements.txt
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -m pip check
+      - name: Verify and rebuild saved prediction package
+        run: |
+          [[ "$ACCEPTANCE_SHA" =~ ^[0-9a-f]{64}$ ]]
+          mkdir -p "$MPLCONFIGDIR" "$TMPDIR"
+          PACKAGE="$GITHUB_WORKSPACE/release/longitude-adaptation-controls-20260930"
+          cd "$PACKAGE/code"
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -B \
+            -m scripts.verify_repaired_adaptation_release \
+            --package "$PACKAGE" \
+            --frozen-package "$PACKAGE/../longitude-review-20260929" \
+            --auxiliary-package "$PACKAGE/../longitude-auxiliary-20260929" \
+            --acceptance-sha256 "$ACCEPTANCE_SHA" \
+            --output "$RUNNER_TEMP/cetus-rebuilt-package"

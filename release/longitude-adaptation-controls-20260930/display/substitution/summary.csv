@@ -1,0 +1,73 @@
+recipe,model,metric,condition,units,mean,sample_sd_pp
+lr,dinov2,precision,reference,percent,35.489772814462796,2.9419457964580986
+lr,dinov2,precision,replacement,percent,35.73052023973734,2.749798853665215
+lr,dinov2,precision,difference,percentage points,0.2407474252745445,0.7922483127472303
+lr,dinov2,recall,reference,percent,43.047321291994635,3.8513927781044712
+lr,dinov2,recall,replacement,percent,43.47773507818979,3.8026573799121968
+lr,dinov2,recall,difference,percentage points,0.43041378619515624,0.9529620293050002
+lr,dinov2,f1,reference,percent,36.808355987317,2.758277241428534
+lr,dinov2,f1,replacement,percent,37.12524876532493,2.770415593512864
+lr,dinov2,f1,difference,percentage points,0.31689277800792115,0.7686387067192615
+lr,dofa,precision,reference,percent,35.239496999817234,2.969800495726181
+lr,dofa,precision,replacement,percent,35.792334698180106,3.1600897425963432
+lr,dofa,precision,difference,percentage points,0.5528376983628769,0.7210644688470031
+lr,dofa,recall,reference,percent,43.115593368891446,5.396998621244128
+lr,dofa,recall,replacement,percent,43.44541172203172,5.038148017616092
+lr,dofa,recall,difference,percentage points,0.329818353140282,1.1735492204182971
+lr,dofa,f1,reference,percent,35.91379384389455,3.5189175140823536
+lr,dofa,f1,replacement,percent,36.47644616594651,3.6025680037868204
+lr,dofa,f1,difference,percentage points,0.5626523220519652,0.8135987530209128
+lr,croma,precision,reference,percent,38.45767046257238,2.6222764574968815
+lr,croma,precision,replacement,percent,39.006784288259226,3.03020132915137
+lr,croma,precision,difference,percentage points,0.5491138256868544,0.510839646512078
+lr,croma,recall,reference,percent,47.23215132554442,5.773850370341593
+lr,croma,recall,replacement,percent,48.44425508515103,5.928998241962387
+lr,croma,recall,difference,percentage points,1.2121037596066109,0.9988969997983945
+lr,croma,f1,reference,percent,39.34098921440416,2.476937122788833
+lr,croma,f1,replacement,percent,40.022491972284264,2.9204434557901493
+lr,croma,f1,difference,percentage points,0.6815027578801013,0.6339401116963777
+lr,random_init,precision,reference,percent,30.803046122027684,4.983785258883457
+lr,random_init,precision,replacement,percent,30.850768081947006,4.897637430785061
+lr,random_init,precision,difference,percentage points,0.047721959919317936,0.3752039481625825
+lr,random_init,recall,reference,percent,34.869360961802144,3.9301471143506266
+lr,random_init,recall,replacement,percent,35.597714414779446,4.409095629266811
+lr,random_init,recall,difference,percentage points,0.7283534529773017,1.0888463738202108
+lr,random_init,f1,reference,percent,27.27671647764663,3.958502582436903
+lr,random_init,f1,replacement,percent,27.522581719662846,3.9526199082483453
+lr,random_init,f1,difference,percentage points,0.24586524201621493,0.37010720639414935
+sgd,dinov2,precision,reference,percent,36.02150172221161,3.5131207005373435
+sgd,dinov2,precision,replacement,percent,36.3701073884915,3.455027666549627
+sgd,dinov2,precision,difference,percentage points,0.34860566627988754,0.5680142592887901
+sgd,dinov2,recall,reference,percent,44.699106940673786,4.301236916539221
+sgd,dinov2,recall,replacement,percent,45.54162572554865,4.782827633968944
+sgd,dinov2,recall,difference,percentage points,0.8425187848748529,0.7909946471922179
+sgd,dinov2,f1,reference,percent,37.70902923732154,3.5631358853227586
+sgd,dinov2,f1,replacement,percent,38.179997300203866,3.6766186132726832
+sgd,dinov2,f1,difference,percentage points,0.47096806288232546,0.6515197295874804
+sgd,dofa,precision,reference,percent,32.56922464301126,3.7574535347230404
+sgd,dofa,precision,replacement,percent,32.81204700816647,3.7921460427363876
+sgd,dofa,precision,difference,percentage points,0.24282236515520972,0.22517376541254136
+sgd,dofa,recall,reference,percent,45.25356073693806,7.665627946055067
+sgd,dofa,recall,replacement,percent,46.126730361942975,8.579666147681271
+sgd,dofa,recall,difference,percentage points,0.8731696250049147,1.2505855039515108
+sgd,dofa,f1,reference,percent,29.044885296997204,2.935059013342162
+sgd,dofa,f1,replacement,percent,29.488541590482725,3.1426099784951678
+sgd,dofa,f1,difference,percentage points,0.4436562934855216,0.3453606667555564
+sgd,croma,precision,reference,percent,35.854817623234624,3.7313927351358562
+sgd,croma,precision,replacement,percent,35.953418512024896,3.7746299077920367
+sgd,croma,precision,difference,percentage points,0.09860088879027673,0.2550384651248845
+sgd,croma,recall,reference,percent,48.450248107932104,7.3964582154784315
+sgd,croma,recall,replacement,percent,48.86553699138377,7.602969271112193
+sgd,croma,recall,difference,percentage points,0.4152888834516677,0.5452770992113014
+sgd,croma,f1,reference,percent,35.257177404992966,4.047164882372295
+sgd,croma,f1,replacement,percent,35.325415095607035,4.094152084051531
+sgd,croma,f1,difference,percentage points,0.0682376906140636,0.47061480413940693
+sgd,random_init,precision,reference,percent,6.0077666397244505,2.1662898571515083
+sgd,random_init,precision,replacement,percent,6.683685022070421,1.3019798581115016
+sgd,random_init,precision,difference,percentage points,0.6759183823459698,2.114385246733344
+sgd,random_init,recall,reference,percent,16.664874551971327,0.004007290282256161
+sgd,random_init,recall,replacement,percent,16.676209018809885,0.021337348057481303
+sgd,random_init,recall,difference,percentage points,0.011334466838560098,0.020702374834119516
+sgd,random_init,f1,reference,percent,7.9728794939970395,2.4657137215526252
+sgd,random_init,f1,replacement,percent,8.59903332376588,1.4813751868108214
+sgd,random_init,f1,difference,percentage points,0.6261538297688405,2.2728830460015774

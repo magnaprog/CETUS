@@ -5,16 +5,23 @@ CROMA and the fixed random ViT control. Scientific source files are unchanged
 from development commit 0257a36197c51eda0a31768531ea26eef9887a6e. SOFTWARE_EXPORT.json lists their
 SHA256 hashes and distinguishes generated packaging and tests.
 
+The manifest's `files` entries bind the current checkout. Its builder hash
+and development commit identify the original export. The September 30 guide
+revision appears in `documentation_updates`, with its previous and current
+hashes. All other 25 export entries remain unchanged. The original generated
+guide and manifest remain in CETUS commit
+`360eaea532ead477f46906d7ebe0cb5282e8b082`.
+
 This export covers feature extraction, five seeded linear probes per fold,
 and cosine k-nearest-neighbor classification. Use the five released contiguous
 Titan folds. Earth transfer, classical baselines, adaptation, preprocessing,
-private acceptance auditors and their CLIs are outside this software release.
+private acceptance auditors and their CLIs are outside the frozen runner export.
 Some shared modules retain those older functions to preserve source identity;
 only the Titan workflow below is supported here.
 
 ## Install and check
 
-After this source bundle is integrated into CETUS:
+From a source checkout:
 
 ```sh
 git clone https://github.com/magnaprog/CETUS.git
@@ -148,8 +155,21 @@ extraction. This inspection covered model construction and checkpoint loading.
 
 Random Init uses one fixed encoder realization with seed 42 across all folds.
 The five probe seeds vary the linear heads. Its score therefore describes this
-single untrained encoder baseline. A full public rerun and comparison with the
-accepted native features and predictions remains pending.
+single untrained encoder baseline.
+
+The completed public frozen replay used CETUS commit
+`360eaea532ead477f46906d7ebe0cb5282e8b082` and compared all twenty model/fold
+pairs with native commit `6295af2bc35c8d8a2e47fc982b196809245f4550`.
+Twenty extraction jobs and twenty CPU analysis jobs passed. All sixty feature
+arrays, their ID and label arrays, one hundred probe heads and twenty kNN
+prediction vectors matched the native records under the declared comparisons.
+Feature arrays, probe probabilities, predictions and saved metrics matched
+exactly. Independently recomputed metrics used absolute tolerance `1e-12`.
+The completion report SHA256 is
+`be3f8a8aeb55ff019cb7978bf8ef038904bca5ca403cc1c1b6221bb549d6349f`;
+its monitor execution exited zero. This verifies the recorded source, data,
+weights and runtime combination. It does not promise identical results on
+other hardware or library versions.
 
 ## Run one model and fold
 
@@ -222,7 +242,70 @@ do not support an independence claim or an inferential confidence interval.
 One repaired test fold has only one Crater tile. Neither these folds nor the
 software release prove a causal effect of spatial buffering.
 
-## Remaining public protocol work
+## Reconstruct adaptation and training substitution results
+
+The sibling `release/longitude-adaptation-controls-20260930` provides CPU
+verification and reconstruction from saved predictions. Keep it beside the
+unchanged `longitude-review-20260929` and `longitude-auxiliary-20260929`
+packages. This workflow requires Python, NumPy and Matplotlib, with eleven
+pinned PyPI wheels. It does not load encoder weights or train models.
+
+Use Python 3.12.3 in an external virtual environment. The tested runtime was
+Linux x86_64 with glibc 2.39, NumPy 2.4.4 and Matplotlib 3.10.9. The exact wheel
+hashes are in the package's `code/requirements.txt`. A separate display trial
+reproduced all sixteen accepted display artifacts and the adaptation checksum
+sidecar byte for byte. The subsequent standalone public verifier and full
+rebuild also exited zero in that isolated PyPI environment. All 51 package
+files, totaling 10,201,553 bytes, matched the native export exactly, including
+the displays, finite claims index and inventories. All three input packages
+remained unchanged. The full-rebuild comparison record has SHA256
+`a61d995a1cd6e0a8fd0db0e4b003b82b9190528f43d44e50d73a7e2e134bc40c`.
+These checks apply to the recorded runtime and do not establish identical
+output on other platforms. This runtime is separate from frozen GPU inference.
+
+Run these commands from the CETUS root. Set `WORK` to a new external directory.
+The `ACCEPTANCE_SHA` below matches the native export identity in the root
+README and the completed independent package reconstruction.
+
+```sh
+PACKAGE="$PWD/release/longitude-adaptation-controls-20260930"
+WORK=/absolute/path/to/new/cetus-reconstruction
+ACCEPTANCE_SHA=7340fcc5d1fdc52b27ff3c0385d86669df97345897f95efa92bcb795dba5ba03
+mkdir -p "$WORK"
+python3.12 -m venv "$WORK/venv"
+. "$WORK/venv/bin/activate"
+python -c 'import sys; assert sys.version_info[:3] == (3, 12, 3)'
+python -m pip install --only-binary=:all: --require-hashes -r "$PACKAGE/code/requirements.txt"
+python -m pip check
+export PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES=''
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+export MPLBACKEND=Agg MPLCONFIGDIR="$WORK/matplotlib-cache" TMPDIR="$WORK/tmp"
+mkdir -p "$MPLCONFIGDIR" "$TMPDIR"
+cd "$PACKAGE/code"
+python -B -m scripts.verify_repaired_adaptation_release \
+  --package "$PACKAGE" \
+  --frozen-package "$PACKAGE/../longitude-review-20260929" \
+  --auxiliary-package "$PACKAGE/../longitude-auxiliary-20260929" \
+  --acceptance-sha256 "$ACCEPTANCE_SHA"
+```
+
+Success requires exit zero and `status: pass`. Verification reconstructs the
+numeric tables. To rebuild both figures and the complete sibling package,
+repeat the verifier command with `--output "$WORK/rebuilt-package"`.
+Both that output directory and `rebuilt-package.receipt.json` must be absent.
+Keep all caches and outputs outside the three input packages. Preserve failed
+outputs and select a fresh destination for a retry. Installation can use an
+authenticated wheelhouse with `--no-index --find-links`; reconstruction can run
+offline after installation. The package README gives the full input and receipt
+contract. These figures do not require TeX.
+
+The existing frozen CPU workflow tests synthetic inference and cache handling.
+The release-inventory workflow also verifies and rebuilds this saved-prediction
+package in its separate pinned environment. Neither CI job runs GPU inference
+or adaptation training. The finite claims index covers its registered
+occurrences; it is not a check of every sentence in the manuscripts.
+
+## Remaining public training protocol work
 
 Classical baseline and adaptation CLIs require new public protocols that bind
 the sanitized catalog, split bytes, supplied tile hashes, public source hashes,

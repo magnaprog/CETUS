@@ -1,6 +1,17 @@
 {
   "builder_sha256": "d747a16839c35f80eb6d0fd682b4ae1e6c34789bb68a2400362a3662eeec81e3",
   "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
+  "documentation_updates": [
+    {
+      "date": "2026-09-30",
+      "new_sha256": "defa82cf512e1a968de0256b6d4d6ceba92107ec70461b56596ba6072ffa7545",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "360eaea532ead477f46906d7ebe0cb5282e8b082",
+      "previous_manifest_sha256": "b8935f863856ae475279bc7cf0549d0fabb335441fff6aae27d26ec613af786a",
+      "previous_sha256": "558c0437e29b2096e1aa071fbcd3ffced41fb3e974f3a2737db9e68d5028ecec",
+      "reason": "Update the guide for the completed forty-job frozen replay and the separately verified CPU adaptation and training-substitution package. Original source files, other export entries, development source commit and initial builder identity are unchanged."
+    }
+  ],
   "excluded": [
     "data and model weights",
     "private audits and acceptance CLIs",
@@ -29,7 +40,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated",
-      "sha256": "558c0437e29b2096e1aa071fbcd3ffced41fb3e974f3a2737db9e68d5028ecec"
+      "sha256": "defa82cf512e1a968de0256b6d4d6ceba92107ec70461b56596ba6072ffa7545"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
