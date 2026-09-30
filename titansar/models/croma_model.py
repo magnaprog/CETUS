@@ -91,6 +91,11 @@ class PretrainedCROMA(nn.Module):
             self.cross_encoder.load_state_dict(checkpoint['joint_encoder'])
 
     def forward(self, SAR_images=None, optical_images=None):
+        """Return patch encodings and pooled features for the selected modalities.
+
+        SAR_GAP and optical_GAP apply learned feed-forward modules after mean
+        pooling. joint_GAP is the mean of the joint encoder's patch features.
+        """
         return_dict = {}
         if self.modality in ['SAR', 'both']:
             assert SAR_images is not None, f'Modality is set to {self.modality}, but SAR_images are None'

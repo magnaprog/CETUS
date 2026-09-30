@@ -51,19 +51,17 @@ def compute_norm_range(
     n_sigma: float = 3.0,
     default=(-30.0, 0.0),
 ):
-    """Robust [lo, hi] dB range for [0, 1] tile normalization from train stats.
+    """Estimate a [lo, hi] dB range for tile normalization from training statistics.
 
-    The range is centered on the train-split mean of per-tile mean dB and widened
-    by ``n_sigma`` pixel-level standard deviations. Because the normalization is
-    applied per pixel but the catalog only stores per-tile statistics, the pixel
-    spread is recovered via the law of total variance:
+    Center the range on the mean of training-tile mean dB values. Estimate pixel
+    variance as mean within-tile variance plus variance of tile means, weighting
+    tiles equally:
 
         sigma_pixel = sqrt( mean(per-tile var) + var(per-tile means) )
 
-    using each tile's ``std_sigma0_db`` when available. This matches the paper's
-    intended ``mu +/- n*sigma`` rule and, unlike the previous
-    ``min/max(tile means) +/- sigma``, reflects the actual pixel distribution the
-    range is applied to, so far fewer pixels clip at 0 or 1.
+    Include the within-tile term when all ``std_sigma0_db`` values are supplied.
+    Otherwise, use only the variance of tile means. Set the bounds to the mean
+    plus or minus ``n_sigma`` estimated standard deviations.
 
     Returns ``default`` if no training stats are available.
     """
@@ -248,9 +246,9 @@ def assign_split(lat: float, lon: float, config: TitanSARConfig) -> str:
 class TitanSARDataset(Dataset):
     """PyTorch Dataset for TitanSAR tiles.
 
-    Loads pre-processed tiles from disk. Each tile is stored as:
-    - {tile_id}.npy: (128, 128) float32 array (sigma0 linear)
-    - metadata in a shared catalog JSON file
+    Each {tile_id}.npy stores a (128, 128) float32 array in the product's intensity
+    space. Catalog metadata declares HiSAR display DN as ``hisar_log_dn`` or
+    calibrated linear backscatter as ``linear_sigma0``.
     """
 
     def __init__(

@@ -86,7 +86,7 @@ def assert_cache_real_weights(feat_dir, array_stem, model_name, strict):
         raise RuntimeError(
             f"{feat_dir}/{array_stem}.npy has no provenance "
             f"({array_stem}.meta.json missing): cannot prove it came from real "
-            "weights. Re-extract with run_probing, or disable strict mode."
+            "weights. Re-extract with run_probing or restore matching array metadata."
         )
     if meta.get("model") != model_name or meta.get("array") != array_stem:
         raise RuntimeError(

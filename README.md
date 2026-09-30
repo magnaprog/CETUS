@@ -6,7 +6,7 @@ source. [SOFTWARE.md](SOFTWARE.md) describes installation, required assets and
 commands. Image tiles, raw source products, encoder weights and embeddings are
 supplied separately. There is no public tile-archive endpoint or project archive DOI.
 
-The software preserves scientific source from development commit `a9c17ad`.
+The software preserves scientific source from development commit `0257a36`.
 Its CPU tests cover normalization, cache checks, model identity and a small
 synthetic evaluation. Full inference through this checkout remains a release
 acceptance task. The [export manifest](SOFTWARE_EXPORT.json) records source

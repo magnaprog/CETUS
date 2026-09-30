@@ -81,7 +81,10 @@ class FoundationModelWrapper(ABC):
 
     @torch.no_grad()
     def extract_features(self, x: torch.Tensor) -> torch.Tensor:
-        """Extract [CLS] token embeddings from input tiles.
+        """Extract one feature vector per input tile.
+
+        DINOv2 and Random Init use CLS tokens. DOFA uses normalized mean patch
+        features. CROMA applies a learned feed-forward module after mean pooling.
 
         Args:
             x: (B, 1, H, W) normalized SAR tile tensor
@@ -96,7 +99,7 @@ class FoundationModelWrapper(ABC):
 
     @abstractmethod
     def _forward(self, x: torch.Tensor) -> torch.Tensor:
-        """Model-specific forward pass returning [CLS] embedding."""
+        """Model-specific forward pass returning one feature vector per tile."""
         pass
 
     def get_transformer_blocks(self) -> list[nn.Module]:
@@ -156,9 +159,8 @@ class DINOv2Wrapper(FoundationModelWrapper):
         # Resize to 224x224 (DINOv2 default, patch_size=14 -> 16x16 patches)
         if x.shape[-1] != 224 or x.shape[-2] != 224:
             x = F.interpolate(x, size=(224, 224), mode="bilinear", align_corners=False)
-        # Apply ImageNet normalization: DINOv2 patch embedding was trained on
-        # ImageNet-normalized inputs (mean/std per channel). Since SAR is replicated
-        # to 3 identical channels, all channels use the same mean/std value.
+        # Apply each channel's ImageNet mean and standard deviation. The repeated
+        # input channels therefore differ after normalization.
         mean = self.IMAGENET_MEAN.to(x.device).view(1, 3, 1, 1)
         std = self.IMAGENET_STD.to(x.device).view(1, 3, 1, 1)
         return (x - mean) / std
@@ -184,6 +186,11 @@ class DOFAWrapper(FoundationModelWrapper):
     as 3.75: https://arxiv.org/html/2403.15356v2#A4. The identifier history of
     the downloaded checkpoint remains unresolved. These values record our
     input convention; they do not validate conditioning on an unseen sensor.
+
+    The accepted Titan evaluation supplies image values in [0, 1] after fitting
+    the range on training pixels. The pinned README's Earth example also applies channel
+    standardization. Its example constants establish neither an appropriate
+    Titan normalization nor the downloaded checkpoint's pretraining recipe.
 
     Weights available at: earthflow/DOFA on HuggingFace
     Code at: github.com/zhu-xlab/DOFA
@@ -250,7 +257,7 @@ class DOFAWrapper(FoundationModelWrapper):
             raise ImportError("Either DOFA or timm is required")
 
     def prepare_input(self, x: torch.Tensor) -> torch.Tensor:
-        """DOFA accepts single-channel input natively."""
+        """Resize the dataset's single-channel tensor without further normalization."""
         # x: (B, 1, H, W) - keep as-is
         if x.shape[-1] != 224 or x.shape[-2] != 224:
             x = F.interpolate(x, size=(224, 224), mode="bilinear", align_corners=False)
@@ -267,7 +274,8 @@ class DOFAWrapper(FoundationModelWrapper):
             features = self.model.forward_features(
                 x, wave_list=[self.wavelength]
             )
-            # DOFA returns CLS token directly (768-dim)
+            # The pinned DOFA factory defaults to mean patch pooling followed by
+            # fc_norm, returning a (batch, 768) tensor.
             if features.ndim == 3:
                 return features[:, 0]
             return features
@@ -366,7 +374,7 @@ class CROMAWrapper(FoundationModelWrapper):
 
     def _forward(self, x: torch.Tensor) -> torch.Tensor:
         if getattr(self, '_use_real_croma', False):
-            # Real CROMA: forward returns dict with SAR_GAP (bsz, 768)
+            # SAR_GAP applies a learned feed-forward module after mean patch pooling.
             result = self.model(SAR_images=x)
             return result['SAR_GAP']
         else:

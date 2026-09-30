@@ -2,7 +2,7 @@
 
 This source checkout runs frozen Titan terrain evaluation with DINOv2, DOFA,
 CROMA and the fixed random ViT control. Scientific source files are unchanged
-from development commit a9c17adb589db962c9992b664e790cd08b62a1ba. SOFTWARE_EXPORT.json lists their
+from development commit 0257a36197c51eda0a31768531ea26eef9887a6e. SOFTWARE_EXPORT.json lists their
 SHA256 hashes and distinguishes generated packaging and tests.
 
 This export covers feature extraction, five seeded linear probes per fold,
@@ -114,11 +114,42 @@ state digest plus timm version. It does not download pretrained weights.
 Always use `--require_real_weights`; this still allows the intentional random
 control but rejects placeholder substitutes for pretrained encoders.
 
-DOFA receives the recorded Cassini identifier 13.78. This follows the numeric
-convention in its upstream README; its checkpoint's pretraining convention
-remains a separate scientific limitation described in the wrapper. CROMA
-repeats Titan's single channel into two inputs. Neither choice establishes
-sensor equivalence.
+The released Titan arrays contain HiSAR display DN, declared as `hisar_log_dn`
+in the catalog. The dataset fits a range on sampled training pixels, scales
+values into [0, 1], and clips values outside that range. A calibration from
+these display values to sigma0 or dB is unavailable in this release.
+
+The wrappers use different input and feature operations:
+
+| Encoder | Input after dataset normalization | Tile feature |
+| --- | --- | --- |
+| DINOv2 | Repeat the channel three times, resize to 224 by 224, then apply channel means [0.485, 0.456, 0.406] and standard deviations [0.229, 0.224, 0.225] | CLS token |
+| DOFA | Keep one channel and resize to 224 by 224 | Mean patch features followed by `fc_norm` |
+| CROMA | Repeat the channel twice and resize to 120 by 120 | Mean patch features followed by the learned `GAP_FFN_s1` projection |
+| Random Init | Keep one channel and resize to 224 by 224 | CLS token |
+
+DINOv2's repeated channels differ after their channel-specific normalization.
+CROMA's two channels duplicate the same SAR display values. DOFA applies only resizing after dataset normalization and receives
+the recorded Cassini identifier 13.78, extending
+the numeric convention in its pinned upstream README. Its checkpoint's
+pretraining identifier convention remains unresolved, as described in the
+wrapper. The README's Earth example also applies channel standardization;
+the applicability of those channel constants to Titan and their use in the
+checkpoint's pretraining remain unverified. This export preserves the recorded Titan
+input recipe.
+
+The pinned DOFA factory uses mean patch pooling followed by LayerNorm through
+`fc_norm`. A separate CPU inspection of the specified checkpoint and factory
+verified that `fc_norm.weight` and `fc_norm.bias` are absent from the checkpoint
+and retain their constant initial values of one and zero. LayerNorm still
+normalizes the pooled features. The checkpoint's `norm` entries do not load
+into `fc_norm`, and the factory's classification head is unused by feature
+extraction. This inspection covered model construction and checkpoint loading.
+
+Random Init uses one fixed encoder realization with seed 42 across all folds.
+The five probe seeds vary the linear heads. Its score therefore describes this
+single untrained encoder baseline. A full public rerun and comparison with the
+accepted native features and predictions remains pending.
 
 ## Run one model and fold
 
@@ -182,8 +213,10 @@ classes present in that test fold, not macro F1. The six classes in index order
 are plains, dunes, hummocky, labyrinths, lakes, craters.
 
 This narrow bundle does not include the private aggregate acceptance script.
-For any derived metric, reconstruct counts from the saved IDs and predictions,
-average the five probe seeds within each fold, then summarize the five folds.
+For probe metrics, reconstruct confusion counts for each seed, average the
+five head results within each fold, then report the equal-fold mean and sample
+standard deviation. For kNN, compute each fold's metric from its single
+deterministic prediction vector, then report the same fold summary.
 Fold standard deviations are descriptive; overlapping training populations
 do not support an independence claim or an inferential confidence interval.
 One repaired test fold has only one Crater tile. Neither these folds nor the
