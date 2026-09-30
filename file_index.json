@@ -21,6 +21,10 @@
       "bytes": 595,
       "sha256": "ec8637baf02e0e8b290c4073f0491c2d292ac649a4d9979abfd55fa40c69d493"
     },
+    ".github/workflows/release-inventory.yml": {
+      "bytes": 1752,
+      "sha256": "6adf68c3c43963c58ba005d1c0b93bbcde081af1ee89affdb7015f8e6245927d"
+    },
     ".gitignore": {
       "bytes": 79,
       "sha256": "54c0160c2ad7df6b0d4b083111557c43d8f0afe5b6c2ce733855980ce39766b0"
@@ -46,16 +50,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 3893,
-      "sha256": "c6f300fb35bb02061c094bc48494cf58bb7b6279bb9ce29bf384db0be2d0994b"
+      "bytes": 4860,
+      "sha256": "9d0afbd3e361ab745e517d34d13058936bd1de9171ab8d9079b75a16c2c623a7"
     },
     "SOFTWARE.md": {
-      "bytes": 11574,
-      "sha256": "ee4e2de7d811ddf3b3d97ccb56c87d547a40c195bf1c48842852f7f38c5be2a9"
+      "bytes": 13790,
+      "sha256": "558c0437e29b2096e1aa071fbcd3ffced41fb3e974f3a2737db9e68d5028ecec"
     },
     "SOFTWARE_EXPORT.json": {
       "bytes": 6938,
-      "sha256": "6ef2449f72da1807d4b73767ea132962d8fd78813e0c384a01cc03c0b26e0033"
+      "sha256": "b8935f863856ae475279bc7cf0549d0fabb335441fff6aae27d26ec613af786a"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -84,6 +88,58 @@
     "pyproject.toml": {
       "bytes": 638,
       "sha256": "7ed9bc5ca8e87d9a1bfee11ce99e29f9809492bbddcc85306a7a48fbbd59e3c8"
+    },
+    "release/longitude-auxiliary-20260929/README.md": {
+      "bytes": 4043,
+      "sha256": "76b6878c5579eee394e3aa991a6a83ba00473271827ebbaf6a54de86a1925146"
+    },
+    "release/longitude-auxiliary-20260929/SHA256SUMS": {
+      "bytes": 1113,
+      "sha256": "58c44b3bd396999864d457193593bc7125bcdc3458ca34db6bccf69862558cf0"
+    },
+    "release/longitude-auxiliary-20260929/evidence/runs.json": {
+      "bytes": 69324,
+      "sha256": "46be96aa1a5efe07530dea2862c90ddc9b3380bea035bfd735f6e42255c6507e"
+    },
+    "release/longitude-auxiliary-20260929/evidence/vims_verification_v3.json": {
+      "bytes": 797,
+      "sha256": "75d90f70a2c83bc51596e63493fd629b85effdefa1ba699bb5a039f4dd4d6a4b"
+    },
+    "release/longitude-auxiliary-20260929/file_index.json": {
+      "bytes": 1429,
+      "sha256": "88c4c01a872c60a1b12985eed5d7dc9a9c5602a04e4552f94c41f7466ba0f87e"
+    },
+    "release/longitude-auxiliary-20260929/metadata/vims_display_v3.json": {
+      "bytes": 3683908,
+      "sha256": "f28957a13990e10b45568c6e2868653db5f1ce9659787e295993ccfaa05a9b48"
+    },
+    "release/longitude-auxiliary-20260929/metadata/vims_source_v3.json": {
+      "bytes": 2802,
+      "sha256": "e2750cec3634fcf0282300d2b56efecb7d13fffa1fec9ed3aae448454fff1594"
+    },
+    "release/longitude-auxiliary-20260929/protocols/classical_baselines_v2.json": {
+      "bytes": 8316,
+      "sha256": "f9ca9a0694dab3f2c0c99d6cb18288a0af87e17006b671c3db6b0c3afaea1470"
+    },
+    "release/longitude-auxiliary-20260929/protocols/common_classifier.json": {
+      "bytes": 73855,
+      "sha256": "a6d7b60e6760b2a297a8684bbcc6ec028ca6f99d97035ec24343ecd3bd7a20b8"
+    },
+    "release/longitude-auxiliary-20260929/provenance.json": {
+      "bytes": 2649,
+      "sha256": "0b7055fad3b11f732e47cbd4a3afdcc47bedb6a2aa135f45f0321e6ec03ab0db"
+    },
+    "release/longitude-auxiliary-20260929/results/classical_baselines_v2.json": {
+      "bytes": 143905,
+      "sha256": "1c9dc259986b742f80afd92ff857c2798f32ecb41178b2a8fe12cff4de041cd2"
+    },
+    "release/longitude-auxiliary-20260929/results/common_classifier.json": {
+      "bytes": 70190,
+      "sha256": "e0c007157b51ea83ab8cdfb7b661232456ecc1a6181d231dbd03104ac5473379"
+    },
+    "release/longitude-auxiliary-20260929/results/predictions.json.gz": {
+      "bytes": 156305,
+      "sha256": "fa6f8a56a67c8f3a36020724b6aa0f4a32a933598089ca45f6bbbe692c2636b9"
     },
     "release/longitude-review-20260929/README.md": {
       "bytes": 3357,
@@ -514,16 +570,16 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "titansar/configs/defaults.py": {
-      "bytes": 5297,
-      "sha256": "198e394a99635455e7b0209fb28d61332d04cc5458e09480680781ae77936adc"
+      "bytes": 5380,
+      "sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
     },
     "titansar/data/__init__.py": {
       "bytes": 48,
       "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
     },
     "titansar/data/dataset.py": {
-      "bytes": 23632,
-      "sha256": "a4e65852fe308a499e3265b9bd1ee652c4d2efa31f65eea8a0f9e055736cf747"
+      "bytes": 23499,
+      "sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f"
     },
     "titansar/evaluation/__init__.py": {
       "bytes": 53,
@@ -538,16 +594,16 @@
       "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
     },
     "titansar/models/croma_model.py": {
-      "bytes": 14692,
-      "sha256": "8f455159d6c7029e8862eb8b9d96aef62171e1875f136b6e06060dceb343ffdc"
+      "bytes": 14944,
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
     },
     "titansar/models/foundation_models.py": {
-      "bytes": 19468,
-      "sha256": "186c6af9ee23b14c6f22fb7bf161a9c8b4a864033cbaf2e92b0c80dfd6a6eac3"
+      "bytes": 19989,
+      "sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d"
     },
     "titansar/models/probing.py": {
-      "bytes": 25317,
-      "sha256": "b7fa9011a8ab10cc9db3f165aa5dd9237ea10b252f3974b573b1966032128369"
+      "bytes": 25328,
+      "sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {
       "bytes": 4648,
@@ -556,6 +612,7 @@
   },
   "packages": {
     "historical_review": "release/v1-review-20260908",
+    "repaired_titan_auxiliary": "release/longitude-auxiliary-20260929",
     "repaired_titan_frozen": "release/longitude-review-20260929"
   },
   "repaired_catalog": {
@@ -564,7 +621,7 @@
   },
   "schema_version": "1.1.0",
   "software": {
-    "development_source_commit": "a9c17adb589db962c9992b664e790cd08b62a1ba",
+    "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
     "gpu_acceptance": "pending",
     "guide": "SOFTWARE.md",
     "manifest": "SOFTWARE_EXPORT.json",

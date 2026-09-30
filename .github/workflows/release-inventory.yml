@@ -1,0 +1,37 @@
+name: Release inventory
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sha256sum -c SHA256SUMS
+      - name: Check index contents and source identity
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          tracked = set(subprocess.check_output(
+              ['git', 'ls-files', '-z']).decode().split('\0')) - {''}
+          index = json.loads(Path('file_index.json').read_text())
+          assert set(index['files']) == tracked - {'file_index.json', 'SHA256SUMS'}, 'Index inventory differs'
+          for name, record in index['files'].items():
+              path = Path(name)
+              assert not path.is_symlink(), f'Symlink in release: {name}'
+              data = path.read_bytes()
+              assert record == {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}, name
+          sums = Path('SHA256SUMS').read_text().splitlines()
+          names = [line.split('  ', 1)[1] for line in sums]
+          assert len(names) == len(set(names)), 'Repeated checksum path'
+          assert set(names) == tracked - {'SHA256SUMS'}, 'Checksum inventory differs'
+          source = json.loads(Path('SOFTWARE_EXPORT.json').read_text())
+          assert index['software']['development_source_commit'] == source['development_source_commit'], 'Source commit differs'
+          for name, record in source['files'].items():
+              assert index['files'][name]['sha256'] == record['sha256'], f'Source export differs: {name}'
+          print(f'Validated {len(index["files"])} index entries and source identity')
+          PY

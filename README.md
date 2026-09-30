@@ -8,10 +8,11 @@ supplied separately. There is no public tile-archive endpoint or project archive
 
 The software preserves scientific source from development commit `0257a36`.
 Its CPU tests cover normalization, cache checks, model identity and a small
-synthetic evaluation. Full inference through this checkout remains a release
-acceptance task. The [export manifest](SOFTWARE_EXPORT.json) records source
-hashes. This source package currently supports frozen Titan evaluation;
-classical baselines and adaptation need separate public protocols.
+synthetic evaluation. A forty-job inference replay is queued through immutable checkout `360eaea`;
+its verification remains pending. The [export manifest](SOFTWARE_EXPORT.json) records source
+hashes. This source package supports frozen Titan evaluation. The additional package
+below supplies accepted common-classifier and classical results; their fitting
+commands and adaptation remain in the development repository.
 
 The September 29 correction separates two dataset identities:
 
@@ -20,6 +21,7 @@ The September 29 correction separates two dataset identities:
 | Root `catalogs/`, `splits/`, and `results/` | Historical v1: 11,371 Titan tiles, 398 Earth tiles, and 2,945 unlabeled Venus tiles. Original scientific payloads remain unchanged for existing links. Results describe the retained v1 population and its known limitations. |
 | [Original review bundle](release/v1-review-20260908/README.md) | All 46 files from the September 8 repository tree, preserved byte-for-byte with their original index and checksums. Historical descriptions in that snapshot are superseded by the correction notice. |
 | [Repaired Titan package](release/longitude-review-20260929/README.md) | 23,380 Titan tiles, including 140 Craters; five contiguous geographic folds; verified frozen DINOv2, DOFA, CROMA, and RandomInit probe/kNN results with predictions and counts. Earth transfer and repaired fine-tuning are not included. |
+| [Additional repaired results](release/longitude-auxiliary-20260929/README.md) | Common-classifier and classical v2 results, all 70 prediction vectors, and corrected VIMS v3 display metadata. The package uses the repaired parent catalog and folds. VIMS values remain separate from classifier inputs. |
 
 Read [CORRECTIONS.md](CORRECTIONS.md) before interpreting the historical
 results. The v1 longitude sampler omitted valid western terrain. The repair
@@ -40,6 +42,14 @@ allow reconstruction of confusion matrices, per-class scores, fold means, and
 sample standard deviations. These checks do not rerun model inference or
 establish independent geological truth. Fine-tuning results at the root belong
 to historical v1; no completed repaired fine-tuning experiment is claimed here.
+
+The additional package reports precision, recall and F1 for four encoder and
+four classical feature families under one fixed logistic classifier. It also
+includes majority and class-prior controls. Its predictions reconstruct all
+70 confusion matrices across 23,246 distinct test tiles. The corrected VIMS
+sidecar has 23,379 available numerical samples and one unavailable edge sample;
+these values describe a display composite and do not measure composition or
+mission coverage. The package README explains verification and provenance.
 
 [FILES.md](FILES.md) explains the root historical files. Source terms remain in
 [DATA_LICENSES.md](DATA_LICENSES.md) and
