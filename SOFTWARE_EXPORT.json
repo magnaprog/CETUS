@@ -1,0 +1,158 @@
+{
+  "builder_sha256": "d747a16839c35f80eb6d0fd682b4ae1e6c34789bb68a2400362a3662eeec81e3",
+  "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
+  "documentation_updates": [
+    {
+      "date": "2026-09-30",
+      "new_sha256": "defa82cf512e1a968de0256b6d4d6ceba92107ec70461b56596ba6072ffa7545",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "360eaea532ead477f46906d7ebe0cb5282e8b082",
+      "previous_manifest_sha256": "b8935f863856ae475279bc7cf0549d0fabb335441fff6aae27d26ec613af786a",
+      "previous_sha256": "558c0437e29b2096e1aa071fbcd3ffced41fb3e974f3a2737db9e68d5028ecec",
+      "reason": "Update the guide for the completed forty-job frozen replay and the separately verified CPU adaptation and training-substitution package. Original source files, other export entries, development source commit and initial builder identity are unchanged."
+    }
+  ],
+  "excluded": [
+    "data and model weights",
+    "private audits and acceptance CLIs",
+    "classical baseline and adaptation CLIs",
+    "queue and remote administration",
+    "papers and archived releases",
+    "development exporter itself"
+  ],
+  "files": {
+    ".github/workflows/frozen-cpu-tests.yml": {
+      "origin": "generated",
+      "sha256": "ec8637baf02e0e8b290c4073f0491c2d292ac649a4d9979abfd55fa40c69d493"
+    },
+    ".gitignore": {
+      "origin": "generated",
+      "sha256": "54c0160c2ad7df6b0d4b083111557c43d8f0afe5b6c2ce733855980ce39766b0"
+    },
+    "CITATION.cff": {
+      "origin": "generated",
+      "sha256": "c1fb518a21aa92fa6afe0833180b0b0b59b4517243a9ffa2544a6fb65c4bd4a4"
+    },
+    "LICENSE": {
+      "origin": "verbatim committed blob",
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2",
+      "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "SOFTWARE.md": {
+      "origin": "generated",
+      "sha256": "defa82cf512e1a968de0256b6d4d6ceba92107ec70461b56596ba6072ffa7545"
+    },
+    "licenses/CROMA-LICENSE": {
+      "origin": "generated",
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "pyproject.toml": {
+      "origin": "generated",
+      "sha256": "7ed9bc5ca8e87d9a1bfee11ce99e29f9809492bbddcc85306a7a48fbbd59e3c8"
+    },
+    "scripts/__init__.py": {
+      "origin": "generated",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/run_probing.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5",
+      "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
+    },
+    "tests/test_bound_feature_cache.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33",
+      "source_sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33"
+    },
+    "tests/test_normalization_provenance.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "d82523e76752685e29b59ba0a2921a5adeffe87e78b5ecf67c2e4d733dc97290",
+      "source_sha256": "d82523e76752685e29b59ba0a2921a5adeffe87e78b5ecf67c2e4d733dc97290"
+    },
+    "tests/test_public_frozen_smoke.py": {
+      "origin": "generated",
+      "sha256": "e4c9ad1a6b964edb54ddc34b8e141116eb9fcb84153d5ec358c7d22d7d27c5e7"
+    },
+    "tests/test_random_model_identity.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "599a6c8beef624f555a59f9b8bbdc054de9268f36a40de6abdf62641cf503367",
+      "source_sha256": "599a6c8beef624f555a59f9b8bbdc054de9268f36a40de6abdf62641cf503367"
+    },
+    "tests/test_within_titan_probing.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "808f882c78c51c3a22db87552b0beaa8fcc457abd3a937858f307db8f1ca7d34",
+      "source_sha256": "808f882c78c51c3a22db87552b0beaa8fcc457abd3a937858f307db8f1ca7d34"
+    },
+    "titansar/__init__.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f",
+      "source_sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "titansar/configs/__init__.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "titansar/configs/defaults.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709",
+      "source_sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
+    },
+    "titansar/data/__init__.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59",
+      "source_sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "titansar/data/dataset.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f",
+      "source_sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f"
+    },
+    "titansar/evaluation/__init__.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de",
+      "source_sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de"
+    },
+    "titansar/evaluation/metrics.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837",
+      "source_sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837"
+    },
+    "titansar/models/__init__.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220",
+      "source_sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "titansar/models/croma_model.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c",
+      "source_sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+    },
+    "titansar/models/foundation_models.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d",
+      "source_sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d"
+    },
+    "titansar/models/probing.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf",
+      "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
+    },
+    "titansar/reproducibility.py": {
+      "origin": "verbatim committed blob",
+      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804",
+      "source_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+    }
+  },
+  "metadata_source_sha256": {
+    "CITATION.cff": "c8d67c23a4d583f0d2a9e6be8436e569786c61094f8316e0597046ba09c38217",
+    "pyproject.toml": "69cabff57fbebbfffd17d16051a96225f4bee94bfaa5ec176578f800a83b77bc"
+  },
+  "schema_version": 1,
+  "scope": "frozen within-Titan source checkout",
+  "upstream_croma_license": {
+    "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f",
+    "url": "https://raw.githubusercontent.com/antofuller/CROMA/814dcf58b7774150fa5370a9f432588219f11be1/LICENSE"
+  },
+  "validation": "Build integrity only; CPU execution evidence is recorded separately."
+}

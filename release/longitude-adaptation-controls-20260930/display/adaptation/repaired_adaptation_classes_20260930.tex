@@ -1,0 +1,25 @@
+% Equal-fold mean and sample fold SD. Support counts test tiles once.
+\begin{tabular}{@{}llrrrrrrr@{}}
+\toprule
+Encoder & Class & Support & FT P, \% & FT R, \% & FT F1, \% & LR P, \% & LR R, \% & LR F1, \% \\
+\midrule
+DINOv2 & Plains & 15406 & \shortstack{$88.05$\\$\pm 2.69$} & \shortstack{$68.03$\\$\pm 7.48$} & \shortstack{$76.24$\\$\pm 4.32$} & \shortstack{$85.22$\\$\pm 1.36$} & \shortstack{$68.92$\\$\pm 5.70$} & \shortstack{$76.10$\\$\pm 3.65$} \\
+DINOv2 & Dunes & 3958 & \shortstack{$61.80$\\$\pm 7.60$} & \shortstack{$71.52$\\$\pm 9.70$} & \shortstack{$65.76$\\$\pm 7.47$} & \shortstack{$53.23$\\$\pm 11.12$} & \shortstack{$68.04$\\$\pm 8.21$} & \shortstack{$59.43$\\$\pm 9.37$} \\
+DINOv2 & Hummocky & 2757 & \shortstack{$46.21$\\$\pm 3.87$} & \shortstack{$57.96$\\$\pm 18.87$} & \shortstack{$49.34$\\$\pm 7.55$} & \shortstack{$37.36$\\$\pm 5.34$} & \shortstack{$57.65$\\$\pm 17.63$} & \shortstack{$44.43$\\$\pm 8.22$} \\
+DINOv2 & Labyrinths & 498 & \shortstack{$30.10$\\$\pm 10.64$} & \shortstack{$63.81$\\$\pm 12.99$} & \shortstack{$38.23$\\$\pm 7.48$} & \shortstack{$25.24$\\$\pm 9.92$} & \shortstack{$38.88$\\$\pm 18.40$} & \shortstack{$27.85$\\$\pm 5.32$} \\
+DINOv2 & Lakes & 495 & \shortstack{$12.78$\\$\pm 9.88$} & \shortstack{$32.84$\\$\pm 23.53$} & \shortstack{$14.10$\\$\pm 11.58$} & \shortstack{$10.51$\\$\pm 8.82$} & \shortstack{$20.87$\\$\pm 20.69$} & \shortstack{$11.09$\\$\pm 12.33$} \\
+DINOv2 & Craters & 132 & \shortstack{$4.64$\\$\pm 6.43$} & \shortstack{$19.54$\\$\pm 23.64$} & \shortstack{$3.27$\\$\pm 3.13$} & \shortstack{$1.37$\\$\pm 1.95$} & \shortstack{$3.93$\\$\pm 5.70$} & \shortstack{$1.94$\\$\pm 2.67$} \\
+DOFA & Plains & 15406 & \shortstack{$68.04$\\$\pm 4.56$} & \shortstack{$42.45$\\$\pm 9.90$} & \shortstack{$49.67$\\$\pm 8.27$} & \shortstack{$85.97$\\$\pm 0.55$} & \shortstack{$65.75$\\$\pm 5.09$} & \shortstack{$74.42$\\$\pm 3.33$} \\
+DOFA & Dunes & 3958 & \shortstack{$24.07$\\$\pm 10.25$} & \shortstack{$61.79$\\$\pm 4.48$} & \shortstack{$32.49$\\$\pm 10.96$} & \shortstack{$52.99$\\$\pm 10.96$} & \shortstack{$65.97$\\$\pm 12.28$} & \shortstack{$57.90$\\$\pm 8.50$} \\
+DOFA & Hummocky & 2757 & \shortstack{$1.87$\\$\pm 4.19$} & \shortstack{$0.24$\\$\pm 0.53$} & \shortstack{$0.42$\\$\pm 0.94$} & \shortstack{$44.34$\\$\pm 6.07$} & \shortstack{$61.82$\\$\pm 22.25$} & \shortstack{$49.71$\\$\pm 8.77$} \\
+DOFA & Labyrinths & 498 & \shortstack{$9.38$\\$\pm 3.30$} & \shortstack{$10.78$\\$\pm 12.26$} & \shortstack{$4.84$\\$\pm 2.91$} & \shortstack{$13.83$\\$\pm 8.26$} & \shortstack{$33.10$\\$\pm 14.88$} & \shortstack{$18.13$\\$\pm 8.21$} \\
+DOFA & Lakes & 495 & \shortstack{$11.38$\\$\pm 17.47$} & \shortstack{$27.29$\\$\pm 23.42$} & \shortstack{$6.66$\\$\pm 5.68$} & \shortstack{$12.97$\\$\pm 12.01$} & \shortstack{$27.98$\\$\pm 23.72$} & \shortstack{$13.73$\\$\pm 14.33$} \\
+DOFA & Craters & 132 & \shortstack{$0.00$\\$\pm 0.00$} & \shortstack{$0.00$\\$\pm 0.00$} & \shortstack{$0.00$\\$\pm 0.00$} & \shortstack{$1.33$\\$\pm 1.39$} & \shortstack{$4.08$\\$\pm 5.36$} & \shortstack{$1.61$\\$\pm 1.66$} \\
+CROMA & Plains & 15406 & \shortstack{$87.71$\\$\pm 1.54$} & \shortstack{$65.63$\\$\pm 4.72$} & \shortstack{$74.78$\\$\pm 2.85$} & \shortstack{$87.21$\\$\pm 1.60$} & \shortstack{$69.49$\\$\pm 5.79$} & \shortstack{$77.22$\\$\pm 3.55$} \\
+CROMA & Dunes & 3958 & \shortstack{$55.28$\\$\pm 12.92$} & \shortstack{$61.92$\\$\pm 9.98$} & \shortstack{$57.36$\\$\pm 9.16$} & \shortstack{$56.14$\\$\pm 8.32$} & \shortstack{$64.67$\\$\pm 12.85$} & \shortstack{$59.49$\\$\pm 8.07$} \\
+CROMA & Hummocky & 2757 & \shortstack{$48.69$\\$\pm 5.71$} & \shortstack{$65.13$\\$\pm 20.27$} & \shortstack{$53.82$\\$\pm 7.53$} & \shortstack{$48.63$\\$\pm 5.55$} & \shortstack{$65.68$\\$\pm 19.00$} & \shortstack{$54.14$\\$\pm 5.66$} \\
+CROMA & Labyrinths & 498 & \shortstack{$18.80$\\$\pm 5.90$} & \shortstack{$54.09$\\$\pm 12.98$} & \shortstack{$25.86$\\$\pm 5.14$} & \shortstack{$19.21$\\$\pm 6.34$} & \shortstack{$44.94$\\$\pm 17.30$} & \shortstack{$25.16$\\$\pm 4.78$} \\
+CROMA & Lakes & 495 & \shortstack{$19.64$\\$\pm 18.36$} & \shortstack{$40.64$\\$\pm 26.14$} & \shortstack{$21.27$\\$\pm 19.59$} & \shortstack{$18.41$\\$\pm 16.92$} & \shortstack{$33.87$\\$\pm 20.57$} & \shortstack{$18.33$\\$\pm 13.98$} \\
+CROMA & Craters & 132 & \shortstack{$2.43$\\$\pm 3.66$} & \shortstack{$6.20$\\$\pm 8.37$} & \shortstack{$1.95$\\$\pm 2.15$} & \shortstack{$1.14$\\$\pm 1.13$} & \shortstack{$4.73$\\$\pm 5.18$} & \shortstack{$1.71$\\$\pm 1.60$} \\
+\bottomrule
+\end{tabular}

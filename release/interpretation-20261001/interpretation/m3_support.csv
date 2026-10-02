@@ -1,0 +1,6 @@
+fold,test_tiles,map_parts,largest_part_id,largest_part_tiles,largest_part_fraction,part_memberships
+0,8,2,18,7,0.875,8
+1,1,1,17,1,1.0,1
+2,14,5,14,8,0.5714285714285714,14
+3,61,4,58,52,0.8524590163934426,61
+4,48,5,53,30,0.625,48

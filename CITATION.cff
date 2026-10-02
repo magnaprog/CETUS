@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use CETUS in your work, please cite it as below."
+title: "CETUS: Geographic Evaluation of Visual Representations on Titan SAR"
+type: software
+authors:
+  - family-names: Lee
+    given-names: Kevin
+    orcid: "https://orcid.org/0009-0004-0388-9260"
+    affiliation: "NASA Jet Propulsion Laboratory; University of California, Los Angeles"
+repository-code: "https://github.com/magnaprog/CETUS"
+license: MIT
+keywords:
+  - synthetic aperture radar
+  - Titan
+  - Cassini
+  - foundation models
+  - benchmark
+  - planetary science
