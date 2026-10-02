@@ -77,3 +77,14 @@ jobs:
             --auxiliary-package "$PACKAGE/../longitude-auxiliary-20260929" \
             --acceptance-sha256 "$ACCEPTANCE_SHA" \
             --output "$RUNNER_TEMP/cetus-rebuilt-package"
+      - name: Reconstruct October interpretation results
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/cetus-interpretation-matplotlib
+          TMPDIR: ${{ runner.temp }}/cetus-interpretation-temporary
+        run: |
+          mkdir -p "$MPLCONFIGDIR" "$TMPDIR"
+          PACKAGE="$GITHUB_WORKSPACE/release/interpretation-20261001"
+          cd "$PACKAGE/code"
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -B \
+            verify_reconstruction.py --release-root "$PACKAGE/.." \
+            --output "$RUNNER_TEMP/cetus-interpretation-rebuilt"

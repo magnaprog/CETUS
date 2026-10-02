@@ -7,6 +7,12 @@ branch is `revision/repaired-titan-2026`, in
 `1cc34ca7c6a1d54f01852ce6b54a848e97017d54` is the accepted snapshot before the
 30 September memory update, rather than a permanent branch tip.
 
+The October interpretation package is `release/interpretation-20261001`.
+Its README and source export identify CPU producer `0297c9a` and distinguish
+post hoc analyses from the equal-fold primary results. The development handoff
+`audit/MEMORY_HANDOFF_2026-10-01.md` supersedes dated September paper status.
+Keep machine-specific continuation paths in local memory.
+
 ## Release boundaries
 
 Root historical catalogs and `release/v1-review-20260908` retain the original

@@ -27,6 +27,7 @@ The versioned packages separate historical v1 from the repaired Titan population
 | [Repaired Titan package](release/longitude-review-20260929/README.md) | 23,380 Titan tiles, including 140 Craters; five contiguous geographic folds; verified frozen DINOv2, DOFA, CROMA, and RandomInit probe/kNN results with predictions and counts. Earth transfer and repaired fine-tuning are not included. |
 | [Additional repaired results](release/longitude-auxiliary-20260929/README.md) | Common-classifier and classical v2 results, all 70 prediction vectors, and corrected VIMS v3 display metadata. The package uses the repaired parent catalog and folds. VIMS values remain separate from classifier inputs. |
 | [Adaptation and training substitution](release/longitude-adaptation-controls-20260930/README.md) | Saved predictions, histories, checkpoint-replay evidence and summaries for 75 repaired adaptation fits, with SGD and common LR training-substitution controls. CPU code reconstructs metrics, tables, figures and a finite manuscript claims index. |
+| [Interpretation analyses](release/interpretation-20261001/README.md) | Post hoc class contrasts, aggregation sensitivity, boundary exposure, map-part support and deterministic input examples. Separate CPU reconstruction uses the accepted sibling predictions and preserves equal-fold primary results. |
 
 Read [CORRECTIONS.md](CORRECTIONS.md) before interpreting the historical
 results. The v1 longitude sampler omitted valid western terrain. The repair
@@ -73,6 +74,15 @@ All 51 package files, totaling 10,201,553 bytes, matched the native export
 exactly, and all three input packages remained unchanged. This check includes
 the displays, finite claims index and inventories. The frozen GPU replay used
 `360eaea`, a separate source identity.
+
+The October interpretation package comes from development source `0297c9a`.
+It reports how class errors and weighting affect the description of the same
+accepted runs. CROMA's adaptation contrast changes from -0.17 to +0.85 F1
+points under a specified pooled estimator, while only 1,136 of 23,246 test
+centers meet the boundary-exposure rule. These are descriptive comparisons.
+The package README provides CPU reconstruction, numeric tolerances and an
+optional exact figure check with separately supplied tile arrays. Earlier
+release files and scientific producer identities remain unchanged.
 
 [FILES.md](FILES.md) explains the root historical files. Source terms remain in
 [DATA_LICENSES.md](DATA_LICENSES.md) and
