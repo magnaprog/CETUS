@@ -30,8 +30,8 @@
       "sha256": "54c0160c2ad7df6b0d4b083111557c43d8f0afe5b6c2ce733855980ce39766b0"
     },
     "AGENTS.md": {
-      "bytes": 3389,
-      "sha256": "f313b5eb6e2d90b57bece17a4848fcbeb7455cddf4dd4934df1da19fabd8c234"
+      "bytes": 3491,
+      "sha256": "cddb58870edd3b23dd005a801b7592993af13d66a793021afe8df0c89a7b6efb"
     },
     "CITATION.cff": {
       "bytes": 558,
@@ -1014,7 +1014,8 @@
     "historical_review": "release/v1-review-20260908",
     "repaired_titan_adaptation": "release/longitude-adaptation-controls-20260930",
     "repaired_titan_auxiliary": "release/longitude-auxiliary-20260929",
-    "repaired_titan_frozen": "release/longitude-review-20260929"
+    "repaired_titan_frozen": "release/longitude-review-20260929",
+    "repaired_titan_interpretation": "release/interpretation-20261001"
   },
   "repaired_catalog": {
     "path": "release/longitude-review-20260929/catalogs/titan_catalog.json",

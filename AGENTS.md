@@ -1,9 +1,10 @@
 # CETUS release instructions
 
 Read [README.md](README.md), [SOFTWARE.md](SOFTWARE.md) and the README of the
-specific release package before editing or running anything. The active review
-branch is `revision/repaired-titan-2026`, in
-[draft PR 1](https://github.com/magnaprog/CETUS/pull/1). Check current Git state;
+specific release package before editing or running anything. The September and
+October revision was prepared on `revision/repaired-titan-2026`, in
+[PR 1](https://github.com/magnaprog/CETUS/pull/1). Use `main` as the starting point
+for subsequent work after that PR is merged. Check current Git and PR state;
 `1cc34ca7c6a1d54f01852ce6b54a848e97017d54` is the accepted snapshot before the
 30 September memory update, rather than a permanent branch tip.
 
