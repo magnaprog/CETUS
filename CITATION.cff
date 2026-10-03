@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use CETUS in your work, please cite it as below."
-title: "CETUS: Geographic Evaluation of Visual Representations on Titan SAR"
+title: "CETUS: How Far Do Representations Trained on Earth Transfer to Cassini SAR of Titan?"
 type: software
 authors:
   - family-names: Lee

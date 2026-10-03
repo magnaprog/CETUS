@@ -10,6 +10,24 @@
       "previous_manifest_sha256": "b8935f863856ae475279bc7cf0549d0fabb335441fff6aae27d26ec613af786a",
       "previous_sha256": "558c0437e29b2096e1aa071fbcd3ffced41fb3e974f3a2737db9e68d5028ecec",
       "reason": "Update the guide for the completed forty-job frozen replay and the separately verified CPU adaptation and training-substitution package. Original source files, other export entries, development source commit and initial builder identity are unchanged."
+    },
+    {
+      "date": "2026-10-03",
+      "new_sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf",
+      "path": "CITATION.cff",
+      "previous_cetus_commit": "8e3984fe35d9df4b5f2a0dc4b6517df3e8afcd6e",
+      "previous_manifest_sha256": "e154cc601442019e88cfe5db2fb135b7b958e8edc89d248b5afd16c7755076b1",
+      "previous_sha256": "c1fb518a21aa92fa6afe0833180b0b0b59b4517243a9ffa2544a6fb65c4bd4a4",
+      "reason": "Restore the author-selected question title while preserving the software citation type and author metadata."
+    },
+    {
+      "date": "2026-10-03",
+      "new_sha256": "08f0c6ba206417da867be210dbc00c51352769735ac0ff5a4aa3c07a1ffa9e83",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "8e3984fe35d9df4b5f2a0dc4b6517df3e8afcd6e",
+      "previous_manifest_sha256": "e154cc601442019e88cfe5db2fb135b7b958e8edc89d248b5afd16c7755076b1",
+      "previous_sha256": "defa82cf512e1a968de0256b6d4d6ceba92107ec70461b56596ba6072ffa7545",
+      "reason": "Clarify the documentation-update history after the citation title correction. Scientific source hashes and original export identities remain unchanged."
     }
   ],
   "excluded": [
@@ -31,7 +49,7 @@
     },
     "CITATION.cff": {
       "origin": "generated",
-      "sha256": "c1fb518a21aa92fa6afe0833180b0b0b59b4517243a9ffa2544a6fb65c4bd4a4"
+      "sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf"
     },
     "LICENSE": {
       "origin": "verbatim committed blob",
@@ -40,7 +58,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated",
-      "sha256": "defa82cf512e1a968de0256b6d4d6ceba92107ec70461b56596ba6072ffa7545"
+      "sha256": "08f0c6ba206417da867be210dbc00c51352769735ac0ff5a4aa3c07a1ffa9e83"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",

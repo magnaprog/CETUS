@@ -6,10 +6,10 @@ from development commit 0257a36197c51eda0a31768531ea26eef9887a6e. SOFTWARE_EXPOR
 SHA256 hashes and distinguishes generated packaging and tests.
 
 The manifest's `files` entries bind the current checkout. Its builder hash
-and development commit identify the original export. The September 30 guide
-revision appears in `documentation_updates`, with its previous and current
-hashes. All other 25 export entries remain unchanged. The original generated
-guide and manifest remain in CETUS commit
+and development commit identify the original export. The `documentation_updates`
+records identify changes to the guide and citation metadata, including their
+previous and current hashes. Scientific source hashes remain unchanged. The
+original generated guide and manifest remain in CETUS commit
 `360eaea532ead477f46906d7ebe0cb5282e8b082`.
 
 This export covers feature extraction, five seeded linear probes per fold,
