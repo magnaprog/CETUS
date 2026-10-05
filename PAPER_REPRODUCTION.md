@@ -12,6 +12,43 @@ commands. The [README](README.md) distinguishes the original and expanded Titan
 datasets. File names below remain exact because the software and existing data
 use them. Wording changes in the paper leave their meaning and bytes intact.
 
+
+## Fold numbers in the current papers
+
+The papers and current figures number folds 1 through 5. Saved results, split
+files, commands and array indices retain IDs 0 through 4. To locate a paper
+fold in these files, subtract one from its displayed number. Image assignments,
+metrics, seeds and averaging are unchanged. Earlier figures and execution logs
+retain the numbering used when they were produced.
+
+| Paper fold | Saved ID |
+| --- | --- |
+| 1 | 0 |
+| 2 | 1 |
+| 3 | 2 |
+| 4 | 3 |
+| 5 | 4 |
+
+For the expanded Titan evaluation, paper fold 2 contains the single Craters
+test tile; paper fold 1 contains the single Craters validation tile. The
+original dataset uses different geographic groups, even when fold numbers
+coincide. Map-component IDs and seed values are separate identifiers.
+
+
+## Image examples in the paper
+
+The current full paper retains the original Earth, Titan and Venus example
+images. Its Earth display now masks the exact fill value written by SNAP
+preprocessing. For each of the five Earth examples, the number of fill pixels
+agrees with the catalog's valid fraction. This agreement distinguishes missing
+pixels from genuine low backscatter values; values below the fill value remain
+visible when valid. Display percentiles use the remaining pixels. The image
+arrays, example choices, model inputs and scientific results are unchanged.
+
+Figure inputs, rendering code and checks belong to the development repository.
+The paper's plots display folds 1 through 5 as described above. Earlier figures
+inside the result packages retain their original appearance and numbering.
+
 ## Choosing an experiment
 
 For the primary geographic evaluation, use the expanded catalog and its five
