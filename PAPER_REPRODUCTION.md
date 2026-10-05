@@ -28,6 +28,30 @@ Calling all of these baselines would lose the distinction between their roles.
 Combining confusion counts across regions also differs from averaging regional
 F1 scores: the paper uses equal regional weights for its primary comparisons.
 
+## Untrained encoder and other baselines
+
+The paper's **Untrained ViT** is the `random_init` method in the software and
+result files. Its encoder receives no training; a classifier learns from its
+image features and Titan map labels. For the expanded Titan catalog, the encoder
+uses a single input channel and initialization seed 42. The five SGD seeds
+repeat classifier training on those same features. They do not repeat encoder
+initialization. DINOv2 instead receives three repeated channels with ImageNet
+normalization, so this comparison also includes differences in input handling.
+
+The common logistic regression comparison includes intensity statistics,
+histograms, texture measurements and their concatenation. These provide the
+current classical baselines. The small CNN results belong to the original
+catalog; they cannot be combined with the expanded-catalog table. Predicting
+the most frequent training class is a separate comparison that ignores images.
+
+The development [baseline followup plan](https://github.com/magnaprog/TitanSAR-dev/blob/revision/full-paper-design-20261002/docs/BASELINE_FOLLOWUP.md)
+describes additional experiments using identical encoder architectures and
+inputs, repeated encoder initializations, and a CNN trained on the current
+geographic splits. These experiments have not been run. The wording and table
+formatting revisions add no predictions or training results. Existing method
+identifiers and scientific packages retain their bytes. Access to the plan
+requires access to the development repository.
+
 ## Software versions for the geographic evaluation
 
 | Role | Exact identifier in the original appendix |
