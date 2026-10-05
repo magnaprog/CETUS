@@ -28,6 +28,15 @@
       "previous_manifest_sha256": "e154cc601442019e88cfe5db2fb135b7b958e8edc89d248b5afd16c7755076b1",
       "previous_sha256": "defa82cf512e1a968de0256b6d4d6ceba92107ec70461b56596ba6072ffa7545",
       "reason": "Clarify the documentation-update history after the citation title correction. Scientific source hashes and original export identities remain unchanged."
+    },
+    {
+      "date": "2026-10-05",
+      "new_sha256": "d54a06078a20f3bfe6e884d3fc6a98e8d7ea14ee702567d249d51b49a98d9770",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "5e5b8214564a3cdecf0c707c21407f9a58c84460",
+      "previous_manifest_sha256": "787cb55eae3cb406b043e3e0f45f51543d714d321458cf2eeee6204971869c48",
+      "previous_sha256": "08f0c6ba206417da867be210dbc00c51352769735ac0ff5a4aa3c07a1ffa9e83",
+      "reason": "Rewrite explanations of classifier training, model inputs and reproduction records; preserve command examples, scientific source files and the original export identity."
     }
   ],
   "excluded": [
@@ -58,7 +67,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated",
-      "sha256": "08f0c6ba206417da867be210dbc00c51352769735ac0ff5a4aa3c07a1ffa9e83"
+      "sha256": "d54a06078a20f3bfe6e884d3fc6a98e8d7ea14ee702567d249d51b49a98d9770"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",

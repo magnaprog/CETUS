@@ -1,97 +1,94 @@
 # CETUS
 
-Cross-domain Evaluation of Earth-to-Titan Transfer Using SAR. This private
-repository contains scientific metadata, results and the frozen Titan evaluation
-source. [SOFTWARE.md](SOFTWARE.md) describes installation, required assets and
-commands. Image tiles, raw source products, encoder weights and embeddings are
-supplied separately. There is no public tile-archive endpoint or project archive DOI.
+CETUS studies how representations learned from Earth images transfer to
+Cassini SAR images of Titan. This repository contains the tile catalogs,
+geographic divisions, predictions and software used to evaluate agreement
+with an expert terrain map.
 
-The software preserves scientific source from development commit `0257a36`.
-Its CPU tests cover normalization, cache checks, model identity and a small
-synthetic evaluation. The forty-job frozen replay through immutable checkout
-`360eaea` completed on September 30, 2026. Its twenty extraction and twenty
-analysis jobs reproduced the native feature arrays, probe probabilities,
-predictions and saved metrics exactly in the recorded environment.
-[SOFTWARE.md](SOFTWARE.md) gives the verification identity and scope.
-The [export manifest](SOFTWARE_EXPORT.json) records source hashes. This source
-package supports frozen Titan evaluation. The new sibling package includes
-CPU reconstruction code; classical and adaptation training commands remain in
-the development repository.
+Start with [the paper reproduction guide](PAPER_REPRODUCTION.md) to locate an
+experiment's data and results. [SOFTWARE.md](SOFTWARE.md) gives installation
+instructions, required inputs and commands. Image arrays, original radar
+products, pretrained model weights and embeddings must be supplied separately;
+this repository provides no download location or project DOI for those images.
 
-The versioned packages separate historical v1 from the repaired Titan population:
+## Data and experiments
 
-| Contents | Status and population |
+The original and expanded Titan datasets belong to different experiments.
+Choose the complete package for the result you want to reproduce.
+
+| Package | Contents |
 | --- | --- |
-| Root `catalogs/`, `splits/`, and `results/` | Historical v1: 11,371 Titan tiles, 398 Earth tiles, and 2,945 unlabeled Venus tiles. Original scientific payloads remain unchanged for existing links. Results describe the retained v1 population and its known limitations. |
-| [Original review bundle](release/v1-review-20260908/README.md) | All 46 files from the September 8 repository tree, preserved byte-for-byte with their original index and checksums. Historical descriptions in that snapshot are superseded by the correction notice. |
-| [Repaired Titan package](release/longitude-review-20260929/README.md) | 23,380 Titan tiles, including 140 Craters; five contiguous geographic folds; verified frozen DINOv2, DOFA, CROMA, and RandomInit probe/kNN results with predictions and counts. Earth transfer and repaired fine-tuning are not included. |
-| [Additional repaired results](release/longitude-auxiliary-20260929/README.md) | Common-classifier and classical v2 results, all 70 prediction vectors, and corrected VIMS v3 display metadata. The package uses the repaired parent catalog and folds. VIMS values remain separate from classifier inputs. |
-| [Adaptation and training substitution](release/longitude-adaptation-controls-20260930/README.md) | Saved predictions, histories, checkpoint-replay evidence and summaries for 75 repaired adaptation fits, with SGD and common LR training-substitution controls. CPU code reconstructs metrics, tables, figures and a finite manuscript claims index. |
-| [Interpretation analyses](release/interpretation-20261001/README.md) | Post hoc class contrasts, aggregation sensitivity, boundary exposure, map-part support and deterministic input examples. Separate CPU reconstruction uses the accepted sibling predictions and preserves equal-fold primary results. |
+| Root `catalogs/`, `splits/` and `results/` | Original sample: 11,371 Titan tiles, 398 Earth tiles and 2,945 Venus tiles without labels. These files retain their original bytes and links. |
+| [Original September package](release/v1-review-20260908/README.md) | The 46 files from the September 8 repository, with its index and checksums. Read the subsequent correction notice when interpreting this snapshot. |
+| [Expanded Titan dataset](release/longitude-review-20260929/README.md) | 23,380 Titan tiles, including 140 Craters tiles; five geographic folds; linear classifiers and nearest neighbors for DINOv2, DOFA, CROMA and Random Init. Encoder weights stay unchanged. Earth transfer and training of encoder weights belong to separate experiments. |
+| [Additional classifier results](release/longitude-auxiliary-20260929/README.md) | Logistic regression and classical image features on the expanded dataset, with 70 prediction vectors. Separate VIMS display metadata uses the same catalog and contributes no classifier input. |
+| [Encoder training and training-image replacements](release/longitude-adaptation-controls-20260930/README.md) | Predictions and histories from 75 fits that train part of each encoder, plus SGD and logistic regression experiments that replace some training images. CPU software reconstructs the scores, tables, figures and registered numerical claims. |
+| [Interpretation of the Titan results](release/interpretation-20261001/README.md) | Changes by terrain class, alternative weighting of regions, distances to reinstated training images, map-component counts and image examples. These additional analyses use existing predictions and retain equal regional weights for the primary scores. |
 
-Read [CORRECTIONS.md](CORRECTIONS.md) before interpreting the historical
-results. The v1 longitude sampler omitted valid western terrain. The repair
-retains original pixels, adds 12,009 tile IDs, and changes 15 retained labels.
-Catalog and split hashes identify the correct track; joining by tile ID alone
-across versions can mix labels. Both population and partition design change in
-the repaired evaluation, so score differences cannot isolate either change.
+Read [CORRECTIONS.md](CORRECTIONS.md) before using the original results. The
+original map sampler omitted valid western terrain. The expanded catalog
+preserves original image pixels, adds 12,009 tile IDs and changes 15 existing
+labels. Use the catalog and geographic split checksums together: an image ID
+alone can refer to different labels in the two datasets. Both the sampled
+population and the geographic design changed, so their effects on performance
+cannot be separated by comparing the resulting scores alone.
 
-Earth source labels still require expert review. Wadi Rum tiles came from
-Egypt; some Plains footprints are offshore, and Earth training/validation
-footprints overlap. Historical source-cap and preprocessing controls remain
-sensitivity analyses. This package assigns no new Earth labels.
+Earth labels still need expert review. Images named Wadi Rum came from Egypt;
+some Plains images lie offshore, and some training and validation image areas
+overlap. The additional experiments examine training counts and preprocessing
+while retaining these limits. This repository assigns no new Earth labels.
 
-The repaired evaluation includes all 100 probe heads and 20 kNN evaluations.
-Its [prediction arrays](release/longitude-review-20260929/results/predictions.json.gz)
+## Reproduce the results
+
+The expanded Titan comparison includes 100 SGD classifiers and 20 nearest
+neighbor evaluations. Its [predictions](release/longitude-review-20260929/results/predictions.json.gz)
 and [metrics](release/longitude-review-20260929/results/frozen_results.json)
-allow reconstruction of confusion matrices, per-class scores, fold means, and
-sample standard deviations. Reconstruction from saved predictions does not
-establish independent geological truth. The separately verified forty-job
-replay repeated frozen inference and probe fitting. Fine-tuning results at the
-root belong to historical v1; completed repaired adaptation results belong to
-the new sibling package.
+allow readers to calculate confusion matrices, class scores, regional means
+and sample standard deviations. These scores measure agreement with the map.
+Geological accuracy requires independent observations.
 
-The additional package reports precision, recall and F1 for four encoder and
-four classical feature families under one fixed logistic classifier. It also
-includes majority and class-prior controls. Its predictions reconstruct all
-70 confusion matrices across 23,246 distinct test tiles. The corrected VIMS
-sidecar has 23,379 available numerical samples and one unavailable edge sample;
-these values describe a display composite and do not measure composition or
-mission coverage. The package README explains verification and provenance.
+The additional classifier package applies the same logistic regression settings
+to four encoder representations and four classical feature families. It also
+includes baselines that always predict the most frequent training class or use
+training class frequencies. The predictions reconstruct 70 confusion matrices
+for 23,246 distinct test tiles. Its VIMS metadata contains 23,379 numerical
+samples and one unavailable sample at an image edge. The values describe a
+display composite; physical composition and mission coverage require other data.
 
-The adaptation package requires both repaired sibling packages unchanged.
-Its comparisons describe complete training recipes and changes to training
-membership. They do not isolate unfreezing or spatial leakage as causes.
-[SOFTWARE.md](SOFTWARE.md#reconstruct-adaptation-and-training-substitution-results)
-gives the CPU verification command and tested runtime.
+The encoder-training package needs both neighboring Titan packages without
+changes. It compares complete training configurations and different training
+images. Optimization, image content and geography can contribute together to
+its score differences. Use the [CPU reconstruction instructions](SOFTWARE.md#reconstruct-adaptation-and-training-substitution-results)
+to check its saved predictions. Fine-tuning results in the root directory use
+the original dataset; the package contains the corresponding experiments on
+the expanded dataset.
 
-The native export of the adaptation package completed from development commit
-`3f4a6a4`. The SHA256 of its `evidence/acceptance.json` is
-`7340fcc5d1fdc52b27ff3c0385d86669df97345897f95efa92bcb795dba5ba03`. Use this externally supplied identity
-with the CPU verifier. Independent CPU verification and reconstruction completed
-with exit zero in the isolated PyPI environment described in SOFTWARE.md.
-All 51 package files, totaling 10,201,553 bytes, matched the native export
-exactly, and all three input packages remained unchanged. This check includes
-the displays, finite claims index and inventories. The frozen GPU replay used
-`360eaea`, a separate source identity.
+The interpretation package shows how regional weighting affects the same
+predictions. CROMA's F1 difference after encoder training changes from -0.17 to
++0.85 percentage points when confusion counts are combined across test regions
+separately for each training seed. Only 1,136 of 23,246 test centers lie within
+the original minimum separation of a reinstated training center. The package
+gives the calculations, numerical tolerances and optional figure checks when
+image arrays are available.
 
-The October interpretation package comes from development source `0297c9a`.
-It reports how class errors and weighting affect the description of the same
-accepted runs. CROMA's adaptation contrast changes from -0.17 to +0.85 F1
-points under a specified pooled estimator, while only 1,136 of 23,246 test
-centers meet the boundary-exposure rule. These are descriptive comparisons.
-The package README provides CPU reconstruction, numeric tolerances and an
-optional exact figure check with separately supplied tile arrays. Earlier
-release files and scientific producer identities remain unchanged.
+[SOFTWARE.md](SOFTWARE.md) records the exact source revisions, environments and
+verification checks. The public inference run reproduced the native expanded-dataset features,
+classifier probabilities, predictions and metrics in 20 feature jobs and 20
+analysis jobs. Independent reconstruction also reproduced all 51 files of the
+encoder-training package, totaling 10,201,553 bytes. These checks apply to the
+specified inputs and runtime. New training of classical classifiers or encoder
+weights requires the additional work described in that guide.
 
-[FILES.md](FILES.md) explains the root historical files. Source terms remain in
+## File integrity and use terms
+
+Run `sha256sum -c SHA256SUMS` from the repository root. Each experiment package
+also has its own checksum list, checked from that package's directory. At each
+location, `file_index.json` lists every tracked file except itself and
+`SHA256SUMS`; the checksum list includes the index. Git internals, ignored
+environments and local outputs are excluded.
+
+[FILES.md](FILES.md) explains the original root files.
 [DATA_LICENSES.md](DATA_LICENSES.md) and
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), including the VIMS+ISS notice.
-Those terms do not imply that a processed image archive has been published.
-
-Run `sha256sum -c SHA256SUMS` from the repository root to check the entire
-versioned payload. Ignored environments and local outputs are excluded. Each versioned package also has its own `SHA256SUMS`, checked
-from that package's directory. At each level, `file_index.json` covers all
-payload files except itself and `SHA256SUMS`; the checksum list also covers
-`file_index.json`. Git internals are excluded. The root index distinguishes
-the historical root catalogs from the repaired catalog.
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) give the data terms and credits,
+including the VIMS+ISS notice. Consult those terms separately from availability:
+the processed image arrays are not distributed here.

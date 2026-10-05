@@ -1,9 +1,11 @@
-# CETUS frozen evaluation software
+# Running the Titan classifiers
 
-This source checkout runs frozen Titan terrain evaluation with DINOv2, DOFA,
-CROMA and the fixed random ViT control. Scientific source files are unchanged
-from development commit 0257a36197c51eda0a31768531ea26eef9887a6e. SOFTWARE_EXPORT.json lists their
-SHA256 hashes and distinguishes generated packaging and tests.
+This software calculates DINOv2, DOFA, CROMA and Random Init image features,
+then fits classifiers with the encoder weights unchanged. Scientific code
+comes from development revision `0257a36197c51eda0a31768531ea26eef9887a6e`.
+SOFTWARE_EXPORT.json gives the source hashes and identifies the packaging and
+tests. [PAPER_REPRODUCTION.md](PAPER_REPRODUCTION.md) maps paper results to
+their data packages and keeps implementation details outside the manuscripts.
 
 The manifest's `files` entries bind the current checkout. Its builder hash
 and development commit identify the original export. The `documentation_updates`
@@ -12,12 +14,13 @@ previous and current hashes. Scientific source hashes remain unchanged. The
 original generated guide and manifest remain in CETUS commit
 `360eaea532ead477f46906d7ebe0cb5282e8b082`.
 
-This export covers feature extraction, five seeded linear probes per fold,
-and cosine k-nearest-neighbor classification. Use the five released contiguous
-Titan folds. Earth transfer, classical baselines, adaptation, preprocessing,
-private acceptance auditors and their CLIs are outside the frozen runner export.
-Some shared modules retain those older functions to preserve source identity;
-only the Titan workflow below is supported here.
+The runner calculates image features, trains five linear classifiers per fold
+with different initialization seeds, and classifies by cosine nearest neighbors.
+Use the five contiguous Titan folds supplied here. Earth transfer, classical
+classifiers, encoder training, additional preprocessing and private verification
+commands require the development repository. Some imported files retain functions
+for those experiments so their original bytes remain reproducible. The commands
+below exercise the Titan workflow.
 
 ## Install and check
 
@@ -39,18 +42,19 @@ Install a PyTorch build appropriate for the machine before editable installation
 if its default build is unsuitable. CPU checks can install `.[test]` without
 the optional encoder dependencies. Python 3.12 is the exercised CPU environment;
 dependency lower bounds are compatibility declarations, not a tested matrix.
-The CPU tests create their own small tiles and caches. They test normalization,
-cache integrity, random-control identity and Titan-only routing. The synthetic
-smoke test trains real linear probes and runs k-NN over a tiny deterministic
-encoder. It does not validate pretrained-model inference or paper scores.
+The CPU tests create small image arrays and caches. They check normalization,
+cache integrity, the random encoder's weights and routing to the Titan workflow.
+A small synthetic example trains real linear classifiers and runs nearest
+neighbors with a simple encoder. Checking pretrained inference or the paper's
+scores requires the separately specified model inputs and result files.
 
-The completed repaired frozen runs used the production environment below.
-These versions were read from all twenty extraction and twenty analysis
-manifests, whose hashes match the accepted frozen audit. Those runs used source
-commit `6295af2bc35c8d8a2e47fc982b196809245f4550`; a new public run records its
-own source revision. The public bundle's CPU tests used the separate environment
-in the last column. These records describe observed environments, not a wheel
-lock or a claim that dependency lower bounds reproduce the same numbers.
+The expanded Titan experiments used the production environment below. These
+versions appear in all twenty feature-calculation and twenty analysis manifests,
+whose hashes agree with the experiment checks. The runs used source revision
+`6295af2bc35c8d8a2e47fc982b196809245f4550`; a new run must identify its own source.
+The last column gives the separate CPU test environment. These are the versions
+actually used. Reproducing numbers under other allowed dependency versions
+requires another comparison.
 
 | Component | Completed production runs | Public bundle CPU tests |
 | --- | --- | --- |
@@ -116,15 +120,15 @@ source checkouts as well as weights in the cache expected by Torch Hub. The
 wrappers can access the network when assets are missing; no fully offline
 asset installation command is provided here. CROMA reads
 `~/.cache/croma/CROMA_base.pt`. Do not pass untrusted checkpoints to PyTorch.
-The random control needs timm, has encoder seed 42, and records the actual
-state digest plus timm version. It does not download pretrained weights.
-Always use `--require_real_weights`; this still allows the intentional random
-control but rejects placeholder substitutes for pretrained encoders.
+The random baseline needs timm and uses encoder seed 42. Each run includes the
+actual weight digest and timm version. It generates its weights locally.
+Always use `--require_real_weights`: the deliberate random baseline is allowed,
+while placeholder substitutes for pretrained encoders are rejected.
 
-The released Titan arrays contain HiSAR display DN, declared as `hisar_log_dn`
-in the catalog. The dataset fits a range on sampled training pixels, scales
-values into [0, 1], and clips values outside that range. A calibration from
-these display values to sigma0 or dB is unavailable in this release.
+The Titan arrays contain HiSAR display DN, identified by `hisar_log_dn` in the
+catalog. Training pixels determine the brightness range used to scale values
+into [0, 1], with clipping outside that range. Converting these display values
+to sigma0 or dB requires radiometric information unavailable in the package.
 
 The wrappers use different input and feature operations:
 
@@ -132,7 +136,7 @@ The wrappers use different input and feature operations:
 | --- | --- | --- |
 | DINOv2 | Repeat the channel three times, resize to 224 by 224, then apply channel means [0.485, 0.456, 0.406] and standard deviations [0.229, 0.224, 0.225] | CLS token |
 | DOFA | Keep one channel and resize to 224 by 224 | Mean patch features followed by `fc_norm` |
-| CROMA | Repeat the channel twice and resize to 120 by 120 | Mean patch features followed by the learned `GAP_FFN_s1` projection |
+| CROMA | Repeat the channel twice and resize to 120 by 120 | Mean patch features followed by the learned `GAP_FFN_s1` feedforward network |
 | Random Init | Keep one channel and resize to 224 by 224 | CLS token |
 
 DINOv2's repeated channels differ after their channel-specific normalization.
@@ -153,13 +157,14 @@ normalizes the pooled features. The checkpoint's `norm` entries do not load
 into `fc_norm`, and the factory's classification head is unused by feature
 extraction. This inspection covered model construction and checkpoint loading.
 
-Random Init uses one fixed encoder realization with seed 42 across all folds.
-The five probe seeds vary the linear heads. Its score therefore describes this
-single untrained encoder baseline.
+Random Init uses the same encoder weights from seed 42 in every fold. The five
+classifier seeds change only the linear classifier initialization. Its score
+therefore concerns one random encoder, without measuring variation among
+independently generated random encoders.
 
-The completed public frozen replay used CETUS commit
-`360eaea532ead477f46906d7ebe0cb5282e8b082` and compared all twenty model/fold
-pairs with native commit `6295af2bc35c8d8a2e47fc982b196809245f4550`.
+The public inference reproduction used CETUS revision
+`360eaea532ead477f46906d7ebe0cb5282e8b082` and compared all twenty encoder and
+fold combinations with native revision `6295af2bc35c8d8a2e47fc982b196809245f4550`.
 Twenty extraction jobs and twenty CPU analysis jobs passed. All sixty feature
 arrays, their ID and label arrays, one hundred probe heads and twenty kNN
 prediction vectors matched the native records under the declared comparisons.
@@ -201,13 +206,13 @@ CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS
   --output_dir "$RESULTS/analysis/$MODEL/fold-$FOLD"
 ```
 
-These settings match the completed frozen plan. Set `GPU_ID` to the physical
-GPU selected for extraction. With that single device in `CUDA_VISIBLE_DEVICES`,
-PyTorch exposes it as logical device 0, so `--device cuda` addresses the selected
-GPU; do not substitute its physical index as a logical CUDA index. CPU analysis
-hides all CUDA devices. The thread counts and cuBLAS workspace setting preserve
-the recorded numerical settings; they do not guarantee bitwise agreement across
-different hardware, drivers or library versions.
+These settings match the completed inference experiment. Set `GPU_ID` to the
+physical GPU used for image features. When `CUDA_VISIBLE_DEVICES` contains that
+single device, PyTorch numbers it as logical device 0, which `--device cuda`
+addresses. A different physical index must still use logical index 0 in this
+case. CPU analysis hides CUDA devices. Thread counts and the cuBLAS workspace
+setting reproduce the numerical configuration; agreement on other hardware,
+drivers or library versions still needs verification.
 
 Cache analysis still requires the training tiles to recompute the exact
 normalization record. Both modes bind catalog, split, actual benchmark track,
@@ -232,15 +237,15 @@ include IDs, labels and predictions. `macro_accuracy` is mean recall over
 classes present in that test fold, not macro F1. The six classes in index order
 are plains, dunes, hummocky, labyrinths, lakes, craters.
 
-This narrow bundle does not include the private aggregate acceptance script.
-For probe metrics, reconstruct confusion counts for each seed, average the
-five head results within each fold, then report the equal-fold mean and sample
-standard deviation. For kNN, compute each fold's metric from its single
-deterministic prediction vector, then report the same fold summary.
-Fold standard deviations are descriptive; overlapping training populations
-do not support an independence claim or an inferential confidence interval.
-One repaired test fold has only one Crater tile. Neither these folds nor the
-software release prove a causal effect of spatial buffering.
+The private verification script is outside this package. To calculate the
+linear classifier metrics, reconstruct each seed's confusion counts, average
+five classifier scores per fold, then calculate the mean and sample standard
+deviation of the five folds. Nearest neighbors supplies one prediction vector
+per fold; calculate its metric and the same regional mean and SD. These SDs
+describe variation among the five regions, whose training sets overlap. One
+fold contains only one Craters tile. Establishing geographic independence,
+inferential uncertainty or the effect of spatial separation needs further
+experimental evidence.
 
 ## Reconstruct adaptation and training substitution results
 
@@ -264,8 +269,9 @@ These checks apply to the recorded runtime and do not establish identical
 output on other platforms. This runtime is separate from frozen GPU inference.
 
 Run these commands from the CETUS root. Set `WORK` to a new external directory.
-The `ACCEPTANCE_SHA` below matches the native export identity in the root
-README and the completed independent package reconstruction.
+The `ACCEPTANCE_SHA` below is the SHA256 of the package's
+`evidence/acceptance.json`, also listed in PAPER_REPRODUCTION.md. It identifies
+the native export used for the completed independent package reconstruction.
 
 ```sh
 PACKAGE="$PWD/release/longitude-adaptation-controls-20260930"
@@ -299,21 +305,23 @@ authenticated wheelhouse with `--no-index --find-links`; reconstruction can run
 offline after installation. The package README gives the full input and receipt
 contract. These figures do not require TeX.
 
-The existing frozen CPU workflow tests synthetic inference and cache handling.
-The release-inventory workflow also verifies and rebuilds this saved-prediction
-package in its separate pinned environment. Neither CI job runs GPU inference
-or adaptation training. The finite claims index covers its registered
-occurrences; it is not a check of every sentence in the manuscripts.
+The CPU workflow checks synthetic inference and cache handling. The inventory
+workflow also reconstructs this package from saved predictions in the specified
+separate environment. GPU inference and encoder training remain outside these
+CI jobs. The numerical claims index checks the passages registered in it;
+other manuscript statements require their own review.
 
-## Remaining public training protocol work
+## Preparing additional training runs
 
-Classical baseline and adaptation CLIs require new public protocols that bind
-the sanitized catalog, split bytes, supplied tile hashes, public source hashes,
-normalization, and newly produced reference cache/result/manifest hashes.
-Adaptation also needs the same-fold five-seed frozen reference and exact
-matched-head seed. Preserve the original private protocol seals and describe
-any new run as a public-input rerun. This export does not claim those CLIs are
-portable or those experiments have been repeated with the public bytes.
+Running classical classifiers or training encoder weights with the public
+inputs requires new experiment specifications. They must identify the sanitized
+catalog, geographic splits, image hashes, software sources, normalization and
+newly produced classifier results and feature caches. Encoder training also
+needs the five classifier seeds from the same fold and the corresponding
+classifier initialization. Preserve the original private specifications and
+identify new runs by their actual public inputs. This package supplies the
+completed predictions; execution of these additional training commands with
+the public files remains future work.
 
 Project code uses the root MIT license. The vendored CROMA implementation has
 its upstream MIT notice in `licenses/CROMA-LICENSE`. Upstream source and weights

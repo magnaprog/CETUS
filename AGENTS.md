@@ -1,5 +1,9 @@
 # CETUS release instructions
 
+Read [the paper reproduction guide](PAPER_REPRODUCTION.md) for the methods,
+software identities and data routes removed from the manuscript prose in the
+October 5 language revision. The scientific packages retain their original bytes.
+
 Read [README.md](README.md), [SOFTWARE.md](SOFTWARE.md) and the README of the
 specific release package before editing or running anything. The September and
 October revision was prepared on `revision/repaired-titan-2026`, in
