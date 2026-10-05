@@ -15,6 +15,8 @@ this repository provides no download location or project DOI for those images.
 
 The original and expanded Titan datasets belong to different experiments.
 Choose the complete package for the result you want to reproduce.
+Package READMEs retain their status at export; [SOFTWARE.md](SOFTWARE.md)
+describes the software currently included in this repository.
 
 | Package | Contents |
 | --- | --- |
@@ -62,6 +64,10 @@ its score differences. Use the [CPU reconstruction instructions](SOFTWARE.md#rec
 to check its saved predictions. Fine-tuning results in the root directory use
 the original dataset; the package contains the corresponding experiments on
 the expanded dataset.
+
+The encoder-training package's accepted `evidence/acceptance.json` has SHA256
+`7340fcc5d1fdc52b27ff3c0385d86669df97345897f95efa92bcb795dba5ba03`.
+Use this identity for the reconstruction commands in its README and SOFTWARE.md.
 
 The interpretation package shows how regional weighting affects the same
 predictions. CROMA's F1 difference after encoder training changes from -0.17 to

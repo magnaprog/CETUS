@@ -5,11 +5,11 @@ then fits classifiers with the encoder weights unchanged. Scientific code
 comes from development revision `0257a36197c51eda0a31768531ea26eef9887a6e`.
 SOFTWARE_EXPORT.json gives the source hashes and identifies the packaging and
 tests. [PAPER_REPRODUCTION.md](PAPER_REPRODUCTION.md) maps paper results to
-their data packages and keeps implementation details outside the manuscripts.
+their data packages and verification records.
 
 The manifest's `files` entries bind the current checkout. Its builder hash
 and development commit identify the original export. The `documentation_updates`
-records identify changes to the guide and citation metadata, including their
+records identify changes to the guide, citation and author metadata, including their
 previous and current hashes. Scientific source hashes remain unchanged. The
 original generated guide and manifest remain in CETUS commit
 `360eaea532ead477f46906d7ebe0cb5282e8b082`.
@@ -304,6 +304,14 @@ outputs and select a fresh destination for a retry. Installation can use an
 authenticated wheelhouse with `--no-index --find-links`; reconstruction can run
 offline after installation. The package README gives the full input and receipt
 contract. These figures do not require TeX.
+
+The package also preserves development tests. Running every test in its
+`code/tests/` directory gives one known failure:
+`test_helper_projection_changes_only_denylist_constants` expects the original
+private helper's hash, while the package contains the public helper. The public
+verifier above checks the exported helper and reconstructs all 51 package files.
+The October 5 review reproduced those files exactly; the other 152 adaptation
+tests passed. The preserved test is not part of the root CPU test command.
 
 The CPU workflow checks synthetic inference and cache handling. The inventory
 workflow also reconstructs this package from saved predictions in the specified

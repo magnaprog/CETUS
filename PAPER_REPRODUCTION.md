@@ -1,16 +1,15 @@
 # Reproducing the CETUS paper
 
 This guide locates the software, data and verification records behind the full
-CETUS paper and its RPS workshop version. Implementation names, paths and run
-hashes are kept here so the papers can concentrate on methods and results.
-The details below come from the manuscript at development revision
+CETUS paper and its RPS workshop version. Run identifiers and data routes were
+transcribed from the manuscript at development revision
 `5dedb5d762b40e7c331f1bffa597819691e59c96` and the existing experiment records.
-They identify earlier runs; this prose revision adds no model training.
+The fold-number and image-display notes below reflect later paper revisions;
+the earlier run identities remain unchanged.
 
 Use [SOFTWARE.md](SOFTWARE.md) for runnable installation and reconstruction
 commands. The [README](README.md) distinguishes the original and expanded Titan
-datasets. File names below remain exact because the software and existing data
-use them. Wording changes in the paper leave their meaning and bytes intact.
+datasets. File names and method IDs below match the software and saved data.
 
 
 ## Fold numbers in the current papers
@@ -84,8 +83,7 @@ the most frequent training class is a separate comparison that ignores images.
 The development [baseline followup plan](https://github.com/magnaprog/TitanSAR-dev/blob/revision/full-paper-design-20261002/docs/BASELINE_FOLLOWUP.md)
 describes additional experiments using identical encoder architectures and
 inputs, repeated encoder initializations, and a CNN trained on the current
-geographic splits. These experiments have not been run. The wording and table
-formatting revisions add no predictions or training results. Existing method
+geographic splits. These experiments have not been run. Existing method
 identifiers and scientific packages retain their bytes. Access to the plan
 requires access to the development repository.
 
@@ -102,15 +100,16 @@ Independent checks covered all 40 fitted estimators, reproduced predicted classe
 
 ## Data and result packages
 
-| Repository | Exact relative path | Contents or purpose retained from the original appendix |
+| Repository | Exact relative path | Contents or purpose |
 | --- | --- | --- |
 | CETUS | `release/longitude-review-20260929/` | Catalog, split definitions, original predictions with encoder weights unchanged, fold metrics and source-part counts |
 | CETUS | `release/longitude-auxiliary-20260929/` | Common classifier and classical-feature results, saved predicted classes, scientific specifications, and separate VIMS display metadata with corrected coordinates |
 | CETUS | `release/longitude-adaptation-controls-20260930/` | Completed partial-training and training-substitution predictions, histories and reconstruction code; its README distinguishes saved-prediction reconstruction from new training and specifies additional inputs |
+| CETUS | `release/interpretation-20261001/` | Class-level changes, alternative regional weighting, geometric exposure, map-part counts and image examples from existing predictions and metadata; its README gives reconstruction commands |
 | CETUS | `release/longitude-review-20260929/evidence/` | Exported label and catalog checks; full execution records remain in the development repository |
 | CETUS | `release/v1-review-20260908/DATA_LICENSES.md` | Source-specific terms and required attributions |
 
-The original v1 payload remains unchanged. The three packages must retain their separate population, prediction and producer identities. The manuscript's statement about revision `9a06f6c` refers specifically to the longitude-review and longitude-auxiliary packages, not to every later package.
+The original v1 payload remains unchanged. The three longitude packages must retain their separate population, prediction and producer identities. The original appendix's statement about revision `9a06f6c` refers specifically to the longitude-review and longitude-auxiliary packages, not to every later package.
 
 ## Completed training and prediction checks
 
@@ -134,7 +133,7 @@ The adaptation reconstruction checked 165 confusion matrices and 5,670 scalar co
 | `audit/EARTH_SITE_REVIEW_2026-09-29.json` | Internal source and geometry record for Earth site review; explicitly absent from the CETUS review package |
 | `audit/gpu_execution/archived_mmd/` | Internal stable numerical recalculation of original Random Init arrays; explicitly absent from the CETUS review package |
 
-A link to this description does not make these internal files part of the public package. Maintain the access distinctions. The paper retains the material limitations that prompted these checks: geographic overlap and Earth-label concerns, undefined spatial correlations, invalid original Random Init permutation statistics and unresolved initial model state.
+These files require access to the development repository and are not included in CETUS. The paper retains the material limitations that prompted these checks: geographic overlap and Earth-label concerns, undefined spatial correlations, invalid original Random Init permutation statistics and unresolved initial model state.
 
 ## Exact implementation and image identifiers
 

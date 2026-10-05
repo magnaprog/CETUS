@@ -1,1 +1,106 @@
-{"bundle_type":"versioned_scientific_metadata","code_included":false,"historical_root_provenance":{"bundle_type":"anonymous_rps_review_data","catalogs":{"earth":{"filename":"earth_catalog.json","sha256":"6185fab2b731ef74d64216cf04dee563656030cb4ac66d6771d10413dccaf3df"},"titan":{"filename":"titan_catalog.json","sha256":"6fe39b659d0840e15b062c95d405f3cd9b34790303a97fa8c8206528c6a3754d"},"venus":{"filename":"venus_catalog.json","sha256":"b4bc10e58d4812c090ef4cabba45c75735430525aadaf34f6c84dce2257706b8"}},"results":{"aggregate_files":["baseline_results.json","coral_results.json","finetuning_results.json","probing_cv_results.json","label_efficiency_croma_results.json","label_efficiency_dinov2_results.json","label_efficiency_dofa_results.json","label_efficiency_random_init_results.json"],"encoding":"Original aggregate JSON files are compacted for distribution. Added experiment files use indented JSON.","experiment_export":"Existing experiment records are grouped by analysis. Finite numerical values are preserved. In display_rendering_results.json, undefined Hummocky recall is stored as null. Each file lists its source filenames. Where an export selects part of a source object, its metadata identifies retained and omitted fields.","experiment_files":["constrained_training_results.json","display_rendering_results.json","quantization_results.json","smoothing_results.json","preprocessing_mmd_results.json","source_site_sensitivity_results.json"],"final_results_index":"results/final_results.json","label_efficiency_split":["label_efficiency_croma_results.json","label_efficiency_dinov2_results.json","label_efficiency_dofa_results.json","label_efficiency_random_init_results.json"],"max_file_bytes":8000000,"omission_scope":"omitted_per_tile_keys applies to aggregate_files, not the catalogs, Selk records, or added experiment files.","omitted_per_tile_keys":["labels","predictions","probabilities","tile_ids"],"supplementary_result_files":["selk_relative_uncertainty_results.json","venus_domain_gap.json"]},"schema_version":"1.0.0","tiles":{"included":false,"integrity_fields":{"earth":"sha256","titan":"tile_sha256","venus":"tile_sha256"}}},"historical_root_scope":"catalogs, splits and results retain historical v1 scientific payload bytes","packages":{"historical_review":{"SHA256SUMS_sha256":"e6323d39da98fadd645312041367ee41d6057a7a083478b207869bf0b4738ef7","file_count":46,"path":"release/v1-review-20260908","snapshot_commit":"a5b1eedec5116dac0d22edeb76ee333efdaad0fd"},"repaired_titan_frozen":{"SHA256SUMS_sha256":"bce79748a1698fee71c9e5ff36a8c9c39490619c689d0a8ac3ad7993c18ec78f","benchmark_track":"TitanSAR-HiSAR-IMG-longitude-review-20260929","path":"release/longitude-review-20260929"}},"repaired_finetuning_included":false,"repository_status":"private; code export pending","schema_version":"1.1.0","tile_arrays_included":false}
+{
+  "bundle_type": "versioned_scientific_metadata_and_frozen_source",
+  "code_included": true,
+  "historical_root_provenance": {
+    "bundle_type": "anonymous_rps_review_data",
+    "catalogs": {
+      "earth": {
+        "filename": "earth_catalog.json",
+        "sha256": "6185fab2b731ef74d64216cf04dee563656030cb4ac66d6771d10413dccaf3df"
+      },
+      "titan": {
+        "filename": "titan_catalog.json",
+        "sha256": "6fe39b659d0840e15b062c95d405f3cd9b34790303a97fa8c8206528c6a3754d"
+      },
+      "venus": {
+        "filename": "venus_catalog.json",
+        "sha256": "b4bc10e58d4812c090ef4cabba45c75735430525aadaf34f6c84dce2257706b8"
+      }
+    },
+    "results": {
+      "aggregate_files": [
+        "baseline_results.json",
+        "coral_results.json",
+        "finetuning_results.json",
+        "probing_cv_results.json",
+        "label_efficiency_croma_results.json",
+        "label_efficiency_dinov2_results.json",
+        "label_efficiency_dofa_results.json",
+        "label_efficiency_random_init_results.json"
+      ],
+      "encoding": "Original aggregate JSON files are compacted for distribution. Added experiment files use indented JSON.",
+      "experiment_export": "Existing experiment records are grouped by analysis. Finite numerical values are preserved. In display_rendering_results.json, undefined Hummocky recall is stored as null. Each file lists its source filenames. Where an export selects part of a source object, its metadata identifies retained and omitted fields.",
+      "experiment_files": [
+        "constrained_training_results.json",
+        "display_rendering_results.json",
+        "quantization_results.json",
+        "smoothing_results.json",
+        "preprocessing_mmd_results.json",
+        "source_site_sensitivity_results.json"
+      ],
+      "final_results_index": "results/final_results.json",
+      "label_efficiency_split": [
+        "label_efficiency_croma_results.json",
+        "label_efficiency_dinov2_results.json",
+        "label_efficiency_dofa_results.json",
+        "label_efficiency_random_init_results.json"
+      ],
+      "max_file_bytes": 8000000,
+      "omission_scope": "omitted_per_tile_keys applies to aggregate_files, not the catalogs, Selk records, or added experiment files.",
+      "omitted_per_tile_keys": [
+        "labels",
+        "predictions",
+        "probabilities",
+        "tile_ids"
+      ],
+      "supplementary_result_files": [
+        "selk_relative_uncertainty_results.json",
+        "venus_domain_gap.json"
+      ]
+    },
+    "schema_version": "1.0.0",
+    "tiles": {
+      "included": false,
+      "integrity_fields": {
+        "earth": "sha256",
+        "titan": "tile_sha256",
+        "venus": "tile_sha256"
+      }
+    }
+  },
+  "historical_root_scope": "catalogs, splits and results retain historical v1 scientific payload bytes",
+  "packages": {
+    "historical_review": {
+      "SHA256SUMS_sha256": "e6323d39da98fadd645312041367ee41d6057a7a083478b207869bf0b4738ef7",
+      "file_count": 46,
+      "path": "release/v1-review-20260908",
+      "snapshot_commit": "a5b1eedec5116dac0d22edeb76ee333efdaad0fd"
+    },
+    "repaired_titan_adaptation": {
+      "SHA256SUMS_sha256": "95f62da2bd3e489af4b4eea0fcdab13dfd09758e48fed5f8c16e6d30a72bdbcf",
+      "path": "release/longitude-adaptation-controls-20260930"
+    },
+    "repaired_titan_auxiliary": {
+      "SHA256SUMS_sha256": "58c44b3bd396999864d457193593bc7125bcdc3458ca34db6bccf69862558cf0",
+      "path": "release/longitude-auxiliary-20260929"
+    },
+    "repaired_titan_frozen": {
+      "SHA256SUMS_sha256": "bce79748a1698fee71c9e5ff36a8c9c39490619c689d0a8ac3ad7993c18ec78f",
+      "benchmark_track": "TitanSAR-HiSAR-IMG-longitude-review-20260929",
+      "path": "release/longitude-review-20260929"
+    },
+    "repaired_titan_interpretation": {
+      "SHA256SUMS_sha256": "a4eab0a2d502b0815c96581ea9c890103df5f413dd3500fab2e17d19fb7fed4b",
+      "path": "release/interpretation-20261001"
+    }
+  },
+  "repaired_finetuning_included": true,
+  "repository_status": "Software and five result packages included; see SOFTWARE.md and PAPER_REPRODUCTION.md for scope and reproduction.",
+  "schema_version": "1.1.0",
+  "software": {
+    "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
+    "guide": "SOFTWARE.md",
+    "manifest": "SOFTWARE_EXPORT.json"
+  },
+  "tile_arrays_included": false
+}

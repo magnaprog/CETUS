@@ -33,8 +33,8 @@ union of 23,246 tiles. Four frozen encoders supply five probe-head seeds per
 fold and one kNN evaluation per fold. Results retain all six classes. The
 [Crater support evidence](release/longitude-review-20260929/evidence/crater_support.json)
 records source polygon parts and roles; parts do not establish independent
-physical craters. Fold 1 has a single Craters test tile. Fold variation is
-descriptive, and neither the partition design nor artifact verification proves
+physical craters. Saved fold ID 1 (paper fold 2) has a single Craters test tile.
+Fold variation is descriptive, and neither the partition design nor artifact verification proves
 spatial independence. Differences from v1 combine population and protocol changes.
 
 **Earth source limitations.** Sixteen historical training tiles cataloged as
@@ -66,8 +66,9 @@ contains the completed 75 repaired fits, checkpoint-replay evidence and the
 SGD and common LR substitution controls. Root v1 results and both repaired
 parent packages retain their existing bytes. These comparisons describe
 complete recipes and training membership changes; they do not isolate a
-causal effect of unfreezing or spatial leakage. The root README supplies the
-separate package acceptance identity.
+causal effect of unfreezing or spatial leakage. The
+[root README](README.md#reproduce-the-results) supplies the separate package
+acceptance identity.
 
 **Historical figure index.** A separate earlier software-side v1 artifact
 index retained the figure-manifest digest

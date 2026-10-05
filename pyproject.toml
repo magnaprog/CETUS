@@ -9,7 +9,7 @@ description = "CETUS frozen Titan terrain evaluation"
 readme = "SOFTWARE.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-authors = [{name = "TitanSAR Team"}]
+authors = [{name = "Kevin Lee"}]
 dependencies = ["torch>=2.4", "numpy>=1.24", "scipy>=1.10", "scikit-learn>=1.3"]
 
 [project.optional-dependencies]
