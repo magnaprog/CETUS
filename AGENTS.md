@@ -1,18 +1,26 @@
 # CETUS release instructions
 
+Read [the paper reproduction guide](PAPER_REPRODUCTION.md) for the methods,
+software identities and data routes. The scientific packages retain their
+original bytes.
+
 Read [README.md](README.md), [SOFTWARE.md](SOFTWARE.md) and the README of the
 specific release package before editing or running anything. The September and
-October revision was prepared on `revision/repaired-titan-2026`, in
-[PR 1](https://github.com/magnaprog/CETUS/pull/1). Use `main` as the starting point
-for subsequent work after that PR is merged. Check current Git and PR state;
-`1cc34ca7c6a1d54f01852ce6b54a848e97017d54` is the accepted snapshot before the
-30 September memory update, rather than a permanent branch tip.
+October revision on `revision/repaired-titan-2026` was merged in
+[PR 1](https://github.com/magnaprog/CETUS/pull/1). Continue the documentation
+revision on `revision/citation-title-20261003` in
+[PR 2](https://github.com/magnaprog/CETUS/pull/2) until it is merged. Start
+subsequent work from updated `main` after integration. Check current Git and
+PR state; `1cc34ca7c6a1d54f01852ce6b54a848e97017d54` is an earlier accepted
+snapshot, not a permanent branch tip.
 
 The October interpretation package is `release/interpretation-20261001`.
 Its README and source export identify CPU producer `0297c9a` and distinguish
-post hoc analyses from the equal-fold primary results. The development handoff
-`audit/MEMORY_HANDOFF_2026-10-01.md` supersedes dated September paper status.
-Keep machine-specific continuation paths in local memory.
+post hoc analyses from the equal-fold primary results. In TitanSAR-dev,
+`audit/MEMORY_HANDOFF_SECTIONS_2026-10-05.md` records the current paper review;
+earlier handoffs retain their scientific producer identities. That development
+handoff is not included in CETUS. Keep machine-specific continuation paths in
+local memory.
 
 ## Release boundaries
 
