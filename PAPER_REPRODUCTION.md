@@ -158,6 +158,21 @@ input conventions remain uncertain. The model uses identifier 13.78 for Titan,
 while the upstream Earth example uses 5.405 and Appendix D of the DOFA
 preprint, arXiv:2403.15356 version 2, gives SAR identifier 3.75. See SOFTWARE.md for the exact source and model hashes.
 
+The paper's DOFA usage citation links to the
+[Sentinel-1 example](https://github.com/zhu-xlab/DOFA/blob/73ff5c0721da322689ae890bed5b4efd78935f47/README.md)
+at repository revision `73ff5c0721da322689ae890bed5b4efd78935f47`.
+The printed reference uses a short link label; this guide retains the revision
+and filename for reproduction. The model-loading example lists the missing
+and unused normalization parameters, and the Sentinel-1 example applies channel
+standardization and the band identifier 5.405.
+
+The bibliography cites CROMA through DOI
+[10.52202/075280-0241](https://doi.org/10.52202/075280-0241) and Mars-Bench
+through DOI [10.52202/085713-4098](https://doi.org/10.52202/085713-4098).
+Their original proceedings links remain available here for lookup:
+[CROMA paper](https://proceedings.neurips.cc/paper_files/paper/2023/file/11822e84689e631615199db3b75cd0e4-Paper-Conference.pdf)
+and [Mars-Bench proceedings entry](https://proceedings.neurips.cc/paper_files/paper/2025/hash/b21b8e8823034df7de4a8cc2e56891af-Abstract-Datasets_and_Benchmarks_Track.html).
+
 ## Earth preprocessing and training-count checks
 
 The development record `audit/CONTROL_RESULTS_2026-09-29.json` gives complete

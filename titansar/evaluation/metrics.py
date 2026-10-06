@@ -29,10 +29,10 @@ def compute_mmd(
 ) -> float:
     """Compute a seeded MMD estimate between two finite feature arrays.
 
-    RBF bandwidth estimation occurs after random subsampling, avoiding dependence
-    on catalog row order. Equal sample sizes are used by default so comparisons
-    are not driven by unequal diagonal bias. ``estimator`` may be ``biased``
-    (V-statistic) or ``unbiased`` (U-statistic).
+    RBF bandwidth estimation occurs after seeded random subsampling.
+    The selected rows still depend on catalog row order. Equal sample sizes
+    are used by default so comparisons are not driven by unequal diagonal bias.
+    ``estimator`` may be ``biased`` (V-statistic) or ``unbiased`` (U-statistic).
     """
     source_features = np.asarray(source_features, dtype=np.float64)
     target_features = np.asarray(target_features, dtype=np.float64)
@@ -264,14 +264,15 @@ def compute_proxy_a_distance(
     """Compute proxy A-distance (Ben-David et al. 2010).
 
     Trains a linear classifier to distinguish source from target features.
-    A-distance = 2 * (1 - 2 * error), where error is the classifier's
-    generalization error. Higher A-distance means larger domain gap.
+    A-distance = 2 * (1 - 2 * error), where error is the classifier's balanced
+    error on the held-out partition. Higher values indicate greater domain
+    separability for this classifier and split.
 
-    Caveat: with high-dimensional (e.g. 768-d) features and a few thousand
-    points, a linear classifier is almost always separable, so this proxy
-    saturates near 2 regardless of true overlap (a random-feature control gives
-    ~2 as well). Interpret with that ceiling in mind, or reduce dimensionality
-    (e.g. PCA) before computing it. Subsampling and shuffling are seeded.
+    A feature dimension of 768 and a few thousand points do not by themselves
+    imply separability or saturation near 2. A value of ~2 from a random-feature
+    control would be specific to that experiment, not implied by dimensionality
+    alone. Dimension reduction such as PCA changes the evaluated representation.
+    Subsampling and shuffling are seeded.
 
     Returns value in [0, 2].
     """
@@ -321,8 +322,10 @@ def compute_centroid_distances(
 
     For each class, computes the L2 distance between the mean feature
     vector in the source domain and the mean feature vector in the target
-    domain. Small distances suggest domain-invariant representations for
-    that class; large distances indicate a failure mode.
+    domain. These distances describe class mean displacement in the chosen feature
+    coordinates and depend on scaling. They omit covariance and higher-order
+    structure and do not establish distributional invariance or classification
+    performance.
     """
     distances = {}
     for c in range(num_classes):

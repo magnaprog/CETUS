@@ -10,15 +10,11 @@ import os
 from abc import ABC, abstractmethod
 from pathlib import Path
 
-import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from titansar.configs.defaults import (
-    CASSINI_FREQ_GHZ,
-    TitanSARConfig,
-)
+from titansar.configs.defaults import CASSINI_FREQ_GHZ
 
 logger = logging.getLogger(__name__)
 
@@ -156,7 +152,7 @@ class DINOv2Wrapper(FoundationModelWrapper):
         """Replicate 1-channel -> 3-channel and apply ImageNet normalization for DINOv2."""
         # x: (B, 1, H, W) in [0, 1] -> (B, 3, H, W)
         x = x.expand(-1, 3, -1, -1)
-        # Resize to 224x224 (DINOv2 default, patch_size=14 -> 16x16 patches)
+        # Resize to 224x224 for CETUS; patch_size=14 gives 16x16 patches
         if x.shape[-1] != 224 or x.shape[-2] != 224:
             x = F.interpolate(x, size=(224, 224), mode="bilinear", align_corners=False)
         # Apply each channel's ImageNet mean and standard deviation. The repeated
@@ -169,7 +165,7 @@ class DINOv2Wrapper(FoundationModelWrapper):
         return self.model(x)  # Returns [CLS] token by default
 
     def get_transformer_blocks(self) -> list[nn.Module]:
-        """DINOv2 ViT uses self.model.blocks (nn.Sequential of Block modules)."""
+        """Return DINOv2 transformer blocks from self.model.blocks."""
         return list(self.model.blocks)
 
 
@@ -264,10 +260,11 @@ class DOFAWrapper(FoundationModelWrapper):
         return x
 
     def _forward(self, x: torch.Tensor) -> torch.Tensor:
-        """Forward pass with wavelength conditioning.
+        """Forward pass with numeric band identifiers.
 
-        DOFA's forward signature: forward_features(x, wave_list)
-        where wave_list is a list of band identifiers (frequency in GHz for SAR).
+        DOFA's forward signature is forward_features(x, wave_list).
+        This wrapper supplies the SAR identifier using the frequency convention
+        described above.
         """
         try:
             # Real DOFA API: forward_features(x, wave_list)
@@ -300,10 +297,9 @@ class CROMAWrapper(FoundationModelWrapper):
     Pre-trained on co-located Sentinel-1/2 via contrastive + reconstructive
     objectives. SAR encoder expects 2-channel (VV+VH) input.
 
-    Limitation: We replicate Titan's single channel to both VV and VH inputs,
-    producing identical channels. This prevents the model from leveraging any
-    cross-polarization features learned during pre-training, since cross-pol
-    information requires genuinely different polarization measurements.
+    The wrapper duplicates Titan's single channel into its two input channels.
+    This supplies no independent polarization measurement and changes the input
+    relationship from the paired VV and VH channels used in pretraining.
     """
 
     def __init__(self, device: str = "cuda"):

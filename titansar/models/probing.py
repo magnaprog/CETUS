@@ -29,14 +29,12 @@ def save_feature_metadata(
     feat_dir, array_stem, model_name, weights_source, n_features, feature_dim,
     provenance=None,
 ):
-    """Write provenance for ONE cached feature array (review D8).
+    """Write metadata for one cached feature array.
 
-    The sidecar is ``{array_stem}.meta.json`` next to ``{array_stem}.npy``, so each
-    array carries its own provenance. A model directory can hold arrays produced by
-    different runs/weights (e.g. run_probing writes the Titan/Earth/Selk sets; a
-    single directory-level record could not prove any individual file. Callers
-    bind each array to catalog, split, model revision, checkpoint, and byte hashes;
-    the run manifest additionally binds the code commit and all inputs/outputs.
+    The sidecar is ``{array_stem}.meta.json`` next to ``{array_stem}.npy``.
+    Separate sidecars distinguish arrays from different runs or weights within
+    the same directory. Callers can supply additional provenance fields through
+    ``provenance``; this function records those fields without validating them.
     """
     feat_dir = Path(feat_dir)
     feat_dir.mkdir(parents=True, exist_ok=True)
@@ -220,7 +218,7 @@ def train_linear_probe(
 ) -> LinearProbe:
     """Train a linear probe on frozen features.
 
-    Uses SGD with cosine annealing and inverse-frequency class weighting.
+    Uses SGD with cosine annealing and optional class weighting.
     """
     if config is None:
         config = TitanSARConfig()
@@ -434,7 +432,7 @@ def train_finetuned_model(
     Args:
         model: Foundation model wrapper (will be modified in-place).
         train_loader: Training DataLoader yielding dicts with "image" and "label".
-        val_loader: Validation DataLoader for early stopping / best checkpoint.
+        val_loader: Validation DataLoader for checkpoint selection by macro recall.
         num_classes: Number of terrain classes.
         unfreeze_blocks: Number of trailing transformer blocks to unfreeze.
         lr: Learning rate for AdamW.
@@ -443,7 +441,8 @@ def train_finetuned_model(
         device: CUDA device string.
         use_amp: Whether to use automatic mixed precision (GPU only).
         grad_accum_steps: Gradient accumulation steps (effective batch =
-            batch_size * grad_accum_steps).
+            batch_size * grad_accum_steps for complete windows of full batches).
+            The final batch or accumulation window can be shorter.
         init_probe: Optional LinearProbe supplied by the caller. It may be
             freshly initialized or previously trained.
         return_history: Also return per-epoch loss and validation accuracy.
@@ -649,9 +648,8 @@ def compute_silhouette_score(
 ) -> float:
     """Compute silhouette score on feature embeddings.
 
-    Measures how well terrain classes cluster in feature space without
-    any training, providing insight into intrinsic structure captured
-    by the representations.
+    Compute the mean silhouette coefficient for the supplied class labels
+    using cosine distance. Subsample rows with the supplied seed when needed.
     """
     from sklearn.metrics import silhouette_score
 
