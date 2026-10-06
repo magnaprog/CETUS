@@ -55,6 +55,95 @@
       "previous_manifest_sha256": "598c5385a8fd70f6e632229ad29e76f1a06d7aafb891872eb403e6fb8025e870",
       "previous_sha256": "7ed9bc5ca8e87d9a1bfee11ce99e29f9809492bbddcc85306a7a48fbbd59e3c8",
       "reason": "Align the software author with Kevin Lee in CITATION.cff; dependencies and scientific source files are unchanged."
+    },
+    {
+      "date": "2026-10-05",
+      "new_sha256": "89d33f9663f893f569ae0497c23bb9099ec66953f3e13be9a66f0abe67412039",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "34676fabfb4ff7c69e057259d067af797ba9a596e560ef21ef6cc1f8fa0a4ec1",
+      "previous_sha256": "36d7790fe376eb145f96145e4b940e957d02173413a85748a0b36252903e5537",
+      "reason": "Record current source documentation corrections and distinguish original export hashes and scientific producer identities from current file hashes."
+    },
+    {
+      "date": "2026-10-05",
+      "new_sha256": "fb3f91f325dcac330abe475aa7f36efeb05b8052a57e2cb7cb6d5fe740a0edc5",
+      "path": "titansar/data/dataset.py",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "34676fabfb4ff7c69e057259d067af797ba9a596e560ef21ef6cc1f8fa0a4ec1",
+      "previous_sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f",
+      "reason": "Correct comments/docstrings only: compute_linear_norm_range calls np.percentile directly and falls back for a near-zero range. Original source_sha256 and scientific run identities are retained; executable AST is unchanged after removing docstrings."
+    },
+    {
+      "date": "2026-10-05",
+      "new_sha256": "86347f1750497455728c644d0d116faa857ee753ccac772ef100c6f35f4bd4c7",
+      "path": "titansar/evaluation/metrics.py",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "34676fabfb4ff7c69e057259d067af797ba9a596e560ef21ef6cc1f8fa0a4ec1",
+      "previous_sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837",
+      "reason": "Correct comments/docstrings only: compute_mmd uses seeded rng.choice on row indices, then estimates bandwidth on selected rows.; compute_centroid_distances calculates Euclidean distances between class means only.; compute_proxy_a_distance uses a stratified held-out split, training-only StandardScaler and balanced_accuracy_score; the return is clipped to [0, 2]. The refinement avoids calling 2 a non-universal ceiling. Original source_sha256 and scientific run identities are retained; executable AST is unchanged after removing docstrings."
+    },
+    {
+      "date": "2026-10-05",
+      "new_sha256": "c67bf7c51fbb6a302bab8e85d166ef59afcde130b1331393db85e27bb84da329",
+      "path": "titansar/models/foundation_models.py",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "34676fabfb4ff7c69e057259d067af797ba9a596e560ef21ef6cc1f8fa0a4ec1",
+      "previous_sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d",
+      "reason": "Correct comments/docstrings only: CROMAWrapper.prepare_input expands one channel to two; the class-level statement makes no unsupported claim that all learned cross-polarization features become unusable.; DOFAWrapper._forward passes wave_list=[self.wavelength]; class documentation retains the unresolved pretraining-identifier qualification.; DINOv2Wrapper.prepare_input resizes to (224, 224); the wrapper uses patch_size=14, yielding a 16x16 grid.; DINOv2Wrapper.get_transformer_blocks returns list(self.model.blocks), without requiring nn.Sequential. Original source_sha256 and scientific run identities are retained; executable AST is unchanged after removing docstrings."
+    },
+    {
+      "date": "2026-10-05",
+      "new_sha256": "32b7ddc24481910b5cb5b1da63815ca5632b4f8e90c98331e21309bac60494f3",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "34676fabfb4ff7c69e057259d067af797ba9a596e560ef21ef6cc1f8fa0a4ec1",
+      "previous_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf",
+      "reason": "Correct comments/docstrings only: train_finetuned_model iterates range(epochs), compares mean recall over validation classes present, and restores the best checkpoint; there is no early-stopping break.; train_finetuned_model updates at each full accumulation window and at the last loader step, dividing by actual accumulated loss weight; the final batch itself may also be partial.; compute_silhouette_score subsamples row indices with the supplied seed and calls sklearn silhouette_score with metric=cosine.; save_feature_metadata writes caller provenance through dict(provenance); it does not check supplied hashes or identities.; train_linear_probe passes optional caller-supplied weights to CrossEntropyLoss, with an unweighted branch when None. Original source_sha256 and scientific run identities are retained; executable AST is unchanged after removing docstrings."
+    },
+    {
+      "change_kind": "unused_import_cleanup",
+      "date": "2026-10-05",
+      "new_sha256": "58bac3774ac65380d32cadcbce28848605bd24719522ca8fb2a5c38a8efd0f02",
+      "path": "titansar/configs/defaults.py",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "eab6c79bc05e4c5d3e03a73e7dec129f6269f9dbb194006c2835846566d8b605",
+      "previous_sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709",
+      "previous_state": "reviewed working tree before unused import cleanup",
+      "reason": "Separate reviewed code cleanup: remove the unused Optional import from typing. No function, class, constant or configuration field changes. Original source_sha256 is retained."
+    },
+    {
+      "change_kind": "unused_import_cleanup",
+      "date": "2026-10-05",
+      "new_sha256": "9b1e77b74be4ae8a3fac1703919867476689ff6c85a9c2276c4041401f6b2897",
+      "path": "titansar/models/foundation_models.py",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "eab6c79bc05e4c5d3e03a73e7dec129f6269f9dbb194006c2835846566d8b605",
+      "previous_sha256": "c67bf7c51fbb6a302bab8e85d166ef59afcde130b1331393db85e27bb84da329",
+      "previous_state": "reviewed working tree before unused import cleanup",
+      "reason": "Separate reviewed code cleanup after the recorded comment/docstring corrections: remove only the unused numpy as np and TitanSARConfig import bindings. Encoder construction, preprocessing, checkpoint identities and function bodies are unchanged. Original source_sha256 and intermediate documentation-update records are retained."
+    },
+    {
+      "change_kind": "maintenance_documentation",
+      "date": "2026-10-05",
+      "new_sha256": "9f72dd0120ca94c54520df9ac401f89fe377dc056cecea9a42dbdc02cdb46fec",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "eab6c79bc05e4c5d3e03a73e7dec129f6269f9dbb194006c2835846566d8b605",
+      "previous_sha256": "89d33f9663f893f569ae0497c23bb9099ec66953f3e13be9a66f0abe67412039",
+      "previous_state": "reviewed working tree before unused import cleanup",
+      "reason": "Distinguish the earlier prose-only AST comparison from the subsequent three-binding import cleanup, and explain retention of runtime, compatibility and documented historical paths. No new scientific producer or run is identified. Describe features from an untrained ViT and classifier training seeds, which vary initialization and minibatch order."
+    },
+    {
+      "change_kind": "docstring_line_wrap",
+      "date": "2026-10-05",
+      "new_sha256": "6731e0f906b8d9808d452665d6b6a6f966189e3e2b4d66ed969651d76008c5fb",
+      "path": "titansar/evaluation/metrics.py",
+      "previous_cetus_commit": "9ec28240275c11e4be844e0157b34ab9d532edc4",
+      "previous_manifest_sha256": "7629d81166a8d824a3ad63f3e9ab7e0385951eb69628aa2253c7146e7157c7c6",
+      "previous_sha256": "86347f1750497455728c644d0d116faa857ee753ccac772ef100c6f35f4bd4c7",
+      "previous_state": "reviewed working tree after import cleanup, before final prose wrap",
+      "reason": "Wrap the reviewed compute_mmd docstring without changing words or executable AST. Retain the preceding correction record and its intermediate source hash."
     }
   ],
   "excluded": [
@@ -84,8 +173,8 @@
       "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "SOFTWARE.md": {
-      "origin": "generated",
-      "sha256": "36d7790fe376eb145f96145e4b940e957d02173413a85748a0b36252903e5537"
+      "origin": "generated guide with documentation updates",
+      "sha256": "9f72dd0120ca94c54520df9ac401f89fe377dc056cecea9a42dbdc02cdb46fec"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
@@ -139,8 +228,8 @@
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "titansar/configs/defaults.py": {
-      "origin": "verbatim committed blob",
-      "sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709",
+      "origin": "committed source with reviewed unused import cleanup",
+      "sha256": "58bac3774ac65380d32cadcbce28848605bd24719522ca8fb2a5c38a8efd0f02",
       "source_sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
     },
     "titansar/data/__init__.py": {
@@ -149,8 +238,8 @@
       "source_sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
     },
     "titansar/data/dataset.py": {
-      "origin": "verbatim committed blob",
-      "sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f",
+      "origin": "committed source with comment/docstring corrections; executable AST unchanged",
+      "sha256": "fb3f91f325dcac330abe475aa7f36efeb05b8052a57e2cb7cb6d5fe740a0edc5",
       "source_sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f"
     },
     "titansar/evaluation/__init__.py": {
@@ -159,8 +248,8 @@
       "source_sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de"
     },
     "titansar/evaluation/metrics.py": {
-      "origin": "verbatim committed blob",
-      "sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837",
+      "origin": "committed source with comment/docstring corrections; executable AST unchanged",
+      "sha256": "6731e0f906b8d9808d452665d6b6a6f966189e3e2b4d66ed969651d76008c5fb",
       "source_sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837"
     },
     "titansar/models/__init__.py": {
@@ -174,13 +263,13 @@
       "source_sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
     },
     "titansar/models/foundation_models.py": {
-      "origin": "verbatim committed blob",
-      "sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d",
+      "origin": "committed source with reviewed documentation and unused import cleanup",
+      "sha256": "9b1e77b74be4ae8a3fac1703919867476689ff6c85a9c2276c4041401f6b2897",
       "source_sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d"
     },
     "titansar/models/probing.py": {
-      "origin": "verbatim committed blob",
-      "sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf",
+      "origin": "committed source with comment/docstring corrections; executable AST unchanged",
+      "sha256": "32b7ddc24481910b5cb5b1da63815ca5632b4f8e90c98331e21309bac60494f3",
       "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {

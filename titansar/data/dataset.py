@@ -136,8 +136,8 @@ def compute_linear_norm_range(samples, lo_pct=1.0, hi_pct=99.0, default=(0.0, 25
     The USGS Cassini Titan HiSAR Global Mosaic is an 8-bit logarithmically
     stretched display product. Its authoritative transfer function to calibrated
     backscatter is not available here, so DN is normalized linearly and never
-    interpreted as sigma0 or dB. Percentile bounds keep saturated display pixels
-    from setting the scale.
+    interpreted as sigma0 or dB. Percentile bounds limit the influence of extreme
+    values, but saturation can still determine a bound.
     """
     if samples is None or len(samples) == 0:
         return default

@@ -1,7 +1,6 @@
 """Default configuration for TitanSAR experiments."""
 
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 # === Instrument values and reference assumptions ===

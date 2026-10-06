@@ -7,12 +7,10 @@ original bytes.
 Read [README.md](README.md), [SOFTWARE.md](SOFTWARE.md) and the README of the
 specific release package before editing or running anything. The September and
 October revision on `revision/repaired-titan-2026` was merged in
-[PR 1](https://github.com/magnaprog/CETUS/pull/1). Continue the documentation
-revision on `revision/citation-title-20261003` in
-[PR 2](https://github.com/magnaprog/CETUS/pull/2) until it is merged. Start
-subsequent work from updated `main` after integration. Check current Git and
-PR state; `1cc34ca7c6a1d54f01852ce6b54a848e97017d54` is an earlier accepted
-snapshot, not a permanent branch tip.
+[PR 1](https://github.com/magnaprog/CETUS/pull/1). The documentation revision in
+[PR 2](https://github.com/magnaprog/CETUS/pull/2) is also merged. Continue the
+current main-based review on `revision/prose-recheck-20261005`. Check current
+Git and PR state before integration; start subsequent work from updated `main`.
 
 The October interpretation package is `release/interpretation-20261001`.
 Its README and source export identify CPU producer `0297c9a` and distinguish

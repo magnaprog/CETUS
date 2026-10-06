@@ -1,26 +1,39 @@
 # Running the Titan classifiers
 
-This software calculates DINOv2, DOFA, CROMA and Random Init image features,
-then fits classifiers with the encoder weights unchanged. Scientific code
+This software calculates features from DINOv2, DOFA, CROMA and an untrained
+ViT, then fits classifiers with the encoder weights unchanged. Scientific code
 comes from development revision `0257a36197c51eda0a31768531ea26eef9887a6e`.
-SOFTWARE_EXPORT.json gives the source hashes and identifies the packaging and
-tests. [PAPER_REPRODUCTION.md](PAPER_REPRODUCTION.md) maps paper results to
-their data packages and verification records.
+SOFTWARE_EXPORT.json records the original source hashes, current file hashes,
+packaging and tests. [PAPER_REPRODUCTION.md](PAPER_REPRODUCTION.md) maps paper
+results to their data packages and verification records.
 
 The manifest's `files` entries bind the current checkout. Its builder hash
 and development commit identify the original export. The `documentation_updates`
-records identify changes to the guide, citation and author metadata, including their
-previous and current hashes. Scientific source hashes remain unchanged. The
-original generated guide and manifest remain in CETUS commit
-`360eaea532ead477f46906d7ebe0cb5282e8b082`.
+records identify documentation, citation and author metadata changes and the
+separate unused-import cleanup, with previous and current hashes. The October 5
+comment and docstring corrections clarify normalization, metrics, encoder inputs
+and training behavior. Those prose edits preserved executable ASTs when docstrings
+were excluded. A subsequent reviewed cleanup removed only the unused `Optional`,
+`np` and `TitanSARConfig` import bindings; function bodies and algorithms are
+unchanged.
+Original `source_sha256` values and scientific run producer identities are retained;
+these corrections do not identify a new scientific run. The versioned `release/`
+packages are unchanged. Original source, guide and manifest bytes remain in CETUS
+commit `360eaea532ead477f46906d7ebe0cb5282e8b082`.
 
 The runner calculates image features, trains five linear classifiers per fold
-with different initialization seeds, and classifies by cosine nearest neighbors.
+with different training seeds, and classifies by cosine nearest neighbors.
 Use the five contiguous Titan folds supplied here. Earth transfer, classical
 classifiers, encoder training, additional preprocessing and private verification
 commands require the development repository. Some imported files retain functions
-for those experiments so their original bytes remain reproducible. The commands
+for those experiments; Git history preserves their original bytes. The commands
 below exercise the Titan workflow.
+
+Current source files support the runner, reconstruction, tests and existing
+library interfaces. Historical root catalogs, splits and results retain their
+documented paths, including copies in the September snapshot. Keep the complete
+release packages and their source identities together; duplicate bytes alone
+do not make these files unnecessary.
 
 ## Install and check
 
