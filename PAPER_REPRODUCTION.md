@@ -54,6 +54,14 @@ provides the CNN, matched-DINO and CPU-fitting implementations with their
 supply the omitted scientific inputs or historical machine-bound plans. The
 earlier classifier runner remains a separate workflow.
 
+## DOFA band input comparison
+
+The [DOFA companion](release/dofa-band-20261109/README.md) adds the completed
+13.78 versus 3.75 comparison on all five regions. It preserves ten sets of
+test predictions and probabilities and reconstructs their arithmetic on CPU.
+It is separate from the four earlier numerical packages and does not change
+the original Earth or partial-training results.
+
 ## Fold numbers in the current papers
 
 The papers and current figures number folds 1 through 5. Saved results, split
