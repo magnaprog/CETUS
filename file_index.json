@@ -16,22 +16,32 @@
     }
   },
   "code_included": true,
+  "current_execution_source": {
+    "development_source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+    "guide": "release/current-source-20261109/README.md",
+    "manifest": "release/current-source-20261109/SOURCE_EXPORT.json",
+    "scope": "Separate versioned source export; the historical root software identity is retained."
+  },
   "files": {
+    ".github/workflows/current-source-cpu-tests.yml": {
+      "bytes": 7869,
+      "sha256": "40e9536dae7707db493a40d2982de621b48ca5064cc8210c0faa3a70a8a39575"
+    },
     ".github/workflows/frozen-cpu-tests.yml": {
       "bytes": 595,
       "sha256": "ec8637baf02e0e8b290c4073f0491c2d292ac649a4d9979abfd55fa40c69d493"
     },
     ".github/workflows/release-inventory.yml": {
-      "bytes": 4239,
-      "sha256": "6c089eae84a6e6df346c5b6fcc3a67dbfb738e5a5b7522af7cc2c0fbc8bbe03e"
+      "bytes": 8862,
+      "sha256": "65405f534c11fb001d0d2d33300bc4a7218f2eb3c805ff292f155eef6d305345"
     },
     ".gitignore": {
       "bytes": 79,
       "sha256": "54c0160c2ad7df6b0d4b083111557c43d8f0afe5b6c2ce733855980ce39766b0"
     },
     "AGENTS.md": {
-      "bytes": 3777,
-      "sha256": "dc680f6347d1d6888dab1979cdece6f1047e05dafac367199ece6e2f56f4c626"
+      "bytes": 5079,
+      "sha256": "f428273dff5e51c9e8911a3f18345bbecb68ebb6f83eff7209406c85b258f9b8"
     },
     "CITATION.cff": {
       "bytes": 575,
@@ -58,20 +68,20 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 14844,
-      "sha256": "0d2f37bf2fca86059f5e680aab39e1ad7106f66bcce52a90e34e328ee78eddd7"
+      "bytes": 20204,
+      "sha256": "06148eebe018eaae4dc2abf9e0a2c0ef87106117b1707884a084528f570c1990"
     },
     "README.md": {
-      "bytes": 7081,
-      "sha256": "224875ec0d3cdff0a55781251d93a7f391da182ffa4e212fd561ea896c04e03c"
+      "bytes": 5126,
+      "sha256": "d1a1792769aff673c30b28bb6f4bf44e5a6783e094d2ec676957f57f435b8acf"
     },
     "SOFTWARE.md": {
-      "bytes": 20411,
-      "sha256": "9f72dd0120ca94c54520df9ac401f89fe377dc056cecea9a42dbdc02cdb46fec"
+      "bytes": 22267,
+      "sha256": "537c1ad8fd86998fba58ec38dd66403a7f6103064f3c02e581d598cd4a94d338"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 19035,
-      "sha256": "baae7726bb64caca71640e1bacefda57f84228abfecbca971d6611648aa6652b"
+      "bytes": 19872,
+      "sha256": "b34820dff62c0390c6dc9833e187bd2a5db33936732dd90d55a99ca1019c0060"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -94,12 +104,252 @@
       "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
     },
     "provenance.json": {
-      "bytes": 4356,
-      "sha256": "b098bad79de08623552e4ea4e24af4364507f9052dd295bcca5735052fcfb83e"
+      "bytes": 8960,
+      "sha256": "8f65d9b573a86211870cb2d27126a7cff2cf723538ebff221506851020452535"
     },
     "pyproject.toml": {
       "bytes": 634,
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
+    },
+    "release/current-source-20261109/CONTRACTS.md": {
+      "bytes": 16744,
+      "sha256": "40a9f63af4c39782b70ceccebfc78f2e30b7afda8a89da3f42b3d5764a808790"
+    },
+    "release/current-source-20261109/DATA_LICENSES.md": {
+      "bytes": 1886,
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "release/current-source-20261109/LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "release/current-source-20261109/README.md": {
+      "bytes": 8340,
+      "sha256": "00b0e1072f3648389768a7f5de7f4ceec5cc3cefdc196b9b237706d379c0e9eb"
+    },
+    "release/current-source-20261109/SHA256SUMS": {
+      "bytes": 5764,
+      "sha256": "1ec0aecef147b434ca7dcf9e7197582ef02b7a442388052abeabd862bb23bbde"
+    },
+    "release/current-source-20261109/SOURCE_EXPORT.json": {
+      "bytes": 45680,
+      "sha256": "e09e636cff8e960638d2f89477e905b8b915e6945c3c0a004fecd84acacd6a8c"
+    },
+    "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "release/current-source-20261109/audit/gpu_execution/repaired_splits/titan_contiguous_fold_0.json": {
+      "bytes": 710427,
+      "sha256": "1079b1c63588ee9af674184b7dd6937ef01d3a354c8773e8ee9caad4ab8cc388"
+    },
+    "release/current-source-20261109/audit/gpu_execution/repaired_splits/titan_contiguous_fold_1.json": {
+      "bytes": 715458,
+      "sha256": "f9bb93592f5bb9e111118f796c4cdc4e2478cb1ef18f1d61d7044525d0a820d2"
+    },
+    "release/current-source-20261109/audit/gpu_execution/repaired_splits/titan_contiguous_fold_2.json": {
+      "bytes": 713935,
+      "sha256": "7862dd95df2eed01d0252a7a37068ee780509d98dd9e0105e1930ad0ffa75610"
+    },
+    "release/current-source-20261109/audit/gpu_execution/repaired_splits/titan_contiguous_fold_3.json": {
+      "bytes": 711432,
+      "sha256": "8317384eb1945fc2af628e0051b8181637525d0412c2f2c1b38b7b2967fee9b6"
+    },
+    "release/current-source-20261109/audit/gpu_execution/repaired_splits/titan_contiguous_fold_4.json": {
+      "bytes": 704758,
+      "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
+    },
+    "release/current-source-20261109/docs/CVPR2027_DATA_ACCESS.md": {
+      "bytes": 11154,
+      "sha256": "9585c3fb515418d3bd5c63c1a1e5fd50c3a3523dc7f53d238a3f5f8506b3d82f"
+    },
+    "release/current-source-20261109/docs/FITTING_SENSITIVITY.md": {
+      "bytes": 5615,
+      "sha256": "5401eea0c85ef35214bd7882a212e4776f21c8ac4b344e0040a3708f6dfe2fb3"
+    },
+    "release/current-source-20261109/docs/MODEL_FOLLOWUP.md": {
+      "bytes": 28062,
+      "sha256": "8d2dfbae0c79283cb804633dc01800421d5a4d3fd819bbb808948db962907a39"
+    },
+    "release/current-source-20261109/file_index.json": {
+      "bytes": 8994,
+      "sha256": "c195c513669c09953adc6362fdc5f23484523af1c7631b065323511336c03f07"
+    },
+    "release/current-source-20261109/licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "release/current-source-20261109/pyproject.toml": {
+      "bytes": 1248,
+      "sha256": "04093328c1fb403c43f29cd0f43f8c97dda602c24e15c3773c6062aab50d2470"
+    },
+    "release/current-source-20261109/requirements.txt": {
+      "bytes": 561,
+      "sha256": "1d33ac7b3e3df48dd50170e4c65fb83ffd9dd2295bca7822023ded2887283372"
+    },
+    "release/current-source-20261109/scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release/current-source-20261109/scripts/analyze_model_followup.py": {
+      "bytes": 41406,
+      "sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b"
+    },
+    "release/current-source-20261109/scripts/analyze_model_followup_coverage.py": {
+      "bytes": 16003,
+      "sha256": "fd6ff553ce588709bc21928afbc1ebdf218269fdec0c0dbe6e39c74959b6dd48"
+    },
+    "release/current-source-20261109/scripts/analyze_sar_coverage.py": {
+      "bytes": 9599,
+      "sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03"
+    },
+    "release/current-source-20261109/scripts/launch_fitting_sensitivity.py": {
+      "bytes": 7562,
+      "sha256": "c462e60dc6f11cddd0050cf47975d5b6eeab3fd95ccf173856b58948eee2feb4"
+    },
+    "release/current-source-20261109/scripts/model_followup_support.py": {
+      "bytes": 18359,
+      "sha256": "4f8ac453a0b4a87a421d2017ebcb35d06a35bb722a632e2685356bf5ab157712"
+    },
+    "release/current-source-20261109/scripts/run_finetuning.py": {
+      "bytes": 25658,
+      "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+    },
+    "release/current-source-20261109/scripts/run_fitting_sensitivity.py": {
+      "bytes": 21022,
+      "sha256": "305862c19374d5c297ddf97a9a5c39daf9fd4d8ffa75dbeec9e148284c8400d7"
+    },
+    "release/current-source-20261109/scripts/run_model_followup.py": {
+      "bytes": 28785,
+      "sha256": "65be05657150afb55ff8f05b2cf8d7601bbb080d43f4a8740ead69c9ddb6e7ca"
+    },
+    "release/current-source-20261109/scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "release/current-source-20261109/tests/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release/current-source-20261109/tests/test_analyze_model_followup.py": {
+      "bytes": 26629,
+      "sha256": "3e384ada40d51b7e8724321694a2c72ddbfeb31d50e6d2d178cbc6a94a19e5c9"
+    },
+    "release/current-source-20261109/tests/test_anonymous_followup_inputs.py": {
+      "bytes": 6818,
+      "sha256": "052dc08ce0870211d33e43aab5df5f71fa2c46fa82e482078f8823fc6ec07818"
+    },
+    "release/current-source-20261109/tests/test_fitting_launcher.py": {
+      "bytes": 18843,
+      "sha256": "22849e5091bb3e93161a540f1819b0d6246ffc33be6248f8be17ce12dfef8c0e"
+    },
+    "release/current-source-20261109/tests/test_fitting_sensitivity.py": {
+      "bytes": 13855,
+      "sha256": "9639c22dcf83a2e3b9ad5f7a5777c6928869d6053bb0a2d55e6fab4e768100c1"
+    },
+    "release/current-source-20261109/tests/test_model_followup.py": {
+      "bytes": 40297,
+      "sha256": "0f8ae7ce4e4e526ff58f01b94a7af0337ef2eb8408b4af7bacb106dabfb3fc96"
+    },
+    "release/current-source-20261109/tests/test_model_followup_coverage.py": {
+      "bytes": 19220,
+      "sha256": "74427a7663e29a160f6d9d0a43f18bb6d22f933eeb5393496f15f44b2c6ad20d"
+    },
+    "release/current-source-20261109/tests/test_model_followup_integration.py": {
+      "bytes": 6724,
+      "sha256": "4d9f7efe49b3190026b39f69b476e89eaa7a6bc92895e7cd84a394138f3fca0a"
+    },
+    "release/current-source-20261109/titansar/__init__.py": {
+      "bytes": 98,
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "release/current-source-20261109/titansar/configs/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release/current-source-20261109/titansar/configs/defaults.py": {
+      "bytes": 5380,
+      "sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
+    },
+    "release/current-source-20261109/titansar/data/__init__.py": {
+      "bytes": 48,
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "release/current-source-20261109/titansar/data/dataset.py": {
+      "bytes": 24742,
+      "sha256": "68150c666fa3f18b0726a63944ae260a9668005fc804e034d642f2e37ad58fa0"
+    },
+    "release/current-source-20261109/titansar/data/earth_analog.py": {
+      "bytes": 11552,
+      "sha256": "caff7f98184968e1c03808d3797b6bf4e2831dd386a92964b4983a0a7d7702fb"
+    },
+    "release/current-source-20261109/titansar/data/sar_processing.py": {
+      "bytes": 24513,
+      "sha256": "2aa65b71cf3454eb140b6040412613dc73e06ee0fcdc68ff910f1a6d1b4b5e6f"
+    },
+    "release/current-source-20261109/titansar/data/vims_processing.py": {
+      "bytes": 9692,
+      "sha256": "c4dbdc178d4961b04abba4831a8f006f9725cc5f009062be2caa0112e40beb50"
+    },
+    "release/current-source-20261109/titansar/evaluation/__init__.py": {
+      "bytes": 53,
+      "sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de"
+    },
+    "release/current-source-20261109/titansar/evaluation/anomaly_scoring.py": {
+      "bytes": 7970,
+      "sha256": "de3c009c6570b3567c6679b44f69d0a9a499955a2d6c7f4e1bcc4e62bf8ecc8a"
+    },
+    "release/current-source-20261109/titansar/evaluation/domain_adaptation.py": {
+      "bytes": 8310,
+      "sha256": "3c76ee7f471e6a1578a4c454ad0f500fdceaa4ab3362dca6c1717260a761a0b6"
+    },
+    "release/current-source-20261109/titansar/evaluation/metrics.py": {
+      "bytes": 14472,
+      "sha256": "d8767548ebf359650cee10c34ac92962b06287794ad5000004afe219176c5485"
+    },
+    "release/current-source-20261109/titansar/evaluation/physics_analysis.py": {
+      "bytes": 12849,
+      "sha256": "aa46efd6ea8b3f7ffca7bc4d896d4e71142d3ca3c93b1afe56bde313ca7c5d6c"
+    },
+    "release/current-source-20261109/titansar/models/__init__.py": {
+      "bytes": 46,
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "release/current-source-20261109/titansar/models/baselines.py": {
+      "bytes": 6238,
+      "sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1"
+    },
+    "release/current-source-20261109/titansar/models/croma_model.py": {
+      "bytes": 14944,
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+    },
+    "release/current-source-20261109/titansar/models/followup.py": {
+      "bytes": 10123,
+      "sha256": "8f6f986efcfd5b5d0f2f231ee50ad592824757a2b32937452cfc064f4aaa7d66"
+    },
+    "release/current-source-20261109/titansar/models/foundation_models.py": {
+      "bytes": 19921,
+      "sha256": "ae9bdfde05ff6ac955e4fa017762337d5ef4e6d40d421ffc89d31b50db077b14"
+    },
+    "release/current-source-20261109/titansar/models/image_training.py": {
+      "bytes": 4667,
+      "sha256": "3474ddf206feea2178da43d973dbfff84e22b7356c140cbc90a663e8d51ad917"
+    },
+    "release/current-source-20261109/titansar/models/probing.py": {
+      "bytes": 26317,
+      "sha256": "75d270bf00e763530a9c686b60ce7ecef53e46d25caf5fec692a18199157e946"
+    },
+    "release/current-source-20261109/titansar/physics/__init__.py": {
+      "bytes": 77,
+      "sha256": "238191d247d47f81397d61550b46a5419250ff52d5394012e47f5546f5f9dbf6"
+    },
+    "release/current-source-20261109/titansar/physics/remapping.py": {
+      "bytes": 12648,
+      "sha256": "ef9558c684f5307bb7c6143e29a1f2116f901ce16ead57c4de6d370be0eb49ae"
+    },
+    "release/current-source-20261109/titansar/reproducibility.py": {
+      "bytes": 4578,
+      "sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05"
     },
     "release/interpretation-20261001/README.md": {
       "bytes": 10710,
@@ -609,6 +859,46 @@
       "bytes": 558126,
       "sha256": "1df555f0f95c16e3fb44243ce7ecca41225e4e588353148f25725c68f1cb4271"
     },
+    "release/titan-followup-20261109/DATA_ACCESS.md": {
+      "bytes": 10361,
+      "sha256": "f56990123cf5ce26fb4426e88dd2f7f5c3f62c7dce6c6bd7ea30233683a5910b"
+    },
+    "release/titan-followup-20261109/NOTICE.md": {
+      "bytes": 3225,
+      "sha256": "cb76c9ca9d9c0ca0b32e75fccd9e788d1f34412532d596f28618654259506aef"
+    },
+    "release/titan-followup-20261109/README.md": {
+      "bytes": 9820,
+      "sha256": "e2b714dcdc79b4290ce0f284204ba8334d9aba58757d47dafe22b79041d3f737"
+    },
+    "release/titan-followup-20261109/SHA256SUMS": {
+      "bytes": 769,
+      "sha256": "6296c7fc3c567fd501ddaa796e6a90bfd70aff4d934deafdf8b4ddae808d1fa9"
+    },
+    "release/titan-followup-20261109/file_index.json": {
+      "bytes": 1475,
+      "sha256": "773261a27cd93456e16a8b5308b0c131c9d36d162cccbf5d6ee0e83b4bbff94a"
+    },
+    "release/titan-followup-20261109/followup-supplement.zip": {
+      "bytes": 4385713,
+      "sha256": "6a6179b76278d7fac55924643a24133d9304deb8a77d1706316e1d171d775eaf"
+    },
+    "release/titan-followup-20261109/initialization-supplement.zip": {
+      "bytes": 35858028,
+      "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486"
+    },
+    "release/titan-followup-20261109/provenance.json": {
+      "bytes": 10695,
+      "sha256": "249a7f7ae7e5ac026d5c571d385b8a046ff3b61d342058b386720c13e822ec51"
+    },
+    "release/titan-followup-20261109/reassessment-supplement.zip": {
+      "bytes": 32559371,
+      "sha256": "7c4a2f80e53b0c7834e526d10a4f334da40d376ba9a5c74f218505f6ec7c8dff"
+    },
+    "release/titan-followup-20261109/scientific-supplement.zip": {
+      "bytes": 49621594,
+      "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d"
+    },
     "release/v1-review-20260908/DATA_LICENSES.md": {
       "bytes": 1886,
       "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
@@ -1014,12 +1304,17 @@
       "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
     }
   },
+  "full_catalog_tile_arrays_included": false,
+  "inventory_file_set_basis": "parent_supplied_tracked_paths",
+  "inventory_status": "final_parent_selected_file_set",
   "packages": {
+    "current_execution_source": "release/current-source-20261109",
     "historical_review": "release/v1-review-20260908",
     "repaired_titan_adaptation": "release/longitude-adaptation-controls-20260930",
     "repaired_titan_auxiliary": "release/longitude-auxiliary-20260929",
     "repaired_titan_frozen": "release/longitude-review-20260929",
-    "repaired_titan_interpretation": "release/interpretation-20261001"
+    "repaired_titan_interpretation": "release/interpretation-20261001",
+    "titan_followup_20261109": "release/titan-followup-20261109"
   },
   "repaired_catalog": {
     "path": "release/longitude-review-20260929/catalogs/titan_catalog.json",
@@ -1041,5 +1336,6 @@
     },
     "scope": "frozen within-Titan source checkout"
   },
-  "tile_arrays_included": false
+  "tile_array_scope": "60 follow-up SAR inspection packets and 37 reassessment SAR/map excerpts; not asserted to be disjoint.",
+  "tile_arrays_included": true
 }

@@ -88,3 +88,95 @@ jobs:
           "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -B \
             verify_reconstruction.py --release-root "$PACKAGE/.." \
             --output "$RUNNER_TEMP/cetus-interpretation-rebuilt"
+      - name: Reconstruct current fitting, coverage and initialization results
+        run: |
+          set -eu
+          export CETUS_PACKAGE="$GITHUB_WORKSPACE/release/titan-followup-20261109"
+          export CETUS_REPLAY_WORK="$RUNNER_TEMP/cetus-followup-reconstruction"
+          export CETUS_PYTHON="$RUNNER_TEMP/cetus-reconstruction-venv/bin/python"
+          test ! -e "$CETUS_REPLAY_WORK"
+          mkdir "$CETUS_REPLAY_WORK"
+          mkdir "$CETUS_REPLAY_WORK/reports"
+          export CUDA_VISIBLE_DEVICES='' PYTHONDONTWRITEBYTECODE=1
+          export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+          "$CETUS_PYTHON" -B - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path, PurePosixPath
+          import stat
+          import zipfile
+
+          package = Path(os.environ['CETUS_PACKAGE']).resolve()
+          work = Path(os.environ['CETUS_REPLAY_WORK']).resolve()
+          pins = {
+              'scientific': '67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d',
+              'followup': '6a6179b76278d7fac55924643a24133d9304deb8a77d1706316e1d171d775eaf',
+              'initialization': 'ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486',
+              'reassessment': '7c4a2f80e53b0c7834e526d10a4f334da40d376ba9a5c74f218505f6ec7c8dff',
+          }
+          counts = {'scientific': 203, 'followup': 84, 'initialization': 19, 'reassessment': 54}
+          for name, expected in pins.items():
+              archive = package / (name + '-supplement.zip')
+              with archive.open('rb') as stream:
+                  assert hashlib.file_digest(stream, 'sha256').hexdigest() == expected, name
+              destination = work / name
+              destination.mkdir()
+              with zipfile.ZipFile(archive) as z:
+                  members = z.infolist()
+                  assert len(members) == counts[name]
+                  assert len({m.filename for m in members}) == len(members)
+                  for member in members:
+                      rel = PurePosixPath(member.filename)
+                      assert not rel.is_absolute() and '..' not in rel.parts
+                      assert str(rel) == member.filename and '\\' not in member.filename
+                      assert not stat.S_ISLNK(member.external_attr >> 16)
+                  z.extractall(destination)
+          PY
+
+          (cd "$CETUS_REPLAY_WORK/scientific" && sha256sum -c SHA256SUMS)
+          (cd "$CETUS_REPLAY_WORK/followup" && sha256sum -c SHA256SUMS)
+          (cd "$CETUS_REPLAY_WORK/initialization" && sha256sum -c SHA256SUMS)
+          # Reassessment has MANIFEST.json, not SHA256SUMS; check.py verifies its members.
+
+          (
+            cd "$CETUS_REPLAY_WORK/scientific"
+            "$CETUS_PYTHON" -B scripts/replay_metrics.py \
+              --output "$CETUS_REPLAY_WORK/reports/scientific.json"
+            "$CETUS_PYTHON" -B scripts/prepare_cvpr_tables.py \
+              --output paper/cvpr2027/tables --check
+          )
+          (
+            cd "$CETUS_REPLAY_WORK/followup/coverage"
+            "$CETUS_PYTHON" -B analyze_sar_coverage.py \
+              --package "$CETUS_PACKAGE/scientific-supplement.zip" \
+              --sha256 67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d \
+              --output "$CETUS_REPLAY_WORK/reports/coverage.json"
+            "$CETUS_PYTHON" -B - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          original = json.loads(Path('results.json').read_text())
+          replayed = json.loads((Path(os.environ['CETUS_REPLAY_WORK']) /
+                                 'reports/coverage.json').read_text())
+          original.pop('execution')
+          replayed.pop('execution')
+          assert original == replayed
+          PY
+          )
+          (
+            cd "$CETUS_REPLAY_WORK/followup/label-support"
+            "$CETUS_PYTHON" -B replay_vote_inputs.py data \
+              --report "$CETUS_REPLAY_WORK/reports/votes.json" \
+              --expect-manifest-sha256 be98e9950e19641889e8e8234a43b3b2913648848407df38796fc58b9e556e69
+          )
+          (
+            cd "$CETUS_REPLAY_WORK/initialization"
+            "$CETUS_PYTHON" -B reconstruct.py \
+              --output "$CETUS_REPLAY_WORK/reports/initialization.json"
+          )
+          (
+            cd "$CETUS_REPLAY_WORK/reassessment"
+            "$CETUS_PYTHON" -B check.py \
+              --initialization-zip "$CETUS_PACKAGE/initialization-supplement.zip" \
+              > "$CETUS_REPLAY_WORK/reports/reassessment.json"
+          )

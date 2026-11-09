@@ -4,21 +4,27 @@ Read [the paper reproduction guide](PAPER_REPRODUCTION.md) for the methods,
 software identities and data routes. The scientific packages retain their
 original bytes.
 
-Read [README.md](README.md), [SOFTWARE.md](SOFTWARE.md) and the README of the
-specific release package before editing or running anything. The September and
-October revision on `revision/repaired-titan-2026` was merged in
-[PR 1](https://github.com/magnaprog/CETUS/pull/1). The documentation revision in
-[PR 2](https://github.com/magnaprog/CETUS/pull/2) is also merged. Continue the
-current main-based review on `revision/prose-recheck-20261005`. Check current
+Maintainers should read [README.md](README.md), [SOFTWARE.md](SOFTWARE.md) and
+the relevant package README before editing or running commands. Check current
 Git and PR state before integration; start subsequent work from updated `main`.
+The September/October release and its earlier documentation revisions retain
+their history. Do not resume an old review branch from a dated instruction.
+
+The [November saved-results package](release/titan-followup-20261109/README.md)
+contains four immutable archives. Read its access inventory, notice and
+provenance before changing the public wrapper. The 90-case initialization
+study and thirty saved epoch-100 evaluations are complete. Later document
+commits do not replace those scientific producers. The separate
+[current source export](release/current-source-20261109/README.md) retains
+its own source manifest and execution contracts. Keep it separate from the
+earlier root runner and from the portable saved-result consumers. Source
+availability does not supply the omitted scientific inputs or private supervision.
 
 The October interpretation package is `release/interpretation-20261001`.
 Its README and source export identify CPU producer `0297c9a` and distinguish
-post hoc analyses from the equal-fold primary results. In TitanSAR-dev,
-`audit/MEMORY_HANDOFF_SECTIONS_2026-10-05.md` records the current paper review;
-earlier handoffs retain their scientific producer identities. That development
-handoff is not included in CETUS. Keep machine-specific continuation paths in
-local memory.
+post hoc analyses from the equal-fold primary results. Development handoffs
+retain their own scientific producer identities and are not public release
+instructions. Keep machine-specific continuation paths outside this repository.
 
 ## Release boundaries
 
@@ -35,7 +41,10 @@ completed 20 feature and 20 analysis jobs. The 51-file adaptation/control
 package was independently rebuilt from saved predictions in the recorded CPU
 runtime. It does not rerun model training. New public adaptation and classical
 execution require the additional protocols described in SOFTWARE.md.
-The release supplies neither tile arrays nor pretrained weights.
+The November archives supply sixty SAR inspection packets and thirty-seven
+SAR/map excerpts; these counts are not a claim of disjoint samples. Full
+catalog pixels, embeddings and model states are not included. The earlier
+frozen runner still requires separately supplied tiles and weights.
 
 Scores measure agreement with an expert geomorphological map informed by SAR.
 Five geographic folds support descriptive spreads. They do not establish
@@ -56,11 +65,20 @@ Every tracked file must appear in `file_index.json` except that index and
 file. Rebuild both inventories after edits and validate the exact file sets,
 hashes and `SOFTWARE_EXPORT.json` source records using
 [the inventory workflow](.github/workflows/release-inventory.yml).
-Its saved-prediction reconstruction uses the pinned runtime from SOFTWARE.md.
+Use each package's documented saved-result entrypoints with the pinned runtime
+from SOFTWARE.md. Keep extracted inputs unchanged and put reports, environments
+and caches outside them. Check archive hashes against the wrapper provenance;
+the reassessment archive uses MANIFEST.json rather than SHA256SUMS. The
+initialization verifier rejects extra files. Retain the older reconstruction
+checks and their documented scope, including the historical private-helper-hash
+test failure.
 The frozen CPU tests cover synthetic inference and cache behavior; they do not
 run pretrained GPU inference or adaptation training.
 
 Write clear prose while preserving technical terms, identifiers, citations,
 units, mathematical notation and necessary code punctuation. Review claims
-against the actual package and its receipts. Record new material decisions in
-the relevant release documentation and local project memory.
+against the actual package and its receipts. Preserve full licenses, source
+credits, copyright holders and truthful AI-assistance disclosures. Anonymous
+review wording inside the four ZIPs describes their original export; explain
+later status and author attribution in the public wrapper without rewriting
+the archives. Record material decisions in the relevant release documentation.

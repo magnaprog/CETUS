@@ -1,0 +1,165 @@
+name: Current source CPU tests
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  current-source-cpu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    env:
+      CUDA_VISIBLE_DEVICES: ""
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONNOUSERSITE: "1"
+      PYTHONPATH: ""
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      NUMEXPR_NUM_THREADS: "1"
+      XFORMERS_DISABLED: "1"
+      CUBLAS_WORKSPACE_CONFIG: ":4096:8"
+      NVIDIA_TF32_OVERRIDE: "0"
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Authenticate and copy source plus scientific metadata fixture
+        run: |
+          cd "$GITHUB_WORKSPACE/release/current-source-20261109"
+          sha256sum -c SHA256SUMS
+          python -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import shutil
+
+          package = Path.cwd()
+          target = Path(os.environ['RUNNER_TEMP']) / 'cetus-current-source'
+          archive = package.parent / 'titan-followup-20261109/scientific-supplement.zip'
+          assert not target.exists()
+          assert archive.stat().st_size == 49621594
+          with archive.open('rb') as stream:
+              assert hashlib.file_digest(stream, 'sha256').hexdigest() == '67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d'
+          manifest = json.loads((package / 'SOURCE_EXPORT.json').read_text())
+          assert manifest['exported_from']['commit'] == '9089214a5a6134a088eed058b02df6e021fe80dc'
+          shutil.copytree(package, target)
+          fixture = target / 'paper/cvpr2027/scientific-supplement.zip'
+          fixture.parent.mkdir(parents=True)
+          shutil.copyfile(archive, fixture)
+          # Tests read small archive metadata directly; no extraction/consumer run.
+          (Path(os.environ['RUNNER_TEMP']) / 'cetus-current-source-reports').mkdir()
+          PY
+
+      - name: Commit the external synthetic test fixture
+        working-directory: ${{ runner.temp }}/cetus-current-source
+        run: |
+          # Synthetic paths still call git_state()/rev-parse HEAD. This local
+          # commit identifies only the CPU test fixture, never a scientific run.
+          git init --initial-branch=synthetic-tests
+          git add -- .
+          git -c user.name='CETUS synthetic tests' \
+            -c user.email='cetus-synthetic-tests@example.invalid' \
+            -c commit.gpgsign=false commit \
+            -m 'Synthetic CPU test fixture; not a scientific producer'
+          test -z "$(git status --porcelain=v1)"
+          git rev-parse HEAD > "$RUNNER_TEMP/cetus-current-source-reports/synthetic-git-head.txt"
+
+      - name: Install isolated CPU dependencies
+        run: |
+          python -m venv "$RUNNER_TEMP/cetus-current-source-venv"
+          SOURCE_PYTHON="$RUNNER_TEMP/cetus-current-source-venv/bin/python"
+          "$SOURCE_PYTHON" -m pip install 'torch>=2.11' torchvision \
+            --index-url https://download.pytorch.org/whl/cpu
+          "$SOURCE_PYTHON" -m pip install \
+            pytest numpy==2.4.4 matplotlib==3.10.9 \
+            scipy==1.17.1 scikit-learn==1.9.0 \
+            joblib==1.5.3 threadpoolctl==3.6.0 narwhals==2.28.0 \
+            typing_extensions timm einops scikit-image PyWavelets
+          "$SOURCE_PYTHON" -m pip check
+          "$SOURCE_PYTHON" -m pip freeze \
+            > "$RUNNER_TEMP/cetus-current-source-reports/pip-freeze.txt"
+
+      - name: Check exact imported source origins and record runtime
+        working-directory: ${{ runner.temp }}/cetus-current-source
+        run: |
+          unset PYTHONPATH TORCH_ALLOW_TF32_CUBLAS_OVERRIDE
+          unset TITANSAR_RUN_MODEL_INTEGRATION TITANSAR_RESNET18_CHECKPOINT TITANSAR_DINO_SOURCE_SPEC
+          "$RUNNER_TEMP/cetus-current-source-venv/bin/python" -B - <<'PY' \
+            > "$RUNNER_TEMP/cetus-current-source-reports/imports.json"
+          import importlib
+          import importlib.metadata
+          import json
+          import sys
+          from pathlib import Path
+
+          root = Path.cwd().resolve()
+          names = ['titansar', 'scripts', 'tests',
+                   'scripts.run_model_followup', 'scripts.model_followup_support',
+                   'scripts.run_finetuning', 'scripts.summarize_review_frozen',
+                   'scripts.run_fitting_sensitivity', 'scripts.launch_fitting_sensitivity',
+                   'scripts.analyze_model_followup', 'scripts.analyze_model_followup_coverage',
+                   'scripts.analyze_sar_coverage']
+          origins = {}
+          for name in names:
+              module = importlib.import_module(name)
+              actual = Path(module.__file__).resolve()
+              stem = root.joinpath(*name.split('.'))
+              expected = stem / '__init__.py' if stem.is_dir() else stem.with_suffix('.py')
+              assert actual == expected.resolve(), (name, actual, expected)
+              origins[name] = str(actual)
+          from scripts import model_followup_support as support
+          source = json.loads(Path('SOURCE_EXPORT.json').read_text())
+          support.verify_source_imports({n: source['files'][n]['current_sha256']
+                                         for n in support.SOURCE_FILES})
+          import torch
+          assert torch.version.cuda is None, 'Expected CPU-only Torch wheels'
+          assert not torch.cuda.is_initialized()
+          versions = {name: importlib.metadata.version(name) for name in
+                      ['torch', 'torchvision', 'numpy', 'scipy', 'scikit-learn',
+                       'joblib', 'threadpoolctl', 'narwhals', 'typing_extensions', 'pytest']}
+          print(json.dumps({'python': sys.version, 'executable': sys.executable,
+                            'versions': versions, 'module_origins': origins,
+                            'cuda_initialized': False}, indent=2))
+          PY
+
+      - name: Run seven focused modules with actual-model tests disabled
+        working-directory: ${{ runner.temp }}/cetus-current-source
+        run: |
+          set -euo pipefail
+          unset PYTHONPATH TORCH_ALLOW_TF32_CUBLAS_OVERRIDE
+          unset TITANSAR_RUN_MODEL_INTEGRATION TITANSAR_RESNET18_CHECKPOINT TITANSAR_DINO_SOURCE_SPEC
+          export MPLCONFIGDIR="$RUNNER_TEMP/cetus-current-source-matplotlib"
+          "$RUNNER_TEMP/cetus-current-source-venv/bin/python" -B -m pytest \
+            tests/test_model_followup.py tests/test_anonymous_followup_inputs.py \
+            tests/test_model_followup_integration.py tests/test_analyze_model_followup.py \
+            tests/test_model_followup_coverage.py tests/test_fitting_sensitivity.py \
+            tests/test_fitting_launcher.py -q -ra \
+            --basetemp="$RUNNER_TEMP/cetus-current-source-test-tmp" \
+            -o cache_dir="$RUNNER_TEMP/cetus-current-source-pytest-cache" \
+            --junitxml="$RUNNER_TEMP/cetus-current-source-reports/focused-tests.xml" \
+            2>&1 | tee "$RUNNER_TEMP/cetus-current-source-reports/focused-tests.log"
+          # Synthetic CPU networks/classifiers are exercised. Three actual-model
+          # cases remain skipped; this job makes no pretrained-model/run claim.
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+          cd "$GITHUB_WORKSPACE/release/current-source-20261109"
+          sha256sum -c SHA256SUMS
+
+      - name: Preserve runtime and test reports, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: current-source-cpu-reports
+          path: ${{ runner.temp }}/cetus-current-source-reports/
+          if-no-files-found: warn

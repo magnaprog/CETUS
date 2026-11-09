@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "titansar"
+version = "0.1.0"
+description = "TitanSAR: ML benchmark for Titan's surface from Cassini SAR"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Kevin Lee"},
+]
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-learn>=1.3",
+    "scikit-image>=0.21",
+    "PyWavelets>=1.4",
+    "matplotlib>=3.7",
+    "rasterio>=1.3",
+    "pyproj>=3.5",
+    "shapely>=2.0",
+    "geopandas>=0.13",
+    "h5py>=3.8",
+    "Pillow>=10.0",
+    "timm>=0.9",
+    "huggingface-hub>=0.16",
+    "einops>=0.6",
+    "tqdm>=4.65",
+    "requests>=2.31",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Optional extras not required to import titansar (planetary SAR data access,
+# extra plotting/config). Install with: pip install -e ".[extras]"
+extras = [
+    "pydar>=0.8",
+    "pdr>=0.7",
+    "opencv-python>=4.8",
+    "umap-learn>=0.5",
+    "seaborn>=0.12",
+    "hydra-core>=1.3",
+    "omegaconf>=2.3",
+]
+
+[tool.setuptools.packages.find]
+include = ["titansar*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

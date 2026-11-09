@@ -144,6 +144,17 @@
       "previous_sha256": "86347f1750497455728c644d0d116faa857ee753ccac772ef100c6f35f4bd4c7",
       "previous_state": "reviewed working tree after import cleanup, before final prose wrap",
       "reason": "Wrap the reviewed compute_mmd docstring without changing words or executable AST. Retain the preceding correction record and its intermediate source hash."
+    },
+    {
+      "change_kind": "maintenance_documentation",
+      "date": "2026-11-09",
+      "new_sha256": "537c1ad8fd86998fba58ec38dd66403a7f6103064f3c02e581d598cd4a94d338",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "1c043bca393a0ac94d0dbdc0e84d0ddf78f04711",
+      "previous_manifest_sha256": "baae7726bb64caca71640e1bacefda57f84228abfecbca971d6611648aa6652b",
+      "previous_sha256": "9f72dd0120ca94c54520df9ac401f89fe377dc056cecea9a42dbdc02cdb46fec",
+      "previous_state": "Parent-selected working documentation before inventory regeneration",
+      "reason": "Document the completed November saved-result studies and separate current execution source package. Preserve the original frozen runner, all scientific producer identities, builder, source hashes and earlier history; no new scientific execution."
     }
   ],
   "excluded": [
@@ -174,7 +185,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated guide with documentation updates",
-      "sha256": "9f72dd0120ca94c54520df9ac401f89fe377dc056cecea9a42dbdc02cdb46fec"
+      "sha256": "537c1ad8fd86998fba58ec38dd66403a7f6103064f3c02e581d598cd4a94d338"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",

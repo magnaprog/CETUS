@@ -5,12 +5,54 @@ CETUS paper and its RPS workshop version. Run identifiers and data routes were
 transcribed from the manuscript at development revision
 `5dedb5d762b40e7c331f1bffa597819691e59c96` and the existing experiment records.
 The fold-number and image-display notes below reflect later paper revisions;
-the earlier run identities remain unchanged.
+the earlier run identities remain unchanged. The dated November route below
+adds the completed follow-up studies without changing the historical results.
 
 Use [SOFTWARE.md](SOFTWARE.md) for runnable installation and reconstruction
 commands. The [README](README.md) distinguishes the original and expanded Titan
 datasets. File names and method IDs below match the software and saved data.
 
+## November 2026 follow-up
+
+The [9 November saved-results release](release/titan-followup-20261109/README.md)
+contains four unchanged numerical archives. They cover the current 23,380-tile
+catalog and 23,246 distinct test tiles. The package's
+[provenance](release/titan-followup-20261109/provenance.json) records archive
+identities, original scientific producers and the source revision used for
+this release. A later documentation or packaging revision does not replace a
+scientific producer.
+
+| Archive | Completed work and recipient reconstruction |
+| --- | --- |
+| Scientific | 315 saved test-prediction vectors: 40 common-LR, 100 SGD, 20 kNN, 75 partial-training and 80 fitting-study vectors. CPU replay checks sixteen fitting settings, twenty contrasts and eleven generated table fragments. It does not refit classifiers or reconstruct gradients. |
+| Follow-up | Coverage calculations for 115 saved vectors; map-vote replay for 2,685 sampled grids and sixty SAR inspection packets. The 2,643 partial test tiles differ from the 2,651 partial catalog tiles plus 34 complete inspection tiles used for map votes. |
+| Initialization | The completed 90-case study comprises thirty DINOv2 readouts, thirty ResNet18 tuning fits and thirty final fits. Thirty DINO feature jobs supplied the readout inputs. The companion reconstructs sixty native test records, 6,000 validation-history rows from sixty CNN fits, ten learning-rate choices and 180 coverage confusion matrices. |
+| Reassessment | Thirty evaluations of saved epoch-100 CNN states, validation-choice checks and thirty-seven SAR/map excerpts. The original validation-selected results remain primary; the epoch-100 comparison involved no retraining or reselection. |
+
+The 8 November records establish completion of the initialization and epoch-100
+studies. This public documentation update adds no scientific run or result.
+Recipient commands reconstruct saved arithmetic on CPU with Python 3.12.3 and
+NumPy 2.4.4. Reports belong outside the extracted packages. They do not
+regenerate GPU probabilities, omitted per-epoch prediction vectors or optimizer
+updates. Validation-removal checks use supplied outcome records and cannot
+independently regenerate every removal score.
+
+The fitting study retains 23 iteration caps and 54 gradient concerns.
+Initialization comparisons reuse examined test regions, and the CNN initializations use
+separate validation choices of learning rate and epoch. Average seeds within
+regions before giving the five regions equal weight; their sample SD is
+descriptive. Neither repeated seeds nor the learning curves establish
+independent regions, convergence, equal optimization adequacy or a causal
+effect of pretraining. Rare Craters support and unsupported-class null summaries
+remain part of the reporting rules.
+
+The [access inventory](release/titan-followup-20261109/DATA_ACCESS.md) separates
+the supplied inspection excerpts from the full pixel collection, embeddings
+and model states, which are not included. The [current execution source](release/current-source-20261109/README.md)
+provides the CNN, matched-DINO and CPU-fitting implementations with their
+[execution contracts](release/current-source-20261109/CONTRACTS.md). It does not
+supply the omitted scientific inputs or historical machine-bound plans. The
+earlier classifier runner remains a separate workflow.
 
 ## Fold numbers in the current papers
 
@@ -36,13 +78,17 @@ coincide. Map-component IDs and seed values are separate identifiers.
 
 ## Image examples in the paper
 
-The current full paper retains the original Earth, Titan and Venus example
-images. Its Earth display now masks the exact fill value written by SNAP
-preprocessing. For each of the five Earth examples, the number of fill pixels
-agrees with the catalog's valid fraction. This agreement distinguishes missing
-pixels from genuine low backscatter values; values below the fill value remain
-visible when valid. Display percentiles use the remaining pixels. The image
-arrays, example choices, model inputs and scientific results are unchanged.
+The revised full paper and CVPR supplement show seventeen examples from the
+original Earth, Titan and Venus collections. They were chosen from 134
+candidates using coverage, contrast and visual inspection. Earth examples
+have at least 99.9% valid pixels; Titan and Venus examples have complete
+coverage. Titan examples also have modal map fractions of at least 80%.
+The Earth Labyrinths image shows Atacama channels, replacing the misnamed
+Wadi Rum example. One invalid pixel remains in the Earth Craters display
+and is masked in magenta with diagonal hatching. The plots preserve the
+underlying arrays and experiment labels; display choices do not change
+training inputs or scores. These illustrations are separate from the enlarged
+Titan catalog's examples chosen by median modal map fraction.
 
 Figure inputs, rendering code and checks belong to the development repository.
 The paper's plots display folds 1 through 5 as described above. Earlier figures
@@ -76,16 +122,19 @@ normalization, so this comparison also includes differences in input handling.
 
 The common logistic regression comparison includes intensity statistics,
 histograms, texture measurements and their concatenation. These provide the
-current classical baselines. The small CNN results belong to the original
+classical baselines. The historical small CNN results belong to the original
 catalog; they cannot be combined with the expanded-catalog table. Predicting
 the most frequent training class is a separate comparison that ignores images.
 
-The development [baseline followup plan](https://github.com/magnaprog/TitanSAR-dev/blob/revision/full-paper-design-20261002/docs/BASELINE_FOLLOWUP.md)
-describes additional experiments using identical encoder architectures and
-inputs, repeated encoder initializations, and a CNN trained on the current
-geographic splits. These experiments have not been run. Existing method
-identifiers and scientific packages retain their bytes. Access to the plan
-requires access to the development repository.
+The October 2 baseline follow-up plan proposed matching encoder architecture
+and inputs, repeating encoder initializations, and training a CNN on the
+current geographic splits. The [November release](release/titan-followup-20261109/README.md)
+provides the completed follow-up: official DINOv2 ViT-B/14 with five random
+states and one pretrained state under matched transforms and C=1 logistic
+regression, and ResNet18 trained from random or ImageNet initialization with
+three seeds per arm. The CNN comparison retains its separate validation-based
+learning-rate choices. These studies do not alter the older `random_init`
+definition, the historical CNN, or any of the five earlier release packages.
 
 ## Software versions for the geographic evaluation
 
@@ -102,6 +151,7 @@ Independent checks covered all 40 fitted estimators, reproduced predicted classe
 
 | Repository | Exact relative path | Contents or purpose |
 | --- | --- | --- |
+| CETUS | `release/titan-followup-20261109/` | Four preserved saved-result archives, CPU reconstruction commands, access inventory, public attribution and original producer identities |
 | CETUS | `release/longitude-review-20260929/` | Catalog, split definitions, original predictions with encoder weights unchanged, fold metrics and source-part counts |
 | CETUS | `release/longitude-auxiliary-20260929/` | Common classifier and classical-feature results, saved predicted classes, scientific specifications, and separate VIMS display metadata with corrected coordinates |
 | CETUS | `release/longitude-adaptation-controls-20260930/` | Completed partial-training and training-substitution predictions, histories and reconstruction code; its README distinguishes saved-prediction reconstruction from new training and specifies additional inputs |
@@ -184,6 +234,26 @@ They remain development-repository records; listing them here does not add
 those files to this repository. The papers retain the underlying scientific
 limits, including Earth label uncertainty and use of Titan training images.
 
+## Earlier results and reconstruction
+
+The expanded frozen comparison includes 100 SGD classifiers and twenty nearest
+neighbor evaluations. The additional classifier package reconstructs seventy
+confusion matrices for 23,246 distinct test tiles. Its VIMS metadata contains
+23,379 numerical samples and one unavailable sample at an image edge; these
+display samples are not classifier inputs or physical composition measurements.
+
+The interpretation package retains the original weighting comparison: CROMA's
+F1 difference after encoder training changes from -0.17 to +0.85 percentage
+points when confusion counts are combined across test regions separately for
+each training seed. Only 1,136 of 23,246 test centers lie within the original
+minimum separation of a reinstated training center. These calculations use
+existing predictions; equal regional weights remain primary.
+
+Historical Earth limits also remain: images named Wadi Rum came from Egypt,
+some Plains images lie offshore, and some training and validation image areas
+overlap. Training-count and preprocessing checks retain those limitations and
+assign no new Earth labels.
+
 ## Package reconstruction and exact software sources
 
 The evaluation software retains scientific code from development revision
@@ -213,8 +283,9 @@ GSHHG shoreline documentation is at [the provider's site](https://www.soest.hawa
 Bengio and Grandvalet's discussion of cross-validation uncertainty is in
 [their JMLR article](https://jmlr.org/papers/v5/grandvalet04a.html).
 
-This repository distributes metadata, predictions and software. Raw radar
-products, processed image arrays and pretrained weights require separate
-access. Internal verification records named above retain their stated access
-limits. Their presence in this guide does not establish geological accuracy,
+This repository distributes metadata, predictions, software and the November
+companions' small SAR/map inspection excerpts. The full processed image
+collection, raw radar products, embeddings and pretrained or fitted model
+weights require separate access. Internal verification records named above
+retain their stated access limits. Their presence in this guide does not establish geological accuracy,
 a universal reproducibility guarantee or access to omitted source data.
