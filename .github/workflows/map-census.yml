@@ -1,0 +1,25 @@
+name: Saved map census
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  reconstruction:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - run: python -m pip install numpy==2.4.4
+      - name: Test the checker and reconstruct all saved counts
+        working-directory: release/map-census-20261109
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          CUDA_VISIBLE_DEVICES: ""
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          set -eu
+          python -B -m unittest -v test_check_counts
+          python -B check_counts.py --output "$RUNNER_TEMP/cetus-map-counts.json"

@@ -54,6 +54,27 @@ provides the CNN, matched-DINO and CPU-fitting implementations with their
 supply the omitted scientific inputs or historical machine-bound plans. The
 earlier classifier runner remains a separate workflow.
 
+## Terrain within each image
+
+The [complete map census](release/map-census-20261109/README.md) supplies all
+23,380 saved map grids, their SAR validity masks and five-fold role assignments.
+The CPU checker reconstructs class and unknown counts under four coverage rules
+for the complete catalog and every training, validation, test and exclusion group.
+It uses saved arrays; original SAR decoding and map sampling are separate checks.
+
+With NumPy installed, run from the companion directory:
+
+```sh
+python3 -B -m unittest -v test_check_counts
+python3 -B check_counts.py --output /absolute/new/path/map-counts.json
+```
+
+Craters occurs in 331 images under complete nominal SAR coverage; 140 images
+have Craters as their modal label. Of the eligible Craters cells, 21.8% occur
+in other modal classes. These counts include overlapping images and describe
+the map's spatial mixtures. Existing image labels and model scores are unchanged.
+The companion README defines the masks, units and interpretation of each count.
+
 ## DOFA band input comparison
 
 The [DOFA companion](release/dofa-band-20261109/README.md) adds the completed
