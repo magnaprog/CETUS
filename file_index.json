@@ -41,6 +41,10 @@
       "bytes": 595,
       "sha256": "ec8637baf02e0e8b290c4073f0491c2d292ac649a4d9979abfd55fa40c69d493"
     },
+    ".github/workflows/map-census.yml": {
+      "bytes": 780,
+      "sha256": "6fc1fdd14c62e2cd1235c508eb8c32d0eadf73a9c4c8fe66f74100f6efe2fc9f"
+    },
     ".github/workflows/release-inventory.yml": {
       "bytes": 8862,
       "sha256": "65405f534c11fb001d0d2d33300bc4a7218f2eb3c805ff292f155eef6d305345"
@@ -70,12 +74,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 20590,
-      "sha256": "cd1db6d7c7324317e36bd49ac7958f02bb06fda195ec29e1917bc3e6bf9ba105"
+      "bytes": 21603,
+      "sha256": "0dd96ab0195cf24c2260aaf0eee2bcf9a7b2a293796cab6090319d799335b031"
     },
     "README.md": {
-      "bytes": 5980,
-      "sha256": "ffe8c3a7cc2951de667be5de856046d367e8653787363aa79089ea2267ce7756"
+      "bytes": 6220,
+      "sha256": "f66ddfb5cf9a559902ba40e07d7750c7a64665d4887045eb899db498ea9b7cb7"
     },
     "SOFTWARE.md": {
       "bytes": 22784,
@@ -877,6 +881,34 @@
       "bytes": 558126,
       "sha256": "1df555f0f95c16e3fb44243ce7ecca41225e4e588353148f25725c68f1cb4271"
     },
+    "release/map-census-20261109/LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "release/map-census-20261109/NOTICE.md": {
+      "bytes": 1518,
+      "sha256": "e33100aae6b375edeab58240d1f1a09739d10dc4aaa8b54145962e62db6c522a"
+    },
+    "release/map-census-20261109/README.md": {
+      "bytes": 8256,
+      "sha256": "2c01926fe1f687aa0d6a19a6eb359a703e92231f785be72c0e64bf2013c6b93f"
+    },
+    "release/map-census-20261109/check_counts.py": {
+      "bytes": 10402,
+      "sha256": "01c2afde55617a34f44fd864b08dd3ba2a01dad4cef6b27e19d2d049a903879f"
+    },
+    "release/map-census-20261109/counts.json": {
+      "bytes": 192001,
+      "sha256": "302f12413c0a92cf0b8152383bf30765adac57d05719ff2609852efdab037126"
+    },
+    "release/map-census-20261109/map_cells.npz": {
+      "bytes": 2279451,
+      "sha256": "d6511e2ffb01cd6fc5f5e78b68f4d9ae7fe7ecf6176fb67aea4f0e756359ab96"
+    },
+    "release/map-census-20261109/test_check_counts.py": {
+      "bytes": 15932,
+      "sha256": "222a8619793d351e23dcac83596234c5fdc58401973bbbce27fc342d7887cae5"
+    },
     "release/titan-followup-20261109/DATA_ACCESS.md": {
       "bytes": 13327,
       "sha256": "23138f72bc5ac16553771337d7803bf62716f1c3e54daf23767f2f10c2ab233d"
@@ -1325,9 +1357,15 @@
   "full_catalog_tile_arrays_included": false,
   "inventory_file_set_basis": "git_ls_files",
   "inventory_status": "complete",
+  "map_census": {
+    "guide": "release/map-census-20261109/README.md",
+    "scientific_source_commit": "1c3b2881820c5673906f45a000cb80575ed8672a",
+    "scope": "All 23,380 saved map grids and SAR validity masks with five-fold role assignments; CPU reconstruction of 26 aggregate groups under four coverage rules."
+  },
   "packages": {
     "current_execution_source": "release/current-source-20261109",
     "historical_review": "release/v1-review-20260908",
+    "map_census_20261109": "release/map-census-20261109",
     "repaired_titan_adaptation": "release/longitude-adaptation-controls-20260930",
     "repaired_titan_auxiliary": "release/longitude-auxiliary-20260929",
     "repaired_titan_frozen": "release/longitude-review-20260929",

@@ -25,6 +25,7 @@ omitted embeddings, model states and historical Earth/Venus images.
 | --- | --- |
 | [Current Titan images](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109) | All 23,380 processed arrays, the anonymous catalog, five geographic divisions, source notices and an offline input verifier. |
 | [November saved results](release/titan-followup-20261109/README.md) | Current Titan fitting study, coverage and map-vote analyses, matched-initialization comparisons, and saved epoch-100 and validation-choice checks. Four archives with separate entrypoints and dependencies. |
+| [Complete map census](release/map-census-20261109/README.md) | All 23,380 map grids, SAR validity masks and geographic roles, with CPU reconstruction of class counts. |
 | [DOFA numeric input comparison](release/dofa-band-20261109/README.md) | Five-region comparison of inputs 13.78 and 3.75, with ten prediction records and CPU reconstruction code. |
 | [Expanded Titan evaluation](release/longitude-review-20260929/README.md) | 23,380 catalog images, including 140 Craters tiles, and five geographic folds; DINOv2, DOFA, CROMA and untrained-ViT results with encoder weights unchanged. The test union contains 23,246 images. |
 | [Additional classifier results](release/longitude-auxiliary-20260929/README.md) | Common logistic regression, classical image features and 70 prediction vectors, with separate VIMS display metadata. |
@@ -77,5 +78,5 @@ export's source history.
 [DATA_LICENSES.md](DATA_LICENSES.md),
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the package notices retain
 source terms and credits. The [November
-notice](release/titan-followup-20261109/NOTICE.md) records authorship and AI
-assistance.
+notice](release/titan-followup-20261109/NOTICE.md) records authorship; the
+[manuscript](https://arxiv.org/abs/2610.07576) contains the assistance disclosure.
