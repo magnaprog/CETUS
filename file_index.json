@@ -104,8 +104,8 @@
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
     },
     "release/current-source-20261109/CONTRACTS.md": {
-      "bytes": 17041,
-      "sha256": "f9430fac49e631b4fe764fe155fb0e0f02e250430d9740aad8a5b26a160241c2"
+      "bytes": 17164,
+      "sha256": "e1c661b2385cb349a9c89a25373952fdd062928d29f2e2f82173f024e24d47ff"
     },
     "release/current-source-20261109/DATA_LICENSES.md": {
       "bytes": 1886,
@@ -116,16 +116,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/current-source-20261109/README.md": {
-      "bytes": 7875,
-      "sha256": "dadc64d812fd262e08be4f436cb09f42a5ed68d85a9a107c22cbdff7b74eb1c1"
+      "bytes": 7998,
+      "sha256": "1f6369b7b0b0b19c8876719ea2673e2b4ea72d64202ecefd8bcad8510b515637"
     },
     "release/current-source-20261109/SHA256SUMS": {
       "bytes": 5764,
-      "sha256": "569fbf54270e020b81491bbeb1d2b4707639ddd2c8739bcf0b7ddb8d62ec943e"
+      "sha256": "8e602aec9b5156f1821c19387cd7e3d4b0ef059fd60b7d79df4dddd7137ba5b0"
     },
     "release/current-source-20261109/SOURCE_EXPORT.json": {
-      "bytes": 49027,
-      "sha256": "2febc5b1bf9921aefaed0190fe18aea13ce72b51e83e35960886e27bec23b0e3"
+      "bytes": 51052,
+      "sha256": "a8e64ba421c350c52f7086a30854524ad2e0aef54a34850ce00c62aba891118f"
     },
     "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -152,8 +152,8 @@
       "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
     },
     "release/current-source-20261109/docs/CVPR2027_DATA_ACCESS.md": {
-      "bytes": 11171,
-      "sha256": "6cf107775ba50e9233286bc065334f99756b97f9d5e603f355d3a09438db77d9"
+      "bytes": 11246,
+      "sha256": "5cf02f62bc7b8edf85f1ce636d0de40cbe738366f20c97d3a13f0afb60a39ceb"
     },
     "release/current-source-20261109/docs/FITTING_SENSITIVITY.md": {
       "bytes": 5615,
@@ -165,7 +165,7 @@
     },
     "release/current-source-20261109/file_index.json": {
       "bytes": 8994,
-      "sha256": "f7022986787255b14ef827ef01342bf4d51ad2f641e6ed9086ca670f304e657d"
+      "sha256": "fb5ac8cab1036cdab09fc5c5aabe2f48b19ef55bb12dcfe8dffaec5eeaea2f67"
     },
     "release/current-source-20261109/licenses/CROMA-LICENSE": {
       "bytes": 1071,

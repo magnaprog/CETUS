@@ -1,6 +1,6 @@
 # CVPR 2027 artifact access
 
-Updated 8 November 2026. The current evaluation uses **23,380 Titan tiles**
+Updated 9 November 2026. The current evaluation uses **23,380 Titan tiles**
 and five geographic folds with **23,246 unique test tiles**. Historical v1
 results use 11,371 Titan tiles, 398 Earth tiles and 2,945 unlabeled Venus
 tiles; their catalogs, splits and results are separate.
@@ -27,12 +27,13 @@ for package identity, commands and numerical qualifications. This companion
 has its own inventory; the table below remains the original ZIP's inventory.
 
 The [anonymous saved-results ZIP](../../titan-followup-20261109/scientific-supplement.zip)
-is present in this checkout and prepared for review; submission or public
-hosting is not established here. It contains 203 files, totals 49,621,594 bytes,
+is publicly available in this repository; an unauthenticated download was
+verified on 9 November 2026. It contains 203 files, totals 49,621,594 bytes,
 and has SHA256
 `67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d`.
+It supplies saved numerical results, with no full imagery or model weights.
 There is no verified public processed-tile endpoint or registered project
-archive DOI. A checksum identifies bytes; it does not supply access to them.
+archive DOI. A checksum identifies bytes; it does not supply omitted artifacts.
 
 Paths in the inventory below are relative to the **extracted ZIP**, not this
 repository. The ZIP's `README.md`, `manifest.json` and `SHA256SUMS` define its
