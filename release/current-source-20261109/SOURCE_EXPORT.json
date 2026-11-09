@@ -148,6 +148,32 @@
       "previous_SOURCE_EXPORT_sha256": "e09e636cff8e960638d2f89477e905b8b915e6945c3c0a004fecd84acacd6a8c",
       "scope": "Public documentation and hosted CPU validation; execution source unchanged.",
       "upstream_python_files_unchanged": 40
+    },
+    {
+      "changed_files": [
+        {
+          "current_sha256": "6cf107775ba50e9233286bc065334f99756b97f9d5e603f355d3a09438db77d9",
+          "path": "docs/CVPR2027_DATA_ACCESS.md",
+          "previous_sha256": "9585c3fb515418d3bd5c63c1a1e5fd50c3a3523dc7f53d238a3f5f8506b3d82f",
+          "reason": "Clarify that sixty CNN validation histories contain 6,000 epoch records; retain the original source identity and public link destinations."
+        },
+        {
+          "current_sha256": "dadc64d812fd262e08be4f436cb09f42a5ed68d85a9a107c22cbdff7b74eb1c1",
+          "path": "README.md",
+          "previous_sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0",
+          "reason": "Describe the count correction and remove the obsolete link-only guide description."
+        },
+        {
+          "current_sha256": "f9430fac49e631b4fe764fe155fb0e0f02e250430d9740aad8a5b26a160241c2",
+          "path": "CONTRACTS.md",
+          "previous_sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568",
+          "reason": "Describe the count correction and remove the obsolete link-only guide description."
+        }
+      ],
+      "date": "2026-11-09",
+      "previous_SOURCE_EXPORT_sha256": "ca49b2a6148899f6e1a1384c737705bf768bec3939d65fc62e14b9a5018731c3",
+      "scope": "Correct the validation-history count in the access guide; execution source and scientific payloads unchanged.",
+      "upstream_python_files_unchanged": 40
     }
   ],
   "entrypoints": [
@@ -172,11 +198,11 @@
   },
   "files": {
     "CONTRACTS.md": {
-      "bytes": 16943,
-      "current_sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568",
+      "bytes": 17041,
+      "current_sha256": "f9430fac49e631b4fe764fe155fb0e0f02e250430d9740aad8a5b26a160241c2",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568",
+      "sha256": "f9430fac49e631b4fe764fe155fb0e0f02e250430d9740aad8a5b26a160241c2",
       "source_commit": null
     },
     "DATA_LICENSES.md": {
@@ -202,11 +228,11 @@
       "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 8039,
-      "current_sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0",
+      "bytes": 7875,
+      "current_sha256": "dadc64d812fd262e08be4f436cb09f42a5ed68d85a9a107c22cbdff7b74eb1c1",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0",
+      "sha256": "dadc64d812fd262e08be4f436cb09f42a5ed68d85a9a107c22cbdff7b74eb1c1",
       "source_commit": null
     },
     "THIRD_PARTY_NOTICES.md": {
@@ -276,10 +302,10 @@
       "source_sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
     },
     "docs/CVPR2027_DATA_ACCESS.md": {
-      "bytes": 11154,
-      "current_sha256": "9585c3fb515418d3bd5c63c1a1e5fd50c3a3523dc7f53d238a3f5f8506b3d82f",
-      "disposition": "guide_link_projection",
-      "sha256": "9585c3fb515418d3bd5c63c1a1e5fd50c3a3523dc7f53d238a3f5f8506b3d82f",
+      "bytes": 11171,
+      "current_sha256": "6cf107775ba50e9233286bc065334f99756b97f9d5e603f355d3a09438db77d9",
+      "disposition": "guide_link_projection_with_count_correction",
+      "sha256": "6cf107775ba50e9233286bc065334f99756b97f9d5e603f355d3a09438db77d9",
       "source_bytes": 11113,
       "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
       "source_path": "docs/CVPR2027_DATA_ACCESS.md",
@@ -797,8 +823,8 @@
   ],
   "guide_projections": {
     "docs/CVPR2027_DATA_ACCESS.md": {
-      "current_bytes": 11154,
-      "current_sha256": "9585c3fb515418d3bd5c63c1a1e5fd50c3a3523dc7f53d238a3f5f8506b3d82f",
+      "current_bytes": 11171,
+      "current_sha256": "6cf107775ba50e9233286bc065334f99756b97f9d5e603f355d3a09438db77d9",
       "link_target_changes": [
         {
           "current_target": "../../titan-followup-20261109/followup-supplement.zip",
@@ -849,7 +875,7 @@
           "source_target": "../audit/CVPR2027_REPRODUCTION_2026-11-08.md"
         }
       ],
-      "projection": "link_targets_only",
+      "projection": "link_targets_and_count_correction",
       "source_bytes": 11113,
       "source_sha256": "3d505935e8b9e0fccbf84dc39b837aae04d75c62a672532575c60f63bce36170"
     },
