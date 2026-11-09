@@ -15,7 +15,7 @@ collection, map raster, feature arrays or encoder weights. The
 identity and scope. The original ZIP remains unchanged.
 
 The [19-file initialization companion](../../titan-followup-20261109/initialization-supplement.zip)
-adds sixty native test records, 6,000 compact CNN validation histories, validation
+adds sixty native test records, sixty CNN validation histories with 6,000 epoch records, validation
 choices and numerical targets for the DINOv2 and ResNet18 comparisons. Its CPU
 checker reconstructs the 90 cells and 180 coverage confusion matrices. Its
 catalog and divisions retain the original anonymous ZIP bytes. It contains no

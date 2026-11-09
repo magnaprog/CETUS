@@ -97,15 +97,15 @@
     },
     "provenance.json": {
       "bytes": 8960,
-      "sha256": "4a0de894c31d9293e57a6316cbcfbec41a7675c4d6f5086915b48ea86646b378"
+      "sha256": "29668a21096a1e5560cdf67ce6275935479031e11ec2955e914fc94d9c504f4f"
     },
     "pyproject.toml": {
       "bytes": 634,
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
     },
     "release/current-source-20261109/CONTRACTS.md": {
-      "bytes": 16943,
-      "sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568"
+      "bytes": 17041,
+      "sha256": "f9430fac49e631b4fe764fe155fb0e0f02e250430d9740aad8a5b26a160241c2"
     },
     "release/current-source-20261109/DATA_LICENSES.md": {
       "bytes": 1886,
@@ -116,16 +116,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/current-source-20261109/README.md": {
-      "bytes": 8039,
-      "sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0"
+      "bytes": 7875,
+      "sha256": "dadc64d812fd262e08be4f436cb09f42a5ed68d85a9a107c22cbdff7b74eb1c1"
     },
     "release/current-source-20261109/SHA256SUMS": {
       "bytes": 5764,
-      "sha256": "e7d5165deeb41eb9ac16cbff7c468c6a6bee0ad7146675db7e8adf61beb80579"
+      "sha256": "569fbf54270e020b81491bbeb1d2b4707639ddd2c8739bcf0b7ddb8d62ec943e"
     },
     "release/current-source-20261109/SOURCE_EXPORT.json": {
-      "bytes": 47508,
-      "sha256": "ca49b2a6148899f6e1a1384c737705bf768bec3939d65fc62e14b9a5018731c3"
+      "bytes": 49027,
+      "sha256": "2febc5b1bf9921aefaed0190fe18aea13ce72b51e83e35960886e27bec23b0e3"
     },
     "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -152,8 +152,8 @@
       "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
     },
     "release/current-source-20261109/docs/CVPR2027_DATA_ACCESS.md": {
-      "bytes": 11154,
-      "sha256": "9585c3fb515418d3bd5c63c1a1e5fd50c3a3523dc7f53d238a3f5f8506b3d82f"
+      "bytes": 11171,
+      "sha256": "6cf107775ba50e9233286bc065334f99756b97f9d5e603f355d3a09438db77d9"
     },
     "release/current-source-20261109/docs/FITTING_SENSITIVITY.md": {
       "bytes": 5615,
@@ -165,7 +165,7 @@
     },
     "release/current-source-20261109/file_index.json": {
       "bytes": 8994,
-      "sha256": "cb258281d07b81777d330db0f7f62ecebc8a9230b50e81990ef930802934310a"
+      "sha256": "f7022986787255b14ef827ef01342bf4d51ad2f641e6ed9086ca670f304e657d"
     },
     "release/current-source-20261109/licenses/CROMA-LICENSE": {
       "bytes": 1071,

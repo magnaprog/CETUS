@@ -28,19 +28,17 @@ image collection is established by this export.
 [CONTRACTS.md](CONTRACTS.md) identifies model assets, source/runtime seals,
 input identities, omitted supervision and test fixtures. The dated source guides
 are [model execution](docs/MODEL_FOLLOWUP.md), [CPU fitting](docs/FITTING_SENSITIVITY.md)
-and [artifact access](docs/CVPR2027_DATA_ACCESS.md). Their prose, scientific
-settings, example code and historical outcomes retain the upstream wording.
-Only link destinations in two guides have been projected to existing public
-files or explicitly qualified sections of CONTRACTS.md; the fitting guide is
-byte-identical. [The destination map](CONTRACTS.md#guide-destination-map) identifies
+and [artifact access](docs/CVPR2027_DATA_ACCESS.md). Scientific settings,
+example code and historical outcomes retain the upstream wording. Links in
+two guides point to existing public files or qualified sections of CONTRACTS.md.
+The access guide also corrects the count to sixty CNN validation histories
+containing 6,000 epoch records. The fitting guide is byte-identical.
+[The destination map](CONTRACTS.md#guide-destination-map) identifies
 every omitted document or script behind those links.
 
 Statements in the dated guides about review status, earlier preparation phases
 and author-side checks describe those records. They are not new validation of
-this package. The CNN study has **60 validation histories containing 6,000
-epoch records**; the access guide's historical phrase “6,000 compact CNN
-validation histories” refers to those epoch records, not 6,000 separate fits.
-Their `/srv/cetus` and `/opt/cetus` locations are examples to
+this package. Their `/srv/cetus` and `/opt/cetus` locations are examples to
 replace. The five historical split files retain the exact generic
 `/tmp/cetus-repaired-titan-catalog.json` provenance field, which is not a public
 download route. The original guide bytes remain identified by their upstream
