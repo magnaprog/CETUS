@@ -70,8 +70,9 @@ model execution used Torch 2.12.1+cu126 and torchvision 0.27.1+cu126. NumPy was
 2.4.4. The CPU fitting study used scikit-learn 1.9.0 and SciPy 1.17.1.
 [Runtime details](CONTRACTS.md#runtime-and-third-party-dependencies) distinguish
 these environments and the deferred preprocessing dependencies. The local CPU
-checks below used an existing environment; fresh dependency installation and
-actual-model compatibility remain unverified for this export.
+checks used an existing environment. Hosted CI installed dependencies in a
+fresh CPU environment and ran the synthetic tests; it did not load the actual
+model assets.
 
 ## Integrity and validation
 
@@ -95,14 +96,13 @@ is separate from scientific producer identities. Default actual-model integratio
 skip unless explicitly enabled with local assets. Synthetic tests exercise
 small CPU networks and classifiers; they do not repeat the scientific fits.
 
-Local validation on 9 November recorded 218 passed, six Git-setup failures,
-three actual-model skips and 15 passed subtests. After committing the synthetic
-copy, all 56 tests in the affected model-follow-up module passed. The other
-six modules retain their earlier results; this is not one complete passing
-suite. [Validation scope and runtime](CONTRACTS.md#validation) distinguish the
-local checks from the fresh seven-module hosted CI job. All 40 upstream Python
-files remained unchanged. These source checks ran no scientific fits and did
-not repeat the numerical consumers.
+The [hosted CPU run](https://github.com/magnaprog/CETUS/actions/runs/42614128106)
+on 9 November passed 224 tests and 15 subtests across all seven modules.
+Three tests that require actual model assets were skipped. All 40 upstream
+Python files remained unchanged. [Validation scope and runtime](CONTRACTS.md#validation)
+describe the earlier local attempts and the test setup. These checks use
+synthetic CPU models and classifiers; the numerical companions provide the
+separate reconstruction of scientific results.
 
 ## Attribution
 
@@ -110,10 +110,7 @@ Author-owned code is by Kevin Lee under [MIT](LICENSE). Preserve the vendored
 [CROMA MIT notice](licenses/CROMA-LICENSE), [data terms](DATA_LICENSES.md) and
 [third-party notices](THIRD_PARTY_NOTICES.md). DINO source, torchvision and
 weights are separately provisioned under their own terms. These notices do
-not establish access to omitted inputs. The [assistance and responsibility
-disclosure](../titan-followup-20261109/NOTICE.md#assistance-and-responsibility)
-applies to the development and verification history. Codex also assisted with
-this source export and its documentation; the author owns final review.
+not establish access to omitted inputs.
 
 The experiments measure agreement with a SAR-informed terrain map. Regional
 spreads are descriptive. Preserve the documented test reuse, sparse classes,

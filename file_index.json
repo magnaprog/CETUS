@@ -39,17 +39,9 @@
       "bytes": 79,
       "sha256": "54c0160c2ad7df6b0d4b083111557c43d8f0afe5b6c2ce733855980ce39766b0"
     },
-    "AGENTS.md": {
-      "bytes": 5079,
-      "sha256": "f428273dff5e51c9e8911a3f18345bbecb68ebb6f83eff7209406c85b258f9b8"
-    },
     "CITATION.cff": {
       "bytes": 575,
       "sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf"
-    },
-    "CLAUDE.md": {
-      "bytes": 423,
-      "sha256": "d5dbf83f0afc9b41695dfec434e9ad3658c81bd608be7ee8cebd84cd3ad07400"
     },
     "CORRECTIONS.md": {
       "bytes": 6013,
@@ -105,15 +97,15 @@
     },
     "provenance.json": {
       "bytes": 8960,
-      "sha256": "8f65d9b573a86211870cb2d27126a7cff2cf723538ebff221506851020452535"
+      "sha256": "4a0de894c31d9293e57a6316cbcfbec41a7675c4d6f5086915b48ea86646b378"
     },
     "pyproject.toml": {
       "bytes": 634,
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
     },
     "release/current-source-20261109/CONTRACTS.md": {
-      "bytes": 16744,
-      "sha256": "40a9f63af4c39782b70ceccebfc78f2e30b7afda8a89da3f42b3d5764a808790"
+      "bytes": 16943,
+      "sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568"
     },
     "release/current-source-20261109/DATA_LICENSES.md": {
       "bytes": 1886,
@@ -124,16 +116,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/current-source-20261109/README.md": {
-      "bytes": 8340,
-      "sha256": "00b0e1072f3648389768a7f5de7f4ceec5cc3cefdc196b9b237706d379c0e9eb"
+      "bytes": 8039,
+      "sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0"
     },
     "release/current-source-20261109/SHA256SUMS": {
       "bytes": 5764,
-      "sha256": "1ec0aecef147b434ca7dcf9e7197582ef02b7a442388052abeabd862bb23bbde"
+      "sha256": "e7d5165deeb41eb9ac16cbff7c468c6a6bee0ad7146675db7e8adf61beb80579"
     },
     "release/current-source-20261109/SOURCE_EXPORT.json": {
-      "bytes": 45680,
-      "sha256": "e09e636cff8e960638d2f89477e905b8b915e6945c3c0a004fecd84acacd6a8c"
+      "bytes": 47508,
+      "sha256": "ca49b2a6148899f6e1a1384c737705bf768bec3939d65fc62e14b9a5018731c3"
     },
     "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -173,7 +165,7 @@
     },
     "release/current-source-20261109/file_index.json": {
       "bytes": 8994,
-      "sha256": "c195c513669c09953adc6362fdc5f23484523af1c7631b065323511336c03f07"
+      "sha256": "cb258281d07b81777d330db0f7f62ecebc8a9230b50e81990ef930802934310a"
     },
     "release/current-source-20261109/licenses/CROMA-LICENSE": {
       "bytes": 1071,
@@ -864,8 +856,8 @@
       "sha256": "f56990123cf5ce26fb4426e88dd2f7f5c3f62c7dce6c6bd7ea30233683a5910b"
     },
     "release/titan-followup-20261109/NOTICE.md": {
-      "bytes": 3225,
-      "sha256": "cb76c9ca9d9c0ca0b32e75fccd9e788d1f34412532d596f28618654259506aef"
+      "bytes": 2304,
+      "sha256": "0d07fca59430dc0aae4fedde74f538cecd5a5eba9a342455d32b1f71289cd8b5"
     },
     "release/titan-followup-20261109/README.md": {
       "bytes": 9820,
@@ -873,11 +865,11 @@
     },
     "release/titan-followup-20261109/SHA256SUMS": {
       "bytes": 769,
-      "sha256": "6296c7fc3c567fd501ddaa796e6a90bfd70aff4d934deafdf8b4ddae808d1fa9"
+      "sha256": "6b714a373341e80cc0d38e186d9239eabbbf5d4d95d93abfa46bce169c647607"
     },
     "release/titan-followup-20261109/file_index.json": {
       "bytes": 1475,
-      "sha256": "773261a27cd93456e16a8b5308b0c131c9d36d162cccbf5d6ee0e83b4bbff94a"
+      "sha256": "fa669d57af7ba2d0923aea2755febea00b675abfca3a4faf690eda795fd3a42a"
     },
     "release/titan-followup-20261109/followup-supplement.zip": {
       "bytes": 4385713,
@@ -1305,8 +1297,8 @@
     }
   },
   "full_catalog_tile_arrays_included": false,
-  "inventory_file_set_basis": "parent_supplied_tracked_paths",
-  "inventory_status": "final_parent_selected_file_set",
+  "inventory_file_set_basis": "git_ls_files",
+  "inventory_status": "complete",
   "packages": {
     "current_execution_source": "release/current-source-20261109",
     "historical_review": "release/v1-review-20260908",

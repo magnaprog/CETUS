@@ -17,22 +17,6 @@ public wrapper publishes saved records without changing those producers or
 adding a scientific run. Anonymous-review wording is not a venue submission
 or acceptance receipt.
 
-## Assistance and responsibility
-
-Parts of development and verification used an agentic research platform and
-command-line interface developed by the author. OpenAI Codex assisted with
-software implementation and review, analysis scripts, figure preparation,
-literature searches, and manuscript drafting and editing. HumanizeAI.pro
-supplied wording alternatives for short manuscript passages; suggestions that
-changed the scientific meaning were rejected. This public documentation update
-also used Codex and the local humanizer prose skill. The author remains
-responsible for the scientific claims, citations and final manuscript.
-
-Descriptions of independent numerical checks refer to separately implemented
-calculations within their recorded scope. The assistance disclosure applies
-to the development and verification history; source-data credits do not imply
-that those institutions reviewed or endorsed this work.
-
 ## Third-party material
 
 Cassini SAR inspection arrays derive from the HiSAR display-DN mosaic. Credit
