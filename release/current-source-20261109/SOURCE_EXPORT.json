@@ -208,6 +208,97 @@
       },
       "scope": "Correct public availability of the saved numerical ZIP; full imagery and model weights remain separate requirements. Execution source and scientific payloads are unchanged.",
       "upstream_python_files_unchanged": 40
+    },
+    {
+      "author_side_inference_extension": {
+        "additional_cases": 12,
+        "additional_regions": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "additional_validation_test_prediction_rows": 112062,
+        "evidence_access": "Receipt hashes identify author-retained records; raw private audits, model states and inference supervision are not included.",
+        "independent_recipient_model_execution_established": false,
+        "native_outputs_exact": true,
+        "new_accuracy_estimate": false,
+        "numerical_review_sha256": "ccbf43589feabf2b5a09feb40beadc1c6343018d15f0ad563dfb9a29b643d58d",
+        "prior_region1_cases": 3,
+        "regions_covered": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "scientific_acceptance_sha256": "e83fe8f1991fe46c71d6e3358c9c48140acebfe2e0bcd108cbaa4eb8efa4699e",
+        "total_cases": 15,
+        "training_repeated": false
+      },
+      "changed_files": [
+        {
+          "current_sha256": "6cbeb2604671a3db76a8546460ba3c439e0878c7e94e378c04028c387390f60c",
+          "path": "README.md",
+          "previous_sha256": "1f6369b7b0b0b19c8876719ea2673e2b4ea72d64202ecefd8bcad8510b515637",
+          "reason": "Route the verified separate Titan image release and distinguish public input verification from fifteen author-side retained-model checks across all five regions; preserve state, source/runtime and training-access limits."
+        },
+        {
+          "current_sha256": "9b0050f2ddd3af94ae38870fe05beef1c8d9854b1737c2942f879aae49c73bce",
+          "path": "CONTRACTS.md",
+          "previous_sha256": "e1c661b2385cb349a9c89a25373952fdd062928d29f2e2f82173f024e24d47ff",
+          "reason": "Route the verified separate Titan image release and distinguish public input verification from fifteen author-side retained-model checks across all five regions; preserve state, source/runtime and training-access limits."
+        },
+        {
+          "current_sha256": "9538e7cf98bc3d138afdf115c994f80c56b7fbe12b9c7c142c2f9edccf89fa0f",
+          "path": "docs/CVPR2027_DATA_ACCESS.md",
+          "previous_sha256": "5cf02f62bc7b8edf85f1ce636d0de40cbe738366f20c97d3a13f0afb60a39ceb",
+          "reason": "Route the verified separate Titan image release and distinguish public input verification from fifteen author-side retained-model checks across all five regions; preserve state, source/runtime and training-access limits."
+        }
+      ],
+      "date": "2026-11-09",
+      "model_execution_or_tests_repeated_for_documentation": false,
+      "previous_SOURCE_EXPORT_sha256": "a8e64ba421c350c52f7086a30854524ad2e0aef54a34850ce00c62aba891118f",
+      "previous_cetus_commit": "460699b0d2a1bffad702ea65f5b6f14beae7a769",
+      "public_image_release": {
+        "assets": [
+          {
+            "bytes": 1312330584,
+            "name": "anonymous-titan-images.tar.zst",
+            "sha256": "83db434978996511bf487add0c0d28b95d6b197a867463570b0fe0b9e7ddabcb",
+            "url": "https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/anonymous-titan-images.tar.zst"
+          },
+          {
+            "bytes": 5271,
+            "name": "RELEASE_NOTICE.md",
+            "sha256": "f6361c94cd52bfc80d058f750e83547e1969253be9ecbb1218c73f3ce5dca412",
+            "url": "https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md"
+          },
+          {
+            "bytes": 181,
+            "name": "SHA256SUMS.release",
+            "sha256": "227b2e96e59208f73f9f048be67db28ae3e45928cb4e4952f03345de369c34dd",
+            "url": "https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/SHA256SUMS.release"
+          }
+        ],
+        "commit": "460699b0d2a1bffad702ea65f5b6f14beae7a769",
+        "recipient_verification": {
+          "assets": 3,
+          "authorization": "Unauthenticated downloads",
+          "date": "2026-11-09",
+          "inference_reproduced": false,
+          "members": 23395,
+          "model_executed": false,
+          "normalization_recomputed": false,
+          "status": "inputs_verified",
+          "tiles": 23380,
+          "unique_test_images": 23246
+        },
+        "tag": "titan-processed-images-20261109",
+        "url": "https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109"
+      },
+      "scope": "Document the verified public image release and all-five-region author-side inference coverage. Scientific source, input bytes, numerical archives, original producer identities and historical receipts are unchanged.",
+      "upstream_python_files_unchanged": 40
     }
   ],
   "entrypoints": [
@@ -232,11 +323,11 @@
   },
   "files": {
     "CONTRACTS.md": {
-      "bytes": 17164,
-      "current_sha256": "e1c661b2385cb349a9c89a25373952fdd062928d29f2e2f82173f024e24d47ff",
+      "bytes": 18503,
+      "current_sha256": "9b0050f2ddd3af94ae38870fe05beef1c8d9854b1737c2942f879aae49c73bce",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "e1c661b2385cb349a9c89a25373952fdd062928d29f2e2f82173f024e24d47ff",
+      "sha256": "9b0050f2ddd3af94ae38870fe05beef1c8d9854b1737c2942f879aae49c73bce",
       "source_commit": null
     },
     "DATA_LICENSES.md": {
@@ -262,11 +353,11 @@
       "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 7998,
-      "current_sha256": "1f6369b7b0b0b19c8876719ea2673e2b4ea72d64202ecefd8bcad8510b515637",
+      "bytes": 8575,
+      "current_sha256": "6cbeb2604671a3db76a8546460ba3c439e0878c7e94e378c04028c387390f60c",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "1f6369b7b0b0b19c8876719ea2673e2b4ea72d64202ecefd8bcad8510b515637",
+      "sha256": "6cbeb2604671a3db76a8546460ba3c439e0878c7e94e378c04028c387390f60c",
       "source_commit": null
     },
     "THIRD_PARTY_NOTICES.md": {
@@ -336,10 +427,10 @@
       "source_sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
     },
     "docs/CVPR2027_DATA_ACCESS.md": {
-      "bytes": 11246,
-      "current_sha256": "5cf02f62bc7b8edf85f1ce636d0de40cbe738366f20c97d3a13f0afb60a39ceb",
+      "bytes": 12647,
+      "current_sha256": "9538e7cf98bc3d138afdf115c994f80c56b7fbe12b9c7c142c2f9edccf89fa0f",
       "disposition": "guide_link_projection_with_count_and_access_corrections",
-      "sha256": "5cf02f62bc7b8edf85f1ce636d0de40cbe738366f20c97d3a13f0afb60a39ceb",
+      "sha256": "9538e7cf98bc3d138afdf115c994f80c56b7fbe12b9c7c142c2f9edccf89fa0f",
       "source_bytes": 11113,
       "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
       "source_path": "docs/CVPR2027_DATA_ACCESS.md",
@@ -857,8 +948,8 @@
   ],
   "guide_projections": {
     "docs/CVPR2027_DATA_ACCESS.md": {
-      "current_bytes": 11246,
-      "current_sha256": "5cf02f62bc7b8edf85f1ce636d0de40cbe738366f20c97d3a13f0afb60a39ceb",
+      "current_bytes": 12647,
+      "current_sha256": "9538e7cf98bc3d138afdf115c994f80c56b7fbe12b9c7c142c2f9edccf89fa0f",
       "link_target_changes": [
         {
           "current_target": "../../titan-followup-20261109/followup-supplement.zip",

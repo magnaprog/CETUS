@@ -12,15 +12,18 @@ CPU reconstruction code. The [current execution source](release/current-source-2
 contains the CNN, matched-DINO and CPU-fitting implementations.
 [SOFTWARE.md](SOFTWARE.md) also describes the earlier classifier runner.
 
-The complete processed image collection, embeddings and model weights are not
-distributed here. The November companions contain small inspection arrays and map
-excerpts. See their [access
-inventory](release/titan-followup-20261109/DATA_ACCESS.md) for the exact contents
-and missing inputs. Source-product links identify upstream data; they do not
-deliver the processed benchmark images.
+The complete current collection of 23,380 processed Titan images is available
+in the [image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109).
+Download the archive, [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
+and checksums together. Unauthenticated download, extraction and verification of
+all images passed on 9 November 2026; no model ran in that input check.
+The [access inventory](release/titan-followup-20261109/DATA_ACCESS.md) distinguishes
+these images from the numerical companions' small inspection arrays and from
+omitted embeddings, model states and historical Earth/Venus images.
 
 | Package | Contents |
 | --- | --- |
+| [Current Titan images](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109) | All 23,380 processed arrays, the anonymous catalog, five geographic divisions, source notices and an offline input verifier. |
 | [November saved results](release/titan-followup-20261109/README.md) | Current Titan fitting study, coverage and map-vote analyses, matched-initialization comparisons, and saved epoch-100 and validation-choice checks. Four archives with separate entrypoints and dependencies. |
 | [Expanded Titan evaluation](release/longitude-review-20260929/README.md) | 23,380 catalog images, including 140 Craters tiles, and five geographic folds; DINOv2, DOFA, CROMA and untrained-ViT results with encoder weights unchanged. The test union contains 23,246 images. |
 | [Additional classifier results](release/longitude-auxiliary-20260929/README.md) | Common logistic regression, classical image features and 70 prediction vectors, with separate VIMS display metadata. |
@@ -44,15 +47,15 @@ expert review; DOFA's checkpoint/input convention remains unresolved.
 For saved-result checks, follow the November package's [CPU
 commands](release/titan-followup-20261109/README.md#reconstruct-saved-results)
 using the recorded Python and NumPy versions. These commands reconstruct
-arithmetic from supplied records. Repeating inference or training requires
-additional source, images, states and runtime inputs. The earlier reproduction
-with encoder weights unchanged and the later model comparisons have separate
-producers and verification scopes.
+arithmetic from supplied records. Image-based runs use the separate image release
+and still require the applicable source, weights, states and runtime inputs.
+The earlier reproduction with encoder weights unchanged and the later model
+comparisons have separate producers and verification scopes.
 
 The current source package documents its input and execution contracts. New
-runs use separately supplied imagery, weights and plans; the numerical
-companions provide the portable saved-result calculations. The reproduction
-guide retains the [earlier checks and metrics](PAPER_REPRODUCTION.md#earlier-results-and-reconstruction).
+runs bind the downloaded images, separately supplied weights and new plans;
+the numerical companions provide the portable saved-result calculations.
+The reproduction guide retains the [earlier checks and metrics](PAPER_REPRODUCTION.md#earlier-results-and-reconstruction).
 
 From the repository root, check file integrity with:
 

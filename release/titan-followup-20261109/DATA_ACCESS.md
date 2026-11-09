@@ -7,10 +7,51 @@ test tiles. Historical v1 results use 11,371 Titan tiles, 398 Earth tiles and
 
 The archives and their exact identities are listed in [README.md](README.md)
 and [provenance.json](provenance.json). They contain small inspection arrays,
-but **the full processed pixel collection is not included**. There is no
-verified public processed-tile endpoint or registered project archive DOI
-supplied here. A checksum identifies bytes; it does not provide access to
-omitted files. Upstream product links below are not benchmark-image downloads.
+but **the full processed pixel collection is not included in those ZIPs**.
+The separate image release below supplies the complete current Titan collection.
+Upstream product links identify its sources; they are not benchmark-image
+downloads. No registered project archive DOI is supplied here.
+
+## Processed Titan images
+
+The [public image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109)
+is tagged `titan-processed-images-20261109` at CETUS commit
+`460699b0d2a1bffad702ea65f5b6f14beae7a769`. Download these three assets:
+
+- [anonymous-titan-images.tar.zst](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/anonymous-titan-images.tar.zst)
+- [RELEASE_NOTICE.md](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
+- [SHA256SUMS.release](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/SHA256SUMS.release)
+
+The image archive is 1,312,330,584 bytes, SHA256
+`83db434978996511bf487add0c0d28b95d6b197a867463570b0fe0b9e7ddabcb`.
+It contains 23,395 regular files, including all 23,380 float32 128-by-128
+image arrays, the anonymous catalog, five divisions, their protocol, notices
+and an offline input verifier. The images preserve the accepted bytes; the
+anonymous catalog and divisions match the public scientific supplement and
+differ from the original producer metadata bytes.
+
+On 9 November 2026, unauthenticated downloads of all three assets matched their
+recorded hashes. Safe extraction and the bundled standard-library verifier
+passed for every image and the complete inventory; the test union contains
+23,246 images. This input verification ran no model, calculated no training
+normalization and did not reproduce inference or training.
+
+Follow the companion notice's download-hash, extraction and verification
+instructions using Bash, Python 3.12, zstd and GNU tar. Keep the three downloads
+and verifier output outside the new empty extraction directory: extra files
+inside it are rejected. The extracted catalog is `data/catalog.json`; images
+are `data/tiles/TILE_ID.npy`, and divisions are
+`data/splits/titan_contiguous_fold_F.json`. The current runner uses
+`inputs.binding_contract = "cvpr2027-anonymous-v1"`; that support is already
+public, superseding the archived README's instruction to apply a source patch.
+The [frozen runner](../../SOFTWARE.md) accepts the same catalog and divisions.
+
+Preserve the companion and the archive's source notices. The companion confirms
+the VIMS/ISS BSD-3-Clause terms from official DOI metadata and retains the map's
+CC BY 4.0 attribution and modification notice. This release supplies no model
+states, feature caches, full masks/label rasters, original mosaics, or historical
+Earth/Venus image collection. The automatically generated GitHub source ZIP
+and tar.gz do not contain the separately attached image archive.
 
 ## Original scientific archive
 
@@ -69,13 +110,19 @@ supply complete scientific inputs or private execution supervision. Preserve
 the original input and source guards when preparing new runs.
 
 Recorded author-side checks validated anonymous inputs across all five folds
-without constructing a model. A separate execution check reproduced validation
-and test outputs for three retained models in Region 1: ResNet18 from scratch,
-ResNet18 from ImageNet, and pretrained DINOv2 with its saved scaler and linear
-classifier. DINOv2 also reproduced training features. Those checks involved no
-fitting or new accuracy estimate and do not establish independent-recipient
-access to the full images, states, source or environment. Private preservation
-does not supply a public download route.
+without constructing a model. Retained-model inference checks now cover all
+five regions: fifteen cases comprising ResNet18 from scratch, ResNet18 from
+ImageNet and pretrained DINOv2 with its saved scaler and linear classifier in
+each region. The earlier three Region 1 cases are complemented by twelve
+Region 2–5 cases, whose 112,062 validation/test prediction rows reproduce the
+native outputs exactly. DINOv2 also reproduced training features. These checks
+performed no fitting and supplied no new accuracy estimate.
+
+The separate public download check establishes access to the current Titan
+images only. The author-side inference checks do not establish independent
+recipient inference or training. Retained model states remain outside the
+public release, and source/runtime specifications and omitted supervision
+remain separate prerequisites.
 
 Titan and Venus inputs are display DN; historical Earth inputs are calibrated
 linear sigma0. Display scaling cannot recover planetary backscatter calibration.

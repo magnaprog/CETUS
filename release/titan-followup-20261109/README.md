@@ -11,6 +11,12 @@ result. The five earlier CETUS packages retain their original bytes and metrics.
 See the [access inventory](DATA_ACCESS.md) for supplied and missing inputs and
 the [notice](NOTICE.md) for attribution, assistance and historical review wording.
 
+The separate [processed-image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109)
+provides all 23,380 current Titan arrays with the matching anonymous catalog and
+five divisions. Its [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
+gives source terms and input-verification commands. Public download and input
+verification passed on 9 November 2026; the four numerical ZIPs below are unchanged.
+
 | Archive | Entries | Compressed bytes | Reconstruction scope |
 | --- | ---: | ---: | --- |
 | [Scientific](scientific-supplement.zip) | 203 | 49,621,594 | 315 saved test-prediction vectors, including 80 fitting cells; sixteen settings, twenty contrasts and eleven table fragments. |
@@ -178,6 +184,6 @@ Embeddings, model states, full label rasters and a complete current training
 environment are absent. The separate [current source package](../current-source-20261109/README.md)
 provides the execution code and documents these prerequisites. For the earlier
 classifier runner, use
-[SOFTWARE.md](../../SOFTWARE.md); it still requires separately supplied images
-and weights. See [DATA_ACCESS.md](DATA_ACCESS.md) for the distinction between
+[SOFTWARE.md](../../SOFTWARE.md) with the images from the separate release and
+upstream weights. See [DATA_ACCESS.md](DATA_ACCESS.md) for the distinction between
 recorded author-side checks and independent-recipient access.

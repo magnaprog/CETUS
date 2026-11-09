@@ -17,13 +17,14 @@ frozen runner described below has separate source and verification records.
 The scientific archive's four reference source files are for inspection and
 must not replace this runner.
 
-The [access inventory](release/titan-followup-20261109/DATA_ACCESS.md) distinguishes
-small inspection arrays from the full image collection. The separate
+The [access inventory](release/titan-followup-20261109/DATA_ACCESS.md) links the
+public release of all 23,380 current Titan images and distinguishes it from the
+numerical companions' small inspection arrays. The separate
 [current source package](release/current-source-20261109/README.md) exports
 the CNN, matched-DINO and CPU-fitting code at development revision `9089214`.
 Its [contracts](release/current-source-20261109/CONTRACTS.md) distinguish
-new execution from historical analysis and identify omitted imagery, weights,
-plans and supervision. Use it in its own environment; both source packages
+new execution from historical analysis and identify separately supplied images,
+weights, plans and supervision. Use it in its own environment; both source packages
 import as `titansar`.
 
 ## Frozen Titan classifier runner
@@ -128,18 +129,25 @@ the checkout. Never bypass the clean-source check to label a run reproducible.
 
 ## Supply the data and weights
 
-The separate public data package is `release/longitude-review-20260929` in
-CETUS. Copy its `catalogs/titan_catalog.json` unchanged to a data directory
-outside the checkout. Put the separately supplied arrays in a directory named
-`tiles` beside that catalog, as `tiles/TILE_ID.npy`. There is no tile-directory
-CLI override. Each tile must match the product, tile ID and NPY file hash in the
-catalog's `tile_sha256` field. Verify that inventory before extraction; the
-runner binds normalization samples but does not hash every raw tile itself.
-There is no tile archive URL or project DOI supplied by this software bundle.
+Download the [current Titan image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109),
+including its [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
+and `SHA256SUMS.release`. The archive `anonymous-titan-images.tar.zst` contains
+23,380 arrays and is 1,312,330,584 bytes, SHA256
+`83db434978996511bf487add0c0d28b95d6b197a867463570b0fe0b9e7ddabcb`.
+Follow the notice to verify the download, extract outside the checkout and run
+the bundled standard-library verifier. Public download and input verification
+passed on 9 November 2026, without model execution or normalization calculation.
 
-Use `splits/titan_contiguous_fold_0.json` through
-`splits/titan_contiguous_fold_4.json` from that same public package. Each split
-binds the sanitized catalog bytes. Do not edit catalog paths inside JSON, mix
+Set `TITAN_DATA` below to the extracted `data` directory. It contains
+`catalog.json`, `tiles/TILE_ID.npy` and `splits/titan_contiguous_fold_F.json`.
+The catalog and five divisions exactly match those in
+`release/longitude-review-20260929`; no renaming or JSON rewrite is needed.
+Each tile must match its catalog `tile_sha256`. The bundled verifier checks
+every array; the runner binds normalization samples but does not hash every
+raw tile itself. There is no tile-directory CLI override.
+
+Use the matching split for fold 0 through 4. Each split binds the sanitized
+catalog bytes. Do not edit catalog paths inside JSON, mix
 historical splits with the repaired catalog, or substitute private caches. The
 sanitized catalog has a different byte hash from the original scientific input;
 new caches and manifests must identify the public input and the public source
@@ -224,8 +232,7 @@ one of `dinov2`, `dofa`, `croma`, `random_init`; FOLD is 0 through 4. Repeat thi
 pair for all twenty model/fold combinations. Each output directory must be new.
 
 ```sh
-PUBLIC_DATA="$PWD/release/longitude-review-20260929"
-TITAN_DATA=/absolute/path/to/supplied/titan
+TITAN_DATA=/absolute/path/to/extracted/titan-images/data
 RESULTS=/absolute/path/to/new/results
 MODEL=dinov2
 FOLD=0
@@ -233,15 +240,15 @@ GPU_ID=0
 CUDA_VISIBLE_DEVICES="$GPU_ID" OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 \
   OPENBLAS_NUM_THREADS=1 CUBLAS_WORKSPACE_CONFIG=:4096:8 \
   python -m scripts.run_probing --within_titan_only --require_real_weights \
-  --titan_catalog "$TITAN_DATA/titan_catalog.json" \
-  --titan_split_manifest "$PUBLIC_DATA/splits/titan_contiguous_fold_${FOLD}.json" \
+  --titan_catalog "$TITAN_DATA/catalog.json" \
+  --titan_split_manifest "$TITAN_DATA/splits/titan_contiguous_fold_${FOLD}.json" \
   --models "$MODEL" --device cuda --batch_size 32 --seeds 0 1 2 3 4 \
   --features_only --output_dir "$RESULTS/features/$MODEL/fold-$FOLD"
 CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 \
   python -m scripts.run_probing \
   --within_titan_only --require_real_weights \
-  --titan_catalog "$TITAN_DATA/titan_catalog.json" \
-  --titan_split_manifest "$PUBLIC_DATA/splits/titan_contiguous_fold_${FOLD}.json" \
+  --titan_catalog "$TITAN_DATA/catalog.json" \
+  --titan_split_manifest "$TITAN_DATA/splits/titan_contiguous_fold_${FOLD}.json" \
   --models "$MODEL" --device cpu --batch_size 32 --seeds 0 1 2 3 4 \
   --cached_features_dir "$RESULTS/features/$MODEL/fold-$FOLD/features" \
   --output_dir "$RESULTS/analysis/$MODEL/fold-$FOLD"
