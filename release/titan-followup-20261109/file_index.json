@@ -1,0 +1,41 @@
+{
+  "files": {
+    "DATA_ACCESS.md": {
+      "bytes": 10361,
+      "sha256": "f56990123cf5ce26fb4426e88dd2f7f5c3f62c7dce6c6bd7ea30233683a5910b"
+    },
+    "NOTICE.md": {
+      "bytes": 3225,
+      "sha256": "cb76c9ca9d9c0ca0b32e75fccd9e788d1f34412532d596f28618654259506aef"
+    },
+    "README.md": {
+      "bytes": 9820,
+      "sha256": "e2b714dcdc79b4290ce0f284204ba8334d9aba58757d47dafe22b79041d3f737"
+    },
+    "followup-supplement.zip": {
+      "bytes": 4385713,
+      "sha256": "6a6179b76278d7fac55924643a24133d9304deb8a77d1706316e1d171d775eaf"
+    },
+    "initialization-supplement.zip": {
+      "bytes": 35858028,
+      "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486"
+    },
+    "provenance.json": {
+      "bytes": 10695,
+      "sha256": "249a7f7ae7e5ac026d5c571d385b8a046ff3b61d342058b386720c13e822ec51"
+    },
+    "reassessment-supplement.zip": {
+      "bytes": 32559371,
+      "sha256": "7c4a2f80e53b0c7834e526d10a4f334da40d376ba9a5c74f218505f6ec7c8dff"
+    },
+    "scientific-supplement.zip": {
+      "bytes": 49621594,
+      "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d"
+    }
+  },
+  "full_catalog_tile_arrays_included": false,
+  "schema_version": "1.0.0",
+  "scope": "Four unchanged saved-result archives and public wrapper documentation",
+  "tile_array_scope": "60 follow-up SAR inspection packets and 37 reassessment SAR/map excerpts; not asserted to be disjoint.",
+  "tile_arrays_included": true
+}

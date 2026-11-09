@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0.0",
+  "package": "titan-followup-20261109",
+  "date": "2026-11-09",
+  "scope": "Public saved-result reconstruction from four unchanged numerical archives; no new scientific execution.",
+  "source_repository": "https://github.com/magnaprog/TitanSAR-dev",
+  "accepted_source_revision": "9089214a5a6134a088eed058b02df6e021fe80dc",
+  "source_revision_role": "Selected archive/documentation source; not a replacement scientific producer or a claim of a new run.",
+  "cetus_base_commit": "1c043bca393a0ac94d0dbdc0e84d0ddf78f04711",
+  "archives": {
+    "scientific-supplement.zip": {
+      "bytes": 49621594,
+      "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d",
+      "archive_entries": 203,
+      "uncompressed_bytes": 63527701,
+      "source_path": "paper/cvpr2027/scientific-supplement.zip",
+      "copied_without_changes": true,
+      "reconstruction_dependencies": []
+    },
+    "followup-supplement.zip": {
+      "bytes": 4385713,
+      "sha256": "6a6179b76278d7fac55924643a24133d9304deb8a77d1706316e1d171d775eaf",
+      "archive_entries": 84,
+      "uncompressed_bytes": 13086745,
+      "source_path": "paper/cvpr2027/followup-supplement.zip",
+      "copied_without_changes": true,
+      "reconstruction_dependencies": [
+        {
+          "archive": "scientific-supplement.zip",
+          "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d",
+          "consumer": "coverage/analyze_sar_coverage.py",
+          "scope": "Coverage only; map-vote replay is standalone."
+        }
+      ]
+    },
+    "initialization-supplement.zip": {
+      "bytes": 35858028,
+      "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+      "archive_entries": 19,
+      "uncompressed_bytes": 46445129,
+      "source_path": "paper/cvpr2027/initialization-supplement.zip",
+      "copied_without_changes": true,
+      "reconstruction_dependencies": [],
+      "lineage_dependencies": [
+        {
+          "archive": "scientific-supplement.zip",
+          "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d",
+          "scope": "Preserved catalog and split bytes; this ZIP is not needed to run reconstruct.py."
+        }
+      ]
+    },
+    "reassessment-supplement.zip": {
+      "bytes": 32559371,
+      "sha256": "7c4a2f80e53b0c7834e526d10a4f334da40d376ba9a5c74f218505f6ec7c8dff",
+      "archive_entries": 54,
+      "uncompressed_bytes": 32881967,
+      "source_path": "paper/cvpr2027/reassessment-supplement.zip",
+      "copied_without_changes": true,
+      "reconstruction_dependencies": [
+        {
+          "archive": "initialization-supplement.zip",
+          "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+          "consumer": "check.py"
+        }
+      ]
+    }
+  },
+  "totals": {
+    "archives": 4,
+    "archive_entries": 360,
+    "archive_bytes": 122424706,
+    "uncompressed_bytes": 155941542,
+    "entry_count_note": "Entries overlap between archives; 360 is not a unique scientific-file count."
+  },
+  "population": {
+    "catalog_tiles": 23380,
+    "unique_test_tiles": 23246,
+    "geographic_folds": 5,
+    "catalog_sha256": "8152226f876e0cb5fad105e0b00a37ef5b62d156d7f6eb3a85b77c549a402967",
+    "catalog_identity_note": "Anonymous catalog bytes differ from original producer inputs; IDs, ordering, labels and paired splits must stay together."
+  },
+  "scientific_producers": {
+    "fitting_80_cpu_cells": {
+      "commit": "56b3356a937021b91152de40a203ccc871db4c59"
+    },
+    "coverage": {
+      "commit": "9559d27ce9ab59edd777e3f38a43d698a049927d",
+      "original_result_sha256": "3170d9e92e88e32812b848df7448df8f04af0aa3cb717acb3978680af3fb8de3"
+    },
+    "map_votes": {
+      "commit": "0085a25456ac417779b8cccffc8aa93c8bcfa39e",
+      "original_result_sha256": "df6830a7abb1e681f5f09a0bf76240332fbec723f8c4a4ec2f22bd9ef82f2387"
+    },
+    "initialization": {
+      "commit": "1f3fc8fe0e831777e3188d70caf2c5450b656333",
+      "completed": {
+        "dino_features": 30,
+        "dino_readouts": 30,
+        "cnn_tuning": 30,
+        "cnn_final": 30,
+        "cnn_epochs": 6000
+      },
+      "primary_report_sha256": "ecf436ba0fb9f4104419b60741375923d9f6b173bfd82989ec8fddb41971296d",
+      "coverage_report_sha256": "c4e94b5dd0be4cc14a99395f365f444245bdbe1ddfa888865935f483a3ee5b94",
+      "independent_numeric_sha256": "ad6cf3ea4efff48f742146ded31818d121f4784f6ffb0ff31b4506fccaba8676",
+      "independent_coverage_sha256": "226506220b0c0dac41a530424ac1baaaa628354e0d8f8770e65b9977079de329",
+      "packaged_source_bindings": {
+        "analysis_plan_sha256": "39b5564622eb1630b2d4779773bf08497d9346b076122d6cbba7b604fdd3233f",
+        "coverage_report_sha256": "c4e94b5dd0be4cc14a99395f365f444245bdbe1ddfa888865935f483a3ee5b94",
+        "primary_report_sha256": "ecf436ba0fb9f4104419b60741375923d9f6b173bfd82989ec8fddb41971296d",
+        "scientific_zip_sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d"
+      }
+    },
+    "epoch100": {
+      "commit": "93ac7868baf199782f1e43c745f68dbd28a2755b",
+      "evaluations": 30,
+      "exact_validation_replays": 30,
+      "training_runs": 0,
+      "execution_acceptance_sha256": "33ba5c4497b10c07402c7fee9c1ece8f102141a491c56b7728a65068aef6cfde",
+      "independent_numerical_review_sha256": "d7f65bfdbd20d2576569f0e2f484c8f1be8342ddeeeac69ce55f17d54d8821e1",
+      "parent_acceptance_sha256": "4fe7f80ebebb8db19a789c4e2e3052ec77ae95e3df0d119b545c31224bcf05bc",
+      "packaged_source_bindings": {
+        "build_source_freeze_sha256": "5e7efaa43694692197c27e8acfdf09ee58717c40c128814ccb578605ce6dc60d",
+        "contract_sha256": "3c12281a98d9912ca81e4f30e6268436bd936278d9ea0dbe317e5cd14bf83d09",
+        "dependency_sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+        "independent_review_sha256": "d7f65bfdbd20d2576569f0e2f484c8f1be8342ddeeeac69ce55f17d54d8821e1",
+        "source_acceptance_sha256": "4fe7f80ebebb8db19a789c4e2e3052ec77ae95e3df0d119b545c31224bcf05bc"
+      }
+    },
+    "earlier_results": {
+      "scope": "Original frozen, common-classifier, classical and partial-training producers retain their existing package records.",
+      "public_packages": [
+        "release/longitude-review-20260929/provenance.json",
+        "release/longitude-auxiliary-20260929/provenance.json",
+        "release/longitude-adaptation-controls-20260930/provenance.json"
+      ]
+    }
+  },
+  "recorded_receipt_identities": {
+    "scientific-supplement": {
+      "source_repository_path": "audit/cvpr2027/scientific-supplement.json",
+      "sha256": "086b6e7ec8228e4f640d6c0a01cfc231b73fee71e16b58e6a7573775cdae2738",
+      "availability": "Identity of a development receipt; the receipt itself is not included in this wrapper."
+    },
+    "followup-results": {
+      "source_repository_path": "audit/cvpr2027/followup-results.json",
+      "sha256": "32332d1f763200ee387f827523afc0ee0810e29196056e03797dd8a30ff22fd3",
+      "availability": "Identity of a development receipt; the receipt itself is not included in this wrapper."
+    },
+    "initialization-results": {
+      "source_repository_path": "audit/cvpr2027/initialization-results.json",
+      "sha256": "3a301c5a8734229cf1d7cd544f82c75202de61c169a56e97cfb2c6e98397d561",
+      "availability": "Identity of a development receipt; the receipt itself is not included in this wrapper."
+    },
+    "reassessment": {
+      "source_repository_path": "audit/cvpr2027/reassessment.json",
+      "sha256": "e4944a6833077619c724dffb2c18a84a460ebd39f00d57c285ed85a1b257c7a7",
+      "availability": "Identity of a development receipt; the receipt itself is not included in this wrapper."
+    },
+    "reassessment-supplement": {
+      "source_repository_path": "audit/cvpr2027/reassessment-supplement.json",
+      "sha256": "f9536612b0a35f0b43435b998615d42d172f6519e6f3ae8dc9cb1fbddeb6e9c2",
+      "availability": "Identity of a development receipt; the receipt itself is not included in this wrapper."
+    }
+  },
+  "reconstruction": {
+    "runtime": {
+      "python": "3.12.3",
+      "numpy": "2.4.4",
+      "device": "CPU"
+    },
+    "entrypoints": {
+      "scientific-supplement.zip": [
+        "scripts/replay_metrics.py",
+        "scripts/prepare_cvpr_tables.py --check"
+      ],
+      "followup-supplement.zip": [
+        "coverage/analyze_sar_coverage.py",
+        "label-support/replay_vote_inputs.py"
+      ],
+      "initialization-supplement.zip": [
+        "reconstruct.py"
+      ],
+      "reassessment-supplement.zip": [
+        "check.py"
+      ]
+    },
+    "recorded_checks": {
+      "scientific": {
+        "saved_test_vectors": 315,
+        "fitting_cells": 80,
+        "settings": 16,
+        "contrasts": 20,
+        "table_fragments": 11
+      },
+      "followup": {
+        "coverage_vectors": 115,
+        "sampled_map_grids": 2685,
+        "sar_inspection_packets": 60
+      },
+      "initialization": {
+        "cells": 90,
+        "native_test_vectors": 60,
+        "compact_history_rows": 6000,
+        "learning_rate_choices": 10,
+        "coverage_confusions": 180
+      },
+      "reassessment": {
+        "epoch100_evaluations": 30,
+        "sar_map_excerpts": 37
+      }
+    },
+    "execution_note": "These counts describe preserved package checks. Writing this wrapper did not execute the numerical consumers.",
+    "limits": [
+      "No inference or training.",
+      "No GPU probability generation or optimizer-update replay.",
+      "Omitted per-epoch prediction vectors prevent regeneration of every validation-removal score.",
+      "No convergence, causal pretraining, independent geological accuracy or complete pipeline guarantee."
+    ]
+  },
+  "availability": {
+    "tile_arrays_included": true,
+    "full_catalog_tile_arrays_included": false,
+    "tile_array_scope": "60 follow-up SAR inspection packets and 37 reassessment SAR/map excerpts; not asserted to be disjoint.",
+    "embeddings_included": false,
+    "model_states_included": false,
+    "full_label_rasters_included": false,
+    "original_mission_products_included": false,
+    "portable_current_training_export_included": false,
+    "training_source_review_status": "Current execution source is supplied separately in release/current-source-20261109; scientific inputs, historical plans and private supervision are not included.",
+    "public_processed_image_endpoint_established": false,
+    "project_archive_doi_supplied": false
+  },
+  "preservation": {
+    "five_earlier_release_packages": "Unchanged",
+    "historical_root_scientific_payloads": "Unchanged",
+    "archive_notices_and_licenses": "Unchanged; NOTICE.md supplies public author attribution and later status."
+  }
+}

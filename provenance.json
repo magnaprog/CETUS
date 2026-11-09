@@ -1,6 +1,7 @@
 {
   "bundle_type": "versioned_scientific_metadata_and_frozen_source",
   "code_included": true,
+  "full_catalog_tile_arrays_included": false,
   "historical_root_provenance": {
     "bundle_type": "anonymous_rps_review_data",
     "catalogs": {
@@ -70,6 +71,24 @@
   },
   "historical_root_scope": "catalogs, splits and results retain historical v1 scientific payload bytes",
   "packages": {
+    "current_execution_source": {
+      "SHA256SUMS_sha256": "1ec0aecef147b434ca7dcf9e7197582ef02b7a442388052abeabd862bb23bbde",
+      "SOURCE_EXPORT_sha256": "e09e636cff8e960638d2f89477e905b8b915e6945c3c0a004fecd84acacd6a8c",
+      "exported_from": {
+        "commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+        "repository": "magnaprog/TitanSAR-dev",
+        "tree": "8e63b400ad214dd6c867879ca1c4701957bae501"
+      },
+      "file_count": 60,
+      "manifest": "release/current-source-20261109/SOURCE_EXPORT.json",
+      "path": "release/current-source-20261109",
+      "scientific_producers": {
+        "later_30_saved_epoch100_evaluations": "93ac7868baf199782f1e43c745f68dbd28a2755b",
+        "original_80_cpu_fits": "56b3356a937021b91152de40a203ccc871db4c59",
+        "original_90_cell_initialization_study": "1f3fc8fe0e831777e3188d70caf2c5450b656333"
+      },
+      "scope": "Separate current execution source for inspection and preparation of new runs; full scientific inputs, historical plans and private supervision are omitted. See the package contracts."
+    },
     "historical_review": {
       "SHA256SUMS_sha256": "e6323d39da98fadd645312041367ee41d6057a7a083478b207869bf0b4738ef7",
       "file_count": 46,
@@ -92,15 +111,89 @@
     "repaired_titan_interpretation": {
       "SHA256SUMS_sha256": "a4eab0a2d502b0815c96581ea9c890103df5f413dd3500fab2e17d19fb7fed4b",
       "path": "release/interpretation-20261001"
+    },
+    "titan_followup_20261109": {
+      "SHA256SUMS_sha256": "6296c7fc3c567fd501ddaa796e6a90bfd70aff4d934deafdf8b4ddae808d1fa9",
+      "accepted_source_revision": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "archives": {
+        "followup-supplement.zip": {
+          "archive_entries": 84,
+          "bytes": 4385713,
+          "copied_without_changes": true,
+          "reconstruction_dependencies": [
+            {
+              "archive": "scientific-supplement.zip",
+              "consumer": "coverage/analyze_sar_coverage.py",
+              "scope": "Coverage only; map-vote replay is standalone.",
+              "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d"
+            }
+          ],
+          "sha256": "6a6179b76278d7fac55924643a24133d9304deb8a77d1706316e1d171d775eaf",
+          "source_path": "paper/cvpr2027/followup-supplement.zip",
+          "uncompressed_bytes": 13086745
+        },
+        "initialization-supplement.zip": {
+          "archive_entries": 19,
+          "bytes": 35858028,
+          "copied_without_changes": true,
+          "lineage_dependencies": [
+            {
+              "archive": "scientific-supplement.zip",
+              "scope": "Preserved catalog and split bytes; this ZIP is not needed to run reconstruct.py.",
+              "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d"
+            }
+          ],
+          "reconstruction_dependencies": [],
+          "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+          "source_path": "paper/cvpr2027/initialization-supplement.zip",
+          "uncompressed_bytes": 46445129
+        },
+        "reassessment-supplement.zip": {
+          "archive_entries": 54,
+          "bytes": 32559371,
+          "copied_without_changes": true,
+          "reconstruction_dependencies": [
+            {
+              "archive": "initialization-supplement.zip",
+              "consumer": "check.py",
+              "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486"
+            }
+          ],
+          "sha256": "7c4a2f80e53b0c7834e526d10a4f334da40d376ba9a5c74f218505f6ec7c8dff",
+          "source_path": "paper/cvpr2027/reassessment-supplement.zip",
+          "uncompressed_bytes": 32881967
+        },
+        "scientific-supplement.zip": {
+          "archive_entries": 203,
+          "bytes": 49621594,
+          "copied_without_changes": true,
+          "reconstruction_dependencies": [],
+          "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d",
+          "source_path": "paper/cvpr2027/scientific-supplement.zip",
+          "uncompressed_bytes": 63527701
+        }
+      },
+      "file_count": 10,
+      "path": "release/titan-followup-20261109",
+      "provenance": "release/titan-followup-20261109/provenance.json",
+      "scope": "Public saved-result reconstruction from four unchanged numerical archives; no new scientific execution.",
+      "totals": {
+        "archive_bytes": 122424706,
+        "archive_entries": 360,
+        "archives": 4,
+        "entry_count_note": "Entries overlap between archives; 360 is not a unique scientific-file count.",
+        "uncompressed_bytes": 155941542
+      }
     }
   },
   "repaired_finetuning_included": true,
-  "repository_status": "Software and five result packages included; see SOFTWARE.md and PAPER_REPRODUCTION.md for scope and reproduction.",
+  "repository_status": "Earlier frozen runner, five historical result packages, the November saved-results wrapper and separate current execution source are included. See SOFTWARE.md, PAPER_REPRODUCTION.md and each package's contracts for scope.",
   "schema_version": "1.1.0",
   "software": {
     "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
     "guide": "SOFTWARE.md",
     "manifest": "SOFTWARE_EXPORT.json"
   },
-  "tile_arrays_included": false
+  "tile_array_scope": "60 follow-up SAR inspection packets and 37 reassessment SAR/map excerpts; not asserted to be disjoint.",
+  "tile_arrays_included": true
 }

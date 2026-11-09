@@ -1,4 +1,32 @@
-# Running the Titan classifiers
+# CETUS software and reconstruction
+
+For the completed November fitting and model-comparison studies, use the
+[saved-results package](release/titan-followup-20261109/README.md). Its four
+archives contain CPU consumers for metrics and eleven tables, coverage,
+map votes, initialization comparisons, and epoch-100/validation checks.
+The [recipient commands](release/titan-followup-20261109/README.md#reconstruct-saved-results)
+use Python 3.12.3 and NumPy 2.4.4 in an external environment, with outputs
+outside the extracted packages. No model library, weights or full image
+collection is needed for those calculations.
+
+The 90-case initialization study and thirty saved epoch-100 evaluations are
+complete. Their archives preserve the original scientific producers and
+reconstruct saved arithmetic; they do not train models, regenerate GPU
+probabilities or supply the omitted per-epoch prediction vectors. The older
+frozen runner described below has separate source and verification records.
+The scientific archive's four reference source files are for inspection and
+must not replace this runner.
+
+The [access inventory](release/titan-followup-20261109/DATA_ACCESS.md) distinguishes
+small inspection arrays from the full image collection. The separate
+[current source package](release/current-source-20261109/README.md) exports
+the CNN, matched-DINO and CPU-fitting code at development revision `9089214`.
+Its [contracts](release/current-source-20261109/CONTRACTS.md) distinguish
+new execution from historical analysis and identify omitted imagery, weights,
+plans and supervision. Use it in its own environment; both source packages
+import as `titansar`.
+
+## Frozen Titan classifier runner
 
 This software calculates features from DINOv2, DOFA, CROMA and an untrained
 ViT, then fits classifiers with the encoder weights unchanged. Scientific code
@@ -17,8 +45,8 @@ were excluded. A subsequent reviewed cleanup removed only the unused `Optional`,
 `np` and `TitanSARConfig` import bindings; function bodies and algorithms are
 unchanged.
 Original `source_sha256` values and scientific run producer identities are retained;
-these corrections do not identify a new scientific run. The versioned `release/`
-packages are unchanged. Original source, guide and manifest bytes remain in CETUS
+these corrections do not identify a new scientific run. The five earlier
+versioned `release/` packages are unchanged. Original source, guide and manifest bytes remain in CETUS
 commit `360eaea532ead477f46906d7ebe0cb5282e8b082`.
 
 The runner calculates image features, trains five linear classifiers per fold
@@ -341,8 +369,10 @@ newly produced classifier results and feature caches. Encoder training also
 needs the five classifier seeds from the same fold and the corresponding
 classifier initialization. Preserve the original private specifications and
 identify new runs by their actual public inputs. This package supplies the
-completed predictions; execution of these additional training commands with
-the public files remains future work.
+completed predictions. The November model comparisons have already run with
+their original inputs and producers; publishing their saved results does not
+make those training commands portable. Execution with the public files still
+needs the separate source, input and environment work described above.
 
 Project code uses the root MIT license. The vendored CROMA implementation has
 its upstream MIT notice in `licenses/CROMA-LICENSE`. Upstream source and weights

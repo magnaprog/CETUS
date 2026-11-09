@@ -1,0 +1,239 @@
+{
+  "bundle_type": "versioned_current_authored_source",
+  "exported_from_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+  "file_count": 60,
+  "files": {
+    "CONTRACTS.md": {
+      "bytes": 16744,
+      "sha256": "40a9f63af4c39782b70ceccebfc78f2e30b7afda8a89da3f42b3d5764a808790"
+    },
+    "DATA_LICENSES.md": {
+      "bytes": 1886,
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "README.md": {
+      "bytes": 8340,
+      "sha256": "00b0e1072f3648389768a7f5de7f4ceec5cc3cefdc196b9b237706d379c0e9eb"
+    },
+    "SOURCE_EXPORT.json": {
+      "bytes": 45680,
+      "sha256": "e09e636cff8e960638d2f89477e905b8b915e6945c3c0a004fecd84acacd6a8c"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "audit/gpu_execution/repaired_splits/titan_contiguous_fold_0.json": {
+      "bytes": 710427,
+      "sha256": "1079b1c63588ee9af674184b7dd6937ef01d3a354c8773e8ee9caad4ab8cc388"
+    },
+    "audit/gpu_execution/repaired_splits/titan_contiguous_fold_1.json": {
+      "bytes": 715458,
+      "sha256": "f9bb93592f5bb9e111118f796c4cdc4e2478cb1ef18f1d61d7044525d0a820d2"
+    },
+    "audit/gpu_execution/repaired_splits/titan_contiguous_fold_2.json": {
+      "bytes": 713935,
+      "sha256": "7862dd95df2eed01d0252a7a37068ee780509d98dd9e0105e1930ad0ffa75610"
+    },
+    "audit/gpu_execution/repaired_splits/titan_contiguous_fold_3.json": {
+      "bytes": 711432,
+      "sha256": "8317384eb1945fc2af628e0051b8181637525d0412c2f2c1b38b7b2967fee9b6"
+    },
+    "audit/gpu_execution/repaired_splits/titan_contiguous_fold_4.json": {
+      "bytes": 704758,
+      "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
+    },
+    "docs/CVPR2027_DATA_ACCESS.md": {
+      "bytes": 11154,
+      "sha256": "9585c3fb515418d3bd5c63c1a1e5fd50c3a3523dc7f53d238a3f5f8506b3d82f"
+    },
+    "docs/FITTING_SENSITIVITY.md": {
+      "bytes": 5615,
+      "sha256": "5401eea0c85ef35214bd7882a212e4776f21c8ac4b344e0040a3708f6dfe2fb3"
+    },
+    "docs/MODEL_FOLLOWUP.md": {
+      "bytes": 28062,
+      "sha256": "8d2dfbae0c79283cb804633dc01800421d5a4d3fd819bbb808948db962907a39"
+    },
+    "licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "pyproject.toml": {
+      "bytes": 1248,
+      "sha256": "04093328c1fb403c43f29cd0f43f8c97dda602c24e15c3773c6062aab50d2470"
+    },
+    "requirements.txt": {
+      "bytes": 561,
+      "sha256": "1d33ac7b3e3df48dd50170e4c65fb83ffd9dd2295bca7822023ded2887283372"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/analyze_model_followup.py": {
+      "bytes": 41406,
+      "sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b"
+    },
+    "scripts/analyze_model_followup_coverage.py": {
+      "bytes": 16003,
+      "sha256": "fd6ff553ce588709bc21928afbc1ebdf218269fdec0c0dbe6e39c74959b6dd48"
+    },
+    "scripts/analyze_sar_coverage.py": {
+      "bytes": 9599,
+      "sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03"
+    },
+    "scripts/launch_fitting_sensitivity.py": {
+      "bytes": 7562,
+      "sha256": "c462e60dc6f11cddd0050cf47975d5b6eeab3fd95ccf173856b58948eee2feb4"
+    },
+    "scripts/model_followup_support.py": {
+      "bytes": 18359,
+      "sha256": "4f8ac453a0b4a87a421d2017ebcb35d06a35bb722a632e2685356bf5ab157712"
+    },
+    "scripts/run_finetuning.py": {
+      "bytes": 25658,
+      "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+    },
+    "scripts/run_fitting_sensitivity.py": {
+      "bytes": 21022,
+      "sha256": "305862c19374d5c297ddf97a9a5c39daf9fd4d8ffa75dbeec9e148284c8400d7"
+    },
+    "scripts/run_model_followup.py": {
+      "bytes": 28785,
+      "sha256": "65be05657150afb55ff8f05b2cf8d7601bbb080d43f4a8740ead69c9ddb6e7ca"
+    },
+    "scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "tests/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/test_analyze_model_followup.py": {
+      "bytes": 26629,
+      "sha256": "3e384ada40d51b7e8724321694a2c72ddbfeb31d50e6d2d178cbc6a94a19e5c9"
+    },
+    "tests/test_anonymous_followup_inputs.py": {
+      "bytes": 6818,
+      "sha256": "052dc08ce0870211d33e43aab5df5f71fa2c46fa82e482078f8823fc6ec07818"
+    },
+    "tests/test_fitting_launcher.py": {
+      "bytes": 18843,
+      "sha256": "22849e5091bb3e93161a540f1819b0d6246ffc33be6248f8be17ce12dfef8c0e"
+    },
+    "tests/test_fitting_sensitivity.py": {
+      "bytes": 13855,
+      "sha256": "9639c22dcf83a2e3b9ad5f7a5777c6928869d6053bb0a2d55e6fab4e768100c1"
+    },
+    "tests/test_model_followup.py": {
+      "bytes": 40297,
+      "sha256": "0f8ae7ce4e4e526ff58f01b94a7af0337ef2eb8408b4af7bacb106dabfb3fc96"
+    },
+    "tests/test_model_followup_coverage.py": {
+      "bytes": 19220,
+      "sha256": "74427a7663e29a160f6d9d0a43f18bb6d22f933eeb5393496f15f44b2c6ad20d"
+    },
+    "tests/test_model_followup_integration.py": {
+      "bytes": 6724,
+      "sha256": "4d9f7efe49b3190026b39f69b476e89eaa7a6bc92895e7cd84a394138f3fca0a"
+    },
+    "titansar/__init__.py": {
+      "bytes": 98,
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "titansar/configs/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "titansar/configs/defaults.py": {
+      "bytes": 5380,
+      "sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
+    },
+    "titansar/data/__init__.py": {
+      "bytes": 48,
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "titansar/data/dataset.py": {
+      "bytes": 24742,
+      "sha256": "68150c666fa3f18b0726a63944ae260a9668005fc804e034d642f2e37ad58fa0"
+    },
+    "titansar/data/earth_analog.py": {
+      "bytes": 11552,
+      "sha256": "caff7f98184968e1c03808d3797b6bf4e2831dd386a92964b4983a0a7d7702fb"
+    },
+    "titansar/data/sar_processing.py": {
+      "bytes": 24513,
+      "sha256": "2aa65b71cf3454eb140b6040412613dc73e06ee0fcdc68ff910f1a6d1b4b5e6f"
+    },
+    "titansar/data/vims_processing.py": {
+      "bytes": 9692,
+      "sha256": "c4dbdc178d4961b04abba4831a8f006f9725cc5f009062be2caa0112e40beb50"
+    },
+    "titansar/evaluation/__init__.py": {
+      "bytes": 53,
+      "sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de"
+    },
+    "titansar/evaluation/anomaly_scoring.py": {
+      "bytes": 7970,
+      "sha256": "de3c009c6570b3567c6679b44f69d0a9a499955a2d6c7f4e1bcc4e62bf8ecc8a"
+    },
+    "titansar/evaluation/domain_adaptation.py": {
+      "bytes": 8310,
+      "sha256": "3c76ee7f471e6a1578a4c454ad0f500fdceaa4ab3362dca6c1717260a761a0b6"
+    },
+    "titansar/evaluation/metrics.py": {
+      "bytes": 14472,
+      "sha256": "d8767548ebf359650cee10c34ac92962b06287794ad5000004afe219176c5485"
+    },
+    "titansar/evaluation/physics_analysis.py": {
+      "bytes": 12849,
+      "sha256": "aa46efd6ea8b3f7ffca7bc4d896d4e71142d3ca3c93b1afe56bde313ca7c5d6c"
+    },
+    "titansar/models/__init__.py": {
+      "bytes": 46,
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "titansar/models/baselines.py": {
+      "bytes": 6238,
+      "sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1"
+    },
+    "titansar/models/croma_model.py": {
+      "bytes": 14944,
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+    },
+    "titansar/models/followup.py": {
+      "bytes": 10123,
+      "sha256": "8f6f986efcfd5b5d0f2f231ee50ad592824757a2b32937452cfc064f4aaa7d66"
+    },
+    "titansar/models/foundation_models.py": {
+      "bytes": 19921,
+      "sha256": "ae9bdfde05ff6ac955e4fa017762337d5ef4e6d40d421ffc89d31b50db077b14"
+    },
+    "titansar/models/image_training.py": {
+      "bytes": 4667,
+      "sha256": "3474ddf206feea2178da43d973dbfff84e22b7356c140cbc90a663e8d51ad917"
+    },
+    "titansar/models/probing.py": {
+      "bytes": 26317,
+      "sha256": "75d270bf00e763530a9c686b60ce7ecef53e46d25caf5fec692a18199157e946"
+    },
+    "titansar/physics/__init__.py": {
+      "bytes": 77,
+      "sha256": "238191d247d47f81397d61550b46a5419250ff52d5394012e47f5546f5f9dbf6"
+    },
+    "titansar/physics/remapping.py": {
+      "bytes": 12648,
+      "sha256": "ef9558c684f5307bb7c6143e29a1f2116f901ce16ead57c4de6d370be0eb49ae"
+    },
+    "titansar/reproducibility.py": {
+      "bytes": 4578,
+      "sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05"
+    }
+  }
+}
