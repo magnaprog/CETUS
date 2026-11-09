@@ -207,8 +207,11 @@ history and warnings remain in retained private receipts.
 The actual imported runtime was Python 3.12.3, Torch 2.15.0+cpu,
 torchvision 0.29.2+cpu, NumPy 2.4.4, SciPy 1.17.1 and scikit-learn 1.9.0;
 pytest was 9.2.0. Imported library versions agree with distribution metadata.
-SOURCE_EXPORT.json binds the receipts. Hosted CI runs all seven modules
-afresh; no hosted result is included in this local validation record.
+SOURCE_EXPORT.json binds the receipts. The subsequent
+[hosted run](https://github.com/magnaprog/CETUS/actions/runs/42614128106)
+installed a fresh CPU environment and passed all seven modules: 224 tests
+and 15 subtests, with three actual-model skips. This is a separate result
+from the local attempts above; the Python sources are identical.
 
 For a new validation, first check SHA256SUMS and file_index.json in the source
 package. Use a fresh external temporary copy with an isolated environment;

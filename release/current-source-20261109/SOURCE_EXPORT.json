@@ -13,8 +13,8 @@
     "current_authored_source_matches_tested_copies": true,
     "date": "2026-11-09",
     "evidence_access": "Hashes identify author-retained local logs/receipts; raw records are not included in this public source package.",
-    "hosted_ci": "Separate fresh seven-module job configured; result not evaluated in this amendment",
-    "initial_export_record": "validation_at_export retains the initial static-only freeze, before the attempts below",
+    "hosted_ci": "Later hosted results appear in hosted_validation; the local attempts retain their separate outcomes.",
+    "initial_export_record": "validation_at_export retains the initial source inspection before the local tests",
     "local_checks": [
       {
         "failed": 6,
@@ -105,7 +105,7 @@
       ],
       "date": "2026-11-09",
       "previous_SOURCE_EXPORT_sha256": "c3e5616682e20ee88f5e03c1d415fb8bf73a8e8db8eed3efd15f69d315650e33",
-      "scope": "Parent-authorized local validation amendment; no upstream source, guide, fixture or notice changes",
+      "scope": "Local validation amendment; no upstream source, guide, fixture or notice changes",
       "upstream_python_files_unchanged": 40
     },
     {
@@ -126,7 +126,27 @@
       "date": "2026-11-09",
       "imported_runtime_receipt_sha256": "0f132d70c24602280d00fb0da64ea016b6a9d4c465e949e99893693d85813103",
       "previous_SOURCE_EXPORT_sha256": "e4e892dc75c319104fd8ac0458c593bf35c9eb8229a61370a6c8b33924529869",
-      "scope": "Parent-authorized concise validation wording and actual imported-runtime evidence; no upstream code changes",
+      "scope": "Concise validation wording and actual imported-runtime evidence; no upstream code changes",
+      "upstream_python_files_unchanged": 40
+    },
+    {
+      "changed_files": [
+        {
+          "current_sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0",
+          "path": "README.md",
+          "previous_sha256": "00b0e1072f3648389768a7f5de7f4ceec5cc3cefdc196b9b237706d379c0e9eb",
+          "reason": "Public documentation cleanup and final hosted CPU results."
+        },
+        {
+          "current_sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568",
+          "path": "CONTRACTS.md",
+          "previous_sha256": "40a9f63af4c39782b70ceccebfc78f2e30b7afda8a89da3f42b3d5764a808790",
+          "reason": "Public documentation cleanup and final hosted CPU results."
+        }
+      ],
+      "date": "2026-11-09",
+      "previous_SOURCE_EXPORT_sha256": "e09e636cff8e960638d2f89477e905b8b915e6945c3c0a004fecd84acacd6a8c",
+      "scope": "Public documentation and hosted CPU validation; execution source unchanged.",
       "upstream_python_files_unchanged": 40
     }
   ],
@@ -152,11 +172,11 @@
   },
   "files": {
     "CONTRACTS.md": {
-      "bytes": 16744,
-      "current_sha256": "40a9f63af4c39782b70ceccebfc78f2e30b7afda8a89da3f42b3d5764a808790",
+      "bytes": 16943,
+      "current_sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "40a9f63af4c39782b70ceccebfc78f2e30b7afda8a89da3f42b3d5764a808790",
+      "sha256": "c69c2150647ddc09c7e70b79064c1f23e954f31e5bc0eea6f546a8c10e1fb568",
       "source_commit": null
     },
     "DATA_LICENSES.md": {
@@ -182,11 +202,11 @@
       "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 8340,
-      "current_sha256": "00b0e1072f3648389768a7f5de7f4ceec5cc3cefdc196b9b237706d379c0e9eb",
+      "bytes": 8039,
+      "current_sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "00b0e1072f3648389768a7f5de7f4ceec5cc3cefdc196b9b237706d379c0e9eb",
+      "sha256": "c9c2f387cb61f29e1b3dbc708afd9235779838271a753a49e99aad2a61a3b0a0",
       "source_commit": null
     },
     "THIRD_PARTY_NOTICES.md": {
@@ -882,6 +902,32 @@
     }
   },
   "historical_validator_limit": "Full-grid and coverage consumers retain original catalog/split/receipt/path guards; not a new anonymous-grid admission route.",
+  "hosted_validation": {
+    "actual_model_assets_used": false,
+    "date": "2026-11-09",
+    "fresh_cpu_environment": true,
+    "passed": 224,
+    "runs": [
+      {
+        "conclusion": "success",
+        "id": 42614128106,
+        "log_sha256": "e3baa99db4b91c18abfaf0d653d759d74d31a371c4ed55a07a8b695469dfba6b",
+        "url": "https://github.com/magnaprog/CETUS/actions/runs/42614128106"
+      },
+      {
+        "conclusion": "success",
+        "id": 42614105823,
+        "log_sha256": "233749cfb3ee4a4d690dd06240dfaf9153e7cc194cf297e2ca18042104d3ce9a",
+        "url": "https://github.com/magnaprog/CETUS/actions/runs/42614105823"
+      }
+    ],
+    "scientific_fits_run": false,
+    "seven_modules_in_one_run": true,
+    "skipped": 3,
+    "source_commit": "3b11c73deeb4a42eb7b715577a396426e3ff5b85",
+    "subtests_passed": 15,
+    "warnings": 6
+  },
   "integrity_policy": {
     "checksums": "All files except SHA256SUMS, including file_index.json and SOURCE_EXPORT.json.",
     "file_index": "All files except file_index.json and SHA256SUMS.",
@@ -911,7 +957,7 @@
     "models_or_scientific_fits_run": false,
     "numerical_consumers_repeated": false,
     "project_imports_run": false,
-    "runtime_validation": "Pending parent review",
+    "runtime_validation": "Not executed at the initial source export",
     "source_inspection_only": true,
     "tests_run": false
   }

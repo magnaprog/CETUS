@@ -72,8 +72,8 @@
   "historical_root_scope": "catalogs, splits and results retain historical v1 scientific payload bytes",
   "packages": {
     "current_execution_source": {
-      "SHA256SUMS_sha256": "1ec0aecef147b434ca7dcf9e7197582ef02b7a442388052abeabd862bb23bbde",
-      "SOURCE_EXPORT_sha256": "e09e636cff8e960638d2f89477e905b8b915e6945c3c0a004fecd84acacd6a8c",
+      "SHA256SUMS_sha256": "e7d5165deeb41eb9ac16cbff7c468c6a6bee0ad7146675db7e8adf61beb80579",
+      "SOURCE_EXPORT_sha256": "ca49b2a6148899f6e1a1384c737705bf768bec3939d65fc62e14b9a5018731c3",
       "exported_from": {
         "commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
         "repository": "magnaprog/TitanSAR-dev",
@@ -113,7 +113,7 @@
       "path": "release/interpretation-20261001"
     },
     "titan_followup_20261109": {
-      "SHA256SUMS_sha256": "6296c7fc3c567fd501ddaa796e6a90bfd70aff4d934deafdf8b4ddae808d1fa9",
+      "SHA256SUMS_sha256": "6b714a373341e80cc0d38e186d9239eabbbf5d4d95d93abfa46bce169c647607",
       "accepted_source_revision": "9089214a5a6134a088eed058b02df6e021fe80dc",
       "archives": {
         "followup-supplement.zip": {
