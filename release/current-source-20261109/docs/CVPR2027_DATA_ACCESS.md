@@ -31,9 +31,20 @@ is publicly available in this repository; an unauthenticated download was
 verified on 9 November 2026. It contains 203 files, totals 49,621,594 bytes,
 and has SHA256
 `67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d`.
-It supplies saved numerical results, with no full imagery or model weights.
-There is no verified public processed-tile endpoint or registered project
-archive DOI. A checksum identifies bytes; it does not supply omitted artifacts.
+It supplies saved numerical results, with no full imagery or model weights
+inside that ZIP. All 23,380 current Titan arrays are now separately available
+in the [processed-image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109).
+Its [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
+gives source terms and extraction/verification commands. The image archive is
+1,312,330,584 bytes, SHA256
+`83db434978996511bf487add0c0d28b95d6b197a867463570b0fe0b9e7ddabcb`.
+Unauthenticated downloads of all three release assets matched their hashes on
+9 November 2026. Safe extraction and the bundled standard-library verifier
+passed for 23,395 regular files and all 23,380 images, with 23,246 unique test
+images. No model, normalization calculation or training ran in that check.
+See the [image access instructions](../../titan-followup-20261109/DATA_ACCESS.md#processed-titan-images)
+for all three downloads and the distinction from omitted states and source
+products. No registered project archive DOI is supplied here.
 
 Paths in the inventory below are relative to the **extracted ZIP**, not this
 repository. The ZIP's `README.md`, `manifest.json` and `SHA256SUMS` define its
@@ -75,16 +86,21 @@ including their hashes, ordered labels, role counts and training normalization.
 [The model guide](MODEL_FOLLOWUP.md) specifies the field and directory layout.
 This input check did not construct or execute a model. The existing numerical
 ZIPs still omit the full imagery and model states; their contents and scope
-are unchanged. No public processed-image download is established by this check.
+are unchanged. The separate public image release supplies the arrays beside
+`data/catalog.json`, with matching `data/splits/titan_contiguous_fold_F.json`.
+The anonymous selector is already implemented in the public source; the image
+archive README's older patch instruction is superseded.
 
-A subsequent [execution check](../CONTRACTS.md#historical-execution-records)
-uses a fresh extraction of that bundle on the author's server. Three retained
-models reproduce their validation and test outputs exactly: ResNet18 from
-scratch, ResNet18 from ImageNet and pretrained DINOv2 with its saved scaler and
-linear classifier. The cases cover Region 1 and retain their original GPU
-devices. DINOv2 also reproduces its training features without fitting.
-Independent recipients still need access to the full image bundle, usable
-source, environment and retained states.
+The author-side [retained-model checks](../CONTRACTS.md#historical-execution-records)
+now cover fifteen cases across all five regions: ResNet18 from scratch,
+ResNet18 from ImageNet and pretrained DINOv2 with its saved scaler and linear
+classifier in each region. The earlier three Region 1 cases are extended by
+twelve Region 2–5 cases, whose 112,062 validation/test prediction rows match
+native outputs exactly. DINOv2 also reproduces training features. No fitting
+or new accuracy estimate occurred. These checks are separate from public image
+download/input verification. Independent-recipient inference or training is
+not established. New runs need usable source/runtime specifications and model
+assets; replay of the retained models also needs their unpublished states.
 
 ## Supported reconstruction
 
@@ -143,6 +159,7 @@ The recorded storage decision retains original Sentinel ZIPs and the Venus
 mosaic on the GPU server and requires new checkpoints to remain there.
 Older local checkpoint archives are historical preservation copies, not public
 distribution. This access inventory neither changes that decision nor supplies
-a route to private retained assets. Exact processed images, masks/rasters,
-features, weights, a complete training release and its environment remain
-separate access or reproduction requirements.
+a route to private retained assets. The separate release supplies exact current
+Titan processed images; historical Earth/Venus arrays, full masks/rasters,
+features, weights, retained states, a complete training release and its
+environment remain separate access or reproduction requirements.

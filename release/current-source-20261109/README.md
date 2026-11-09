@@ -8,13 +8,17 @@ anonymous-input contract and output-directory protection. It contains all 23
 source metadata, three guides and the required notices. The earlier CETUS root
 runner has a separate source identity and remains unchanged.
 
-Complete imagery, feature caches, weights, trained states and historical
-machine-bound plans are absent. Source availability does not establish a
-turnkey historical run or independent-recipient model reproduction. The four
+This source package omits imagery, feature caches, weights, trained states and
+historical machine-bound plans. All 23,380 current Titan images are available
+separately in the [processed-image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109),
+with a [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
+for attribution and extraction. Unauthenticated download and complete input
+verification passed on 9 November 2026, without model execution. Source and
+image availability do not establish a turnkey historical run or
+independent-recipient model reproduction. The four
 [numerical companions](../titan-followup-20261109/README.md) provide the separate
 portable saved-result workflow. Their [access inventory](../titan-followup-20261109/DATA_ACCESS.md)
-states which inputs are supplied. No public endpoint for the complete processed
-image collection is established by this export.
+states which inputs are supplied and which prerequisites remain separate.
 
 | Entry surface | Included implementation | Execution prerequisite or limit |
 | --- | --- | --- |
@@ -33,7 +37,10 @@ example code and historical outcomes retain the upstream wording. Links in
 two guides point to existing public files or qualified sections of CONTRACTS.md.
 The access guide also corrects the count to sixty CNN validation histories
 containing 6,000 epoch records and records verified public access to the saved
-numerical ZIP. Full imagery and model weights remain separate requirements.
+numerical ZIP and the separate full current Titan image release. It also records
+fifteen author-side retained-model checks across all five regions; these are
+separate from recipient input verification. Model states remain outside the
+public release.
 The fitting guide is byte-identical.
 [The destination map](CONTRACTS.md#guide-destination-map) identifies
 every omitted document or script behind those links.

@@ -4,8 +4,8 @@
   "file_count": 60,
   "files": {
     "CONTRACTS.md": {
-      "bytes": 17164,
-      "sha256": "e1c661b2385cb349a9c89a25373952fdd062928d29f2e2f82173f024e24d47ff"
+      "bytes": 18503,
+      "sha256": "9b0050f2ddd3af94ae38870fe05beef1c8d9854b1737c2942f879aae49c73bce"
     },
     "DATA_LICENSES.md": {
       "bytes": 1886,
@@ -16,12 +16,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 7998,
-      "sha256": "1f6369b7b0b0b19c8876719ea2673e2b4ea72d64202ecefd8bcad8510b515637"
+      "bytes": 8575,
+      "sha256": "6cbeb2604671a3db76a8546460ba3c439e0878c7e94e378c04028c387390f60c"
     },
     "SOURCE_EXPORT.json": {
-      "bytes": 51052,
-      "sha256": "a8e64ba421c350c52f7086a30854524ad2e0aef54a34850ce00c62aba891118f"
+      "bytes": 55736,
+      "sha256": "d1eb6b4031e96a454218be62ee5d1233daa6847b2af9c22f1170aaf940123bc2"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -48,8 +48,8 @@
       "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
     },
     "docs/CVPR2027_DATA_ACCESS.md": {
-      "bytes": 11246,
-      "sha256": "5cf02f62bc7b8edf85f1ce636d0de40cbe738366f20c97d3a13f0afb60a39ceb"
+      "bytes": 12647,
+      "sha256": "9538e7cf98bc3d138afdf115c994f80c56b7fbe12b9c7c142c2f9edccf89fa0f"
     },
     "docs/FITTING_SENSITIVITY.md": {
       "bytes": 5615,

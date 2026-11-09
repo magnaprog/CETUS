@@ -64,16 +64,16 @@
       "sha256": "06148eebe018eaae4dc2abf9e0a2c0ef87106117b1707884a084528f570c1990"
     },
     "README.md": {
-      "bytes": 5126,
-      "sha256": "d1a1792769aff673c30b28bb6f4bf44e5a6783e094d2ec676957f57f435b8acf"
+      "bytes": 5734,
+      "sha256": "92d1075a1064ce2d37a506f275fe91320fe8bf1b8b9f538b983daab73e5289e2"
     },
     "SOFTWARE.md": {
-      "bytes": 22267,
-      "sha256": "537c1ad8fd86998fba58ec38dd66403a7f6103064f3c02e581d598cd4a94d338"
+      "bytes": 22784,
+      "sha256": "698da37624c69e51a71c0405777350f33702ce5b0ecb03aa716f44462fa85e4c"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 19872,
-      "sha256": "b34820dff62c0390c6dc9833e187bd2a5db33936732dd90d55a99ca1019c0060"
+      "bytes": 20658,
+      "sha256": "d5a768a3f1ff1e73d2a9b86f56e53d1b9ee5884b5e5f245bb872f9937ca549cf"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -104,8 +104,8 @@
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
     },
     "release/current-source-20261109/CONTRACTS.md": {
-      "bytes": 17164,
-      "sha256": "e1c661b2385cb349a9c89a25373952fdd062928d29f2e2f82173f024e24d47ff"
+      "bytes": 18503,
+      "sha256": "9b0050f2ddd3af94ae38870fe05beef1c8d9854b1737c2942f879aae49c73bce"
     },
     "release/current-source-20261109/DATA_LICENSES.md": {
       "bytes": 1886,
@@ -116,16 +116,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/current-source-20261109/README.md": {
-      "bytes": 7998,
-      "sha256": "1f6369b7b0b0b19c8876719ea2673e2b4ea72d64202ecefd8bcad8510b515637"
+      "bytes": 8575,
+      "sha256": "6cbeb2604671a3db76a8546460ba3c439e0878c7e94e378c04028c387390f60c"
     },
     "release/current-source-20261109/SHA256SUMS": {
       "bytes": 5764,
-      "sha256": "8e602aec9b5156f1821c19387cd7e3d4b0ef059fd60b7d79df4dddd7137ba5b0"
+      "sha256": "d55ec7c24e409ba9bd4249e471924b8dda33883485079c183a9474d1a12f688e"
     },
     "release/current-source-20261109/SOURCE_EXPORT.json": {
-      "bytes": 51052,
-      "sha256": "a8e64ba421c350c52f7086a30854524ad2e0aef54a34850ce00c62aba891118f"
+      "bytes": 55736,
+      "sha256": "d1eb6b4031e96a454218be62ee5d1233daa6847b2af9c22f1170aaf940123bc2"
     },
     "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -152,8 +152,8 @@
       "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
     },
     "release/current-source-20261109/docs/CVPR2027_DATA_ACCESS.md": {
-      "bytes": 11246,
-      "sha256": "5cf02f62bc7b8edf85f1ce636d0de40cbe738366f20c97d3a13f0afb60a39ceb"
+      "bytes": 12647,
+      "sha256": "9538e7cf98bc3d138afdf115c994f80c56b7fbe12b9c7c142c2f9edccf89fa0f"
     },
     "release/current-source-20261109/docs/FITTING_SENSITIVITY.md": {
       "bytes": 5615,
@@ -165,7 +165,7 @@
     },
     "release/current-source-20261109/file_index.json": {
       "bytes": 8994,
-      "sha256": "fb5ac8cab1036cdab09fc5c5aabe2f48b19ef55bb12dcfe8dffaec5eeaea2f67"
+      "sha256": "133810dcfba76705762b72242c104e41aa22f2615eea35d23c729a3b1c2f5ffd"
     },
     "release/current-source-20261109/licenses/CROMA-LICENSE": {
       "bytes": 1071,
@@ -852,24 +852,24 @@
       "sha256": "1df555f0f95c16e3fb44243ce7ecca41225e4e588353148f25725c68f1cb4271"
     },
     "release/titan-followup-20261109/DATA_ACCESS.md": {
-      "bytes": 10361,
-      "sha256": "f56990123cf5ce26fb4426e88dd2f7f5c3f62c7dce6c6bd7ea30233683a5910b"
+      "bytes": 13327,
+      "sha256": "23138f72bc5ac16553771337d7803bf62716f1c3e54daf23767f2f10c2ab233d"
     },
     "release/titan-followup-20261109/NOTICE.md": {
       "bytes": 2304,
       "sha256": "0d07fca59430dc0aae4fedde74f538cecd5a5eba9a342455d32b1f71289cd8b5"
     },
     "release/titan-followup-20261109/README.md": {
-      "bytes": 9820,
-      "sha256": "e2b714dcdc79b4290ce0f284204ba8334d9aba58757d47dafe22b79041d3f737"
+      "bytes": 10333,
+      "sha256": "6d0acc7aef2b0093eb3fdd54d469f2ab29af612b2451d2287a4341ec21e411c5"
     },
     "release/titan-followup-20261109/SHA256SUMS": {
       "bytes": 769,
-      "sha256": "6b714a373341e80cc0d38e186d9239eabbbf5d4d95d93abfa46bce169c647607"
+      "sha256": "8e4df07a7851cdc450ed782a2fd6292bb9bb59e6001778a2b9d52f6d50f05edf"
     },
     "release/titan-followup-20261109/file_index.json": {
-      "bytes": 1475,
-      "sha256": "fa669d57af7ba2d0923aea2755febea00b675abfca3a4faf690eda795fd3a42a"
+      "bytes": 1476,
+      "sha256": "51c680f83bbc0397dd8425e6670ba5ae4f4d6d51b6c3635d70c9237eff12e111"
     },
     "release/titan-followup-20261109/followup-supplement.zip": {
       "bytes": 4385713,

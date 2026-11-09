@@ -46,8 +46,17 @@ catalog has 23,380 ordered rows and class order plains, dunes, hummocky,
 labyrinths, lakes, craters. Train/val/test totals, six-class counts, assignments,
 benchmark track and training-only normalization must agree. No fallback or
 relabeling of real data as `synthetic_cpu_test` is supported. Metadata in the
-scientific ZIP cannot supply the missing pixels. There is no established
-public processed-image endpoint in this export.
+scientific ZIP does not include these pixels. The separate
+[processed-image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109)
+supplies all 23,380 arrays with the matching anonymous catalog and divisions.
+Its [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
+gives the archive hash, source terms and extraction/verification commands.
+Public download and complete input verification passed on 9 November 2026,
+without model execution or normalization calculation. Bind the extracted
+`data/catalog.json` and `data/splits/titan_contiguous_fold_F.json`; images reside
+in `data/tiles/`. The anonymous contract is already implemented here, so the
+archive README's earlier patch instruction is superseded. This does not alter
+the original-input gate or make retained states and historical plans public.
 
 Final CNN jobs require all three complete same-fold/initialization tuning
 bundles with the same source/runtime/input identity, including states and
@@ -157,9 +166,15 @@ dependencies and weights remain separately supplied under their own terms.
 
 The guides link here where original private audit records were omitted. Those
 records covered the completed 90-cell study, coverage and three author-side
-retained-model checks. Their existence does not establish independent access
-to images/states or new validation of this source package. Original producer
-identities are retained in SOURCE_EXPORT.json. Public saved records, numerical
+retained-model checks in Region 1. Twelve additional cases in Regions 2–5
+bring the inference coverage to fifteen cases across all five regions, with
+scratch ResNet18, ImageNet ResNet18 and pretrained DINOv2 in each region.
+The added cases reproduce 112,062 native validation/test prediction rows
+exactly; no fitting or new accuracy estimate occurred. These author-side
+checks are separate from the public image download/input verification and do
+not establish independent-recipient inference or access to retained model
+states. They are not new execution validation of this source export. Original
+producer identities are retained in SOURCE_EXPORT.json. Public saved records, numerical
 commands and qualifications are in the sibling [saved-results wrapper](../titan-followup-20261109/README.md)
 and its [provenance](../titan-followup-20261109/provenance.json). The wrapper is
 not a byte-identical copy of the omitted private audits.
@@ -179,9 +194,11 @@ Paths in the first column below are **upstream historical paths**, not files
 promised in this package. SOURCE_EXPORT.json records each exact original link
 target, projected target and both complete-guide hashes. The access guide also
 corrects the count to sixty CNN validation histories with 6,000 epoch records
-and records verified public access to the saved numerical ZIP. Full imagery
-and model weights remain separate requirements. Other guide content, including
-examples, scientific settings, limitations and disclosures, is unchanged.
+and records verified public access to the saved numerical ZIP and separate
+processed-image release, plus the extension of author-side inference checks
+to all five regions. Model states remain outside the public release. Other
+guide content, including examples, scientific settings, limitations and
+disclosures, is unchanged.
 The fitting guide contains no links and has no byte changes.
 
 | Upstream historical path | Public destination and omission |

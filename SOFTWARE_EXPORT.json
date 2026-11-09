@@ -155,6 +155,16 @@
       "previous_sha256": "9f72dd0120ca94c54520df9ac401f89fe377dc056cecea9a42dbdc02cdb46fec",
       "previous_state": "Parent-selected working documentation before inventory regeneration",
       "reason": "Document the completed November saved-result studies and separate current execution source package. Preserve the original frozen runner, all scientific producer identities, builder, source hashes and earlier history; no new scientific execution."
+    },
+    {
+      "change_kind": "maintenance_documentation",
+      "date": "2026-11-09",
+      "new_sha256": "698da37624c69e51a71c0405777350f33702ce5b0ecb03aa716f44462fa85e4c",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "460699b0d2a1bffad702ea65f5b6f14beae7a769",
+      "previous_manifest_sha256": "b34820dff62c0390c6dc9833e187bd2a5db33936732dd90d55a99ca1019c0060",
+      "previous_sha256": "537c1ad8fd86998fba58ec38dd66403a7f6103064f3c02e581d598cd4a94d338",
+      "reason": "Route the verified public processed-image release and companion; use its unchanged catalog/split layout in existing runner commands. Preserve original scientific settings, source hashes, producers and all earlier receipts. No new model or scientific execution in this documentation update."
     }
   ],
   "excluded": [
@@ -185,7 +195,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated guide with documentation updates",
-      "sha256": "537c1ad8fd86998fba58ec38dd66403a7f6103064f3c02e581d598cd4a94d338"
+      "sha256": "698da37624c69e51a71c0405777350f33702ce5b0ecb03aa716f44462fa85e4c"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
