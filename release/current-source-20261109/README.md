@@ -32,7 +32,9 @@ and [artifact access](docs/CVPR2027_DATA_ACCESS.md). Scientific settings,
 example code and historical outcomes retain the upstream wording. Links in
 two guides point to existing public files or qualified sections of CONTRACTS.md.
 The access guide also corrects the count to sixty CNN validation histories
-containing 6,000 epoch records. The fitting guide is byte-identical.
+containing 6,000 epoch records and records verified public access to the saved
+numerical ZIP. Full imagery and model weights remain separate requirements.
+The fitting guide is byte-identical.
 [The destination map](CONTRACTS.md#guide-destination-map) identifies
 every omitted document or script behind those links.
 

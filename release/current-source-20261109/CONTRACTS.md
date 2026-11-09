@@ -178,10 +178,11 @@ own documented outputs; no replacement display command is implied here.
 Paths in the first column below are **upstream historical paths**, not files
 promised in this package. SOURCE_EXPORT.json records each exact original link
 target, projected target and both complete-guide hashes. The access guide also
-corrects the count to sixty CNN validation histories with 6,000 epoch records.
-Other guide content, including examples, scientific settings, limitations and
-disclosures, is unchanged. The fitting guide contains no links and has no byte
-changes.
+corrects the count to sixty CNN validation histories with 6,000 epoch records
+and records verified public access to the saved numerical ZIP. Full imagery
+and model weights remain separate requirements. Other guide content, including
+examples, scientific settings, limitations and disclosures, is unchanged.
+The fitting guide contains no links and has no byte changes.
 
 | Upstream historical path | Public destination and omission |
 | --- | --- |
