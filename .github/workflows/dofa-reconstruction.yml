@@ -1,0 +1,31 @@
+name: DOFA saved results
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  reconstruction:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - run: python -m pip install numpy==2.4.4
+      - name: Verify and reconstruct the numerical companion
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          CUDA_VISIBLE_DEVICES: ""
+          OMP_NUM_THREADS: "1"
+          OPENBLAS_NUM_THREADS: "1"
+          MKL_NUM_THREADS: "1"
+        run: |
+          set -eu
+          companion="$GITHUB_WORKSPACE/release/dofa-band-20261109/dofa-numerical-companion.zip"
+          echo "0b27c9a9d2a431ce19cf1a7114ddbcced03f84337d422f1c2a7e66541fa79efb  $companion" | sha256sum -c -
+          inputs="$RUNNER_TEMP/cetus-dofa-inputs"
+          results="$RUNNER_TEMP/cetus-dofa-results"
+          test ! -e "$inputs"
+          test ! -e "$results"
+          unzip -q "$companion" -d "$inputs"
+          sh "$inputs/reproduce.sh" "$results"
+          cmp "$companion" "$results/dofa-numerical-companion.zip"

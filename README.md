@@ -25,6 +25,7 @@ omitted embeddings, model states and historical Earth/Venus images.
 | --- | --- |
 | [Current Titan images](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109) | All 23,380 processed arrays, the anonymous catalog, five geographic divisions, source notices and an offline input verifier. |
 | [November saved results](release/titan-followup-20261109/README.md) | Current Titan fitting study, coverage and map-vote analyses, matched-initialization comparisons, and saved epoch-100 and validation-choice checks. Four archives with separate entrypoints and dependencies. |
+| [DOFA numeric input comparison](release/dofa-band-20261109/README.md) | Five-region comparison of inputs 13.78 and 3.75, with ten prediction records and CPU reconstruction code. |
 | [Expanded Titan evaluation](release/longitude-review-20260929/README.md) | 23,380 catalog images, including 140 Craters tiles, and five geographic folds; DINOv2, DOFA, CROMA and untrained-ViT results with encoder weights unchanged. The test union contains 23,246 images. |
 | [Additional classifier results](release/longitude-auxiliary-20260929/README.md) | Common logistic regression, classical image features and 70 prediction vectors, with separate VIMS display metadata. |
 | [Encoder training and training-image replacements](release/longitude-adaptation-controls-20260930/README.md) | Predictions and histories from 75 partial-training fits, training-substitution controls, and CPU reconstruction code. |
@@ -42,7 +43,8 @@ Scores measure agreement with a map informed partly by the same radar
 observations. They do not establish independent geological accuracy. Regional
 spreads are descriptive, and fitting and initialization comparisons retain their
 documented optimization and selection limits. Historical Earth labels still need
-expert review; DOFA's checkpoint/input convention remains unresolved.
+expert review. The new DOFA comparison shows sensitivity to its numeric input;
+the appropriate Cassini convention remains unresolved.
 
 For saved-result checks, follow the November package's [CPU
 commands](release/titan-followup-20261109/README.md#reconstruct-saved-results)

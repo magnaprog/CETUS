@@ -22,10 +22,20 @@
     "manifest": "release/current-source-20261109/SOURCE_EXPORT.json",
     "scope": "Separate versioned source export; the historical root software identity is retained."
   },
+  "dofa_band_comparison": {
+    "archive": "release/dofa-band-20261109/dofa-numerical-companion.zip",
+    "guide": "release/dofa-band-20261109/README.md",
+    "scientific_source_commit": "a45526c44d935c89ca8ecd94812be49ba8f659a7",
+    "scope": "Ten saved test records for five regions and two numeric inputs; CPU arithmetic reconstruction."
+  },
   "files": {
     ".github/workflows/current-source-cpu-tests.yml": {
       "bytes": 7869,
       "sha256": "40e9536dae7707db493a40d2982de621b48ca5064cc8210c0faa3a70a8a39575"
+    },
+    ".github/workflows/dofa-reconstruction.yml": {
+      "bytes": 1118,
+      "sha256": "b1de752de1ece41ba2d64bc1afd2b3a3582109f273e4119bd26f3a16f97921e7"
     },
     ".github/workflows/frozen-cpu-tests.yml": {
       "bytes": 595,
@@ -60,12 +70,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 20204,
-      "sha256": "06148eebe018eaae4dc2abf9e0a2c0ef87106117b1707884a084528f570c1990"
+      "bytes": 20590,
+      "sha256": "cd1db6d7c7324317e36bd49ac7958f02bb06fda195ec29e1917bc3e6bf9ba105"
     },
     "README.md": {
-      "bytes": 5734,
-      "sha256": "92d1075a1064ce2d37a506f275fe91320fe8bf1b8b9f538b983daab73e5289e2"
+      "bytes": 5980,
+      "sha256": "ffe8c3a7cc2951de667be5de856046d367e8653787363aa79089ea2267ce7756"
     },
     "SOFTWARE.md": {
       "bytes": 22784,
@@ -342,6 +352,22 @@
     "release/current-source-20261109/titansar/reproducibility.py": {
       "bytes": 4578,
       "sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05"
+    },
+    "release/dofa-band-20261109/NOTICE.md": {
+      "bytes": 588,
+      "sha256": "6564e348cb6fe1b67135a423f47ce224e3cdfaf27e207e9f245968d570cc9be8"
+    },
+    "release/dofa-band-20261109/README.md": {
+      "bytes": 2315,
+      "sha256": "c778159052deae8b750a0b27d41ccea17cf068d8d8158c68c72dc10319d5bd5b"
+    },
+    "release/dofa-band-20261109/dofa-numerical-companion.zip": {
+      "bytes": 6922999,
+      "sha256": "0b27c9a9d2a431ce19cf1a7114ddbcced03f84337d422f1c2a7e66541fa79efb"
+    },
+    "release/dofa-band-20261109/members.json": {
+      "bytes": 3635,
+      "sha256": "223267c27a1c9ff818849be8927632054a2f94336f51c3cf0a9bc7774ff44728"
     },
     "release/interpretation-20261001/README.md": {
       "bytes": 10710,
