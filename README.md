@@ -12,6 +12,9 @@ CPU reconstruction code. The [current execution source](release/current-source-2
 contains the CNN, matched-DINO and CPU-fitting implementations.
 The [loss normalization source](release/loss-source-20261110/README.md)
 adds the ResNet18 denominator comparison and its focused CPU checks.
+The [loss comparison companion](release/loss-normalization-20261110/README.md)
+supplies the fifteen additional runs and standard-library CPU reconstruction,
+reusing the original initialization archive.
 [SOFTWARE.md](SOFTWARE.md) also describes the earlier classifier runner.
 
 The complete current collection of 23,380 processed Titan images is available
@@ -30,6 +33,7 @@ omitted embeddings, model states and historical Earth/Venus images.
 | [Complete map census](release/map-census-20261109/README.md) | All 23,380 map grids, SAR validity masks and geographic roles, with CPU reconstruction of class counts. |
 | [Craters descriptive analysis](release/crater-analysis-20261110/README.md) | Training-batch availability and map-composition joins for 30 primary CNN and five pretrained DINOv2 prediction records, with saved results and CPU reproduction. No model fitting or new accuracy estimate. |
 | [Training loss source](release/loss-source-20261110/README.md) | ResNet18 implementation and synthetic CPU checks for the two loss denominators, retaining the original class weights and image sampling. |
+| [Training loss comparison](release/loss-normalization-20261110/README.md) | Saved predictions and compact histories from fifteen additional 100-epoch fits, with CPU reconstruction against the original initialization archive. The [reproduction guide](PAPER_REPRODUCTION.md#training-loss-normalization) gives commands and interpretation limits. |
 | [DOFA numeric input comparison](release/dofa-band-20261109/README.md) | Five-region comparison of inputs 13.78 and 3.75, with ten prediction records and CPU reconstruction code. |
 | [Expanded Titan evaluation](release/longitude-review-20260929/README.md) | 23,380 catalog images, including 140 Craters tiles, and five geographic folds; DINOv2, DOFA, CROMA and untrained-ViT results with encoder weights unchanged. The test union contains 23,246 images. |
 | [Additional classifier results](release/longitude-auxiliary-20260929/README.md) | Common logistic regression, classical image features and 70 prediction vectors, with separate VIMS display metadata. |

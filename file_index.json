@@ -54,6 +54,10 @@
       "bytes": 595,
       "sha256": "ec8637baf02e0e8b290c4073f0491c2d292ac649a4d9979abfd55fa40c69d493"
     },
+    ".github/workflows/loss-comparison.yml": {
+      "bytes": 1388,
+      "sha256": "c5e0b2f60ceb51c0d643d61133c5f11f2ab59d27901c851cae8c8c05a083aeae"
+    },
     ".github/workflows/map-census.yml": {
       "bytes": 780,
       "sha256": "6fc1fdd14c62e2cd1235c508eb8c32d0eadf73a9c4c8fe66f74100f6efe2fc9f"
@@ -87,12 +91,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 23173,
-      "sha256": "81c262b0c27ee77faa43306cd66a88cc4360839b6db4b8a32600fdfe5119effe"
+      "bytes": 25111,
+      "sha256": "1297f19c0e3eaf01c112e5ef8ecfa5712a148fb7a02cbfaffd92ffa5478a6130"
     },
     "README.md": {
-      "bytes": 6852,
-      "sha256": "98b555e6fb2f6a27d980eb04826d980090224852ac6b33418e895732bb1cf259"
+      "bytes": 7401,
+      "sha256": "31e32cbd2b9884db0a24d27158160b72476843de7a366790b285630e960b4e1d"
     },
     "SOFTWARE.md": {
       "bytes": 22784,
@@ -910,6 +914,46 @@
       "bytes": 558126,
       "sha256": "1df555f0f95c16e3fb44243ce7ecca41225e4e588353148f25725c68f1cb4271"
     },
+    "release/loss-normalization-20261110/LICENSE": {
+      "bytes": 1073,
+      "sha256": "a5fad1f285cb7b7acf7972e5d2608d2e8dfdf5cacade5e550fe415b084ab5645"
+    },
+    "release/loss-normalization-20261110/NOTICE.md": {
+      "bytes": 1171,
+      "sha256": "2c3e3ca3814c3336c1759b2ab8691c25674272eff8778ffcc8469db19a785920"
+    },
+    "release/loss-normalization-20261110/README.md": {
+      "bytes": 3474,
+      "sha256": "c6ebd02b9f1dfe0083fb04b9c7326c23b473dc24c03badffdf8eafd8f2d00d8e"
+    },
+    "release/loss-normalization-20261110/SHA256SUMS": {
+      "bytes": 717,
+      "sha256": "76ca5e482b142f27d6191061a65df1a20d85e8c0795d1d174e5542ccdef7afd3"
+    },
+    "release/loss-normalization-20261110/expected.json": {
+      "bytes": 78113,
+      "sha256": "2f85e742443348668415a194985843a9433e2c9aa524bd127aea781b07417e46"
+    },
+    "release/loss-normalization-20261110/manifest.json": {
+      "bytes": 1695,
+      "sha256": "f13af14d6b0d01ffdfcda20db7d31c26e072981141f9ab10a883aaf3d5d3ea6d"
+    },
+    "release/loss-normalization-20261110/provenance.json": {
+      "bytes": 148404,
+      "sha256": "ec51d07ee4b0672ad85a038fdc212ef7bad1d97dc914fdb42bfd246f73402896"
+    },
+    "release/loss-normalization-20261110/reconstruct.py": {
+      "bytes": 18408,
+      "sha256": "79910aeeced91d8cf185f374deec0fc0f026344a4d2155329e32d5040d56d6c7"
+    },
+    "release/loss-normalization-20261110/records.json.gz": {
+      "bytes": 4183842,
+      "sha256": "0a9f58cacccaa6621e7879e0b651e685a4a83f4fe37d049a4a6e7cb9a1ff14a2"
+    },
+    "release/loss-normalization-20261110/test_reconstruct.py": {
+      "bytes": 12037,
+      "sha256": "8d688901798e21ac42b3aac1e79a4cab66c973185b6f3b2d4a7768022a79ade9"
+    },
     "release/loss-source-20261110/CONTRACTS.md": {
       "bytes": 4519,
       "sha256": "e6ac5e2e16a39636f50030cb1d4ba456cecb533b110bbcdfbfd071c95669899a"
@@ -1528,6 +1572,13 @@
     "manifest": "release/loss-source-20261110/SOURCE_EXPORT.json",
     "scope": "ResNet18 training source and synthetic CPU checks for two weighted-loss denominators; numerical results supplied separately."
   },
+  "loss_normalization_comparison": {
+    "guide": "release/loss-normalization-20261110/README.md",
+    "manifest": "release/loss-normalization-20261110/manifest.json",
+    "original_control_commit": "1f3fc8fe0e831777e3188d70caf2c5450b656333",
+    "scientific_source_commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+    "scope": "Saved predictions and compact histories for fifteen additional loss-normalization fits; standard-library CPU reconstruction reuses the original initialization archive."
+  },
   "map_census": {
     "guide": "release/map-census-20261109/README.md",
     "scientific_source_commit": "1c3b2881820c5673906f45a000cb80575ed8672a",
@@ -1538,6 +1589,7 @@
     "current_execution_source": "release/current-source-20261109",
     "historical_review": "release/v1-review-20260908",
     "loss_execution_source_20261110": "release/loss-source-20261110",
+    "loss_normalization_20261110": "release/loss-normalization-20261110",
     "map_census_20261109": "release/map-census-20261109",
     "repaired_titan_adaptation": "release/longitude-adaptation-controls-20260930",
     "repaired_titan_auxiliary": "release/longitude-auxiliary-20260929",
