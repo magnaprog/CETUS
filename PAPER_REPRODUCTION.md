@@ -90,6 +90,54 @@ cross-entropy coefficients; it does not bound gradients or performance. Map
 fractions concern eligible known cells, with empty domains undefined. Repeated
 seeds and overlapping images do not provide independent geographic samples.
 
+## Training loss normalization
+
+The [execution source](release/loss-source-20261110/README.md) compares two
+denominators for the weighted cross entropy used to train ImageNet ResNet18.
+The original divides by the sum of label weights in each batch. The alternative
+divides by the batch size times the mean weight across the training images.
+Both retain the original class weights and image sampling.
+
+The [numerical companion](release/loss-normalization-20261110/README.md) supplies
+saved records from fifteen additional 100-epoch fits and fifteen fresh replays
+of the validation-selected states on validation and test images. All fifteen
+original and all fifteen additional runs have zero Craters true positives.
+Six-class macro F1, averaged over three seeds within each region and then equally
+over five regions, changes from 43.84% to 44.38%. Regional macro F1 means rise in
+three regions and fall in two. The companion retains all six classes, including
+false-positive counts.
+
+The learning rate is inherited from the original loss, and the study reuses the
+same five test regions. Seeds repeat training within regions; they do not add
+independent geographic samples. The original Craters F1 is zero, so its change
+cannot be negative. These results describe sensitivity under the stated settings
+and agreement with the SAR-informed map. The original initialization results
+remain primary.
+
+Use Python 3.11 or later on Linux; reconstruction needs only the standard
+library. From the repository root:
+
+```sh
+cd release/loss-normalization-20261110
+sha256sum -c SHA256SUMS
+python3 -B reconstruct.py \
+  --initialization-zip ../titan-followup-20261109/initialization-supplement.zip \
+  --output /absolute/new/path/loss-comparison.json
+```
+
+Choose a new output filename outside the companion directory. The reader reuses
+the unchanged [initialization archive](release/titan-followup-20261109/initialization-supplement.zip)
+for the original A runs, labels and geographic divisions; it reads the archive's
+data without executing its Python files. It checks saved arithmetic and compact
+validation histories without fitting models or rerunning GPU predictions.
+The [manifest](release/loss-normalization-20261110/manifest.json) and
+[notice](release/loss-normalization-20261110/NOTICE.md) record identities and credits.
+
+The separate source package retains the implementation, study specification and
+focused synthetic CPU tests. Its [execution contracts](release/loss-source-20261110/CONTRACTS.md)
+describe the original input and model-state dependencies. Model states and full
+training inputs are not supplied by the numerical companion.
+
 ## DOFA band input comparison
 
 The [DOFA companion](release/dofa-band-20261109/README.md) adds the completed

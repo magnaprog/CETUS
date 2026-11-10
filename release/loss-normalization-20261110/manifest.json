@@ -1,0 +1,45 @@
+{
+  "a_archive_sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+  "control_producer": "1f3fc8fe0e831777e3188d70caf2c5450b656333",
+  "files": {
+    "LICENSE": {
+      "bytes": 1073,
+      "sha256": "a5fad1f285cb7b7acf7972e5d2608d2e8dfdf5cacade5e550fe415b084ab5645"
+    },
+    "NOTICE.md": {
+      "bytes": 1171,
+      "sha256": "2c3e3ca3814c3336c1759b2ab8691c25674272eff8778ffcc8469db19a785920"
+    },
+    "README.md": {
+      "bytes": 3474,
+      "sha256": "c6ebd02b9f1dfe0083fb04b9c7326c23b473dc24c03badffdf8eafd8f2d00d8e"
+    },
+    "expected.json": {
+      "bytes": 78113,
+      "sha256": "2f85e742443348668415a194985843a9433e2c9aa524bd127aea781b07417e46"
+    },
+    "provenance.json": {
+      "bytes": 148404,
+      "sha256": "ec51d07ee4b0672ad85a038fdc212ef7bad1d97dc914fdb42bfd246f73402896"
+    },
+    "reconstruct.py": {
+      "bytes": 18408,
+      "sha256": "79910aeeced91d8cf185f374deec0fc0f026344a4d2155329e32d5040d56d6c7"
+    },
+    "records.json.gz": {
+      "bytes": 4183842,
+      "sha256": "0a9f58cacccaa6621e7879e0b651e685a4a83f4fe37d049a4a6e7cb9a1ff14a2"
+    },
+    "test_reconstruct.py": {
+      "bytes": 12037,
+      "sha256": "8d688901798e21ac42b3aac1e79a4cab66c973185b6f3b2d4a7768022a79ade9"
+    }
+  },
+  "independent_report_sha256": "2644153e027a436a13e13b2ec3a5fee3db7ed594954cad3be2e99c437eb2b0d3",
+  "package": "loss-normalization-20261110",
+  "producer": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+  "public_file_count": 10,
+  "purpose": "saved_result_reconstruction",
+  "schema_version": "loss-normalization-numeric-v1",
+  "scope": "Saved predictions, compact validation selection and descriptive differences; no training or inference."
+}

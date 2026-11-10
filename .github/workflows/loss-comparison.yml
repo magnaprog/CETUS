@@ -1,0 +1,44 @@
+name: Loss comparison reconstruction
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  reconstruction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONNOUSERSITE: "1"
+      CUDA_VISIBLE_DEVICES: ""
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - name: Check companion files and synthetic examples
+        working-directory: release/loss-normalization-20261110
+        run: |
+          set -euo pipefail
+          sha256sum -c SHA256SUMS
+          python -B -m unittest -v test_reconstruct
+      - name: Reconstruct all fifteen comparisons
+        working-directory: release/loss-normalization-20261110
+        run: |
+          set -euo pipefail
+          python -B reconstruct.py \
+            --initialization-zip ../titan-followup-20261109/initialization-supplement.zip \
+            --output "$RUNNER_TEMP/loss-comparison.json"
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+      - name: Preserve the numerical output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: loss-comparison-reconstruction
+          path: ${{ runner.temp }}/loss-comparison.json
+          if-no-files-found: warn
