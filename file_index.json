@@ -34,13 +34,17 @@
     "scope": "Ten saved test records for five regions and two numeric inputs; CPU arithmetic reconstruction."
   },
   "files": {
+    ".github/scripts/offline_cpu.py": {
+      "bytes": 2033,
+      "sha256": "3b8f442daa818f6f8dc8fa24e12f83b573a25e6bfa2957e1c7394b5d17ca1cfb"
+    },
     ".github/workflows/crater-analysis.yml": {
       "bytes": 1885,
       "sha256": "e9c78da73cf59cb28a92711c55340c654e29a1e1ba839ded13ea5ce9b4709a02"
     },
     ".github/workflows/current-source-cpu-tests.yml": {
-      "bytes": 7869,
-      "sha256": "40e9536dae7707db493a40d2982de621b48ca5064cc8210c0faa3a70a8a39575"
+      "bytes": 11969,
+      "sha256": "ed859bfc119322d6d6a07462927eb6f2463b64ec036d64a361dbb9ceb43109a8"
     },
     ".github/workflows/dofa-reconstruction.yml": {
       "bytes": 1118,
@@ -83,12 +87,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 22477,
-      "sha256": "457fe3795843bd402d6522a414726fb02bea659d65059c09ab5c2fefd1dd85f5"
+      "bytes": 23173,
+      "sha256": "81c262b0c27ee77faa43306cd66a88cc4360839b6db4b8a32600fdfe5119effe"
     },
     "README.md": {
-      "bytes": 6505,
-      "sha256": "44ffc9cf154851495bd300ce97652fc293ac41aff49afb209947bb21c674fd0b"
+      "bytes": 6852,
+      "sha256": "98b555e6fb2f6a27d980eb04826d980090224852ac6b33418e895732bb1cf259"
     },
     "SOFTWARE.md": {
       "bytes": 22784,
@@ -906,6 +910,142 @@
       "bytes": 558126,
       "sha256": "1df555f0f95c16e3fb44243ce7ecca41225e4e588353148f25725c68f1cb4271"
     },
+    "release/loss-source-20261110/CONTRACTS.md": {
+      "bytes": 4519,
+      "sha256": "e6ac5e2e16a39636f50030cb1d4ba456cecb533b110bbcdfbfd071c95669899a"
+    },
+    "release/loss-source-20261110/DATA_LICENSES.md": {
+      "bytes": 1886,
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "release/loss-source-20261110/LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "release/loss-source-20261110/README.md": {
+      "bytes": 2995,
+      "sha256": "53771c0fa5dcf4b88aef03764e94de0769b48f46101aad5c37e57d056b7f0704"
+    },
+    "release/loss-source-20261110/SHA256SUMS": {
+      "bytes": 3013,
+      "sha256": "502912361a7bf7ce65c861902dfcd285fc116a3e19e37121b37e36d74a94e8ad"
+    },
+    "release/loss-source-20261110/SOURCE_EXPORT.json": {
+      "bytes": 18431,
+      "sha256": "be63276e7de31b88017c07d845875d43cb5dd75949789a57f1fb6017f01c977d"
+    },
+    "release/loss-source-20261110/THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "release/loss-source-20261110/docs/LOSS_NORMALIZATION_COMPARISON.md": {
+      "bytes": 5799,
+      "sha256": "ecc7ce4873ac54944143793a9eab705e5ae9acc527c10abcba39aa84f0a38a19"
+    },
+    "release/loss-source-20261110/file_index.json": {
+      "bytes": 4730,
+      "sha256": "4bf6470dc25dfc5319de5ae95759a11e12e8483d4932dfaed112608ee47960d3"
+    },
+    "release/loss-source-20261110/licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "release/loss-source-20261110/requirements.txt": {
+      "bytes": 538,
+      "sha256": "1a7a023bd7d1a800b990e8e72264d628d85c73debc1b3caec955aaaddd451027"
+    },
+    "release/loss-source-20261110/scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release/loss-source-20261110/scripts/loss_comparison.py": {
+      "bytes": 7695,
+      "sha256": "f8c4143671a8cb27b84adb1a5ce6accd5dd342965d6d7d6215e94bdbdef3c349"
+    },
+    "release/loss-source-20261110/scripts/model_followup_support.py": {
+      "bytes": 18605,
+      "sha256": "72a81fe57c0fdc4ee1796643234b080e4a6b34651f6db3c30d2b8ef31afe7527"
+    },
+    "release/loss-source-20261110/scripts/run_finetuning.py": {
+      "bytes": 25658,
+      "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+    },
+    "release/loss-source-20261110/scripts/run_model_followup.py": {
+      "bytes": 30304,
+      "sha256": "b1d0b2a19149937a6c0f88b3516d5c8b34505fbde0f7a7d869215e07f1a84fe6"
+    },
+    "release/loss-source-20261110/scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "release/loss-source-20261110/tests/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release/loss-source-20261110/tests/test_loss_comparison.py": {
+      "bytes": 16262,
+      "sha256": "0e6eebf909309db7d285cfcb895ad720d4dcfac812bec4a14f900275867adb2d"
+    },
+    "release/loss-source-20261110/tests/test_model_followup.py": {
+      "bytes": 40297,
+      "sha256": "0f8ae7ce4e4e526ff58f01b94a7af0337ef2eb8408b4af7bacb106dabfb3fc96"
+    },
+    "release/loss-source-20261110/tests/test_population_loss.py": {
+      "bytes": 6307,
+      "sha256": "bfdd2700006ff3dc2a6dc463f020016152021479d599d8eebee888510b16f141"
+    },
+    "release/loss-source-20261110/titansar/__init__.py": {
+      "bytes": 98,
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "release/loss-source-20261110/titansar/configs/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release/loss-source-20261110/titansar/configs/defaults.py": {
+      "bytes": 5380,
+      "sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
+    },
+    "release/loss-source-20261110/titansar/data/__init__.py": {
+      "bytes": 48,
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "release/loss-source-20261110/titansar/data/dataset.py": {
+      "bytes": 24742,
+      "sha256": "68150c666fa3f18b0726a63944ae260a9668005fc804e034d642f2e37ad58fa0"
+    },
+    "release/loss-source-20261110/titansar/models/__init__.py": {
+      "bytes": 46,
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "release/loss-source-20261110/titansar/models/baselines.py": {
+      "bytes": 6238,
+      "sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1"
+    },
+    "release/loss-source-20261110/titansar/models/croma_model.py": {
+      "bytes": 14944,
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+    },
+    "release/loss-source-20261110/titansar/models/followup.py": {
+      "bytes": 10123,
+      "sha256": "8f6f986efcfd5b5d0f2f231ee50ad592824757a2b32937452cfc064f4aaa7d66"
+    },
+    "release/loss-source-20261110/titansar/models/foundation_models.py": {
+      "bytes": 19921,
+      "sha256": "ae9bdfde05ff6ac955e4fa017762337d5ef4e6d40d421ffc89d31b50db077b14"
+    },
+    "release/loss-source-20261110/titansar/models/image_training.py": {
+      "bytes": 7963,
+      "sha256": "89ab7ca2091ab7763df7674610f89a82fab5082f7e368ce2e3d954f5f85aebfb"
+    },
+    "release/loss-source-20261110/titansar/models/probing.py": {
+      "bytes": 26317,
+      "sha256": "75d270bf00e763530a9c686b60ce7ecef53e46d25caf5fec692a18199157e946"
+    },
+    "release/loss-source-20261110/titansar/reproducibility.py": {
+      "bytes": 4578,
+      "sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05"
+    },
     "release/map-census-20261109/LICENSE": {
       "bytes": 1066,
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
@@ -1382,6 +1522,12 @@
   "full_catalog_tile_arrays_included": false,
   "inventory_file_set_basis": "git_ls_files",
   "inventory_status": "complete",
+  "loss_execution_source": {
+    "development_source_commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+    "guide": "release/loss-source-20261110/README.md",
+    "manifest": "release/loss-source-20261110/SOURCE_EXPORT.json",
+    "scope": "ResNet18 training source and synthetic CPU checks for two weighted-loss denominators; numerical results supplied separately."
+  },
   "map_census": {
     "guide": "release/map-census-20261109/README.md",
     "scientific_source_commit": "1c3b2881820c5673906f45a000cb80575ed8672a",
@@ -1391,6 +1537,7 @@
     "crater_analysis_20261110": "release/crater-analysis-20261110",
     "current_execution_source": "release/current-source-20261109",
     "historical_review": "release/v1-review-20260908",
+    "loss_execution_source_20261110": "release/loss-source-20261110",
     "map_census_20261109": "release/map-census-20261109",
     "repaired_titan_adaptation": "release/longitude-adaptation-controls-20260930",
     "repaired_titan_auxiliary": "release/longitude-auxiliary-20260929",

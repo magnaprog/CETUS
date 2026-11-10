@@ -90,6 +90,19 @@ cross-entropy coefficients; it does not bound gradients or performance. Map
 fractions concern eligible known cells, with empty domains undefined. Repeated
 seeds and overlapping images do not provide independent geographic samples.
 
+## Training loss normalization
+
+The [execution source](release/loss-source-20261110/README.md) compares two
+denominators for the weighted cross entropy used to train ImageNet ResNet18.
+The original divides by the sum of label weights in each batch. The alternative
+divides by the batch size times the mean weight across the training images.
+Both retain the original class weights and image sampling.
+
+The package includes the implementation, study specification and focused
+synthetic CPU tests. Its [execution contracts](release/loss-source-20261110/CONTRACTS.md)
+describe the original input and model-state dependencies. The earlier execution
+source and its scientific results remain separate.
+
 ## DOFA band input comparison
 
 The [DOFA companion](release/dofa-band-20261109/README.md) adds the completed

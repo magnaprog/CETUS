@@ -156,6 +156,89 @@ jobs:
           cd "$GITHUB_WORKSPACE/release/current-source-20261109"
           sha256sum -c SHA256SUMS
 
+      - name: Prepare the loss-comparison source fixture
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE/release/loss-source-20261110"
+          sha256sum -c SHA256SUMS
+          python -B - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import shutil
+
+          package = Path.cwd()
+          source = json.loads((package / 'SOURCE_EXPORT.json').read_text())
+          assert source['exported_from']['commit'] == '11033ff9f6fb21db81b3cc91b18bff4f9a58d02b'
+          target = Path(os.environ['RUNNER_TEMP']) / 'cetus-loss-source'
+          shutil.copytree(package, target)
+          (Path(os.environ['RUNNER_TEMP']) / 'cetus-current-source-reports/loss').mkdir()
+          (Path(os.environ['RUNNER_TEMP']) / 'cetus-loss-system-temp').mkdir()
+          PY
+          cd "$RUNNER_TEMP/cetus-loss-source"
+          git init --initial-branch=synthetic-tests
+          git add -- .
+          git -c user.name='CETUS synthetic tests' \
+            -c user.email='cetus-synthetic-tests@example.invalid' \
+            -c commit.gpgsign=false -c core.hooksPath=/dev/null commit \
+            -m 'Synthetic loss tests; not a scientific producer'
+          test -z "$(git status --porcelain=v1)"
+          git rev-parse HEAD > "$RUNNER_TEMP/cetus-current-source-reports/loss/fixture-head.txt"
+
+      - name: Check loss-source imports and the two focused CPU modules
+        working-directory: ${{ runner.temp }}/cetus-loss-source
+        env:
+          TMPDIR: ${{ runner.temp }}/cetus-loss-system-temp
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+        run: |
+          set -euo pipefail
+          unset PYTHONPATH PYTEST_ADDOPTS PYTEST_PLUGINS TORCH_ALLOW_TF32_CUBLAS_OVERRIDE
+          unset TITANSAR_RUN_MODEL_INTEGRATION TITANSAR_RESNET18_CHECKPOINT TITANSAR_DINO_SOURCE_SPEC
+          python -B "$GITHUB_WORKSPACE/.github/scripts/offline_cpu.py" \
+            "$RUNNER_TEMP/cetus-current-source-venv/bin/python" -B - <<'PY' \
+            2>&1 | tee "$RUNNER_TEMP/cetus-current-source-reports/loss/tests.log"
+          import hashlib
+          import importlib
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path.cwd().resolve()
+          source = json.loads(Path('SOURCE_EXPORT.json').read_text())
+          origins = {}
+          for name, record in source['files'].items():
+              if not name.endswith('.py'):
+                  continue
+              module_name = name[:-3].replace('/', '.')
+              if module_name.endswith('.__init__'):
+                  module_name = module_name[:-9]
+              module = importlib.import_module(module_name)
+              actual = Path(module.__file__).resolve()
+              assert actual == root / name, (module_name, actual)
+              assert hashlib.sha256(actual.read_bytes()).hexdigest() == record['sha256'], name
+              origins[module_name] = {'path': str(actual), 'sha256': record['sha256']}
+          from scripts import model_followup_support as support
+          support.verify_source_imports(source['runtime_source_files'])
+          import torch
+          assert torch.version.cuda is None and not torch.cuda.is_initialized()
+          report = Path(os.environ['RUNNER_TEMP']) / 'cetus-current-source-reports/loss'
+          (report / 'imports.json').write_text(json.dumps({
+              'origins': origins, 'runtime': support.runtime_identity(),
+              'torch_build': torch.__version__, 'scope': 'Synthetic CPU source checks only'
+          }, indent=2) + '\n')
+          import pytest
+          raise SystemExit(pytest.main([
+              'tests/test_population_loss.py', 'tests/test_loss_comparison.py',
+              '-q', '-ra', '-p', 'no:cacheprovider',
+              '--basetemp', str(Path(os.environ['TMPDIR']) / 'pytest'),
+              '--junitxml', str(report / 'tests.xml')
+          ]))
+          PY
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+          cd "$GITHUB_WORKSPACE/release/loss-source-20261110"
+          sha256sum -c SHA256SUMS
+
       - name: Preserve runtime and test reports, including failures
         if: always()
         uses: actions/upload-artifact@v4
