@@ -1,0 +1,44 @@
+name: Craters descriptive analysis
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  reproduction:
+    runs-on: ubuntu-24.04
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      CUDA_VISIBLE_DEVICES: ""
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - run: "python -m pip install --only-binary=:all: numpy==2.4.4"
+      - name: Run the 14 synthetic tests
+        working-directory: release/crater-analysis-20261110
+        run: python -O -B -m unittest -v test_crater_training
+      - name: Reproduce and compare the complete saved result
+        working-directory: release/crater-analysis-20261110
+        run: |
+          set -eu
+          python -B analyze_crater_training.py \
+            --initialization-zip ../titan-followup-20261109/initialization-supplement.zip \
+            --map-census ../map-census-20261109/map_cells.npz \
+            --census-metadata ../map-census-20261109/counts.json \
+            --output "$RUNNER_TEMP/cetus-crater-analysis"
+          python -B - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          expected = json.loads(Path("results.json").read_bytes())
+          actual = json.loads((Path(os.environ["RUNNER_TEMP"]) /
+                               "cetus-crater-analysis/results.json").read_bytes())
+          # No timestamps or host paths occur in the result; compare runtime and provenance too.
+          if json.dumps(actual, sort_keys=True, allow_nan=False) != json.dumps(expected, sort_keys=True, allow_nan=False):
+              raise ValueError("Craters reproduction differs from the complete packaged JSON")
+          print("Complete Craters result matches, including runtime and provenance.")
+          PY

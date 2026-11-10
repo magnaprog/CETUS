@@ -75,6 +75,21 @@ in other modal classes. These counts include overlapping images and describe
 the map's spatial mixtures. Existing image labels and model scores are unchanged.
 The companion README defines the masks, units and interpretation of each count.
 
+## Craters training and map composition
+
+The [10 November companion](release/crater-analysis-20261110/README.md) preserves
+the completed CPU analysis of training-batch availability and modal-Craters test
+images. It joins 30 primary, validation-selected CNN records and five pretrained
+DINOv2 records to the accepted census. Its reproduction uses the existing
+initialization ZIP and public census `counts.json` and `map_cells.npz`; commands
+and exact input identities are in the companion README. No model is fitted or
+rescored, and per-seed results remain separate.
+
+The batch bound concerns the equal-step average of normalized target-class
+cross-entropy coefficients; it does not bound gradients or performance. Map
+fractions concern eligible known cells, with empty domains undefined. Repeated
+seeds and overlapping images do not provide independent geographic samples.
+
 ## DOFA band input comparison
 
 The [DOFA companion](release/dofa-band-20261109/README.md) adds the completed
