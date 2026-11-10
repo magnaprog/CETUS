@@ -16,6 +16,11 @@
     }
   },
   "code_included": true,
+  "crater_analysis": {
+    "analysis_source_commit": "a8abe8414a3a87ad4677f31d82db50996dd27955",
+    "guide": "release/crater-analysis-20261110/README.md",
+    "scope": "Expected training-label batch availability and saved-prediction joins to known map cells; CPU reproduction without model fitting."
+  },
   "current_execution_source": {
     "development_source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
     "guide": "release/current-source-20261109/README.md",
@@ -29,6 +34,10 @@
     "scope": "Ten saved test records for five regions and two numeric inputs; CPU arithmetic reconstruction."
   },
   "files": {
+    ".github/workflows/crater-analysis.yml": {
+      "bytes": 1885,
+      "sha256": "e9c78da73cf59cb28a92711c55340c654e29a1e1ba839ded13ea5ce9b4709a02"
+    },
     ".github/workflows/current-source-cpu-tests.yml": {
       "bytes": 7869,
       "sha256": "40e9536dae7707db493a40d2982de621b48ca5064cc8210c0faa3a70a8a39575"
@@ -74,12 +83,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 21603,
-      "sha256": "0dd96ab0195cf24c2260aaf0eee2bcf9a7b2a293796cab6090319d799335b031"
+      "bytes": 22477,
+      "sha256": "457fe3795843bd402d6522a414726fb02bea659d65059c09ab5c2fefd1dd85f5"
     },
     "README.md": {
-      "bytes": 6220,
-      "sha256": "f66ddfb5cf9a559902ba40e07d7750c7a64665d4887045eb899db498ea9b7cb7"
+      "bytes": 6505,
+      "sha256": "44ffc9cf154851495bd300ce97652fc293ac41aff49afb209947bb21c674fd0b"
     },
     "SOFTWARE.md": {
       "bytes": 22784,
@@ -116,6 +125,22 @@
     "pyproject.toml": {
       "bytes": 634,
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
+    },
+    "release/crater-analysis-20261110/README.md": {
+      "bytes": 5767,
+      "sha256": "7bf499ddd1938118ebf2695c57a20fc8ac4f2fe7df6c55703c444506fbab9683"
+    },
+    "release/crater-analysis-20261110/analyze_crater_training.py": {
+      "bytes": 16306,
+      "sha256": "984020ced2828392d0793734924922001a950400cac636f313b6421460b41736"
+    },
+    "release/crater-analysis-20261110/results.json": {
+      "bytes": 897346,
+      "sha256": "c0f1d60faaedc9b083be115e1468e97f25f40c676d0e9a25651076dec1759716"
+    },
+    "release/crater-analysis-20261110/test_crater_training.py": {
+      "bytes": 18856,
+      "sha256": "c40447ab60b094d11e0cf7a1589e5e103c0cc2672837f0b8092c80379c52fdf1"
     },
     "release/current-source-20261109/CONTRACTS.md": {
       "bytes": 18503,
@@ -1363,6 +1388,7 @@
     "scope": "All 23,380 saved map grids and SAR validity masks with five-fold role assignments; CPU reconstruction of 26 aggregate groups under four coverage rules."
   },
   "packages": {
+    "crater_analysis_20261110": "release/crater-analysis-20261110",
     "current_execution_source": "release/current-source-20261109",
     "historical_review": "release/v1-review-20260908",
     "map_census_20261109": "release/map-census-20261109",
