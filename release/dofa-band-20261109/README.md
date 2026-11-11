@@ -3,8 +3,11 @@
 This comparison changes DOFA's numeric band input from 13.78 to 3.75 while
 retaining its encoder weights, images and processing. All five geographic
 regions use fresh logistic regression classifiers with the same settings.
-The value 3.75 follows the upstream Sentinel-1 convention; the appropriate
-input for Cassini remains uncertain.
+The value 3.75 is specified for Sentinel-1 in
+[Appendix D of the DOFA preprint, version 2](https://arxiv.org/html/2403.15356v2#A4);
+the [pinned upstream README](https://github.com/zhu-xlab/DOFA/blob/73ff5c0721da322689ae890bed5b4efd78935f47/README.md)
+uses 5.405. The checkpoint's pretraining identifier convention and the appropriate
+input for Cassini remain unresolved.
 
 | Numeric input | Mean macro F1 | Sample SD among regions |
 | --- | ---: | ---: |
@@ -22,13 +25,18 @@ regional means, sample SDs and paired differences. It also supplies small
 corruption tests and a ZIP builder. The 22 members total 6,922,999 bytes as
 packaged; [members.json](members.json) lists their individual hashes.
 
+Run from this companion directory. Set `CETUS_DOFA_WORK` to a new directory outside
+the CETUS checkout; its parent must exist.
+
 ```sh
-unzip dofa-numerical-companion.zip -d dofa-inputs
-sh dofa-inputs/reproduce.sh dofa-results
-cmp dofa-numerical-companion.zip dofa-results/dofa-numerical-companion.zip
+CETUS_DOFA_WORK=/absolute/path/to/external-dofa-reconstruction
+mkdir "$CETUS_DOFA_WORK"
+unzip dofa-numerical-companion.zip -d "$CETUS_DOFA_WORK/inputs"
+PYTHONDONTWRITEBYTECODE=1 sh "$CETUS_DOFA_WORK/inputs/reproduce.sh" "$CETUS_DOFA_WORK/results"
+cmp dofa-numerical-companion.zip "$CETUS_DOFA_WORK/results/dofa-numerical-companion.zip"
 ```
 
-Both directories must be new. Python 3.12.3 and NumPy 2.4.4 were used for the
+Python 3.12.3 and NumPy 2.4.4 were used for the
 saved arithmetic check. The script installs nothing and makes no network
 requests. The embedded README explains class order, averaging and tolerances.
 

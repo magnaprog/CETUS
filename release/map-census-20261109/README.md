@@ -43,10 +43,11 @@ From this directory:
 
 ```sh
 python3 -B -m unittest -v test_check_counts
-python3 -B check_counts.py --output recount.json
+python3 -B check_counts.py --output /absolute/path/to/external-work/recount.json
 ```
 
-Tests use synthetic data only. The recount writes a new JSON report containing
+Use an existing parent directory outside the CETUS checkout and a new report
+filename. Tests use synthetic data only. The recount writes a JSON report containing
 all reconstructed summaries. `--output` refuses to overwrite an existing file;
 use a fresh filename for another invocation. Failures and interruptions are
 retained in that report when the destination is writable, and exit nonzero.

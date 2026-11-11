@@ -67,8 +67,8 @@ SGD and common LR substitution controls. Root v1 results and both repaired
 parent packages retain their existing bytes. These comparisons describe
 complete recipes and training membership changes; they do not isolate a
 causal effect of unfreezing or spatial leakage. The
-[root README](README.md#reproduce-the-results) supplies the separate package
-acceptance identity.
+[reconstruction instructions](SOFTWARE.md#reconstruct-adaptation-and-training-substitution-results)
+give the package acceptance identity and verification command.
 
 **Historical figure index.** A separate earlier software-side v1 artifact
 index retained the figure-manifest digest

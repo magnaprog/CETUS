@@ -75,8 +75,8 @@
       "sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf"
     },
     "CORRECTIONS.md": {
-      "bytes": 6013,
-      "sha256": "f5948a59e894572d5959ffa3599e45b461ab4ba155c25b281b16900a4828a19e"
+      "bytes": 6078,
+      "sha256": "3d64183548f4f62f38007253f4dda8502a4474f91482380478bf1d9219687b00"
     },
     "DATA_LICENSES.md": {
       "bytes": 1886,
@@ -103,8 +103,8 @@
       "sha256": "698da37624c69e51a71c0405777350f33702ce5b0ecb03aa716f44462fa85e4c"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 20658,
-      "sha256": "d5a768a3f1ff1e73d2a9b86f56e53d1b9ee5884b5e5f245bb872f9937ca549cf"
+      "bytes": 21444,
+      "sha256": "397f65f6242dd6bfd1d261f01270fb764564c6b091f96b5b0381cdff46167dec"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -135,8 +135,8 @@
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
     },
     "release/crater-analysis-20261110/README.md": {
-      "bytes": 5767,
-      "sha256": "7bf499ddd1938118ebf2695c57a20fc8ac4f2fe7df6c55703c444506fbab9683"
+      "bytes": 5818,
+      "sha256": "2c49e978dd33f042b0a874387d4691a4a4d8bc4b3eeb524dc98069ab862ec990"
     },
     "release/crater-analysis-20261110/analyze_crater_training.py": {
       "bytes": 16306,
@@ -395,8 +395,8 @@
       "sha256": "6564e348cb6fe1b67135a423f47ce224e3cdfaf27e207e9f245968d570cc9be8"
     },
     "release/dofa-band-20261109/README.md": {
-      "bytes": 2315,
-      "sha256": "c778159052deae8b750a0b27d41ccea17cf068d8d8158c68c72dc10319d5bd5b"
+      "bytes": 2842,
+      "sha256": "7f329f0604bfec07385abb2b2e0f571927bc9768c00e11a16c379ee8111cd8c3"
     },
     "release/dofa-band-20261109/dofa-numerical-companion.zip": {
       "bytes": 6922999,
@@ -1099,8 +1099,8 @@
       "sha256": "e33100aae6b375edeab58240d1f1a09739d10dc4aaa8b54145962e62db6c522a"
     },
     "release/map-census-20261109/README.md": {
-      "bytes": 8256,
-      "sha256": "2c01926fe1f687aa0d6a19a6eb359a703e92231f785be72c0e64bf2013c6b93f"
+      "bytes": 8371,
+      "sha256": "7979bf68932d947163b683581fc29b216bd19859a2160fe3b6e5d5e5f04ec681"
     },
     "release/map-census-20261109/check_counts.py": {
       "bytes": 10402,
@@ -1415,8 +1415,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "bytes": 32499,
-      "sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
+      "bytes": 32251,
+      "sha256": "c869753291925ebc663aa09b453b5ebff47cb55fba91256bd96635af43668d91"
     },
     "splits/earth_loso_arctic_thermokarst.json": {
       "bytes": 17905,

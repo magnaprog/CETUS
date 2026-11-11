@@ -165,6 +165,16 @@
       "previous_manifest_sha256": "b34820dff62c0390c6dc9833e187bd2a5db33936732dd90d55a99ca1019c0060",
       "previous_sha256": "537c1ad8fd86998fba58ec38dd66403a7f6103064f3c02e581d598cd4a94d338",
       "reason": "Route the verified public processed-image release and companion; use its unchanged catalog/split layout in existing runner commands. Preserve original scientific settings, source hashes, producers and all earlier receipts. No new model or scientific execution in this documentation update."
+    },
+    {
+      "change_kind": "maintenance_documentation",
+      "date": "2026-11-11",
+      "new_sha256": "c869753291925ebc663aa09b453b5ebff47cb55fba91256bd96635af43668d91",
+      "path": "scripts/run_probing.py",
+      "previous_cetus_commit": "12735ce442883c412c0acde60d01a84ab9e195d0",
+      "previous_manifest_sha256": "d5a768a3f1ff1e73d2a9b86f56e53d1b9ee5884b5e5f245bb872f9937ca549cf",
+      "previous_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5",
+      "reason": "Correct the public Titan command example in the module docstring, including the required split, strict weights and external output path. Original source_sha256, scientific producer identities and executable AST are unchanged."
     }
   ],
   "excluded": [
@@ -210,8 +220,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "origin": "verbatim committed blob",
-      "sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5",
+      "origin": "committed source with docstring example correction; executable AST unchanged",
+      "sha256": "c869753291925ebc663aa09b453b5ebff47cb55fba91256bd96635af43668d91",
       "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
     },
     "tests/test_bound_feature_cache.py": {

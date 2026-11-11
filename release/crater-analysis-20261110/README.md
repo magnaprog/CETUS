@@ -13,11 +13,12 @@ python3 -B analyze_crater_training.py \
   --initialization-zip ../titan-followup-20261109/initialization-supplement.zip \
   --map-census ../map-census-20261109/map_cells.npz \
   --census-metadata ../map-census-20261109/counts.json \
-  --output ../../OUTPUTS/crater-analysis-new
+  --output /absolute/path/to/external-work/crater-analysis-new
 ```
 
-`../../OUTPUTS` must exist; `crater-analysis-new` must not exist. The script checks the
-following SHA256 identities before decoding the consumed bytes. There is no
+Use an existing parent directory outside the CETUS checkout;
+`crater-analysis-new` must not exist. The script checks the following SHA256
+identities before decoding the consumed bytes. There is no
 hash override. Output is `results.json` in the new directory, published by an
 atomic rename after encoding. Existing outputs are never reused; an interrupted
 write may retain its temporary file in the reserved directory.
