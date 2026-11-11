@@ -16,23 +16,18 @@ of file bytes; normalization sample and membership formats are recorded by
 the dataset. Unused Earth catalog and split hashes are null.
 
 Usage:
-    # Sequential (single GPU):
-    python scripts/run_probing.py --titan_catalog data/titan_sar/catalog.json \
-                                  --earth_catalog data/earth_analog_real/catalog.json \
-                                  --output_dir outputs/probing \
-                                  --models dinov2 dofa croma random_init \
-                                  --device cuda
+    # From the CETUS root; replace both external paths.
+    TITAN_DATA=/absolute/path/to/extracted/titan-images/data
+    RESULTS=/absolute/path/to/new/results
+    python -m scripts.run_probing --within_titan_only --require_real_weights \
+      --titan_catalog "$TITAN_DATA/catalog.json" \
+      --titan_split_manifest "$TITAN_DATA/splits/titan_contiguous_fold_0.json" \
+      --models dinov2 --device cuda --batch_size 32 --seeds 0 1 2 3 4 \
+      --features_only --output_dir "$RESULTS/features/dinov2/fold-0"
 
-    # Parallel (one model per GPU, auto-assigned):
-    python scripts/run_probing.py --titan_catalog data/titan_sar/catalog.json \
-                                  --earth_catalog data/earth_analog_real/catalog.json \
-                                  --output_dir outputs/probing \
-                                  --models dinov2 dofa croma random_init \
-                                  --parallel
-
-    # Parallel with explicit GPU assignment:
-    python scripts/run_probing.py --titan_catalog ... --earth_catalog ... \
-                                  --parallel --gpu_ids 0 1 2 3
+    See SOFTWARE.md for image/weight setup, CPU cache analysis, and all folds.
+    Historical Earth-transfer and parallel examples require separately supplied
+    inputs; they are outside the supported public recipe.
 """
 
 import argparse
