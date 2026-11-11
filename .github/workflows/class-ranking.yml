@@ -1,0 +1,48 @@
+name: Class ranking reconstruction
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  reconstruction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONNOUSERSITE: "1"
+      CUDA_VISIBLE_DEVICES: ""
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - run: "python -m pip install --only-binary=:all: numpy==2.4.4"
+      - name: Check package files and synthetic examples
+        working-directory: release/class-ranking-20261111
+        run: |
+          set -euo pipefail
+          sha256sum -c SHA256SUMS
+          python -B -m unittest -v test_reconstruct
+      - name: Reconstruct all class scores and curves
+        working-directory: release/class-ranking-20261111
+        run: |
+          set -euo pipefail
+          python -B reconstruct.py \
+            --initialization-zip ../titan-followup-20261109/initialization-supplement.zip \
+            --output "$RUNNER_TEMP/class-ranking"
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+      - name: Preserve reconstruction results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: class-ranking-reconstruction
+          path: ${{ runner.temp }}/class-ranking
+          if-no-files-found: warn

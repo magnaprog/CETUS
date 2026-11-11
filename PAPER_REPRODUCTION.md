@@ -90,6 +90,28 @@ cross-entropy coefficients; it does not bound gradients or performance. Map
 fractions concern eligible known cells, with empty domains undefined. Repeated
 seeds and overlapping images do not provide independent geographic samples.
 
+## Ranking images by terrain class
+
+The [class-ranking companion](release/class-ranking-20261111/README.md) calculates
+average precision from the initialization study's saved probabilities. It keeps
+each region and fitted model separate, includes all six classes and retains all
+60 Craters precision–recall curves. The calculation admits tied scores together
+and sums recall increments times precision without interpolation. Seeds are
+averaged within each region before giving the five regions equal weight.
+
+Both initialization comparisons improve mean macro average precision. Mean
+Craters average precision changes little for DINOv2 and declines for ResNet18.
+Region 2 has only one Craters image, whose rank strongly affects its score;
+the companion retains all seeds and the differences in the other regions.
+This is an exploratory ranking analysis on the same test images. It measures
+agreement with the terrain map and does not assess calibrated probabilities
+or detection of individual geological craters.
+
+The companion's commands use Python 3.12.3 and NumPy 2.4.4 on CPU. They read the
+existing initialization ZIP intact, reconstruct all 360 class scores and their
+regional summaries, and compare every saved curve array. No model weights,
+image decoding or training are involved.
+
 ## Training loss normalization
 
 The [execution source](release/loss-source-20261110/README.md) compares two
@@ -376,8 +398,10 @@ Bengio and Grandvalet's discussion of cross-validation uncertainty is in
 [their JMLR article](https://jmlr.org/papers/v5/grandvalet04a.html).
 
 This repository distributes metadata, predictions, software and the November
-companions' small SAR/map inspection excerpts. The full processed image
-collection, raw radar products, embeddings and pretrained or fitted model
-weights require separate access. Internal verification records named above
+companions' small SAR/map inspection excerpts. The complete processed Titan
+image collection is available through the separate
+[image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109).
+Raw radar products, embeddings and pretrained or fitted model weights have
+separate access routes. Internal verification records named above
 retain their stated access limits. Their presence in this guide does not establish geological accuracy,
 a universal reproducibility guarantee or access to omitted source data.

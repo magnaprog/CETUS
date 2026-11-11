@@ -1,0 +1,57 @@
+{
+  "schema": "class-ranking-package-v1",
+  "files": {
+    "LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "NOTICE.md": {
+      "bytes": 1368,
+      "sha256": "15311db94d4bd83a17665ff78d43294a52994941f55b9a88415568d13201ce2b"
+    },
+    "README.md": {
+      "bytes": 5638,
+      "sha256": "0a938c76d43699759828110f2726cdc99c39377d3100e8e1a38a17991157010c"
+    },
+    "contract.json": {
+      "bytes": 7295,
+      "sha256": "36688f6d9fe32cc7bcefb4a197f1204fcaafb87ada74e0a03f0c240c33c9f0c4"
+    },
+    "craters-curves.npz": {
+      "bytes": 3208180,
+      "sha256": "74f8fb2159edf44a7d95c7abb7f3aaa582b74fb2aaf1951222a1fa2cd09c63c4"
+    },
+    "provenance.json": {
+      "bytes": 2238,
+      "sha256": "681befd71a91adfcfc96cb869f0fc82925a34c5e92e27b1d6fb2f477388040dd"
+    },
+    "reconstruct.py": {
+      "bytes": 5940,
+      "sha256": "1d2af6fee4901c5c89832c51e1c4752db57db9cbed7b44f162e9b7c34b418751"
+    },
+    "results.json": {
+      "bytes": 415274,
+      "sha256": "f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/analyze_class_ranking.py": {
+      "bytes": 25011,
+      "sha256": "52f98cd9643fea928988b1f3d4159e8eda230955f152d1a2a38c1773ac096134"
+    },
+    "scripts/analyze_model_followup.py": {
+      "bytes": 41406,
+      "sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b"
+    },
+    "scripts/analyze_sar_coverage.py": {
+      "bytes": 9599,
+      "sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03"
+    },
+    "test_reconstruct.py": {
+      "bytes": 4284,
+      "sha256": "290e73f4743b88862d8dd0278bf441ecb44fc052dddd0ae370e56bacf3ef4162"
+    }
+  }
+}
