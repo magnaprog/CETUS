@@ -15,6 +15,12 @@
       "sha256": "b4bc10e58d4812c090ef4cabba45c75735430525aadaf34f6c84dce2257706b8"
     }
   },
+  "class_ranking": {
+    "analysis_source_commit": "0e4def2cb41139f6eeea2de31dd724f6694f0dbc",
+    "guide": "release/class-ranking-20261111/README.md",
+    "manifest": "release/class-ranking-20261111/manifest.json",
+    "scope": "Within-region average precision for all six classes and all sixty Craters curves from saved initialization probabilities; offline CPU reconstruction without fitting."
+  },
   "code_included": true,
   "crater_analysis": {
     "analysis_source_commit": "a8abe8414a3a87ad4677f31d82db50996dd27955",
@@ -37,6 +43,10 @@
     ".github/scripts/offline_cpu.py": {
       "bytes": 2033,
       "sha256": "3b8f442daa818f6f8dc8fa24e12f83b573a25e6bfa2957e1c7394b5d17ca1cfb"
+    },
+    ".github/workflows/class-ranking.yml": {
+      "bytes": 1520,
+      "sha256": "43f10c876541617dc5255d11ed91d9e26c306b47365c9b5dc079c2ac74d4fa2a"
     },
     ".github/workflows/crater-analysis.yml": {
       "bytes": 1885,
@@ -91,12 +101,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 25111,
-      "sha256": "1297f19c0e3eaf01c112e5ef8ecfa5712a148fb7a02cbfaffd92ffa5478a6130"
+      "bytes": 26549,
+      "sha256": "c291ef9ff8d73f3ab2ce7556332de164d085b0cf0bd4325018e58bfb5d7370b7"
     },
     "README.md": {
-      "bytes": 7401,
-      "sha256": "31e32cbd2b9884db0a24d27158160b72476843de7a366790b285630e960b4e1d"
+      "bytes": 7849,
+      "sha256": "de1045f29eba4e8cd01b9c60d12d6eca534058c9965acc0438bc907cf6a7c8f9"
     },
     "SOFTWARE.md": {
       "bytes": 22784,
@@ -133,6 +143,66 @@
     "pyproject.toml": {
       "bytes": 634,
       "sha256": "624e5c86412b4094532f64326dee70714d550cf7b58373b38891b4155452c396"
+    },
+    "release/class-ranking-20261111/LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "release/class-ranking-20261111/NOTICE.md": {
+      "bytes": 1368,
+      "sha256": "15311db94d4bd83a17665ff78d43294a52994941f55b9a88415568d13201ce2b"
+    },
+    "release/class-ranking-20261111/README.md": {
+      "bytes": 5638,
+      "sha256": "0a938c76d43699759828110f2726cdc99c39377d3100e8e1a38a17991157010c"
+    },
+    "release/class-ranking-20261111/SHA256SUMS": {
+      "bytes": 1182,
+      "sha256": "34bdec25f036ce9f692e60e7599614043761ae76931e0d89c44d8770d86a3e77"
+    },
+    "release/class-ranking-20261111/contract.json": {
+      "bytes": 7295,
+      "sha256": "36688f6d9fe32cc7bcefb4a197f1204fcaafb87ada74e0a03f0c240c33c9f0c4"
+    },
+    "release/class-ranking-20261111/craters-curves.npz": {
+      "bytes": 3208180,
+      "sha256": "74f8fb2159edf44a7d95c7abb7f3aaa582b74fb2aaf1951222a1fa2cd09c63c4"
+    },
+    "release/class-ranking-20261111/manifest.json": {
+      "bytes": 1868,
+      "sha256": "3324a404d55fdf024e4799a0f10bf136d2b967e3853dd9309729a56a4ef1a770"
+    },
+    "release/class-ranking-20261111/provenance.json": {
+      "bytes": 2238,
+      "sha256": "681befd71a91adfcfc96cb869f0fc82925a34c5e92e27b1d6fb2f477388040dd"
+    },
+    "release/class-ranking-20261111/reconstruct.py": {
+      "bytes": 5940,
+      "sha256": "1d2af6fee4901c5c89832c51e1c4752db57db9cbed7b44f162e9b7c34b418751"
+    },
+    "release/class-ranking-20261111/results.json": {
+      "bytes": 415274,
+      "sha256": "f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d"
+    },
+    "release/class-ranking-20261111/scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "release/class-ranking-20261111/scripts/analyze_class_ranking.py": {
+      "bytes": 25011,
+      "sha256": "52f98cd9643fea928988b1f3d4159e8eda230955f152d1a2a38c1773ac096134"
+    },
+    "release/class-ranking-20261111/scripts/analyze_model_followup.py": {
+      "bytes": 41406,
+      "sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b"
+    },
+    "release/class-ranking-20261111/scripts/analyze_sar_coverage.py": {
+      "bytes": 9599,
+      "sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03"
+    },
+    "release/class-ranking-20261111/test_reconstruct.py": {
+      "bytes": 4284,
+      "sha256": "290e73f4743b88862d8dd0278bf441ecb44fc052dddd0ae370e56bacf3ef4162"
     },
     "release/crater-analysis-20261110/README.md": {
       "bytes": 5818,
@@ -1585,6 +1655,7 @@
     "scope": "All 23,380 saved map grids and SAR validity masks with five-fold role assignments; CPU reconstruction of 26 aggregate groups under four coverage rules."
   },
   "packages": {
+    "class_ranking_20261111": "release/class-ranking-20261111",
     "crater_analysis_20261110": "release/crater-analysis-20261110",
     "current_execution_source": "release/current-source-20261109",
     "historical_review": "release/v1-review-20260908",
