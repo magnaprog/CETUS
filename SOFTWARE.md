@@ -384,3 +384,13 @@ needs the separate source, input and environment work described above.
 Project code uses the root MIT license. The vendored CROMA implementation has
 its upstream MIT notice in `licenses/CROMA-LICENSE`. Upstream source and weights
 remain subject to their own terms; this package contains no pretrained weights.
+
+## DOFA partial training
+
+The [DOFA source package](release/dofa-partial-source-20261112/README.md)
+contains the runner and supporting modules for the fifty-fit numeric-input
+comparison. It preserves the original implementation without presenting the
+source subset as a complete runnable environment. Its contracts describe the
+additional inputs and execution checks. The separate
+[numerical companion](release/dofa-partial-20261112/README.md) reconstructs
+scores from saved predictions using only the Python standard library.

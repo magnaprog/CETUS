@@ -1,0 +1,386 @@
+{
+  "counts": {
+    "omitted_bytes": 766482,
+    "omitted_files": 49,
+    "original_bytes": 910134,
+    "original_files": 61,
+    "supplied_bytes": 143652,
+    "supplied_files": 12
+  },
+  "execution_limit": "This subset is not the full historical inventory and cannot satisfy the unchanged original source gate.",
+  "files": {
+    "scripts/aggregate_cv_results.py": {
+      "bytes": 8297,
+      "export_path": null,
+      "sha256": "0c4c079cb0e77212e95e17e6d1fc57cba30cb0a5a964fb83094d2df46ff176ac",
+      "supplied": false
+    },
+    "scripts/aggregate_final_results.py": {
+      "bytes": 31099,
+      "export_path": null,
+      "sha256": "c21795c1275051e05698da06d57f590cd222e7f9f6b16be4937451b7fdf8afcf",
+      "supplied": false
+    },
+    "scripts/analyze_review_metrics.py": {
+      "bytes": 24178,
+      "export_path": null,
+      "sha256": "4376458bc7a1a243a4f5ddadaf2acf177ef1647cbd9bcf758668c974a08377fc",
+      "supplied": false
+    },
+    "scripts/audit_bidr_footprints.py": {
+      "bytes": 17617,
+      "export_path": null,
+      "sha256": "0c9cdb3e440e2f6b8e40a6179afa5828832ad52d0393b20f57a57862ac703d53",
+      "supplied": false
+    },
+    "scripts/audit_bidr_geometry.py": {
+      "bytes": 7989,
+      "export_path": null,
+      "sha256": "70b5482eb823c5406bc457d0c03b3e99861cfe3c62b46449c738e8c9e4b817e7",
+      "supplied": false
+    },
+    "scripts/audit_contiguous_splits.py": {
+      "bytes": 10476,
+      "export_path": null,
+      "sha256": "6c8874369d06c130d860a46aaecc49becdea17ca92fb75f9c5f7eb20d9886218",
+      "supplied": false
+    },
+    "scripts/audit_manuscript.py": {
+      "bytes": 21549,
+      "export_path": null,
+      "sha256": "81cae94322c2a106ea5ea3df861072643da4d97566bd971185541eb6d517bd97",
+      "supplied": false
+    },
+    "scripts/audit_rebuilt_catalog.py": {
+      "bytes": 7181,
+      "export_path": null,
+      "sha256": "b79dad92f80f3d80886ebbc6c6eaaa7f58c7641d4edd2a250f333583e632deac",
+      "supplied": false
+    },
+    "scripts/build_anonymous_rps_data_bundle.py": {
+      "bytes": 55803,
+      "export_path": null,
+      "sha256": "d910af2243871fa6c87a56ba18af1f4a61c464f29d5a4cdc3c510a0a592b4aa9",
+      "supplied": false
+    },
+    "scripts/build_contiguous_splits.py": {
+      "bytes": 11157,
+      "export_path": null,
+      "sha256": "1b162403341a5dff104066f87906c31a482be151e1733df964700b315947584b",
+      "supplied": false
+    },
+    "scripts/build_review_protocol.py": {
+      "bytes": 16891,
+      "export_path": null,
+      "sha256": "bdc47c47548c83700abf16d7ae33576c1fd0df04405d739adc906b5a2d32bfa0",
+      "supplied": false
+    },
+    "scripts/build_split_manifests.py": {
+      "bytes": 12656,
+      "export_path": null,
+      "sha256": "eae02f730dc14777c6ae9a73dedb98461ee1278f124a5b583fa7b844a0764681",
+      "supplied": false
+    },
+    "scripts/check_gpu_execution.py": {
+      "bytes": 4305,
+      "export_path": null,
+      "sha256": "0f4b99f86a42c888416ad30b3da25bb24c275281ca15b958bf222bf8712c0de5",
+      "supplied": false
+    },
+    "scripts/check_r7_numerics.py": {
+      "bytes": 21336,
+      "export_path": null,
+      "sha256": "cbd70f1cfc6320fb860a3f4cba18f9f32ed1b907f1b8a39e71c61a73bd11ae7b",
+      "supplied": false
+    },
+    "scripts/check_workshop_results.py": {
+      "bytes": 7490,
+      "export_path": null,
+      "sha256": "08afaff047ed32f0ae7c4d34cfe4091dae4d091bd67d7046e5410c1244b3f594",
+      "supplied": false
+    },
+    "scripts/download_data.py": {
+      "bytes": 8409,
+      "export_path": null,
+      "sha256": "620217be85702ffad1d0068a8ee5b1df0dc6ec09a443534d032cc683c92a2e4d",
+      "supplied": false
+    },
+    "scripts/generate_figures.py": {
+      "bytes": 44682,
+      "export_path": null,
+      "sha256": "e9f908ae56733249ff5c2ad3f5b4efd1afeb825d0091b91bccdd6290fae5f8e9",
+      "supplied": false
+    },
+    "scripts/generate_synthetic_earth.py": {
+      "bytes": 6499,
+      "export_path": null,
+      "sha256": "8f85aadab2ca71209ab076e1d61ad2e1c09c2b4bfb275ea2c3497c2a3f2954f9",
+      "supplied": false
+    },
+    "scripts/prepare_data.py": {
+      "bytes": 8569,
+      "export_path": null,
+      "sha256": "75ea3c70c6a6017a325a1d7b56e13d30e2aa42fe0a20f93455ed48cdc3c3ae2c",
+      "supplied": false
+    },
+    "scripts/process_sentinel1.py": {
+      "bytes": 32145,
+      "export_path": null,
+      "sha256": "293c8f1f25ef6aac909b1330d9c7e5480bdcbb0e84539b590bef358eb37739d7",
+      "supplied": false
+    },
+    "scripts/process_sentinel1_snap.py": {
+      "bytes": 9532,
+      "export_path": null,
+      "sha256": "f54f342dff51251332d56aa60b8c4d3af75bbe26e81bddfc4a151a406c51ad63",
+      "supplied": false
+    },
+    "scripts/process_venus.py": {
+      "bytes": 5753,
+      "export_path": null,
+      "sha256": "2789abfce8aef633511a3cef6f192bfbf3af1473a10716dd5345fe806e325574",
+      "supplied": false
+    },
+    "scripts/rasterize_labels.py": {
+      "bytes": 5285,
+      "export_path": null,
+      "sha256": "c75f6b28c45c581409676bbcc4946a624408d8371a5c9144ce2ba475a7cc3ccc",
+      "supplied": false
+    },
+    "scripts/recompute_archived_mmd.py": {
+      "bytes": 17906,
+      "export_path": null,
+      "sha256": "feae0691b00bcf518aea9c59f24192b01a546b90a947a3ad1e78cd1c023eee47",
+      "supplied": false
+    },
+    "scripts/review_preprocessing.py": {
+      "bytes": 17357,
+      "export_path": null,
+      "sha256": "ae1bdac53d34e2804747e942a0f10c354d45f4fb67411c0bc5b070f8b7a6238f",
+      "supplied": false
+    },
+    "scripts/run_anomaly_scoring.py": {
+      "bytes": 16755,
+      "export_path": null,
+      "sha256": "5599c65c6f1e5feb2900d2e0ce4b221c563081ec3de68078731c88f84f1361b4",
+      "supplied": false
+    },
+    "scripts/run_baselines.py": {
+      "bytes": 14502,
+      "export_path": null,
+      "sha256": "12aed091aef39398b8438f5765e0f1023a286aa0f0b2aafc6fa1b2327302035c",
+      "supplied": false
+    },
+    "scripts/run_coral.py": {
+      "bytes": 15049,
+      "export_path": null,
+      "sha256": "18a88fa18db71c2ecd228ba38475d66afcd61430b26c733af8a6a4019f9397ad",
+      "supplied": false
+    },
+    "scripts/run_curriculum.py": {
+      "bytes": 24273,
+      "export_path": null,
+      "sha256": "fcd44e2e2445764fba2f628fad72f2806233f5cdaa4ddfe359a8ecf6d7fa637e",
+      "supplied": false
+    },
+    "scripts/run_finetuning.py": {
+      "bytes": 25658,
+      "export_path": "historical-ed2eb3e/scripts/run_finetuning.py",
+      "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c",
+      "supplied": true
+    },
+    "scripts/run_label_efficiency.py": {
+      "bytes": 9925,
+      "export_path": null,
+      "sha256": "3d5e0144e6767fafbcbdcd660861b5822879842e9217a128d480549ecb636f60",
+      "supplied": false
+    },
+    "scripts/run_physics_analysis.py": {
+      "bytes": 12478,
+      "export_path": null,
+      "sha256": "9fd602087d1f073242e5461315c2f05c3cb440b3abc1f978184d11460c6118d3",
+      "supplied": false
+    },
+    "scripts/run_probing.py": {
+      "bytes": 32499,
+      "export_path": null,
+      "sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5",
+      "supplied": false
+    },
+    "scripts/run_review_controls.py": {
+      "bytes": 23856,
+      "export_path": null,
+      "sha256": "127b37a099a997f58e3ebc4bff19d7d9aeb9eb682f82315c918a979d0a3e9e15",
+      "supplied": false
+    },
+    "scripts/run_review_preprocessing.py": {
+      "bytes": 15842,
+      "export_path": null,
+      "sha256": "d01b6aa5ab981e81e1f370037d05812554adf41433cf59d3db71ab0e843a75a7",
+      "supplied": false
+    },
+    "scripts/run_review_queue.py": {
+      "bytes": 5832,
+      "export_path": null,
+      "sha256": "9fa54d0f14b03abcf6642f52bf3722fa10d9e1cbfcd3906f7c252cfec3dbf61d",
+      "supplied": false
+    },
+    "scripts/run_venus_probing.py": {
+      "bytes": 17301,
+      "export_path": null,
+      "sha256": "83f39a8d6e484cf6f6b4839b08b5e8052dc6745931cfe48de08f7afd05491d6e",
+      "supplied": false
+    },
+    "scripts/summarize_repaired_titan.py": {
+      "bytes": 25191,
+      "export_path": null,
+      "sha256": "a166437fc65b86dec8fa49ae24f5ad46bf72b645b4103c4f6646f0ac9f421e72",
+      "supplied": false
+    },
+    "scripts/summarize_review_controls.py": {
+      "bytes": 37992,
+      "export_path": null,
+      "sha256": "481cdc2acffa76868fbe4d7688baea9e93104c163bcbe1a96b9e9d9270201565",
+      "supplied": false
+    },
+    "scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "export_path": "historical-ed2eb3e/scripts/summarize_review_frozen.py",
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd",
+      "supplied": true
+    },
+    "titansar/__init__.py": {
+      "bytes": 98,
+      "export_path": "historical-ed2eb3e/titansar/__init__.py",
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f",
+      "supplied": true
+    },
+    "titansar/configs/__init__.py": {
+      "bytes": 0,
+      "export_path": "historical-ed2eb3e/titansar/configs/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "supplied": true
+    },
+    "titansar/configs/defaults.py": {
+      "bytes": 5136,
+      "export_path": "historical-ed2eb3e/titansar/configs/defaults.py",
+      "sha256": "859262bfe4fd36fad1ca0c00ac4e2782ff25da3915564db027f79944673036ee",
+      "supplied": true
+    },
+    "titansar/data/__init__.py": {
+      "bytes": 48,
+      "export_path": "historical-ed2eb3e/titansar/data/__init__.py",
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59",
+      "supplied": true
+    },
+    "titansar/data/dataset.py": {
+      "bytes": 23632,
+      "export_path": "historical-ed2eb3e/titansar/data/dataset.py",
+      "sha256": "a4e65852fe308a499e3265b9bd1ee652c4d2efa31f65eea8a0f9e055736cf747",
+      "supplied": true
+    },
+    "titansar/data/earth_analog.py": {
+      "bytes": 11114,
+      "export_path": null,
+      "sha256": "09d8ad3bea1facc7571509eb73737e7bce0b1388b5c334d7d697eef4e140f5e5",
+      "supplied": false
+    },
+    "titansar/data/sar_processing.py": {
+      "bytes": 23789,
+      "export_path": null,
+      "sha256": "eb1b6463fc30449dfa98b582ab65f5a2af690273ac5ac67899e74c0a11295927",
+      "supplied": false
+    },
+    "titansar/data/vims_processing.py": {
+      "bytes": 4270,
+      "export_path": null,
+      "sha256": "28a0fef38bda9aaa46809f15a9c5519a1ca837b3a88bcfdaa81321baedc8ec55",
+      "supplied": false
+    },
+    "titansar/evaluation/__init__.py": {
+      "bytes": 53,
+      "export_path": null,
+      "sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de",
+      "supplied": false
+    },
+    "titansar/evaluation/anomaly_scoring.py": {
+      "bytes": 7490,
+      "export_path": null,
+      "sha256": "90a445ec72c835e8c56d0425f5c02e53a999f9b8d7cdf4f321d9b6d6d818c4f2",
+      "supplied": false
+    },
+    "titansar/evaluation/domain_adaptation.py": {
+      "bytes": 8136,
+      "export_path": null,
+      "sha256": "f8dcb9e587b2a5c65d5db4c813a4dda6503888ab92d9088771930bc3cc32ec51",
+      "supplied": false
+    },
+    "titansar/evaluation/metrics.py": {
+      "bytes": 14386,
+      "export_path": null,
+      "sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837",
+      "supplied": false
+    },
+    "titansar/evaluation/physics_analysis.py": {
+      "bytes": 11859,
+      "export_path": null,
+      "sha256": "364b34309bb5e22da3ee66583743ab0425dc043b39074fbe19ca900f74972130",
+      "supplied": false
+    },
+    "titansar/models/__init__.py": {
+      "bytes": 46,
+      "export_path": "historical-ed2eb3e/titansar/models/__init__.py",
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220",
+      "supplied": true
+    },
+    "titansar/models/baselines.py": {
+      "bytes": 6225,
+      "export_path": null,
+      "sha256": "3db31bb13fe2aec090fc2916946ff08eca27f33c863a1fd6ab5d12834ec8037e",
+      "supplied": false
+    },
+    "titansar/models/croma_model.py": {
+      "bytes": 14704,
+      "export_path": "historical-ed2eb3e/titansar/models/croma_model.py",
+      "sha256": "b964e682a4d4086643918844c348a5c8160a12a5768cd6678286935a3a14acf2",
+      "supplied": true
+    },
+    "titansar/models/foundation_models.py": {
+      "bytes": 19831,
+      "export_path": "historical-ed2eb3e/titansar/models/foundation_models.py",
+      "sha256": "93514f0e93104387b54327717938ddf833c9527b4bf0f50ebfb079f592d986c8",
+      "supplied": true
+    },
+    "titansar/models/probing.py": {
+      "bytes": 25323,
+      "export_path": "historical-ed2eb3e/titansar/models/probing.py",
+      "sha256": "b247e3e6f7ee4dbb94963d5925a1e111b65ef525209d57985be24a25be5d0b36",
+      "supplied": true
+    },
+    "titansar/physics/__init__.py": {
+      "bytes": 48,
+      "export_path": null,
+      "sha256": "ddb35e2bb5f96d181e1427a8026894c62b4ec01d1af7a7dbe091ce0fc26e656d",
+      "supplied": false
+    },
+    "titansar/physics/remapping.py": {
+      "bytes": 13456,
+      "export_path": null,
+      "sha256": "4ef361be7abbe72fd8a94e2d2a02d0a26f0c36a214ebe433eb6454e6f47bfc7e",
+      "supplied": false
+    },
+    "titansar/reproducibility.py": {
+      "bytes": 4648,
+      "export_path": "historical-ed2eb3e/titansar/reproducibility.py",
+      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804",
+      "supplied": true
+    }
+  },
+  "historical_source_commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+  "inventory_scope": "All tracked Python paths under scripts/ and titansar/ in the original contract.",
+  "original_contract": {
+    "bytes": 43796,
+    "sha256": "7eecb0d70e467c222a501b96150c502ab606ec318a207569729426f354ee5d39"
+  },
+  "schema": "dofa-partial-historical-source-inventory-v1"
+}

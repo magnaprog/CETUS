@@ -1,0 +1,604 @@
+{
+  "counts": {
+    "exact_development_source_test_protocol_files": 18,
+    "exact_notice_files": 4,
+    "generated_files_including_integrity": 9,
+    "projected_guides": 2,
+    "total_files": 33
+  },
+  "documentation_revision": {
+    "inherited_verification": "Source, guide-projection and contract-view checks from the unchanged original export.",
+    "new_primary_source": {
+      "bytes": 1070,
+      "commit": "73ff5c0721da322689ae890bed5b4efd78935f47",
+      "finding": "MIT software license, copyright 2024 Zhitong Xiong.",
+      "git_blob": "3b7ee0ab6aaf38305d86075d646c24dc1827fc65",
+      "limit": "Externally hosted checkpoint terms and full dependency closure remain unestablished; no upstream code or weights supplied.",
+      "sha256": "e169ac02166d48529244826773fc7e4afa855b62edb7533a09f910e6fb6dfcd8",
+      "subject": "Pinned DOFA repository software license",
+      "url": "https://github.com/zhu-xlab/DOFA/blob/73ff5c0721da322689ae890bed5b4efd78935f47/LICENSE"
+    },
+    "new_verification": [
+      "changed documentation links and retained inbound anchors",
+      "five-file delta and exact unchanged-member identity",
+      "derived inventory and checksum consistency"
+    ],
+    "prior_complete_inventory_sha256": "cdec762a61318e6d2966851de27ed0cb1a23e8f1abd57d5498edbcc125af40ad",
+    "prior_source_manifest_sha256": "626ab86c77de92b11c11ad08c7f7c56466f43c5fac4eef2ef90b83cf8dfcc1a3",
+    "scope": "README.md and CONTRACTS.md prose revision; all code, guides, contract views and notices unchanged."
+  },
+  "exported_from": {
+    "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+    "repository": "magnaprog/TitanSAR-dev",
+    "tree": "23d3ad90461b26afeea6342ddf25c015b55c5637"
+  },
+  "files": {
+    "CONTRACTS.md": {
+      "bytes": 7678,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "7a156f695d300cc2539b9c1254010e668c9283b1e298ca8af26a6d98a7d0f7bf"
+    },
+    "DATA_LICENSES.md": {
+      "bytes": 1886,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "DATA_LICENSES.md",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 1886,
+        "source_sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+      },
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "LICENSE": {
+      "bytes": 1066,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "LICENSE",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 1066,
+        "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+      },
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "README.md": {
+      "bytes": 1284,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "5bb6a3c7dbf3d1d55e2fb0e8db89d82a101900401fbe10af23dff75014341242"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "THIRD_PARTY_NOTICES.md",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 2457,
+        "source_sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+      },
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "contracts/candidate02.public.json": {
+      "bytes": 22388,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "20305293548fa9dda0d0aef52ecef7d8111a13fc92000dcbbf168f7621d4f8c6"
+    },
+    "contracts/historical-source-inventory.json": {
+      "bytes": 13626,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "6e81ab54f1a659f6279031efa3e46382ea85d1dd16f3dea36d2f87f016e72ab3"
+    },
+    "docs/DOFA_INPUT_REVIEW.md": {
+      "bytes": 5447,
+      "origin": {
+        "byte_identical": false,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "docs/DOFA_INPUT_REVIEW.md",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "explicit public guide projection",
+        "source_bytes": 5217,
+        "source_sha256": "3342429b3466b05a1f453a2727da52fd361e8e2d940695f5f52b204bb0f4b8d2"
+      },
+      "sha256": "dc60f937a347df1950779378960da7eda8da88d72dee01acf20c2f5b627e0fca"
+    },
+    "docs/DOFA_PARTIAL_BAND_PLAN.md": {
+      "bytes": 13866,
+      "origin": {
+        "byte_identical": false,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "docs/DOFA_PARTIAL_BAND_PLAN.md",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "explicit public guide projection",
+        "source_bytes": 13776,
+        "source_sha256": "fc5ab2b7917b609a6f07a386f035b9f76feb71647169412155b1c1a9c878aa3d"
+      },
+      "sha256": "403deecd055bf2a883df54c97bcc77b3a9c07f555b88b7db900ee76c42e265f3"
+    },
+    "historical-ed2eb3e/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json": {
+      "bytes": 15795,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 15795,
+        "source_sha256": "dd280f9b830acd8fba84a0603504c12ee39941b40fb89912a3e264002c8f44cb"
+      },
+      "sha256": "dd280f9b830acd8fba84a0603504c12ee39941b40fb89912a3e264002c8f44cb"
+    },
+    "historical-ed2eb3e/scripts/run_finetuning.py": {
+      "bytes": 25658,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "scripts/run_finetuning.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 25658,
+        "source_sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+      },
+      "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+    },
+    "historical-ed2eb3e/scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "scripts/summarize_review_frozen.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 24528,
+        "source_sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+      },
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "historical-ed2eb3e/tests/test_repaired_finetuning.py": {
+      "bytes": 16322,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "tests/test_repaired_finetuning.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 16322,
+        "source_sha256": "3d92d688ac5974c2ec4e4a784f324066eb13a2ed1a6f2e009b5aeb5c29fe4027"
+      },
+      "sha256": "3d92d688ac5974c2ec4e4a784f324066eb13a2ed1a6f2e009b5aeb5c29fe4027"
+    },
+    "historical-ed2eb3e/titansar/__init__.py": {
+      "bytes": 98,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 98,
+        "source_sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+      },
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "historical-ed2eb3e/titansar/configs/__init__.py": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/configs/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 0,
+        "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "historical-ed2eb3e/titansar/configs/defaults.py": {
+      "bytes": 5136,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/configs/defaults.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 5136,
+        "source_sha256": "859262bfe4fd36fad1ca0c00ac4e2782ff25da3915564db027f79944673036ee"
+      },
+      "sha256": "859262bfe4fd36fad1ca0c00ac4e2782ff25da3915564db027f79944673036ee"
+    },
+    "historical-ed2eb3e/titansar/data/__init__.py": {
+      "bytes": 48,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/data/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 48,
+        "source_sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+      },
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "historical-ed2eb3e/titansar/data/dataset.py": {
+      "bytes": 23632,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/data/dataset.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 23632,
+        "source_sha256": "a4e65852fe308a499e3265b9bd1ee652c4d2efa31f65eea8a0f9e055736cf747"
+      },
+      "sha256": "a4e65852fe308a499e3265b9bd1ee652c4d2efa31f65eea8a0f9e055736cf747"
+    },
+    "historical-ed2eb3e/titansar/models/__init__.py": {
+      "bytes": 46,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 46,
+        "source_sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+      },
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "historical-ed2eb3e/titansar/models/croma_model.py": {
+      "bytes": 14704,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/croma_model.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 14704,
+        "source_sha256": "b964e682a4d4086643918844c348a5c8160a12a5768cd6678286935a3a14acf2"
+      },
+      "sha256": "b964e682a4d4086643918844c348a5c8160a12a5768cd6678286935a3a14acf2"
+    },
+    "historical-ed2eb3e/titansar/models/foundation_models.py": {
+      "bytes": 19831,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/foundation_models.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 19831,
+        "source_sha256": "93514f0e93104387b54327717938ddf833c9527b4bf0f50ebfb079f592d986c8"
+      },
+      "sha256": "93514f0e93104387b54327717938ddf833c9527b4bf0f50ebfb079f592d986c8"
+    },
+    "historical-ed2eb3e/titansar/models/probing.py": {
+      "bytes": 25323,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/probing.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 25323,
+        "source_sha256": "b247e3e6f7ee4dbb94963d5925a1e111b65ef525209d57985be24a25be5d0b36"
+      },
+      "sha256": "b247e3e6f7ee4dbb94963d5925a1e111b65ef525209d57985be24a25be5d0b36"
+    },
+    "historical-ed2eb3e/titansar/reproducibility.py": {
+      "bytes": 4648,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/reproducibility.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 4648,
+        "source_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+      },
+      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+    },
+    "licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "licenses/CROMA-LICENSE",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 1071,
+        "source_sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+      },
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "requirements.txt": {
+      "bytes": 699,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "37713c3abbc2c1f1e4059c2049fb2c74318e8281f07a5c414610625243caaaff"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/run_dofa_band_sensitivity.py": {
+      "bytes": 44299,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "scripts/run_dofa_band_sensitivity.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 44299,
+        "source_sha256": "998d877d4af302f29b2146755da198b27f934f2319091c6193e86c3e5fccc8c6"
+      },
+      "sha256": "998d877d4af302f29b2146755da198b27f934f2319091c6193e86c3e5fccc8c6"
+    },
+    "scripts/run_dofa_partial_band.py": {
+      "bytes": 35329,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "scripts/run_dofa_partial_band.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 35329,
+        "source_sha256": "fd9e7684336377c9a8a225afbe3eb86f13fb1485cc6f871ef344024dff149bfe"
+      },
+      "sha256": "fd9e7684336377c9a8a225afbe3eb86f13fb1485cc6f871ef344024dff149bfe"
+    },
+    "tests/test_dofa_band_sensitivity.py": {
+      "bytes": 22041,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "tests/test_dofa_band_sensitivity.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 22041,
+        "source_sha256": "668112cbce035280009b0003ed8925f67956d391e9483a4490e0af865315b8d0"
+      },
+      "sha256": "668112cbce035280009b0003ed8925f67956d391e9483a4490e0af865315b8d0"
+    },
+    "tests/test_dofa_partial_band.py": {
+      "bytes": 27070,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "tests/test_dofa_partial_band.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 27070,
+        "source_sha256": "01ddc83ad1046cee8f3d4733e7a6291033c3b3b15b4bc03fe3af9d1814766499"
+      },
+      "sha256": "01ddc83ad1046cee8f3d4733e7a6291033c3b3b15b4bc03fe3af9d1814766499"
+    }
+  },
+  "guide_projections": {
+    "docs/DOFA_INPUT_REVIEW.md": [
+      {
+        "after": "# DOFA input review\n\nThis dated review concerns the earlier frozen-feature comparison. Its reported\nscores are not outcomes of the 50-fit partial-training comparison. External\nlinks retain their original targets; this source export did not revisit them.\n",
+        "before_bytes": 20,
+        "before_sha256": "061a90ef60f2b41d49a74ac9f74c1b005d89c0d3069f044d2e457afb9f7a9b18",
+        "before_start_utf8": 0,
+        "occurrences": 1,
+        "reason": "Identify historical result scope and bounded link verification."
+      },
+      {
+        "after": "../CONTRACTS.md#earlier-studies",
+        "before_bytes": 37,
+        "before_sha256": "d84c79a6a0ead50e8a1aea7d1a58bd9742faa2d5755da90410719472e0f1bca8",
+        "before_start_utf8": 283,
+        "occurrences": 1,
+        "reason": "Route omitted historical audit to public-study reference."
+      },
+      {
+        "after": "../CONTRACTS.md#earlier-studies",
+        "before_bytes": 46,
+        "before_sha256": "9359d8f79791ce4fdb41e0f2562953d5299af08eec02bbb0d881a9cbf77c1137",
+        "before_start_utf8": 4762,
+        "occurrences": 1,
+        "reason": "Route omitted initialization audit to public-study reference."
+      },
+      {
+        "after": "repair. The cited sources describe the evidence available for this dated\nreview; the underlying investigation records are not included in this export.",
+        "before_bytes": 133,
+        "before_sha256": "ebed77494567df6ab8eed032a7e5b109b0450a20e8950b96f0c8a919ae80d654",
+        "before_start_utf8": 4856,
+        "occurrences": 1,
+        "reason": "Remove internal handoff route without expanding evidence claim."
+      }
+    ],
+    "docs/DOFA_PARTIAL_BAND_PLAN.md": [
+      {
+        "after": "This guide records the recipe and execution interfaces at source revision\n`3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0`. Its public projection changes\ndocumentation only. It is not launch authorization or a report of completed\nfits. The [source contracts](../CONTRACTS.md#execution-limits) explain the\nomitted execution prerequisites and the distinction from the earlier studies.\nSynthetic tests do not establish a scientific result.",
+        "before_bytes": 326,
+        "before_sha256": "67d05d54d6cd88a95e79755c4eae5bd3b20569e877a198f877e13ee5ab79f342",
+        "before_start_utf8": 55,
+        "occurrences": 1,
+        "reason": "Replace internal work coordination with public scope and source identity."
+      },
+      {
+        "after": "../historical-ed2eb3e/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json",
+        "before_bytes": 51,
+        "before_sha256": "2829092a87d2fb633fe95fa4cfec331387dc5c06ee0e176889cb115015ed3053",
+        "before_start_utf8": 1712,
+        "occurrences": 1,
+        "reason": "Link included exact sealed JSON instead of omitted protocol prose."
+      },
+      {
+        "after": "## Original executable contract (not supplied)",
+        "before_bytes": 30,
+        "before_sha256": "781212fc6c80315eda891b7bd3d7ab049073bb9a41bf8499763af6d7e4588240",
+        "before_start_utf8": 4920,
+        "occurrences": 1,
+        "reason": "Distinguish original executable contract from documentation view."
+      },
+      {
+        "after": "contract. The execution operator creates its JSON **after clean source freeze**.",
+        "before_bytes": 76,
+        "before_sha256": "6f326d81abe3b65ee300d42cae744a400a425c53c73ee669f5046ddd626d9b70",
+        "before_start_utf8": 5043,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "read-only snapshot; the execution operator must exclude concurrent input writers.",
+        "before_bytes": 69,
+        "before_sha256": "a72d59a4aab9bee185f0c6021014684b263fb60181416dbab5fdfadb11aa5fed",
+        "before_start_utf8": 8446,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "execution operator's acceptance file must have schema",
+        "before_bytes": 41,
+        "before_sha256": "97937cfa416de41afe3da2122a3aca2e28f9cb1672f4e45bba1909b34ee2f55a",
+        "before_start_utf8": 10007,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "receipt creation are the execution operator's responsibility.",
+        "before_bytes": 49,
+        "before_sha256": "b114b7b4f894da67a1e416e0ea26a5cd9122dcd55b8aea9c4300590283508b4c",
+        "before_start_utf8": 10476,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "Execution scheduling must account",
+        "before_bytes": 30,
+        "before_sha256": "7585f075a5521dbc5e6c8423471b8c7f6f339607648a4f4e2985574c2f2f7666",
+        "before_start_utf8": 10720,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "interfaces. Outer execution receipts must cover",
+        "before_bytes": 44,
+        "before_sha256": "23c299a316eaed276d4b0a9a5efd3a8a422ea170b00af9fc817d77e3754ab154",
+        "before_start_utf8": 11191,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "independent scientific acceptance; separate output review is still required.",
+        "before_bytes": 75,
+        "before_sha256": "448137c3cbb4e402723d904a57d692d69f69699e00a3562a7c206646a495cfbc",
+        "before_start_utf8": 11976,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "<fresh-external-test-directory>",
+        "before_bytes": 30,
+        "before_sha256": "3aca57704e37715fc01038801250e18d8a419d0d0774f662ffd580d6adf1b04c",
+        "before_start_utf8": 13104,
+        "occurrences": 1,
+        "reason": "Use operator/process roles or caller-local examples; preserve scientific requirements."
+      },
+      {
+        "after": "Selected model states remain outside this source release. Runtime and storage\nrequirements depend on the supplied environment and inputs. Source inspection\ndoes not establish execution feasibility or a completion time.",
+        "before_bytes": 317,
+        "before_sha256": "d56adfe011e9824af88bfa58f65aeaa0dab8a515cc8064fa245fc1e43593a1fe",
+        "before_start_utf8": 12535,
+        "occurrences": 1,
+        "reason": "Remove dated operational estimate; retain selected-state availability limit."
+      }
+    ]
+  },
+  "import_routes": {
+    "current": [
+      "scripts/run_dofa_partial_band.py",
+      "scripts/run_dofa_band_sensitivity.py"
+    ],
+    "external_dynamic_modules": [
+      "dofa_v1",
+      "wave_dynamic_layer"
+    ],
+    "historical_root": "historical-ed2eb3e",
+    "historical_scientific_python_files": [
+      "scripts/run_finetuning.py",
+      "scripts/summarize_review_frozen.py",
+      "titansar/__init__.py",
+      "titansar/configs/__init__.py",
+      "titansar/configs/defaults.py",
+      "titansar/data/__init__.py",
+      "titansar/data/dataset.py",
+      "titansar/models/__init__.py",
+      "titansar/models/croma_model.py",
+      "titansar/models/foundation_models.py",
+      "titansar/models/probing.py",
+      "titansar/reproducibility.py"
+    ],
+    "historical_scripts_namespace": true,
+    "observed_runtime_imports": false
+  },
+  "integrity_policy": {
+    "file_index": "Every file except file_index.json and SHA256SUMS.",
+    "original_hashes": "Identify source bytes; projected files carry independent exported hashes.",
+    "sha256sums": "Every file except SHA256SUMS.",
+    "source_export_files": "All payload files except SOURCE_EXPORT.json, file_index.json and SHA256SUMS; self/forward records excluded."
+  },
+  "not_performed": [
+    "candidate module imports",
+    "preserved test execution",
+    "model or scientific execution",
+    "external access verification"
+  ],
+  "omitted": [
+    "49 historical inventory-gate Python files",
+    "original historical Git checkout",
+    "original executable contract and machine bindings",
+    "catalogs, imagery, features and reference result directories",
+    "pretrained weights, upstream source and selected states",
+    "external dispatch, collection and independent acceptance tools",
+    "current study result payloads and numerical reconstruction"
+  ],
+  "original_contract": {
+    "bytes": 43796,
+    "sha256": "7eecb0d70e467c222a501b96150c502ab606ec318a207569729426f354ee5d39"
+  },
+  "package": "release/dofa-partial-source-20261111",
+  "preserved_dated_export": {
+    "exported_from": "9089214a5a6134a088eed058b02df6e021fe80dc",
+    "path": "release/current-source-20261109",
+    "role": "Separate unchanged export; not this study's producer."
+  },
+  "schema": "cetus-dofa-partial-source-export-v1",
+  "scientific_sources": {
+    "current_consumer": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+    "historical_frozen_reference": "6295af2bc35c8d8a2e47fc982b196809245f4550",
+    "historical_training": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376"
+  },
+  "scope": "Source inspection and preparation of separately specified runs; no result export or execution claim.",
+  "verification_scope": [
+    "committed-source byte identity",
+    "explicit guide and contract projections",
+    "static local-import routes",
+    "relative links and anchors",
+    "exact inventory and checksums",
+    "private-location/device/instruction disclosure scan"
+  ]
+}
