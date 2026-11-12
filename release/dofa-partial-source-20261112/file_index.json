@@ -1,0 +1,129 @@
+{
+  "files": {
+    "CONTRACTS.md": {
+      "bytes": 7678,
+      "sha256": "7a156f695d300cc2539b9c1254010e668c9283b1e298ca8af26a6d98a7d0f7bf"
+    },
+    "DATA_LICENSES.md": {
+      "bytes": 1886,
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "README.md": {
+      "bytes": 1284,
+      "sha256": "5bb6a3c7dbf3d1d55e2fb0e8db89d82a101900401fbe10af23dff75014341242"
+    },
+    "SOURCE_EXPORT.json": {
+      "bytes": 26374,
+      "sha256": "ac1952a95d8051719fa6c4458d99794af60f9ee7cbd6a03c0282f575125fb05f"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "contracts/candidate02.public.json": {
+      "bytes": 22388,
+      "sha256": "20305293548fa9dda0d0aef52ecef7d8111a13fc92000dcbbf168f7621d4f8c6"
+    },
+    "contracts/historical-source-inventory.json": {
+      "bytes": 13626,
+      "sha256": "6e81ab54f1a659f6279031efa3e46382ea85d1dd16f3dea36d2f87f016e72ab3"
+    },
+    "docs/DOFA_INPUT_REVIEW.md": {
+      "bytes": 5447,
+      "sha256": "dc60f937a347df1950779378960da7eda8da88d72dee01acf20c2f5b627e0fca"
+    },
+    "docs/DOFA_PARTIAL_BAND_PLAN.md": {
+      "bytes": 13866,
+      "sha256": "403deecd055bf2a883df54c97bcc77b3a9c07f555b88b7db900ee76c42e265f3"
+    },
+    "historical-ed2eb3e/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json": {
+      "bytes": 15795,
+      "sha256": "dd280f9b830acd8fba84a0603504c12ee39941b40fb89912a3e264002c8f44cb"
+    },
+    "historical-ed2eb3e/scripts/run_finetuning.py": {
+      "bytes": 25658,
+      "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+    },
+    "historical-ed2eb3e/scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "historical-ed2eb3e/tests/test_repaired_finetuning.py": {
+      "bytes": 16322,
+      "sha256": "3d92d688ac5974c2ec4e4a784f324066eb13a2ed1a6f2e009b5aeb5c29fe4027"
+    },
+    "historical-ed2eb3e/titansar/__init__.py": {
+      "bytes": 98,
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "historical-ed2eb3e/titansar/configs/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "historical-ed2eb3e/titansar/configs/defaults.py": {
+      "bytes": 5136,
+      "sha256": "859262bfe4fd36fad1ca0c00ac4e2782ff25da3915564db027f79944673036ee"
+    },
+    "historical-ed2eb3e/titansar/data/__init__.py": {
+      "bytes": 48,
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "historical-ed2eb3e/titansar/data/dataset.py": {
+      "bytes": 23632,
+      "sha256": "a4e65852fe308a499e3265b9bd1ee652c4d2efa31f65eea8a0f9e055736cf747"
+    },
+    "historical-ed2eb3e/titansar/models/__init__.py": {
+      "bytes": 46,
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "historical-ed2eb3e/titansar/models/croma_model.py": {
+      "bytes": 14704,
+      "sha256": "b964e682a4d4086643918844c348a5c8160a12a5768cd6678286935a3a14acf2"
+    },
+    "historical-ed2eb3e/titansar/models/foundation_models.py": {
+      "bytes": 19831,
+      "sha256": "93514f0e93104387b54327717938ddf833c9527b4bf0f50ebfb079f592d986c8"
+    },
+    "historical-ed2eb3e/titansar/models/probing.py": {
+      "bytes": 25323,
+      "sha256": "b247e3e6f7ee4dbb94963d5925a1e111b65ef525209d57985be24a25be5d0b36"
+    },
+    "historical-ed2eb3e/titansar/reproducibility.py": {
+      "bytes": 4648,
+      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+    },
+    "licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "requirements.txt": {
+      "bytes": 699,
+      "sha256": "37713c3abbc2c1f1e4059c2049fb2c74318e8281f07a5c414610625243caaaff"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/run_dofa_band_sensitivity.py": {
+      "bytes": 44299,
+      "sha256": "998d877d4af302f29b2146755da198b27f934f2319091c6193e86c3e5fccc8c6"
+    },
+    "scripts/run_dofa_partial_band.py": {
+      "bytes": 35329,
+      "sha256": "fd9e7684336377c9a8a225afbe3eb86f13fb1485cc6f871ef344024dff149bfe"
+    },
+    "tests/test_dofa_band_sensitivity.py": {
+      "bytes": 22041,
+      "sha256": "668112cbce035280009b0003ed8925f67956d391e9483a4490e0af865315b8d0"
+    },
+    "tests/test_dofa_partial_band.py": {
+      "bytes": 27070,
+      "sha256": "01ddc83ad1046cee8f3d4733e7a6291033c3b3b15b4bc03fe3af9d1814766499"
+    }
+  },
+  "schema": "cetus-source-file-index-v1"
+}

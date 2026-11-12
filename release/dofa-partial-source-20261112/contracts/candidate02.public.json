@@ -1,0 +1,827 @@
+{
+  "limits": [
+    "Logical resources are not filesystem bindings and cannot be submitted to the original runner.",
+    "The original contract hash identifies an omitted original, not these projected bytes.",
+    "Physical devices, host layout and runtime entrypoint are not reconstructible from this view.",
+    "No inputs, outputs, checkpoints, launch approval or scientific acceptance are supplied."
+  ],
+  "original_contract": {
+    "bytes": 43796,
+    "sha256": "7eecb0d70e467c222a501b96150c502ab606ec318a207569729426f354ee5d39"
+  },
+  "projection_rules": [
+    {
+      "operation": "Replace with documentation-only identity and status; original executable status is not retained.",
+      "source": "/schema,/status",
+      "target": "/schema,/status"
+    },
+    {
+      "operation": "Keep commit and script bytes/hash; drop checkout path; replace script path with source.consumer resource.",
+      "source": "/consumer",
+      "target": "/view/consumer"
+    },
+    {
+      "operation": "Keep bytes and sha256 exactly; replace path with a declared logical resource.",
+      "source": "/helper,/catalog,/protocol,/tiles,/weights,/python",
+      "target": "/view/<same key>"
+    },
+    {
+      "operation": "Keep commit; drop checkout path; replace file paths with separately hashed full relative-path inventory.",
+      "source": "/historical_source",
+      "target": "/view/historical_source"
+    },
+    {
+      "operation": "Keep commit and file names/bytes/hashes; drop root path; replace file paths with upstream/<file> resources.",
+      "source": "/upstream",
+      "target": "/view/upstream"
+    },
+    {
+      "operation": "Keep order, fold, counts and each binding's bytes/hash; bound paths become fold/<fold>/<key>; features_dir becomes features_resource.",
+      "source": "/folds/*",
+      "target": "/view/folds/*"
+    },
+    {
+      "operation": "Keep order and cell/fold/seed/band/device unchanged; output and replay_output become cell/<two-digit cell>/fit and cell/<two-digit cell>/replay resources.",
+      "source": "/cells/*",
+      "target": "/view/cells/*"
+    },
+    {
+      "operation": "Preserve array index only; replace physical UUID and lock path by device/<index> and lock/<index> resources.",
+      "source": "/devices/*",
+      "target": "/view/devices/*"
+    },
+    {
+      "operation": "Replace host paths with output.root and runtime.python_entrypoint resources.",
+      "source": "/output_root,/python_entrypoint",
+      "target": "/view/output_resource,/view/python_entrypoint_resource"
+    },
+    {
+      "operation": "Copy values unchanged.",
+      "source": "/policy,/initial_feature_state,/head_state_sha256,/fit_timeout_seconds,/replay_timeout_seconds",
+      "target": "/view/<same key>"
+    },
+    {
+      "operation": "Add unchanged class order from supplied historical protocol.",
+      "source": "Historical protocol /specification/class_names",
+      "target": "/view/class_names"
+    }
+  ],
+  "schema": "dofa-partial-source-contract-view-v1",
+  "status": "documentation_only_not_executable",
+  "view": {
+    "catalog": {
+      "bytes": 13884678,
+      "resource": "input.catalog",
+      "sha256": "2c77251230c47596f33d13eafd91ff7d0c927c8f8275451d814fad875df893ec"
+    },
+    "cells": [
+      {
+        "band": 13.78,
+        "cell": 0,
+        "device": 0,
+        "fit_resource": "cell/00/fit",
+        "fold": 0,
+        "replay_resource": "cell/00/replay",
+        "seed": 0
+      },
+      {
+        "band": 3.75,
+        "cell": 1,
+        "device": 0,
+        "fit_resource": "cell/01/fit",
+        "fold": 0,
+        "replay_resource": "cell/01/replay",
+        "seed": 0
+      },
+      {
+        "band": 13.78,
+        "cell": 2,
+        "device": 1,
+        "fit_resource": "cell/02/fit",
+        "fold": 0,
+        "replay_resource": "cell/02/replay",
+        "seed": 1
+      },
+      {
+        "band": 3.75,
+        "cell": 3,
+        "device": 1,
+        "fit_resource": "cell/03/fit",
+        "fold": 0,
+        "replay_resource": "cell/03/replay",
+        "seed": 1
+      },
+      {
+        "band": 13.78,
+        "cell": 4,
+        "device": 2,
+        "fit_resource": "cell/04/fit",
+        "fold": 0,
+        "replay_resource": "cell/04/replay",
+        "seed": 2
+      },
+      {
+        "band": 3.75,
+        "cell": 5,
+        "device": 2,
+        "fit_resource": "cell/05/fit",
+        "fold": 0,
+        "replay_resource": "cell/05/replay",
+        "seed": 2
+      },
+      {
+        "band": 13.78,
+        "cell": 6,
+        "device": 0,
+        "fit_resource": "cell/06/fit",
+        "fold": 0,
+        "replay_resource": "cell/06/replay",
+        "seed": 3
+      },
+      {
+        "band": 3.75,
+        "cell": 7,
+        "device": 0,
+        "fit_resource": "cell/07/fit",
+        "fold": 0,
+        "replay_resource": "cell/07/replay",
+        "seed": 3
+      },
+      {
+        "band": 13.78,
+        "cell": 8,
+        "device": 1,
+        "fit_resource": "cell/08/fit",
+        "fold": 0,
+        "replay_resource": "cell/08/replay",
+        "seed": 4
+      },
+      {
+        "band": 3.75,
+        "cell": 9,
+        "device": 1,
+        "fit_resource": "cell/09/fit",
+        "fold": 0,
+        "replay_resource": "cell/09/replay",
+        "seed": 4
+      },
+      {
+        "band": 13.78,
+        "cell": 10,
+        "device": 2,
+        "fit_resource": "cell/10/fit",
+        "fold": 1,
+        "replay_resource": "cell/10/replay",
+        "seed": 0
+      },
+      {
+        "band": 3.75,
+        "cell": 11,
+        "device": 2,
+        "fit_resource": "cell/11/fit",
+        "fold": 1,
+        "replay_resource": "cell/11/replay",
+        "seed": 0
+      },
+      {
+        "band": 13.78,
+        "cell": 12,
+        "device": 0,
+        "fit_resource": "cell/12/fit",
+        "fold": 1,
+        "replay_resource": "cell/12/replay",
+        "seed": 1
+      },
+      {
+        "band": 3.75,
+        "cell": 13,
+        "device": 0,
+        "fit_resource": "cell/13/fit",
+        "fold": 1,
+        "replay_resource": "cell/13/replay",
+        "seed": 1
+      },
+      {
+        "band": 13.78,
+        "cell": 14,
+        "device": 1,
+        "fit_resource": "cell/14/fit",
+        "fold": 1,
+        "replay_resource": "cell/14/replay",
+        "seed": 2
+      },
+      {
+        "band": 3.75,
+        "cell": 15,
+        "device": 1,
+        "fit_resource": "cell/15/fit",
+        "fold": 1,
+        "replay_resource": "cell/15/replay",
+        "seed": 2
+      },
+      {
+        "band": 13.78,
+        "cell": 16,
+        "device": 2,
+        "fit_resource": "cell/16/fit",
+        "fold": 1,
+        "replay_resource": "cell/16/replay",
+        "seed": 3
+      },
+      {
+        "band": 3.75,
+        "cell": 17,
+        "device": 2,
+        "fit_resource": "cell/17/fit",
+        "fold": 1,
+        "replay_resource": "cell/17/replay",
+        "seed": 3
+      },
+      {
+        "band": 13.78,
+        "cell": 18,
+        "device": 0,
+        "fit_resource": "cell/18/fit",
+        "fold": 1,
+        "replay_resource": "cell/18/replay",
+        "seed": 4
+      },
+      {
+        "band": 3.75,
+        "cell": 19,
+        "device": 0,
+        "fit_resource": "cell/19/fit",
+        "fold": 1,
+        "replay_resource": "cell/19/replay",
+        "seed": 4
+      },
+      {
+        "band": 13.78,
+        "cell": 20,
+        "device": 1,
+        "fit_resource": "cell/20/fit",
+        "fold": 2,
+        "replay_resource": "cell/20/replay",
+        "seed": 0
+      },
+      {
+        "band": 3.75,
+        "cell": 21,
+        "device": 1,
+        "fit_resource": "cell/21/fit",
+        "fold": 2,
+        "replay_resource": "cell/21/replay",
+        "seed": 0
+      },
+      {
+        "band": 13.78,
+        "cell": 22,
+        "device": 2,
+        "fit_resource": "cell/22/fit",
+        "fold": 2,
+        "replay_resource": "cell/22/replay",
+        "seed": 1
+      },
+      {
+        "band": 3.75,
+        "cell": 23,
+        "device": 2,
+        "fit_resource": "cell/23/fit",
+        "fold": 2,
+        "replay_resource": "cell/23/replay",
+        "seed": 1
+      },
+      {
+        "band": 13.78,
+        "cell": 24,
+        "device": 0,
+        "fit_resource": "cell/24/fit",
+        "fold": 2,
+        "replay_resource": "cell/24/replay",
+        "seed": 2
+      },
+      {
+        "band": 3.75,
+        "cell": 25,
+        "device": 0,
+        "fit_resource": "cell/25/fit",
+        "fold": 2,
+        "replay_resource": "cell/25/replay",
+        "seed": 2
+      },
+      {
+        "band": 13.78,
+        "cell": 26,
+        "device": 1,
+        "fit_resource": "cell/26/fit",
+        "fold": 2,
+        "replay_resource": "cell/26/replay",
+        "seed": 3
+      },
+      {
+        "band": 3.75,
+        "cell": 27,
+        "device": 1,
+        "fit_resource": "cell/27/fit",
+        "fold": 2,
+        "replay_resource": "cell/27/replay",
+        "seed": 3
+      },
+      {
+        "band": 13.78,
+        "cell": 28,
+        "device": 2,
+        "fit_resource": "cell/28/fit",
+        "fold": 2,
+        "replay_resource": "cell/28/replay",
+        "seed": 4
+      },
+      {
+        "band": 3.75,
+        "cell": 29,
+        "device": 2,
+        "fit_resource": "cell/29/fit",
+        "fold": 2,
+        "replay_resource": "cell/29/replay",
+        "seed": 4
+      },
+      {
+        "band": 13.78,
+        "cell": 30,
+        "device": 0,
+        "fit_resource": "cell/30/fit",
+        "fold": 3,
+        "replay_resource": "cell/30/replay",
+        "seed": 0
+      },
+      {
+        "band": 3.75,
+        "cell": 31,
+        "device": 0,
+        "fit_resource": "cell/31/fit",
+        "fold": 3,
+        "replay_resource": "cell/31/replay",
+        "seed": 0
+      },
+      {
+        "band": 13.78,
+        "cell": 32,
+        "device": 1,
+        "fit_resource": "cell/32/fit",
+        "fold": 3,
+        "replay_resource": "cell/32/replay",
+        "seed": 1
+      },
+      {
+        "band": 3.75,
+        "cell": 33,
+        "device": 1,
+        "fit_resource": "cell/33/fit",
+        "fold": 3,
+        "replay_resource": "cell/33/replay",
+        "seed": 1
+      },
+      {
+        "band": 13.78,
+        "cell": 34,
+        "device": 2,
+        "fit_resource": "cell/34/fit",
+        "fold": 3,
+        "replay_resource": "cell/34/replay",
+        "seed": 2
+      },
+      {
+        "band": 3.75,
+        "cell": 35,
+        "device": 2,
+        "fit_resource": "cell/35/fit",
+        "fold": 3,
+        "replay_resource": "cell/35/replay",
+        "seed": 2
+      },
+      {
+        "band": 13.78,
+        "cell": 36,
+        "device": 0,
+        "fit_resource": "cell/36/fit",
+        "fold": 3,
+        "replay_resource": "cell/36/replay",
+        "seed": 3
+      },
+      {
+        "band": 3.75,
+        "cell": 37,
+        "device": 0,
+        "fit_resource": "cell/37/fit",
+        "fold": 3,
+        "replay_resource": "cell/37/replay",
+        "seed": 3
+      },
+      {
+        "band": 13.78,
+        "cell": 38,
+        "device": 1,
+        "fit_resource": "cell/38/fit",
+        "fold": 3,
+        "replay_resource": "cell/38/replay",
+        "seed": 4
+      },
+      {
+        "band": 3.75,
+        "cell": 39,
+        "device": 1,
+        "fit_resource": "cell/39/fit",
+        "fold": 3,
+        "replay_resource": "cell/39/replay",
+        "seed": 4
+      },
+      {
+        "band": 13.78,
+        "cell": 40,
+        "device": 2,
+        "fit_resource": "cell/40/fit",
+        "fold": 4,
+        "replay_resource": "cell/40/replay",
+        "seed": 0
+      },
+      {
+        "band": 3.75,
+        "cell": 41,
+        "device": 2,
+        "fit_resource": "cell/41/fit",
+        "fold": 4,
+        "replay_resource": "cell/41/replay",
+        "seed": 0
+      },
+      {
+        "band": 13.78,
+        "cell": 42,
+        "device": 0,
+        "fit_resource": "cell/42/fit",
+        "fold": 4,
+        "replay_resource": "cell/42/replay",
+        "seed": 1
+      },
+      {
+        "band": 3.75,
+        "cell": 43,
+        "device": 0,
+        "fit_resource": "cell/43/fit",
+        "fold": 4,
+        "replay_resource": "cell/43/replay",
+        "seed": 1
+      },
+      {
+        "band": 13.78,
+        "cell": 44,
+        "device": 1,
+        "fit_resource": "cell/44/fit",
+        "fold": 4,
+        "replay_resource": "cell/44/replay",
+        "seed": 2
+      },
+      {
+        "band": 3.75,
+        "cell": 45,
+        "device": 1,
+        "fit_resource": "cell/45/fit",
+        "fold": 4,
+        "replay_resource": "cell/45/replay",
+        "seed": 2
+      },
+      {
+        "band": 13.78,
+        "cell": 46,
+        "device": 2,
+        "fit_resource": "cell/46/fit",
+        "fold": 4,
+        "replay_resource": "cell/46/replay",
+        "seed": 3
+      },
+      {
+        "band": 3.75,
+        "cell": 47,
+        "device": 2,
+        "fit_resource": "cell/47/fit",
+        "fold": 4,
+        "replay_resource": "cell/47/replay",
+        "seed": 3
+      },
+      {
+        "band": 13.78,
+        "cell": 48,
+        "device": 0,
+        "fit_resource": "cell/48/fit",
+        "fold": 4,
+        "replay_resource": "cell/48/replay",
+        "seed": 4
+      },
+      {
+        "band": 3.75,
+        "cell": 49,
+        "device": 0,
+        "fit_resource": "cell/49/fit",
+        "fold": 4,
+        "replay_resource": "cell/49/replay",
+        "seed": 4
+      }
+    ],
+    "class_names": [
+      "plains",
+      "dunes",
+      "hummocky",
+      "labyrinths",
+      "lakes",
+      "craters"
+    ],
+    "consumer": {
+      "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+      "script": {
+        "bytes": 35329,
+        "resource": "source.consumer",
+        "sha256": "fd9e7684336377c9a8a225afbe3eb86f13fb1485cc6f871ef344024dff149bfe"
+      }
+    },
+    "devices": [
+      {
+        "device_resource": "device/0",
+        "index": 0,
+        "lock_resource": "lock/0"
+      },
+      {
+        "device_resource": "device/1",
+        "index": 1,
+        "lock_resource": "lock/1"
+      },
+      {
+        "device_resource": "device/2",
+        "index": 2,
+        "lock_resource": "lock/2"
+      }
+    ],
+    "fit_timeout_seconds": 5400,
+    "folds": [
+      {
+        "analysis_manifest": {
+          "bytes": 3754,
+          "resource": "fold/0/analysis_manifest",
+          "sha256": "8fdbd8f6e3899df217f69aa0c2fb5b6dfb0f696de86a4419f794ba7be9166bc6"
+        },
+        "counts": [
+          14603,
+          4342,
+          3660
+        ],
+        "feature_manifest": {
+          "bytes": 3561,
+          "resource": "fold/0/feature_manifest",
+          "sha256": "2e18a065223873f3b8c0000c357dbe4a07fddd61632ca6b10006627cbfeb0aa2"
+        },
+        "features_resource": "fold/0/features",
+        "fold": 0,
+        "reference": {
+          "bytes": 6040402,
+          "resource": "fold/0/reference",
+          "sha256": "500fa1baf992a03643a95879de4cf324be10b6ea4fb8ba9d3345999f65bf69e7"
+        },
+        "split": {
+          "bytes": 710427,
+          "resource": "fold/0/split",
+          "sha256": "1079b1c63588ee9af674184b7dd6937ef01d3a354c8773e8ee9caad4ab8cc388"
+        }
+      },
+      {
+        "analysis_manifest": {
+          "bytes": 3754,
+          "resource": "fold/1/analysis_manifest",
+          "sha256": "bea9939097fb87103a5afc7059c4d3db3828116b807c8cf10fdea760525b3142"
+        },
+        "counts": [
+          12542,
+          5420,
+          4497
+        ],
+        "feature_manifest": {
+          "bytes": 3561,
+          "resource": "fold/1/feature_manifest",
+          "sha256": "94737c59edd642c64a68ab5cd0e17ed33535150b09074c0b14f25c7899ebaca3"
+        },
+        "features_resource": "fold/1/features",
+        "fold": 1,
+        "reference": {
+          "bytes": 7433069,
+          "resource": "fold/1/reference",
+          "sha256": "e54e6d4909a7b1533f41a5ed9d835b823d4fb74c72ce8f167b8bded5dfa13791"
+        },
+        "split": {
+          "bytes": 715458,
+          "resource": "fold/1/split",
+          "sha256": "f9bb93592f5bb9e111118f796c4cdc4e2478cb1ef18f1d61d7044525d0a820d2"
+        }
+      },
+      {
+        "analysis_manifest": {
+          "bytes": 3754,
+          "resource": "fold/2/analysis_manifest",
+          "sha256": "44e45dd78b88c025f728e77d3ec761000a3757efdd2313e5d1903d90745545ad"
+        },
+        "counts": [
+          12348,
+          4429,
+          5721
+        ],
+        "feature_manifest": {
+          "bytes": 3561,
+          "resource": "fold/2/feature_manifest",
+          "sha256": "5c5ac60f13387c9fb39047eead08f7707e6a373e5605538703a38f51a1b9ed02"
+        },
+        "features_resource": "fold/2/features",
+        "fold": 2,
+        "reference": {
+          "bytes": 9442298,
+          "resource": "fold/2/reference",
+          "sha256": "e023d25fe34d9cc96272ccda383c737c0f64e7bae0d6c4937e6c2368483fff63"
+        },
+        "split": {
+          "bytes": 713935,
+          "resource": "fold/2/split",
+          "sha256": "7862dd95df2eed01d0252a7a37068ee780509d98dd9e0105e1930ad0ffa75610"
+        }
+      },
+      {
+        "analysis_manifest": {
+          "bytes": 3754,
+          "resource": "fold/3/analysis_manifest",
+          "sha256": "81b217e8737ba7573f6f8a387fdda8f3e33be5c679e8235572dcb5532aca427e"
+        },
+        "counts": [
+          13350,
+          4466,
+          4748
+        ],
+        "feature_manifest": {
+          "bytes": 3561,
+          "resource": "fold/3/feature_manifest",
+          "sha256": "003248e0708cbf9f93530d4b52c1455f1a1f0652e610a5bbfa750649de502881"
+        },
+        "features_resource": "fold/3/features",
+        "fold": 3,
+        "reference": {
+          "bytes": 7871842,
+          "resource": "fold/3/reference",
+          "sha256": "26f3653286c4c22a7036484c7dbebf2e44dbb9a64de9ac50e7674f01269fde3d"
+        },
+        "split": {
+          "bytes": 711432,
+          "resource": "fold/3/split",
+          "sha256": "8317384eb1945fc2af628e0051b8181637525d0412c2f2c1b38b7b2967fee9b6"
+        }
+      },
+      {
+        "analysis_manifest": {
+          "bytes": 3754,
+          "resource": "fold/4/analysis_manifest",
+          "sha256": "5a60b8cf0617657e10bdab6a97ff94bfeaa45ed3f1b17cd523f126fe523452af"
+        },
+        "counts": [
+          14644,
+          3453,
+          4620
+        ],
+        "feature_manifest": {
+          "bytes": 3561,
+          "resource": "fold/4/feature_manifest",
+          "sha256": "99b5bfb8fbd8603d89be3147334dd736e305fd3952d453cd5d638c6dd9d77ac8"
+        },
+        "features_resource": "fold/4/features",
+        "fold": 4,
+        "reference": {
+          "bytes": 7613736,
+          "resource": "fold/4/reference",
+          "sha256": "48804c4b08526d12cc70eeed974eaa2b50c4e88ec616f6d39cb4ee658ee4c408"
+        },
+        "split": {
+          "bytes": 704758,
+          "resource": "fold/4/split",
+          "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
+        }
+      }
+    ],
+    "head_state_sha256": [
+      "4185ad1a4d653714eb71bc4114cffb8d98e41ccc96239f4a2df4dc3cdd36041e",
+      "192a620ada65d8fce89dc8c2aba1a2f1e3a5b33d26f817a8742cd78cfdfc82bb",
+      "34b77217c198d20b97357dc0dacbcdf08a61f79f9ccd7f9d120c5e0d11ba50cc",
+      "9dd53afab7e11584e0624279f38aabd33e9908ced92789403d1cef557a77be0d",
+      "18a96e823cc044a524c3f40ce31e4b773303039e4107baf6a7dff83984e961eb"
+    ],
+    "helper": {
+      "bytes": 44299,
+      "resource": "source.helper",
+      "sha256": "998d877d4af302f29b2146755da198b27f934f2319091c6193e86c3e5fccc8c6"
+    },
+    "historical_source": {
+      "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+      "inventory": {
+        "bytes": 13626,
+        "file": "historical-source-inventory.json",
+        "sha256": "6e81ab54f1a659f6279031efa3e46382ea85d1dd16f3dea36d2f87f016e72ab3"
+      }
+    },
+    "initial_feature_state": {
+      "excludes": [
+        "head.weight",
+        "head.bias"
+      ],
+      "sha256": "75c6ae1b2ec8d27f7a552414701cd1c294d0ee10fa9932fa8890b1828d6f9777",
+      "tensor_count": 170
+    },
+    "output_resource": "output.root",
+    "policy": {
+      "T_max": 50,
+      "accumulation": 4,
+      "amp_test": false,
+      "amp_training_and_validation": true,
+      "backbone_lr": 0.0001,
+      "bands": [
+        13.78,
+        3.75
+      ],
+      "cells": 50,
+      "checkpoint_retention": "selected_only_server_side",
+      "epochs": 50,
+      "folds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "head_lr": 0.001,
+      "loss": "historical effective-batch weighted mean CE",
+      "microbatch": 8,
+      "optimizer": "AdamW",
+      "pilot_epochs": 50,
+      "pilot_selection_by_score": false,
+      "pilots": [
+        0,
+        1
+      ],
+      "resume": false,
+      "scheduler": "CosineAnnealingLR",
+      "scope": "both_current_runtime_bands",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "selection": "earliest highest validation macro recall among updated epochs",
+      "unfreeze_blocks": 2,
+      "weight_decay": 0.01,
+      "workers": 2
+    },
+    "protocol": {
+      "bytes": 15795,
+      "resource": "input.protocol",
+      "sha256": "dd280f9b830acd8fba84a0603504c12ee39941b40fb89912a3e264002c8f44cb"
+    },
+    "python": {
+      "bytes": 8020928,
+      "resource": "runtime.python_binary",
+      "sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f"
+    },
+    "python_entrypoint_resource": "runtime.python_entrypoint",
+    "replay_timeout_seconds": 600,
+    "tiles": {
+      "bytes": 5143729,
+      "resource": "input.tiles",
+      "sha256": "2313c5801416ed6a0115b783d1fec87a994c06297ec8b7eb4917e59ddeb7d9ea"
+    },
+    "upstream": {
+      "commit": "73ff5c0721da322689ae890bed5b4efd78935f47",
+      "files": {
+        "dofa_v1.py": {
+          "bytes": 4014,
+          "resource": "upstream/dofa_v1.py",
+          "sha256": "ed99d82a4339f2c71446720094f07b5e21920e427729d369beb1bd0e5f2a2b37"
+        },
+        "hubconf.py": {
+          "bytes": 594,
+          "resource": "upstream/hubconf.py",
+          "sha256": "8a7d625cf3d5babc3b321de95305726eeff09896491c19bbecbdd6a4a2fb954a"
+        },
+        "wave_dynamic_layer.py": {
+          "bytes": 7434,
+          "resource": "upstream/wave_dynamic_layer.py",
+          "sha256": "828e72df0c935a5403e5bb90349814355fd659a6219b63380f2d2d61baae4bf9"
+        }
+      }
+    },
+    "weights": {
+      "bytes": 447669164,
+      "resource": "input.weights",
+      "sha256": "4720985e42b918ac0307009eb06121a3435d9bbce6fd95446f84824a538165b1"
+    }
+  }
+}
