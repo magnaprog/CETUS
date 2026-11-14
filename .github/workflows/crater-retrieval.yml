@@ -1,0 +1,66 @@
+name: Craters retrieval display
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  display:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONNOUSERSITE: "1"
+      CUDA_VISIBLE_DEVICES: ""
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - name: Install plotting and test dependencies
+        run: |
+          python -m pip install --only-binary=:all: -r release/crater-retrieval-20261114/requirements.txt pytest==9.0.3
+      - name: Set plotting cache directory
+        run: echo "MPLCONFIGDIR=$RUNNER_TEMP/crater-retrieval-matplotlib" >> "$GITHUB_ENV"
+      - name: Check renderer examples
+        working-directory: release/crater-retrieval-20261114
+        run: |
+          set -euo pipefail
+          sha256sum -c SHA256SUMS
+          python -B -m pytest tests/test_crater_retrieval_plot.py -q -p no:cacheprovider \
+            --basetemp="$RUNNER_TEMP/crater-retrieval-tests"
+      - name: Render saved Craters rankings
+        working-directory: release/crater-retrieval-20261114
+        run: |
+          set -euo pipefail
+          python -B -m scripts.plot_crater_retrieval \
+            --report ../class-ranking-20261111/results.json \
+            --report-sha256 f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d \
+            --curves ../class-ranking-20261111/craters-curves.npz \
+            --curves-sha256 74f8fb2159edf44a7d95c7abb7f3aaa582b74fb2aaf1951222a1fa2cd09c63c4 \
+            --output "$RUNNER_TEMP/crater-retrieval"
+          python -B - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+          output = Path(os.environ['RUNNER_TEMP']) / 'crater-retrieval'
+          for name, expected in json.loads(Path('manifest.json').read_text())['expected_figures'].items():
+              data = (output / name).read_bytes()
+              assert {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} == expected, name
+          print('Both figure variants match the supplied display records.')
+          PY
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+      - name: Preserve figure and display records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: crater-retrieval-display
+          path: ${{ runner.temp }}/crater-retrieval
+          if-no-files-found: warn

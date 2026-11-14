@@ -112,6 +112,19 @@ existing initialization ZIP intact, reconstruct all 360 class scores and their
 regional summaries, and compare every saved curve array. No model weights,
 image decoding or training are involved.
 
+### Displaying retrieved tile counts
+
+The [retrieval companion](release/crater-retrieval-20261114/README.md) renders
+each saved Craters ranking as recall against retrieved test-tile count. Equal
+scores enter together. Small points show every group endpoint; larger symbols
+mark groups that add Craters labels. All regions and seeds remain separate.
+The count axis is logarithmic, and its area has no average-precision meaning.
+
+The CPU command reads the existing class-ranking results and curves in place.
+It produces both paper variants with bundled fonts and preserves the saved
+ranking and model choices. Retrieved tiles may contain overlapping views of a
+landform, so this count differs from a count of geological craters.
+
 ## Training loss normalization
 
 The [execution source](release/loss-source-20261110/README.md) compares two
