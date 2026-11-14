@@ -1,0 +1,149 @@
+{
+  "entrypoint": "python3.12 -B -m scripts.plot_crater_retrieval",
+  "expected_figures": {
+    "crater-retrieval-cvpr.pdf": {
+      "bytes": 85326,
+      "sha256": "6059dbc276b9e9e9b2f96c542e484dbe80b712e5226fd549450eb041eb49048b"
+    },
+    "crater-retrieval-cvpr.png": {
+      "bytes": 236332,
+      "sha256": "d372676ca16accf215d5b933e6dbb165ffbb4cde4ebcbb428e8832bba3196748"
+    },
+    "crater-retrieval-full.pdf": {
+      "bytes": 85889,
+      "sha256": "04ab5ccccc80cd372eeb81fb8ae22c2d955d7c9828ab73069e684d0169862356"
+    },
+    "crater-retrieval-full.png": {
+      "bytes": 227783,
+      "sha256": "d157049596f51ba0f386861746e5483d2008e2331cd2a6b84a0c22370683bdc1"
+    }
+  },
+  "files": {
+    "LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "NOTICE.md": {
+      "bytes": 1719,
+      "sha256": "20ade9559352def3f8dec6206788b387120bc51aca6fc2a1e9fd5d62144db2ac"
+    },
+    "README.md": {
+      "bytes": 3874,
+      "sha256": "b2c44aa61481c8120e4d03c4b183da513198c0acddf3509d124f98ef227015cb"
+    },
+    "paper/fonts/nimbus-roman/COPYING": {
+      "bytes": 34520,
+      "sha256": "57c8ff33c9c0cfc3ef00e650a1cc910d7ee479a8bc509f6c9209a7c2a11399d6"
+    },
+    "paper/fonts/nimbus-roman/LICENSE": {
+      "bytes": 440,
+      "sha256": "772b1b47eead8722156abaed483154e1dd1137e7035290550cea6444192a2e3f"
+    },
+    "paper/fonts/nimbus-roman/NimbusRoman-Bold.ttf": {
+      "bytes": 200040,
+      "sha256": "03a62d23942e51f48e42da30f0c50e008c67f0e5d6dacf739b5117c15a2e0bfd"
+    },
+    "paper/fonts/nimbus-roman/NimbusRoman-BoldItalic.ttf": {
+      "bytes": 201916,
+      "sha256": "4b80d3617da875d4fa789bf4698417117cf2c52a9e678038b3b5f490736ce39c"
+    },
+    "paper/fonts/nimbus-roman/NimbusRoman-Italic.ttf": {
+      "bytes": 204136,
+      "sha256": "b9111288e478cb36a23433df28a54aab49f9007663ddc877d35c7e0275724129"
+    },
+    "paper/fonts/nimbus-roman/NimbusRoman-Regular.ttf": {
+      "bytes": 203180,
+      "sha256": "47dbff21ede6f3b8428ffe9f8c7c4ac5f1e3c1bc33cd987cfe42e99e0298c495"
+    },
+    "paper/fonts/nimbus-roman/sources.json": {
+      "bytes": 1619,
+      "sha256": "e9fe437ec0fcc8e9a29658b7b33e549fb9fab5eddd7f98433c6f44d35de8aa8f"
+    },
+    "paper/fonts/nimbus-sans/COPYING": {
+      "bytes": 34520,
+      "sha256": "57c8ff33c9c0cfc3ef00e650a1cc910d7ee479a8bc509f6c9209a7c2a11399d6"
+    },
+    "paper/fonts/nimbus-sans/LICENSE": {
+      "bytes": 440,
+      "sha256": "772b1b47eead8722156abaed483154e1dd1137e7035290550cea6444192a2e3f"
+    },
+    "paper/fonts/nimbus-sans/NimbusSans-Regular.ttf": {
+      "bytes": 181776,
+      "sha256": "df5d1ce7b86c2e74974008623612bae136123a35ba7885de8a0721b68258edbc"
+    },
+    "paper/fonts/nimbus-sans/sources.json": {
+      "bytes": 1196,
+      "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
+    },
+    "requirements.txt": {
+      "bytes": 134,
+      "sha256": "2324c1b9639a5ba148e758c2a871018db2dde9d8f380bd184e759d95f1f466c6"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/cvpr_figure_style.py": {
+      "bytes": 5098,
+      "sha256": "fc6a4c79cc093c09fd9727bee7ca2da3bc295ddf342c274b18085726de9a2818"
+    },
+    "scripts/figure_style.py": {
+      "bytes": 3995,
+      "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
+    },
+    "scripts/plot_class_ranking.py": {
+      "bytes": 21534,
+      "sha256": "7a59f3bda7ba8f0c11b5e5c6d24450c9489eef8ddf0583efaf020ba162f104cc"
+    },
+    "scripts/plot_crater_retrieval.py": {
+      "bytes": 17951,
+      "sha256": "38ff8955b8f0ed531d7df377e5bfc53ca55b979d5c81ec3aca819f2d89010ac5"
+    },
+    "scripts/prepare_cvpr_tables.py": {
+      "bytes": 9493,
+      "sha256": "b42c013905f759f1129883dc561e680a7a83f9e91e9df2e8cda382857b9fecc4"
+    },
+    "tests/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/test_class_ranking_plot.py": {
+      "bytes": 15979,
+      "sha256": "8d6658d777dad883ac595c895bac713c56786e20f6ac67605d355dd398a675aa"
+    },
+    "tests/test_crater_retrieval_plot.py": {
+      "bytes": 19088,
+      "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
+    }
+  },
+  "inputs": {
+    "commit": "d48bf00775746c499c14d6e7a7c523e32d2d5e43",
+    "files": {
+      "craters-curves.npz": {
+        "bytes": 3208180,
+        "path": "release/class-ranking-20261111/craters-curves.npz",
+        "sha256": "74f8fb2159edf44a7d95c7abb7f3aaa582b74fb2aaf1951222a1fa2cd09c63c4"
+      },
+      "results.json": {
+        "bytes": 415274,
+        "path": "release/class-ranking-20261111/results.json",
+        "sha256": "f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d"
+      }
+    },
+    "repository": "magnaprog/CETUS"
+  },
+  "integrity_policy": {
+    "manifest": "Every payload file except manifest.json and SHA256SUMS.",
+    "sha256sums": "Every file except SHA256SUMS."
+  },
+  "schema": "crater-retrieval-package-v1",
+  "source": {
+    "copy_policy": "All Python source/test files and font/license resources retain their source bytes; scripts/__init__.py is an empty package initializer.",
+    "new_files_identified_by_payload_hashes": [
+      "scripts/plot_crater_retrieval.py",
+      "tests/test_crater_retrieval_plot.py"
+    ],
+    "repository": "magnaprog/TitanSAR-dev",
+    "unchanged_dependency_base_commit": "3f7584f185e1e82627a6b75008c13189bd8c5794"
+  }
+}
