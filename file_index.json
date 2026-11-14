@@ -67,8 +67,8 @@
       "sha256": "e9c78da73cf59cb28a92711c55340c654e29a1e1ba839ded13ea5ce9b4709a02"
     },
     ".github/workflows/crater-retrieval.yml": {
-      "bytes": 2533,
-      "sha256": "29b8f0f7034c5bcfea235fde1ea2ead33078330c7e68a3b2e8aa6c5d3f74a34f"
+      "bytes": 2612,
+      "sha256": "553f8cffc40031eeb81abec1bb64829dea0c327d05626ca4027a859fdd7c03d6"
     },
     ".github/workflows/current-source-cpu-tests.yml": {
       "bytes": 11969,
