@@ -28,8 +28,8 @@
       "sha256": "20ade9559352def3f8dec6206788b387120bc51aca6fc2a1e9fd5d62144db2ac"
     },
     "README.md": {
-      "bytes": 3874,
-      "sha256": "b2c44aa61481c8120e4d03c4b183da513198c0acddf3509d124f98ef227015cb"
+      "bytes": 3889,
+      "sha256": "007c624e37c46ea9906a6c6761ae41a9cc964028aee0ce4c0de7e657677a9db4"
     },
     "paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,
@@ -76,8 +76,8 @@
       "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
     },
     "requirements.txt": {
-      "bytes": 134,
-      "sha256": "2324c1b9639a5ba148e758c2a871018db2dde9d8f380bd184e759d95f1f466c6"
+      "bytes": 149,
+      "sha256": "e5816ffff907c8631e01579a24ffb31860fde314bcd67aba1fb8220f5128135f"
     },
     "scripts/__init__.py": {
       "bytes": 0,

@@ -7,7 +7,7 @@ test-tile count.
 
 ## Reproduce
 
-Use Python 3.12.3, NumPy 2.4.4 and Matplotlib 3.10.9; see
+Use Python 3.12.3, NumPy 2.4.4, Matplotlib 3.10.9 and Pillow 10.2.0; see
 [requirements.txt](requirements.txt). Five bundled Nimbus font faces support
 regular 9-point Sans (CVPR) and Roman (full-paper) text. From the CETUS
 repository root, run offline on CPU:

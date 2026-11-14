@@ -67,8 +67,8 @@
       "sha256": "e9c78da73cf59cb28a92711c55340c654e29a1e1ba839ded13ea5ce9b4709a02"
     },
     ".github/workflows/crater-retrieval.yml": {
-      "bytes": 2612,
-      "sha256": "553f8cffc40031eeb81abec1bb64829dea0c327d05626ca4027a859fdd7c03d6"
+      "bytes": 2634,
+      "sha256": "a8099d52c33ff409e546f0cece9daa9afdeb9f17ec8b91d855b4de9aba843133"
     },
     ".github/workflows/current-source-cpu-tests.yml": {
       "bytes": 11969,
@@ -251,16 +251,16 @@
       "sha256": "20ade9559352def3f8dec6206788b387120bc51aca6fc2a1e9fd5d62144db2ac"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 3874,
-      "sha256": "b2c44aa61481c8120e4d03c4b183da513198c0acddf3509d124f98ef227015cb"
+      "bytes": 3889,
+      "sha256": "007c624e37c46ea9906a6c6761ae41a9cc964028aee0ce4c0de7e657677a9db4"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
       "bytes": 2410,
-      "sha256": "795f9f922bf29fef744ac9c2437e2777c790bd6a2bbe6b73f353cd61daf539bb"
+      "sha256": "ad9e81da6c413890ddf0dd4bcbde8086e4c234c50cf2fc6f1f55bc52b1814f2e"
     },
     "release/crater-retrieval-20261114/manifest.json": {
       "bytes": 5538,
-      "sha256": "4b4e4829739a857b5d7b25a1decdab513fea4558a6803611aa880ff9d80b2b34"
+      "sha256": "0e9d89e85447c3526758a77980e17355719f640c14630b1ce7ce372e2bf33848"
     },
     "release/crater-retrieval-20261114/paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,
@@ -307,8 +307,8 @@
       "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
     },
     "release/crater-retrieval-20261114/requirements.txt": {
-      "bytes": 134,
-      "sha256": "2324c1b9639a5ba148e758c2a871018db2dde9d8f380bd184e759d95f1f466c6"
+      "bytes": 149,
+      "sha256": "e5816ffff907c8631e01579a24ffb31860fde314bcd67aba1fb8220f5128135f"
     },
     "release/crater-retrieval-20261114/scripts/__init__.py": {
       "bytes": 0,
