@@ -89,6 +89,10 @@
       "bytes": 1118,
       "sha256": "b1de752de1ece41ba2d64bc1afd2b3a3582109f273e4119bd26f3a16f97921e7"
     },
+    ".github/workflows/dofa-scores.yml": {
+      "bytes": 1380,
+      "sha256": "44742b28b001dfe5ea08f5abed3f7036de6d15ccb1227fc8313d176008b896d4"
+    },
     ".github/workflows/frozen-cpu-tests.yml": {
       "bytes": 595,
       "sha256": "ec8637baf02e0e8b290c4073f0491c2d292ac649a4d9979abfd55fa40c69d493"
@@ -130,12 +134,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 29975,
-      "sha256": "cc52c7aab6c9721bb49eaef348d251432038f5dc64c6db5bd31c3b4ab3b26097"
+      "bytes": 30658,
+      "sha256": "15290f4fb40eba6e4d6bf3f1d01202d77102a8ff771ca5aaa624df67e56e5001"
     },
     "README.md": {
-      "bytes": 9007,
-      "sha256": "0c68efd6a82d1f5a1c51eca3658ae6f1303493c7b77e720522712a20969bb346"
+      "bytes": 9375,
+      "sha256": "24ccc1176f412d037f594d742068686f3db2f388fdbefa4b2d16e362fc276242"
     },
     "SOFTWARE.md": {
       "bytes": 23312,
@@ -812,6 +816,46 @@
     "release/dofa-partial-source-20261112/tests/test_dofa_partial_band.py": {
       "bytes": 27070,
       "sha256": "01ddc83ad1046cee8f3d4733e7a6291033c3b3b15b4bc03fe3af9d1814766499"
+    },
+    "release/dofa-scores-20261114/LICENSE": {
+      "bytes": 1102,
+      "sha256": "5c944047ab4a1369edfa7de34b5de7e32bc133d054232151acddd1c198734273"
+    },
+    "release/dofa-scores-20261114/NOTICE.md": {
+      "bytes": 1257,
+      "sha256": "68d2cc71f9dc732068944e328010e5f7572280d5e7fd3048e9c8dbbdc1e6768d"
+    },
+    "release/dofa-scores-20261114/README.md": {
+      "bytes": 3338,
+      "sha256": "ae026b8ece20d830f7f3fec585feb492e9fbff6d77b49cac12024c29e3b913c8"
+    },
+    "release/dofa-scores-20261114/SHA256SUMS": {
+      "bytes": 717,
+      "sha256": "d2b3b39ed28ed4fb8950b9c1c9af012a061494c9156fb65cc1b6032b2387545a"
+    },
+    "release/dofa-scores-20261114/expected.json": {
+      "bytes": 81345,
+      "sha256": "3538b968d7adf61d7cb72b6de80d4db7f962d69b2a17d37b39303c0abbceb01c"
+    },
+    "release/dofa-scores-20261114/manifest.json": {
+      "bytes": 922,
+      "sha256": "0a4ce075b4c1181397747c6ccab06abbc99fb48044abfb286b624ffd63d636c8"
+    },
+    "release/dofa-scores-20261114/provenance.json": {
+      "bytes": 19107,
+      "sha256": "5e4c43235a152031850624853dabd5c735062de23b14e148b3f7a384a87fd973"
+    },
+    "release/dofa-scores-20261114/reconstruct.py": {
+      "bytes": 20540,
+      "sha256": "35ae1cbc6a53b9c8c6b110325669b1341aea2538bccb6e610dce6a2ba5d198d7"
+    },
+    "release/dofa-scores-20261114/records.json.gz": {
+      "bytes": 13235321,
+      "sha256": "e9244419add6a017bca13dac78e7129a9f77f106d84230abd10faa45ae2553e5"
+    },
+    "release/dofa-scores-20261114/test_reconstruct.py": {
+      "bytes": 32043,
+      "sha256": "7e5fdcd20769ca32de8926770fa16164b042249ebd4a2011c0eb9d904432033b"
     },
     "release/interpretation-20261001/README.md": {
       "bytes": 10710,
