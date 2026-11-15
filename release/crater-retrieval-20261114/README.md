@@ -94,20 +94,25 @@ model and test region. Gray marks give macro F1 for the predictor that assigns
 the most frequent training class. Seeds describe variation in classifier fitting;
 they do not add geographic tests.
 
-The right subplot compares error rates at modal map fractions below 0.75 and
-at least 0.90. It first averages seeds per tile, then tiles within each bin and
-class-region group, and finally the 20 eligible groups equally. Each bin has at
-least 20 tiles in a group. The groups comprise five each for Plains, Dunes and
-Hummocky, three for Labyrinths, two for Lakes and none for Craters. This
-association describes the available groups; it does not isolate a causal effect
-of map mixtures or estimate an average across all six classes.
+The right subplot shows each eligible class-region group's error difference
+between modal map fractions below 0.75 and at least 0.90, in percentage points.
+Positive values mean more errors in mixed tiles. Region numbers identify the
+groups; class labels give their eligible counts. A separate row shows the saved
+equal-group mean. The analysis first averages seeds per tile, then tiles within
+each bin and class-region group, and finally the 20 eligible groups equally.
+Each bin has at least 20 tiles in a group. The groups comprise five each for
+Plains, Dunes and Hummocky, three for Labyrinths, two for Lakes and none for
+Craters. This association describes the available groups; it does not isolate
+a causal effect of map mixtures or estimate an average across all six classes.
+The absolute endpoint means remain available in the unchanged report.
 
-The fixed vertical axis spans 0–50% macro F1; inputs outside that range are
+Panel A's fixed vertical axis spans 0–50% macro F1; inputs outside that range are
 rejected before rendering.
 
 The outputs are `full-regional-errors.pdf`, `cvpr-regional-errors.pdf`, their PNG
-copies and rendering records. This command copies the saved error summaries
-and displays the stored seed scores. It does not rerun the prediction analysis.
+copies and rendering records. This command displays the stored seed scores,
+within-group error differences and saved equal-group means. It does not rerun
+the prediction analysis.
 The report retains the source and figure identities of its original analysis;
 `manifest.json` identifies the current plotting source and expected displays.
 

@@ -31,13 +31,13 @@
     "guide": "release/crater-retrieval-20261114/README.md",
     "input_guide": "release/class-ranking-20261111/README.md",
     "manifest": "release/crater-retrieval-20261114/manifest.json",
-    "plotting_source_commit": "f0a3a4d41f28bbd810f75243b06bc3ecacb2965c",
+    "plotting_source_commit": "b016bdbf8520d26bdb6eff20a5112b0c67fa7055",
     "renderer_sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced",
     "renderers": {
-      "plot_class_contrasts.py": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca",
+      "plot_class_contrasts.py": "08cc068fb0c8ccf4b69e62a627c3861d66add7920586f2c365ccfe5ba106e79c",
       "plot_class_ranking.py": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c",
       "plot_crater_retrieval.py": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced",
-      "plot_regional_errors.py": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
+      "plot_regional_errors.py": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
     },
     "scope": "Regional AP differences for all six classes, absolute Craters AP, recall against retrieved tile count, and regional SGD variation with map-mixture error summaries. Existing results only; no model execution or new AP calculation."
   },
@@ -262,12 +262,12 @@
       "sha256": "d5e5e7b85bafc18ab57144d6df98819e357d5fe2a2a41eee19786fb67b1a4e6c"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 7575,
-      "sha256": "3741e9be9731da6d2cf88169b78a858115d8be7ea630d6b705db1fbf40453be5"
+      "bytes": 7923,
+      "sha256": "16693a0f2689c5aa0ff68404c61e0652cccbebe38074100e41310e80b9262eaf"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
       "bytes": 3180,
-      "sha256": "951c003ccf9ef2305b80d777c8750329d2d7ef1be7e9e0d76db0c404f9dd1d56"
+      "sha256": "3867ba6da2928fd926af608198dc566cfe00e9a76ec5c12caa596577255b3893"
     },
     "release/crater-retrieval-20261114/figures/craters-ap-caption.tex": {
       "bytes": 623,
@@ -283,7 +283,7 @@
     },
     "release/crater-retrieval-20261114/manifest.json": {
       "bytes": 11501,
-      "sha256": "34cd790284741ef09e3a4df858f0e5b96cc70f07e6dc7a9fe82e07fa283d3cf0"
+      "sha256": "4e13ba4a00d1b887ef69e403a6c8939fef1a6a189737060fc535c114fe09fa8f"
     },
     "release/crater-retrieval-20261114/paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,
@@ -350,8 +350,8 @@
       "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
     },
     "release/crater-retrieval-20261114/scripts/plot_class_contrasts.py": {
-      "bytes": 10952,
-      "sha256": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca"
+      "bytes": 10983,
+      "sha256": "08cc068fb0c8ccf4b69e62a627c3861d66add7920586f2c365ccfe5ba106e79c"
     },
     "release/crater-retrieval-20261114/scripts/plot_class_ranking.py": {
       "bytes": 21474,
@@ -362,8 +362,8 @@
       "sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced"
     },
     "release/crater-retrieval-20261114/scripts/plot_regional_errors.py": {
-      "bytes": 11250,
-      "sha256": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
+      "bytes": 15899,
+      "sha256": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
     },
     "release/crater-retrieval-20261114/scripts/prepare_cvpr_tables.py": {
       "bytes": 9493,
@@ -386,8 +386,8 @@
       "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
     },
     "release/crater-retrieval-20261114/tests/test_regional_errors_plot.py": {
-      "bytes": 16689,
-      "sha256": "be6a11852ad93023cb2801aee95fafd19e995bdf43000eb1e2031de9612eb1de"
+      "bytes": 24813,
+      "sha256": "b1dcae0a02f28ec7657c3737dc5dd6ff1827de2580e415386909c4cdd992c77d"
     },
     "release/current-source-20261109/CONTRACTS.md": {
       "bytes": 18503,

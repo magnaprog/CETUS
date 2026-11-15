@@ -26,20 +26,20 @@
   },
   "expected_class_contrasts": {
     "class-contrasts-cvpr.pdf": {
-      "bytes": 15063,
-      "sha256": "4553c2804ba405bf704320961131dacca4e2d6d6542658b89654d1d58b735dde"
+      "bytes": 15204,
+      "sha256": "e61a271d1e26a6a42fea594e32335a8ad5af594ed6b6acf1beb5a5f14cbb331a"
     },
     "class-contrasts-cvpr.png": {
-      "bytes": 52201,
-      "sha256": "4449cd8724190f9f567d88a269e1d598aa063435a2a07b9e57b04fa85375ce22"
+      "bytes": 57380,
+      "sha256": "b503142d2514c9242b8a6a37509b051e212521f815de4aec08bfbb0b1f4c52ae"
     },
     "class-contrasts-full.pdf": {
-      "bytes": 15528,
-      "sha256": "de5497152523893d93aa6ed93a4693915561cb01585a7bd7bd39f6d1e7132580"
+      "bytes": 15670,
+      "sha256": "55b9697c9fce76c407caf644e0fb11d6934384d2791e4db9a1f8fe49a079d0f0"
     },
     "class-contrasts-full.png": {
-      "bytes": 47578,
-      "sha256": "02650fec480a65bd38eb030653d656e804bd70c56f780fc8ea6d309684b7ee9b"
+      "bytes": 52963,
+      "sha256": "b53abb9e854efa00c33e1a1e9337cd8da2f967d524ce133bc6b12c841a3a009d"
     }
   },
   "expected_figures": {
@@ -62,20 +62,20 @@
   },
   "expected_regional_errors": {
     "cvpr-regional-errors.pdf": {
-      "bytes": 25317,
-      "sha256": "6d0b82e40acac9e23136e0a50e8c404b421528e54c22d10eda6ee7c4159ef268"
+      "bytes": 26352,
+      "sha256": "11c1367220c1024f3842577c16c6458eb3c2642a835dd851270c68d4b72cab04"
     },
     "cvpr-regional-errors.png": {
-      "bytes": 146828,
-      "sha256": "4367d75affcb9f1c697bfc00563591e22d1ef6394d82bb0c5f9a74a9d69781ea"
+      "bytes": 183069,
+      "sha256": "ccd00ffd928ec2bfe30a3fc7912194cbfa188c0962395963e6f4ff78a93a34d9"
     },
     "full-regional-errors.pdf": {
-      "bytes": 25648,
-      "sha256": "28739358cd0c169f91a25def07f5df23a48193f5eb8bf73196041043c5853766"
+      "bytes": 26567,
+      "sha256": "01a6d4086171ca987532841a6a10d497afeaf299aed79bcd19d84625bc40c640"
     },
     "full-regional-errors.png": {
-      "bytes": 134707,
-      "sha256": "9a3b681b99a1fed1dc766523713bdb1a029dd3002f8edd9b96a0fe1fc58e815c"
+      "bytes": 173542,
+      "sha256": "5368ccb4c3f535b1bdb9dbe5ca6e537f3dc26ca9a58bb7ffea6ef07e5c9b0140"
     }
   },
   "files": {
@@ -88,8 +88,8 @@
       "sha256": "d5e5e7b85bafc18ab57144d6df98819e357d5fe2a2a41eee19786fb67b1a4e6c"
     },
     "README.md": {
-      "bytes": 7575,
-      "sha256": "3741e9be9731da6d2cf88169b78a858115d8be7ea630d6b705db1fbf40453be5"
+      "bytes": 7923,
+      "sha256": "16693a0f2689c5aa0ff68404c61e0652cccbebe38074100e41310e80b9262eaf"
     },
     "figures/craters-ap-caption.tex": {
       "bytes": 623,
@@ -168,8 +168,8 @@
       "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
     },
     "scripts/plot_class_contrasts.py": {
-      "bytes": 10952,
-      "sha256": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca"
+      "bytes": 10983,
+      "sha256": "08cc068fb0c8ccf4b69e62a627c3861d66add7920586f2c365ccfe5ba106e79c"
     },
     "scripts/plot_class_ranking.py": {
       "bytes": 21474,
@@ -180,8 +180,8 @@
       "sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced"
     },
     "scripts/plot_regional_errors.py": {
-      "bytes": 11250,
-      "sha256": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
+      "bytes": 15899,
+      "sha256": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
     },
     "scripts/prepare_cvpr_tables.py": {
       "bytes": 9493,
@@ -204,8 +204,8 @@
       "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
     },
     "tests/test_regional_errors_plot.py": {
-      "bytes": 16689,
-      "sha256": "be6a11852ad93023cb2801aee95fafd19e995bdf43000eb1e2031de9612eb1de"
+      "bytes": 24813,
+      "sha256": "b1dcae0a02f28ec7657c3737dc5dd6ff1827de2580e415386909c4cdd992c77d"
     }
   },
   "inputs": {
@@ -247,7 +247,7 @@
       },
       "scripts/plot_class_contrasts.py": {
         "path": "scripts/plot_class_contrasts.py",
-        "sha256": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca"
+        "sha256": "08cc068fb0c8ccf4b69e62a627c3861d66add7920586f2c365ccfe5ba106e79c"
       },
       "scripts/plot_class_ranking.py": {
         "path": "scripts/plot_class_ranking.py",
@@ -259,7 +259,7 @@
       },
       "scripts/plot_regional_errors.py": {
         "path": "scripts/plot_regional_errors.py",
-        "sha256": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
+        "sha256": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
       },
       "scripts/prepare_cvpr_tables.py": {
         "path": "scripts/prepare_cvpr_tables.py",
@@ -283,7 +283,7 @@
       },
       "tests/test_regional_errors_plot.py": {
         "path": "tests/test_regional_errors_plot.py",
-        "sha256": "be6a11852ad93023cb2801aee95fafd19e995bdf43000eb1e2031de9612eb1de"
+        "sha256": "b1dcae0a02f28ec7657c3737dc5dd6ff1827de2580e415386909c4cdd992c77d"
       }
     },
     "new_files_identified_by_payload_hashes": [
@@ -294,7 +294,7 @@
       "scripts/plot_regional_errors.py",
       "tests/test_regional_errors_plot.py"
     ],
-    "plotting_source_commit": "f0a3a4d41f28bbd810f75243b06bc3ecacb2965c",
+    "plotting_source_commit": "b016bdbf8520d26bdb6eff20a5112b0c67fa7055",
     "repository": "magnaprog/TitanSAR-dev",
     "unchanged_dependency_base_commit": "3f7584f185e1e82627a6b75008c13189bd8c5794"
   }
