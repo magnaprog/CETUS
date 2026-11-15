@@ -1,8 +1,8 @@
 # Software, font and data credits
 
-The author-owned plotting code and tests are by Kevin Lee and use the
-accompanying MIT [license](LICENSE). NumPy, Matplotlib and pytest are supplied
-separately under their own terms; this companion does not bundle their source.
+The author-owned plotting code, tests and display helpers are by Kevin Lee and
+use the accompanying MIT [license](LICENSE). NumPy, Matplotlib, Pillow and pytest
+are supplied separately under their own terms; their source is not bundled.
 
 The unmodified Nimbus Sans and Nimbus Roman TrueType files are from Artifex
 URW Base 35, commit `3c0ba3b5687632dfc66526544a4e811fe0ec0cd9`. Each font
@@ -18,14 +18,36 @@ directory retains the upstream `LICENSE`, `COPYING` and `sources.json`:
 Preserve these separate font terms, including their stated PostScript/PDF
 embedding permission. The MIT code license does not replace them. All four
 Roman faces are included because the unchanged style configuration registers
-each face, although this display uses the regular face for its text.
+each face.
 
-The companion reads the existing class-ranking results and supplies the saved
-SGD analysis for the regional display. Preserve the ranking package's
-[data and software credits](../class-ranking-20261111/NOTICE.md),
-the repository's [data licenses](../../DATA_LICENSES.md) and
-[third-party notices](../../THIRD_PARTY_NOTICES.md). Those records credit the
-Cassini SAR Team, Jet Propulsion Laboratory and USGS Astrogeology Science
-Center, and the Lopes et al. terrain interpretation and Ashley Schoenfeld
-Titan Global Map Shapefiles used for map labels. No original imagery, map
-geometry or model weights are distributed in this display companion.
+The class and regional displays read the existing accepted ranking and SGD
+analysis records. Preserve the ranking companion's
+[data and software credits](../class-ranking-20261111/NOTICE.md), the repository's
+[data licenses](../../DATA_LICENSES.md) and
+[third-party notices](../../THIRD_PARTY_NOTICES.md), and the notices within the
+original numerical archives. Original result files and archived licenses remain
+unchanged.
+
+Titan sampling metadata derives from Cassini SAR HiSAR Global Mosaic 351 m
+and the current test catalog. Credit the Cassini SAR Team, Jet Propulsion
+Laboratory and USGS Astrogeology Science Center. Terrain labels derive from
+Lopes et al. (2020) and Ashley Schoenfeld's *Titan Global Map Shapefiles*, version
+1, licensed CC BY 4.0. The displayed labels describe modal map classes.
+
+Earth metadata retains nominal Sentinel-1 source-window outlines and geometric
+centers for the original 398 images. Preserve the required notice:
+"Contains modified Copernicus Sentinel data 2026."
+The underlying processing used calibrated sigma0 and terrain correction; the
+repository's notices retain the Copernicus DEM GLO-30/WorldDEM-30 terms and the
+recorded limits on exact collection/tile versions. Nominal outlines are not
+SAR-valid masks or terrain annotations.
+
+Venus metadata retains centers and pixel-validity fractions from the Magellan
+SAR FMAP right-look global mosaic. Credit NASA/JPL, the Magellan mission and
+Saunders et al. (1992), following the existing source-data notice. The 2,945
+samples are unlabeled; their six illustration markers do not assign terrain.
+
+This companion distributes derived ranking arrays and sampling metadata,
+including nominal Earth window geometry. It includes no original image pixels,
+geological terrain-map geometry or model weights. The MIT software license does
+not replace source-data, font or upstream-model terms.

@@ -1,4 +1,4 @@
-name: Class ranking and regional displays
+name: Class ranking and geographic displays
 
 on: [push, pull_request]
 
@@ -36,7 +36,8 @@ jobs:
           sha256sum -c SHA256SUMS
           python -B -m pytest tests/test_crater_retrieval_plot.py \
             tests/test_class_ranking_plot.py tests/test_class_contrasts_plot.py \
-            tests/test_regional_errors_plot.py -q -p no:cacheprovider \
+            tests/test_regional_errors_plot.py tests/test_class_retrieval_plot.py \
+            tests/test_dataset_geography_plot.py -q -p no:cacheprovider \
             --basetemp="$RUNNER_TEMP/crater-retrieval-tests"
       - name: Render saved Craters rankings
         working-directory: release/crater-retrieval-20261114
@@ -105,6 +106,46 @@ jobs:
           PYCODE
           sha256sum -c SHA256SUMS
           test -z "$(git status --porcelain=v1)"
+      - name: Render all-class retrieval and geographic sampling
+        working-directory: release/crater-retrieval-20261114
+        run: |
+          set -euo pipefail
+          python -B -m scripts.plot_class_retrieval \
+            --report ../class-ranking-20261111/results.json \
+            --report-sha256 f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d \
+            --export data/class-retrieval.json \
+            --export-sha256 b03ce1da11d41c6b92b0e75b669f57d7f3db887dff840da6a808ea0d938c9de2 \
+            --curves data/class-curves.npz \
+            --curves-sha256 f31fab61e09b81555119379d916ddce6c5ec88947c7126b92ea46aa4f0927e1c \
+            --output "$RUNNER_TEMP/class-retrieval"
+          for style in cvpr full; do
+            python -B -m scripts.plot_dataset_geography \
+              --payload data/dataset-geography.json \
+              --payload-sha256 6619ff667273aaa0273bcab1614ef3dff1e6453f1d79309d350da13e5508591d \
+              --style "$style" \
+              --output "$RUNNER_TEMP/geography-$style" \
+              --receipt "$RUNNER_TEMP/geography-$style-receipt.json"
+          done
+          python -B - <<'PYCODE'
+          import hashlib, json, os
+          from pathlib import Path
+          root = Path(os.environ['RUNNER_TEMP'])
+          manifest = json.loads(Path('manifest.json').read_text())
+          groups = [('class-retrieval', manifest['expected_class_retrieval'])]
+          groups += [('geography-' + style, manifest['expected_dataset_geography'][style])
+                     for style in ('cvpr', 'full')]
+          assert [len(expected) for _, expected in groups] == [24, 8, 8]
+          for folder, expected in groups:
+              output = root / folder
+              actual = {p.name for p in output.iterdir() if p.suffix in ('.pdf', '.png')}
+              assert actual == set(expected), folder
+              for name, record in expected.items():
+                  data = (output / name).read_bytes()
+                  assert {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} == record, name
+          print('All 40 retrieval and geographic figures match the supplied displays.')
+          PYCODE
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
       - name: Preserve figure and display records
         if: always()
         uses: actions/upload-artifact@v4
@@ -115,4 +156,6 @@ jobs:
             ${{ runner.temp }}/class-contrasts
             ${{ runner.temp }}/absolute-ap
             ${{ runner.temp }}/regional-errors
+            ${{ runner.temp }}/class-retrieval
+            ${{ runner.temp }}/geography-*
           if-no-files-found: warn

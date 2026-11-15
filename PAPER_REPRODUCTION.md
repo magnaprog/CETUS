@@ -125,15 +125,31 @@ methods and validation choices used in the two model comparisons.
 ### Displaying retrieved tile counts
 
 The [retrieval companion](release/crater-retrieval-20261114/README.md) renders
-each saved Craters ranking as recall against retrieved test-tile count. Equal
-scores enter together. Small points show every group endpoint; larger symbols
-mark groups that add Craters labels. All regions and seeds remain separate.
+recall against retrieved test-tile count for all six map classes. Equal scores
+enter together, with each region and model state shown separately. Every score
+group has an endpoint; the Craters sheets also emphasize groups that add
+positive labels. Dense overlap can obscure individual states in common classes.
 The count axis is logarithmic, and its area has no average-precision meaning.
 
-The CPU command reads the existing class-ranking results and curves in place.
-It produces both paper variants with bundled fonts and preserves the saved
-ranking and model choices. Retrieved tiles may contain overlapping views of a
-landform, so this count differs from a count of geological craters.
+The CPU command reads saved curves and preserves the ranking and model choices.
+It produces both paper variants with bundled fonts. Retrieved tiles can show
+overlapping views of a landform, so the count describes images rather than
+independent geological objects.
+
+### Geographic sampling displays
+
+The same companion plots all 23,246 Titan test centers, the thirteen Earth
+collection sites and 398 original image windows, and the 2,945 unlabeled Venus
+centers.
+Titan colors identify modal map labels. Earth windows use the stated angular
+extent around their centers; they do not establish terrain purity or valid SAR
+coverage throughout each window. Venus symbols distinguish complete and partial
+image coverage. None of these sampling displays measures independent geological
+objects or mapped surface area.
+
+The compact coordinate payload supports both paper styles without access to
+mission archives. Its source and population descriptions accompany the plotting
+commands in the companion guide.
 
 ### Regional SGD variation
 
