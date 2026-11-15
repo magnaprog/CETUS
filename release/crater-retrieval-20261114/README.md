@@ -130,7 +130,7 @@ ranking.
 ## Geographic variation and map mixtures
 
 The accompanying `regional-errors.json` is the unchanged analysis of the saved
-SGD classifier predictions. Recreate Figure S7 with:
+SGD classifier predictions. Recreate the regional SGD figure with:
 
 ```sh
 python3.12 -B -m scripts.plot_regional_errors \
