@@ -1,4 +1,9 @@
 {
+  "check_plan_clarification": {
+    "contract_sha256": "805b9be8cd1494838f3015ad9a490ddc88f1509be919c8a42ed226ad39bde5bc",
+    "previous_contract_sha256": "7a156f695d300cc2539b9c1254010e668c9283b1e298ca8af26a6d98a7d0f7bf",
+    "scope": "CONTRACTS.md separates contract/source/reference checks from the later worker checks. Code, input records and execution guards are unchanged."
+  },
   "counts": {
     "exact_development_source_test_protocol_files": 18,
     "exact_notice_files": 4,
@@ -34,12 +39,12 @@
   },
   "files": {
     "CONTRACTS.md": {
-      "bytes": 7678,
+      "bytes": 7817,
       "origin": {
         "byte_identical": false,
         "role": "generated source-inspection metadata or packaging initializer"
       },
-      "sha256": "7a156f695d300cc2539b9c1254010e668c9283b1e298ca8af26a6d98a7d0f7bf"
+      "sha256": "805b9be8cd1494838f3015ad9a490ddc88f1509be919c8a42ed226ad39bde5bc"
     },
     "DATA_LICENSES.md": {
       "bytes": 1886,

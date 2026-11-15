@@ -686,8 +686,8 @@
       "sha256": "3d7ddaf65cfb2fbf5f4a590c589164f08dfbb9ccf98fd385c6bd2d61e0e405ae"
     },
     "release/dofa-partial-source-20261112/CONTRACTS.md": {
-      "bytes": 7678,
-      "sha256": "7a156f695d300cc2539b9c1254010e668c9283b1e298ca8af26a6d98a7d0f7bf"
+      "bytes": 7817,
+      "sha256": "805b9be8cd1494838f3015ad9a490ddc88f1509be919c8a42ed226ad39bde5bc"
     },
     "release/dofa-partial-source-20261112/DATA_LICENSES.md": {
       "bytes": 1886,
@@ -703,11 +703,11 @@
     },
     "release/dofa-partial-source-20261112/SHA256SUMS": {
       "bytes": 3243,
-      "sha256": "13d2760a9e201b6cf2830a882400ccf4c29d4b74e33bb8b846822e4c8280ec29"
+      "sha256": "a810d7c688e8799aca107cf766b935ecb2fe86592249f3718a26a90c7bba9d7f"
     },
     "release/dofa-partial-source-20261112/SOURCE_EXPORT.json": {
-      "bytes": 26374,
-      "sha256": "ac1952a95d8051719fa6c4458d99794af60f9ee7cbd6a03c0282f575125fb05f"
+      "bytes": 26759,
+      "sha256": "ccf4c904ea6a735811b4ff992c4a2cc272f1c2860200de467b54562a1cbdebc2"
     },
     "release/dofa-partial-source-20261112/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -731,7 +731,7 @@
     },
     "release/dofa-partial-source-20261112/file_index.json": {
       "bytes": 4900,
-      "sha256": "4fdd3134019d29453d1cf0973f0f4e9b3b9183581713d1fb372e9f971fcb32de"
+      "sha256": "606d2d5837b4234470c03e2c64926a26646c607a8e6077bff9c5d937856f1b99"
     },
     "release/dofa-partial-source-20261112/historical-ed2eb3e/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json": {
       "bytes": 15795,

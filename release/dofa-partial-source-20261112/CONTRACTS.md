@@ -26,11 +26,13 @@ the other 49 as omitted. A source archive or a new local commit cannot satisfy
 that original check.
 
 The CLI exposes `check-plan`, `fit` and `replay`; `_fit-worker` and `_replay-worker`
-are supervised internal modes. Even `check-plan` needs the original prerequisites:
-a clean declared consumer, the historical checkout, original catalog and splits,
-complete feature/analysis directories and manifests, pretrained weights, pinned
-upstream code, and interpreter, runtime, device and lock bindings. The supplied
-contract view is not executable.
+are supervised internal modes. `check-plan` verifies the executable contract's
+structure and source/reference bindings: the clean declared consumer and
+historical Git identities, declared interpreter, original catalog/protocol/tile
+inventory, upstream source and fold-reference records. It reports
+`scientific_preflight: false`; workers perform the subsequent raw-input,
+feature-cache, normalization, model and runtime checks. The supplied contract
+view cannot pass the original contract checks.
 
 Preflight checks complete file inventories, cache arrays and sidecars, all five
 reference heads, normalization and input identities. These references establish
