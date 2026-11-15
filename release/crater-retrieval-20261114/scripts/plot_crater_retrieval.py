@@ -6,7 +6,6 @@ python3 -B -m scripts.plot_crater_retrieval --report results.json \
 
 Every whole-score-group endpoint is shown; no connectors imply attainable
 counts inside ties. Larger symbols mark all and only groups that increase TP.
-The caller owns scientific acceptance, captions and manuscript integration.
 """
 from __future__ import annotations
 
@@ -310,7 +309,7 @@ def main(argv=None):
              for ext in ("pdf", "png")] + ["display.json"]
     require(all((output / name).stat().st_size > 0 for name in names), "Empty render output")
     write_json(output / "complete.json", {
-        **binding, "status": "rendered_pending_parent_review", "curves_per_variant": 60,
+        **binding, "status": "rendered", "curves_per_variant": 60,
         "outputs": {name: {"sha256": digest(output / name), "bytes": (output / name).stat().st_size}
                     for name in names},
     })

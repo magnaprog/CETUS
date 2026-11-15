@@ -1,4 +1,4 @@
-name: Craters retrieval display
+name: Class ranking and regional displays
 
 on: [push, pull_request]
 
@@ -34,7 +34,9 @@ jobs:
         run: |
           set -euo pipefail
           sha256sum -c SHA256SUMS
-          python -B -m pytest tests/test_crater_retrieval_plot.py -q -p no:cacheprovider \
+          python -B -m pytest tests/test_crater_retrieval_plot.py \
+            tests/test_class_ranking_plot.py tests/test_class_contrasts_plot.py \
+            tests/test_regional_errors_plot.py -q -p no:cacheprovider \
             --basetemp="$RUNNER_TEMP/crater-retrieval-tests"
       - name: Render saved Craters rankings
         working-directory: release/crater-retrieval-20261114
@@ -57,10 +59,60 @@ jobs:
           PY
           sha256sum -c SHA256SUMS
           test -z "$(git status --porcelain=v1)"
+      - name: Render regional AP contrasts and absolute AP
+        working-directory: release/crater-retrieval-20261114
+        run: |
+          set -euo pipefail
+          python -B -m scripts.plot_class_contrasts \
+            --report ../class-ranking-20261111/results.json \
+            --report-sha256 f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d \
+            --output "$RUNNER_TEMP/class-contrasts"
+          python -B -m scripts.plot_class_ranking \
+            --report ../class-ranking-20261111/results.json \
+            --report-sha256 f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d \
+            --output "$RUNNER_TEMP/absolute-ap"
+          python -B - <<'PYCODE'
+          import hashlib, json, os
+          from pathlib import Path
+          manifest = json.loads(Path('manifest.json').read_text())
+          for folder, field in [('class-contrasts', 'expected_class_contrasts'),
+                                ('absolute-ap', 'expected_absolute_ap')]:
+              output = Path(os.environ['RUNNER_TEMP']) / folder
+              for name, expected in manifest[field].items():
+                  data = (output / name).read_bytes()
+                  assert {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} == expected, name
+          print('Regional contrasts and absolute AP match the supplied displays.')
+          PYCODE
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+      - name: Render regional SGD results
+        working-directory: release/crater-retrieval-20261114
+        run: |
+          set -euo pipefail
+          python -B -m scripts.plot_regional_errors \
+            --report regional-errors.json \
+            --report-sha256 a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07 \
+            --output "$RUNNER_TEMP/regional-errors"
+          python -B - <<'PYCODE'
+          import hashlib, json, os
+          from pathlib import Path
+          output = Path(os.environ['RUNNER_TEMP']) / 'regional-errors'
+          expected = json.loads(Path('manifest.json').read_text())['expected_regional_errors']
+          for name, record in expected.items():
+              data = (output / name).read_bytes()
+              assert {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()} == record, name
+          print('Regional displays match the supplied figures.')
+          PYCODE
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
       - name: Preserve figure and display records
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: crater-retrieval-display
-          path: ${{ runner.temp }}/crater-retrieval
+          path: |
+            ${{ runner.temp }}/crater-retrieval
+            ${{ runner.temp }}/class-contrasts
+            ${{ runner.temp }}/absolute-ap
+            ${{ runner.temp }}/regional-errors
           if-no-files-found: warn

@@ -1,5 +1,47 @@
 {
   "entrypoint": "python3.12 -B -m scripts.plot_crater_retrieval",
+  "entrypoints": [
+    "python3.12 -B -m scripts.plot_crater_retrieval",
+    "python3.12 -B -m scripts.plot_class_ranking",
+    "python3.12 -B -m scripts.plot_class_contrasts",
+    "python3.12 -B -m scripts.plot_regional_errors"
+  ],
+  "expected_absolute_ap": {
+    "craters-ap-cvpr.pdf": {
+      "bytes": 17596,
+      "sha256": "682858833d19c418f8064c584c752a1b855533bd347ee13241a2f798970bf82b"
+    },
+    "craters-ap-cvpr.png": {
+      "bytes": 46446,
+      "sha256": "5296ba5ea987d93813ce3b5c0200d59198b8db2d7788477473e07fbc9dc82429"
+    },
+    "craters-ap-full.pdf": {
+      "bytes": 18361,
+      "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
+    },
+    "craters-ap-full.png": {
+      "bytes": 43749,
+      "sha256": "ffd039e488a995b3438adbf1367883c666649ded999563fddc0451fb58d65f1d"
+    }
+  },
+  "expected_class_contrasts": {
+    "class-contrasts-cvpr.pdf": {
+      "bytes": 15063,
+      "sha256": "4553c2804ba405bf704320961131dacca4e2d6d6542658b89654d1d58b735dde"
+    },
+    "class-contrasts-cvpr.png": {
+      "bytes": 52201,
+      "sha256": "4449cd8724190f9f567d88a269e1d598aa063435a2a07b9e57b04fa85375ce22"
+    },
+    "class-contrasts-full.pdf": {
+      "bytes": 15528,
+      "sha256": "de5497152523893d93aa6ed93a4693915561cb01585a7bd7bd39f6d1e7132580"
+    },
+    "class-contrasts-full.png": {
+      "bytes": 47578,
+      "sha256": "02650fec480a65bd38eb030653d656e804bd70c56f780fc8ea6d309684b7ee9b"
+    }
+  },
   "expected_figures": {
     "crater-retrieval-cvpr.pdf": {
       "bytes": 85326,
@@ -18,18 +60,48 @@
       "sha256": "d157049596f51ba0f386861746e5483d2008e2331cd2a6b84a0c22370683bdc1"
     }
   },
+  "expected_regional_errors": {
+    "cvpr-regional-errors.pdf": {
+      "bytes": 25317,
+      "sha256": "6d0b82e40acac9e23136e0a50e8c404b421528e54c22d10eda6ee7c4159ef268"
+    },
+    "cvpr-regional-errors.png": {
+      "bytes": 146828,
+      "sha256": "4367d75affcb9f1c697bfc00563591e22d1ef6394d82bb0c5f9a74a9d69781ea"
+    },
+    "full-regional-errors.pdf": {
+      "bytes": 25648,
+      "sha256": "28739358cd0c169f91a25def07f5df23a48193f5eb8bf73196041043c5853766"
+    },
+    "full-regional-errors.png": {
+      "bytes": 134707,
+      "sha256": "9a3b681b99a1fed1dc766523713bdb1a029dd3002f8edd9b96a0fe1fc58e815c"
+    }
+  },
   "files": {
     "LICENSE": {
       "bytes": 1066,
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "NOTICE.md": {
-      "bytes": 1719,
-      "sha256": "20ade9559352def3f8dec6206788b387120bc51aca6fc2a1e9fd5d62144db2ac"
+      "bytes": 1762,
+      "sha256": "d5e5e7b85bafc18ab57144d6df98819e357d5fe2a2a41eee19786fb67b1a4e6c"
     },
     "README.md": {
-      "bytes": 3889,
-      "sha256": "007c624e37c46ea9906a6c6761ae41a9cc964028aee0ce4c0de7e657677a9db4"
+      "bytes": 7575,
+      "sha256": "3741e9be9731da6d2cf88169b78a858115d8be7ea630d6b705db1fbf40453be5"
+    },
+    "figures/craters-ap-caption.tex": {
+      "bytes": 623,
+      "sha256": "43a8ff7adcee585b5d78281ac0725ce237b5061d283a3d82a36868e392a5f867"
+    },
+    "figures/craters-ap-cvpr.pdf": {
+      "bytes": 17596,
+      "sha256": "682858833d19c418f8064c584c752a1b855533bd347ee13241a2f798970bf82b"
+    },
+    "figures/craters-ap-full.pdf": {
+      "bytes": 18361,
+      "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
     },
     "paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,
@@ -75,6 +147,10 @@
       "bytes": 1196,
       "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
     },
+    "regional-errors.json": {
+      "bytes": 172455,
+      "sha256": "a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07"
+    },
     "requirements.txt": {
       "bytes": 149,
       "sha256": "e5816ffff907c8631e01579a24ffb31860fde314bcd67aba1fb8220f5128135f"
@@ -91,13 +167,21 @@
       "bytes": 3995,
       "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
     },
+    "scripts/plot_class_contrasts.py": {
+      "bytes": 10952,
+      "sha256": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca"
+    },
     "scripts/plot_class_ranking.py": {
-      "bytes": 21534,
-      "sha256": "7a59f3bda7ba8f0c11b5e5c6d24450c9489eef8ddf0583efaf020ba162f104cc"
+      "bytes": 21474,
+      "sha256": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c"
     },
     "scripts/plot_crater_retrieval.py": {
-      "bytes": 17951,
-      "sha256": "38ff8955b8f0ed531d7df377e5bfc53ca55b979d5c81ec3aca819f2d89010ac5"
+      "bytes": 17853,
+      "sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced"
+    },
+    "scripts/plot_regional_errors.py": {
+      "bytes": 11250,
+      "sha256": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
     },
     "scripts/prepare_cvpr_tables.py": {
       "bytes": 9493,
@@ -107,6 +191,10 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
+    "tests/test_class_contrasts_plot.py": {
+      "bytes": 13035,
+      "sha256": "74dedc68357d5c71abfa2aa9ef96c6aa23eb2bacf6325cb51947f27dec10d84a"
+    },
     "tests/test_class_ranking_plot.py": {
       "bytes": 15979,
       "sha256": "8d6658d777dad883ac595c895bac713c56786e20f6ac67605d355dd398a675aa"
@@ -114,6 +202,10 @@
     "tests/test_crater_retrieval_plot.py": {
       "bytes": 19088,
       "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
+    },
+    "tests/test_regional_errors_plot.py": {
+      "bytes": 16689,
+      "sha256": "be6a11852ad93023cb2801aee95fafd19e995bdf43000eb1e2031de9612eb1de"
     }
   },
   "inputs": {
@@ -130,6 +222,11 @@
         "sha256": "f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d"
       }
     },
+    "regional_errors": {
+      "bytes": 172455,
+      "path": "regional-errors.json",
+      "sha256": "a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07"
+    },
     "repository": "magnaprog/CETUS"
   },
   "integrity_policy": {
@@ -139,10 +236,65 @@
   "schema": "crater-retrieval-package-v1",
   "source": {
     "copy_policy": "All Python source/test files and font/license resources retain their source bytes; scripts/__init__.py is an empty package initializer.",
+    "current_source_mapping": {
+      "scripts/cvpr_figure_style.py": {
+        "path": "scripts/cvpr_figure_style.py",
+        "sha256": "fc6a4c79cc093c09fd9727bee7ca2da3bc295ddf342c274b18085726de9a2818"
+      },
+      "scripts/figure_style.py": {
+        "path": "scripts/figure_style.py",
+        "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
+      },
+      "scripts/plot_class_contrasts.py": {
+        "path": "scripts/plot_class_contrasts.py",
+        "sha256": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca"
+      },
+      "scripts/plot_class_ranking.py": {
+        "path": "scripts/plot_class_ranking.py",
+        "sha256": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c"
+      },
+      "scripts/plot_crater_retrieval.py": {
+        "path": "scripts/plot_crater_retrieval.py",
+        "sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced"
+      },
+      "scripts/plot_regional_errors.py": {
+        "path": "scripts/plot_regional_errors.py",
+        "sha256": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
+      },
+      "scripts/prepare_cvpr_tables.py": {
+        "path": "scripts/prepare_cvpr_tables.py",
+        "sha256": "b42c013905f759f1129883dc561e680a7a83f9e91e9df2e8cda382857b9fecc4"
+      },
+      "tests/__init__.py": {
+        "path": "tests/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tests/test_class_contrasts_plot.py": {
+        "path": "tests/test_class_contrasts_plot.py",
+        "sha256": "74dedc68357d5c71abfa2aa9ef96c6aa23eb2bacf6325cb51947f27dec10d84a"
+      },
+      "tests/test_class_ranking_plot.py": {
+        "path": "tests/test_class_ranking_plot.py",
+        "sha256": "8d6658d777dad883ac595c895bac713c56786e20f6ac67605d355dd398a675aa"
+      },
+      "tests/test_crater_retrieval_plot.py": {
+        "path": "tests/test_crater_retrieval_plot.py",
+        "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
+      },
+      "tests/test_regional_errors_plot.py": {
+        "path": "tests/test_regional_errors_plot.py",
+        "sha256": "be6a11852ad93023cb2801aee95fafd19e995bdf43000eb1e2031de9612eb1de"
+      }
+    },
     "new_files_identified_by_payload_hashes": [
       "scripts/plot_crater_retrieval.py",
-      "tests/test_crater_retrieval_plot.py"
+      "tests/test_crater_retrieval_plot.py",
+      "scripts/plot_class_contrasts.py",
+      "tests/test_class_contrasts_plot.py",
+      "scripts/plot_regional_errors.py",
+      "tests/test_regional_errors_plot.py"
     ],
+    "plotting_source_commit": "f0a3a4d41f28bbd810f75243b06bc3ecacb2965c",
     "repository": "magnaprog/TitanSAR-dev",
     "unchanged_dependency_base_commit": "3f7584f185e1e82627a6b75008c13189bd8c5794"
   }

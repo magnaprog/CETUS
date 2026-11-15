@@ -20,8 +20,9 @@ embedding permission. The MIT code license does not replace them. All four
 Roman faces are included because the unchanged style configuration registers
 each face, although this display uses the regular face for its text.
 
-The companion reads, but does not duplicate, the existing class-ranking
-results. Preserve that package's [data and software credits](../class-ranking-20261111/NOTICE.md),
+The companion reads the existing class-ranking results and supplies the saved
+SGD analysis for the regional display. Preserve the ranking package's
+[data and software credits](../class-ranking-20261111/NOTICE.md),
 the repository's [data licenses](../../DATA_LICENSES.md) and
 [third-party notices](../../THIRD_PARTY_NOTICES.md). Those records credit the
 Cassini SAR Team, Jet Propulsion Laboratory and USGS Astrogeology Science

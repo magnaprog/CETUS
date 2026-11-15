@@ -5,8 +5,8 @@ python -B -m scripts.plot_class_ranking --report results.json \
 python -B -m scripts.plot_class_ranking --report results.json \
     --report-sha256 SHA256 --check-table FRESH_PRIVATE_DIRECTORY/class-ranking.tex
 
-The caller owns scientific acceptance, including independent arithmetic review.
-This consumer checks presentation membership and copies saved scalars/aggregates.
+The reader verifies the report hash and complete display membership.
+Plots and tables copy the saved scores and averages.
 Both font variants use the same data, all seeds, and a common logarithmic axis.
 The log axis is a post-results display choice; means remain saved arithmetic AP.
 """
@@ -408,7 +408,7 @@ def main(argv=None):
             variants[variant] = evidence
         write_json(output / "artist-data.json", {"units": "AP percent; raw report fractions retained",
                    "table_note": TABLE_NOTE, "table": mapping, "panels": panels, "variants": variants})
-        write_json(output / "complete.json", {**binding, "status": "proposal_pending_parent_view",
+        write_json(output / "complete.json", {**binding, "status": "rendered",
                    "seed_points_per_variant": 60, "table_cells": 28,
                    "outputs": {p.name: {"sha256": digest(p), "bytes": p.stat().st_size}
                                for p in sorted(output.iterdir())}})
