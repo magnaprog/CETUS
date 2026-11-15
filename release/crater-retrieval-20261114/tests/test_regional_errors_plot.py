@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.colors import to_rgba
 from matplotlib.figure import Figure
+from matplotlib.markers import MarkerStyle
 import numpy as np
 import pytest
 
@@ -26,6 +27,7 @@ def report():
                   {"fold": f, "macro": {"f1": (f + 1) / 100}} for f in range(5)]},
               "test_support": [10, 20, 30, 40, 50, 60]}
     for index, model in enumerate(plot.MODELS):
+        low, high = (.71, .63, .55, .47)[index], (.21, .22, .23, .24)[index]
         result["models"][model] = {
             "folds": [{"fold": f, "macro_by_seed": {"f1": [
                 (4 * (index + 1) + 3 * f + s) / 100 for s in (2, 8, 1, 5, 4)]}}
@@ -35,10 +37,19 @@ def report():
             "context": {"modal_fraction": {
                 "low_below": .75, "high_at_least": .9, "minimum_each_group": 20,
                 "weighting": plot.WEIGHTING,
-                # Deliberately different from summary: the renderer must use summary.
-                "strata": [{"low_error": .01, "high_error": .99}],
-                "summary": {"strata": 3, "low_error": (.71, .63, .55, .47)[index],
-                            "high_error": (.21, .22, .23, .24)[index]}}},
+                # Unsorted identities, unequal supports, and a zero-support bin.
+                # The saved summary is the equal-group mean, not a tile-weighted mean.
+                "strata": [
+                    {"class_index": 4, "fold": 3, "low_count": 20, "high_count": 70,
+                     "low_error": low - .2, "high_error": high + .1, "eligible": True},
+                    {"class_index": 0, "fold": 2, "low_count": 200, "high_count": 2000,
+                     "low_error": low + .2, "high_error": high - .2, "eligible": True},
+                    {"class_index": 5, "fold": 1, "low_count": 0, "high_count": 8,
+                     "low_error": None, "high_error": .5, "eligible": False},
+                    {"class_index": 0, "fold": 0, "low_count": 36, "high_count": 20,
+                     "low_error": low, "high_error": high + .1, "eligible": True}],
+                "summary": {"strata": 3, "low_error": low, "high_error": high,
+                            "low_minus_high": low - high}}},
         }
     return result
 
@@ -65,7 +76,7 @@ def test_exact_artists_and_undrawn_figure(report, monkeypatch):
         assert tuple(plot.CLASSES) == ("Plains", "Dunes", "Hummocky", "Labyrinths", "Lakes", "Craters")
         left, right = fig.axes
         assert len(left.lines) == 5 and len(left.collections) == 24
-        assert len(right.lines) == 4 and len(right.collections) == 8
+        assert len(right.lines) == 10 and len(right.collections) == 0
         for index, (model, shift) in enumerate(zip(plot.MODELS, (-.33, -.11, .11, .33))):
             centers = np.arange(5) + shift
             base = 4 * (index + 1) + 3 * np.arange(5)
@@ -93,16 +104,25 @@ def test_exact_artists_and_undrawn_figure(report, monkeypatch):
                 np.testing.assert_array_equal(dots.get_sizes(), [2.25])
                 np.testing.assert_array_equal(dots.get_linewidths(), [0])
                 assert dots.get_zorder() == 3
-            low, high = (71, 63, 55, 47)[index], (21, 22, 23, 24)[index]
-            np.testing.assert_allclose(right.lines[index].get_xdata(), [low, high], atol=1e-14, rtol=0)
-            np.testing.assert_array_equal(right.lines[index].get_ydata(), [index, index])
-            assert right.lines[index].get_color() == color
-            for offset, value in enumerate((low, high)):
-                dots = right.collections[2 * index + offset]
-                np.testing.assert_allclose(dots.get_offsets(), [[value, index]], atol=1e-14, rtol=0)
-                np.testing.assert_array_equal(dots.get_facecolors(), [to_rgba("white" if offset == 0 else color)])
-                np.testing.assert_array_equal(dots.get_edgecolors(), [to_rgba(plot.style.INK)])
-                np.testing.assert_array_equal(dots.get_sizes(), [48 if offset == 0 else 40])
+            context = report["models"][model]["context"]["modal_fraction"]
+            rows = [context["strata"][i] for i in (3, 1, 0)]
+            dots, group_mean = right.lines[2 + 2 * index:4 + 2 * index]
+            np.testing.assert_array_equal(dots.get_xdata(), [
+                100 * (row["low_error"] - row["high_error"]) for row in rows])
+            np.testing.assert_allclose(dots.get_ydata(), np.arange(3) + (-.385, -.155, .075, .345)[index], atol=1e-15, rtol=0)
+            np.testing.assert_array_equal(group_mean.get_xdata(), [100 * context["summary"]["low_minus_high"]])
+            np.testing.assert_allclose(group_mean.get_ydata(), [4.6 + (index - 1.5) * .34], atol=1e-15, rtol=0)
+            weighted = 100 * (np.average([row["low_error"] for row in rows], weights=[row["low_count"] for row in rows])
+                              - np.average([row["high_error"] for row in rows], weights=[row["high_count"] for row in rows]))
+            assert abs(group_mean.get_xdata()[0] - weighted) > 10
+            for artist, size in ((dots, 2.8), (group_mean, 3.5)):
+                assert artist.get_color() == color and artist.get_marker() == plot.style.MODEL_MARKERS[model]
+                assert artist.get_linestyle() == "None" and artist.get_markersize() == size
+                assert artist.get_markeredgewidth() == 0
+            key = left.get_legend().legend_handles[index]
+            assert key.get_marker() == plot.style.MODEL_MARKERS[model]
+            assert key.get_markerfacecolor() == key.get_markeredgecolor() == color
+            assert key.get_markersize() == 5
         baseline = left.lines[-1]
         np.testing.assert_array_equal(baseline.get_xdata(), range(5))
         np.testing.assert_array_equal(baseline.get_ydata(), [1, 2, 3, 4, 5])
@@ -110,17 +130,19 @@ def test_exact_artists_and_undrawn_figure(report, monkeypatch):
         assert baseline.get_color() == "#666666"
         assert baseline.get_markersize() == 12 and baseline.get_markeredgewidth() == 1.2
         assert [t.get_text() for t in left.get_xticklabels()] == ["1", "2", "3", "4", "5"]
-        assert [t.get_text() for t in right.get_yticklabels()] == list(plot.DISPLAY)
+        assert [t.get_text() for t in right.get_yticklabels()] == ["1", "3", "4"]
+        assert [t.get_text() for t in right.texts] == ["Plains (2)", "Lakes (1)", "Equal-group\nmean"]
         assert left.get_ylim() == (0, 50) and left.get_xlim() == (-.55, 4.55)
-        assert right.get_xlim() == (0, 100) and right.yaxis_inverted()
+        assert right.get_xlim() == (-20, 100) and right.yaxis_inverted()
         assert left.get_xlabel() == "Test region" and left.get_ylabel() == "Six-class macro F1 (%)"
         assert left.get_title(loc="left") == "A  Macro F1 by test region\nFive classifier seeds per model"
-        assert right.get_title(loc="left") == "B  Error by modal map fraction\n3 eligible class and region groups"
-        assert right.get_xlabel() == "Mean error rate across\nclass and fold groups (%)"
-        assert [t.get_text() for t in left.get_legend().get_texts()] == [*plot.DISPLAY, "Most frequent training class"]
-        assert [t.get_text() for t in right.get_legend().get_texts()] == ["Modal fraction < 0.75", "Modal fraction ≥ 0.90"]
+        assert right.get_title(loc="left") == "B  Error difference by class and region\n3 groups; ≥20 tiles per bin; no Craters"
+        assert right.get_xlabel() == "Mixed − high-fraction error\n(percentage points)"
+        assert [t.get_text() for t in left.get_legend().get_texts()] == [
+            "DINOv2", "DOFA (13.78)", "CROMA", "Untrained ViT", "Most frequent training class"]
+        assert right.get_legend() is None
         assert fig._suptitle.get_text() == "SGD classifiers; encoder weights unchanged"
-        np.testing.assert_array_equal(fig.get_size_inches(), [6.5, 4.6])
+        np.testing.assert_array_equal(fig.get_size_inches(), [6.5, 6.0])
         assert report == before
     finally:
         plt.close(fig)
@@ -128,16 +150,125 @@ def test_exact_artists_and_undrawn_figure(report, monkeypatch):
 
 def test_missing_support_branch(report):
     for data in report["models"].values():
-        data["context"]["modal_fraction"]["summary"] = None
+        context = data["context"]["modal_fraction"]
+        context["summary"] = None
+        context["strata"] = [row for row in context["strata"] if not row["eligible"]]
     plot.validate_report(report)
     fig = plot.draw_figure(report)
     try:
         right = fig.axes[1]
         assert len(right.lines) == len(right.collections) == 0
-        assert [text.get_text() for text in right.texts] == ["Insufficient matched support"] * 4
-        assert right.get_title(loc="left").endswith("0 eligible class and region groups")
+        assert not right.axison
+        assert [text.get_text() for text in right.texts] == [
+            "No eligible class–region groups\nEqual-group mean unavailable"]
+        assert right.get_title(loc="left").endswith("0 groups; ≥20 tiles per bin; no Craters")
     finally:
         plt.close(fig)
+
+
+@pytest.mark.parametrize("keys", [
+    [(5, 4)], [(0, 3), (2, 1), (5, 4)],
+    [(c, f) for c in (0, 2, 4, 5) for f in range(5)],
+    [(c, f) for c in range(6) for f in range(5)],
+])
+def test_layout_uses_actual_groups_and_signed_endpoints(report, keys):
+    for model_index, data in enumerate(report["models"].values()):
+        context = data["context"]["modal_fraction"]
+        rows = [{"class_index": c, "fold": f, "low_count": 20 + i, "high_count": 40 + i,
+                 "low_error": float(i % 2), "high_error": float(1 - i % 2), "eligible": True}
+                for i, (c, f) in enumerate(keys)]
+        # Every model may serialize the same groups in a different order.
+        context["strata"] = rows[model_index:] + rows[:model_index]
+        low, high = np.mean([row["low_error"] for row in rows]), np.mean([row["high_error"] for row in rows])
+        context["summary"] = {"strata": len(keys), "low_error": float(low), "high_error": float(high),
+                              "low_minus_high": float(low - high)}
+    before = copy.deepcopy(report)
+    with plt.rc_context():
+        plot.style.configure()
+        fig = plot.draw_figure(report)
+        try:
+            left, right = fig.axes
+            assert [t.get_text() for t in right.get_yticklabels()] == [str(f + 1) for _, f in keys]
+            counts = [sum(c == i for c, _ in keys) for i in range(6)]
+            assert [t.get_text() for t in right.texts] == [
+                f"{name} ({n})" for name, n in zip(plot.CLASSES, counts) if n] + ["Equal-group\nmean"]
+            assert right.get_title(loc="left").endswith(f"{len(keys)} groups; ≥20 tiles per bin; Craters groups: {counts[-1]}")
+            for index in range(4):
+                points = right.lines[2 + 2 * index]
+                np.testing.assert_array_equal(points.get_xdata(), [100 * (2 * (i % 2) - 1) for i in range(len(keys))])
+                np.testing.assert_allclose(points.get_ydata(), np.arange(len(keys)) + (-.385, -.155, .075, .345)[index])
+                assert right.get_xlim()[0] < min(points.get_xdata()) <= max(points.get_xdata()) < right.get_xlim()[1]
+            assert fig.get_figwidth() == 6.5
+            np.testing.assert_allclose(left.get_position().height * fig.get_figheight(), 2.652)
+            if len(keys) == 30:
+                assert fig.get_figheight() > 6.0
+            # Bound actual glyph heights, including D's sqrt(2) extent, not nominal sizes.
+            # This checks separation even for coincident x values and adjacent groups.
+            row_height_pt = right.get_position().height * fig.get_figheight() * 72 / (len(keys) + 4)
+            spans = []
+            for artist in right.lines[2:]:
+                marker = MarkerStyle(artist.get_marker())
+                glyph_height = marker.get_path().transformed(marker.get_transform()).get_extents().height
+                half_height = glyph_height * artist.get_markersize() / 2
+                spans.extend((y * row_height_pt - half_height, y * row_height_pt + half_height)
+                             for y in artist.get_ydata())
+            spans.sort()
+            assert all(a[1] < b[0] for a, b in zip(spans, spans[1:]))
+            plot.typography.prepare_figure(fig, "regional-errors")
+            layout = plot.typography.text_metrics(fig, plot.style.centered_bbox(fig))
+            assert not layout["clipped_text"]
+            assert report == before
+        finally:
+            plt.close(fig)
+
+
+@pytest.mark.parametrize("field,value", [
+    ("class_index", True), ("class_index", -1), ("class_index", 6),
+    ("fold", 1.0), ("fold", 5),
+    ("low_count", True), ("low_count", 20.0), ("low_count", -1), ("low_count", 19),
+    ("high_count", 0), ("high_count", None),
+    ("low_error", -.01), ("low_error", 1.01), ("low_error", None),
+    ("high_error", True), ("high_error", float("nan")), ("high_error", float("inf")),
+    ("eligible", False), ("eligible", 1),
+])
+def test_invalid_stratum_denied_before_output(report, tmp_path, monkeypatch, field, value):
+    report["models"]["dinov2"]["context"]["modal_fraction"]["strata"][0][field] = value
+    path, sha = write_report(tmp_path, report)
+    output = tmp_path / "output"
+    monkeypatch.setattr(plot, "render_figures", lambda *a: pytest.fail("Rendered invalid strata"))
+    with pytest.raises(ValueError):
+        plot.main(arguments(path, sha, output))
+    assert not output.exists()
+
+
+@pytest.mark.parametrize("case,message", [
+    ("duplicate_eligible", "Duplicate"), ("duplicate_ineligible", "Duplicate"),
+    ("different_identity", "Eligible groups or support differ"),
+    ("different_support", "Eligible groups or support differ"),
+    ("empty_bin_error", "Empty bin"), ("empty_bin_eligible", "Eligibility"),
+    ("missing_summary", "Missing summary"), ("empty_with_summary", "eligible-group count"),
+    ("no_groups_one_model", "Eligible groups or support differ"),
+])
+def test_group_consistency(report, case, message):
+    context = report["models"]["dinov2"]["context"]["modal_fraction"]
+    if case.startswith("duplicate"):
+        context["strata"].append(copy.deepcopy(context["strata"][0 if case.endswith("_eligible") else 2]))
+    elif case == "different_identity":
+        context["strata"][0]["fold"] = 4  # Same count, different class/region identities.
+    elif case == "different_support":
+        context["strata"][0]["high_count"] += 1
+    elif case == "empty_bin_error":
+        context["strata"][2]["low_error"] = 0
+    elif case == "empty_bin_eligible":
+        context["strata"][2]["eligible"] = True
+    elif case == "missing_summary":
+        context["summary"] = None
+    else:
+        context["strata"] = []
+        if case == "no_groups_one_model":
+            context["summary"] = None
+    with pytest.raises(ValueError, match=message):
+        plot.validate_report(report)
 
 
 @pytest.mark.parametrize("field,value", [
@@ -151,6 +282,11 @@ def test_missing_support_branch(report):
     (("models", "dinov2", "folds", 0, "macro_by_seed", "f1", 0), .5001),
     (("models", "dinov2", "context", "modal_fraction", "summary", "low_error"), -.01),
     (("models", "dinov2", "context", "modal_fraction", "summary", "strata"), 4),
+    (("models", "dinov2", "context", "modal_fraction", "summary", "strata"), 3.0),
+    (("models", "dinov2", "context", "modal_fraction", "summary", "low_minus_high"), .4),
+    (("models", "dinov2", "context", "modal_fraction", "summary", "low_minus_high"), 1.01),
+    (("models", "dinov2", "context", "modal_fraction", "summary", "low_minus_high"), True),
+    (("models", "dinov2", "context", "modal_fraction", "summary", "low_minus_high"), float("inf")),
     (("models", "dinov2", "context", "modal_fraction", "low_below"), .7),
     (("models", "dinov2", "context", "modal_fraction", "weighting"), "pooled tiles"),
     (("models", "dinov2", "context", "modal_fraction", "minimum_each_group"), 20.0),
@@ -298,7 +434,7 @@ def test_export_draw_sequence_and_options(report, tmp_path, monkeypatch):
         events.append(Path(destination).suffix[1:])
         assert figure is figures[-1]
         assert options["pad_inches"] == 0
-        np.testing.assert_allclose([options["bbox_inches"].width, options["bbox_inches"].height], [6.5, 4.6])
+        np.testing.assert_allclose([options["bbox_inches"].width, options["bbox_inches"].height], [6.5, 6.0])
         if Path(destination).suffix == ".pdf":
             assert options["metadata"] == {"CreationDate": None, "ModDate": None}
             assert "dpi" not in options

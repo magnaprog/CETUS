@@ -4,7 +4,8 @@ python -B -m scripts.plot_regional_errors --report results.json \
     --report-sha256 SHA256 --output FRESH_DIRECTORY
 
 Panel A displays the five saved classifier seeds and their mean and range.
-Panel B copies the saved error summaries without reaggregating class/fold groups.
+Panel B shows eligible class/fold error differences and the saved equal-group mean.
+The original absolute endpoint means remain in the unmodified report for callers.
 Both full-paper and CVPR PDF/PNG variants are written to a new directory.
 """
 
@@ -22,7 +23,6 @@ if __package__ in (None, ""):
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
 import numpy as np
 
 from scripts import cvpr_figure_style as typography
@@ -50,13 +50,13 @@ def fraction(value):
 
 
 def validate_report(report):
-    """Validate consumed fields and fixed label definitions, without scoring."""
+    """Validate display inputs and return eligible groups, without scoring."""
     require(isinstance(report, dict) and report.get("schema_version") == "1.0.0",
             "Report schema differs")
     require(report.get("classes") == list(CLASSES), "Class order differs")
     models = report.get("models")
     require(isinstance(models, dict) and set(models) == set(MODELS), "Model membership differs")
-    group_counts = []
+    groups = {}
     try:
         for model in MODELS:
             data = models[model]
@@ -76,17 +76,50 @@ def validate_report(report):
                     and type(context["minimum_each_group"]) is int
                     and context["minimum_each_group"] == 20
                     and context["weighting"] == WEIGHTING, "Modal-fraction definitions differ")
+            strata = context["strata"]
+            require(isinstance(strata, list), "Invalid class/fold strata")
+            seen = set()
+            groups[model] = {}
+            for row in strata:
+                require(isinstance(row, dict), "Invalid class/fold stratum")
+                c, f = row["class_index"], row["fold"]
+                require(type(c) is int and 0 <= c < len(CLASSES)
+                        and type(f) is int and 0 <= f < 5, "Invalid class/fold identity")
+                key = (c, f)
+                require(key not in seen, "Duplicate class/fold group")
+                seen.add(key)
+                for bin_name in ("low", "high"):
+                    count, error = row[f"{bin_name}_count"], row[f"{bin_name}_error"]
+                    require(type(count) is int and count >= 0, "Invalid bin support")
+                    if count == 0:
+                        require(error is None, "Empty bin must have null error")
+                    else:
+                        fraction(error)
+                eligible = row["eligible"]
+                require(type(eligible) is bool and eligible ==
+                        (min(row["low_count"], row["high_count"]) >= context["minimum_each_group"]),
+                        "Eligibility differs from bin support")
+                if eligible:
+                    groups[model][key] = row
             summary = context["summary"]
             if summary is None:
-                group_counts.append(0)
+                require(not groups[model], "Missing summary for eligible groups")
             else:
                 require(isinstance(summary, dict), "Invalid modal-fraction summary")
                 count = summary["strata"]
-                require(type(count) is int and 1 <= count <= 30, "Invalid eligible-group count")
-                group_counts.append(count)
+                require(type(count) is int and count == len(groups[model]) and count > 0,
+                        "Invalid eligible-group count")
                 fraction(summary["low_error"])
                 fraction(summary["high_error"])
-        require(len(set(group_counts)) == 1, "Eligible-group counts differ across models")
+                difference = summary["low_minus_high"]
+                require(type(difference) in (int, float) and math.isfinite(difference)
+                        and -1 <= difference <= 1, "Invalid mean difference")
+                require(math.isclose(difference, summary["low_error"] - summary["high_error"],
+                                     rel_tol=0, abs_tol=1e-12), "Summary endpoints disagree")
+        supports = [{key: (row["low_count"], row["high_count"]) for key, row in group.items()}
+                    for group in groups.values()]
+        require(all(support == supports[0] for support in supports[1:]),
+                "Eligible groups or support differ across models")
         folds = report["majority_reference"]["folds"]
         require(isinstance(folds, list) and len(folds) == 5, "Expected five baseline folds")
         for index, fold in enumerate(folds):
@@ -95,6 +128,7 @@ def validate_report(report):
             require(fold["macro"]["f1"] <= .5, "Baseline F1 exceeds the fixed 50% display limit")
     except (KeyError, TypeError) as exc:
         raise ValueError("Missing or malformed regional report fields") from exc
+    return groups
 
 
 def read_report(path, expected_sha256):
@@ -127,8 +161,15 @@ def read_report(path, expected_sha256):
 
 def draw_figure(report):
     """Build an undrawn regional figure; the caller configures style and export."""
+    groups = validate_report(report)
+    keys = sorted(groups[MODELS[0]])
+    n = len(keys)
+    # Preserve row spacing at larger support counts; leave room for the x label.
+    height = max(6.0, 6.0 * (n + 4) / 24)
     colors = [style.MODEL_COLORS[model] for model in MODELS]
-    fig, (left,right) = plt.subplots(1,2,figsize=(style.WIDTH, 4.6),layout="constrained",gridspec_kw={"width_ratios":[1.5,1]})
+    fig, (left,right) = plt.subplots(1,2,figsize=(style.WIDTH, height))
+    left.set_position([.075, .85 - 2.652 / height, .415, 2.652 / height])
+    right.set_position([.715, .13, .26, .72])
     for index,(model,name,color) in enumerate(zip(MODELS,DISPLAY,colors)):
         data = report["models"][model]
         values=np.array([f["macro_by_seed"]["f1"] for f in data["folds"]])*100
@@ -139,31 +180,69 @@ def draw_figure(report):
                          linewidths=0,zorder=3)
         left.plot(xs,values.mean(1),marker=style.MODEL_MARKERS[model],color=color,
                   label=name,ls="",ms=7.5,mfc="none",mew=.7,zorder=2)
-        context=data["context"]["modal_fraction"]["summary"]
-        if context:
-            low, high=100*context["low_error"],100*context["high_error"]
-            right.plot([low,high],[index,index],color=color,lw=1.8)
-            right.scatter(low,index,marker="o",s=48,facecolors="white",edgecolors=style.INK,linewidths=.5,zorder=3)
-            right.scatter(high,index,marker="o",s=40,color=color,edgecolors=style.INK,linewidths=.5,zorder=3)
-        else:
-            right.text(.02,index,"Insufficient matched support",transform=right.get_yaxis_transform())
     majority=np.array([f["macro"]["f1"] for f in report["majority_reference"]["folds"]])*100
     left.plot(range(5),majority,color="#666666",ls="",marker="_",ms=12,mew=1.2,
               label="Most frequent training class")
     left.set_xticks(range(5),[str(f + 1) for f in range(5)])
     left.set(xlabel="Test region",ylabel="Six-class macro F1 (%)",ylim=(0,50),xlim=(-.55,4.55))
     left.set_title("A  Macro F1 by test region\nFive classifier seeds per model",loc="left")
-    left.legend(loc="upper left",bbox_to_anchor=(0,-.27),fontsize=style.SMALL,ncol=2,frameon=False)
-    right.set_yticks(range(4),DISPLAY)
-    right.invert_yaxis()
-    right.set(xlabel="Mean error rate across\nclass and fold groups (%)",xlim=(0,100))
-    right.legend(handles=[Line2D([],[],marker="o",mfc="white",mec="#333",ls="",label="Modal fraction < 0.75"),
-                          Line2D([],[],marker="o",color="#333",ls="",label="Modal fraction ≥ 0.90")],
-                 loc="upper left",bbox_to_anchor=(0,-.27),fontsize=style.SMALL,frameon=False)
-    selected=report["models"]["dinov2"]["context"]["modal_fraction"]["summary"]
-    n=selected["strata"] if selected else 0
-    right.set_title(f"B  Error by modal map fraction\n{n} eligible class and region groups", loc="left")
-    fig.suptitle('SGD classifiers; encoder weights unchanged', fontsize=style.TITLE)
+    legend = left.legend(loc="upper left",bbox_to_anchor=(0,-.27),fontsize=style.SMALL,ncol=2,frameon=False)
+    # Color the legend proxies explicitly; do not change A's open mean artists.
+    for model, handle in zip(MODELS, legend.legend_handles):
+        handle.set_markerfacecolor(style.MODEL_COLORS[model])
+        handle.set_markeredgecolor(style.MODEL_COLORS[model])
+        handle.set_markersize(5)
+    for label in legend.get_texts():
+        if label.get_text() == "DOFA":
+            label.set_text("DOFA (13.78)")
+    counts = [sum(c == index for c, _ in keys) for index in range(len(CLASSES))]
+    craters = "no Craters" if counts[-1] == 0 else f"Craters groups: {counts[-1]}"
+    right.set_title(f"B  Error difference by class and region\n{n} groups; ≥20 tiles per bin; {craters}",
+                    loc="left", x=-.73, pad=9)
+    if n:
+        differences = {model: [100 * (groups[model][key]["low_error"] -
+                                     groups[model][key]["high_error"]) for key in keys]
+                       for model in MODELS}
+        means = {model: 100 * report["models"][model]["context"]["modal_fraction"]["summary"]["low_minus_high"]
+                 for model in MODELS}
+        values = [0, *means.values(), *(value for row in differences.values() for value in row)]
+        low = 20 * math.floor((min(values) - 1) / 20)
+        high = 20 * math.ceil((max(values) + 1) / 20)
+        tick_step = 20 if high - low <= 120 else 50
+        right.set(xlim=(low, high), ylim=(n + 3, -1),
+                  xlabel="Mixed − high-fraction error\n(percentage points)")
+        right.set_xticks(np.arange(math.ceil(low / tick_step) * tick_step, high + 1, tick_step))
+        right.set_yticks(range(n), [str(fold + 1) for _, fold in keys])
+        right.tick_params(axis="y", length=0, pad=4)
+        right.spines["left"].set_visible(False)
+        right.axvline(0, color="#999999", linewidth=.65, zorder=1)
+        for index, count in enumerate(counts):
+            if not count:
+                continue
+            positions = [i for i, (c, _) in enumerate(keys) if c == index]
+            if index % 2 == 0:
+                right.axhspan(min(positions) - .5, max(positions) + .5, color="#f0f0f0", zorder=0)
+            right.text(-.16, np.mean(positions), f"{CLASSES[index]} ({count})",
+                       transform=right.get_yaxis_transform(), va="center", ha="right")
+        mean_y = n + 1.6
+        right.axhline(n + .4, color="#bbbbbb", linewidth=.6)
+        right.text(-.16, mean_y, "Equal-group\nmean", transform=right.get_yaxis_transform(),
+                   va="center", ha="right")
+        for index, (model, color) in enumerate(zip(MODELS, colors)):
+            # The diamond is sqrt(2) taller than the other nominal-size glyphs.
+            # Reserve extra space on both sides, including the next group row.
+            offset = (-.385, -.155, .075, .345)[index]
+            right.plot(differences[model], np.arange(n) + offset, linestyle="none", markersize=2.8,
+                       marker=style.MODEL_MARKERS[model], color=color, markeredgewidth=0)
+            right.plot([means[model]], [mean_y + (index - 1.5) * .34], linestyle="none", markersize=3.5,
+                       marker=style.MODEL_MARKERS[model], color=color, markeredgewidth=0)
+    else:
+        right.set_axis_off()
+        right.text(.5, .5, "No eligible class–region groups\nEqual-group mean unavailable",
+                   transform=right.transAxes, va="center", ha="center")
+    fig.text(.075, .025, "B: eligible groups per class in parentheses; positive = more errors in mixed tiles.",
+             va="bottom")
+    fig.suptitle('SGD classifiers; encoder weights unchanged', fontsize=style.TITLE, y=.98)
     return fig
 
 
