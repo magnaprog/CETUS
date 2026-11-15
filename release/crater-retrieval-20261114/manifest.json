@@ -258,8 +258,8 @@
       "sha256": "be9a42fb32ed8e330ff2e51c90f0c64d2477c48370e20f8f45b851eae44b6a88"
     },
     "README.md": {
-      "bytes": 10096,
-      "sha256": "ff28b3500c345faa76babe072813b3caecfee2180b12a03373425dcecbd87c0d"
+      "bytes": 10110,
+      "sha256": "8f4d0c4ea12ce20ba46485b394a39ce0ea5146fb735af262cf4df0431f1c9dbb"
     },
     "data/class-curves.npz": {
       "bytes": 21401700,
