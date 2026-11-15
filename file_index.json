@@ -31,8 +31,15 @@
     "guide": "release/crater-retrieval-20261114/README.md",
     "input_guide": "release/class-ranking-20261111/README.md",
     "manifest": "release/crater-retrieval-20261114/manifest.json",
-    "renderer_sha256": "38ff8955b8f0ed531d7df377e5bfc53ca55b979d5c81ec3aca819f2d89010ac5",
-    "scope": "All saved Craters score-group endpoints, without new AP scoring, model execution or threshold selection."
+    "plotting_source_commit": "f0a3a4d41f28bbd810f75243b06bc3ecacb2965c",
+    "renderer_sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced",
+    "renderers": {
+      "plot_class_contrasts.py": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca",
+      "plot_class_ranking.py": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c",
+      "plot_crater_retrieval.py": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced",
+      "plot_regional_errors.py": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
+    },
+    "scope": "Regional AP differences for all six classes, absolute Craters AP, recall against retrieved tile count, and regional SGD variation with map-mixture error summaries. Existing results only; no model execution or new AP calculation."
   },
   "current_execution_source": {
     "development_source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
@@ -67,8 +74,8 @@
       "sha256": "e9c78da73cf59cb28a92711c55340c654e29a1e1ba839ded13ea5ce9b4709a02"
     },
     ".github/workflows/crater-retrieval.yml": {
-      "bytes": 2634,
-      "sha256": "a8099d52c33ff409e546f0cece9daa9afdeb9f17ec8b91d855b4de9aba843133"
+      "bytes": 5429,
+      "sha256": "a6deba2fd3bc124ef9a96faa7fdbfe3c26dfa2677a6136cf6d42e59be5e18cf3"
     },
     ".github/workflows/current-source-cpu-tests.yml": {
       "bytes": 11969,
@@ -123,12 +130,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 28833,
-      "sha256": "72162e78da3510efd59bf0b2de2f6bb53fbee2784069efddf3845a156f2941b0"
+      "bytes": 29975,
+      "sha256": "cc52c7aab6c9721bb49eaef348d251432038f5dc64c6db5bd31c3b4ab3b26097"
     },
     "README.md": {
-      "bytes": 8764,
-      "sha256": "bf00848614b3c3cf0388d9e1799be9ded0cbebfc0f0677b52619be3e60f33a05"
+      "bytes": 9007,
+      "sha256": "0c68efd6a82d1f5a1c51eca3658ae6f1303493c7b77e720522712a20969bb346"
     },
     "SOFTWARE.md": {
       "bytes": 23312,
@@ -247,20 +254,32 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/crater-retrieval-20261114/NOTICE.md": {
-      "bytes": 1719,
-      "sha256": "20ade9559352def3f8dec6206788b387120bc51aca6fc2a1e9fd5d62144db2ac"
+      "bytes": 1762,
+      "sha256": "d5e5e7b85bafc18ab57144d6df98819e357d5fe2a2a41eee19786fb67b1a4e6c"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 3889,
-      "sha256": "007c624e37c46ea9906a6c6761ae41a9cc964028aee0ce4c0de7e657677a9db4"
+      "bytes": 7575,
+      "sha256": "3741e9be9731da6d2cf88169b78a858115d8be7ea630d6b705db1fbf40453be5"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
-      "bytes": 2410,
-      "sha256": "ad9e81da6c413890ddf0dd4bcbde8086e4c234c50cf2fc6f1f55bc52b1814f2e"
+      "bytes": 3180,
+      "sha256": "951c003ccf9ef2305b80d777c8750329d2d7ef1be7e9e0d76db0c404f9dd1d56"
+    },
+    "release/crater-retrieval-20261114/figures/craters-ap-caption.tex": {
+      "bytes": 623,
+      "sha256": "43a8ff7adcee585b5d78281ac0725ce237b5061d283a3d82a36868e392a5f867"
+    },
+    "release/crater-retrieval-20261114/figures/craters-ap-cvpr.pdf": {
+      "bytes": 17596,
+      "sha256": "682858833d19c418f8064c584c752a1b855533bd347ee13241a2f798970bf82b"
+    },
+    "release/crater-retrieval-20261114/figures/craters-ap-full.pdf": {
+      "bytes": 18361,
+      "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
     },
     "release/crater-retrieval-20261114/manifest.json": {
-      "bytes": 5538,
-      "sha256": "0e9d89e85447c3526758a77980e17355719f640c14630b1ce7ce372e2bf33848"
+      "bytes": 11501,
+      "sha256": "34cd790284741ef09e3a4df858f0e5b96cc70f07e6dc7a9fe82e07fa283d3cf0"
     },
     "release/crater-retrieval-20261114/paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,
@@ -306,6 +325,10 @@
       "bytes": 1196,
       "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
     },
+    "release/crater-retrieval-20261114/regional-errors.json": {
+      "bytes": 172455,
+      "sha256": "a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07"
+    },
     "release/crater-retrieval-20261114/requirements.txt": {
       "bytes": 149,
       "sha256": "e5816ffff907c8631e01579a24ffb31860fde314bcd67aba1fb8220f5128135f"
@@ -322,13 +345,21 @@
       "bytes": 3995,
       "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
     },
+    "release/crater-retrieval-20261114/scripts/plot_class_contrasts.py": {
+      "bytes": 10952,
+      "sha256": "9d64c809bbee867253a9d6a0abe402963ab9dbcbc9ebad4e97c20d8ed18231ca"
+    },
     "release/crater-retrieval-20261114/scripts/plot_class_ranking.py": {
-      "bytes": 21534,
-      "sha256": "7a59f3bda7ba8f0c11b5e5c6d24450c9489eef8ddf0583efaf020ba162f104cc"
+      "bytes": 21474,
+      "sha256": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c"
     },
     "release/crater-retrieval-20261114/scripts/plot_crater_retrieval.py": {
-      "bytes": 17951,
-      "sha256": "38ff8955b8f0ed531d7df377e5bfc53ca55b979d5c81ec3aca819f2d89010ac5"
+      "bytes": 17853,
+      "sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced"
+    },
+    "release/crater-retrieval-20261114/scripts/plot_regional_errors.py": {
+      "bytes": 11250,
+      "sha256": "a8eeff65ce682c1655e012f0834e08003379e3eba7ea56bdd8b775a5a7d3886c"
     },
     "release/crater-retrieval-20261114/scripts/prepare_cvpr_tables.py": {
       "bytes": 9493,
@@ -338,6 +369,10 @@
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
+    "release/crater-retrieval-20261114/tests/test_class_contrasts_plot.py": {
+      "bytes": 13035,
+      "sha256": "74dedc68357d5c71abfa2aa9ef96c6aa23eb2bacf6325cb51947f27dec10d84a"
+    },
     "release/crater-retrieval-20261114/tests/test_class_ranking_plot.py": {
       "bytes": 15979,
       "sha256": "8d6658d777dad883ac595c895bac713c56786e20f6ac67605d355dd398a675aa"
@@ -345,6 +380,10 @@
     "release/crater-retrieval-20261114/tests/test_crater_retrieval_plot.py": {
       "bytes": 19088,
       "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
+    },
+    "release/crater-retrieval-20261114/tests/test_regional_errors_plot.py": {
+      "bytes": 16689,
+      "sha256": "be6a11852ad93023cb2801aee95fafd19e995bdf43000eb1e2031de9612eb1de"
     },
     "release/current-source-20261109/CONTRACTS.md": {
       "bytes": 18503,

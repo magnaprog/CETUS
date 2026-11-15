@@ -1,9 +1,10 @@
-# Craters retrieval from saved rankings
+# Class ranking and regional variation
 
-Render all 60 saved series from the existing
-[class-ranking package](../class-ranking-20261111/README.md), using its data
-in place. The display shows recall of Craters map labels against retrieved
-test-tile count.
+The [class-ranking package](../class-ranking-20261111/README.md) supplies the
+values for three complementary displays: regional average-precision differences
+for all six terrain classes, absolute Craters average precision, and Craters
+recall against retrieved test-tile count. These plotting commands reuse the
+saved scores and rankings.
 
 ## Reproduce
 
@@ -35,10 +36,82 @@ cat "$CETUS_RETRIEVAL_WORK/render/complete.json"
 These input hashes identify CETUS commit
 `d48bf00775746c499c14d6e7a7c523e32d2d5e43`. Keep the inputs unchanged and use
 a fresh output directory outside this companion, retaining failed attempts.
-Other CLI actions in the copied helper modules are unsupported here and may
-require omitted reports.
+The AP commands below use the same report and environment. The regional display
+uses the accompanying saved SGD report.
+Other helper-module commands may depend on omitted reports.
 
-## Reading the figure
+## All six terrain classes
+
+From the companion directory and with the variables above still set:
+
+```sh
+python3.12 -B -m scripts.plot_class_contrasts \
+  --report "$CETUS_RANKING_INPUTS/results.json" \
+  --report-sha256 f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d \
+  --output "$CETUS_RETRIEVAL_WORK/class-contrasts"
+```
+
+Each point is a regional difference in mean average precision, in percentage
+points. Positive values favor pretraining. DINOv2 compares AP from one pretrained
+state with mean AP from five random states. ResNet18 averages three differences
+between ImageNet and scratch fits with paired seed IDs and separate validation
+choices. Both plots use the same linear scale; they compare different fitting
+methods. The five region marks show geographic variation, not uncertainty
+intervals. Absolute AP and class counts remain relevant to interpreting a gain.
+
+## Absolute Craters average precision
+
+The earlier [CVPR plot](figures/craters-ap-cvpr.pdf),
+[full-paper plot](figures/craters-ap-full.pdf) and
+[caption](figures/craters-ap-caption.tex) are retained. Recreate them with:
+
+```sh
+python3.12 -B -m scripts.plot_class_ranking \
+  --report "$CETUS_RANKING_INPUTS/results.json" \
+  --report-sha256 f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d \
+  --output "$CETUS_RETRIEVAL_WORK/absolute-ap"
+```
+
+This display retains every encoder state or training seed in each region. The
+logarithmic axis shows AP in percent. Horizontal marks give arithmetic means;
+dashed lines give class prevalence, the AP obtained when all scores tie. That
+line is not the expected AP of a finite random ranking.
+
+## Geographic variation and map mixtures
+
+The accompanying `regional-errors.json` is the unchanged analysis of the saved
+SGD classifier predictions. Recreate Figure S7 with:
+
+```sh
+python3.12 -B -m scripts.plot_regional_errors \
+  --report regional-errors.json \
+  --report-sha256 a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07 \
+  --output "$CETUS_RETRIEVAL_WORK/regional-errors"
+```
+
+The left subplot shows five classifier seeds, their mean and range for each
+model and test region. Gray marks give macro F1 for the predictor that assigns
+the most frequent training class. Seeds describe variation in classifier fitting;
+they do not add geographic tests.
+
+The right subplot compares error rates at modal map fractions below 0.75 and
+at least 0.90. It first averages seeds per tile, then tiles within each bin and
+class-region group, and finally the 20 eligible groups equally. Each bin has at
+least 20 tiles in a group. The groups comprise five each for Plains, Dunes and
+Hummocky, three for Labyrinths, two for Lakes and none for Craters. This
+association describes the available groups; it does not isolate a causal effect
+of map mixtures or estimate an average across all six classes.
+
+The fixed vertical axis spans 0–50% macro F1; inputs outside that range are
+rejected before rendering.
+
+The outputs are `full-regional-errors.pdf`, `cvpr-regional-errors.pdf`, their PNG
+copies and rendering records. This command copies the saved error summaries
+and displays the stored seed scores. It does not rerun the prediction analysis.
+The report retains the source and figure identities of its original analysis;
+`manifest.json` identifies the current plotting source and expected displays.
+
+## Reading the retrieval figure
 
 Rows show Regions 1–5; columns show DINOv2 with logistic regression and ResNet18
 with full training. Each region retains five random DINOv2 states (42–46) and
@@ -57,7 +130,7 @@ Retrieved tiles can overlap and do not constitute an independent crater
 inventory. The existing AP results remain separate; area in this log-count
 display is not AP.
 
-## Outputs
+## Retrieval outputs
 
 Both variants are 6.5 × 7.4 inches:
 
@@ -80,7 +153,8 @@ CETUS_RETRIEVAL_TESTS="$(mktemp -d "${TMPDIR:-/tmp}/cetus-retrieval-tests.XXXXXX
 CUDA_VISIBLE_DEVICES='' PYTHONDONTWRITEBYTECODE=1 \
   MPLCONFIGDIR="$CETUS_RETRIEVAL_TESTS/matplotlib" \
   python3.12 -B -m pytest tests/test_crater_retrieval_plot.py \
-    -q -p no:cacheprovider --basetemp="$CETUS_RETRIEVAL_TESTS/pytest"
+    tests/test_class_ranking_plot.py tests/test_class_contrasts_plot.py \
+    tests/test_regional_errors_plot.py -q -p no:cacheprovider --basetemp="$CETUS_RETRIEVAL_TESTS/pytest"
 ```
 
 Code uses the [MIT license](LICENSE). Preserve the separate font and data

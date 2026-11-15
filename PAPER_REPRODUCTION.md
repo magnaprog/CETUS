@@ -100,7 +100,9 @@ and sums recall increments times precision without interpolation. Seeds are
 averaged within each region before giving the five regions equal weight.
 
 Both initialization comparisons improve mean macro average precision. Mean
-Craters average precision changes little for DINOv2 and declines for ResNet18.
+AP rises for Plains, Dunes and Labyrinths in both comparisons. DINOv2's mean
+Hummocky and Lakes AP fall. Mean Craters AP changes little for DINOv2 and
+declines for ResNet18.
 Region 2 has only one Craters image, whose rank strongly affects its score;
 the companion retains all seeds and the differences in the other regions.
 This is an exploratory ranking analysis on the same test images. It measures
@@ -111,6 +113,14 @@ The companion's commands use Python 3.12.3 and NumPy 2.4.4 on CPU. They read the
 existing initialization ZIP intact, reconstruct all 360 class scores and their
 regional summaries, and compare every saved curve array. No model weights,
 image decoding or training are involved.
+
+The [ranking displays](release/crater-retrieval-20261114/README.md) show all
+60 regional class contrasts on a common percentage-point scale. Each DINOv2
+point compares one pretrained state's AP with mean AP from five random states;
+each ResNet18 point averages three paired seed differences. The earlier
+absolute Craters AP plot and its caption remain available there, with every
+state or seed shown separately. These displays preserve the different fitting
+methods and validation choices used in the two model comparisons.
 
 ### Displaying retrieved tile counts
 
@@ -124,6 +134,15 @@ The CPU command reads the existing class-ranking results and curves in place.
 It produces both paper variants with bundled fonts and preserves the saved
 ranking and model choices. Retrieved tiles may contain overlapping views of a
 landform, so this count differs from a count of geological craters.
+
+### Regional SGD variation
+
+The [regional SGD display](release/crater-retrieval-20261114/README.md#geographic-variation-and-map-mixtures)
+shows all five classifier seeds, their mean and range in each test region.
+Its second subplot compares error rates in twenty eligible class-region groups
+at two ranges of modal map fraction. The companion supplies the unchanged
+saved report and rendering command; the explanation gives the averaging order
+and which terrain classes contribute. These displays reuse existing results.
 
 ## Training loss normalization
 
