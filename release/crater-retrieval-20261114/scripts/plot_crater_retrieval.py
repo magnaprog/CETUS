@@ -95,58 +95,63 @@ def read_curves(path, expected_sha256, report):
         for entry in entries:
             prefix, cell = entry["prefix"], entry["cell"]
             row = metrics[tuple(cell)]
-            n, k = row["n"], row["positives"]
-            require(type(n) is int and type(k) is int and 0 < k < n <= COUNT_LIMIT,
-                    "Curve support exceeds count axis or differs in type")
             arrays = {field: archive[f"{prefix}_{field}"] for field in FIELDS}
-            tp, fp = arrays["tp"], arrays["fp"]
-            require(all(a.ndim == 1 and a.shape == tp.shape for a in arrays.values())
-                    and 1 <= tp.size <= n, "Curve vector shapes or group count differ")
-            for name, limit in (("tp", k), ("fp", n - k)):
-                a = arrays[name]
-                require(a.dtype.kind in "iu" and a.dtype.itemsize <= 8,
-                        f"{prefix}: {name} must contain integer counts")
-                require(np.all((a >= 0) & (a <= limit))
-                        and np.all(a[1:] >= a[:-1]) and a[-1] == limit,
-                        f"{prefix}: {name} monotonic counts/endpoints differ")
-            # Bounds are checked before int64 conversion/addition to avoid overflow.
-            tp, fp = tp.astype(np.int64), fp.astype(np.int64)
-            count = tp + fp
-            require(count[0] >= 1 and count[-1] == n and np.all(count[1:] > count[:-1]),
-                    f"{prefix}: retrieved group counts must strictly increase from 1..N to N")
-            for name in ("thresholds", "precision", "recall"):
-                a = arrays[name]
-                require(a.dtype.kind == "f" and a.dtype.itemsize == 8 and np.isfinite(a).all()
-                        and np.all((a >= 0) & (a <= 1)),
-                        f"{prefix}: {name} must be finite float64 fractions")
-            thresholds = arrays["thresholds"]
-            require(np.all(thresholds[1:] < thresholds[:-1]),
-                    f"{prefix}: thresholds must strictly descend")
-            require(np.array_equal(arrays["recall"], tp / k)
-                    and np.array_equal(arrays["precision"], tp / count),
-                    f"{prefix}: saved recall/precision differs from integer counts")
-            sizes = np.diff(np.r_[0, count])
-            for name, value in (("distinct_scores", tp.size),
-                                ("tied_groups", np.count_nonzero(sizes > 1)),
-                                ("largest_tie", sizes.max())):
-                require(type(row[name]) is int and row[name] == value,
-                        f"{prefix}: saved {name} differs from groups")
-            if k == 1:
-                first = int(np.flatnonzero(tp)[0])
-                single = row["single_positive"]
-                require(single["rank_first"] == count[first] - sizes[first] + 1
-                        and single["rank_last"] == count[first]
-                        and single["tie_size"] == sizes[first],
-                        f"{prefix}: single-positive group differs")
-            zero = arrays["precision"] == 0
-            require(np.all(arrays["recall"][zero] == 0), "Zero-precision groups must have zero recall")
-            emphasis = np.flatnonzero(np.diff(np.r_[0, tp]) > 0)
-            curves.append({"prefix": prefix, "cell": cell, "n": n, "positives": k,
-                           "count": count, "recall_percent": 100 * arrays["recall"],
-                           "emphasis_indices": emphasis,
-                           "zero_precision_groups": int(np.count_nonzero(zero)),
-                           "zero_recall_groups": int(np.count_nonzero(arrays["recall"] == 0))})
+            curves.append(validated_curve(arrays, row, prefix, cell))
     return curves
+
+
+def validated_curve(arrays, row, prefix, cell):
+    """Validate one class ranking against its accepted support and group counts."""
+    n, k = row["n"], row["positives"]
+    require(type(n) is int and type(k) is int and 0 < k < n <= COUNT_LIMIT,
+            "Curve support exceeds count axis or differs in type")
+    tp, fp = arrays["tp"], arrays["fp"]
+    require(all(a.ndim == 1 and a.shape == tp.shape for a in arrays.values())
+            and 1 <= tp.size <= n, "Curve vector shapes or group count differ")
+    for name, limit in (("tp", k), ("fp", n - k)):
+        a = arrays[name]
+        require(a.dtype.kind in "iu" and a.dtype.itemsize <= 8,
+                f"{prefix}: {name} must contain integer counts")
+        require(np.all((a >= 0) & (a <= limit))
+                and np.all(a[1:] >= a[:-1]) and a[-1] == limit,
+                f"{prefix}: {name} monotonic counts/endpoints differ")
+    # Bounds are checked before int64 conversion/addition to avoid overflow.
+    tp, fp = tp.astype(np.int64), fp.astype(np.int64)
+    count = tp + fp
+    require(count[0] >= 1 and count[-1] == n and np.all(count[1:] > count[:-1]),
+            f"{prefix}: retrieved group counts must strictly increase from 1..N to N")
+    for name in ("thresholds", "precision", "recall"):
+        a = arrays[name]
+        require(a.dtype.kind == "f" and a.dtype.itemsize == 8 and np.isfinite(a).all()
+                and np.all((a >= 0) & (a <= 1)),
+                f"{prefix}: {name} must be finite float64 fractions")
+    thresholds = arrays["thresholds"]
+    require(np.all(thresholds[1:] < thresholds[:-1]),
+            f"{prefix}: thresholds must strictly descend")
+    require(np.array_equal(arrays["recall"], tp / k)
+            and np.array_equal(arrays["precision"], tp / count),
+            f"{prefix}: saved recall/precision differs from integer counts")
+    sizes = np.diff(np.r_[0, count])
+    for name, value in (("distinct_scores", tp.size),
+                        ("tied_groups", np.count_nonzero(sizes > 1)),
+                        ("largest_tie", sizes.max())):
+        require(type(row[name]) is int and row[name] == value,
+                f"{prefix}: saved {name} differs from groups")
+    if k == 1:
+        first = int(np.flatnonzero(tp)[0])
+        single = row["single_positive"]
+        require(single["rank_first"] == count[first] - sizes[first] + 1
+                and single["rank_last"] == count[first]
+                and single["tie_size"] == sizes[first],
+                f"{prefix}: single-positive group differs")
+    zero = arrays["precision"] == 0
+    require(np.all(arrays["recall"][zero] == 0), "Zero-precision groups must have zero recall")
+    emphasis = np.flatnonzero(np.diff(np.r_[0, tp]) > 0)
+    return {"prefix": prefix, "cell": cell, "n": n, "positives": k,
+                   "count": count, "recall_percent": 100 * arrays["recall"],
+                   "emphasis_indices": emphasis,
+                   "zero_precision_groups": int(np.count_nonzero(zero)),
+                   "zero_recall_groups": int(np.count_nonzero(arrays["recall"] == 0))}
 
 
 def coordinate_digest(values):
@@ -164,7 +169,7 @@ def display_mapping(curve):
     }
 
 
-def draw_figure(curves, variant):
+def draw_figure(curves, variant, *, class_name="Craters", dense=False):
     require(variant in ("cvpr", "full"), "Unknown font variant")
     roman.configure()
     if variant == "cvpr":
@@ -181,14 +186,16 @@ def draw_figure(curves, variant):
         kind, fold, arm, seed = curve["cell"]
         ax = axes[fold, 0 if kind == "dino_c1" else 1]
         marker = next(m for a, s, m, _ in KEYS[kind] if (a, s) == (arm, seed))
-        x, y, selected = curve["count"], curve["recall_percent"], curve["emphasis_indices"]
-        background, = ax.plot(x, y, linestyle="none", marker=".", markersize=1.1,
-                              markeredgewidth=0, alpha=.3, color=COLORS[arm],
+        x, y = curve["count"], curve["recall_percent"]
+        selected = np.array([], dtype=np.int64) if dense else curve["emphasis_indices"]
+        background, = ax.plot(x, y, linestyle="none", marker=marker if dense else ".",
+                              markersize=1.1, markeredgewidth=0,
+                              alpha=.65 if dense else .3, color=COLORS[arm],
                               rasterized=True, clip_on=False, zorder=2)
         emphasis, = ax.plot(x[selected], y[selected], linestyle="none", marker=marker,
                             markersize=3.2, markeredgewidth=.35, alpha=.9,
                             color=COLORS[arm], rasterized=False, clip_on=False, zorder=3)
-        artists.append((curve, background, emphasis))
+        artists.append((curve, background, emphasis, selected))
     for fold, row in enumerate(axes):
         support = next(c for c in curves if c["cell"][1] == fold)
         for ax in row:
@@ -199,7 +206,7 @@ def draw_figure(curves, variant):
             ax.grid(axis="y", color="#dddddd", linewidth=.4)
             ax.set_title(f"Region {fold + 1}: {support['positives']} / {support['n']:,}",
                          fontsize=9, pad=5)
-    figure.supylabel("Recall of Craters map labels (%)", x=.015, y=.45)
+    figure.supylabel(f"Recall of {class_name} map labels (%)", x=.015, y=.45)
     figure.supxlabel("Retrieved test tiles (log scale)", x=.545, y=.02)
     legends = []
     for col, (kind, title) in enumerate((("dino_c1", "DINOv2 + logistic regression"),
@@ -237,11 +244,11 @@ def draw_figure(curves, variant):
     require(all(legend.get_window_extent(renderer).y0 > axes[0, 0].bbox.y1
                 for legend in legends), "Seed key overlaps data")
     records = []
-    for curve, background, emphasis in artists:
+    for curve, background, emphasis, selected_indices in artists:
         record = {"prefix": curve["prefix"], "cell": curve["cell"],
-                  "tp_increase_group_indices": curve["emphasis_indices"].tolist()}
+                  "tp_increase_group_indices": selected_indices.tolist()}
         for name, line, selected in (("all_groups", background, slice(None)),
-                                      ("tp_increases", emphasis, curve["emphasis_indices"])):
+                                      ("tp_increases", emphasis, selected_indices)):
             x, y = line.get_xdata(), line.get_ydata()
             require(np.array_equal(x, curve["count"][selected])
                     and np.array_equal(y, curve["recall_percent"][selected]),

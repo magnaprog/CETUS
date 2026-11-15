@@ -4,7 +4,9 @@
     "python3.12 -B -m scripts.plot_crater_retrieval",
     "python3.12 -B -m scripts.plot_class_ranking",
     "python3.12 -B -m scripts.plot_class_contrasts",
-    "python3.12 -B -m scripts.plot_regional_errors"
+    "python3.12 -B -m scripts.plot_regional_errors",
+    "python3.12 -B -m scripts.plot_class_retrieval",
+    "python3.12 -B -m scripts.plot_dataset_geography"
   ],
   "expected_absolute_ap": {
     "craters-ap-cvpr.pdf": {
@@ -40,6 +42,174 @@
     "class-contrasts-full.png": {
       "bytes": 52963,
       "sha256": "b53abb9e854efa00c33e1a1e9337cd8da2f967d524ce133bc6b12c841a3a009d"
+    }
+  },
+  "expected_class_retrieval": {
+    "craters-retrieval-cvpr.pdf": {
+      "bytes": 85326,
+      "sha256": "6059dbc276b9e9e9b2f96c542e484dbe80b712e5226fd549450eb041eb49048b"
+    },
+    "craters-retrieval-cvpr.png": {
+      "bytes": 236332,
+      "sha256": "d372676ca16accf215d5b933e6dbb165ffbb4cde4ebcbb428e8832bba3196748"
+    },
+    "craters-retrieval-full.pdf": {
+      "bytes": 85889,
+      "sha256": "04ab5ccccc80cd372eeb81fb8ae22c2d955d7c9828ab73069e684d0169862356"
+    },
+    "craters-retrieval-full.png": {
+      "bytes": 227783,
+      "sha256": "d157049596f51ba0f386861746e5483d2008e2331cd2a6b84a0c22370683bdc1"
+    },
+    "dunes-retrieval-cvpr.pdf": {
+      "bytes": 59349,
+      "sha256": "ed3f13f979f78d5122822324ec234406fa9e1a12d77daa9d587ef9e0b7562fba"
+    },
+    "dunes-retrieval-cvpr.png": {
+      "bytes": 152512,
+      "sha256": "aa43505429f27822f8c8e9025e1645bf4d755cdf7932d5922330164c6cadc7a2"
+    },
+    "dunes-retrieval-full.pdf": {
+      "bytes": 59982,
+      "sha256": "8c33ae2aaa90397727143f298e1e92a665bde2d5238fe27c5885db0b238f0a20"
+    },
+    "dunes-retrieval-full.png": {
+      "bytes": 144478,
+      "sha256": "1c54fa020c1cf4dde532372bb29b02314510a904a8b295c512029d3526b5310e"
+    },
+    "hummocky-retrieval-cvpr.pdf": {
+      "bytes": 61793,
+      "sha256": "9b52b8729a7db452cd752ce3182f173256ac1d2f435319e4469af11af4ae3023"
+    },
+    "hummocky-retrieval-cvpr.png": {
+      "bytes": 155441,
+      "sha256": "5d6da09d7723d960dd3b779894fb664ba1727577ce1548595ab8865b8033e93f"
+    },
+    "hummocky-retrieval-full.pdf": {
+      "bytes": 62401,
+      "sha256": "8a563606db308016b9ce97cdd48f5a170a06557bf435a08461040955abcce2a5"
+    },
+    "hummocky-retrieval-full.png": {
+      "bytes": 146700,
+      "sha256": "931a3162f82ae72aa9dca7b8d84b5f653338ebc61281eaccad8df4df9ba5a812"
+    },
+    "labyrinths-retrieval-cvpr.pdf": {
+      "bytes": 76597,
+      "sha256": "c4608d4627e337ef00f22ed0b25fb056594fff02ccdcf3d9f3a697f7e3a97b5e"
+    },
+    "labyrinths-retrieval-cvpr.png": {
+      "bytes": 181221,
+      "sha256": "6c3165683bf6176dc6f6891949d05e7a8062bf5d7008af25a731d850cb4e54ca"
+    },
+    "labyrinths-retrieval-full.pdf": {
+      "bytes": 77172,
+      "sha256": "fc953d258f22f075722d6242a1936441cb72e11ab404666d7bcdc6c7a16ec618"
+    },
+    "labyrinths-retrieval-full.png": {
+      "bytes": 173014,
+      "sha256": "5350c9ea09ec380e2d1ba3a180c1f8b4057cfe8734f09d44c19c28be778873f9"
+    },
+    "lakes-retrieval-cvpr.pdf": {
+      "bytes": 64088,
+      "sha256": "8ccb9e552e6bfbc5850b953202d0f2383ae8febe94552e6be8365b0bfdf412e0"
+    },
+    "lakes-retrieval-cvpr.png": {
+      "bytes": 154968,
+      "sha256": "0711427311451a22d71c82970e6db2da75dd314b189bc251cb09fc8b020138d8"
+    },
+    "lakes-retrieval-full.pdf": {
+      "bytes": 64759,
+      "sha256": "f32417d411e6d270a9346ee58982f9b8cb133512fa3c2fd083b7db4eaecda391"
+    },
+    "lakes-retrieval-full.png": {
+      "bytes": 146403,
+      "sha256": "20827bee11621c3664a994917d0ed3e26745c8561e094b5ac4d08701031d044a"
+    },
+    "plains-retrieval-cvpr.pdf": {
+      "bytes": 46974,
+      "sha256": "a4ed87e03e48ed825cb317eac7608a665a34bc22b00720d6f6dde9392fcb4d50"
+    },
+    "plains-retrieval-cvpr.png": {
+      "bytes": 130656,
+      "sha256": "771a2d30405b1a49a6e9522c815969875e117a701e4ac95d040affe47bffd830"
+    },
+    "plains-retrieval-full.pdf": {
+      "bytes": 47605,
+      "sha256": "6ab895e28b812663a46e2acbc0055d672d725597ed3d3894d3223419c8837cc0"
+    },
+    "plains-retrieval-full.png": {
+      "bytes": 120647,
+      "sha256": "58b66eebf53eafc5f3ef3f290e05e96195bb82a2e6a622c0452de568e5e785d0"
+    }
+  },
+  "expected_dataset_geography": {
+    "cvpr": {
+      "earth-site-footprints.pdf": {
+        "bytes": 135463,
+        "sha256": "e101e5cbc5cbca61510820d994123d18f774b565c1b9764188a0fdfd52b3bfff"
+      },
+      "earth-site-footprints.png": {
+        "bytes": 197282,
+        "sha256": "4b3b4a40f8c27be453f23e1f9cec661d1d3766974e24080144714d9896968578"
+      },
+      "earth-site-locator.pdf": {
+        "bytes": 22468,
+        "sha256": "cfb86e8c97755c360b96128863f4f3192d59825e7abe183e4e47fabaf229a45a"
+      },
+      "earth-site-locator.png": {
+        "bytes": 97502,
+        "sha256": "f261ae7a2e8aea2b9fa5dc1665544dbda7a4d5cd4d8ff8cfa15548d84b06ed95"
+      },
+      "titan-class-locations.pdf": {
+        "bytes": 44558,
+        "sha256": "50eda45883a959bf8072a4dae304418c13698313cb8f6f3a90c7d5563163ae4a"
+      },
+      "titan-class-locations.png": {
+        "bytes": 138631,
+        "sha256": "f1a7723450433931132113637e408e8b23a778f4d68d8ac712f926b47c70e637"
+      },
+      "venus-sample-centers.pdf": {
+        "bytes": 61131,
+        "sha256": "9e6bf533be3199bb3d3e9b3445ca0a23d75b2db8243abe4ab54ec957603c7f86"
+      },
+      "venus-sample-centers.png": {
+        "bytes": 173271,
+        "sha256": "d085f88acbcac1e2499d886f14626add86f4670fa4847d3f3c0462a5fb06c44b"
+      }
+    },
+    "full": {
+      "earth-site-footprints.pdf": {
+        "bytes": 135238,
+        "sha256": "267fe015067853848a44eba629c7cce86a6329ccbf07a10dec177867dea62037"
+      },
+      "earth-site-footprints.png": {
+        "bytes": 190735,
+        "sha256": "ab299e9b2bc1bf4d3c9e0637775da23b12ceddbf10bf3eba6c6a0faf7ed20e2c"
+      },
+      "earth-site-locator.pdf": {
+        "bytes": 22368,
+        "sha256": "cd695a02d957a529c49a66ac2ed8d4e72eabb3e087ca66db65f202c5daa596c1"
+      },
+      "earth-site-locator.png": {
+        "bytes": 90764,
+        "sha256": "fdbb1c03f154ea7a6a2a50331c640bbc1d428552983390e2ec12c74e9f4faf6b"
+      },
+      "titan-class-locations.pdf": {
+        "bytes": 74394,
+        "sha256": "2e83090598bc48e402789d36582642a71c78a5af25d9f55ce6f8d53b65b06eb7"
+      },
+      "titan-class-locations.png": {
+        "bytes": 131515,
+        "sha256": "1da25e4d7c48f5e61e1fcd8f619f02453e9192d8e3537e16706bf354c0cd2be7"
+      },
+      "venus-sample-centers.pdf": {
+        "bytes": 157437,
+        "sha256": "6ae8bb0b7b0e7861a8ae8e977de3b8c8f3f71551e41284934395fd9788237ed8"
+      },
+      "venus-sample-centers.png": {
+        "bytes": 169206,
+        "sha256": "037827ebe96623df393af2448d211b105c27a57846fa23867ac1ab21402ce9f7"
+      }
     }
   },
   "expected_figures": {
@@ -84,12 +254,24 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "NOTICE.md": {
-      "bytes": 1762,
-      "sha256": "d5e5e7b85bafc18ab57144d6df98819e357d5fe2a2a41eee19786fb67b1a4e6c"
+      "bytes": 2943,
+      "sha256": "be9a42fb32ed8e330ff2e51c90f0c64d2477c48370e20f8f45b851eae44b6a88"
     },
     "README.md": {
-      "bytes": 7923,
-      "sha256": "16693a0f2689c5aa0ff68404c61e0652cccbebe38074100e41310e80b9262eaf"
+      "bytes": 10096,
+      "sha256": "ff28b3500c345faa76babe072813b3caecfee2180b12a03373425dcecbd87c0d"
+    },
+    "data/class-curves.npz": {
+      "bytes": 21401700,
+      "sha256": "f31fab61e09b81555119379d916ddce6c5ec88947c7126b92ea46aa4f0927e1c"
+    },
+    "data/class-retrieval.json": {
+      "bytes": 706344,
+      "sha256": "b03ce1da11d41c6b92b0e75b669f57d7f3db887dff840da6a808ea0d938c9de2"
+    },
+    "data/dataset-geography.json": {
+      "bytes": 1736087,
+      "sha256": "6619ff667273aaa0273bcab1614ef3dff1e6453f1d79309d350da13e5508591d"
     },
     "figures/craters-ap-caption.tex": {
       "bytes": 623,
@@ -163,6 +345,14 @@
       "bytes": 5098,
       "sha256": "fc6a4c79cc093c09fd9727bee7ca2da3bc295ddf342c274b18085726de9a2818"
     },
+    "scripts/dataset_geography_payload.py": {
+      "bytes": 9599,
+      "sha256": "bef93b7e44b9f07ab29a34aeefde74354c538110d120765dee79bd44f5950c1b"
+    },
+    "scripts/display_io.py": {
+      "bytes": 2213,
+      "sha256": "534dad357422e0c5ee0c4dbc8f13ada582522ca8673a531b2aea4bc8766a6433"
+    },
     "scripts/figure_style.py": {
       "bytes": 3995,
       "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
@@ -175,9 +365,17 @@
       "bytes": 21474,
       "sha256": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c"
     },
+    "scripts/plot_class_retrieval.py": {
+      "bytes": 8535,
+      "sha256": "daa43a965da8b682d4b3d2664cf24fb604ea8242cb6e737f8bb49c7475208c61"
+    },
     "scripts/plot_crater_retrieval.py": {
-      "bytes": 17853,
-      "sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced"
+      "bytes": 17823,
+      "sha256": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3"
+    },
+    "scripts/plot_dataset_geography.py": {
+      "bytes": 20457,
+      "sha256": "fafb566b9256c481cbf3bdfc66f7997952533129c2c18b2a6f23fd0b216749e1"
     },
     "scripts/plot_regional_errors.py": {
       "bytes": 15899,
@@ -199,9 +397,17 @@
       "bytes": 15979,
       "sha256": "8d6658d777dad883ac595c895bac713c56786e20f6ac67605d355dd398a675aa"
     },
+    "tests/test_class_retrieval_plot.py": {
+      "bytes": 11341,
+      "sha256": "de4124db4f3bf620cb23387d268dee002912ae45a9a8ae5a22b71b92e2bc4e06"
+    },
     "tests/test_crater_retrieval_plot.py": {
       "bytes": 19088,
       "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
+    },
+    "tests/test_dataset_geography_plot.py": {
+      "bytes": 12011,
+      "sha256": "9eafab6bc5381e67cc8f37467add1a8795710ecb2d675f581b53195b1982288e"
     },
     "tests/test_regional_errors_plot.py": {
       "bytes": 24813,
@@ -210,6 +416,23 @@
   },
   "inputs": {
     "commit": "d48bf00775746c499c14d6e7a7c523e32d2d5e43",
+    "display_extension": {
+      "class_curves": {
+        "bytes": 21401700,
+        "path": "data/class-curves.npz",
+        "sha256": "f31fab61e09b81555119379d916ddce6c5ec88947c7126b92ea46aa4f0927e1c"
+      },
+      "class_retrieval": {
+        "bytes": 706344,
+        "path": "data/class-retrieval.json",
+        "sha256": "b03ce1da11d41c6b92b0e75b669f57d7f3db887dff840da6a808ea0d938c9de2"
+      },
+      "dataset_geography": {
+        "bytes": 1736087,
+        "path": "data/dataset-geography.json",
+        "sha256": "6619ff667273aaa0273bcab1614ef3dff1e6453f1d79309d350da13e5508591d"
+      }
+    },
     "files": {
       "craters-curves.npz": {
         "bytes": 3208180,
@@ -235,11 +458,19 @@
   },
   "schema": "crater-retrieval-package-v1",
   "source": {
-    "copy_policy": "All Python source/test files and font/license resources retain their source bytes; scripts/__init__.py is an empty package initializer.",
+    "copy_policy": "Existing fonts, licenses, runtime requirements and unchanged Python files retain their bytes. The shared Craters renderer uses its frozen updated source. New class/geography modules and focused synthetic tests adapt imports and extract display-only validators and atomic writers; current_source_mapping records the distributed bytes.",
     "current_source_mapping": {
       "scripts/cvpr_figure_style.py": {
         "path": "scripts/cvpr_figure_style.py",
         "sha256": "fc6a4c79cc093c09fd9727bee7ca2da3bc295ddf342c274b18085726de9a2818"
+      },
+      "scripts/dataset_geography_payload.py": {
+        "path": "scripts/dataset_geography_payload.py",
+        "sha256": "bef93b7e44b9f07ab29a34aeefde74354c538110d120765dee79bd44f5950c1b"
+      },
+      "scripts/display_io.py": {
+        "path": "scripts/display_io.py",
+        "sha256": "534dad357422e0c5ee0c4dbc8f13ada582522ca8673a531b2aea4bc8766a6433"
       },
       "scripts/figure_style.py": {
         "path": "scripts/figure_style.py",
@@ -253,9 +484,17 @@
         "path": "scripts/plot_class_ranking.py",
         "sha256": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c"
       },
+      "scripts/plot_class_retrieval.py": {
+        "path": "scripts/plot_class_retrieval.py",
+        "sha256": "daa43a965da8b682d4b3d2664cf24fb604ea8242cb6e737f8bb49c7475208c61"
+      },
       "scripts/plot_crater_retrieval.py": {
         "path": "scripts/plot_crater_retrieval.py",
-        "sha256": "2b0f8f7f2d8421517ad20f0267c5243c7f02ed2758d0e7b930eff8942b62dced"
+        "sha256": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3"
+      },
+      "scripts/plot_dataset_geography.py": {
+        "path": "scripts/plot_dataset_geography.py",
+        "sha256": "fafb566b9256c481cbf3bdfc66f7997952533129c2c18b2a6f23fd0b216749e1"
       },
       "scripts/plot_regional_errors.py": {
         "path": "scripts/plot_regional_errors.py",
@@ -277,14 +516,31 @@
         "path": "tests/test_class_ranking_plot.py",
         "sha256": "8d6658d777dad883ac595c895bac713c56786e20f6ac67605d355dd398a675aa"
       },
+      "tests/test_class_retrieval_plot.py": {
+        "path": "tests/test_class_retrieval_plot.py",
+        "sha256": "de4124db4f3bf620cb23387d268dee002912ae45a9a8ae5a22b71b92e2bc4e06"
+      },
       "tests/test_crater_retrieval_plot.py": {
         "path": "tests/test_crater_retrieval_plot.py",
         "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
+      },
+      "tests/test_dataset_geography_plot.py": {
+        "path": "tests/test_dataset_geography_plot.py",
+        "sha256": "9eafab6bc5381e67cc8f37467add1a8795710ecb2d675f581b53195b1982288e"
       },
       "tests/test_regional_errors_plot.py": {
         "path": "tests/test_regional_errors_plot.py",
         "sha256": "b1dcae0a02f28ec7657c3737dc5dd6ff1827de2580e415386909c4cdd992c77d"
       }
+    },
+    "display_adaptations": {
+      "scripts/dataset_geography_payload.py": "Extracted payload constants and validators only; no catalog reading or sampling.",
+      "scripts/display_io.py": "Extracted digest and existing atomic writers, preserving their separate completion and cleanup behavior.",
+      "scripts/plot_class_retrieval.py": "Completion writing imports display_io; local source records bind distributed helpers.",
+      "scripts/plot_crater_retrieval.py": "Frozen shared curve validation and dense class markers; original CLI defaults retained.",
+      "scripts/plot_dataset_geography.py": "Imports payload validation and display_io without the raw-data preparation CLI; local source records bind distributed helpers.",
+      "tests/test_class_retrieval_plot.py": "Synthetic public-module coverage without the unavailable analysis import.",
+      "tests/test_dataset_geography_plot.py": "Direct synthetic payload fixtures and rendering failure checks without raw preparation."
     },
     "new_files_identified_by_payload_hashes": [
       "scripts/plot_crater_retrieval.py",
@@ -292,10 +548,17 @@
       "scripts/plot_class_contrasts.py",
       "tests/test_class_contrasts_plot.py",
       "scripts/plot_regional_errors.py",
-      "tests/test_regional_errors_plot.py"
+      "tests/test_regional_errors_plot.py",
+      "scripts/dataset_geography_payload.py",
+      "scripts/display_io.py",
+      "scripts/plot_class_retrieval.py",
+      "scripts/plot_dataset_geography.py",
+      "tests/test_class_retrieval_plot.py",
+      "tests/test_dataset_geography_plot.py"
     ],
-    "plotting_source_commit": "b016bdbf8520d26bdb6eff20a5112b0c67fa7055",
+    "plotting_source_commit": "f4bdcd6e18bfc15316876d25b894c446ca6a365b",
     "repository": "magnaprog/TitanSAR-dev",
+    "retained_plotting_source_commit": "b016bdbf8520d26bdb6eff20a5112b0c67fa7055",
     "unchanged_dependency_base_commit": "3f7584f185e1e82627a6b75008c13189bd8c5794"
   }
 }
