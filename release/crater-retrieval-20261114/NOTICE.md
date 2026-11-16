@@ -42,6 +42,11 @@ repository's notices retain the Copernicus DEM GLO-30/WorldDEM-30 terms and the
 recorded limits on exact collection/tile versions. Nominal outlines are not
 SAR-valid masks or terrain annotations.
 
+The Earth locator also includes the Natural Earth 1:110m coastline, version
+4.1.0, in the public domain. Its [source record](paper/figure_data/geography/README.md)
+retains the upstream attribution and terms. This generalized outline supplies
+global context separately from the scientific sampling metadata.
+
 Venus metadata retains centers and pixel-validity fractions from the Magellan
 SAR FMAP right-look global mosaic. Credit NASA/JPL, the Magellan mission and
 Saunders et al. (1992), following the existing source-data notice. The 2,945
