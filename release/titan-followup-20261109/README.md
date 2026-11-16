@@ -6,8 +6,9 @@ inspection excerpts and CPU reconstruction code. The catalog contains 23,380
 tiles, with 23,246 distinct test tiles across five geographic folds.
 
 The initialization study's 90 cases and the thirty saved epoch-100 evaluations
-were complete by 8 November. This release adds no model run or scientific
-result. The five earlier CETUS packages retain their original bytes and metrics.
+are complete. This release publishes those records without adding a model run
+or scientific result. The September and October CETUS packages retain their
+scientific payloads and metrics.
 See the [access inventory](DATA_ACCESS.md) for supplied and missing inputs and
 the [notice](NOTICE.md) for attribution, assistance and historical review wording.
 
@@ -152,8 +153,8 @@ reports `supplied_numerical_records_reconstructed` and includes the epoch-100
 table check. Inspect warnings and retain command output and runtime versions
 with the reports. Recheck input checksums after reconstruction.
 
-The supplied receipts describe earlier successful checks; this wrapper's
-documentation does not itself constitute a new numerical execution receipt.
+The supplied receipts document successful checks of the named inputs and outputs;
+this wrapper's documentation is not a numerical execution receipt.
 These consumers calculate saved-result arithmetic. They do not repeat model
 training, generate GPU probabilities, reproduce omitted per-epoch predictions,
 or verify every manuscript claim. Validation-removal counts use supplied
@@ -182,8 +183,8 @@ The sixty follow-up inspection packets and thirty-seven reassessment excerpts
 are not asserted to be disjoint and do not supply the full pixel collection.
 Embeddings, model states, full label rasters and a complete current training
 environment are absent. The separate [current source package](../current-source-20261109/README.md)
-provides the execution code and documents these prerequisites. For the earlier
-classifier runner, use
+provides the execution code and documents these prerequisites. For native SGD
+and nearest-neighbor classification with encoder weights unchanged, use
 [SOFTWARE.md](../../SOFTWARE.md) with the images from the separate release and
 upstream weights. See [DATA_ACCESS.md](DATA_ACCESS.md) for the distinction between
 recorded author-side checks and independent-recipient access.

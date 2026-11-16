@@ -61,7 +61,7 @@ def titan_figure(payload):
                         color=full.CLASS_COLORS[c], linewidths=0, rasterized=True),
              "titan", [r[0] for r in rows], class_index=c)
         ax.set_title(data.CLASSES[c].capitalize())
-    figure.text(.5, .035, "Current test tile centers; regions 1–5 run west to east.\n"
+    figure.text(.5, .035, "Test tile centers; regions 1–5 run west to east.\n"
                  "Neutral lines mark 72-degree sector boundaries; points are not surface coverage.", ha="center")
     return figure
 
@@ -81,19 +81,19 @@ def earth_locator(payload):
             site["site_id"], ((8 if i % 2 else -12), (6 if i % 2 else -10)))
         ax.annotate(str(i), center, xytext=offset,
                     textcoords="offset points", arrowprops=dict(arrowstyle="-", color=".45", lw=.5))
-    ax.set_title("Original Earth sample locations")
+    ax.set_title("Earth sample locations")
     table_axes = figure.add_axes([.04, .10, .92, .44]); table_axes.set_axis_off()
     cells = [[str(i), s["name"], data.CLASSES[s["class_index"]].capitalize(),
               str(s["train_count"]), str(s["val_count"])]
              for i, s in enumerate(payload["earth"]["sites"], 1)]
-    table = table_axes.table(cellText=cells, colLabels=["Site", "Historical site assignment", "Class", "Train", "Val"],
+    table = table_axes.table(cellText=cells, colLabels=["Site", "Catalog site assignment", "Class", "Train", "Val"],
                              colWidths=[.07, .48, .19, .13, .13], cellLoc="left", bbox=[0, 0, 1, 1])
     table.auto_set_font_size(False); table.set_fontsize(9)
     for (row, column), cell in table.get_celld().items():
         cell.set_linewidth(.3); cell.set_edgecolor(".8")
         if row == 0:
             cell.set_facecolor(".94")
-    figure.text(.5, .035, "398 original images: 352 train / 46 validation. Haughton: 0 images; Hummocky absent.\n"
+    figure.text(.5, .035, "398 images: 352 train / 46 validation. Haughton: 0 images; Hummocky absent.\n"
                  "Intended site labels are unverified within footprints; Egyptian images remain in this population.", ha="center")
     return figure
 
@@ -132,7 +132,7 @@ def earth_footprints(payload):
                for role, (color, style) in ROLE_STYLE.items()]
     figure.legend(handles=handles, loc="lower center", bbox_to_anchor=(.5, .055), ncol=2, frameon=False)
     figure.text(.5, .018, "Axes: longitude/latitude in degrees. Local extents vary; areas are not comparable.\n"
-                 "All 398 retained nominal outlines shown; overlap and missing SAR do not create new terrain labels.", ha="center")
+                 "All 398 nominal outlines are shown; terrain classes within these footprints remain unverified.", ha="center")
     return figure
 
 
@@ -155,7 +155,7 @@ def venus_figure(payload):
         ax.annotate(ex["code"], (row[1], row[2]), xytext=(4, 5), textcoords="offset points")
     ax.set_title("All 2,945 retained Venus sample centers")
     ax.legend(loc="upper center", bbox_to_anchor=(.5, -.18), ncol=2, frameon=False)
-    figure.text(.5, .035, "A–F: the six existing unlabeled examples. Symbols describe pixel completeness.\n"
+    figure.text(.5, .035, "A–F: the six displayed unlabeled examples. Symbols describe pixel completeness.\n"
                  "These centers do not measure surface-area or acquisition coverage.", ha="center")
     return figure
 
@@ -225,7 +225,7 @@ def audit_artists(figures, payload):
         data.require(len(ids) == len(expected_ids[kind]) and set(ids) == expected_ids[kind], "Incomplete artist population")
     sites = payload["earth"]["sites"]
     locator = figures["earth-site-locator"]
-    expected_cells = [["Site", "Historical site assignment", "Class", "Train", "Val"]] + [
+    expected_cells = [["Site", "Catalog site assignment", "Class", "Train", "Val"]] + [
         [str(i), s["name"], data.CLASSES[s["class_index"]].capitalize(), str(s["train_count"]), str(s["val_count"])]
         for i, s in enumerate(sites, 1)]
     data.require(len(locator.axes[1].tables) == 1, "Site table inventory differs")

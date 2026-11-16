@@ -12,8 +12,9 @@ collection is needed for those calculations.
 The 90-case initialization study and thirty saved epoch-100 evaluations are
 complete. Their archives preserve the original scientific producers and
 reconstruct saved arithmetic; they do not train models, regenerate GPU
-probabilities or supply the omitted per-epoch prediction vectors. The older
-frozen runner described below has separate source and verification records.
+probabilities or supply the omitted per-epoch prediction vectors. The native
+SGD and nearest-neighbor runner described below has separate source and
+verification records.
 The scientific archive's four reference source files are for inspection and
 must not replace this runner.
 
@@ -38,16 +39,14 @@ results to their data packages and verification records.
 
 The manifest's `files` entries bind the current checkout. Its builder hash
 and development commit identify the original export. The `documentation_updates`
-records identify documentation, citation and author metadata changes and the
-separate unused-import cleanup, with previous and current hashes. The October 5
-comment and docstring corrections clarify normalization, metrics, encoder inputs
-and training behavior. Those prose edits preserved executable ASTs when docstrings
-were excluded. A subsequent reviewed cleanup removed only the unused `Optional`,
-`np` and `TitanSARConfig` import bindings; function bodies and algorithms are
-unchanged.
+records retain the source-to-public changes and their hashes. Documentation,
+citation and author metadata changes are separate from the import cleanup.
+Comment and docstring edits preserved executable ASTs when docstrings were
+excluded. The import cleanup removed only the unused `Optional`, `np` and
+`TitanSARConfig` bindings; function bodies and algorithms were preserved.
 Original `source_sha256` values and scientific run producer identities are retained;
-these corrections do not identify a new scientific run. The five earlier
-versioned `release/` packages are unchanged. Original source, guide and manifest bytes remain in CETUS
+these corrections do not identify a new scientific run. The September and October
+`release/` packages retain their scientific payloads. Original source, guide and manifest bytes remain in CETUS
 commit `360eaea532ead477f46906d7ebe0cb5282e8b082`.
 
 The runner calculates image features, trains five linear classifiers per fold
@@ -112,7 +111,7 @@ requires another comparison.
 | cuDNN version returned by PyTorch | 91002 | GPU path not exercised |
 | Extraction GPU | NVIDIA GeForce RTX 3080 Ti | None |
 
-Production analysis ran on CPU with CUDA hidden. The later supplemental
+Production analysis ran on CPU with CUDA hidden. The supplemental
 environment snapshot records einops 0.8.2 and NVIDIA driver 580.173.02; those
 two versions were not captured in the individual frozen launch manifests.
 The CPU test tools were pytest 9.0.3 and setuptools 81.0.0. Editable installation
@@ -148,7 +147,8 @@ raw tile itself. There is no tile-directory CLI override.
 
 Use the matching split for fold 0 through 4. Each split binds the sanitized
 catalog bytes. Do not edit catalog paths inside JSON, mix
-historical splits with the repaired catalog, or substitute private caches. The
+spatial-block splits with the longitude-sector catalog, or substitute private
+caches. The
 sanitized catalog has a different byte hash from the original scientific input;
 new caches and manifests must identify the public input and the public source
 commit honestly. Existing sealed records remain unchanged.

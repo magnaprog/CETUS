@@ -32,7 +32,8 @@ The [probabilities and histories](release/dofa-scores-20261114/README.md)
 retain all six probability columns and fifty epochs from the same fits.
 Its [source package](release/dofa-partial-source-20261112/README.md) documents
 the training implementation and inputs for preparing new runs.
-[SOFTWARE.md](SOFTWARE.md) also describes the earlier classifier runner.
+[SOFTWARE.md](SOFTWARE.md) describes the native SGD and nearest-neighbor runner
+with encoder weights unchanged.
 
 The complete current collection of 23,380 processed Titan images is available
 in the [image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109).
@@ -56,11 +57,11 @@ omitted embeddings, model states and historical Earth/Venus images.
 | [DOFA input during partial training](release/dofa-partial-20261112/README.md) | Fifty saved prediction vectors, all class metrics and paired regional differences, with standard-library CPU reconstruction and a separate source package. |
 | [DOFA probabilities and histories](release/dofa-scores-20261114/README.md) | Six class probabilities, predictions and fifty-epoch histories for the same fifty fits, with CPU checks of scores, epoch choice and metrics. |
 | [DOFA numeric input comparison](release/dofa-band-20261109/README.md) | Five-region comparison of inputs 13.78 and 3.75, with ten prediction records and CPU reconstruction code. |
-| [Expanded Titan evaluation](release/longitude-review-20260929/README.md) | 23,380 catalog images, including 140 Craters tiles, and five geographic folds; DINOv2, DOFA, CROMA and untrained-ViT results with encoder weights unchanged. The test union contains 23,246 images. |
-| [Additional classifier results](release/longitude-auxiliary-20260929/README.md) | Common logistic regression, classical image features and 70 prediction vectors, with separate VIMS display metadata. |
+| [Longitude-sector Titan evaluation](release/longitude-review-20260929/README.md) | 23,380 catalog images, including 140 Craters tiles, and five longitude-sector partitions; DINOv2, DOFA, CROMA and untrained-ViT results with encoder weights unchanged. The test union contains 23,246 images. |
+| [Standardized logistic-regression results](release/longitude-auxiliary-20260929/README.md) | Common LBFGS fitting, classical image features and 70 prediction vectors, with separate VIMS display metadata. |
 | [Encoder training and training-image replacements](release/longitude-adaptation-controls-20260930/README.md) | Predictions and histories from 75 partial-training fits, training-substitution controls, and CPU reconstruction code. |
 | [Interpretation analyses](release/interpretation-20261001/README.md) | Class differences, regional weighting, distances to reinstated training images, map-component counts and examples from accepted results. |
-| [Original September snapshot](release/v1-review-20260908/README.md) and root `catalogs/`, `splits/`, `results/` | Historical experiments: 11,371 Titan images, 398 Earth images and 2,945 unlabeled Venus images. Original bytes and links are preserved. |
+| [Spatial-block evaluation snapshot](release/v1-review-20260908/README.md) and root `catalogs/`, `splits/`, `results/` | 11,371 Titan images with the western map-sampling omission, 398 Earth images and 2,945 unlabeled Venus images. Original bytes and links are preserved. |
 
 Read [CORRECTIONS.md](CORRECTIONS.md) before interpreting historical results. The
 original map sampler omitted valid western terrain. The expanded catalog preserves
@@ -73,7 +74,7 @@ Scores measure agreement with a map informed partly by the same radar
 observations. They do not establish independent geological accuracy. Regional
 spreads are descriptive, and fitting and initialization comparisons retain their
 documented optimization and selection limits. Historical Earth labels still need
-expert review. The new DOFA comparison shows sensitivity to its numeric input;
+expert review. The DOFA comparisons show sensitivity to its numeric input;
 the appropriate Cassini convention remains unresolved.
 
 For saved-result checks, follow the November package's [CPU
@@ -81,13 +82,14 @@ commands](release/titan-followup-20261109/README.md#reconstruct-saved-results)
 using the recorded Python and NumPy versions. These commands reconstruct
 arithmetic from supplied records. Image-based runs use the separate image release
 and still require the applicable source, weights, states and runtime inputs.
-The earlier reproduction with encoder weights unchanged and the later model
-comparisons have separate producers and verification scopes.
+Reproduction of native SGD and nearest-neighbor results with encoder weights
+unchanged has a separate producer and verification scope from the matched-DINO
+and ResNet18 initialization comparisons.
 
 The current source package documents its input and execution contracts. New
 runs bind the downloaded images, separately supplied weights and new plans;
 the numerical companions provide the portable saved-result calculations.
-The reproduction guide retains the [earlier checks and metrics](PAPER_REPRODUCTION.md#earlier-results-and-reconstruction).
+The reproduction guide describes the [classifier and interpretation checks](PAPER_REPRODUCTION.md#classifier-and-interpretation-checks).
 
 From the repository root, check file integrity with:
 
@@ -95,10 +97,14 @@ From the repository root, check file integrity with:
 sha256sum -c SHA256SUMS
 ```
 
-The five earlier packages retain their original bytes, metrics and export-date
-wording. Each versioned package has its own inventory. The four ZIPs retain their
-original internal inventories and historical review wording; the wrapper explains
-their public attribution and later status.
+The September and October packages retain their scientific payloads, metrics
+and producer identities. Each versioned package has its own inventory. The
+longitude-package guides are sealed with their export-date wording: statements
+that software and a tile archive are pending describe that export, while the
+source and image-release links above provide the available materials.
+The four ZIPs retain
+their original bytes, internal inventories and historical review wording; the
+wrapper explains their public attribution and completed studies.
 [SOFTWARE_EXPORT.json](SOFTWARE_EXPORT.json) preserves the earlier software
 export's source history.
 

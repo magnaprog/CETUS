@@ -10,7 +10,7 @@ This script:
 Use --within_titan_only for Titan geographic evaluation without Earth inputs.
 It supports both --features_only and --cached_features_dir. Cached analysis
 still requires Titan training tiles to reproduce normalization provenance.
-New-mode sidecars and source_metadata bind evaluation_scope, benchmark_track,
+Titan-only sidecars and source_metadata bind evaluation_scope, benchmark_track,
 and the full dataset normalization_provenance object. File hashes are SHA256
 of file bytes; normalization sample and membership formats are recorded by
 the dataset. Unused Earth catalog and split hashes are null.
@@ -26,7 +26,7 @@ Usage:
       --features_only --output_dir "$RESULTS/features/dinov2/fold-0"
 
     See SOFTWARE.md for image/weight setup, CPU cache analysis, and all folds.
-    Historical Earth-transfer and parallel examples require separately supplied
+    Earth-transfer and parallel examples require separately supplied
     inputs; they are outside the supported public recipe.
 """
 

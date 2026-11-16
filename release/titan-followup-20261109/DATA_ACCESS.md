@@ -1,9 +1,10 @@
 # Data and software access
 
-Updated 9 November 2026. The four ZIPs in this directory supply saved results
-for 23,380 Titan catalog tiles and five geographic folds with 23,246 unique
-test tiles. Historical v1 results use 11,371 Titan tiles, 398 Earth tiles and
-2,945 unlabeled Venus tiles; their catalogs, splits and results remain separate.
+The four ZIPs in this directory supply saved results for 23,380 Titan catalog
+tiles and five longitude-sector partitions with 23,246 unique test tiles.
+The v1 results use 11,371 Titan tiles with the western map-sampling omission
+and spatial-block partitions, 398 Earth tiles and 2,945 unlabeled Venus tiles;
+their catalogs, splits and results remain separate.
 
 The archives and their exact identities are listed in [README.md](README.md)
 and [provenance.json](provenance.json). They contain small inspection arrays,
@@ -103,18 +104,19 @@ their actual source and inputs.
 The separate [frozen-runner guide](../../SOFTWARE.md) expects
 `tiles/TILE_ID.npy` beside its catalog. Even cached-feature analysis needs
 training images to reconstruct normalization. Its public-source replay and
-the later matched-model study have separate producers and verification scopes.
+the matched-DINO and ResNet18 initialization study have separate producers
+and verification scopes.
 The separate [current source package](../current-source-20261109/README.md)
 provides execution code and its input contracts. The numerical archives do not
 supply complete scientific inputs or private execution supervision. Preserve
 the original input and source guards when preparing new runs.
 
 Recorded author-side checks validated anonymous inputs across all five folds
-without constructing a model. Retained-model inference checks now cover all
+without constructing a model. Retained-model inference checks cover all
 five regions: fifteen cases comprising ResNet18 from scratch, ResNet18 from
 ImageNet and pretrained DINOv2 with its saved scaler and linear classifier in
-each region. The earlier three Region 1 cases are complemented by twelve
-Region 2–5 cases, whose 112,062 validation/test prediction rows reproduce the
+each region. Three cases cover Region 1; twelve cover Regions 2–5, whose
+112,062 validation/test prediction rows reproduce the
 native outputs exactly. DINOv2 also reproduced training features. These checks
 performed no fitting and supplied no new accuracy estimate.
 

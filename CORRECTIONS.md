@@ -26,7 +26,7 @@ ontology, Lakes includes filled and empty lakes and seas, and Hummocky includes
 mountains. See [Lopes et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC7271969/)
 and the [source map dataset](https://data.mendeley.com/datasets/f6jrtyfp66/1).
 
-The [new protocol](release/longitude-review-20260929/splits/protocol.json) uses
+The [longitude-sector protocol](release/longitude-review-20260929/splits/protocol.json) uses
 five contiguous longitude sectors and footprint gaps between active roles.
 It reserves 65 Selk tiles and a further 69 Selk-buffer tiles, leaving a test
 union of 23,246 tiles. Four frozen encoders supply five probe-head seeds per

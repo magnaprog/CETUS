@@ -1,4 +1,4 @@
-# Descriptive interpretation of the repaired Titan evaluation
+# Descriptive interpretation of the longitude-sector Titan evaluation
 
 This package contains the 1 October 2026 CPU analyses of existing predictions
 and metadata. The scientific producer is development commit
@@ -6,7 +6,7 @@ and metadata. The scientific producer is development commit
 included. Equal-fold scores remain the primary results; pooled scores and local
 exposure comparisons are post hoc descriptive analyses.
 
-Use the complete, unchanged sibling packages
+Use the complete sibling packages, with their accepted scientific payloads:
 [`longitude-review-20260929`](../longitude-review-20260929/README.md),
 [`longitude-auxiliary-20260929`](../longitude-auxiliary-20260929/README.md), and
 [`longitude-adaptation-controls-20260930`](../longitude-adaptation-controls-20260930/README.md).
@@ -111,8 +111,11 @@ appearance. The metadata selection is fully reproducible without arrays.
 
 To rerender, supply only the selected `TILE_ID.npy` files in an external
 directory. Each must match the NPY SHA256 in `examples/selected.json`, shape
-128 × 128, float32 dtype, and recorded SAR-valid fraction. No download endpoint
-or array archive is supplied here. Do not place arrays inside this package.
+128 × 128, float32 dtype, and recorded SAR-valid fraction. The
+[processed-image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109)
+supplies the full catalog's arrays; use its companion notice to verify them
+before selecting the required files. This package itself contains no image
+archive. Do not place arrays inside this package.
 
 ```sh
 TILES=/absolute/path/to/supplied/selected-arrays
