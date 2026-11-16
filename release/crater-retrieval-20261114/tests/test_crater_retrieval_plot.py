@@ -1,4 +1,5 @@
 """Saved endpoints only: synthetic count identities, artists and CLI boundaries."""
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -350,3 +351,137 @@ def test_output_fresh_outside_checkout_and_no_symlink_reuse(tmp_path, ranking):
         p.main([*args, "--output", str(link)])
     with pytest.raises(ValueError, match="outside the checkout"):
         p.main([*args, "--output", str(p.ROOT / "rejected-retrieval")])
+
+
+@pytest.mark.parametrize("variant", ["cvpr", "full"])
+def test_display_sparse_identifiers_keep_actual_tie_endpoints(tmp_path, ranking, variant):
+    curves = load(tmp_path, ranking)
+    original = [(c["count"].copy(), c["recall_percent"].copy()) for c in curves]
+    fig, record = p.draw_figure(curves, variant, class_name="Invented", dense=True)
+    axis_lines = {ax: iter(ax.lines) for ax in fig.axes}
+    for c, rec, (x, y) in zip(curves, record["artists"], original):
+        np.testing.assert_array_equal(c["count"], x)
+        np.testing.assert_array_equal(c["recall_percent"], y)
+        indices = np.asarray(rec["identity_group_indices"], dtype=int)
+        assert len(indices) >= 1 and np.all(np.diff(indices) > 0)
+        assert indices.min() >= 0 and indices.max() < len(x)
+        kind, fold, arm, seed = c["cell"]
+        ax = fig.axes[fold * 2 + (kind == "final")]
+        background, emphasis, identity = (next(axis_lines[ax]) for _ in range(3))
+        np.testing.assert_array_equal(background.get_xdata(), x)
+        np.testing.assert_array_equal(background.get_ydata(), y)
+        np.testing.assert_array_equal(identity.get_xdata(), x[indices])
+        np.testing.assert_array_equal(identity.get_ydata(), y[indices])
+        assert len(emphasis.get_xdata()) == 0
+        for line in (background, identity):
+            assert line.get_linestyle() == "None" and line.get_markevery() is None
+            assert not line.get_path().should_simplify
+        assert background.get_rasterized() and not identity.get_rasterized()
+        assert identity.get_markerfacecolor() == ("none" if arm == "scratch" else p.COLORS[arm])
+        assert identity.get_markeredgecolor() == "#222222"
+        if c["positives"] == 1:
+            assert set(identity.get_ydata()).issubset({0., 100.})
+        if len(x) == 1:  # An all-tied fit has no attainable earlier endpoint.
+            assert identity.get_xdata().tolist() == [c["n"]]
+            assert identity.get_ydata().tolist() == [100.]
+        assert rec["all_groups"]["point_count"] == len(x)
+        assert rec["state_identity"]["x_sha256"] == p.coordinate_digest(x[indices])
+        assert rec["state_identity"]["y_sha256"] == p.coordinate_digest(y[indices])
+    assert len(record["artists"]) == 60 and record["identity_spacing_pt"] == 36
+
+
+@pytest.mark.parametrize("variant", ["cvpr", "full"])
+def test_display_reference_legend_and_craters_increment_semantics(tmp_path, ranking, variant):
+    curves = load(tmp_path, ranking)
+    fig, record = p.draw_figure(curves, variant)
+    for ax, ref in zip(fig.axes, record["uniform_order_references"]):
+        collection, = ax.collections
+        coordinates, = collection.get_segments()
+        assert collection.get_gid() == "uniform_order_expectation"
+        assert collection.get_zorder() < min(line.get_zorder() for line in ax.lines)
+        assert collection.get_linestyles()[0][1] is not None
+        np.testing.assert_array_equal(coordinates[:, 0], np.arange(1, ref["n"] + 1))
+        np.testing.assert_array_equal(coordinates[:, 1], 100 * coordinates[:, 0] / ref["n"])
+        assert coordinates[-1].tolist() == [ref["n"], 100.]
+        assert ax.get_xlim() == (1, 6500) and ax.get_ylim() == (-5, 105)
+        assert ax.get_xticks().tolist() == [1, 10, 100, 1000, 5000]
+    for c, rec in zip(curves, record["artists"]):
+        assert rec["tp_increase_group_indices"] == c["emphasis_indices"].tolist()
+        assert rec["identity_group_indices"] == [] and "state_identity" not in rec
+        assert rec["tp_increases"]["point_count"] == len(c["emphasis_indices"])
+    # Check the actual key's two rows, independently of its QA serialization.
+    legend = fig.legends[1]
+    texts, handles = legend.get_texts(), legend.legend_handles
+    for row, arm in enumerate(("Scratch", "ImageNet")):
+        positions = []
+        for column, seed in enumerate(range(3)):
+            i = 2 * column + row
+            assert texts[i].get_text() == f"{arm} {seed}"
+            assert handles[i].get_markerfacecolor() == ("none" if row == 0 else p.COLORS["pretrained"])
+            assert handles[i].get_markeredgecolor() == "#222222"
+            positions.append(texts[i].get_transform().transform(texts[i].get_position()))
+        assert np.all(np.diff(np.asarray(positions)[:, 0]) > 0)
+        np.testing.assert_allclose(np.asarray(positions)[:, 1], positions[0][1], atol=.1)
+    assert [x["label"] for x in record["qa"]["legend"][1]] == [
+        f"{arm} {seed}" for arm in ("Scratch", "ImageNet") for seed in range(3)]
+    assert "expectation" in record["qa"]["reference_legend"]
+    # Holding N fixed while changing K must not move the theoretical reference.
+    changed = copy.deepcopy(curves)
+    for c in changed:
+        c["positives"] += 1
+    _, other = p.draw_figure(changed, variant, class_name="Invented other", dense=True)
+    assert record["uniform_order_references"] == other["uniform_order_references"]
+
+
+@pytest.mark.parametrize("dpi", [90, 180, 300])
+def test_display_spacing_uses_physical_points_without_moving_data(dpi):
+    from matplotlib.figure import Figure
+    from matplotlib.backends.backend_agg import FigureCanvasAgg
+    fig = Figure(figsize=(6.5, 7.4), dpi=dpi)
+    FigureCanvasAgg(fig)
+    ax = fig.add_axes([.1, .1, .4, .12])
+    ax.set(xscale="log", xlim=(1, 6500), ylim=(-5, 105))
+    x, y = np.arange(1, 6001), np.linspace(0, 100, 6000)
+    original = x.copy(), y.copy()
+    # Physical path distance is an independent oracle for selected endpoints.
+    xy = ax.transData.transform(np.column_stack((x, y))) / dpi * 72
+    distance = np.r_[0, np.cumsum(np.hypot(*np.diff(xy, axis=0).T))]
+    selected = []
+    for key in range(6):
+        targets = np.arange(36 * (key + .5) / 6, distance[-1], 36)
+        expected = np.unique(np.searchsorted(distance, targets))
+        actual = p.spaced_endpoint_indices(ax, x, y, key)
+        np.testing.assert_array_equal(actual, expected)
+        assert 4 <= len(actual) <= 10  # Reject empty/dense/all-endpoint shortcuts.
+        selected.append(actual)
+    fig.set_dpi(dpi * 2)
+    for key, indices in enumerate(selected):
+        np.testing.assert_array_equal(p.spaced_endpoint_indices(ax, x, y, key), indices)
+    np.testing.assert_array_equal(x, original[0])
+    np.testing.assert_array_equal(y, original[1])
+
+
+def test_display_wrong_reference_coordinates_are_rejected(tmp_path, ranking, monkeypatch):
+    curves = load(tmp_path, ranking)
+    original = p.LineCollection
+    def altered(segments, **kwargs):
+        bad = np.array(segments)
+        bad[0, -1, 1] = 99
+        return original(bad, **kwargs)
+    monkeypatch.setattr(p, "LineCollection", altered)
+    with pytest.raises(ValueError, match="Uniform-order reference"):
+        p.draw_figure(curves, "full")
+
+
+def test_display_interpolated_identity_marker_is_rejected(tmp_path, ranking, monkeypatch):
+    from matplotlib.axes import Axes
+    curves = load(tmp_path, ranking)
+    original = Axes.plot
+    def altered(ax, x, y, *args, **kwargs):
+        if kwargs.get("markersize") == 3.2 and len(x) and "alpha" not in kwargs:
+            x = np.asarray(x, dtype=float).copy()
+            x[0] += .5  # Impossible between-group retrieval count.
+        return original(ax, x, y, *args, **kwargs)
+    monkeypatch.setattr(Axes, "plot", altered)
+    with pytest.raises(ValueError, match="coordinates"):
+        p.draw_figure(curves, "full", class_name="Invented", dense=True)

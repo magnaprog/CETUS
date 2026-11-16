@@ -151,6 +151,86 @@ def test_actual_artist_mutations_rejected(prepared, fault):
         for figure in figures.values(): plt.close(figure)
 
 
+@pytest.mark.parametrize("fault", ["hash", "oversized"])
+def test_context_authentication_precedes_decoding(tmp_path, monkeypatch, fault):
+    (tmp_path / "natural-earth-110m-coastline.json").write_bytes(
+        b"not JSON" if fault == "hash" else b"x" * 512_001)
+    monkeypatch.setattr(plot, "CONTEXT_DIR", tmp_path)
+    monkeypatch.setattr(prep, "decode", lambda raw: pytest.fail("decoded unbound context"))
+    with pytest.raises(ValueError, match="SHA256|byte limit"):
+        plot.coastline_context()
+
+
+def test_context_retains_source_parts_without_dateline_chords():
+    geometry, provenance = plot.coastline_context()
+    parts = geometry["parts"]
+    assert [(p["source_record"], p["source_part"]) for p in parts] == [(i, 0) for i in range(1, 135)]
+    assert sum(len(p["coordinates"]) for p in parts) == 5128
+    assert max(c[0] for p in parts for c in p["coordinates"]) == 180.00000044181039
+    assert max(abs(a[0]-b[0]) for p in parts for a, b in zip(p["coordinates"], p["coordinates"][1:])) < 10
+    assert provenance["version"] == "4.1.0" and provenance["license"]["name"] == "Public domain"
+
+
+@pytest.mark.parametrize("fault", ["missing", "duplicate", "vertices", "order", "linewidth", "color",
+                                   "fill", "limits", "transform", "binding", "wrong_axes",
+                                   "offsets", "offset_transform", "clip_box", "clip_path", "clip_box_none"])
+def test_coastline_context_mutations_rejected(prepared, fault):
+    figure = plot.earth_locator(prepared["payload"])
+    figures = {"earth-site-locator": figure}
+    try:
+        assert plot.audit_context(figures)["vertices"] == 5128
+        ax = figure.axes[0]; coastline = ax.collections[0]
+        if fault == "missing": coastline.remove()
+        elif fault == "duplicate":
+            from copy import copy
+            duplicate = copy(coastline); ax.add_collection(duplicate, autolim=False)
+        elif fault in ("vertices", "order"):
+            parts = [p.copy() for p in coastline.get_segments()]
+            if fault == "vertices": parts[0][0, 0] += .001
+            else: parts[0], parts[1] = parts[1], parts[0]
+            coastline.set_segments(parts)
+        elif fault == "linewidth": coastline.set_linewidth(.8)
+        elif fault == "color": coastline.set_color("black")
+        elif fault == "fill": coastline.set_facecolor("gray")
+        elif fault == "limits": ax.set_xlim(-181, 181)
+        elif fault == "transform": coastline.set_transform(ax.transAxes)
+        elif fault == "binding": coastline._geography_context["data_sha256"] = "0" * 64
+        elif fault == "offsets": coastline.set_offsets([[10, 0]])
+        elif fault == "offset_transform":
+            from matplotlib.transforms import Affine2D
+            coastline.set_offset_transform(Affine2D().translate(10, 0))
+        elif fault == "clip_box":
+            from matplotlib.transforms import Bbox
+            coastline.set_clip_box(Bbox.from_bounds(0, 0, 10, 10))
+        elif fault == "clip_path":
+            from matplotlib.patches import Circle
+            coastline.set_clip_path(Circle((.5, .5), .1, transform=ax.transAxes))
+        elif fault == "clip_box_none": coastline.set_clip_box(None)
+        else:
+            coastline.remove(); figure.axes[1].add_collection(coastline, autolim=False)
+        with pytest.raises(ValueError, match="[Cc]oastline"):
+            plot.audit_context(figures)
+    finally:
+        plt.close(figure)
+
+
+def test_context_does_not_change_scientific_artist_digest_or_admit_untracked_lines(prepared, monkeypatch):
+    figures = plot.make_figures(prepared["payload"], "cvpr")
+    try:
+        with_context = plot.audit_artists(figures, prepared["payload"])
+        ax = figures["earth-site-locator"].axes[0]
+        coastline = ax.collections[0]; coastline.remove()
+        with monkeypatch.context() as patch:
+            patch.setattr(plot, "audit_context", lambda figures: None)
+            assert plot.audit_artists(figures, prepared["payload"]) == with_context
+        ax.add_collection(coastline, autolim=False)
+        ax.plot([-170, 170], [0, 0], color="gray")
+        with pytest.raises(ValueError, match="Untracked data artist"):
+            plot.audit_artists(figures, prepared["payload"])
+    finally:
+        for figure in figures.values(): plt.close(figure)
+
+
 @pytest.mark.parametrize("style", ["cvpr", "full"])
 def test_earth_locator_nearby_site_callouts_are_separate(style):
     from matplotlib import rc_context
@@ -185,6 +265,9 @@ def test_synthetic_complete_exports_and_freshness(prepared, tmp_path, style):
     output = tmp_path / style; receipt = tmp_path / "private.json"
     result = plot.render(prepared["path"], prep.digest(prepared["path"].read_bytes()), output, receipt, style)
     assert result["status"] == "complete" and len(result["outputs"]) == 8
+    assert result["context"]["data_sha256"] == plot.COASTLINE_SHA256
+    assert result["context"]["parts"] == 134 and result["context"]["vertices"] == 5128
+    assert json.loads(receipt.read_text())["context"] == result["context"]
     assert set(p.name for p in output.iterdir()) == set(result["outputs"]) | {"manifest.json"}
     assert all(p.stat().st_size > 0 for p in output.iterdir())
     with pytest.raises(ValueError, match="fresh"):

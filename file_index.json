@@ -31,14 +31,14 @@
     "guide": "release/crater-retrieval-20261114/README.md",
     "input_guide": "release/class-ranking-20261111/README.md",
     "manifest": "release/crater-retrieval-20261114/manifest.json",
-    "plotting_source_commit": "50a8570e9553d113e1fb9999d4ddf984fdcabdde",
-    "renderer_sha256": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3",
+    "plotting_source_commit": "a997fd68becb1595d1d9d51dfd5a292c2edca4de",
+    "renderer_sha256": "fb2024a3dc4569b624dba9e82a3add4e86bc0218a328f1c94f45481a0f636772",
     "renderers": {
-      "plot_class_contrasts.py": "08cc068fb0c8ccf4b69e62a627c3861d66add7920586f2c365ccfe5ba106e79c",
+      "plot_class_contrasts.py": "f8b27750dea82e3d2c9a46231fc4aebeaf9f3fd9611eb840ccf159a4e8d839c7",
       "plot_class_ranking.py": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c",
-      "plot_class_retrieval.py": "daa43a965da8b682d4b3d2664cf24fb604ea8242cb6e737f8bb49c7475208c61",
-      "plot_crater_retrieval.py": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3",
-      "plot_dataset_geography.py": "7f87c7fedd4a5fa346e6cedb904cf39c7af3237af0ef8eb5d1c8998d80d71481",
+      "plot_class_retrieval.py": "3ab23b4eae84878d2d976e1d3ed3acfe114c44e013558462df69dfc654b85ec2",
+      "plot_crater_retrieval.py": "fb2024a3dc4569b624dba9e82a3add4e86bc0218a328f1c94f45481a0f636772",
+      "plot_dataset_geography.py": "fe327434abda5f6443c0935ee8b05293649d27d27a044a97c2195c57d817932b",
       "plot_regional_errors.py": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
     },
     "scope": "Regional AP differences for all six classes, absolute Craters AP, retrieval curves for all six classes, regional SGD variation and map-mixture summaries, and Titan/Earth/Venus sampling displays. Saved predictions and accepted geographic records; no model execution."
@@ -260,16 +260,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/crater-retrieval-20261114/NOTICE.md": {
-      "bytes": 2943,
-      "sha256": "be9a42fb32ed8e330ff2e51c90f0c64d2477c48370e20f8f45b851eae44b6a88"
+      "bytes": 3251,
+      "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 10076,
-      "sha256": "28bdc810c1ffa37db4ff8ab379bf0eee85f026b7574dd63893d6c5ddce129321"
+      "bytes": 10903,
+      "sha256": "2792e6a3e9d43542d897b6f2e14a5571c0cec376ef9edd918dff4bed1de64735"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
-      "bytes": 4047,
-      "sha256": "1f0603394d89b79472f8f8d71e588ee0d3f9a770a93b22d118fa3f7c7863cd1d"
+      "bytes": 4418,
+      "sha256": "ac356787dc8a8d31ac8094771bd676e40101865d0a9495b936bb295f4464462d"
     },
     "release/crater-retrieval-20261114/data/class-curves.npz": {
       "bytes": 21401700,
@@ -296,8 +296,20 @@
       "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
     },
     "release/crater-retrieval-20261114/manifest.json": {
-      "bytes": 22342,
-      "sha256": "b5cbd52ca64ce23276ccbdd59b9e45363f31b09bc6733f99fdcdfd05953aa9b8"
+      "bytes": 24568,
+      "sha256": "d81d8c97b0687144afa6e6539db23b250794a69f3d7f8a03b8bfad9dc11a89a5"
+    },
+    "release/crater-retrieval-20261114/paper/figure_data/geography/README.md": {
+      "bytes": 2195,
+      "sha256": "15bdd8d46172babe5fb4a19040212836e319be0983f48c690a292517f68190c9"
+    },
+    "release/crater-retrieval-20261114/paper/figure_data/geography/natural-earth-110m-coastline.json": {
+      "bytes": 204784,
+      "sha256": "42486ec096e813b675dd1fb9f7ef79de42f9a31600dea50f8550de3fca72eeaa"
+    },
+    "release/crater-retrieval-20261114/paper/figure_data/geography/natural-earth-110m-coastline.provenance.json": {
+      "bytes": 3354,
+      "sha256": "b699a720b64c7b836179ad6555f8b743d27c0a6b27180b2379356ce55f536fc1"
     },
     "release/crater-retrieval-20261114/paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,
@@ -372,24 +384,24 @@
       "sha256": "6d8436d9455ddd281c0728f9f0fc40f2e9a127256213b176712bc78ae5bd350c"
     },
     "release/crater-retrieval-20261114/scripts/plot_class_contrasts.py": {
-      "bytes": 10983,
-      "sha256": "08cc068fb0c8ccf4b69e62a627c3861d66add7920586f2c365ccfe5ba106e79c"
+      "bytes": 10991,
+      "sha256": "f8b27750dea82e3d2c9a46231fc4aebeaf9f3fd9611eb840ccf159a4e8d839c7"
     },
     "release/crater-retrieval-20261114/scripts/plot_class_ranking.py": {
       "bytes": 21474,
       "sha256": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c"
     },
     "release/crater-retrieval-20261114/scripts/plot_class_retrieval.py": {
-      "bytes": 8535,
-      "sha256": "daa43a965da8b682d4b3d2664cf24fb604ea8242cb6e737f8bb49c7475208c61"
+      "bytes": 8681,
+      "sha256": "3ab23b4eae84878d2d976e1d3ed3acfe114c44e013558462df69dfc654b85ec2"
     },
     "release/crater-retrieval-20261114/scripts/plot_crater_retrieval.py": {
-      "bytes": 17823,
-      "sha256": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3"
+      "bytes": 22877,
+      "sha256": "fb2024a3dc4569b624dba9e82a3add4e86bc0218a328f1c94f45481a0f636772"
     },
     "release/crater-retrieval-20261114/scripts/plot_dataset_geography.py": {
-      "bytes": 20422,
-      "sha256": "7f87c7fedd4a5fa346e6cedb904cf39c7af3237af0ef8eb5d1c8998d80d71481"
+      "bytes": 26609,
+      "sha256": "fe327434abda5f6443c0935ee8b05293649d27d27a044a97c2195c57d817932b"
     },
     "release/crater-retrieval-20261114/scripts/plot_regional_errors.py": {
       "bytes": 15899,
@@ -416,12 +428,12 @@
       "sha256": "de4124db4f3bf620cb23387d268dee002912ae45a9a8ae5a22b71b92e2bc4e06"
     },
     "release/crater-retrieval-20261114/tests/test_crater_retrieval_plot.py": {
-      "bytes": 19088,
-      "sha256": "f288b1ec10fe41862579da2bd1e5677a72b08a28b73c6cef1d15996a3a4fe699"
+      "bytes": 26513,
+      "sha256": "8d13d6bd1aa0e4317affdff0376267991934bc7ca1ead3680857f66e986e20e6"
     },
     "release/crater-retrieval-20261114/tests/test_dataset_geography_plot.py": {
-      "bytes": 12011,
-      "sha256": "9eafab6bc5381e67cc8f37467add1a8795710ecb2d675f581b53195b1982288e"
+      "bytes": 16553,
+      "sha256": "c39a2916c1ebdebd1851aa6292f3fd6bee656aaca9e4e741bf335283271d9a8a"
     },
     "release/crater-retrieval-20261114/tests/test_regional_errors_plot.py": {
       "bytes": 24813,

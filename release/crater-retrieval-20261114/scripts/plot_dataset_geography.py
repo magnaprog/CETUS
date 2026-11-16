@@ -18,10 +18,13 @@ if __package__ in (None, ""):
 import matplotlib
 matplotlib.use("Agg")
 from matplotlib import font_manager
+from matplotlib import patheffects
+from matplotlib.collections import LineCollection
 from matplotlib.colors import to_rgba
 from matplotlib.lines import Line2D
 from matplotlib.text import Text
 from matplotlib.ticker import FuncFormatter
+from matplotlib.transforms import IdentityTransform, TransformedBbox
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -31,6 +34,88 @@ from scripts import dataset_geography_payload as data
 
 STEMS = ("titan-class-locations", "earth-site-locator", "earth-site-footprints", "venus-sample-centers")
 ROLE_STYLE = {"train": ("#0077BB", "-"), "val": ("#EE7733", "--")}
+CONTEXT_DIR = Path(__file__).resolve().parents[1] / "paper/figure_data/geography"
+COASTLINE_SHA256 = "42486ec096e813b675dd1fb9f7ef79de42f9a31600dea50f8550de3fca72eeaa"
+COASTLINE_PROVENANCE_SHA256 = "b699a720b64c7b836179ad6555f8b743d27c0a6b27180b2379356ce55f536fc1"
+COASTLINE_BINDING = dict(kind="natural-earth-110m-coastline", data_sha256=COASTLINE_SHA256,
+                         provenance_sha256=COASTLINE_PROVENANCE_SHA256)
+
+
+def coastline_context():
+    """Authenticate the bounded offline context, independently of science inputs."""
+    decoded = []
+    for suffix, expected in ((".json", COASTLINE_SHA256),
+                             (".provenance.json", COASTLINE_PROVENANCE_SHA256)):
+        with (CONTEXT_DIR / ("natural-earth-110m-coastline" + suffix)).open("rb") as stream:
+            raw = stream.read(512_001)
+        data.require(len(raw) <= 512_000, "Coastline context exceeds byte limit")
+        data.require(data.digest(raw) == expected, "Coastline context SHA256 differs")
+        decoded.append(data.decode(raw))
+    geometry, provenance = decoded
+    data.require(set(geometry) == {"schema_version", "parts"} and geometry["schema_version"] == 1,
+                 "Coastline schema differs")
+    parts = geometry["parts"]
+    data.require(len(parts) == 134, "Coastline part inventory differs")
+    for record, part in enumerate(parts, 1):
+        data.require(set(part) == {"source_record", "source_part", "coordinates"}
+                     and part["source_record"] == record and part["source_part"] == 0,
+                     "Coastline source part identity differs")
+        points = part["coordinates"]
+        data.require(len(points) >= 2, "Empty coastline part")
+        for point in points:
+            data.require(len(point) == 2, "Coastline coordinate dimensions differ")
+            # Preserve the source's 180.00000044181039 endpoint; axes clip it.
+            data.number(point[0], -180.000001, 180.000001)
+            data.number(point[1], -90, 90)
+        data.require(all(abs(a[0]-b[0]) <= 180 for a, b in zip(points, points[1:])),
+                     "Coastline crosses the longitude seam within a part")
+    part_digest = data.digest((json.dumps(parts, sort_keys=True, separators=(",", ":"), allow_nan=False) + "\n").encode())
+    data.require(sum(len(p["coordinates"]) for p in parts) == 5128
+                 and provenance["geometry"]["sha256"] == COASTLINE_SHA256
+                 and provenance["geometry"]["parts_sha256"] == part_digest,
+                 "Coastline provenance/vertices differ")
+    return geometry, provenance
+
+
+def audit_context(figures):
+    """Require exactly the authenticated coastline on the Earth global axes."""
+    geometry, provenance = coastline_context()
+    found = []
+    for stem, figure in figures.items():
+        for ax in figure.axes:
+            for artist in [*ax.collections, *ax.lines]:
+                if not hasattr(artist, "_geography_context"):
+                    continue
+                data.require(stem == "earth-site-locator" and ax is figure.axes[0]
+                             and isinstance(artist, LineCollection)
+                             and artist._geography_context == COASTLINE_BINDING
+                             and not hasattr(artist, "_geography"), "Wrong coastline context artist")
+                data.require(tuple(ax.get_xlim()) == (-180, 180) and tuple(ax.get_ylim()) == (-90, 90)
+                             and ax.get_xscale() == ax.get_yscale() == "linear"
+                             and artist.get_transform() is ax.transData,
+                             "Coastline axes/transform differs")
+                data.require(artist.get_offsets().tolist() == [[0., 0.]]
+                             and isinstance(artist.get_offset_transform(), IdentityTransform),
+                             "Coastline offsets/offset transform differs")
+                clip_box = artist.get_clip_box()
+                data.require(isinstance(clip_box, TransformedBbox)
+                             and np.array_equal(clip_box.extents, ax.bbox.extents)
+                             and artist.get_clip_path() is None,
+                             "Coastline axes clip differs")
+                actual = [segment.tolist() for segment in artist.get_segments()]
+                data.require(actual == [p["coordinates"] for p in geometry["parts"]],
+                             "Actual coastline parts/vertices differ")
+                data.require(artist.get_visible() and artist.get_clip_on() and artist.get_zorder() == 0
+                             and artist.get_alpha() is None
+                             and artist.get_colors().tolist() == [list(to_rgba(".72"))]
+                             and artist.get_linewidths().tolist() == [.4]
+                             and artist.get_linestyles() == [(0., None)]
+                             and len(artist.get_facecolors()) == 0,
+                             "Coastline display style differs")
+                found.append(artist)
+    data.require(len(found) == 1, "Coastline context inventory differs")
+    return {**COASTLINE_BINDING, "parts": 134, "vertices": 5128,
+            "actual_parts_sha256": provenance["geometry"]["parts_sha256"]}
 
 
 def bind(artist, kind, ids, **details):
@@ -50,6 +135,7 @@ def global_axes(ax, *, earth=False):
 def titan_figure(payload):
     figure, axes = plt.subplots(3, 2, figsize=(6.5, 6.5))
     figure.subplots_adjust(left=.115, right=.97, bottom=.13, top=.94, wspace=.38, hspace=.62)
+    point_colors = {"plains": "#998C33", "lakes": "#478FA7"}
     for c, ax in enumerate(axes.flat):
         ax._geography_panel = ("titan", c)
         rows = [r for r in payload["titan"]["points"] if r[3] == c]
@@ -58,7 +144,8 @@ def titan_figure(payload):
         for boundary in data.BOUNDARIES[1:-1]:
             ax.axvline(boundary, color=".7", linewidth=.5, zorder=0)
         bind(ax.scatter([r[1] for r in rows], [r[2] for r in rows], s=2,
-                        color=full.CLASS_COLORS[c], linewidths=0, rasterized=True),
+                        color=point_colors.get(data.CLASSES[c], full.CLASS_COLORS[c]),
+                        linewidths=0, rasterized=True),
              "titan", [r[0] for r in rows], class_index=c)
         ax.set_title(data.CLASSES[c].capitalize())
     figure.text(.5, .035, "Test tile centers; regions 1–5 run west to east.\n"
@@ -70,6 +157,12 @@ def earth_locator(payload):
     figure = plt.figure(figsize=(6.5, 7.6))
     ax = figure.add_axes([.11, .62, .85, .32])
     global_axes(ax, earth=True)
+    geometry, _ = coastline_context()
+    coastline = LineCollection([p["coordinates"] for p in geometry["parts"]],
+                               colors=".72", linewidths=.4, zorder=0, facecolors="none")
+    coastline._geography_context = dict(COASTLINE_BINDING)
+    coastline.set_gid("earth_coastline_context")
+    ax.add_collection(coastline, autolim=False)
     rows = payload["earth"]["footprints"]
     bind(ax.scatter([r[3][0] for r in rows], [r[3][1] for r in rows], s=5, color=".35", linewidths=0),
          "earth_centers", [r[0] for r in rows])
@@ -131,8 +224,8 @@ def earth_footprints(payload):
     handles = [Line2D([], [], color=color, linestyle=style, label=role.capitalize())
                for role, (color, style) in ROLE_STYLE.items()]
     figure.legend(handles=handles, loc="lower center", bbox_to_anchor=(.5, .055), ncol=2, frameon=False)
-    figure.text(.5, .018, "Axes: longitude/latitude in degrees. Local extents vary; areas are not comparable.\n"
-                 "All 398 nominal outlines are shown; terrain classes within these footprints remain unverified.", ha="center")
+    figure.text(.5, .018, "Axes are independently scaled; outlines show coordinate relationships, not metric shape.\n"
+                 "All 398 nominal outlines are shown in longitude/latitude degrees; terrain classes remain unverified.", ha="center")
     return figure
 
 
@@ -152,7 +245,8 @@ def venus_figure(payload):
         row = by_id[ex["tile_id"]]
         bind(ax.scatter([row[1]], [row[2]], s=33, marker="s", facecolors="none", edgecolors="black", linewidths=.8),
              "venus_example", [row[0]], code=ex["code"])
-        ax.annotate(ex["code"], (row[1], row[2]), xytext=(4, 5), textcoords="offset points")
+        ax.annotate(ex["code"], (row[1], row[2]), xytext=(4, 5), textcoords="offset points",
+                    path_effects=[patheffects.withStroke(linewidth=1.5, foreground="white")])
     ax.set_title("All 2,945 retained Venus sample centers")
     ax.legend(loc="upper center", bbox_to_anchor=(.5, -.18), ncol=2, frameon=False)
     figure.text(.5, .035, "A–F: the six displayed unlabeled examples. Symbols describe pixel completeness.\n"
@@ -163,6 +257,7 @@ def venus_figure(payload):
 def audit_artists(figures, payload):
     """Read every plotted data artist, including all overlapping footprint rings."""
     data.require(set(figures) == set(STEMS), "Figure inventory differs")
+    audit_context(figures)
     titan = {r[0]: r for r in payload["titan"]["points"]}
     earth = {r[0]: r for r in payload["earth"]["footprints"]}
     venus = {r[0]: r for r in payload["venus"]["points"]}
@@ -173,6 +268,8 @@ def audit_artists(figures, payload):
     for stem, figure in figures.items():
         for ax in figure.axes:
             for artist in [*ax.collections, *ax.lines]:
+                if hasattr(artist, "_geography_context"):
+                    continue  # The exact separate context contract was checked above.
                 binding = getattr(artist, "_geography", None)
                 if binding is None:
                     # Only the four explicit Titan sector lines are non-data lines.
@@ -291,7 +388,7 @@ def render(payload_path, payload_sha256, output, receipt, style):
         for name, figure in figures.items():
             for suffix in (".pdf", ".png"):
                 buffer = io.BytesIO()
-                kwargs = dict(metadata={"CreationDate": None, "ModDate": None}) if suffix == ".pdf" else dict(dpi=120)
+                kwargs = dict(dpi=300, metadata={"CreationDate": None, "ModDate": None}) if suffix == ".pdf" else dict(dpi=120)
                 figure.savefig(buffer, format=suffix[1:], **kwargs)
                 content = buffer.getvalue()
                 data.require(0 < len(content) <= 20_000_000, "Invalid/big figure export")
@@ -301,7 +398,8 @@ def render(payload_path, payload_sha256, output, receipt, style):
                 outputs[name + suffix] = dict(sha256=data.digest(content), bytes=len(content))
         data.require(set(outputs) == expected and {p.name for p in output.iterdir()} == expected
                      and all((output / n).stat().st_size == r["bytes"] for n, r in outputs.items()), "Export inventory differs")
-        record = dict(status="complete", style=style, payload_sha256=payload_sha256, outputs=outputs, artists=artists)
+        record = dict(status="complete", style=style, payload_sha256=payload_sha256, outputs=outputs,
+                      artists=artists, context=audit_context(figures))
         data.write_new_atomic(receipt, {**record, "status": "verified_before_public_manifest", "font_metrics": metrics,
                                         "fonts_sha256": {p: data.digest(Path(p).read_bytes()) for p in sorted(fonts)},
                                         "source_sha256": data.digest(Path(__file__).read_bytes()),

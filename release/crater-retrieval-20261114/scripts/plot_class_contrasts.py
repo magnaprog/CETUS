@@ -119,12 +119,12 @@ def draw_figure(panels, variant):
             fold = point["fold"]
             line, = ax.plot([point["contrast"]["display_value"]], [point["y"]],
                             linestyle="none", marker=roman.FOLD_MARKERS[fold],
-                            color=roman.FOLD_COLORS[fold], ms=3.8, markeredgecolor="white",
-                            markeredgewidth=.3, zorder=3)
+                            color=roman.FOLD_COLORS[fold], ms=4.4, markeredgecolor="#222222",
+                            markeredgewidth=.18, zorder=3)
             lines.append(line)
             records.append({"role": "class_contrast", "source": point})
     handles = [Line2D([], [], marker=roman.FOLD_MARKERS[f], color=roman.FOLD_COLORS[f],
-                      linestyle="none", markersize=4, markeredgecolor="white", markeredgewidth=.3)
+                      linestyle="none", markersize=4.4, markeredgecolor="#222222", markeredgewidth=.18)
                for f in range(5)]
     legend = figure.legend(handles, [str(f + 1) for f in range(5)], title="Test region",
                            loc="lower center", bbox_to_anchor=(.5, .015), ncol=5,

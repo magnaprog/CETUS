@@ -58,13 +58,20 @@ ResNet18 with full training. All saved states are retained: five random DINOv2
 states and one pretrained state per region, plus three scratch and three
 ImageNet ResNet18 fits with paired seed IDs.
 
-Each marker represents a complete tied-score group: retrieved count is TP+FP,
+Small points represent complete tied-score groups: retrieved count is TP+FP,
 and recall is the saved fraction multiplied by 100. All endpoints, including
-zero recall, are retained without connectors, interpolation or thinning. The
-five common classes use small state-specific markers; Craters also emphasizes
-groups that increase true positives. Dense overlapping marks are not all
-individually distinguishable. Every subplot uses the same logarithmic count
-axis and linear recall axis; titles report positive-label count / test count.
+zero recall, are retained without connectors, interpolation or thinning. Larger
+symbols identify states or seeds at spaced, existing endpoints for the five
+common classes. Craters instead emphasizes every group that increases true
+positives. In the ResNet18 panels, larger open symbols denote scratch training
+and filled symbols denote ImageNet initialization. DINOv2 retains a different
+shape for each state. Coincident states can overlap.
+
+Dashed gray lines give expected recall 100k/N under a uniform ordering of N test
+tiles at retrieval count k. With one positive tile, observed recall is zero or
+100%; intermediate reference values are expectations over orderings. Every
+subplot uses the same logarithmic count axis and linear recall axis; titles
+report positive-label count / test count.
 
 The archive contains 360 curves and 1,800 arrays. The accompanying projection
 preserves every accepted metric, curve index and array descriptor while omitting
@@ -74,7 +81,8 @@ unchanged. Area in a log-count retrieval display is not AP.
 
 `display.json` records the data-to-artist mapping. `complete.json` is written
 last and records hashes for all 24 assets and the display record. Figures are
-6.5 × 7.4 inches, with small marks rasterized at 180 dpi. Seeds describe fitting
+6.5 × 7.4 inches, with small marks rasterized at 300 dpi and larger identifiers
+and text retained as vectors. Seeds describe fitting
 variation and do not add independent geographic tests. Results measure agreement
 with SAR-informed map labels; retrieved tiles may overlap and are not an
 independent geological inventory.
@@ -99,8 +107,12 @@ Earth uses retained geometric centers and source-window outlines, not displaced
 catalog centers or replacement acquisition boxes.
 
 Coordinates are retained without rounding or reprojection. Axis labels can be
-rounded for readability. These longitude/latitude diagrams have no physical
-scale bar; local Earth extents vary and displayed areas are not comparable.
+rounded for readability. A light Natural Earth 1:110m coastline provides global
+orientation in the Earth locator; it does not establish image registration. The
+[context source and terms](paper/figure_data/geography/README.md) are separate
+from the sampling payload. These longitude/latitude diagrams have no physical
+scale bar. Local Earth axes are scaled independently in degrees, distorting
+displayed shapes and areas.
 Titan and Venus points show sampled centers, not surface coverage or independent
 geological occurrences. Venus has no terrain labels; A–F do not imply terrain
 correspondence. No raw imagery, map sampling, new geometry or model work is
@@ -110,8 +122,9 @@ The geography renderer checks actual artist coordinates, all IDs/roles/rings,
 the site table and example annotations against the payload. Each output
 directory ends with `manifest.json`, written after all eight nonempty assets.
 The separately located local receipt contains font diagnostics and is not a
-public payload. Geography PNGs use 120 dpi; Earth footprint sheets are
-6.5 × 8.1 inches.
+public payload. Dense point layers in geography PDFs use 300 dpi; labels and
+outlines remain vector graphics. Geography PNGs use 120 dpi. Earth footprint
+sheets are 6.5 × 8.1 inches.
 
 ## Existing AP and regional displays
 
