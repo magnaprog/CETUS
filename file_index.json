@@ -136,12 +136,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 32586,
-      "sha256": "f5fbbf3b762f49995539b9693d90468047ff4a0f2c9ac4092431e192cc15dbc9"
+      "bytes": 32637,
+      "sha256": "fb6ce0560acaa5c9381ad57a9c5b35c60208f017c6b71004bee6e8a51dacf18b"
     },
     "README.md": {
-      "bytes": 9917,
-      "sha256": "d41e6f681303d85af808d350081f54db65857542b00bbff00d70f85e74010e8d"
+      "bytes": 9919,
+      "sha256": "554d02698caef495f0663fd41b34e1cbdf14ebbe891818f7ab873e39746e366c"
     },
     "SOFTWARE.md": {
       "bytes": 23238,
@@ -269,7 +269,7 @@
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
       "bytes": 4047,
-      "sha256": "ab979230a949f0e4b313fac9ecb3fd7170bedd70ed794ab5a954b5c14e334d3a"
+      "sha256": "1f0603394d89b79472f8f8d71e588ee0d3f9a770a93b22d118fa3f7c7863cd1d"
     },
     "release/crater-retrieval-20261114/data/class-curves.npz": {
       "bytes": 21401700,
@@ -296,8 +296,8 @@
       "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
     },
     "release/crater-retrieval-20261114/manifest.json": {
-      "bytes": 22343,
-      "sha256": "bddaa6e5c2de74fee060abbafd5931dff82fb67793f38e89a2ce2815346bc3c2"
+      "bytes": 22342,
+      "sha256": "b5cbd52ca64ce23276ccbdd59b9e45363f31b09bc6733f99fdcdfd05953aa9b8"
     },
     "release/crater-retrieval-20261114/paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,

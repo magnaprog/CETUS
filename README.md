@@ -89,7 +89,7 @@ and ResNet18 initialization comparisons.
 The current source package documents its input and execution contracts. New
 runs bind the downloaded images, separately supplied weights and new plans;
 the numerical companions provide the portable saved-result calculations.
-The reproduction guide describes the [classifier and interpretation checks](PAPER_REPRODUCTION.md#earlier-results-and-reconstruction).
+The reproduction guide describes the [classifier and interpretation checks](PAPER_REPRODUCTION.md#classifier-and-interpretation-checks).
 
 From the repository root, check file integrity with:
 

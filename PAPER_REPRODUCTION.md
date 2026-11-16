@@ -459,7 +459,9 @@ They remain development-repository records; listing them here does not add
 those files to this repository. The papers retain the underlying scientific
 limits, including Earth label uncertainty and use of Titan training images.
 
-## Earlier results and reconstruction
+<a id="earlier-results-and-reconstruction"></a>
+
+## Classifier and interpretation checks
 
 The expanded frozen comparison includes 100 SGD classifiers and twenty nearest
 neighbor evaluations. The additional classifier package reconstructs seventy

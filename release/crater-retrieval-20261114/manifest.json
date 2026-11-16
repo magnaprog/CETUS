@@ -145,36 +145,36 @@
   "expected_dataset_geography": {
     "cvpr": {
       "earth-site-footprints.pdf": {
-        "bytes": 135538,
-        "sha256": "1b4511bae01bd77b1ddc8351712a1e1280a8b2851408c1fc2a91f8ba00acc800"
+        "bytes": 135664,
+        "sha256": "be686e987b6341c450b154cb3a2b185facab8b6a6da6e2d5f40213d8c7a3b5ec"
       },
       "earth-site-footprints.png": {
-        "bytes": 195457,
-        "sha256": "1d98b08a98c8298c68278eca13cb3fa9bf9371d531dd57ae9acafedd58be9e45"
+        "bytes": 196946,
+        "sha256": "9cb28940193dcb2a0c3df5373160df5f3f7b2bc66a46001e7d233c027b8aac7f"
       },
       "earth-site-locator.pdf": {
-        "bytes": 22495,
-        "sha256": "7677dc6aeac4f31d1899dbd50ae6253d26a98c53fb682abce5836a96a41b57b8"
+        "bytes": 22451,
+        "sha256": "abb0860b9acb3b5d6614d21366d4094e9cf8cc11e98f66c329f1e1361fe2a97d"
       },
       "earth-site-locator.png": {
-        "bytes": 94496,
-        "sha256": "6823298d0430eb9f1c5fc3944db46dbe18fe68fcb15228f90c44f879ac9dd699"
+        "bytes": 95796,
+        "sha256": "3919eac19bdefdaed3091c7b078f24da095d54411c6cd76d120939183c2e720b"
       },
       "titan-class-locations.pdf": {
-        "bytes": 74263,
-        "sha256": "f0a659ca148e5900cb99c433b75998136e276dfba728791ed4513a76879af320"
+        "bytes": 44762,
+        "sha256": "bf2975a23298881ce924921acafd611b89efcdd29d17e77d5373f57f8312fec5"
       },
       "titan-class-locations.png": {
-        "bytes": 136802,
-        "sha256": "1db3954f76ccf0da5285f8de8b1c92088cd563134dbe77d6f7f4a6a8012d57d3"
+        "bytes": 138214,
+        "sha256": "748391262de205c8d5cf7b951412f717eded274d32259f306e2288ce942bef2f"
       },
       "venus-sample-centers.pdf": {
-        "bytes": 157259,
-        "sha256": "eccd100d968f605acd56d1148c0680fc0c41ce9cc392698fd35c1374d68fc9a1"
+        "bytes": 61144,
+        "sha256": "93578b6f3e999e596761201bf577638ba8f5861582662f6f9664265493c0b997"
       },
       "venus-sample-centers.png": {
-        "bytes": 172865,
-        "sha256": "706da4630b173d39b37586f39f8d4fcd447b4841acd6468fcc4f56f916a75894"
+        "bytes": 173632,
+        "sha256": "9db62ec3ce8960433666b4295719738365c1576149ea0322ed77ed4b8b90c4a1"
       }
     },
     "full": {
