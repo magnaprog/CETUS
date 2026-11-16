@@ -185,6 +185,36 @@
       "previous_manifest_sha256": "397f65f6242dd6bfd1d261f01270fb764564c6b091f96b5b0381cdff46167dec",
       "previous_sha256": "698da37624c69e51a71c0405777350f33702ce5b0ecb03aa716f44462fa85e4c",
       "reason": "Describe the separate DOFA partial-training source and numerical companions. Original scientific source hashes, producer and builder identities remain unchanged."
+    },
+    {
+      "change_kind": "maintenance_documentation",
+      "date": "2026-11-16",
+      "new_sha256": "0316b41d7ce615367e1887d3887287c761bb5e2c4c486ee59f2f010e95273358",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "a68246c46a38a6b686a6d4a0b8558d26a783efa5",
+      "previous_manifest_sha256": "d379537a6c8b8da3f4ee25c1024589c85f57ab3115515d3ac31469c8e89fa81c",
+      "previous_sha256": "6113ace9f9476d45730ebdc88d4f2ef9bde49593ad05960bd1ee9579012fc9b8",
+      "reason": "Describe experiment populations and execution scope directly. Original producer and source_sha256 identities remain unchanged; Python executable tokens are unchanged."
+    },
+    {
+      "change_kind": "maintenance_documentation",
+      "date": "2026-11-16",
+      "new_sha256": "b32fdcfe44928b41f185d1a1770d2983506525a826bdf9a85b33362b157f723d",
+      "path": "scripts/run_probing.py",
+      "previous_cetus_commit": "a68246c46a38a6b686a6d4a0b8558d26a783efa5",
+      "previous_manifest_sha256": "d379537a6c8b8da3f4ee25c1024589c85f57ab3115515d3ac31469c8e89fa81c",
+      "previous_sha256": "c869753291925ebc663aa09b453b5ebff47cb55fba91256bd96635af43668d91",
+      "reason": "Describe experiment populations and execution scope directly. Original producer and source_sha256 identities remain unchanged; Python executable tokens are unchanged."
+    },
+    {
+      "change_kind": "maintenance_documentation",
+      "date": "2026-11-16",
+      "new_sha256": "16ab81187767587bc970a15cdce85fa7c89e2d7b9deed63f3e225c500ed1a8d1",
+      "path": "titansar/configs/defaults.py",
+      "previous_cetus_commit": "a68246c46a38a6b686a6d4a0b8558d26a783efa5",
+      "previous_manifest_sha256": "d379537a6c8b8da3f4ee25c1024589c85f57ab3115515d3ac31469c8e89fa81c",
+      "previous_sha256": "58bac3774ac65380d32cadcbce28848605bd24719522ca8fb2a5c38a8efd0f02",
+      "reason": "Describe experiment populations and execution scope directly. Original producer and source_sha256 identities remain unchanged; Python executable tokens are unchanged."
     }
   ],
   "excluded": [
@@ -215,7 +245,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated guide with documentation updates",
-      "sha256": "6113ace9f9476d45730ebdc88d4f2ef9bde49593ad05960bd1ee9579012fc9b8"
+      "sha256": "0316b41d7ce615367e1887d3887287c761bb5e2c4c486ee59f2f010e95273358"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
@@ -231,7 +261,7 @@
     },
     "scripts/run_probing.py": {
       "origin": "committed source with docstring example correction; executable AST unchanged",
-      "sha256": "c869753291925ebc663aa09b453b5ebff47cb55fba91256bd96635af43668d91",
+      "sha256": "b32fdcfe44928b41f185d1a1770d2983506525a826bdf9a85b33362b157f723d",
       "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
     },
     "tests/test_bound_feature_cache.py": {
@@ -270,7 +300,7 @@
     },
     "titansar/configs/defaults.py": {
       "origin": "committed source with reviewed unused import cleanup",
-      "sha256": "58bac3774ac65380d32cadcbce28848605bd24719522ca8fb2a5c38a8efd0f02",
+      "sha256": "16ab81187767587bc970a15cdce85fa7c89e2d7b9deed63f3e225c500ed1a8d1",
       "source_sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
     },
     "titansar/data/__init__.py": {

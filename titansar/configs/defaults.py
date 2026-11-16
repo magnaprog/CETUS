@@ -83,8 +83,9 @@ class TitanSARConfig:
     num_classes: int = 6
 
     # === Split metadata ===
-    # Repaired experiments use catalog-bound contiguous-sector manifests with gaps.
-    # Historical v1 uses spatial-block manifests without boundary buffers.
+    # Both catalogs use local metric grids and latitude-dependent center spacing.
+    # Longitude-sector evaluation uses catalog-bound manifests with footprint gaps.
+    # Spatial-block evaluation uses manifests without boundary buffers.
     # The center/radius below defines the configured Selk exclusion only.
     selk_center_lat: float = 6.0  # degrees N
     selk_center_lon: float = 161.0  # degrees E (199W = 161E)

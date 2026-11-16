@@ -1,18 +1,20 @@
-# Historical root file guide
+# Spatial-block experiment files
 
-Root `catalogs/`, `splits/`, and `results/` retain historical v1 data. The
-guide describes only those files. Read [CORRECTIONS.md](CORRECTIONS.md)
-for known errors and limitations. The [repaired Titan package](release/longitude-review-20260929/README.md)
-has a separate catalog, splits, predictions, metrics, and index. The
-[September 8 snapshot](release/v1-review-20260908/README.md) preserves all 46 original files.
-Use [PAPER_REPRODUCTION.md](PAPER_REPRODUCTION.md) to locate the current paper's
-experiments and their packages.
+Root `catalogs/`, `splits/`, and `results/` describe the 11,371-tile Titan
+catalog and its spatial-block experiments, together with Earth and Venus
+comparisons. Western map-sampling omissions and other limitations are recorded
+in [CORRECTIONS.md](CORRECTIONS.md). The paper's primary Titan evaluation uses
+the separate [23,380-tile longitude-sector package](release/longitude-review-20260929/README.md).
+[PAPER_REPRODUCTION.md](PAPER_REPRODUCTION.md) maps the paper's comparisons to
+their inputs and results. The [46-file snapshot](release/v1-review-20260908/README.md)
+preserves the root package's source records.
 
-Join catalogs, splits, and Selk records by tile ID. For the primary
-classifier results, scores are averaged over five random seeds within
-each spatial fold. The paper reports the mean and sample standard
-deviation across the five fold means. Paired two-sided t-tests use the
-five paired fold means. In `results/final_results.json`, `protocol.ci95`
+Join catalogs, splits, and Selk records by tile ID. For the seeded linear
+classifiers, scores are averaged over five classifier seeds within each spatial
+fold. The paper reports the mean and sample standard deviation across the five
+fold means. k-NN supplies one result per fold. Stored paired two-sided t-tests use the
+five paired fold means; overlapping training sets and spatial dependence limit
+their inferential interpretation. In `results/final_results.json`, `protocol.ci95`
 stores a text description of the confidence-interval method. For repeated
 MMD^2 estimates, `ci95` instead gives the 2.5th and 97.5th percentiles of the
 resampled values, describing variation across those samples.
@@ -24,17 +26,20 @@ row keeps a tile ID, the SHA-256 of the tile file, coordinates, a label,
 and summary statistics of the pixel values. Local paths were removed.
 
 - `catalogs/titan_catalog.json`: 11,371 labeled Titan tiles from the
-  USGS Cassini HiSAR global mosaic, which stores uncalibrated 8-bit
-  display digital numbers after logarithmic stretching (`hisar_log_dn`).
+  USGS Cassini HiSAR global mosaic, which stores 8-bit display digital numbers
+  after logarithmic stretching of calibrated SAR images (`hisar_log_dn`).
+  These display values do not supply a calibration to physical backscatter.
   Classes follow Lopes et al. 2020: Plains, Dunes, Hummocky, Labyrinths,
   Lakes, Craters.
   The scores measure how closely model predictions match that map. The
   labels are expert interpretations drawn partly from the same radar
   swaths.
 - `catalogs/earth_catalog.json`: 398 labeled Earth tiles from 29
-  Sentinel-1 products across 13 morphological analog sites covering five
-  of the six classes, processed by calibration to linear sigma0. Earth
-  to Titan scores use those five classes and omit Hummocky.
+  Sentinel-1 products across 13 populated sites with intended labels for five
+  classes, processed by calibration to linear sigma0. Terrain labels within
+  the sampled footprints remain unverified. Earth-to-Titan scores use those
+  five classes and omit Hummocky; count-matched comparisons have their own
+  source-image exclusions.
 - `catalogs/venus_catalog.json`: 2,945 unlabeled tiles from the Magellan
   FMAP right look global mosaic, used only to compare distributions of
   learned representations. Intensity is display digital numbers. Every
@@ -77,9 +82,11 @@ values for each fold. They omit per-tile prediction arrays to stay under
 - `results/coral_results.json`: correlation alignment (CORAL) evaluated
   for transfer from Earth to Titan. MMD^2 after alignment is
   measured on the Titan features used to estimate the transformation.
-- `results/finetuning_results.json`: encoder weights unchanged versus
-  fine-tuning the final two transformer blocks on Titan. Fine-tuning
-  measures adaptation when Titan labels are available.
+- `results/finetuning_results.json`: records from an incorrect weighted
+  gradient-accumulation implementation. These values are excluded from the
+  paper's encoder-training comparison. The accepted 75-fit comparison and
+  checkpoint replays are in the
+  [longitude-sector training package](release/longitude-adaptation-controls-20260930/README.md).
 - `results/label_efficiency_croma_results.json`,
   `results/label_efficiency_dinov2_results.json`,
   `results/label_efficiency_dofa_results.json`,
@@ -124,14 +131,14 @@ metadata before combining values across files.
   This comparison is separate from unweighted label-efficiency curves for six
   classes.
 - `results/display_rendering_results.json`: transfer recall for the
-  original Earth preprocessing and the display DN renderings. Undefined
+  Earth dB inputs and the display DN renderings. Undefined
   Hummocky recall is stored as `null`. Its `mmd` values are single
   estimates from the same feature extractions as transfer recall.
   `preprocessing_mmd_results.json` contains the paper's repeated MMD^2
   estimates from separately regenerated Earth renderings for the same
   named conditions.
 - `results/quantization_results.json`: transfer recall after changing
-  the number of gray levels while retaining the original normalization
+  the number of gray levels while retaining the fitted normalization
   endpoints. Its `mmd` values use repeated estimation.
 - `results/smoothing_results.json`: transfer recall and Earth validation
   recall for smoothing conditions on the output grid, including smoothing
@@ -156,9 +163,9 @@ metadata before combining values across files.
   source sites. A jackknife standard error and the standard deviation
   across Titan folds are different statistics.
 
-### Finding evidence for the paper
+### Locating the spatial-block comparisons
 
-- Main classification scores and per-class recall: `probing_cv_results.json`.
+- Spatial-block classification scores and per-class recall: `probing_cv_results.json`.
 - Comparisons with image-statistics classifiers and the CNN:
   `probing_cv_results.json` and `baseline_results.json`. Pair fold means
   after averaging seeds within each fold; use the paper's stated test
@@ -171,11 +178,11 @@ metadata before combining values across files.
 - Sensitivity of transfer recall to Earth source composition:
   `source_site_sensitivity_results.json`. The MMD^2 site-omission analysis
   is separate and remains in `probing_cv_results.json`.
-- Alignment, fine-tuning, learning curves, Venus, and Selk: the result
+- Alignment, learning curves, Venus, and Selk: the result
   files described in the preceding section.
 
 Filenames in this subsection are relative to `results/`. Source filenames
-inside the added JSON files identify original measurement files that are
+inside these JSON files identify measurement files that are
 external to this package.
 
 ## Other files

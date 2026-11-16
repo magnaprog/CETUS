@@ -49,14 +49,14 @@ nonzero and retain a failure record when writable.
 
 ## Calculation and interpretation
 
-The sixty records comprise thirty matched DINOv2 readouts and thirty original
+The sixty records comprise thirty matched DINOv2 readouts and thirty
 ResNet18 final fits. DINOv2 has five random encoder states and one pretrained
 state per region; ResNet18 has scratch and pretrained initializations with
-paired seeds 0–2. The original CNN loss divides by the batch sum of class weights.
-The reader checks the original learning-rate and epoch selections against saved
+paired seeds 0–2. The CNN loss divides by the batch sum of class weights.
+The reader checks the learning-rate and epoch selections against saved
 validation metadata. It does not refit, reselect, calibrate or choose a threshold.
 
-For each class, the saved probability column ranks all original test images
+For each class, the saved probability column ranks all test images
 within that region. Descending exact-score ties enter as whole groups. AP sums
 each group's recall increase times its cumulative precision, without interpolation.
 Scores are not rounded or pooled across regions. `K/N` is the all-tied prevalence

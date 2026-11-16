@@ -1,5 +1,4 @@
 {
-  "schema": "class-ranking-package-v1",
   "files": {
     "LICENSE": {
       "bytes": 1066,
@@ -10,8 +9,8 @@
       "sha256": "15311db94d4bd83a17665ff78d43294a52994941f55b9a88415568d13201ce2b"
     },
     "README.md": {
-      "bytes": 5638,
-      "sha256": "0a938c76d43699759828110f2726cdc99c39377d3100e8e1a38a17991157010c"
+      "bytes": 5602,
+      "sha256": "e2fa63c0bbc15491cad9f23b49e18cec4f2d3a364cde9af05381bf80b2297d5c"
     },
     "contract.json": {
       "bytes": 7295,
@@ -53,5 +52,6 @@
       "bytes": 4284,
       "sha256": "290e73f4743b88862d8dd0278bf441ecb44fc052dddd0ae370e56bacf3ef4162"
     }
-  }
+  },
+  "schema": "class-ranking-package-v1"
 }

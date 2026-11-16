@@ -1,16 +1,26 @@
 # Reproducing the CETUS paper
 
 This guide locates the software, data and verification records behind the full
-CETUS paper and its RPS workshop version. Run identifiers and data routes were
-transcribed from the manuscript at development revision
+CETUS paper, the CVPR manuscript and its supplement, and the RPS workshop version.
+Run identifiers and data routes were transcribed from the manuscript at development revision
 `5dedb5d762b40e7c331f1bffa597819691e59c96` and the existing experiment records.
-The fold-number and image-display notes below reflect later paper revisions;
-the earlier run identities remain unchanged. The dated November route below
-adds the completed follow-up studies without changing the historical results.
+The fold-number and image-display notes below describe the current manuscripts;
+the recorded run identities remain unchanged. The November package contains the
+completed fitting, coverage, initialization and epoch-selection studies.
 
 Use [SOFTWARE.md](SOFTWARE.md) for runnable installation and reconstruction
-commands. The [README](README.md) distinguishes the original and expanded Titan
-datasets. File names and method IDs below match the software and saved data.
+commands. The [README](README.md) distinguishes the spatial-block and
+longitude-sector Titan evaluations. File names and method IDs below match the
+software and saved data.
+
+The sealed longitude-package guides retain their export-date availability
+statements. The complete 23,380-image collection is available in the
+[processed-image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109),
+and [SOFTWARE.md](SOFTWARE.md) documents the native SGD and nearest-neighbor
+runner. Partial-training and substitution results are complete in their separate
+package below. These routes supersede the guides' pending-software, pending-image
+and queued-replay wording without changing their sealed bytes or acceptance
+identities. Image access does not establish a complete public training workflow.
 
 ## November 2026 follow-up
 
@@ -29,8 +39,8 @@ scientific producer.
 | Initialization | The completed 90-case study comprises thirty DINOv2 readouts, thirty ResNet18 tuning fits and thirty final fits. Thirty DINO feature jobs supplied the readout inputs. The companion reconstructs sixty native test records, 6,000 validation-history rows from sixty CNN fits, ten learning-rate choices and 180 coverage confusion matrices. |
 | Reassessment | Thirty evaluations of saved epoch-100 CNN states, validation-choice checks and thirty-seven SAR/map excerpts. The original validation-selected results remain primary; the epoch-100 comparison involved no retraining or reselection. |
 
-The 8 November records establish completion of the initialization and epoch-100
-studies. This public documentation update adds no scientific run or result.
+The initialization and epoch-100 studies are complete, as recorded on 8 November.
+This guide describes their saved results and adds no scientific run.
 Recipient commands reconstruct saved arithmetic on CPU with Python 3.12.3 and
 NumPy 2.4.4. Reports belong outside the extracted packages. They do not
 regenerate GPU probabilities, omitted per-epoch prediction vectors or optimizer
@@ -52,7 +62,7 @@ and model states, which are not included. The [current execution source](release
 provides the CNN, matched-DINO and CPU-fitting implementations with their
 [execution contracts](release/current-source-20261109/CONTRACTS.md). It does not
 supply the omitted scientific inputs or historical machine-bound plans. The
-earlier classifier runner remains a separate workflow.
+native SGD and nearest-neighbor runner remains a separate workflow.
 
 ## Terrain within each image
 
@@ -117,7 +127,7 @@ image decoding or training are involved.
 The [ranking displays](release/crater-retrieval-20261114/README.md) show all
 60 regional class contrasts on a common percentage-point scale. Each DINOv2
 point compares one pretrained state's AP with mean AP from five random states;
-each ResNet18 point averages three paired seed differences. The earlier
+each ResNet18 point averages three paired seed differences. The
 absolute Craters AP plot and its caption remain available there, with every
 state or seed shown separately. These displays preserve the different fitting
 methods and validation choices used in the two model comparisons.
@@ -210,11 +220,12 @@ training inputs are not supplied by the numerical companion.
 
 ## DOFA band input comparison
 
-The [DOFA companion](release/dofa-band-20261109/README.md) adds the completed
+The [DOFA companion](release/dofa-band-20261109/README.md) contains the completed
 13.78 versus 3.75 comparison on all five regions. It preserves ten sets of
 test predictions and probabilities and reconstructs their arithmetic on CPU.
-It is separate from the four earlier numerical packages and does not change
-the original Earth or partial-training results.
+It measures input sensitivity with encoder weights unchanged. The fifty-fit
+partial-training comparison below is a separate experiment; both preserve the
+Earth results and the three-encoder partial-training comparison.
 
 ## DOFA input during partial training
 
@@ -285,7 +296,7 @@ coincide. Map-component IDs and seed values are separate identifiers.
 
 ## Image examples in the paper
 
-The revised full paper and CVPR supplement show seventeen examples from the
+The full paper and CVPR supplement show seventeen examples from the
 original Earth, Titan and Venus collections. They were chosen from 134
 candidates using coverage, contrast and visual inspection. Earth examples
 have at least 99.9% valid pixels; Titan and Venus examples have complete
@@ -303,12 +314,20 @@ inside the result packages retain their original appearance and numbering.
 
 ## Choosing an experiment
 
-For the primary geographic evaluation, use the expanded catalog and its five
-longitude-sector splits. Its catalog has 23,380 tiles, with 23,246 distinct test
-tiles across the five folds. Keep the predictions and splits from the same
-package together. The original Earth transfer and Venus experiments instead
-use the earlier 11,371-tile Titan catalog and a different geographic design.
-Their conclusions and model initialization details remain separate.
+For the primary geographic evaluation, use the 23,380-tile catalog and its five
+longitude-sector partitions, with 23,246 distinct test tiles across the five
+folds. Keep the predictions and splits from the same
+package together. Earth transfer and the Venus distribution comparison use the
+11,371-tile Titan catalog with the western map-sampling omission. Earth transfer
+is evaluated on its spatial-block test folds. The Venus comparison pools all
+non-Selk Titan tiles and all Earth source tiles, separately from the foldwise
+transfer evaluation. Their conclusions and model initialization details remain
+separate.
+
+The native SGD classifier uses unstandardized encoder features. The common
+logistic-regression comparison standardizes features using training statistics
+and fits with LBFGS. Their scaling, optimization, regularization and training
+settings differ, so their score difference cannot isolate any one of those choices.
 
 A baseline is a comparison predictor, such as the most frequent training class
 or a linear classifier on existing encoder features. Equalizing class counts,
@@ -333,15 +352,14 @@ classical baselines. The historical small CNN results belong to the original
 catalog; they cannot be combined with the expanded-catalog table. Predicting
 the most frequent training class is a separate comparison that ignores images.
 
-The October 2 baseline follow-up plan proposed matching encoder architecture
-and inputs, repeating encoder initializations, and training a CNN on the
-current geographic splits. The [November release](release/titan-followup-20261109/README.md)
-provides the completed follow-up: official DINOv2 ViT-B/14 with five random
-states and one pretrained state under matched transforms and C=1 logistic
+The [initialization study](release/titan-followup-20261109/README.md) compares
+official DINOv2 ViT-B/14 with five random states and one pretrained state under
+matched transforms and C=1 logistic
 regression, and ResNet18 trained from random or ImageNet initialization with
 three seeds per arm. The CNN comparison retains its separate validation-based
-learning-rate choices. These studies do not alter the older `random_init`
-definition, the historical CNN, or any of the five earlier release packages.
+learning-rate choices. These studies do not alter the single-state `random_init`
+definition, the small CNN on the spatial-block partitions, or the scientific
+results in the September and October packages.
 
 ## Software versions for the geographic evaluation
 
@@ -375,8 +393,8 @@ The original v1 payload remains unchanged. The three longitude packages must ret
 | Accepted native fit audit | `c450220d725a` |
 | Selected-checkpoint replay audit | `398bf1284aa5` |
 | Adaptation analysis binding both audits and the frozen references | `58b2088cb794` |
-| SGD training-substitution audit covering 500 new heads | `e175092aa4ca` |
-| Common-logistic audit covering 100 new fits and saved-estimator replays | `5bf988d1d22d` |
+| SGD training-substitution audit covering 500 replacement heads | `e175092aa4ca` |
+| Common-logistic audit covering 100 replacement fits and saved-estimator replays | `5bf988d1d22d` |
 | Combined display summary retaining fold values, warnings, iteration-cap records and support counts | `0564a6a8a764` |
 | Completion of the separate public-source replay of original frozen SGD and nearest-neighbor calculations | `be3f8a8aeb55` |
 

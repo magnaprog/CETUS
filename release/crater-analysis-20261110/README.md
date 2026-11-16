@@ -68,10 +68,10 @@ an endpoint error rate is undefined when its endpoint count is zero. This
 endpoint concerns only that mode's eligible known cells and implies neither
 physical purity nor, for `all_four`, full-footprint coarse-map purity.
 
-`errors_with_predicted_class_present` is a count. A later error-conditioned rate
+`errors_with_predicted_class_present` is a count. An error-conditioned rate
 must use errors with `known_cells > 0` and separately retain empty-domain errors;
 the all-cohort `undefined_map_fraction` cannot be subtracted from all errors.
-No seed or fold aggregation is performed. A later aggregate should use equal-seed
+No seed or fold aggregation is performed. Any aggregate should use equal-seed
 means within model/fold/mode with a stated undefined-rate policy, or specify its
 alternative in advance. Map composition must be counted once per tile/mode when
 summarized across predictions. Repeated seeds and overlapping images do not

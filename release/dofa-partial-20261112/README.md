@@ -48,7 +48,11 @@ ten-fit comparison with unchanged encoder weights remain separate studies.
 This package does not regenerate probabilities, check argmax/ties, compute AP,
 verify epoch selection, fit models, reproduce training or replay checkpoints.
 It does not render manuscript tables or figures. Execution-source availability
-is separate; older source bundles are not the new study's scientific producer.
+is separate. The [partial-training source package](../dofa-partial-source-20261112/README.md)
+identifies this study's implementation and the inputs needed to prepare further
+runs. The [probabilities and histories companion](../dofa-scores-20261114/README.md)
+checks saved probabilities and epoch-selection scalars for the same fifty fits;
+it does not repeat training or checkpoint replay.
 
 Run the tiny synthetic tests with normal temporary-directory cleanup:
 

@@ -69,7 +69,7 @@ axis and linear recall axis; titles report positive-label count / test count.
 The archive contains 360 curves and 1,800 arrays. The accompanying projection
 preserves every accepted metric, curve index and array descriptor while omitting
 machine execution metadata and private input paths. It does not recompute AP.
-The 60 historical Craters curves and the original numerical companion remain
+The 60 Craters curves and the class-ranking numerical companion remain
 unchanged. Area in a log-count retrieval display is not AP.
 
 `display.json` records the data-to-artist mapping. `complete.json` is written
@@ -115,10 +115,10 @@ public payload. Geography PNGs use 120 dpi; Earth footprint sheets are
 
 ## Existing AP and regional displays
 
-The original `scripts.plot_class_contrasts`, `scripts.plot_class_ranking`,
+The `scripts.plot_class_contrasts`, `scripts.plot_class_ranking`,
 `scripts.plot_regional_errors` and `scripts.plot_crater_retrieval` interfaces
-remain available. They use the same unchanged inputs and expected figures as
-before. The standalone Craters command is an alternative to the corresponding
+remain available with their accepted inputs and expected figures.
+The standalone Craters command is an alternative to the corresponding
 all-class sheets and is unnecessary for the three-call recipe above.
 
 Regional AP differences and absolute AP answer different questions from curve

@@ -3,7 +3,7 @@
 This companion contains saved records for fifty DOFA fits:
 five geographic folds, five seeds and numeric inputs 13.78 and 3.75. It retains
 all six class-probability columns, ordered test IDs/labels, supplied predictions
-and fifty epochs of scalar history per fit. The earlier prediction-only
+and fifty epochs of scalar history per fit. The prediction-only
 companion remains a separate package.
 
 Use Python 3.11 or later on a POSIX system supporting `O_NOFOLLOW` and hard links.

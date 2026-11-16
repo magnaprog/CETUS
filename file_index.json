@@ -31,14 +31,14 @@
     "guide": "release/crater-retrieval-20261114/README.md",
     "input_guide": "release/class-ranking-20261111/README.md",
     "manifest": "release/crater-retrieval-20261114/manifest.json",
-    "plotting_source_commit": "f4bdcd6e18bfc15316876d25b894c446ca6a365b",
+    "plotting_source_commit": "50a8570e9553d113e1fb9999d4ddf984fdcabdde",
     "renderer_sha256": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3",
     "renderers": {
       "plot_class_contrasts.py": "08cc068fb0c8ccf4b69e62a627c3861d66add7920586f2c365ccfe5ba106e79c",
       "plot_class_ranking.py": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c",
       "plot_class_retrieval.py": "daa43a965da8b682d4b3d2664cf24fb604ea8242cb6e737f8bb49c7475208c61",
       "plot_crater_retrieval.py": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3",
-      "plot_dataset_geography.py": "fafb566b9256c481cbf3bdfc66f7997952533129c2c18b2a6f23fd0b216749e1",
+      "plot_dataset_geography.py": "7f87c7fedd4a5fa346e6cedb904cf39c7af3237af0ef8eb5d1c8998d80d71481",
       "plot_regional_errors.py": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
     },
     "scope": "Regional AP differences for all six classes, absolute Craters AP, retrieval curves for all six classes, regional SGD variation and map-mixture summaries, and Titan/Earth/Venus sampling displays. Saved predictions and accepted geographic records; no model execution."
@@ -120,36 +120,36 @@
       "sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf"
     },
     "CORRECTIONS.md": {
-      "bytes": 6078,
-      "sha256": "3d64183548f4f62f38007253f4dda8502a4474f91482380478bf1d9219687b00"
+      "bytes": 6091,
+      "sha256": "03a3072643cdd4d4e462cdc0a2e818733f70691bffe6c08d6b115a178c69cc29"
     },
     "DATA_LICENSES.md": {
       "bytes": 1886,
       "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
     },
     "FILES.md": {
-      "bytes": 10429,
-      "sha256": "8c030952fbf27f9f50392d2f0056e88e9f6fa56428ce459969ef75fb5ab321eb"
+      "bytes": 10999,
+      "sha256": "586bec5af783ca212a5aa2bebf8b562728b3125f606d7dfa8b5e7d7b615c236d"
     },
     "LICENSE": {
       "bytes": 1066,
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 31438,
-      "sha256": "ca78df287885d5d9534cb2e183d2ad17c1aea3b6e96c529218832265b2f54c95"
+      "bytes": 32586,
+      "sha256": "f5fbbf3b762f49995539b9693d90468047ff4a0f2c9ac4092431e192cc15dbc9"
     },
     "README.md": {
-      "bytes": 9509,
-      "sha256": "b44cea62ff1cde62d39c8344ea0e4935e9ca76ecbfaaa2f6bb5743da3a0b30da"
+      "bytes": 9917,
+      "sha256": "d41e6f681303d85af808d350081f54db65857542b00bbff00d70f85e74010e8d"
     },
     "SOFTWARE.md": {
-      "bytes": 23312,
-      "sha256": "6113ace9f9476d45730ebdc88d4f2ef9bde49593ad05960bd1ee9579012fc9b8"
+      "bytes": 23238,
+      "sha256": "0316b41d7ce615367e1887d3887287c761bb5e2c4c486ee59f2f010e95273358"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 22102,
-      "sha256": "d379537a6c8b8da3f4ee25c1024589c85f57ab3115515d3ac31469c8e89fa81c"
+      "bytes": 24119,
+      "sha256": "10bead8df14d49b31029bd3bd4870652e0af80606b4512d06f8ed5e007ce1fdf"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -188,12 +188,12 @@
       "sha256": "15311db94d4bd83a17665ff78d43294a52994941f55b9a88415568d13201ce2b"
     },
     "release/class-ranking-20261111/README.md": {
-      "bytes": 5638,
-      "sha256": "0a938c76d43699759828110f2726cdc99c39377d3100e8e1a38a17991157010c"
+      "bytes": 5602,
+      "sha256": "e2fa63c0bbc15491cad9f23b49e18cec4f2d3a364cde9af05381bf80b2297d5c"
     },
     "release/class-ranking-20261111/SHA256SUMS": {
       "bytes": 1182,
-      "sha256": "34bdec25f036ce9f692e60e7599614043761ae76931e0d89c44d8770d86a3e77"
+      "sha256": "66881f72c9655be70596fdae6c34fe4d41a90c74f2c8c5e002160c1f79eb9f35"
     },
     "release/class-ranking-20261111/contract.json": {
       "bytes": 7295,
@@ -205,7 +205,7 @@
     },
     "release/class-ranking-20261111/manifest.json": {
       "bytes": 1868,
-      "sha256": "3324a404d55fdf024e4799a0f10bf136d2b967e3853dd9309729a56a4ef1a770"
+      "sha256": "0a7723476afd3e7586b381090e7fb0b04d77360a26037e69ae12989d33f13c7a"
     },
     "release/class-ranking-20261111/provenance.json": {
       "bytes": 2238,
@@ -240,8 +240,8 @@
       "sha256": "290e73f4743b88862d8dd0278bf441ecb44fc052dddd0ae370e56bacf3ef4162"
     },
     "release/crater-analysis-20261110/README.md": {
-      "bytes": 5818,
-      "sha256": "2c49e978dd33f042b0a874387d4691a4a4d8bc4b3eeb524dc98069ab862ec990"
+      "bytes": 5809,
+      "sha256": "bed3c9413c751ea507a5ccfced6d7e79151e32d1f1c6058ba99b08ea303c8714"
     },
     "release/crater-analysis-20261110/analyze_crater_training.py": {
       "bytes": 16306,
@@ -264,12 +264,12 @@
       "sha256": "be9a42fb32ed8e330ff2e51c90f0c64d2477c48370e20f8f45b851eae44b6a88"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 10110,
-      "sha256": "8f4d0c4ea12ce20ba46485b394a39ce0ea5146fb735af262cf4df0431f1c9dbb"
+      "bytes": 10076,
+      "sha256": "28bdc810c1ffa37db4ff8ab379bf0eee85f026b7574dd63893d6c5ddce129321"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
       "bytes": 4047,
-      "sha256": "96e94cf644d984309f26755643754ad8998c03e22fa481a18f69f14fc1149428"
+      "sha256": "ab979230a949f0e4b313fac9ecb3fd7170bedd70ed794ab5a954b5c14e334d3a"
     },
     "release/crater-retrieval-20261114/data/class-curves.npz": {
       "bytes": 21401700,
@@ -296,8 +296,8 @@
       "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
     },
     "release/crater-retrieval-20261114/manifest.json": {
-      "bytes": 22396,
-      "sha256": "86b9244d3092e0f69711f60164953bca1bf8c288dee4a88a4e7f9bb99c130faa"
+      "bytes": 22343,
+      "sha256": "bddaa6e5c2de74fee060abbafd5931dff82fb67793f38e89a2ce2815346bc3c2"
     },
     "release/crater-retrieval-20261114/paper/fonts/nimbus-roman/COPYING": {
       "bytes": 34520,
@@ -388,8 +388,8 @@
       "sha256": "59f5a2b32f451cdc6cb2ff5a79d4d38f90b48b223445133dbb9a62ec5c4ab0f3"
     },
     "release/crater-retrieval-20261114/scripts/plot_dataset_geography.py": {
-      "bytes": 20457,
-      "sha256": "fafb566b9256c481cbf3bdfc66f7997952533129c2c18b2a6f23fd0b216749e1"
+      "bytes": 20422,
+      "sha256": "7f87c7fedd4a5fa346e6cedb904cf39c7af3237af0ef8eb5d1c8998d80d71481"
     },
     "release/crater-retrieval-20261114/scripts/plot_regional_errors.py": {
       "bytes": 15899,
@@ -692,20 +692,20 @@
       "sha256": "382f044b61eb91741dddc6858393e6a6c91051d894d5ce36d29ee7cc0f77188a"
     },
     "release/dofa-partial-20261112/README.md": {
-      "bytes": 3668,
-      "sha256": "76d3c9180595c20969e736902f59ee57f8398ea2259360b965b81cf3653fe435"
+      "bytes": 3978,
+      "sha256": "752c6a460fb3578739d993f2fcaceaeedc0a1f62d460cc291b0a8e640476b497"
     },
     "release/dofa-partial-20261112/SHA256SUMS": {
       "bytes": 717,
-      "sha256": "df3028b285edd7a3250aed8997020aebc7628c8833eaeb12270ddb2ac135b1f1"
+      "sha256": "58c0067ffdbce3247f4ce705e127f8c699b32e45dbb66e323786dab73074186a"
     },
     "release/dofa-partial-20261112/expected.json": {
       "bytes": 63907,
       "sha256": "d62c375129c2b03fe7e69a75ca13d784595456a9f3de9377df546379775277ea"
     },
     "release/dofa-partial-20261112/manifest.json": {
-      "bytes": 914,
-      "sha256": "2ae9f89be503e82cf0fc3ad445b50b65280b8b3f5c23f1cc1f394db4a809202d"
+      "bytes": 1142,
+      "sha256": "e2cf2520ead6ec398f86ee09e2469649f4effac9fac1da99b871dc38a48933b3"
     },
     "release/dofa-partial-20261112/provenance.json": {
       "bytes": 18741,
@@ -864,20 +864,20 @@
       "sha256": "68d2cc71f9dc732068944e328010e5f7572280d5e7fd3048e9c8dbbdc1e6768d"
     },
     "release/dofa-scores-20261114/README.md": {
-      "bytes": 3338,
-      "sha256": "ae026b8ece20d830f7f3fec585feb492e9fbff6d77b49cac12024c29e3b913c8"
+      "bytes": 3330,
+      "sha256": "5bf76fc3e686bf8d0736b6c8dfb077e31a80bed7838b423e5c3dc116c72f6958"
     },
     "release/dofa-scores-20261114/SHA256SUMS": {
       "bytes": 717,
-      "sha256": "d2b3b39ed28ed4fb8950b9c1c9af012a061494c9156fb65cc1b6032b2387545a"
+      "sha256": "33e1ee5f29780b22687c1ada250948e62551f1bdf5448bffce96c2b3a929e1b8"
     },
     "release/dofa-scores-20261114/expected.json": {
       "bytes": 81345,
       "sha256": "3538b968d7adf61d7cb72b6de80d4db7f962d69b2a17d37b39303c0abbceb01c"
     },
     "release/dofa-scores-20261114/manifest.json": {
-      "bytes": 922,
-      "sha256": "0a4ce075b4c1181397747c6ccab06abbc99fb48044abfb286b624ffd63d636c8"
+      "bytes": 1151,
+      "sha256": "d34774c385ad79c412234dcb9f949e673ea57c6aa92fc96f2fa888d241f0b505"
     },
     "release/dofa-scores-20261114/provenance.json": {
       "bytes": 19107,
@@ -896,12 +896,12 @@
       "sha256": "7e5fdcd20769ca32de8926770fa16164b042249ebd4a2011c0eb9d904432033b"
     },
     "release/interpretation-20261001/README.md": {
-      "bytes": 10710,
-      "sha256": "354a84d941f337003e0b6679f7ff26fd44371a5fa8a0f9d1562e7e923d46fa4a"
+      "bytes": 10964,
+      "sha256": "9fdb15969c73f87424358d3f85758e651ddd5c853a6d2573fc3d832f67be0170"
     },
     "release/interpretation-20261001/SHA256SUMS": {
       "bytes": 4564,
-      "sha256": "a4eab0a2d502b0815c96581ea9c890103df5f413dd3500fab2e17d19fb7fed4b"
+      "sha256": "80767d813653ffd56d715b9d557c1aee53397f5aac881b79a6981be5f6d598d4"
     },
     "release/interpretation-20261001/class-changes/class_changes.csv": {
       "bytes": 21093,
@@ -1016,8 +1016,8 @@
       "sha256": "7e1abf881fdba3ae894b32ba4510199a61ef0ef37854b699d8e261f7592f1af7"
     },
     "release/interpretation-20261001/file_index.json": {
-      "bytes": 5749,
-      "sha256": "46482c8481266f6852439d5e2e25133d61d50414d75056cb21611d4cf0c33e3e"
+      "bytes": 6976,
+      "sha256": "24f3192c82c10fbb90138a3f890ccbb5b06331aa529d0150cb2413fc464dad16"
     },
     "release/interpretation-20261001/interpretation/analysis.json": {
       "bytes": 235856,
@@ -1608,24 +1608,24 @@
       "sha256": "222a8619793d351e23dcac83596234c5fdc58401973bbbce27fc342d7887cae5"
     },
     "release/titan-followup-20261109/DATA_ACCESS.md": {
-      "bytes": 13327,
-      "sha256": "23138f72bc5ac16553771337d7803bf62716f1c3e54daf23767f2f10c2ab233d"
+      "bytes": 13367,
+      "sha256": "8685c12dc16293569788e756e65cc9034596f6b5e87c984c489bee5c74bdbd0d"
     },
     "release/titan-followup-20261109/NOTICE.md": {
       "bytes": 2304,
       "sha256": "0d07fca59430dc0aae4fedde74f538cecd5a5eba9a342455d32b1f71289cd8b5"
     },
     "release/titan-followup-20261109/README.md": {
-      "bytes": 10333,
-      "sha256": "6d0acc7aef2b0093eb3fdd54d469f2ab29af612b2451d2287a4341ec21e411c5"
+      "bytes": 10413,
+      "sha256": "de7f7b39f978af5a75f5a590b3f10b317d09a5973b878845137bce3a28462e3f"
     },
     "release/titan-followup-20261109/SHA256SUMS": {
       "bytes": 769,
-      "sha256": "8e4df07a7851cdc450ed782a2fd6292bb9bb59e6001778a2b9d52f6d50f05edf"
+      "sha256": "693438cff26d70a074014e6dcbba4be922ea6b85e4a74851315e97b26207b705"
     },
     "release/titan-followup-20261109/file_index.json": {
       "bytes": 1476,
-      "sha256": "51c680f83bbc0397dd8425e6670ba5ae4f4d6d51b6c3635d70c9237eff12e111"
+      "sha256": "a57f7cd229c2123206c1e39d561f7ac9417e70a9e107c10dde54aa3993b55a5f"
     },
     "release/titan-followup-20261109/followup-supplement.zip": {
       "bytes": 4385713,
@@ -1904,8 +1904,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "bytes": 32251,
-      "sha256": "c869753291925ebc663aa09b453b5ebff47cb55fba91256bd96635af43668d91"
+      "bytes": 32242,
+      "sha256": "b32fdcfe44928b41f185d1a1770d2983506525a826bdf9a85b33362b157f723d"
     },
     "splits/earth_loso_arctic_thermokarst.json": {
       "bytes": 17905,
@@ -2012,8 +2012,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "titansar/configs/defaults.py": {
-      "bytes": 5352,
-      "sha256": "58bac3774ac65380d32cadcbce28848605bd24719522ca8fb2a5c38a8efd0f02"
+      "bytes": 5431,
+      "sha256": "16ab81187767587bc970a15cdce85fa7c89e2d7b9deed63f3e225c500ed1a8d1"
     },
     "titansar/data/__init__.py": {
       "bytes": 48,
