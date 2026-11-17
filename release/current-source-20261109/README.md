@@ -53,6 +53,12 @@ replace. The five historical split files retain the exact generic
 download route. The original guide bytes remain identified by their upstream
 commit and `source_sha256` in SOURCE_EXPORT.json.
 
+In the retained model guide, the global class-weight denominator describes the
+logged epoch loss. The initialization study's optimization steps use each
+batch's own label-weight sum. The later loss-normalization comparison has
+separate [source](../loss-source-20261110/README.md) and [saved
+results](../loss-normalization-20261110/README.md).
+
 ## Source and environment identity
 
 The original 90-cell scientific producer is

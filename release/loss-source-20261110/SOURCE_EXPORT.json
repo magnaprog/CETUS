@@ -12,6 +12,21 @@
     "unchanged_development_test_helper_files": 4,
     "unchanged_study_protocol": 1
   },
+  "documentation_updates": [
+    {
+      "changed_files": [
+        {
+          "current_sha256": "4b6f8ed48626c2fc1d17507c222f4717134cbfe3aef051bcb748f18a08ac2241",
+          "path": "README.md",
+          "previous_sha256": "53771c0fa5dcf4b88aef03764e94de0769b48f46101aad5c37e57d056b7f0704"
+        }
+      ],
+      "date": "2026-11-16",
+      "previous_SOURCE_EXPORT_sha256": "be63276e7de31b88017c07d845875d43cb5dd75949789a57f1fb6017f01c977d",
+      "scientific_source_and_results_unchanged": true,
+      "scope": "Link the completed numerical comparison from its source wrapper."
+    }
+  ],
   "entrypoint": "scripts.run_model_followup",
   "exported_from": {
     "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
@@ -52,12 +67,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 2995,
+      "bytes": 3287,
       "origin": {
         "byte_identical": false,
         "role": "new package documentation or dependency metadata"
       },
-      "sha256": "53771c0fa5dcf4b88aef03764e94de0769b48f46101aad5c37e57d056b7f0704"
+      "sha256": "4b6f8ed48626c2fc1d17507c222f4717134cbfe3aef051bcb748f18a08ac2241"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,

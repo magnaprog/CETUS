@@ -10,6 +10,12 @@ environment and executable contract described in [CONTRACTS.md](CONTRACTS.md).
 Those prerequisites are not bundled here; the supplied contract view is
 documentation only.
 
+The fifty-fit comparison is complete. The [prediction
+companion](../dofa-partial-20261112/README.md) reconstructs its metrics, and
+the [probability and history companion](../dofa-scores-20261114/README.md)
+checks saved scores and selection scalars. The study guide below retains the
+recipe recorded before execution.
+
 - [Study recipe](docs/DOFA_PARTIAL_BAND_PLAN.md) and [band interpretation](docs/DOFA_INPUT_REVIEW.md)
 - [Source origins and hashes](SOURCE_EXPORT.json) and [historical file inventory](contracts/historical-source-inventory.json)
 - [Documentation contract view](contracts/candidate02.public.json)

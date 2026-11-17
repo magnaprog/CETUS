@@ -5,35 +5,27 @@ SAR images of Titan. This repository provides catalogs, geographic splits, saved
 predictions and software for measuring agreement with an expert terrain map.
 
 Start with the [paper reproduction guide](PAPER_REPRODUCTION.md) to choose an
-experiment. The [November saved-results
-package](release/titan-followup-20261109/README.md) adds the fitting, coverage,
-initialization and epoch-selection analyses. Its four preserved archives include
-CPU reconstruction code. The [current execution source](release/current-source-20261109/README.md)
-contains the CNN, matched-DINO and CPU-fitting implementations.
-The [loss normalization source](release/loss-source-20261110/README.md)
-adds the ResNet18 denominator comparison and its focused CPU checks.
-The [loss comparison companion](release/loss-normalization-20261110/README.md)
-supplies the fifteen additional runs and standard-library CPU reconstruction,
-reusing the original initialization archive.
-The [class-ranking companion](release/class-ranking-20261111/README.md)
-uses the saved initialization predictions to calculate average precision for
-each terrain class and retain every Craters precision–recall curve.
-The [ranking displays](release/crater-retrieval-20261114/README.md) compare
+experiment and the package table below to find its inputs and commands. The
+[November saved-results package](release/titan-followup-20261109/README.md)
+provides four preserved archives with CPU reconstruction for fitting, coverage,
+initialization and epoch-selection analyses. Later companions cover loss
+normalization, class ranking and retrieval, the two DOFA input comparisons, and
+regional and geographic displays. Both DOFA comparisons use numeric inputs
+13.78 and 3.75.
+
+The [display companion](release/crater-retrieval-20261114/README.md) shows
 regional AP changes and recall against retrieved tile count for all six terrain
-classes, while retaining absolute Craters AP.
-The same companion reproduces the regional SGD display, with individual
-classifier seeds and the comparison of error rates across map mixtures.
-It also plots the Titan test locations, Earth collection sites and nominal image
-windows, and the unlabeled Venus sample centers.
-The [DOFA partial-training companion](release/dofa-partial-20261112/README.md)
-reconstructs metrics from fifty saved prediction vectors comparing numeric
-inputs 13.78 and 3.75.
-The [probabilities and histories](release/dofa-scores-20261114/README.md)
-retain all six probability columns and fifty epochs from the same fits.
-Its [source package](release/dofa-partial-source-20261112/README.md) documents
-the training implementation and inputs for preparing new runs.
-[SOFTWARE.md](SOFTWARE.md) describes the native SGD and nearest-neighbor runner
-with encoder weights unchanged.
+classes, while retaining absolute Craters AP. It also shows individual SGD
+classifier seeds, error rates across map mixtures, Titan test locations, Earth
+collection sites and nominal image windows, and unlabeled Venus sample centers.
+
+For implementation details, use the [current execution
+source](release/current-source-20261109/README.md) for CNN, matched-DINO and
+CPU fitting, the [loss-normalization
+source](release/loss-source-20261110/README.md), or the [DOFA partial-training
+source](release/dofa-partial-source-20261112/README.md). Each states its input
+and environment requirements. [SOFTWARE.md](SOFTWARE.md) describes the native
+SGD and nearest-neighbor runner with encoder weights unchanged.
 
 The complete current collection of 23,380 processed Titan images is available
 in the [image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109).
@@ -59,7 +51,7 @@ omitted embeddings, model states and historical Earth/Venus images.
 | [DOFA numeric input comparison](release/dofa-band-20261109/README.md) | Five-region comparison of inputs 13.78 and 3.75, with ten prediction records and CPU reconstruction code. |
 | [Longitude-sector Titan evaluation](release/longitude-review-20260929/README.md) | 23,380 catalog images, including 140 Craters tiles, and five longitude-sector partitions; DINOv2, DOFA, CROMA and untrained-ViT results with encoder weights unchanged. The test union contains 23,246 images. |
 | [Standardized logistic-regression results](release/longitude-auxiliary-20260929/README.md) | Common LBFGS fitting, classical image features and 70 prediction vectors, with separate VIMS display metadata. |
-| [Encoder training and training-image replacements](release/longitude-adaptation-controls-20260930/README.md) | Predictions and histories from 75 partial-training fits, training-substitution controls, and CPU reconstruction code. |
+| [Encoder training and training-image replacements](release/longitude-adaptation-controls-20260930/README.md) | Predictions and histories from 75 partial-training fits, training-substitution controls, and CPU reconstruction code. [Reconstruction instructions and acceptance digest](SOFTWARE.md#reconstruct-adaptation-and-training-substitution-results). |
 | [Interpretation analyses](release/interpretation-20261001/README.md) | Class differences, regional weighting, distances to reinstated training images, map-component counts and examples from accepted results. |
 | [Spatial-block evaluation snapshot](release/v1-review-20260908/README.md) and root `catalogs/`, `splits/`, `results/` | 11,371 Titan images with the western map-sampling omission, 398 Earth images and 2,945 unlabeled Venus images. Original bytes and links are preserved. |
 

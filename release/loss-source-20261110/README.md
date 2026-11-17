@@ -8,6 +8,12 @@ training population. Both retain the original float32 class weights. The
 [study protocol](docs/LOSS_NORMALIZATION_COMPARISON.md) defines rounding, paired
 settings and validation-based checkpoint selection.
 
+The completed comparison's fifteen additional fits and their saved-result
+reconstruction are in the [numerical
+companion](../loss-normalization-20261110/README.md). Use that companion for
+results and this package for implementation details, including the protocol
+recorded before execution.
+
 Run from this package root in a separate environment, so `titansar`, `scripts`
 and `tests` resolve here. Use Python 3.12.3 and compatible Torch/torchvision builds;
 [requirements.txt](requirements.txt) records the local dependency versions used

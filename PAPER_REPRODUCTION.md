@@ -151,11 +151,14 @@ independent geological objects.
 The same companion plots all 23,246 Titan test centers, the thirteen Earth
 collection sites and 398 original image windows, and the 2,945 unlabeled Venus
 centers.
-Titan colors identify modal map labels. Earth windows use the stated angular
-extent around their centers; they do not establish terrain purity or valid SAR
-coverage throughout each window. Venus symbols distinguish complete and partial
-image coverage. None of these sampling displays measures independent geological
-objects or mapped surface area.
+Titan colors identify modal map labels. Earth windows use the retained
+source-window polygons and their geometric centers. These describe nominal
+sampling geometry; terrain purity and valid SAR coverage throughout a window
+require separate evidence. Local Earth axes are scaled independently in
+longitude and latitude, so displayed shapes and areas are not metric
+comparisons. Venus symbols distinguish complete and partial image coverage. The
+displays describe sampled images, not independent geological objects or mapped
+surface area.
 
 The compact coordinate payload supports both paper styles without access to
 mission archives. Its source and population descriptions accompany the plotting

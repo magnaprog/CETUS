@@ -136,12 +136,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 32637,
-      "sha256": "fb6ce0560acaa5c9381ad57a9c5b35c60208f017c6b71004bee6e8a51dacf18b"
+      "bytes": 32826,
+      "sha256": "42a44c5554d54b3e1eb130116902786c802b2c0325ba0cb9e2863153d57a0115"
     },
     "README.md": {
-      "bytes": 9919,
-      "sha256": "554d02698caef495f0663fd41b34e1cbdf14ebbe891818f7ab873e39746e366c"
+      "bytes": 9399,
+      "sha256": "61583a262ec0dd7f9be13ab8e6c1f541aec243bbcbec8b3de370a2a40f32582f"
     },
     "SOFTWARE.md": {
       "bytes": 23238,
@@ -452,16 +452,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/current-source-20261109/README.md": {
-      "bytes": 8575,
-      "sha256": "6cbeb2604671a3db76a8546460ba3c439e0878c7e94e378c04028c387390f60c"
+      "bytes": 8919,
+      "sha256": "5ba1881524d1a30f3afe055094e32704af297173c3e3f39e11b72c32cd543991"
     },
     "release/current-source-20261109/SHA256SUMS": {
       "bytes": 5764,
-      "sha256": "d55ec7c24e409ba9bd4249e471924b8dda33883485079c183a9474d1a12f688e"
+      "sha256": "6d9f55c2ecc54509daf2deaeb43cb0916e6442d1837818e9c53212516f6b9bf6"
     },
     "release/current-source-20261109/SOURCE_EXPORT.json": {
-      "bytes": 55736,
-      "sha256": "d1eb6b4031e96a454218be62ee5d1233daa6847b2af9c22f1170aaf940123bc2"
+      "bytes": 56314,
+      "sha256": "bcd2db2bc7dc57fcaa6f752e5bf98eb306b50689fb0f86bc9951e84e6e030af4"
     },
     "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -501,7 +501,7 @@
     },
     "release/current-source-20261109/file_index.json": {
       "bytes": 8994,
-      "sha256": "133810dcfba76705762b72242c104e41aa22f2615eea35d23c729a3b1c2f5ffd"
+      "sha256": "4d95e48b9673d07ed9cca04e64a2f593378c1f875428626312f622a4836cfd7d"
     },
     "release/current-source-20261109/licenses/CROMA-LICENSE": {
       "bytes": 1071,
@@ -748,16 +748,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/dofa-partial-source-20261112/README.md": {
-      "bytes": 1284,
-      "sha256": "5bb6a3c7dbf3d1d55e2fb0e8db89d82a101900401fbe10af23dff75014341242"
+      "bytes": 1602,
+      "sha256": "51d647d0d2d5e334ea1c2963f858a9f9ff57e704a49ebdac635c34d73e443b78"
     },
     "release/dofa-partial-source-20261112/SHA256SUMS": {
       "bytes": 3243,
-      "sha256": "a810d7c688e8799aca107cf766b935ecb2fe86592249f3718a26a90c7bba9d7f"
+      "sha256": "7ce059bf2847fddcfe043161fe48d3e156685ff0705653de79e30c20ceb83875"
     },
     "release/dofa-partial-source-20261112/SOURCE_EXPORT.json": {
-      "bytes": 26759,
-      "sha256": "ccf4c904ea6a735811b4ff992c4a2cc272f1c2860200de467b54562a1cbdebc2"
+      "bytes": 27371,
+      "sha256": "93626116431e2c1626df8cfe96e293af98d5f5d8d1b7f2dd53a445882a12d631"
     },
     "release/dofa-partial-source-20261112/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -781,7 +781,7 @@
     },
     "release/dofa-partial-source-20261112/file_index.json": {
       "bytes": 4900,
-      "sha256": "606d2d5837b4234470c03e2c64926a26646c607a8e6077bff9c5d937856f1b99"
+      "sha256": "12f0bf79f22dfa7a0373603bbf650821a010eb973f759f31e27eb725ecfedcf4"
     },
     "release/dofa-partial-source-20261112/historical-ed2eb3e/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json": {
       "bytes": 15795,
@@ -1468,16 +1468,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/loss-source-20261110/README.md": {
-      "bytes": 2995,
-      "sha256": "53771c0fa5dcf4b88aef03764e94de0769b48f46101aad5c37e57d056b7f0704"
+      "bytes": 3287,
+      "sha256": "4b6f8ed48626c2fc1d17507c222f4717134cbfe3aef051bcb748f18a08ac2241"
     },
     "release/loss-source-20261110/SHA256SUMS": {
       "bytes": 3013,
-      "sha256": "502912361a7bf7ce65c861902dfcd285fc116a3e19e37121b37e36d74a94e8ad"
+      "sha256": "cd95ee978bef7b929aac5c303f9f0068c0c0bd7bcbd989366ff049ee284de4ba"
     },
     "release/loss-source-20261110/SOURCE_EXPORT.json": {
-      "bytes": 18431,
-      "sha256": "be63276e7de31b88017c07d845875d43cb5dd75949789a57f1fb6017f01c977d"
+      "bytes": 19026,
+      "sha256": "9811de6b159637580442a49cc80836043ff618a1b4cb5913df3036a6ab4328e0"
     },
     "release/loss-source-20261110/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -1489,7 +1489,7 @@
     },
     "release/loss-source-20261110/file_index.json": {
       "bytes": 4730,
-      "sha256": "4bf6470dc25dfc5319de5ae95759a11e12e8483d4932dfaed112608ee47960d3"
+      "sha256": "295927bb602993b3456c9af255da803e6fb42a17e9f110f998fe6b03204e28bb"
     },
     "release/loss-source-20261110/licenses/CROMA-LICENSE": {
       "bytes": 1071,
