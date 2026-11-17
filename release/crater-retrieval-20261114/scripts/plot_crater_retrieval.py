@@ -254,7 +254,7 @@ def draw_figure(curves, variant, *, class_name="Craters", dense=False):
     figure.supylabel(f"Recall of {class_name} map labels (%)", x=.015, y=.45)
     figure.supxlabel("Retrieved test tiles (log scale)", x=.545, y=.02)
     legends = []
-    for col, (kind, title) in enumerate((("dino_c1", "DINOv2 + logistic regression"),
+    for col, (kind, title) in enumerate((("dino_c1", "DINOv2 with logistic regression"),
                                         ("final", "ResNet18 full training"))):
         center = (axes[0, col].get_position().x0 + axes[0, col].get_position().x1) / 2
         figure.text(center, .977, title, ha="center", va="top")

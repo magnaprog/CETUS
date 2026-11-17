@@ -30,7 +30,7 @@ from scripts.plot_class_ranking import CLASSES, at, digest, mapped, read_report,
 
 ROOT = Path(__file__).resolve().parents[1]
 PANELS = (
-    ("dino_c1", "DINOv2 features with LR\nPretrained − random",
+    ("dino_c1", "DINOv2 features with logistic regression\nPretrained − random",
      "AP from one pretrained state minus the mean AP of five random states (42–46); logistic regression."),
     ("final", "ResNet18 full training\nImageNet − scratch",
      "Mean of three seed-paired differences (0–2); respective validation-selected training procedures."),
