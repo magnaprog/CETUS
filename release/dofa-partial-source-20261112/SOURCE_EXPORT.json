@@ -32,6 +32,21 @@
     "prior_source_manifest_sha256": "626ab86c77de92b11c11ad08c7f7c56466f43c5fac4eef2ef90b83cf8dfcc1a3",
     "scope": "README.md and CONTRACTS.md prose revision; all code, guides, contract views and notices unchanged."
   },
+  "documentation_updates": [
+    {
+      "changed_files": [
+        {
+          "current_sha256": "51d647d0d2d5e334ea1c2963f858a9f9ff57e704a49ebdac635c34d73e443b78",
+          "path": "README.md",
+          "previous_sha256": "5bb6a3c7dbf3d1d55e2fb0e8db89d82a101900401fbe10af23dff75014341242"
+        }
+      ],
+      "date": "2026-11-16",
+      "previous_SOURCE_EXPORT_sha256": "ccf4c904ea6a735811b4ff992c4a2cc272f1c2860200de467b54562a1cbdebc2",
+      "scientific_source_and_results_unchanged": true,
+      "scope": "Link the completed prediction and probability companions from the source wrapper."
+    }
+  ],
   "exported_from": {
     "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
     "repository": "magnaprog/TitanSAR-dev",
@@ -73,12 +88,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 1284,
+      "bytes": 1602,
       "origin": {
         "byte_identical": false,
         "role": "generated source-inspection metadata or packaging initializer"
       },
-      "sha256": "5bb6a3c7dbf3d1d55e2fb0e8db89d82a101900401fbe10af23dff75014341242"
+      "sha256": "51d647d0d2d5e334ea1c2963f858a9f9ff57e704a49ebdac635c34d73e443b78"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
