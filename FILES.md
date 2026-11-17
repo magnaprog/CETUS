@@ -21,9 +21,11 @@ resampled values, describing variation across those samples.
 
 ## Catalogs
 
-Every sample is 128 by 128 pixels covering 45 km by 45 km. Each catalog
-row keeps a tile ID, the SHA-256 of the tile file, coordinates, a label,
-and summary statistics of the pixel values. Local paths were removed.
+Every sample is 128 by 128 pixels over a nominal 45 km by 45 km projected
+window. Equal grid dimensions do not establish equal physical area or effective
+resolution across the source products. Each catalog row keeps a tile ID, the
+SHA-256 of the tile file, coordinates, a label, and summary statistics of the
+pixel values. Local paths were removed.
 
 - `catalogs/titan_catalog.json`: 11,371 labeled Titan tiles from the
   USGS Cassini HiSAR global mosaic, which stores 8-bit display digital numbers

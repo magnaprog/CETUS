@@ -1,7 +1,7 @@
 # CETUS
 
-CETUS studies how representations learned from Earth images transfer to Cassini
-SAR images of Titan. This repository provides catalogs, geographic splits, saved
+CETUS evaluates visual representations pretrained on natural images and Earth
+observations for terrain classification in Cassini SAR images of Titan. This repository provides catalogs, geographic splits, saved
 predictions and software for measuring agreement with an expert terrain map.
 
 Start with the [paper reproduction guide](PAPER_REPRODUCTION.md) to choose an
