@@ -17,8 +17,8 @@ and learning rate 0.0001. `loss_comparison` has exactly three keys:
 
 The historical A producer is `1f3fc8fe0e831777e3188d70caf2c5450b656333`.
 The loss-study producer is `11033ff9f6fb21db81b3cc91b18bff4f9a58d02b`.
-A future public packaging commit and a synthetic-test fixture commit have separate
-roles and do not replace either producer. New scientific execution must bind the
+Public packaging and synthetic-test fixture commits have separate roles and
+do not replace either producer. New scientific execution must bind the
 actual clean Git revision and all twelve runtime `SOURCE_FILES` entries. The
 package manifest additionally covers the complete source/test/notice payload.
 A Git-less extraction does not satisfy the execution guard.
@@ -66,7 +66,9 @@ module or run the full tests directory here. No split fixtures or scientific ZIP
 are included. Use a disposable local Git fixture, keep its reports outside the
 copy, and make the pytest basetemp a descendant of the same TMPDIR.
 
-This package has no numerical companion, accepted B results, model weights,
-mission files, image arrays, launch plans or scientific inference records. Public
-saved-result reconstruction and scientific acceptance are separate work. The
-dated protocol retains prospective wording; copying it does not certify a run.
+This source package omits accepted B results, model weights, mission files,
+image arrays, launch plans and scientific inference records. The completed
+comparison's [numerical companion](../loss-normalization-20261110/README.md) is
+distributed separately. Public saved-result reconstruction and scientific
+acceptance are separate work. The dated protocol retains prospective wording;
+copying it does not certify a run.

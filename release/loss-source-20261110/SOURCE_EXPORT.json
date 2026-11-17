@@ -25,6 +25,19 @@
       "previous_SOURCE_EXPORT_sha256": "be63276e7de31b88017c07d845875d43cb5dd75949789a57f1fb6017f01c977d",
       "scientific_source_and_results_unchanged": true,
       "scope": "Link the completed numerical comparison from its source wrapper."
+    },
+    {
+      "changed_files": [
+        {
+          "current_sha256": "370703e5fa9ffd9b006cc049c4ff8f72549f9469d03eb1621900db895b6bc786",
+          "path": "CONTRACTS.md",
+          "previous_sha256": "e6ac5e2e16a39636f50030cb1d4ba456cecb533b110bbcdfbfd071c95669899a"
+        }
+      ],
+      "date": "2026-11-17",
+      "previous_SOURCE_EXPORT_sha256": "9811de6b159637580442a49cc80836043ff618a1b4cb5913df3036a6ab4328e0",
+      "scientific_source_and_results_unchanged": true,
+      "scope": "Clarify that the completed numerical companion is distributed separately and distinguish packaging commits from scientific producers."
     }
   ],
   "entrypoint": "scripts.run_model_followup",
@@ -35,12 +48,12 @@
   },
   "files": {
     "CONTRACTS.md": {
-      "bytes": 4519,
+      "bytes": 4606,
       "origin": {
         "byte_identical": false,
         "role": "new package documentation or dependency metadata"
       },
-      "sha256": "e6ac5e2e16a39636f50030cb1d4ba456cecb533b110bbcdfbfd071c95669899a"
+      "sha256": "370703e5fa9ffd9b006cc049c4ff8f72549f9469d03eb1621900db895b6bc786"
     },
     "DATA_LICENSES.md": {
       "bytes": 1886,

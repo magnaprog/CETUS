@@ -136,7 +136,8 @@ d6511e2ffb01cd6fc5f5e78b68f4d9ae7fe7ecf6176fb67aea4f0e756359ab96  map_cells.npz
 The raw NPZ is 2,279,451 bytes (2.28 MB compressed). Its decoded arrays occupy
 about 150 MB, and checking needs additional working memory. The original census
 sampled a raster made from the Lopes et al. map, using accepted rounded catalog
-centers, the Titan sphere, 45 km square image areas and nearest-neighbor sampling.
+centers, the Titan sphere, nominal 45 km by 45 km sampling windows and
+nearest-neighbor sampling.
 The SAR-to-map correspondence is the existing nominal 2 × 2 convention.
 Sampling spacing and mask agreement do not measure physical registration.
 

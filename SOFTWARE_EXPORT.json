@@ -215,6 +215,15 @@
       "previous_manifest_sha256": "d379537a6c8b8da3f4ee25c1024589c85f57ab3115515d3ac31469c8e89fa81c",
       "previous_sha256": "58bac3774ac65380d32cadcbce28848605bd24719522ca8fb2a5c38a8efd0f02",
       "reason": "Describe experiment populations and execution scope directly. Original producer and source_sha256 identities remain unchanged; Python executable tokens are unchanged."
+    },
+    {
+      "date": "2026-11-17",
+      "new_sha256": "c9b8730a70ef79afd78ca2b3218eaf3fb625deaad9d9e96becf487b5e26d1827",
+      "path": "CITATION.cff",
+      "previous_cetus_commit": "c213e5676b3ed68c6174ff3afaf3fc55a8a7d841",
+      "previous_manifest_sha256": "10bead8df14d49b31029bd3bd4870652e0af80606b4512d06f8ed5e007ce1fdf",
+      "previous_sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf",
+      "reason": "Update the current software citation to the author-approved project title while preserving the software citation type, author metadata, historical records and original scientific source identities."
     }
   ],
   "excluded": [
@@ -236,7 +245,7 @@
     },
     "CITATION.cff": {
       "origin": "generated",
-      "sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf"
+      "sha256": "c9b8730a70ef79afd78ca2b3218eaf3fb625deaad9d9e96becf487b5e26d1827"
     },
     "LICENSE": {
       "origin": "verbatim committed blob",
