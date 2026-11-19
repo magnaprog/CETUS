@@ -213,7 +213,7 @@ def compute_group_resampling_mmd(
     mode: str = "target_bootstrap",
     **kwargs,
 ) -> dict:
-    """Estimate MMD sensitivity to target spatial bootstrap or source jackknife.
+    """Summarize squared MMD under target spatial bootstrap or source jackknife.
 
     ``ci95`` holds the empirical 2.5/97.5 percent quantiles over the resampled
     (or jackknifed) values; it is a resampling spread, not a parametric

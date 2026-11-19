@@ -1,6 +1,6 @@
 # CETUS
 
-How far can visual representations learned from natural images and Earth observations transfer to Cassini SAR images of Titan? CETUS compares pretrained encoders, random initializations and classical image measurements by asking how well classifiers predict terrain classes in the geomorphological map of Lopes et al. The map draws partly on the same radar observations, so the scores measure agreement with expert interpretation. Classifier fitting, geographic variation and individual terrain classes matter when interpreting an overall score.
+How far can visual representations learned from natural images and Earth observations transfer to Cassini SAR images of Titan? CETUS compares pretrained encoders, random initializations and classical image measurements by asking how well classifiers predict terrain classes in the geomorphological map of Lopes et al. The map draws partly on the same radar observations, so the scores measure agreement with expert interpretation. Read regional and class scores with the overall mean, and compare encoders under the stated classifier-fitting procedure.
 
 This repository supplies catalogs, geographic divisions, saved predictions and software. Choose a task before choosing a package:
 

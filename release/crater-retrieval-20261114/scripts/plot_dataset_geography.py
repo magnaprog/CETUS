@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 from matplotlib import font_manager
 from matplotlib import patheffects
-from matplotlib.collections import LineCollection
+from matplotlib.collections import LineCollection, PathCollection
 from matplotlib.colors import to_rgba
 from matplotlib.lines import Line2D
 from matplotlib.text import Text
@@ -34,6 +34,12 @@ from scripts import dataset_geography_payload as data
 
 STEMS = ("titan-class-locations", "earth-site-locator", "earth-site-footprints", "venus-sample-centers")
 ROLE_STYLE = {"train": ("#0077BB", "-"), "val": ("#EE7733", "--")}
+ROLE_LABELS = {"train": "Training", "val": "Validation"}
+TITAN_CONTEXT_KIND = "titan-test-centers"
+TITAN_CONTEXT_NOTE = ("Gray: all 23,246 test-image centers; color: the named class.\n"
+                      "Lines mark the five longitude sectors. Centers do not show continuous SAR coverage.")
+EARTH_FOOTPRINT_NOTE = ("Horizontal: longitude; vertical: latitude (degrees). Each panel has its own scale.\n"
+                        "398 nominal image windows; shape and area are distorted. Terrain classes remain unverified.")
 CONTEXT_DIR = Path(__file__).resolve().parents[1] / "paper/figure_data/geography"
 COASTLINE_SHA256 = "42486ec096e813b675dd1fb9f7ef79de42f9a31600dea50f8550de3fca72eeaa"
 COASTLINE_PROVENANCE_SHA256 = "b699a720b64c7b836179ad6555f8b743d27c0a6b27180b2379356ce55f536fc1"
@@ -77,8 +83,59 @@ def coastline_context():
     return geometry, provenance
 
 
-def audit_context(figures):
-    """Require exactly the authenticated coastline on the Earth global axes."""
+def titan_context_binding(payload, class_index):
+    return dict(kind=TITAN_CONTEXT_KIND, class_index=class_index,
+                ids=[r[0] for r in payload["titan"]["points"]],
+                test_union_sorted_ids_sha256=payload["titan"]["test_union_sorted_ids_sha256"])
+
+
+def audit_titan_context(figure, payload):
+    """Bind all six gray layers to the exact ordered test population."""
+    data.require(len(figure.axes) == 6, "Titan context panel inventory differs")
+    expected = [r[1:3] for r in payload["titan"]["points"]]
+    records = []
+    for c, ax in enumerate(figure.axes):
+        artists = [a for a in [*ax.collections, *ax.lines] if hasattr(a, "_geography_context")]
+        data.require(len(artists) == 1, "Titan context artist inventory differs")
+        artist = artists[0]
+        data.require(isinstance(artist, PathCollection)
+                     and artist._geography_context == titan_context_binding(payload, c)
+                     and not hasattr(artist, "_geography")
+                     and ax._geography_panel == ("titan", c), "Titan context binding differs")
+        data.require(tuple(ax.get_xlim()) == (0, 360) and tuple(ax.get_ylim()) == (-90, 90)
+                     and ax.get_xscale() == ax.get_yscale() == "linear"
+                     and isinstance(artist.get_transform(), IdentityTransform)
+                     and artist.get_offset_transform() is ax.transData,
+                     "Titan context axes/transform differs")
+        offsets = artist.get_offsets()
+        actual = np.asarray(offsets).tolist()
+        data.require(not np.ma.getmaskarray(offsets).any() and actual == expected,
+                     "Titan context coordinates differ")
+        clip_box = artist.get_clip_box()
+        data.require(isinstance(clip_box, TransformedBbox)
+                     and np.array_equal(clip_box.extents, ax.bbox.extents)
+                     and artist.get_clip_path() is None, "Titan context clip differs")
+        data.require(artist.get_visible() and artist.get_clip_on() and artist.get_zorder() == -.2
+                     and artist.get_alpha() is None and not artist.get_rasterized()
+                     and artist.get_sizes().tolist() == [.5]
+                     and artist.get_facecolors().tolist() == [list(to_rgba(".88"))]
+                     and artist.get_edgecolors().tolist() == [list(to_rgba(".88"))]
+                     and artist.get_linewidths().tolist() == [0.], "Titan context style differs")
+        records.append(dict(binding=artist._geography_context, coordinates=actual))
+    data.require([t.get_text() for t in figure.texts] == [TITAN_CONTEXT_NOTE],
+                 "Titan context explanation differs")
+    return dict(kind=TITAN_CONTEXT_KIND, panels=6, centers_per_panel=len(expected),
+                test_union_sorted_ids_sha256=payload["titan"]["test_union_sorted_ids_sha256"],
+                actual_context_sha256=data.digest(json.dumps(records, sort_keys=True,
+                    separators=(",", ":"), allow_nan=False).encode()))
+
+
+def audit_context(figures, payload=None):
+    """Check the separate coastline and exact Titan sampling-context contracts."""
+    titan_context = None
+    if "titan-class-locations" in figures:
+        data.require(payload is not None, "Titan context requires its bound payload")
+        titan_context = audit_titan_context(figures["titan-class-locations"], payload)
     geometry, provenance = coastline_context()
     found = []
     for stem, figure in figures.items():
@@ -86,6 +143,9 @@ def audit_context(figures):
             for artist in [*ax.collections, *ax.lines]:
                 if not hasattr(artist, "_geography_context"):
                     continue
+                if artist._geography_context.get("kind") == TITAN_CONTEXT_KIND:
+                    data.require(stem == "titan-class-locations", "Wrong Titan context figure")
+                    continue  # Every panel and artist was checked against the payload above.
                 data.require(stem == "earth-site-locator" and ax is figure.axes[0]
                              and isinstance(artist, LineCollection)
                              and artist._geography_context == COASTLINE_BINDING
@@ -115,7 +175,8 @@ def audit_context(figures):
                 found.append(artist)
     data.require(len(found) == 1, "Coastline context inventory differs")
     return {**COASTLINE_BINDING, "parts": 134, "vertices": 5128,
-            "actual_parts_sha256": provenance["geometry"]["parts_sha256"]}
+            "actual_parts_sha256": provenance["geometry"]["parts_sha256"],
+            **({"titan_test_centers": titan_context} if titan_context is not None else {})}
 
 
 def bind(artist, kind, ids, **details):
@@ -145,11 +206,15 @@ def titan_figure(payload):
             ax.axvline(boundary, color=".7", linewidth=.5, zorder=0)
         bind(ax.scatter([r[1] for r in rows], [r[2] for r in rows], s=2,
                         color=point_colors.get(data.CLASSES[c], full.CLASS_COLORS[c]),
-                        linewidths=0, rasterized=True),
+                        linewidths=0, rasterized=False, zorder=2),
              "titan", [r[0] for r in rows], class_index=c)
+        context = ax.scatter([r[1] for r in payload["titan"]["points"]],
+                             [r[2] for r in payload["titan"]["points"]],
+                             s=.5, color=".88", linewidths=0, rasterized=False, zorder=-.2)
+        context._geography_context = titan_context_binding(payload, c)
+        context.set_gid(TITAN_CONTEXT_KIND)
         ax.set_title(data.CLASSES[c].capitalize())
-    figure.text(.5, .035, "Test tile centers; regions 1–5 run west to east.\n"
-                 "Neutral lines mark 72-degree sector boundaries.", ha="center")
+    figure.text(.5, .035, TITAN_CONTEXT_NOTE, ha="center")
     return figure
 
 
@@ -218,14 +283,14 @@ def earth_footprints(payload):
         ax.xaxis.set_major_formatter(formatter); ax.yaxis.set_major_formatter(formatter)
         ax.tick_params(pad=1, length=2)
         ax.grid(color=".9", linewidth=.4)
-        ax.set_title(f"{i}. " + textwrap.fill(site["name"], width=20), pad=4)
+        ax.set_title(f"{i}. " + textwrap.fill(site["name"], width=20)
+                     + f"\n{site['train_count']} train / {site['val_count']} validation", pad=4)
     for ax in list(axes.flat)[13:]:
         ax.set_axis_off()
-    handles = [Line2D([], [], color=color, linestyle=style, label=role.capitalize())
+    handles = [Line2D([], [], color=color, linestyle=style, label=ROLE_LABELS[role])
                for role, (color, style) in ROLE_STYLE.items()]
     figure.legend(handles=handles, loc="lower center", bbox_to_anchor=(.5, .055), ncol=2, frameon=False)
-    figure.text(.5, .018, "Axes are independently scaled; outlines show coordinate relationships, not metric shape.\n"
-                 "All 398 nominal outlines are shown in longitude/latitude degrees; terrain classes remain unverified.", ha="center")
+    figure.text(.5, .018, EARTH_FOOTPRINT_NOTE, ha="center")
     return figure
 
 
@@ -238,7 +303,7 @@ def venus_figure(payload):
         bind(ax.scatter([r[1] for r in rows], [r[2] for r in rows], s=7 if complete else 13,
                         facecolors=".55" if complete else "none", edgecolors="none" if complete else ".20",
                         linewidths=0 if complete else .5,
-                        label="Complete pixels" if complete else "Contains missing pixels", rasterized=True),
+                        label="Complete pixels" if complete else "Contains missing pixels", rasterized=False),
              "venus", [r[0] for r in rows], complete=complete)
     by_id = {r[0]: r for r in payload["venus"]["points"]}
     for ex in payload["venus"]["examples"]:
@@ -256,7 +321,7 @@ def venus_figure(payload):
 def audit_artists(figures, payload):
     """Read every plotted data artist, including all overlapping footprint rings."""
     data.require(set(figures) == set(STEMS), "Figure inventory differs")
-    audit_context(figures)
+    audit_context(figures, payload)
     titan = {r[0]: r for r in payload["titan"]["points"]}
     earth = {r[0]: r for r in payload["earth"]["footprints"]}
     venus = {r[0]: r for r in payload["venus"]["points"]}
@@ -297,7 +362,8 @@ def audit_artists(figures, payload):
                                      "Titan class artist differs")
                         data.require(ax._geography_panel == ("titan", binding["class_index"])
                                      and ax.get_title() == data.CLASSES[binding["class_index"]].capitalize()
-                                     and tuple(ax.get_xlim()) == (0, 360) and tuple(ax.get_ylim()) == (-90, 90),
+                                     and tuple(ax.get_xlim()) == (0, 360) and tuple(ax.get_ylim()) == (-90, 90)
+                                     and artist.get_zorder() == 2 and not artist.get_rasterized(),
                                      "Titan panel differs")
                     elif kind == "earth_centers":
                         data.require(stem == "earth-site-locator", "Wrong Earth locator")
@@ -335,7 +401,14 @@ def audit_artists(figures, payload):
         center = next(r[3] for r in payload["earth"]["footprints"] if r[1] == site["site_id"])
         data.require(annotation.get_text() == str(i) and list(annotation.xy) == center, "Earth locator annotation differs")
         ax = figures["earth-site-footprints"].axes[i-1]
-        data.require(ax.get_title() == f"{i}. " + textwrap.fill(site["name"], width=20), "Earth card title differs")
+        data.require(ax.get_title() == f"{i}. " + textwrap.fill(site["name"], width=20)
+                     + f"\n{site['train_count']} train / {site['val_count']} validation", "Earth card title differs")
+    footprints = figures["earth-site-footprints"]
+    data.require([t.get_text() for t in footprints.texts] == [EARTH_FOOTPRINT_NOTE],
+                 "Earth coordinate explanation differs")
+    data.require(len(footprints.legends) == 1
+                 and [t.get_text() for t in footprints.legends[0].get_texts()] == list(ROLE_LABELS.values()),
+                 "Earth role legend differs")
     annotations = figures["venus-sample-centers"].axes[0].texts
     data.require(len(annotations) == 6 and all(a.get_text() == ex["code"]
                  and list(a.xy) == venus[ex["tile_id"]][1:3] for a, ex in zip(annotations, payload["venus"]["examples"])),
@@ -398,7 +471,7 @@ def render(payload_path, payload_sha256, output, receipt, style):
         data.require(set(outputs) == expected and {p.name for p in output.iterdir()} == expected
                      and all((output / n).stat().st_size == r["bytes"] for n, r in outputs.items()), "Export inventory differs")
         record = dict(status="complete", style=style, payload_sha256=payload_sha256, outputs=outputs,
-                      artists=artists, context=audit_context(figures))
+                      artists=artists, context=audit_context(figures, payload))
         data.write_new_atomic(receipt, {**record, "status": "verified_before_public_manifest", "font_metrics": metrics,
                                         "fonts_sha256": {p: data.digest(Path(p).read_bytes()) for p in sorted(fonts)},
                                         "source_sha256": data.digest(Path(__file__).read_bytes()),

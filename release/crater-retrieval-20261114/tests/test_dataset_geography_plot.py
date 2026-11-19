@@ -221,7 +221,7 @@ def test_context_does_not_change_scientific_artist_digest_or_admit_untracked_lin
         ax = figures["earth-site-locator"].axes[0]
         coastline = ax.collections[0]; coastline.remove()
         with monkeypatch.context() as patch:
-            patch.setattr(plot, "audit_context", lambda figures: None)
+            patch.setattr(plot, "audit_context", lambda figures, payload=None: None)
             assert plot.audit_artists(figures, prepared["payload"]) == with_context
         ax.add_collection(coastline, autolim=False)
         ax.plot([-170, 170], [0, 0], color="gray")
@@ -267,6 +267,9 @@ def test_synthetic_complete_exports_and_freshness(prepared, tmp_path, style):
     assert result["status"] == "complete" and len(result["outputs"]) == 8
     assert result["context"]["data_sha256"] == plot.COASTLINE_SHA256
     assert result["context"]["parts"] == 134 and result["context"]["vertices"] == 5128
+    assert result["context"]["titan_test_centers"]["panels"] == 6
+    assert result["context"]["titan_test_centers"]["centers_per_panel"] == 23246
+    assert result["context"]["titan_test_centers"]["test_union_sorted_ids_sha256"] == prepared["payload"]["titan"]["test_union_sorted_ids_sha256"]
     assert json.loads(receipt.read_text())["context"] == result["context"]
     assert set(p.name for p in output.iterdir()) == set(result["outputs"]) | {"manifest.json"}
     assert all(p.stat().st_size > 0 for p in output.iterdir())
@@ -297,3 +300,63 @@ def test_failed_final_manifest_does_not_leave_complete_receipt(prepared, tmp_pat
         plot.render(prepared["path"], prep.digest(prepared["path"].read_bytes()), output, receipt, "cvpr")
     assert json.loads(receipt.read_text())["status"] == "verified_before_public_manifest"
     assert not (output / "manifest.json").exists()
+
+
+@pytest.mark.parametrize("fault", ["missing", "duplicate", "coordinate", "order", "id", "union",
+                                   "subset", "panel", "hidden", "zorder", "size", "color",
+                                   "linewidth", "rasterization", "offset_transform", "transform",
+                                   "masked", "clip", "explanation"])
+def test_titan_sampling_context_mutations_rejected(prepared, fault):
+    # Each panel must retain the entire exact population, not just its class subset.
+    figure = plot.titan_figure(prepared["payload"])
+    try:
+        report = plot.audit_titan_context(figure, prepared["payload"])
+        assert report["panels"] == 6 and report["centers_per_panel"] == 23246
+        assert not any(a.get_rasterized() for ax in figure.axes for a in ax.collections)
+        assert report["test_union_sorted_ids_sha256"] == prepared["payload"]["titan"]["test_union_sorted_ids_sha256"]
+        ax = figure.axes[0]; context = ax.collections[1]
+        if fault == "missing": context.remove()
+        elif fault == "duplicate":
+            from copy import copy
+            ax.add_collection(copy(context))
+        elif fault in ("coordinate", "order", "subset"):
+            offsets = context.get_offsets().copy()
+            if fault == "coordinate": offsets[0, 0] += .001
+            elif fault == "order": offsets[[0, 1]] = offsets[[1, 0]]
+            else: offsets = offsets[:-1]
+            context.set_offsets(offsets)
+        elif fault == "id": context._geography_context["ids"][0] = "titan_unknown"
+        elif fault == "union": context._geography_context["test_union_sorted_ids_sha256"] = "0"*64
+        elif fault == "panel": context._geography_context["class_index"] = 1
+        elif fault == "hidden": context.set_visible(False)
+        elif fault == "zorder": context.set_zorder(3)
+        elif fault == "size": context.set_sizes([2])
+        elif fault == "color": context.set_facecolor("black")
+        elif fault == "linewidth": context.set_linewidth(.5)
+        elif fault == "rasterization": context.set_rasterized(True)
+        elif fault == "offset_transform": context.set_offset_transform(ax.transAxes)
+        elif fault == "transform": context.set_transform(ax.transAxes)
+        elif fault == "masked": context.get_offsets()[0] = np.ma.masked
+        elif fault == "clip": context.set_clip_box(None)
+        else: figure.texts[0].set_text("Gray: continuous SAR coverage")
+        with pytest.raises(ValueError, match="Titan context"):
+            plot.audit_titan_context(figure, prepared["payload"])
+    finally:
+        plt.close(figure)
+
+
+@pytest.mark.parametrize("fault", ["count", "axis_key", "legend"])
+def test_earth_card_count_and_explanation_mutations_rejected(prepared, fault):
+    figures = plot.make_figures(prepared["payload"], "cvpr")
+    try:
+        plot.audit_artists(figures, prepared["payload"])
+        # The separately revised Venus vector setting must survive this change.
+        assert not any(a.get_rasterized() for a in figures["venus-sample-centers"].axes[0].collections)
+        figure = figures["earth-site-footprints"]
+        if fault == "count": figure.axes[12].set_title("13. Mistastin\n4 train / 0 validation")
+        elif fault == "axis_key": figure.texts[0].set_text("Horizontal: latitude; vertical: longitude")
+        else: figure.legends[0].get_texts()[0].set_text("Validation")
+        with pytest.raises(ValueError, match="Earth"):
+            plot.audit_artists(figures, prepared["payload"])
+    finally:
+        for figure in figures.values(): plt.close(figure)

@@ -436,6 +436,46 @@
       "previous_manifest_sha256": "c652b4119c5c76d0576b6c7089c04dfada677bd117aa19d3a0d2da7efebcccfb",
       "previous_sha256": "1b97c2fbf1b4437270c73b31d19698a354767a60153cd9de3fb73b586347c1d8",
       "reason": "Place both DOFA reconstruction examples outside the checkout and state the existing-directory and fresh-output requirements. Preserved package recipes, readers, scientific inputs, producer identities and earlier documentation history remain unchanged. This update records no reconstruction or model execution."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-19",
+      "new_sha256": "c4a3fd25887fa096b8e8deeb7275b353e031ca34cde7f52c037480d55de85178",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "231612a33417cb2ae5ce08295d683776d8e15af5",
+      "previous_manifest_sha256": "3966ef5f7f2263156190aabd057057af2960cd32b7343128f8bc6b6d027bf7b3",
+      "previous_sha256": "a6440851fd16219d6686d6419ba0ac62cf59762f3a411fc5a705d7e9b84149c0",
+      "reason": "Clarify scientific terminology and the PDF-only supplementary decision; executable behavior and original producer identities are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-19",
+      "new_sha256": "b0878457d740afbd0c95639daf54aa1617fb40c936b9d6876a54f4db152d084c",
+      "path": "titansar/evaluation/metrics.py",
+      "previous_cetus_commit": "231612a33417cb2ae5ce08295d683776d8e15af5",
+      "previous_manifest_sha256": "3966ef5f7f2263156190aabd057057af2960cd32b7343128f8bc6b6d027bf7b3",
+      "previous_sha256": "e8d01a6d75959918f91141043164ba9b9d627a72d1ef68514e994770fcc491c8",
+      "reason": "Clarify scientific terminology and the PDF-only supplementary decision; executable behavior and original producer identities are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-19",
+      "new_sha256": "bdeb6386cc4d6edab6d8349e11062ad005e4a4006291702661bf5e88bc42c896",
+      "path": "titansar/models/foundation_models.py",
+      "previous_cetus_commit": "231612a33417cb2ae5ce08295d683776d8e15af5",
+      "previous_manifest_sha256": "3966ef5f7f2263156190aabd057057af2960cd32b7343128f8bc6b6d027bf7b3",
+      "previous_sha256": "3ef0e1134f87c1215790cdf06d2cc4139062eee9eee8470e5449973b46cbf87e",
+      "reason": "Clarify scientific terminology and the PDF-only supplementary decision; executable behavior and original producer identities are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-19",
+      "new_sha256": "3b09221832a816e57cf445d54aca43a5a0695edd31c79341e84f800d901da7af",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "231612a33417cb2ae5ce08295d683776d8e15af5",
+      "previous_manifest_sha256": "3966ef5f7f2263156190aabd057057af2960cd32b7343128f8bc6b6d027bf7b3",
+      "previous_sha256": "e2fe1212c8b06a2e24235e3ef95cb5436861d1d925478ba78da6fbc0ecb8b0bb",
+      "reason": "Clarify scientific terminology and the PDF-only supplementary decision; executable behavior and original producer identities are preserved."
     }
   ],
   "excluded": [
@@ -466,7 +506,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated guide with documentation updates",
-      "sha256": "a6440851fd16219d6686d6419ba0ac62cf59762f3a411fc5a705d7e9b84149c0"
+      "sha256": "c4a3fd25887fa096b8e8deeb7275b353e031ca34cde7f52c037480d55de85178"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
@@ -541,7 +581,7 @@
     },
     "titansar/evaluation/metrics.py": {
       "origin": "committed source with comment/docstring corrections; executable AST unchanged",
-      "sha256": "e8d01a6d75959918f91141043164ba9b9d627a72d1ef68514e994770fcc491c8",
+      "sha256": "b0878457d740afbd0c95639daf54aa1617fb40c936b9d6876a54f4db152d084c",
       "source_sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837"
     },
     "titansar/models/__init__.py": {
@@ -556,12 +596,12 @@
     },
     "titansar/models/foundation_models.py": {
       "origin": "committed source with reviewed documentation and unused import cleanup",
-      "sha256": "3ef0e1134f87c1215790cdf06d2cc4139062eee9eee8470e5449973b46cbf87e",
+      "sha256": "bdeb6386cc4d6edab6d8349e11062ad005e4a4006291702661bf5e88bc42c896",
       "source_sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d"
     },
     "titansar/models/probing.py": {
       "origin": "committed source with comment/docstring and diagnostic-string corrections; computational structure unchanged after excluding docstrings and accounting for the documented diagnostic-text changes",
-      "sha256": "e2fe1212c8b06a2e24235e3ef95cb5436861d1d925478ba78da6fbc0ecb8b0bb",
+      "sha256": "3b09221832a816e57cf445d54aca43a5a0695edd31c79341e84f800d901da7af",
       "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {

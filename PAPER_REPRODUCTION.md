@@ -100,7 +100,7 @@ The [ranking displays](release/crater-retrieval-20261114/README.md) show all 60 
 
 ### Displaying retrieved tile counts
 
-The [retrieval companion](release/crater-retrieval-20261114/README.md) renders recall against retrieved test-tile count for all six map classes. Equal scores enter together, with each region and model state shown separately. Every score group has an endpoint; the Craters sheets also emphasize groups that add positive labels. Dense overlap can obscure individual states in common classes. The count axis is logarithmic, and its area has no average-precision meaning.
+The [retrieval companion](release/crater-retrieval-20261114/README.md) renders recall against retrieved test-tile count for all six map classes. Equal scores enter together, with each region and model state shown separately. Every score group has an endpoint, and all six classes select state or seed identity symbols from existing endpoints using the same display-spacing rule. Dense overlap can obscure individual states. The count axis is logarithmic, and its area has no average-precision meaning.
 
 The CPU command reads saved curves and preserves the ranking and model choices. It produces both paper variants with bundled fonts. Retrieved tiles can show overlapping views of a landform, so the count describes images rather than independent geological objects.
 
@@ -120,7 +120,7 @@ The [execution source](release/loss-source-20261110/README.md) compares two deno
 
 The [numerical companion](release/loss-normalization-20261110/README.md) supplies saved records from fifteen additional 100-epoch fits and fifteen fresh replays of the validation-selected states on validation and test images. All fifteen original and all fifteen additional runs have zero Craters true positives. Six-class macro F1, averaged over three seeds within each region and then equally over five regions, changes from 43.84% to 44.38%. Regional macro F1 means rise in three regions and fall in two. The companion retains all six classes, including false-positive counts.
 
-The learning rate is inherited from the original loss, and the study reuses the same five test regions. Seeds repeat training within regions; they do not add independent geographic samples. The original Craters F1 is zero, so its change cannot be negative. These results describe sensitivity under the stated settings and agreement with the SAR-informed map. The original initialization results remain primary.
+The study reuses the five test regions and the learning rate selected for the original loss. It therefore compares the loss denominators at that learning rate, rather than comparing separately tuned losses. Seeds repeat training within regions and do not add independent geographic samples. Because the original Craters F1 is zero, a nonnegative difference alone cannot show recovery; the true-positive and false-positive counts are needed to interpret it. The scores measure agreement with the SAR-informed map, and the original initialization results remain primary.
 
 Use Python 3.11 or later on Linux; reconstruction needs only the standard library. From the repository root:
 

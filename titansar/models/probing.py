@@ -279,7 +279,12 @@ def evaluate_linear_probe(
 ) -> dict:
     """Evaluate a trained linear probe.
 
-    Returns dict with macro_accuracy, per_class_accuracy, kappa, predictions.
+    The legacy keys ``per_class_accuracy`` and ``macro_accuracy`` contain class
+    recall and its unweighted mean over configured classes present in ``labels``.
+    Classes absent from ``labels`` receive NaN and are excluded from that mean.
+    The mean defaults to zero if every configured class is absent.
+    The result also contains Cohen's kappa, confusion matrices, predictions,
+    and class probabilities.
     """
     probe.eval()
     X = torch.tensor(features, dtype=torch.float32).to(device)
@@ -290,7 +295,7 @@ def evaluate_linear_probe(
         preds = logits.argmax(dim=1).cpu().numpy()
         probs = F.softmax(logits, dim=1).cpu().numpy()
 
-    # Per-class accuracy
+    # Recall for each configured class
     per_class_acc = []
     for c in range(num_classes):
         mask = y == c
@@ -299,7 +304,7 @@ def evaluate_linear_probe(
         else:
             per_class_acc.append(float("nan"))
 
-    # Macro accuracy (mean of per-class accuracies, excluding NaN)
+    # Mean recall over classes with test support
     valid_accs = [a for a in per_class_acc if not np.isnan(a)]
     macro_acc = float(np.mean(valid_accs)) if valid_accs else 0.0
 

@@ -359,7 +359,7 @@ class CROMAWrapper(FoundationModelWrapper):
             raise ImportError("Either CROMA or timm is required")
 
     def prepare_input(self, x: torch.Tensor) -> torch.Tensor:
-        """Replicate 1-channel -> 2-channel (VV+VH) for CROMA."""
+        """Use the same SAR channel in both CROMA input slots."""
         # x: (B, 1, H, W) -> (B, 2, H, W)
         x = x.expand(-1, 2, -1, -1)
         # CROMA uses 120x120 input (patch_size=8 -> 15×15=225 patches)

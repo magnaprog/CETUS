@@ -65,9 +65,9 @@ states `Random 42` through `Random 46`. The pretrained state's internal identifi
 Small points represent complete tied-score groups: retrieved count is TP+FP,
 and recall is the saved fraction multiplied by 100. All endpoints, including
 zero recall, are retained without connectors, interpolation or thinning. Larger
-symbols identify states or seeds at spaced, existing endpoints for the five
-common classes. Craters instead emphasizes every group that increases true
-positives. In the ResNet18 panels, larger open symbols denote scratch training
+symbols identify states or seeds at existing endpoints selected with the same
+36-point display-spacing rule in all six classes. In the ResNet18 panels,
+larger open symbols denote scratch training
 and filled symbols denote ImageNet initialization. DINOv2 retains a different
 shape for each state. Coincident states can overlap.
 
@@ -85,8 +85,8 @@ unchanged. Area in a log-count retrieval display is not AP.
 
 `display.json` records the data-to-artist mapping. `complete.json` is written
 last and records hashes for all 24 assets and the display record. Figures are
-6.5 × 7.4 inches, with small marks rasterized at 300 dpi and larger identifiers
-and text retained as vectors. Seeds do not add independent geographic tests. Results measure agreement
+6.5 × 7.4 inches, with all points, identity symbols and text retained as
+vectors in the PDFs. Seeds do not add independent geographic tests. Results measure agreement
 with SAR-informed map labels; retrieved tiles may overlap and are not an
 independent geological inventory.
 
@@ -95,11 +95,15 @@ independent geological inventory.
 Each style produces four PDF/PNG pairs:
 
 - `titan-class-locations`: all 23,246 current test centers, separated by the six
-  modal map classes, with neutral 72-degree sector boundaries.
+  modal map classes, with neutral 72-degree sector boundaries. Pale gray points
+  repeat the complete test population behind each class; they show sampling,
+  not continuous SAR coverage.
 - `earth-site-locator`: all 398 original images and the 13-site table, preserving
   352 training and 46 validation assignments.
 - `earth-site-footprints`: every retained nominal source-window ring, including
   polygon holes or multiple components; color and line style identify roles.
+  Per-site counts include images whose outlines overlap, and the axis key names
+  longitude and latitude in degrees.
 - `venus-sample-centers`: all 2,945 retained centers, distinguishing 2,526 complete
   and 419 partial images, with the six existing A–F illustration markers.
 
@@ -125,8 +129,9 @@ The geography renderer checks actual artist coordinates, all IDs/roles/rings,
 the site table and example annotations against the payload. Each output
 directory ends with `manifest.json`, written after all eight nonempty assets.
 The separately located local receipt contains font diagnostics and is not a
-public payload. Dense point layers in geography PDFs use 300 dpi; labels and
-outlines remain vector graphics. Geography PNGs use 120 dpi. Earth footprint
+public payload. Titan and Venus center points, labels and outlines remain
+vector graphics in the geography PDFs, including the pale Titan sampling context. Geography
+PNGs use 120 dpi. Earth footprint
 sheets are 6.5 × 8.1 inches.
 
 ## Existing AP and regional displays
@@ -186,9 +191,11 @@ The report retains the source and figure identities of its original analysis;
 
 ## Integrity and synthetic checks
 
-The [19 November presentation revision](presentation-retrieval-legend-20261119.json)
-records this legend change, its previous and current output hashes, and the
-unchanged scientific inputs. Earlier producer references retain their original scope.
+The [vector and sampling-context revision](presentation-vector-context-20261119.json)
+records the current renderer identities and expected outputs. The [earlier legend
+revision](presentation-retrieval-legend-20261119.json) preserves the preceding
+legend change and its output hashes. Scientific inputs and earlier producer
+references retain their original scope.
 
 The package manifest retains every existing `expected_*` section. Its additive
 `expected_class_retrieval` section contains 24 asset identities;
