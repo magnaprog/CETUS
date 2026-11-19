@@ -82,8 +82,7 @@ unchanged. Area in a log-count retrieval display is not AP.
 `display.json` records the data-to-artist mapping. `complete.json` is written
 last and records hashes for all 24 assets and the display record. Figures are
 6.5 × 7.4 inches, with small marks rasterized at 300 dpi and larger identifiers
-and text retained as vectors. Seeds describe fitting
-variation and do not add independent geographic tests. Results measure agreement
+and text retained as vectors. Seeds do not add independent geographic tests. Results measure agreement
 with SAR-informed map labels; retrieved tiles may overlap and are not an
 independent geological inventory.
 
@@ -135,10 +134,12 @@ The standalone Craters command is an alternative to the corresponding
 all-class sheets and is unnecessary for the three-call recipe above.
 
 Regional AP differences and absolute AP answer different questions from curve
-shape. The retained [absolute Craters AP figures](figures/craters-ap-cvpr.pdf)
-and [caption](figures/craters-ap-caption.tex) remain part of the companion.
-The all-tied prevalence reference is not the expected AP of a finite random
-ranking.
+shape. Use the current [standalone caption](figures/craters-ap-caption.tex) with
+the retained [CVPR-style](figures/craters-ap-cvpr.pdf) or
+[full-style](figures/craters-ap-full.pdf) absolute Craters AP figure. The caption
+identifies the fitting procedures, map-label target and geographic scope for
+both displays. The all-tied prevalence reference is not the expected AP of a
+finite random ranking.
 
 ## Geographic variation and map mixtures
 

@@ -296,6 +296,136 @@
       "path": "release/crater-retrieval-20261114/scripts/plot_dataset_geography.py",
       "previous_sha256": "d4e0a39497987952d35e41fa0cf92fd468b911b7e6211aa0aa8c0967710989e9",
       "reason": "Shorten the Venus sampling footer. All scientific input, coordinate, completeness, example, style and scale values are unchanged. The prior local Titan footer change is retained. Current expected exports and inventory hashes reflect the label edit; earlier producer attributions are retained."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "a6440851fd16219d6686d6419ba0ac62cf59762f3a411fc5a705d7e9b84149c0",
+      "path": "SOFTWARE.md",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "6883c33c52955226809de9197f72eb415720744770bbd15c3c5e8cdb5685a019",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "ddb116401e35b7be5735c8b99a698a83417f755fa61b6be2f7bbf91ac8110401",
+      "path": "scripts/run_probing.py",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "b32fdcfe44928b41f185d1a1770d2983506525a826bdf9a85b33362b157f723d",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "e068a282fc61f83c5a10a85c2ebf6859037975f044a9897aff18e6d1edab6691",
+      "path": "titansar/configs/defaults.py",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "16ab81187767587bc970a15cdce85fa7c89e2d7b9deed63f3e225c500ed1a8d1",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "369d40c37730ae563cd44bdea249eb62176ab14352a044445a64d01cfc96ca3c",
+      "path": "titansar/data/dataset.py",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "fb3f91f325dcac330abe475aa7f36efeb05b8052a57e2cb7cb6d5fe740a0edc5",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "e8d01a6d75959918f91141043164ba9b9d627a72d1ef68514e994770fcc491c8",
+      "path": "titansar/evaluation/metrics.py",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "6731e0f906b8d9808d452665d6b6a6f966189e3e2b4d66ed969651d76008c5fb",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "3ef0e1134f87c1215790cdf06d2cc4139062eee9eee8470e5449973b46cbf87e",
+      "path": "titansar/models/foundation_models.py",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "9b1e77b74be4ae8a3fac1703919867476689ff6c85a9c2276c4041401f6b2897",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "e2fe1212c8b06a2e24235e3ef95cb5436861d1d925478ba78da6fbc0ecb8b0bb",
+      "path": "titansar/models/probing.py",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "6a78eedf98277d6eaeb2cfdb86939a4b4923e08770e0d2145575761b640609cc",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e",
+      "path": "release/current-source-20261109/README.md",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "5ba1881524d1a30f3afe055094e32704af297173c3e3f39e11b72c32cd543991",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "ff7ca6da168c0e71e3e90a282ddca97a74ac1285d5d7a3d64b91a04d9c8426ea",
+      "path": "release/loss-source-20261110/README.md",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "4b6f8ed48626c2fc1d17507c222f4717134cbfe3aef051bcb748f18a08ac2241",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "d8c7440002f614243e813cc4fcfd015e82b4d095ce750c064046ee9b771c4305",
+      "path": "release/dofa-partial-source-20261112/README.md",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "51d647d0d2d5e334ea1c2963f858a9f9ff57e704a49ebdac635c34d73e443b78",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "3a24c49f59ff3caba542ae3f9dbb78b28d6d580535f8b77148566f7e4d45a018",
+      "path": "release/titan-followup-20261109/README.md",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "de7f7b39f978af5a75f5a590b3f10b317d09a5973b878845137bce3a28462e3f",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "0848549729a1bfcdffb93a85180f31a881d85c3e365667e9830619846a81d598",
+      "path": "release/crater-retrieval-20261114/README.md",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "2792e6a3e9d43542d897b6f2e14a5571c0cec376ef9edd918dff4bed1de64735",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "change_kind": "public_prose_correction",
+      "date": "2026-11-19",
+      "new_sha256": "52d8dede0760680a8382c8e3968292fb53854da072528732bda9ecba63c300a4",
+      "path": "release/crater-retrieval-20261114/figures/craters-ap-caption.tex",
+      "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
+      "previous_sha256": "43a8ff7adcee585b5d78281ac0725ce237b5061d283a3d82a36868e392a5f867",
+      "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
     }
   ],
   "excluded": [
@@ -326,7 +456,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated guide with documentation updates",
-      "sha256": "6883c33c52955226809de9197f72eb415720744770bbd15c3c5e8cdb5685a019"
+      "sha256": "a6440851fd16219d6686d6419ba0ac62cf59762f3a411fc5a705d7e9b84149c0"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
@@ -341,8 +471,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "origin": "committed source with docstring example correction; executable AST unchanged",
-      "sha256": "b32fdcfe44928b41f185d1a1770d2983506525a826bdf9a85b33362b157f723d",
+      "origin": "committed source with docstring example and diagnostic-string corrections; computational structure unchanged after excluding docstrings and accounting for the documented diagnostic-text changes",
+      "sha256": "ddb116401e35b7be5735c8b99a698a83417f755fa61b6be2f7bbf91ac8110401",
       "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
     },
     "tests/test_bound_feature_cache.py": {
@@ -381,7 +511,7 @@
     },
     "titansar/configs/defaults.py": {
       "origin": "committed source with reviewed unused import cleanup",
-      "sha256": "16ab81187767587bc970a15cdce85fa7c89e2d7b9deed63f3e225c500ed1a8d1",
+      "sha256": "e068a282fc61f83c5a10a85c2ebf6859037975f044a9897aff18e6d1edab6691",
       "source_sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
     },
     "titansar/data/__init__.py": {
@@ -391,7 +521,7 @@
     },
     "titansar/data/dataset.py": {
       "origin": "committed source with comment/docstring corrections; executable AST unchanged",
-      "sha256": "fb3f91f325dcac330abe475aa7f36efeb05b8052a57e2cb7cb6d5fe740a0edc5",
+      "sha256": "369d40c37730ae563cd44bdea249eb62176ab14352a044445a64d01cfc96ca3c",
       "source_sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f"
     },
     "titansar/evaluation/__init__.py": {
@@ -401,7 +531,7 @@
     },
     "titansar/evaluation/metrics.py": {
       "origin": "committed source with comment/docstring corrections; executable AST unchanged",
-      "sha256": "6731e0f906b8d9808d452665d6b6a6f966189e3e2b4d66ed969651d76008c5fb",
+      "sha256": "e8d01a6d75959918f91141043164ba9b9d627a72d1ef68514e994770fcc491c8",
       "source_sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837"
     },
     "titansar/models/__init__.py": {
@@ -416,12 +546,12 @@
     },
     "titansar/models/foundation_models.py": {
       "origin": "committed source with reviewed documentation and unused import cleanup",
-      "sha256": "9b1e77b74be4ae8a3fac1703919867476689ff6c85a9c2276c4041401f6b2897",
+      "sha256": "3ef0e1134f87c1215790cdf06d2cc4139062eee9eee8470e5449973b46cbf87e",
       "source_sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d"
     },
     "titansar/models/probing.py": {
-      "origin": "committed source with comment/docstring corrections; executable AST unchanged",
-      "sha256": "6a78eedf98277d6eaeb2cfdb86939a4b4923e08770e0d2145575761b640609cc",
+      "origin": "committed source with comment/docstring and diagnostic-string corrections; computational structure unchanged after excluding docstrings and accounting for the documented diagnostic-text changes",
+      "sha256": "e2fe1212c8b06a2e24235e3ef95cb5436861d1d925478ba78da6fbc0ecb8b0bb",
       "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {

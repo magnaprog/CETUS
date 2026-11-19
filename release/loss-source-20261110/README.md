@@ -14,6 +14,10 @@ companion](../loss-normalization-20261110/README.md). Use that companion for
 results and this package for implementation details, including the protocol
 recorded before execution.
 
+For source inspection, the [current description corrections](../../SOFTWARE.md#reading-preserved-source-descriptions)
+explain the input encoding, feature pooling, normalization, scores and helper
+behavior where preserved comments or docstrings are misleading.
+
 Run from this package root in a separate environment, so `titansar`, `scripts`
 and `tests` resolve here. Use Python 3.12.3 and compatible Torch/torchvision builds;
 [requirements.txt](requirements.txt) records the local dependency versions used

@@ -6,4 +6,6 @@ use seeds 42 to 46; ResNet18 uses seeds 0 to 2. DINOv2 pretrained has one
 state. $K$ counts Craters labels among $N$ test images. Dashed lines mark
 $100K/N$, the all-tied AP reference, not the expected empirical AP of a finite
 random ranking. Region 2 contains a single positive image; one scratch CNN
-seed ranks it third.}
+seed ranks it third. DINOv2 uses fixed encoder features with logistic
+regression; ResNet18 trains all weights. AP measures ranking agreement with
+map labels. Seeds do not add independent geographic regions.}

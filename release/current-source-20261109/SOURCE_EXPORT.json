@@ -312,6 +312,20 @@
       "previous_SOURCE_EXPORT_sha256": "d1eb6b4031e96a454218be62ee5d1233daa6847b2af9c22f1170aaf940123bc2",
       "scientific_source_and_results_unchanged": true,
       "scope": "Clarify the distinction between the logged epoch loss and the optimization loss."
+    },
+    {
+      "baseline_cetus_commit": "a04a9932d0c8bc934aed2d51132de2906c935513",
+      "changed_files": [
+        {
+          "current_sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e",
+          "path": "README.md",
+          "previous_sha256": "5ba1881524d1a30f3afe055094e32704af297173c3e3f39e11b72c32cd543991"
+        }
+      ],
+      "date": "2026-11-19",
+      "previous_SOURCE_EXPORT_sha256": "bcd2db2bc7dc57fcaa6f752e5bf98eb306b50689fb0f86bc9951e84e6e030af4",
+      "scientific_source_and_results_unchanged": true,
+      "scope": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
     }
   ],
   "entrypoints": [
@@ -366,11 +380,11 @@
       "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 8919,
-      "current_sha256": "5ba1881524d1a30f3afe055094e32704af297173c3e3f39e11b72c32cd543991",
+      "bytes": 9180,
+      "current_sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "5ba1881524d1a30f3afe055094e32704af297173c3e3f39e11b72c32cd543991",
+      "sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e",
       "source_commit": null
     },
     "THIRD_PARTY_NOTICES.md": {

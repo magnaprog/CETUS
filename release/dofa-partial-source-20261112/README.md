@@ -20,6 +20,10 @@ recipe recorded before execution.
 - [Source origins and hashes](SOURCE_EXPORT.json) and [historical file inventory](contracts/historical-source-inventory.json)
 - [Documentation contract view](contracts/candidate02.public.json)
 
+For source inspection, the [current description corrections](../../SOFTWARE.md#reading-preserved-source-descriptions)
+explain the input encoding, feature pooling, normalization, scores and helper
+behavior where preserved comments or docstrings are misleading.
+
 Check file integrity from this directory:
 
 ```sh

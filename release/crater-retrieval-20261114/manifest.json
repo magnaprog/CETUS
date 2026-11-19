@@ -280,8 +280,8 @@
       "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "README.md": {
-      "bytes": 10903,
-      "sha256": "2792e6a3e9d43542d897b6f2e14a5571c0cec376ef9edd918dff4bed1de64735"
+      "bytes": 11030,
+      "sha256": "0848549729a1bfcdffb93a85180f31a881d85c3e365667e9830619846a81d598"
     },
     "data/class-curves.npz": {
       "bytes": 21401700,
@@ -296,8 +296,8 @@
       "sha256": "6619ff667273aaa0273bcab1614ef3dff1e6453f1d79309d350da13e5508591d"
     },
     "figures/craters-ap-caption.tex": {
-      "bytes": 623,
-      "sha256": "43a8ff7adcee585b5d78281ac0725ce237b5061d283a3d82a36868e392a5f867"
+      "bytes": 809,
+      "sha256": "52d8dede0760680a8382c8e3968292fb53854da072528732bda9ecba63c300a4"
     },
     "figures/craters-ap-cvpr.pdf": {
       "bytes": 17596,

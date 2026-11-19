@@ -542,7 +542,7 @@ def run_single_model(
         f"  Earth->Titan linear probe: {model_results['linear_probe']['earth_to_titan']['macro_accuracy_mean']:.3f}\n"
         f"  k-NN: {model_results['knn']['titan_to_titan']['macro_accuracy']:.3f}\n"
         f"  Silhouette: {sil_titan:.3f}\n"
-        f"  MMD: {mmd_result['mean']:.4f}, A-dist: {a_dist:.3f}"
+        f"  MMD^2: {mmd_result['mean']:.4f}, A-distance: {a_dist:.3f}"
     )
 
     return model_results

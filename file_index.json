@@ -144,12 +144,12 @@
       "sha256": "d045d9a1c6ef86709f08b99dc9ae09f129b90825616fa01f4f5e140dd5fddfe1"
     },
     "SOFTWARE.md": {
-      "bytes": 23294,
-      "sha256": "6883c33c52955226809de9197f72eb415720744770bbd15c3c5e8cdb5685a019"
+      "bytes": 27607,
+      "sha256": "a6440851fd16219d6686d6419ba0ac62cf59762f3a411fc5a705d7e9b84149c0"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 30299,
-      "sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c"
+      "bytes": 39380,
+      "sha256": "c652b4119c5c76d0576b6c7089c04dfada677bd117aa19d3a0d2da7efebcccfb"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -264,12 +264,12 @@
       "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 10903,
-      "sha256": "2792e6a3e9d43542d897b6f2e14a5571c0cec376ef9edd918dff4bed1de64735"
+      "bytes": 11030,
+      "sha256": "0848549729a1bfcdffb93a85180f31a881d85c3e365667e9830619846a81d598"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
       "bytes": 4418,
-      "sha256": "addd27cbbc8f0822c1ab56d8cac7b3be20cce86de9fb740989f82db5dcc61f7c"
+      "sha256": "ba0e1d3d8237ac97a77aacc87979f0e4f754e8ca4e557ba794323e8b129723be"
     },
     "release/crater-retrieval-20261114/data/class-curves.npz": {
       "bytes": 21401700,
@@ -284,8 +284,8 @@
       "sha256": "6619ff667273aaa0273bcab1614ef3dff1e6453f1d79309d350da13e5508591d"
     },
     "release/crater-retrieval-20261114/figures/craters-ap-caption.tex": {
-      "bytes": 623,
-      "sha256": "43a8ff7adcee585b5d78281ac0725ce237b5061d283a3d82a36868e392a5f867"
+      "bytes": 809,
+      "sha256": "52d8dede0760680a8382c8e3968292fb53854da072528732bda9ecba63c300a4"
     },
     "release/crater-retrieval-20261114/figures/craters-ap-cvpr.pdf": {
       "bytes": 17596,
@@ -297,7 +297,7 @@
     },
     "release/crater-retrieval-20261114/manifest.json": {
       "bytes": 24999,
-      "sha256": "1ead9276b23af596a1ac4bd563e8c151dbffd6120d11d965a31b14dae0a0f95d"
+      "sha256": "236c758148670fb4cf3fa514a6da49ed4c47b4438b7df339ed65cf5a59bee6f6"
     },
     "release/crater-retrieval-20261114/paper/figure_data/geography/README.md": {
       "bytes": 2195,
@@ -452,16 +452,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/current-source-20261109/README.md": {
-      "bytes": 8919,
-      "sha256": "5ba1881524d1a30f3afe055094e32704af297173c3e3f39e11b72c32cd543991"
+      "bytes": 9180,
+      "sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e"
     },
     "release/current-source-20261109/SHA256SUMS": {
       "bytes": 5764,
-      "sha256": "6d9f55c2ecc54509daf2deaeb43cb0916e6442d1837818e9c53212516f6b9bf6"
+      "sha256": "a4e4939738c0f3b6f2e597dfb8e13207cb0ab421fa1a7e94877a8ec2ef4e2b96"
     },
     "release/current-source-20261109/SOURCE_EXPORT.json": {
-      "bytes": 56314,
-      "sha256": "bcd2db2bc7dc57fcaa6f752e5bf98eb306b50689fb0f86bc9951e84e6e030af4"
+      "bytes": 57049,
+      "sha256": "5ccf4b4f9d55a9f1979fa5886ca50ef5a874fec98ba84e1b6bd4c26876bd3ce5"
     },
     "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -501,7 +501,7 @@
     },
     "release/current-source-20261109/file_index.json": {
       "bytes": 8994,
-      "sha256": "4d95e48b9673d07ed9cca04e64a2f593378c1f875428626312f622a4836cfd7d"
+      "sha256": "3a8cd3fbc08c3bac66a0908a3cd87f01fc6114c3e4960f070631f7aaecc5c9d2"
     },
     "release/current-source-20261109/licenses/CROMA-LICENSE": {
       "bytes": 1071,
@@ -748,16 +748,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/dofa-partial-source-20261112/README.md": {
-      "bytes": 1602,
-      "sha256": "51d647d0d2d5e334ea1c2963f858a9f9ff57e704a49ebdac635c34d73e443b78"
+      "bytes": 1863,
+      "sha256": "d8c7440002f614243e813cc4fcfd015e82b4d095ce750c064046ee9b771c4305"
     },
     "release/dofa-partial-source-20261112/SHA256SUMS": {
       "bytes": 3243,
-      "sha256": "7ce059bf2847fddcfe043161fe48d3e156685ff0705653de79e30c20ceb83875"
+      "sha256": "ee173779bd321b7e020522086c017786079099b5a91b0099f27e30709d850338"
     },
     "release/dofa-partial-source-20261112/SOURCE_EXPORT.json": {
-      "bytes": 27371,
-      "sha256": "93626116431e2c1626df8cfe96e293af98d5f5d8d1b7f2dd53a445882a12d631"
+      "bytes": 28106,
+      "sha256": "ff1e9463281bb49195c7d32e324732efab87f18e8813c584b5f50fcbbfac3c43"
     },
     "release/dofa-partial-source-20261112/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -781,7 +781,7 @@
     },
     "release/dofa-partial-source-20261112/file_index.json": {
       "bytes": 4900,
-      "sha256": "12f0bf79f22dfa7a0373603bbf650821a010eb973f759f31e27eb725ecfedcf4"
+      "sha256": "687ff1c9729ebfa30a89d5b8293a98684d3dd377455b33760f4dfe769871dec0"
     },
     "release/dofa-partial-source-20261112/historical-ed2eb3e/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json": {
       "bytes": 15795,
@@ -1468,16 +1468,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/loss-source-20261110/README.md": {
-      "bytes": 3287,
-      "sha256": "4b6f8ed48626c2fc1d17507c222f4717134cbfe3aef051bcb748f18a08ac2241"
+      "bytes": 3548,
+      "sha256": "ff7ca6da168c0e71e3e90a282ddca97a74ac1285d5d7a3d64b91a04d9c8426ea"
     },
     "release/loss-source-20261110/SHA256SUMS": {
       "bytes": 3013,
-      "sha256": "4fe06cf5b609a8de761bb67271b1f2ef4f6200e9d4bce2810f8009b8a8da9be2"
+      "sha256": "405cf657c8b752d4b1763c9b5fc43eaf87dc81b7f2441dcfc979c8e4f357a880"
     },
     "release/loss-source-20261110/SOURCE_EXPORT.json": {
-      "bytes": 19660,
-      "sha256": "3f66cb5369d73110fef55142b84b6585e7babb5545ce0b00f3d26973e8f9b7e5"
+      "bytes": 20395,
+      "sha256": "f487639a3e97ca6554a8dd092dfaba40fc4288faadb9409ca5c2650ebcd81a77"
     },
     "release/loss-source-20261110/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -1489,7 +1489,7 @@
     },
     "release/loss-source-20261110/file_index.json": {
       "bytes": 4730,
-      "sha256": "6a26a1763c53d67e0aaf50bf165bd8f9be2a26cb4a456be5a06b7cdb78afce7c"
+      "sha256": "ce475d3150f03f6123a37f73d6a346ace1d8561631dc5d0bf6619dd9dfb8ecf7"
     },
     "release/loss-source-20261110/licenses/CROMA-LICENSE": {
       "bytes": 1071,
@@ -1628,16 +1628,16 @@
       "sha256": "0d07fca59430dc0aae4fedde74f538cecd5a5eba9a342455d32b1f71289cd8b5"
     },
     "release/titan-followup-20261109/README.md": {
-      "bytes": 10413,
-      "sha256": "de7f7b39f978af5a75f5a590b3f10b317d09a5973b878845137bce3a28462e3f"
+      "bytes": 10674,
+      "sha256": "3a24c49f59ff3caba542ae3f9dbb78b28d6d580535f8b77148566f7e4d45a018"
     },
     "release/titan-followup-20261109/SHA256SUMS": {
       "bytes": 769,
-      "sha256": "693438cff26d70a074014e6dcbba4be922ea6b85e4a74851315e97b26207b705"
+      "sha256": "474a58801005b33e4fc700a00b634bfe02b371197d0f968ab231af5ab6059744"
     },
     "release/titan-followup-20261109/file_index.json": {
       "bytes": 1476,
-      "sha256": "a57f7cd229c2123206c1e39d561f7ac9417e70a9e107c10dde54aa3993b55a5f"
+      "sha256": "0b4ea930d9362eee443e7f9281265865e3df2dab1adf6ab63b6c97dd17fc6a04"
     },
     "release/titan-followup-20261109/followup-supplement.zip": {
       "bytes": 4385713,
@@ -1916,8 +1916,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "bytes": 32242,
-      "sha256": "b32fdcfe44928b41f185d1a1770d2983506525a826bdf9a85b33362b157f723d"
+      "bytes": 32248,
+      "sha256": "ddb116401e35b7be5735c8b99a698a83417f755fa61b6be2f7bbf91ac8110401"
     },
     "splits/earth_loso_arctic_thermokarst.json": {
       "bytes": 17905,
@@ -2024,8 +2024,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "titansar/configs/defaults.py": {
-      "bytes": 5431,
-      "sha256": "16ab81187767587bc970a15cdce85fa7c89e2d7b9deed63f3e225c500ed1a8d1"
+      "bytes": 5454,
+      "sha256": "e068a282fc61f83c5a10a85c2ebf6859037975f044a9897aff18e6d1edab6691"
     },
     "titansar/data/__init__.py": {
       "bytes": 48,
@@ -2033,15 +2033,15 @@
     },
     "titansar/data/dataset.py": {
       "bytes": 23528,
-      "sha256": "fb3f91f325dcac330abe475aa7f36efeb05b8052a57e2cb7cb6d5fe740a0edc5"
+      "sha256": "369d40c37730ae563cd44bdea249eb62176ab14352a044445a64d01cfc96ca3c"
     },
     "titansar/evaluation/__init__.py": {
       "bytes": 53,
       "sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de"
     },
     "titansar/evaluation/metrics.py": {
-      "bytes": 14573,
-      "sha256": "6731e0f906b8d9808d452665d6b6a6f966189e3e2b4d66ed969651d76008c5fb"
+      "bytes": 14600,
+      "sha256": "e8d01a6d75959918f91141043164ba9b9d627a72d1ef68514e994770fcc491c8"
     },
     "titansar/models/__init__.py": {
       "bytes": 46,
@@ -2052,12 +2052,12 @@
       "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
     },
     "titansar/models/foundation_models.py": {
-      "bytes": 19880,
-      "sha256": "9b1e77b74be4ae8a3fac1703919867476689ff6c85a9c2276c4041401f6b2897"
+      "bytes": 19869,
+      "sha256": "3ef0e1134f87c1215790cdf06d2cc4139062eee9eee8470e5449973b46cbf87e"
     },
     "titansar/models/probing.py": {
-      "bytes": 25216,
-      "sha256": "6a78eedf98277d6eaeb2cfdb86939a4b4923e08770e0d2145575761b640609cc"
+      "bytes": 25226,
+      "sha256": "e2fe1212c8b06a2e24235e3ef95cb5436861d1d925478ba78da6fbc0ecb8b0bb"
     },
     "titansar/reproducibility.py": {
       "bytes": 4648,

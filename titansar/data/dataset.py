@@ -217,9 +217,9 @@ def assign_split(lat: float, lon: float, config: TitanSARConfig) -> str:
 
     Split logic (all longitudes in 0-360E convention):
     - Selk holdout: within selk_radius_deg of Selk center
-    - Train: Western hemisphere (lon in [180, 360])
-    - Val: Eastern equatorial (lon in [0, 180], |lat| <= 30)
-    - Test: Eastern polar (lon in [0, 180], |lat| > 30)
+    - Train: Western hemisphere (lon in [180, 360))
+    - Val: Eastern equatorial (lon in [0, 180), |lat| <= 30)
+    - Test: Eastern polar (lon in [0, 180), |lat| > 30)
     """
     # Normalize longitude to [0, 360) before any checks
     lon = lon % 360

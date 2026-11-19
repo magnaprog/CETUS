@@ -27,7 +27,7 @@ def compute_mmd(
     estimator: str = "biased",
     equal_sample_size: bool = True,
 ) -> float:
-    """Compute a seeded MMD estimate between two finite feature arrays.
+    """Estimate squared MMD between two finite feature arrays with seeded subsampling.
 
     RBF bandwidth estimation occurs after seeded random subsampling.
     The selected rows still depend on catalog row order. Equal sample sizes
@@ -121,11 +121,11 @@ def compute_mmd_repeated(
     base_seed: int = 0,
     **kwargs,
 ) -> dict:
-    """Return all repeated-subsampling MMD estimates and summary quantiles.
+    """Return all repeated-subsampling squared-MMD estimates and summary quantiles.
 
     The ``ci95`` entry holds the empirical 2.5/97.5 percent quantiles of the
     subsampling distribution. It describes subsampling variability, not a
-    parametric confidence interval for the population MMD.
+    parametric confidence interval for population squared MMD.
     """
     if repeats < 2:
         raise ValueError("repeats must be at least 2")

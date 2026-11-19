@@ -8,7 +8,7 @@ from dataclasses import dataclass, field
 # Cassini RADAR: Ku-band
 CASSINI_FREQ_GHZ = 13.78  # GHz
 CASSINI_WAVELENGTH_CM = 2.176  # cm (c / f = 2.998e10 / 13.78e9 = 2.176 cm)
-CASSINI_WAVELENGTH_UM = 21_760  # micrometers (unused: the DOFA path passes GHz)
+CASSINI_WAVELENGTH_UM = 21_760  # micrometers (reference only; DOFA receives a numeric band identifier)
 # CETUS follows the pinned DOFA README's 5.405 Sentinel-1 example and supplies
 # 13.78 for Cassini. The paper's version 2 instead describes a Sentinel-1
 # identifier of 3.75. Checkpoint-specific pretraining identifiers remain

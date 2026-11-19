@@ -112,7 +112,7 @@ def assert_cache_real_weights(feat_dir, array_stem, model_name, strict):
         if expected_identifier is None or provenance.get("band_identifier_ghz") != expected_identifier:
             raise RuntimeError(
                 f"DOFA band identifier missing or incorrect for {array_stem}; "
-                f"expected {expected_identifier} GHz. Re-extract the domain features."
+                f"expected numeric input {expected_identifier}. Re-extract the domain features."
             )
     for suffix, key in (("_ids", "tile_ids_sha256"), ("_labels", "labels_sha256")):
         companion = Path(feat_dir) / f"{array_stem.replace('_feats', suffix)}.npy"

@@ -173,6 +173,31 @@ Project code uses the root MIT license. The vendored CROMA implementation has it
 
 The [DOFA source package](release/dofa-partial-source-20261112/README.md) contains the runner and supporting modules for the fifty-fit numeric-input comparison. It preserves the original implementation without presenting the source subset as a complete runnable environment. Its contracts describe the additional inputs and execution checks. The separate [numerical companion](release/dofa-partial-20261112/README.md) reconstructs scores from saved predictions using only the Python standard library.
 
+## Reading preserved source descriptions
+
+The table below gives the current interpretation of comments and docstrings in
+[current-source](release/current-source-20261109/README.md),
+[loss-source](release/loss-source-20261110/README.md), the
+[historical DOFA modules](release/dofa-partial-source-20261112/README.md), and
+`reference/titansar/` inside the
+[scientific archive](release/titan-followup-20261109/README.md). It supersedes the
+specific descriptions listed in the last column. These source snapshots retain
+their producer bytes; the root runner's editable descriptions are corrected
+in place.
+
+| Object or helper | Operation and interpretation | Historical wording superseded |
+| --- | --- | --- |
+| DOFA numeric input | The wrapper passes the recorded numeric band identifier. Its checkpoint-specific pretraining convention remains unresolved, so the comparison does not validate physical wavelength conditioning. | `defaults.py`, `DOFAWrapper` and cache messages that label the input GHz or call the Titan comparison a band-extrapolation test; current-source, loss-source, historical DOFA and archived reference copies. |
+| Encoder features | DINOv2 and Random Init use CLS features. The accepted DOFA factory uses mean patch features followed by `fc_norm`; CROMA uses mean patch features followed by `GAP_FFN_s1`. The base wrapper delegates to each encoder. | Historical and archived base-wrapper and DOFA descriptions that call every output a CLS token. |
+| Repeated input channels | DINOv2 uses means [0.485, 0.456, 0.406] and standard deviations [0.229, 0.224, 0.225], so its repeated channels differ after normalization. CROMA receives two copies of the same SAR image, without an independently measured second polarization. The wrapper does not establish which learned features remain usable. | Historical and archived DINOv2 claims of identical normalization constants and CROMA claims that all learned cross-polarization features are unusable. |
+| Titan tile values | `hisar_log_dn` arrays contain display digital numbers. The description “sigma0 linear” applies only to `linear_sigma0` mode; array shape and float32 storage do not establish calibrated backscatter. | The unconditional “sigma0 linear” file-format bullet in the historical and archived dataset docstrings. |
+| Display-DN normalization | `compute_linear_norm_range` takes sample percentiles. Extreme values have less influence than on min/max bounds, but saturation can still determine a percentile bound. A percentile span below `1e-6` returns the declared default range. | Historical and archived claims that percentile bounds prevent saturated pixels from setting the scale. |
+| dB normalization | `compute_norm_range` estimates pixel spread from per-tile means and available variances. The helper does not compare clipping counts. Titan display DN uses the separate percentile routine. | The historical and archived dB helper's claim that far fewer pixels clip at 0 or 1. |
+| MMD estimates | `compute_mmd` returns squared MMD; `compute_mmd_repeated` summarizes those values. Its `ci95` field contains empirical subsampling quantiles, not a parametric confidence interval for population squared MMD. | Current-source repeated-estimator descriptions that call the returned quantity MMD. |
+| Fallback geographic split | `assign_split` first reduces longitude modulo 360 and checks the Selk holdout. Outside that holdout, west [180, 360) is training; east [0, 180) is validation at absolute latitude at most 30 degrees and test above 30 degrees. Published evaluations use their bound external manifests. | Closed longitude intervals in the historical and archived fallback docstrings. |
+| Probe fitting and checkpoint selection | `train_linear_probe` uses caller-supplied class weights when present and otherwise unweighted cross-entropy. `train_finetuned_model` runs the declared epoch loop and restores its validation-selected state; validation does not stop the loop early. | Historical probing descriptions that promise inverse-frequency weights unconditionally or describe checkpoint selection as early stopping. |
+| Legacy Earth patches | `tile_earth_analog` uses `tile_size` for both square-patch dimensions and strides; 128 pixels is the default. | The current-source helper's fixed “128×128” description. |
+
 ## Source identity and maintenance
 
 The root export's builder and development commit identify its original source. `SOFTWARE_EXPORT.json` binds current files and retains the original `source_sha256` values and additive documentation history. Earlier comment/docstring corrections preserved executable ASTs after docstrings were excluded; a separate cleanup removed only the unused `Optional`, `np` and `TitanSARConfig` imports. Original source, guide and manifest bytes remain in CETUS commit `360eaea532ead477f46906d7ebe0cb5282e8b082`.

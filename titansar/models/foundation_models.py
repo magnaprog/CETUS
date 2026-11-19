@@ -240,7 +240,7 @@ class DOFAWrapper(FoundationModelWrapper):
         self.model.eval()
         logger.info(
             f"DOFA loaded ({self.weights_source}). "
-            f"Band identifier: {self.wavelength} (GHz for SAR)"
+            f"Numeric band input: {self.wavelength}"
         )
 
     def _build_placeholder(self) -> nn.Module:

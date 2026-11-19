@@ -31,6 +31,10 @@ paths, original producers and receipt identities are in
 [provenance.json](provenance.json). The source revision used to publish the
 archives is distinct from the revisions that produced their results.
 
+For source inspection, the [current description corrections](../../SOFTWARE.md#reading-preserved-source-descriptions)
+explain the input encoding, feature pooling, normalization, scores and helper
+behavior where preserved comments or docstrings are misleading.
+
 ## Reconstruct saved results
 
 Use Python 3.12.3 and NumPy 2.4.4, the recorded numerical versions. Run the

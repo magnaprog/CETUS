@@ -27,6 +27,10 @@ states which inputs are supplied and which prerequisites remain separate.
 | Historical model-grid and coverage analysis | [analyze_model_followup.py](scripts/analyze_model_followup.py), [analyze_model_followup_coverage.py](scripts/analyze_model_followup_coverage.py), [analyze_sar_coverage.py](scripts/analyze_sar_coverage.py) | Original catalog/split and receipt identities; the full-grid analyzer does not accept the anonymous catalog unchanged. Use the numerical companions for portable saved-result arithmetic. |
 | Remaining package and helpers | All `titansar` modules, plus run_finetuning.py and summarize_review_frozen.py | Preserved import closure and historical facilities. This export does not claim to support every legacy CLI or preprocessing path. |
 
+For source inspection, the [current description corrections](../../SOFTWARE.md#reading-preserved-source-descriptions)
+explain the input encoding, feature pooling, normalization, scores and helper
+behavior where preserved comments or docstrings are misleading.
+
 ## Read the contracts first
 
 [CONTRACTS.md](CONTRACTS.md) identifies model assets, source/runtime seals,
