@@ -224,6 +224,78 @@
       "previous_manifest_sha256": "10bead8df14d49b31029bd3bd4870652e0af80606b4512d06f8ed5e007ce1fdf",
       "previous_sha256": "7070aa0e8481ba42d94119bc8afc803b4d953ba84602b29cef669d54329f1baf",
       "reason": "Update the current software citation to the author-approved project title while preserving the software citation type, author metadata, historical records and original scientific source identities."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-18",
+      "new_sha256": "d045d9a1c6ef86709f08b99dc9ae09f129b90825616fa01f4f5e140dd5fddfe1",
+      "path": "README.md",
+      "previous_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "previous_sha256": "3901079af2e71d166c5ca454175c6cfb992c7c0a731572ff5d79b6e97b4245c3",
+      "reason": "Organize the guide around scientific purpose, reader tasks, study populations and input access; distinguish the dated public preprint. Original scientific producers, source_sha256 values, builder identity and prior history are unchanged; this update records no scientific execution."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-18",
+      "new_sha256": "1b97c2fbf1b4437270c73b31d19698a354767a60153cd9de3fb73b586347c1d8",
+      "path": "PAPER_REPRODUCTION.md",
+      "previous_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "previous_sha256": "42a44c5554d54b3e1eb130116902786c802b2c0325ba0cb9e2863153d57a0115",
+      "reason": "Move population and classifier definitions before package selection; replace inaccessible audit-path and digest tables with reproduction scope and accessible routes. Original scientific producers, source_sha256 values, builder identity and prior history are unchanged; this update records no scientific execution."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-18",
+      "new_sha256": "6883c33c52955226809de9197f72eb415720744770bbd15c3c5e8cdb5685a019",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "previous_sha256": "0316b41d7ce615367e1887d3887287c761bb5e2c4c486ee59f2f010e95273358",
+      "reason": "Separate saved arithmetic, native image execution and training preparation; clarify classifier-seed effects from the unchanged implementation. Original scientific producers, source_sha256 values, builder identity and prior history are unchanged; this update records no scientific execution."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-18",
+      "new_sha256": "22ceb417d9d40dfbc72e516c857c433211fe79713458585f4bb3a374d415502b",
+      "path": "FILES.md",
+      "previous_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "previous_sha256": "52911742f0ad74ec4bf7eb0eff6123923bbfee3dacd568491763e7e345c26d32",
+      "reason": "Clarify the root spatial-block inventory and definitions while retaining file names, quantities and interpretation limits. Original scientific producers, source_sha256 values, builder identity and prior history are unchanged; this update records no scientific execution."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-18",
+      "new_sha256": "d90037a4e9060b2c1b275a765268f734eb1844095284fd4113046f38f4a1ae19",
+      "path": "CORRECTIONS.md",
+      "previous_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "previous_sha256": "03a3072643cdd4d4e462cdc0a2e818733f70691bffe6c08d6b115a178c69cc29",
+      "reason": "Clarify the correction scope and current image-access route while preserving historical data and scientific limitations. Original scientific producers, source_sha256 values, builder identity and prior history are unchanged; this update records no scientific execution."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-18",
+      "new_sha256": "6a78eedf98277d6eaeb2cfdb86939a4b4923e08770e0d2145575761b640609cc",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "previous_sha256": "32b7ddc24481910b5cb5b1da63815ca5632b4f8e90c98331e21309bac60494f3",
+      "reason": "Clarify the metadata-sidecar return object and shared cached-weight flag in two docstrings. Executable AST and the complete train_linear_probe function are unchanged. Original scientific producers, source_sha256 values, builder identity and prior history are unchanged; this update records no scientific execution."
+    },
+    {
+      "change_kind": "editorial_display_label",
+      "date": "2026-11-18",
+      "new_sha256": "d4e0a39497987952d35e41fa0cf92fd468b911b7e6211aa0aa8c0967710989e9",
+      "path": "release/crater-retrieval-20261114/scripts/plot_dataset_geography.py",
+      "previous_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "previous_sha256": "fe327434abda5f6443c0935ee8b05293649d27d27a044a97c2195c57d817932b",
+      "reason": "Shorten the Titan sampling footer. All scientific input, coordinate, class, style and scale values are unchanged. Current expected exports and inventory hashes reflect the label edit; earlier producer attributions are retained."
+    },
+    {
+      "baseline_cetus_commit": "36bcada255f4fc481ae94c37fd4919d0b82c02d6",
+      "change_kind": "editorial_display_label",
+      "date": "2026-11-18",
+      "new_sha256": "84e05b4905699dc8889fec457a02e6695c3d534284083cf7bcfd64e37df760f9",
+      "path": "release/crater-retrieval-20261114/scripts/plot_dataset_geography.py",
+      "previous_sha256": "d4e0a39497987952d35e41fa0cf92fd468b911b7e6211aa0aa8c0967710989e9",
+      "reason": "Shorten the Venus sampling footer. All scientific input, coordinate, completeness, example, style and scale values are unchanged. The prior local Titan footer change is retained. Current expected exports and inventory hashes reflect the label edit; earlier producer attributions are retained."
     }
   ],
   "excluded": [
@@ -254,7 +326,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated guide with documentation updates",
-      "sha256": "0316b41d7ce615367e1887d3887287c761bb5e2c4c486ee59f2f010e95273358"
+      "sha256": "6883c33c52955226809de9197f72eb415720744770bbd15c3c5e8cdb5685a019"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
@@ -349,7 +421,7 @@
     },
     "titansar/models/probing.py": {
       "origin": "committed source with comment/docstring corrections; executable AST unchanged",
-      "sha256": "32b7ddc24481910b5cb5b1da63815ca5632b4f8e90c98331e21309bac60494f3",
+      "sha256": "6a78eedf98277d6eaeb2cfdb86939a4b4923e08770e0d2145575761b640609cc",
       "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {

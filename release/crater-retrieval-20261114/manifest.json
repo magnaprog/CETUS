@@ -183,20 +183,20 @@
         "sha256": "7bb743829c03568b2687ad6dad49c50e36b806e3976259d41be81ff289f67fb9"
       },
       "titan-class-locations.pdf": {
-        "bytes": 104195,
-        "sha256": "71399a5d7dfeb8b63b4f5b7e4c543671a9826eeeb3d337e3aa469bf80df23fde"
+        "bytes": 103591,
+        "sha256": "9f51bce1c91c25cde0adfc0a72d4412f9cd421069597ec3c24181f892e8c66fc"
       },
       "titan-class-locations.png": {
-        "bytes": 139663,
-        "sha256": "2a9035121e49aa01e9b286e744de6b23d8571bc091c61e1a7772faf34ef6859d"
+        "bytes": 137631,
+        "sha256": "b375c293558e91a36fbb1b148142b9b462674d5e5259ecbcc57915d709da180a"
       },
       "venus-sample-centers.pdf": {
-        "bytes": 226432,
-        "sha256": "6b36bf5f0c7bc0597205bf45082a05ec5043f34a0f2bf70b9c96ab1f4dcf27f2"
+        "bytes": 225491,
+        "sha256": "a12eee6785fef1c6c82ded7901287faa3dbe7498448a0f3d0989f0225db1535d"
       },
       "venus-sample-centers.png": {
-        "bytes": 173623,
-        "sha256": "817910a90c576ff29504211d27b07ea14fc9fac1787deb6e8391b5128bf73cfb"
+        "bytes": 167659,
+        "sha256": "baaa3147fa89764da82a60fbb1ae58bf8c4d6d772e720e838f0d7230880ad9dd"
       }
     },
     "full": {
@@ -217,20 +217,20 @@
         "sha256": "8f8ab25a1599e35e6711d9413a48bc0883798c277295302c45aa50e482214abb"
       },
       "titan-class-locations.pdf": {
-        "bytes": 104433,
-        "sha256": "db5c2e2f17bb1f56df3017353e20210730bdd8fd7ed647cf97324702d92c58d7"
+        "bytes": 103952,
+        "sha256": "2c3adec0529a6ef38c8656473c401f52202d1f351769c92048f45de4779e75b8"
       },
       "titan-class-locations.png": {
-        "bytes": 132563,
-        "sha256": "e00ee984a141606845c20da95f21db2047a3b5ebd3e5785e2af9af2b56258654"
+        "bytes": 130094,
+        "sha256": "64c770d45da568c356880629aabb0e3e6c265abcbea0f92db9b5c2f7622fe284"
       },
       "venus-sample-centers.pdf": {
-        "bytes": 228619,
-        "sha256": "3ea093c4413aae055fa1cc607f570f675711bdaaad7bedf48cb160bda8f97065"
+        "bytes": 227955,
+        "sha256": "db7a220f030cb59f2aa576873567fa8b93ea53098d78377f15f39ea90537f179"
       },
       "venus-sample-centers.png": {
-        "bytes": 169800,
-        "sha256": "63a0e10e1b98446d2a3da7bb672b6568fcdbebe4fc454c349148d728128f487a"
+        "bytes": 163915,
+        "sha256": "e9d82d8e40f599ce8cb33552a85b3d23026a4d61e14ae63730aea2a283f86888"
       }
     }
   },
@@ -408,8 +408,8 @@
       "sha256": "9b8ae28fc750b7cba83e2e825a6597f09aaee18ab590c8ad3b5e593993f06071"
     },
     "scripts/plot_dataset_geography.py": {
-      "bytes": 26609,
-      "sha256": "fe327434abda5f6443c0935ee8b05293649d27d27a044a97c2195c57d817932b"
+      "bytes": 26488,
+      "sha256": "84e05b4905699dc8889fec457a02e6695c3d534284083cf7bcfd64e37df760f9"
     },
     "scripts/plot_regional_errors.py": {
       "bytes": 15899,
@@ -528,7 +528,7 @@
       },
       "scripts/plot_dataset_geography.py": {
         "path": "scripts/plot_dataset_geography.py",
-        "sha256": "fe327434abda5f6443c0935ee8b05293649d27d27a044a97c2195c57d817932b"
+        "sha256": "84e05b4905699dc8889fec457a02e6695c3d534284083cf7bcfd64e37df760f9"
       },
       "scripts/plot_regional_errors.py": {
         "path": "scripts/plot_regional_errors.py",
@@ -573,7 +573,7 @@
       "scripts/plot_class_contrasts.py": "Larger class markers with dark edges; saved AP differences, offsets and limits unchanged.",
       "scripts/plot_class_retrieval.py": "Shared endpoint display with public display_io completion writing and exact distributed helper bindings; both styles retain original CLI semantics.",
       "scripts/plot_crater_retrieval.py": "Complete tied-score endpoints with vector identities and a separate uniform-order expected-recall reference; original CLI defaults and curve validation retained.",
-      "scripts/plot_dataset_geography.py": "Public payload validation, 300 dpi point layers and separately authenticated Natural Earth locator context; public helper bindings retained.",
+      "scripts/plot_dataset_geography.py": "Public payload validation, 300 dpi point layers and separately authenticated Natural Earth locator context; public helper bindings retained. The Titan footer names test centers and longitude sectors; the manuscript caption explains the sampling limitation. The Venus footer identifies the unlabeled examples and pixel-completeness symbols; the manuscript caption and guide explain the sampling limitation.",
       "tests/test_class_retrieval_plot.py": "Synthetic public-module coverage without the unavailable analysis import.",
       "tests/test_crater_retrieval_plot.py": "Nine added synthetic cases check endpoint identity, singleton/tie behavior, uniform-order reference, legend and physical spacing.",
       "tests/test_dataset_geography_plot.py": "Existing public synthetic fixtures plus context authentication, source-part identity, geometry/style/transform/clip rejection and scientific-artist separation."

@@ -149,7 +149,7 @@ def titan_figure(payload):
              "titan", [r[0] for r in rows], class_index=c)
         ax.set_title(data.CLASSES[c].capitalize())
     figure.text(.5, .035, "Test tile centers; regions 1–5 run west to east.\n"
-                 "Neutral lines mark 72-degree sector boundaries; points are not surface coverage.", ha="center")
+                 "Neutral lines mark 72-degree sector boundaries.", ha="center")
     return figure
 
 
@@ -249,8 +249,7 @@ def venus_figure(payload):
                     path_effects=[patheffects.withStroke(linewidth=1.5, foreground="white")])
     ax.set_title("All 2,945 retained Venus sample centers")
     ax.legend(loc="upper center", bbox_to_anchor=(.5, -.18), ncol=2, frameon=False)
-    figure.text(.5, .035, "A–F: the six displayed unlabeled examples. Symbols describe pixel completeness.\n"
-                 "These centers do not measure surface-area or acquisition coverage.", ha="center")
+    figure.text(.5, .035, "A–F: the six displayed unlabeled examples. Symbols describe pixel completeness.", ha="center")
     return figure
 
 

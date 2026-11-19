@@ -1,40 +1,31 @@
 # CETUS
 
-CETUS evaluates visual representations pretrained on natural images and Earth
-observations for terrain classification in Cassini SAR images of Titan. This repository provides catalogs, geographic splits, saved
-predictions and software for measuring agreement with an expert terrain map.
+How far can visual representations learned from natural images and Earth observations transfer to Cassini SAR images of Titan? CETUS compares pretrained encoders, random initializations and classical image measurements by asking how well classifiers predict terrain classes in the geomorphological map of Lopes et al. The map draws partly on the same radar observations, so the scores measure agreement with expert interpretation. Classifier fitting, geographic variation and individual terrain classes matter when interpreting an overall score.
 
-Start with the [paper reproduction guide](PAPER_REPRODUCTION.md) to choose an
-experiment and the package table below to find its inputs and commands. The
-[November saved-results package](release/titan-followup-20261109/README.md)
-provides four preserved archives with CPU reconstruction for fitting, coverage,
-initialization and epoch-selection analyses. Later companions cover loss
-normalization, class ranking and retrieval, the two DOFA input comparisons, and
-regional and geographic displays. Both DOFA comparisons use numeric inputs
-13.78 and 3.75.
+This repository supplies catalogs, geographic divisions, saved predictions and software. Choose a task before choosing a package:
 
-The [display companion](release/crater-retrieval-20261114/README.md) shows
-regional AP changes and recall against retrieved tile count for all six terrain
-classes, while retaining absolute Craters AP. It also shows individual SGD
-classifier seeds, error rates across map mixtures, Titan test locations, Earth
-collection sites and nominal image windows, and unlabeled Venus sample centers.
+| Task | Start here | Inputs and scope |
+| --- | --- | --- |
+| Reconstruct reported scores | [Paper reproduction guide](PAPER_REPRODUCTION.md) and [saved-result commands](release/titan-followup-20261109/README.md#reconstruct-saved-results) | CPU calculations from saved predictions, logits or histories. Each companion specifies its dependencies and which quantities it reconstructs. |
+| Replot results or sampling locations | [Ranking and regional displays](release/crater-retrieval-20261114/README.md) | Saved curves, result summaries, geometry and bundled fonts; no new model result. |
+| Extract Titan features and fit classifiers | [Native classifier workflow](SOFTWARE.md#install-and-check) | Processed images, matching catalog/splits, upstream encoder weights and the recorded runtime. This route fits classifiers with encoder weights unchanged. |
+| Inspect or prepare encoder training | [Current execution source](release/current-source-20261109/README.md), [loss-normalization source](release/loss-source-20261110/README.md), [DOFA partial-training source](release/dofa-partial-source-20261112/README.md) | Implementations and input contracts. Historical plans, model states and other execution inputs have separate access requirements. |
 
-For implementation details, use the [current execution
-source](release/current-source-20261109/README.md) for CNN, matched-DINO and
-CPU fitting, the [loss-normalization
-source](release/loss-source-20261110/README.md), or the [DOFA partial-training
-source](release/dofa-partial-source-20261112/README.md). Each states its input
-and environment requirements. [SOFTWARE.md](SOFTWARE.md) describes the native
-SGD and nearest-neighbor runner with encoder weights unchanged.
+## Choose the study population
 
-The complete current collection of 23,380 processed Titan images is available
-in the [image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109).
-Download the archive, [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md)
-and checksums together. Unauthenticated download, extraction and verification of
-all images passed on 9 November 2026; no model ran in that input check.
-The [access inventory](release/titan-followup-20261109/DATA_ACCESS.md) distinguishes
-these images from the numerical companions' small inspection arrays and from
-omitted embeddings, model states and historical Earth/Venus images.
+The primary Titan evaluation has 23,380 catalog images and 23,246 distinct test images across five longitude sectors. The root `catalogs/`, `splits/` and `results/` describe the earlier 11,371-tile spatial-block evaluation, together with Earth transfer and the unlabeled Venus comparison. [FILES.md](FILES.md) explains those root files; the [reproduction guide](PAPER_REPRODUCTION.md#choosing-an-experiment) maps each comparison to its population.
+
+The original map sampler omitted valid western terrain. The expanded catalog preserves the original image pixels, adds 12,009 tile IDs and changes 15 existing labels. Keep each catalog, split and prediction package together: an image ID alone does not identify its label version. Both population and geographic design changed, so comparing scores across the two evaluations cannot separate their effects. [CORRECTIONS.md](CORRECTIONS.md) gives the correction and the Earth-source limitations.
+
+Regional spreads are descriptive. Fitting and initialization comparisons retain their optimization and selection limits, and historical Earth labels still need expert review. The DOFA comparisons test numeric inputs 13.78 and 3.75; their sensitivity does not resolve the appropriate Cassini convention.
+
+## Obtain the inputs
+
+The complete collection of 23,380 processed Titan images is available in the [image release](https://github.com/magnaprog/CETUS/releases/tag/titan-processed-images-20261109). Download the archive, [companion notice](https://github.com/magnaprog/CETUS/releases/download/titan-processed-images-20261109/RELEASE_NOTICE.md) and checksums together. Unauthenticated download, extraction and verification of all images passed on 9 November 2026; that check ran no model. The [access inventory](release/titan-followup-20261109/DATA_ACCESS.md) separates these images from the numerical companions' small inspection arrays and identifies omitted embeddings, model states and historical Earth/Venus images.
+
+Image-based execution needs the applicable source, weights and runtime as well as the pixels. New runs must identify their actual inputs and plans. The native stochastic-gradient-descent (SGD) and nearest-neighbor reproduction has a separate producer and verification scope from the matched-DINOv2 and ResNet18 initialization comparisons. The [classifier and interpretation checks](PAPER_REPRODUCTION.md#classifier-and-interpretation-checks) explain which calculations were completed.
+
+## Find a result package
 
 | Package | Contents |
 | --- | --- |
@@ -55,33 +46,7 @@ omitted embeddings, model states and historical Earth/Venus images.
 | [Interpretation analyses](release/interpretation-20261001/README.md) | Class differences, regional weighting, distances to reinstated training images, map-component counts and examples from accepted results. |
 | [Spatial-block evaluation snapshot](release/v1-review-20260908/README.md) and root `catalogs/`, `splits/`, `results/` | 11,371 Titan images with the western map-sampling omission, 398 Earth images and 2,945 unlabeled Venus images. Original bytes and links are preserved. |
 
-Read [CORRECTIONS.md](CORRECTIONS.md) before interpreting historical results. The
-original map sampler omitted valid western terrain. The expanded catalog preserves
-original image pixels, adds 12,009 tile IDs and changes 15 existing labels. Keep
-each catalog, split and prediction package together; image IDs alone do not
-identify a label version. Both population and geographic design changed, so
-comparing scores alone cannot separate their effects.
-
-Scores measure agreement with a map informed partly by the same radar
-observations. They do not establish independent geological accuracy. Regional
-spreads are descriptive, and fitting and initialization comparisons retain their
-documented optimization and selection limits. Historical Earth labels still need
-expert review. The DOFA comparisons show sensitivity to its numeric input;
-the appropriate Cassini convention remains unresolved.
-
-For saved-result checks, follow the November package's [CPU
-commands](release/titan-followup-20261109/README.md#reconstruct-saved-results)
-using the recorded Python and NumPy versions. These commands reconstruct
-arithmetic from supplied records. Image-based runs use the separate image release
-and still require the applicable source, weights, states and runtime inputs.
-Reproduction of native SGD and nearest-neighbor results with encoder weights
-unchanged has a separate producer and verification scope from the matched-DINO
-and ResNet18 initialization comparisons.
-
-The current source package documents its input and execution contracts. New
-runs bind the downloaded images, separately supplied weights and new plans;
-the numerical companions provide the portable saved-result calculations.
-The reproduction guide describes the [classifier and interpretation checks](PAPER_REPRODUCTION.md#classifier-and-interpretation-checks).
+## Verify files and retain credits
 
 From the repository root, check file integrity with:
 
@@ -89,21 +54,6 @@ From the repository root, check file integrity with:
 sha256sum -c SHA256SUMS
 ```
 
-The September and October packages retain their scientific payloads, metrics
-and producer identities. Each versioned package has its own inventory. The
-longitude-package guides are sealed with their export-date wording: statements
-that software and a tile archive are pending describe that export, while the
-source and image-release links above provide the available materials.
-The four ZIPs retain
-their original bytes, internal inventories and historical review wording; the
-wrapper explains their public attribution and completed studies.
-[SOFTWARE_EXPORT.json](SOFTWARE_EXPORT.json) preserves the earlier software
-export's source history.
+Each dated package has its own inventory and preserves its scientific payload and producer identities. Some sealed guides describe software or images as pending at export; the routes above identify the available source and images. The four numerical ZIPs keep their original inventories and historical review wording, with public attribution in their wrapper. [SOFTWARE_EXPORT.json](SOFTWARE_EXPORT.json) distinguishes current file identities from the original software export. File integrity is separate from checking the scientific interpretation.
 
-[FILES.md](FILES.md) describes the historical root data. Use
-[CITATION.cff](CITATION.cff) for citation metadata.
-[DATA_LICENSES.md](DATA_LICENSES.md),
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the package notices retain
-source terms and credits. The [November
-notice](release/titan-followup-20261109/NOTICE.md) records authorship; the
-[manuscript](https://arxiv.org/abs/2610.07576) describes the scientific methods and results.
+Use [CITATION.cff](CITATION.cff) for citation metadata. [DATA_LICENSES.md](DATA_LICENSES.md), [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), and package notices retain source terms and credits; the [November notice](release/titan-followup-20261109/NOTICE.md) records authorship. The [public preprint, v1 of 6 October 2026](https://arxiv.org/abs/2610.07576), describes the study at that date. Later result packages have their own methods and interpretation notes in this repository.

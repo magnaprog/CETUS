@@ -53,7 +53,7 @@ def save_feature_metadata(
 
 
 def load_feature_metadata(feat_dir, array_stem):
-    """Return the provenance dict for one feature array, or None if absent."""
+    """Return the feature array's metadata sidecar, or None if absent."""
     path = Path(feat_dir) / f"{array_stem}.meta.json"
     if not path.exists():
         return None
@@ -64,9 +64,9 @@ def load_feature_metadata(feat_dir, array_stem):
 def strict_real_weights_requested():
     """True if TITANSAR_REQUIRE_REAL_WEIGHTS is set (1/true/yes).
 
-    Lets the CPU consumers of cached features (CORAL, label efficiency, physics
-    analysis) enforce D8 provenance during a strict rerun without each needing its
-    own flag.
+    Lets CPU analyses of cached features check that their metadata identifies
+    pretrained weights, or the intentional random baseline, through one shared
+    environment flag.
     """
     return os.environ.get("TITANSAR_REQUIRE_REAL_WEIGHTS", "").lower() in ("1", "true", "yes")
 
