@@ -68,100 +68,100 @@
   },
   "expected_class_retrieval": {
     "craters-retrieval-cvpr.pdf": {
-      "bytes": 510890,
-      "sha256": "f5466b2b8fb3a1098a1a03fe0fa78ebc98f97785c0f245f02c6d7a8bef9e8b2c"
+      "bytes": 510888,
+      "sha256": "f9dd47b6d22d79033c00dc04b7e1529a919de31c09fe43540e43a77d41eab509"
     },
     "craters-retrieval-cvpr.png": {
-      "bytes": 291006,
-      "sha256": "21a7d9ca88d036852fb1c72b544e5066a9f5498ae301eb07a46adbd57866df6d"
+      "bytes": 290450,
+      "sha256": "a433c6e9c291849720073aae9fcf4664da95e5de47c9c3f10d70e66e40e8f935"
     },
     "craters-retrieval-full.pdf": {
-      "bytes": 511356,
-      "sha256": "a163eca53df1957ca56ee3c47753f1b288857dda69f10ebcb97b52c863222654"
+      "bytes": 511357,
+      "sha256": "eb5c0a35ab7fb2009678910aac86730dab52b7eb0903161d8d3aa6a29756ddf1"
     },
     "craters-retrieval-full.png": {
-      "bytes": 282431,
-      "sha256": "d1a192e4aa765b17cb490b555db87aa07c1d28e90b15e63523f1cadb73e14390"
+      "bytes": 281920,
+      "sha256": "724af4e416b0608aaa6b7bdac2276cab2ad39103dc4b58a1b8c0613392573401"
     },
     "dunes-retrieval-cvpr.pdf": {
-      "bytes": 544678,
-      "sha256": "a95cc9e610420e3222f3d83dd89cbdbb34c43ab139658c447d0a1f1afe7b751f"
+      "bytes": 544675,
+      "sha256": "5054d77ccf1ef494b8959b84cb7148def279acab035234109b1f987638736261"
     },
     "dunes-retrieval-cvpr.png": {
-      "bytes": 234734,
-      "sha256": "c7a29248f456919211bf9161214c336ee148dce489844fc9731f74a1b40249ab"
+      "bytes": 234144,
+      "sha256": "98427e8f9d45e94689c48921f15285914f98cdd4c9224733ecdea02ae1357523"
     },
     "dunes-retrieval-full.pdf": {
-      "bytes": 545177,
-      "sha256": "e143d7a60ffc9379635a0df06e6a1bf6d8ae36dbfa727265bf86b5402bebe7a4"
+      "bytes": 545174,
+      "sha256": "357382dfb777e0d56546f91ddfccb295d28c7b732e6d2fed2654e17ef314c987"
     },
     "dunes-retrieval-full.png": {
-      "bytes": 226359,
-      "sha256": "37b5ba3aac172bd52d732827a2f9e8d1152f95a78f2e6854f97ac0c956e47687"
+      "bytes": 225872,
+      "sha256": "ff3749123e37bfecfff381546733ebc948fc056093441133fbbc0c23d7ddbfd1"
     },
     "hummocky-retrieval-cvpr.pdf": {
-      "bytes": 557636,
-      "sha256": "4d1d88d2d167edb8cfe1f7829da7764aaa79b519c79b16f3ee43f8e58924472b"
+      "bytes": 557639,
+      "sha256": "1de5e3e36ff0730041088b7cde164ea74376db3b1e941d2411dff7963ac009c6"
     },
     "hummocky-retrieval-cvpr.png": {
-      "bytes": 237341,
-      "sha256": "ccdfb5f9e83305148c769a98cd8d90a9f102c4e217d8ae6fad01c702e3ad3ccd"
+      "bytes": 236743,
+      "sha256": "64ea89afba29955b711e2c67bdf73bc84fd4f8363f8aaac41a3e7efe15c559da"
     },
     "hummocky-retrieval-full.pdf": {
-      "bytes": 558097,
-      "sha256": "5b6064833eadf8e47177aef4de348a5019b5ec5026cea371922e6002fb0a934d"
+      "bytes": 558094,
+      "sha256": "08685207c8c6ee6fe3390dd735620285c9f658eda8fa9199461d3c2fc4a218c4"
     },
     "hummocky-retrieval-full.png": {
-      "bytes": 228066,
-      "sha256": "8eb7e3ccbeaf59354a75a76039c07f9f56971f344e0cd700fa7cf5ae0b59580a"
+      "bytes": 227561,
+      "sha256": "e08be12df7339cc0e2ea38031ee168df4262ef156f3aa75f7fc288c94f89a376"
     },
     "labyrinths-retrieval-cvpr.pdf": {
-      "bytes": 569454,
-      "sha256": "d038efc54c333c69851ae2a3614323225ee3709f00c9779ed80f781af02a4190"
+      "bytes": 569453,
+      "sha256": "0705f434113121c2847a124007bc6cf281139f4d591f7886d38702c218facca1"
     },
     "labyrinths-retrieval-cvpr.png": {
-      "bytes": 273736,
-      "sha256": "45b5b41eca49a782173ded8913186ba6d1c7d727ff2c7c2349d6ddc7d1824889"
+      "bytes": 273202,
+      "sha256": "8dc4b1a7c531e56c5026f3253d410daf3800fec109b2bc0d591c7772be09bf9a"
     },
     "labyrinths-retrieval-full.pdf": {
-      "bytes": 569871,
-      "sha256": "59d0211ccd5f746e6e5c53ccc270226b505408d68435353fd94a71a6a5ff06d8"
+      "bytes": 569867,
+      "sha256": "9ce96348d139533d07d4c88ee419903418627a7039b203d3c5bd919212dc042c"
     },
     "labyrinths-retrieval-full.png": {
-      "bytes": 265296,
-      "sha256": "4c0ad4ec3ed2f0b7117a3f99559c413f6cfb3f813bd168f33659c4a615f3b7a7"
+      "bytes": 264797,
+      "sha256": "ad08d74ec0c2b56a85e81e853c9ef8f2a30eb3446b1fb4ca0f7573b8711979fa"
     },
     "lakes-retrieval-cvpr.pdf": {
       "bytes": 555821,
-      "sha256": "8d5d53eee6f9468403334468082c4bab6aaba38127b5422130dcf50c30dc79c6"
+      "sha256": "98cd101c3d2ef037476c16cab4d76e9b80309f945886e6140521f9bcd5739e22"
     },
     "lakes-retrieval-cvpr.png": {
-      "bytes": 242861,
-      "sha256": "f1ce4c49d51691986ff2c52484ebb2ea68de7361c75ea6adc2d5a580f16d2f96"
+      "bytes": 242298,
+      "sha256": "8f747857d3d4d2c9fde0a814377fc790ecdf4b8d442ff94ea15e0da7dba52341"
     },
     "lakes-retrieval-full.pdf": {
-      "bytes": 556330,
-      "sha256": "a662367f21f062f75eaebdb583049dbf91252ddef903f5d3cea9b2d6b3b6cda8"
+      "bytes": 556327,
+      "sha256": "2fc67ce0320e3869190dc9a7ed4b211e026f9e572e67ec6b075f63166d899f47"
     },
     "lakes-retrieval-full.png": {
-      "bytes": 234024,
-      "sha256": "dd7b7cc1790081a9bc94299ae24e39fcc39f6a857b9ecf3670cb14e23098a3c1"
+      "bytes": 233528,
+      "sha256": "5e13058eb5bb4376e38c8fbfb7ed8bb2b44ef250838661b7ead81d2023f3e254"
     },
     "plains-retrieval-cvpr.pdf": {
-      "bytes": 512651,
-      "sha256": "49f0dd6b72294633adb21f9037404b251adc5fc4f33854a8787529103a3da7c5"
+      "bytes": 512650,
+      "sha256": "055485b7329a92ff92860c14ca9d01b1dbc073210143b5891867fa607e19b41d"
     },
     "plains-retrieval-cvpr.png": {
-      "bytes": 201529,
-      "sha256": "35e7a42cde87e969a7888ab8a9bb22346389b9c4ccd6b0a3b68d305905c51261"
+      "bytes": 200948,
+      "sha256": "1ef99a324f59bcfa9cb15774abbc1f8e0f50ceb28bea34bdb4eb3504c9dda9b5"
     },
     "plains-retrieval-full.pdf": {
-      "bytes": 513145,
-      "sha256": "0816260b5c67768d6aad6f6e21bb8452918280124a23b3a8cd93ae2c4d9f7220"
+      "bytes": 513146,
+      "sha256": "20b81bf82a244542947631fdf3a20c7a7ca4ce5ff5802d4917cf8c0edf143532"
     },
     "plains-retrieval-full.png": {
-      "bytes": 191345,
-      "sha256": "abf482e4e9e2fd64abd0608cd3940f410a956dce895533dda5bfd623c24b8aab"
+      "bytes": 190820,
+      "sha256": "3f19614579efd84be3ab703941ed02b29a7f9abc17e63e690ee49ec56df05a4d"
     }
   },
   "expected_dataset_geography": {
@@ -236,20 +236,20 @@
   },
   "expected_figures": {
     "crater-retrieval-cvpr.pdf": {
-      "bytes": 510890,
-      "sha256": "f5466b2b8fb3a1098a1a03fe0fa78ebc98f97785c0f245f02c6d7a8bef9e8b2c"
+      "bytes": 510888,
+      "sha256": "f9dd47b6d22d79033c00dc04b7e1529a919de31c09fe43540e43a77d41eab509"
     },
     "crater-retrieval-cvpr.png": {
-      "bytes": 291006,
-      "sha256": "21a7d9ca88d036852fb1c72b544e5066a9f5498ae301eb07a46adbd57866df6d"
+      "bytes": 290450,
+      "sha256": "a433c6e9c291849720073aae9fcf4664da95e5de47c9c3f10d70e66e40e8f935"
     },
     "crater-retrieval-full.pdf": {
-      "bytes": 511356,
-      "sha256": "a163eca53df1957ca56ee3c47753f1b288857dda69f10ebcb97b52c863222654"
+      "bytes": 511357,
+      "sha256": "eb5c0a35ab7fb2009678910aac86730dab52b7eb0903161d8d3aa6a29756ddf1"
     },
     "crater-retrieval-full.png": {
-      "bytes": 282431,
-      "sha256": "d1a192e4aa765b17cb490b555db87aa07c1d28e90b15e63523f1cadb73e14390"
+      "bytes": 281920,
+      "sha256": "724af4e416b0608aaa6b7bdac2276cab2ad39103dc4b58a1b8c0613392573401"
     }
   },
   "expected_regional_errors": {
@@ -280,8 +280,8 @@
       "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "README.md": {
-      "bytes": 11030,
-      "sha256": "0848549729a1bfcdffb93a85180f31a881d85c3e365667e9830619846a81d598"
+      "bytes": 11522,
+      "sha256": "fbf5dc2ff0a16eadfa17cf4ce4ece4473df5a6ffd542dd44dcd73214458268e5"
     },
     "data/class-curves.npz": {
       "bytes": 21401700,
@@ -363,6 +363,10 @@
       "bytes": 1196,
       "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
     },
+    "presentation-retrieval-legend-20261119.json": {
+      "bytes": 13241,
+      "sha256": "c45ddd13652b973e72c9da3092e2d8f8ed1bdd63e5a472e01bbd8bea80705e40"
+    },
     "regional-errors.json": {
       "bytes": 172455,
       "sha256": "a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07"
@@ -404,8 +408,8 @@
       "sha256": "3ab23b4eae84878d2d976e1d3ed3acfe114c44e013558462df69dfc654b85ec2"
     },
     "scripts/plot_crater_retrieval.py": {
-      "bytes": 22880,
-      "sha256": "9b8ae28fc750b7cba83e2e825a6597f09aaee18ab590c8ad3b5e593993f06071"
+      "bytes": 22877,
+      "sha256": "0b3a51e4b38d6a31a3741534722db38e85bdfea543a994391df7a10b1c752bae"
     },
     "scripts/plot_dataset_geography.py": {
       "bytes": 26488,
@@ -436,8 +440,8 @@
       "sha256": "de4124db4f3bf620cb23387d268dee002912ae45a9a8ae5a22b71b92e2bc4e06"
     },
     "tests/test_crater_retrieval_plot.py": {
-      "bytes": 26513,
-      "sha256": "8d13d6bd1aa0e4317affdff0376267991934bc7ca1ead3680857f66e986e20e6"
+      "bytes": 26510,
+      "sha256": "2ce00bc4d4f4a7d879ad4172fd57b3535d9a0bd6761bc1951c8b8b61fb0ad164"
     },
     "tests/test_dataset_geography_plot.py": {
       "bytes": 16553,
@@ -493,6 +497,11 @@
   "schema": "crater-retrieval-package-v1",
   "source": {
     "copy_policy": "Fonts, licenses, runtime requirements and numerical inputs retain their bytes. The distributed plotting modules use public payload validation and atomic writers; current_source_mapping identifies their exact source. Geographic labels describe sampling populations and partitions. The separately attributed Natural Earth coastline is display context, outside the unchanged scientific input payload.",
+    "current_presentation_revision": {
+      "bytes": 13241,
+      "path": "presentation-retrieval-legend-20261119.json",
+      "sha256": "c45ddd13652b973e72c9da3092e2d8f8ed1bdd63e5a472e01bbd8bea80705e40"
+    },
     "current_source_mapping": {
       "scripts/cvpr_figure_style.py": {
         "path": "scripts/cvpr_figure_style.py",
@@ -524,7 +533,7 @@
       },
       "scripts/plot_crater_retrieval.py": {
         "path": "scripts/plot_crater_retrieval.py",
-        "sha256": "9b8ae28fc750b7cba83e2e825a6597f09aaee18ab590c8ad3b5e593993f06071"
+        "sha256": "0b3a51e4b38d6a31a3741534722db38e85bdfea543a994391df7a10b1c752bae"
       },
       "scripts/plot_dataset_geography.py": {
         "path": "scripts/plot_dataset_geography.py",
@@ -556,7 +565,7 @@
       },
       "tests/test_crater_retrieval_plot.py": {
         "path": "tests/test_crater_retrieval_plot.py",
-        "sha256": "8d13d6bd1aa0e4317affdff0376267991934bc7ca1ead3680857f66e986e20e6"
+        "sha256": "2ce00bc4d4f4a7d879ad4172fd57b3535d9a0bd6761bc1951c8b8b61fb0ad164"
       },
       "tests/test_dataset_geography_plot.py": {
         "path": "tests/test_dataset_geography_plot.py",

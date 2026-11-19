@@ -58,6 +58,10 @@ ResNet18 with full training. All saved states are retained: five random DINOv2
 states and one pretrained state per region, plus three scratch and three
 ImageNet ResNet18 fits with paired seed IDs.
 
+The DINOv2 legend labels the supplied state `Pretrained` and the five random
+states `Random 42` through `Random 46`. The pretrained state's internal identifier
+42 is preserved in the saved inputs; it does not identify a pretraining replicate.
+
 Small points represent complete tied-score groups: retrieved count is TP+FP,
 and recall is the saved fraction multiplied by 100. All endpoints, including
 zero recall, are retained without connectors, interpolation or thinning. Larger
@@ -181,6 +185,10 @@ The report retains the source and figure identities of its original analysis;
 `manifest.json` identifies the current plotting source and expected displays.
 
 ## Integrity and synthetic checks
+
+The [19 November presentation revision](presentation-retrieval-legend-20261119.json)
+records this legend change, its previous and current output hashes, and the
+unchanged scientific inputs. Earlier producer references retain their original scope.
 
 The package manifest retains every existing `expected_*` section. Its additive
 `expected_class_retrieval` section contains 24 asset identities;

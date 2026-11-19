@@ -42,7 +42,7 @@ DINO_KEYS = (("random", 42, "o", "Random 42"),
              ("random", 44, "^", "Random 44"),
              ("random", 45, "D", "Random 45"),
              ("random", 46, "v", "Random 46"),
-             ("pretrained", 42, "X", "Pretrained 42"))
+             ("pretrained", 42, "X", "Pretrained"))
 CNN_KEYS = tuple((arm, seed, marker, f"{label} {seed}")
                  for arm, label in (("scratch", "Scratch"), ("pretrained", "ImageNet"))
                  for seed, marker in enumerate(("o", "s", "^")))

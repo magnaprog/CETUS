@@ -274,7 +274,7 @@ def test_exact_artists_all_endpoints_and_only_tp_increases(tmp_path, ranking, va
         assert ax.title.get_window_extent(renderer).y0 > ax.bbox.y1
         assert ax.get_title().startswith("Region ") and ": " in ax.get_title()
     assert {t.get_text() for t in fig.texts} >= {"Retrieved test tiles (log scale)", "Recall of Craters map labels (%)"}
-    assert [r["label"] for r in qa["legend"][0]] == [*(f"Random {s}" for s in range(42, 47)), "Pretrained 42"]
+    assert [r["label"] for r in qa["legend"][0]] == [*(f"Random {s}" for s in range(42, 47)), "Pretrained"]
     assert [r["label"] for r in qa["legend"][1]] == [f"{a} {s}" for a in ("Scratch", "ImageNet") for s in range(3)]
     assert not fig.legends[0].get_window_extent(renderer).overlaps(fig.legends[1].get_window_extent(renderer))
 
