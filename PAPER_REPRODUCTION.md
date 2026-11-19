@@ -144,22 +144,24 @@ The [DOFA companion](release/dofa-band-20261109/README.md) contains the complete
 
 The [partial-training companion](release/dofa-partial-20261112/README.md) contains fifty saved prediction vectors: two numeric inputs, five seeds and five geographic regions. It compares inputs 13.78 and 3.75 while retaining the training settings and identical initial encoder and classifier states within each pair. The mean macro F1 is 15.68% at 13.78 and 37.52% at 3.75. The paired difference is 21.84 percentage points, with sample SD 4.24 across five regional means after averaging seeds. Craters mean F1 at 3.75 is 1.37%.
 
-From the repository root:
+From the repository root, choose a new output filename in an existing directory outside the checkout. The output and its `.partial` and `.failure.json` sidecars must all be absent.
 
 ~~~sh
 cd release/dofa-partial-20261112
-python3 -B reconstruct.py --output ../dofa-partial-reconstructed.json
+python3 -B reconstruct.py --output /absolute/external/directory/dofa-partial-reconstructed.json
 ~~~
 
-Use a new output path. The standard-library reader checks all ordered test labels and predictions, confusion counts, class and macro scores, and paired aggregates. It does not load models or reproduce training. The result concerns agreement with map labels on previously examined regions. At 3.75, logistic regression on unchanged encoder features reaches 38.42% mean macro F1 in the separate feature comparison; its fitting and epoch choices differ.
+Preserved companion recipes use `../` to write outside an extracted package. Inside this checkout, those paths can still write into `release/`; use an external directory to keep later model execution's clean-source check satisfied.
+
+The standard-library reader checks all ordered test labels and predictions, confusion counts, class and macro scores, and paired aggregates. It does not load models or reproduce training. The result concerns agreement with map labels on previously examined regions. At 3.75, logistic regression on unchanged encoder features reaches 38.42% mean macro F1 in the separate feature comparison; its fitting and epoch choices differ.
 
 The [probabilities and histories companion](release/dofa-scores-20261114/README.md) adds the six class probabilities and fifty-epoch histories for these same fits. It checks probability sums, predictions among tied maxima, the earliest maximum of saved validation recall, and the existing test metrics and regional means. The probability and history values were compared directly with all fifty native run records. The recipient check uses the saved values; it does not regenerate probabilities or validation predictions.
 
-From the repository root, with Python 3.11 or later:
+From the repository root, with Python 3.11 or later, choose another fresh output filename in an existing directory outside the checkout. Its output and both sidecar paths must be absent.
 
 ~~~sh
 cd release/dofa-scores-20261114
-python3 -B reconstruct.py --output ../dofa-scores-checked.json
+python3 -B reconstruct.py --output /absolute/external/directory/dofa-scores-checked.json
 ~~~
 
 The [source package](release/dofa-partial-source-20261112/README.md) contains the training and replay implementation and focused tests. It supports inspection and preparation; the full historical source, data, weights, environment and executable contract remain separate prerequisites. Its documentation contract does not launch the experiment. The numerical companion above is self-contained.

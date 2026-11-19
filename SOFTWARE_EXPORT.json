@@ -426,6 +426,16 @@
       "previous_manifest_sha256": "c1a2b82d74dfcae0dd1798435dce32da683b5d9b705590e8ace694143b85649c",
       "previous_sha256": "43a8ff7adcee585b5d78281ac0725ce237b5061d283a3d82a36868e392a5f867",
       "reason": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-19",
+      "new_sha256": "2f9995efb5f1eb03b2eb306d5878202ce5e9a548b5c6a851e1b0434e51cd46d2",
+      "path": "PAPER_REPRODUCTION.md",
+      "previous_cetus_commit": "e7809f7f5efb7512931ba1ea4f7a734b307d7bd6",
+      "previous_manifest_sha256": "c652b4119c5c76d0576b6c7089c04dfada677bd117aa19d3a0d2da7efebcccfb",
+      "previous_sha256": "1b97c2fbf1b4437270c73b31d19698a354767a60153cd9de3fb73b586347c1d8",
+      "reason": "Place both DOFA reconstruction examples outside the checkout and state the existing-directory and fresh-output requirements. Preserved package recipes, readers, scientific inputs, producer identities and earlier documentation history remain unchanged. This update records no reconstruction or model execution."
     }
   ],
   "excluded": [
