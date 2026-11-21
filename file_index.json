@@ -84,8 +84,8 @@
       "sha256": "43f10c876541617dc5255d11ed91d9e26c306b47365c9b5dc079c2ac74d4fa2a"
     },
     ".github/workflows/crater-analysis.yml": {
-      "bytes": 1885,
-      "sha256": "e9c78da73cf59cb28a92711c55340c654e29a1e1ba839ded13ea5ce9b4709a02"
+      "bytes": 2356,
+      "sha256": "9e7b5934aa7ff0f8f30e584099244891c2330976e97355783b366142ec05634f"
     },
     ".github/workflows/crater-retrieval.yml": {
       "bytes": 7880,
@@ -148,20 +148,20 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 35531,
-      "sha256": "31c0c53472dde5b07048e4a06349b3a966a5397179aefc14eaa46d30573cebf1"
+      "bytes": 36688,
+      "sha256": "ad0471bf64067a07e414eb22fdc2522659d94580d7e30f7f8c2f6c9ac45d631e"
     },
     "README.md": {
       "bytes": 9640,
       "sha256": "11cb965739aaef09a700258c3a1cb17443ecef8030f45b2f2c6128b3e46bb056"
     },
     "SOFTWARE.md": {
-      "bytes": 27561,
-      "sha256": "c4a3fd25887fa096b8e8deeb7275b353e031ca34cde7f52c037480d55de85178"
+      "bytes": 28050,
+      "sha256": "22ef0cae777fbf17e5e413f647a93df1dcfad7fa1479e30e1ff337615d832bec"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 47580,
-      "sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245"
+      "bytes": 51264,
+      "sha256": "d6e4b09a6e74db1d85890a1ebd96ed0cfc595734d357aebd1828cd9a687080b0"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -1939,6 +1939,10 @@
       "bytes": 33023,
       "sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd"
     },
+    "scripts/summarize_crater_map_comparison.py": {
+      "bytes": 15451,
+      "sha256": "7ab9de343e9ddfd86a42450c327e108566ae6b799f79ff9ebef97eae24853b5f"
+    },
     "splits/earth_loso_arctic_thermokarst.json": {
       "bytes": 17905,
       "sha256": "93722003e558555a0e811d33b6846f7a64f9d85ea21063e8d8311a866f6ad793"
@@ -2019,6 +2023,14 @@
       "bytes": 1706,
       "sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33"
     },
+    "tests/test_crater_map_comparison.py": {
+      "bytes": 14839,
+      "sha256": "5c3515f92c98fd728b956fec8493d75a1a8aa6da94cc5c8966ddd0c8b85bf106"
+    },
+    "tests/test_knn_classify.py": {
+      "bytes": 2647,
+      "sha256": "741a46fcbc95f851dc1581242bc5bb50b18ee988fae32720749161c8f4242ef6"
+    },
     "tests/test_normalization_provenance.py": {
       "bytes": 3347,
       "sha256": "d82523e76752685e29b59ba0a2921a5adeffe87e78b5ecf67c2e4d733dc97290"
@@ -2076,8 +2088,8 @@
       "sha256": "bdeb6386cc4d6edab6d8349e11062ad005e4a4006291702661bf5e88bc42c896"
     },
     "titansar/models/probing.py": {
-      "bytes": 25890,
-      "sha256": "fd2fbcac4eb935ed13c990add24ded411a4df4430bd26b0bc42797630aa0798a"
+      "bytes": 26601,
+      "sha256": "f5a06e82bbb5d5ba3a730ba7672fe63b81c5001f35c38fe09589d683744cd839"
     },
     "titansar/reproducibility.py": {
       "bytes": 4779,
@@ -2140,7 +2152,7 @@
       "package": "release/longitude-adaptation-controls-20260930",
       "scope": "CPU reconstruction from saved predictions; independent byte equality across all 51 package files"
     },
-    "scope": "frozen within-Titan source checkout"
+    "scope": "root within-Titan software derived from the frozen export, with later validation corrections and a saved-result summary script"
   },
   "tile_array_scope": "60 follow-up SAR inspection packets and 37 reassessment SAR/map excerpts; not asserted to be disjoint.",
   "tile_arrays_included": true

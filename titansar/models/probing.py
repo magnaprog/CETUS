@@ -338,10 +338,22 @@ def knn_classify(
     k: int = 20,
     num_classes: int = 6,
 ) -> dict:
-    """k-NN classification using cosine similarity.
+    """Classify by a majority vote among cosine similarity neighbors.
 
-    No training required - uses all training features as the reference set.
+    All training features form the reference set. The legacy result keys
+    ``per_class_accuracy`` and ``macro_accuracy`` contain class recall and its
+    unweighted mean over configured classes present in ``test_labels``.
+    Classes absent from ``test_labels`` receive NaN and are excluded from that
+    mean, which defaults to zero if every configured class is absent.
+
+    Training arrays must be nonempty. The positive integer k is capped at
+    the number of training labels.
     """
+    if isinstance(k, (bool, np.bool_)) or not isinstance(k, (int, np.integer)) or k <= 0:
+        raise ValueError("k must be a positive integer")
+    if len(train_features) == 0 or len(train_labels) == 0:
+        raise ValueError("kNN requires nonempty training features and labels")
+
     # Clamp k to training set size
     k = min(k, len(train_labels))
 

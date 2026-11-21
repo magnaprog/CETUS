@@ -546,6 +546,56 @@
       "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
       "previous_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804",
       "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
+    },
+    {
+      "change_kind": "documentation_update",
+      "date": "2026-11-21",
+      "new_sha256": "22ef0cae777fbf17e5e413f647a93df1dcfad7fa1479e30e1ff337615d832bec",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "a375b979971a8ee05fa926cce28bfca2e78964a7",
+      "previous_manifest_sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245",
+      "previous_sha256": "c4a3fd25887fa096b8e8deeb7275b353e031ca34cde7f52c037480d55de85178",
+      "reason": "Explain current input validation and the distinct saved-result summary route."
+    },
+    {
+      "change_kind": "behavioral_validation_fix",
+      "date": "2026-11-21",
+      "new_sha256": "f5a06e82bbb5d5ba3a730ba7672fe63b81c5001f35c38fe09589d683744cd839",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "a375b979971a8ee05fa926cce28bfca2e78964a7",
+      "previous_manifest_sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245",
+      "previous_sha256": "fd2fbcac4eb935ed13c990add24ded411a4df4430bd26b0bc42797630aa0798a",
+      "reason": "Reject invalid k and empty training arrays before kNN calculation; retain valid-input calculations and clarify the metric/argument contract."
+    },
+    {
+      "change_kind": "regression_tests_added",
+      "date": "2026-11-21",
+      "new_sha256": "741a46fcbc95f851dc1581242bc5bb50b18ee988fae32720749161c8f4242ef6",
+      "path": "tests/test_knn_classify.py",
+      "previous_cetus_commit": "a375b979971a8ee05fa926cce28bfca2e78964a7",
+      "previous_manifest_sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245",
+      "previous_sha256": null,
+      "reason": "Cover invalid inputs, valid-input capping, ties and metric definitions."
+    },
+    {
+      "change_kind": "saved_result_summary_added",
+      "date": "2026-11-21",
+      "new_sha256": "7ab9de343e9ddfd86a42450c327e108566ae6b799f79ff9ebef97eae24853b5f",
+      "path": "scripts/summarize_crater_map_comparison.py",
+      "previous_cetus_commit": "a375b979971a8ee05fa926cce28bfca2e78964a7",
+      "previous_manifest_sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245",
+      "previous_sha256": null,
+      "reason": "Reconstruct the additional Craters table from saved predictions without fitting or changing historical producers."
+    },
+    {
+      "change_kind": "regression_tests_added",
+      "date": "2026-11-21",
+      "new_sha256": "5c3515f92c98fd728b956fec8493d75a1a8aa6da94cc5c8966ddd0c8b85bf106",
+      "path": "tests/test_crater_map_comparison.py",
+      "previous_cetus_commit": "a375b979971a8ee05fa926cce28bfca2e78964a7",
+      "previous_manifest_sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245",
+      "previous_sha256": null,
+      "reason": "Check input authentication, complete joins, no-overwrite output and exact accepted counts; public CI supplies both bundled fixtures."
     }
   ],
   "excluded": [
@@ -575,8 +625,8 @@
       "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "SOFTWARE.md": {
-      "origin": "generated guide with documentation updates",
-      "sha256": "c4a3fd25887fa096b8e8deeb7275b353e031ca34cde7f52c037480d55de85178"
+      "origin": "generated guide with current documentation and validation-contract updates",
+      "sha256": "22ef0cae777fbf17e5e413f647a93df1dcfad7fa1479e30e1ff337615d832bec"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
@@ -595,10 +645,22 @@
       "sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd",
       "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
     },
+    "scripts/summarize_crater_map_comparison.py": {
+      "origin": "post-export standard-library summary of eight primary logistic-regression families from two hash-verified saved-result inputs",
+      "sha256": "7ab9de343e9ddfd86a42450c327e108566ae6b799f79ff9ebef97eae24853b5f"
+    },
     "tests/test_bound_feature_cache.py": {
       "origin": "verbatim committed blob",
       "sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33",
       "source_sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33"
+    },
+    "tests/test_crater_map_comparison.py": {
+      "origin": "post-export regression tests for the standalone Craters comparison",
+      "sha256": "5c3515f92c98fd728b956fec8493d75a1a8aa6da94cc5c8966ddd0c8b85bf106"
+    },
+    "tests/test_knn_classify.py": {
+      "origin": "post-export kNN regression tests, including carried development coverage",
+      "sha256": "741a46fcbc95f851dc1581242bc5bb50b18ee988fae32720749161c8f4242ef6"
     },
     "tests/test_normalization_provenance.py": {
       "origin": "verbatim committed blob",
@@ -670,8 +732,8 @@
       "source_sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d"
     },
     "titansar/models/probing.py": {
-      "origin": "committed source with comment/docstring and diagnostic-string corrections; computational structure unchanged after excluding docstrings and accounting for the documented diagnostic-text changes",
-      "sha256": "fd2fbcac4eb935ed13c990add24ded411a4df4430bd26b0bc42797630aa0798a",
+      "origin": "committed source with documented prose corrections and post-export kNN input validation; valid-input calculation retained",
+      "sha256": "f5a06e82bbb5d5ba3a730ba7672fe63b81c5001f35c38fe09589d683744cd839",
       "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {
@@ -685,7 +747,7 @@
     "pyproject.toml": "69cabff57fbebbfffd17d16051a96225f4bee94bfaa5ec176578f800a83b77bc"
   },
   "schema_version": 1,
-  "scope": "frozen within-Titan source checkout",
+  "scope": "root within-Titan software derived from the frozen export, with later validation corrections and a saved-result summary script",
   "upstream_croma_license": {
     "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f",
     "url": "https://raw.githubusercontent.com/antofuller/CROMA/814dcf58b7774150fa5370a9f432588219f11be1/LICENSE"

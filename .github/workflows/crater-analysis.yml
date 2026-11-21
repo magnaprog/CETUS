@@ -42,3 +42,11 @@ jobs:
               raise ValueError("Craters reproduction differs from the complete packaged JSON")
           print("Complete Craters result matches, including runtime and provenance.")
           PY
+      - name: Check primary-LR Craters comparison with saved inputs
+        env:
+          CETUS_CRATER_RESULTS: release/crater-analysis-20261110/results.json
+          CETUS_PRIMARY_PREDICTIONS: release/longitude-auxiliary-20260929/results/predictions.json.gz
+        run: |
+          set -eu
+          python3 -B -m unittest discover -s tests -p test_crater_map_comparison.py -v
+          python3 -O -B -m unittest discover -s tests -p test_crater_map_comparison.py -v

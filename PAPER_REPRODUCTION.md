@@ -88,6 +88,17 @@ The [10 November companion](release/crater-analysis-20261110/README.md) preserve
 
 The batch bound concerns the equal-step average of normalized target-class cross-entropy coefficients; it does not bound gradients or performance. Map fractions concern eligible known cells, with empty domains undefined. Repeated seeds and overlapping images do not provide independent geographic samples.
 
+For the same map-composition check across all eight primary feature families, run the current [comparison script](scripts/summarize_crater_map_comparison.py) from the repository root:
+
+```sh
+python3 -I -B scripts/summarize_crater_map_comparison.py \
+  --crater-results release/crater-analysis-20261110/results.json \
+  --predictions release/longitude-auxiliary-20260929/results/predictions.json.gz \
+  --output-dir /absolute/path/to/new-output-directory
+```
+
+The output directory must be new and its parent must exist. Python's standard library is sufficient. The command joins saved predictions to the 39 test images whose eligible known map cells all carry Craters under both map-cell calculations. It writes `results.json` and a TeX table containing regional counts, the total correct among those 39 images, and Craters true and false positives across all 23,246 test images. These pooled counts answer a different question from mean regional F1. The primary DINOv2 extraction is distinct from the initialization study's extraction, and the primary untrained ViT is a separate control. The original companion and its initialization results stay intact.
+
 ## Ranking images by terrain class
 
 The [class-ranking companion](release/class-ranking-20261111/README.md) calculates average precision (AP) from the initialization study's saved probabilities. It keeps each region and fitted model separate, includes all six classes and retains all 60 Craters precision–recall curves. The calculation admits tied scores together and sums recall increments times precision without interpolation. Seeds are averaged within each region before giving the five regions equal weight.
