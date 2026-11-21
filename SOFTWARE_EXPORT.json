@@ -1,5 +1,152 @@
 {
   "builder_sha256": "d747a16839c35f80eb6d0fd682b4ae1e6c34789bb68a2400362a3662eeec81e3",
+  "current_validation": {
+    "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+    "commands": [
+      "python3 -B .github/scripts/offline_cpu.py python3 -B -m pytest tests/test_bound_feature_cache.py tests/test_within_titan_probing.py -q -ra -p no:cacheprovider"
+    ],
+    "date": "2026-11-21",
+    "execution_conditions": "Python3.12.3 offline CPU wrapper, network sockets denied and GPU hidden, one numerical thread, plugin autoload/bytecode/cache disabled.",
+    "limits": "ID/label population joins and applicable recorded hashes do not prove unrecorded transform/normalization equivalence. No model construction, scientific result recomputation or historical impact proof. kNN and its exact tested AST remain unchanged; prior cosine execution receipts preserved as history.",
+    "result": {
+      "passed": 47,
+      "reported_warnings": 0,
+      "skipped": 0
+    },
+    "scope": "Current shared bound-cache strict-default and explicit nonstrict policy, hash/companion/ID/label/fold checks and within-Titan caller synthetic tests.",
+    "source_sha256": {
+      "tests/test_bound_feature_cache.py": "654f5b9e4825fbfa54058ced8a4849c9e807e188386b8bc919d23319335e0b0d",
+      "titansar/models/probing.py": "1b2b1e11cb1ee72de5da0fbd71e067ad1836de650411a4a46bc9349269d9b7cf"
+    }
+  },
+  "current_validation_history": [
+    {
+      "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "commands": [
+        "python -B -m pytest tests/test_knn_classify.py tests/test_within_titan_probing.py tests/test_bound_feature_cache.py -q -p no:cacheprovider",
+        "python -B -m scripts.run_probing --help"
+      ],
+      "date": "2026-11-21",
+      "execution_conditions": "Existing offline_cpu.py blocked IPv4/IPv6 sockets and hid GPUs; Python 3.12, numerical thread counts one, disabled bytecode and pytest cache, external temporary directories.",
+      "limits": "Independent old/new valid-input comparisons preserve the inherited float16 zero-vector epsilon-underflow behavior. No dtype stabilization or whole-suite claim. Original export validation and historical source fields are retained.",
+      "negative_controls": "Before repair, the new public boundary suite had 21 failures and 19 passes, with four warnings from the existing nonfinite normalization path.",
+      "result": {
+        "cli_help_exit_code": 0,
+        "passed": 69,
+        "reported_warnings": 0,
+        "skipped": 0
+      },
+      "scope": "Local offline synthetic CPU validation and independent baseline-to-patch source review; no model, scientific reconstruction or GPU execution.",
+      "source_sha256": {
+        "scripts/run_probing.py": "534edc5cb0085c9db735d3b6a7e69b101a835c3421a89da32abcc03a4d5da64f",
+        "tests/test_knn_classify.py": "e9340a644ba5f580498bbb3adb08d78826718824ae4a41c23c5dc2567187aa40",
+        "titansar/models/probing.py": "0d3bea5f342d642e2c6f189c5fc7d27cd4cbc0849db96d653d2094886382ae76"
+      }
+    },
+    {
+      "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "commands": [
+        "python -B -m pytest tests/test_knn_classify.py tests/test_bound_feature_cache.py tests/test_within_titan_probing.py -q -ra -p no:cacheprovider"
+      ],
+      "date": "2026-11-21",
+      "execution_conditions": "Python 3.12.3 with NumPy 2.4.4 from the existing runtime. offline_cpu.py blocks IPv4/IPv6 socket creation and hides GPUs. Numerical thread counts one; disabled bytecode, pytest cache and explicitly recorded plugin autoload; external temporary outputs. Exact source hashes recorded before and after.",
+      "limits": "The inherited float16 genuine-zero-row invalid division is repaired without casting. Separate finite nonzero rows can still produce norm zero or infinity and misrank at tiny/large magnitudes; those cases are diagnosed, unmodified and not waived. No all-dtype or arbitrary-magnitude cosine robustness claim. Prior validation remains in current_validation_history.",
+      "negative_controls": "Before the zero-row normalization repair, the focused public file had six behavioral failures and 41 passes. Separate initial attempts failed before collection because disabling user-site hid the existing pytest; those are setup failures, not red behavior evidence.",
+      "result": {
+        "passed": 76,
+        "reported_warnings": 0,
+        "skipped": 0
+      },
+      "scope": "Synthetic CPU checks of current kNN, bound-cache and within-Titan callers. No model, scientific reconstruction, GPU or production figure execution.",
+      "source_sha256": {
+        "tests/test_knn_classify.py": "52cd6e50e545a80b66085da59cf36434695f4bf77e7c813d52236b9b67d0070d",
+        "titansar/models/probing.py": "5be65fcd49aef6efe62439b636f9bdda7dcd27ca8d6952dd32a63fe04c503179"
+      }
+    },
+    {
+      "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "commands": [
+        "python -B -m pytest tests/test_knn_classify.py tests/test_bound_feature_cache.py tests/test_within_titan_probing.py -q -ra -p no:cacheprovider"
+      ],
+      "date": "2026-11-21",
+      "execution_conditions": "Python 3.12.3 with NumPy 2.4.4 from the existing runtime. offline_cpu.py blocks IPv4/IPv6 socket creation and hides GPUs. Numerical thread counts one; disabled bytecode, pytest cache and explicitly recorded plugin autoload; external temporary outputs. Exact source hashes recorded before and after.",
+      "limits": "Genuine zero rows remain supported. Nonzero rows whose raw norm is zero or nonfinite now reject before normalization instead of misranking. Positive subnormal norms can still be inaccurate, and epsilon can affect similarity near zero even for positive finite norms. No rescaling, casting, all-dtype or arbitrary-magnitude robustness claim. NumPy norm warnings or caller-selected floating-point exceptions retain their existing policy. Prior validations remain unchanged in current_validation_history.",
+      "negative_controls": "Before the raw-norm guard, twelve finite-input boundary cases failed because no ValueError was raised; 47 other public kNN tests passed. These cover tiny and large nonzero training/query rows across float16/32/64. Tests locally ignore expected range warnings to reach the boundary assertion; production warning policy is unchanged.",
+      "result": {
+        "passed": 88,
+        "reported_warnings": 0,
+        "skipped": 0
+      },
+      "scope": "Synthetic CPU checks of current kNN, bound-cache and within-Titan callers. No model, scientific reconstruction, GPU or production figure execution.",
+      "source_sha256": {
+        "tests/test_knn_classify.py": "bdffb5fef855cd0fa3f12744a19065e9ea573e33f6732458336c51e78258f4c9",
+        "titansar/models/probing.py": "715e4e48a0685e00a8358fef6695e81b25533fd890826dad3ae8ee31e2f2ac86"
+      }
+    },
+    {
+      "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "checks": [
+        "New internal anchor supply-the-data-and-weights resolves to the existing section containing recorded inference source/runtime",
+        "Every root file-index and checksum entry matches actual current bytes",
+        "Original export origin/source_sha256 and historical validation records preserved"
+      ],
+      "date": "2026-11-21",
+      "limits": "No browser, service, model run, scientific reproduction, figure regeneration or historical producer change.",
+      "result": "pass",
+      "scope": "Current SOFTWARE maintenance paragraph only: contextual source/diff/meaning and new internal link readback. Existing code validation retained in history; no new claim that cosine normalization is correct for arbitrary finite inputs.",
+      "source_sha256": {
+        "SOFTWARE.md": "4a1a5b4194c1b599b502c07616505617b8a4a4f30e7c4a1aa4283dd017c8d42e"
+      }
+    },
+    {
+      "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "commands": [
+        "python3 -B -m pytest tests/test_knn_classify.py tests/test_bound_feature_cache.py tests/test_within_titan_probing.py -q -ra -p no:cacheprovider"
+      ],
+      "date": "2026-11-21",
+      "execution_conditions": "Python 3.12.3, NumPy 2.4.4; offline_cpu.py denies IPv4/IPv6 sockets and hides GPUs. Numerical threads one, pytest plugin autoload/cache and bytecode disabled; temporary outputs outside checkout.",
+      "limits": "Float64 rounding can change close rankings and round large integers. Float64 copies and similarity batches use additional memory for float16/32. Bool, complex, object/string and wider floating types explicitly reject. Synthetic tests are bounded evidence, not an all-input numerical proof or historical rerun equivalence. Frozen producers retain epsilon arithmetic. Prior validation records remain exact history.",
+      "negative_controls": "Before correction, 51 public focused cases failed and 55 passed: actual positive-finite misranking, invalid original-norm ranges, scale/near-score errors and explicit dtype boundary assertions. All final focused suites pass.",
+      "result": {
+        "passed": 135,
+        "reported_warnings": 0,
+        "skipped": 0
+      },
+      "scope": "Synthetic offline CPU kNN, authenticated-cache and within-Titan caller tests; current maintenance prose source/diff/meaning/link checks. No model execution or historical feature reranking.",
+      "source_sha256": {
+        "SOFTWARE.md": "e0d3011d6cc64bfed4e5457c5cf2827a8f6a77498597210278002e8a9d2c6f20",
+        "tests/test_knn_classify.py": "ff2e735e9b316479162dfd7706085c6d2b6eb69acd4aa54793addc6448adf7fe",
+        "titansar/models/probing.py": "489eeabc0e31cf07e80a105b1daa9937ba25a1d346e1198bbed65b6a5a422dde"
+      }
+    },
+    {
+      "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "commands": [
+        "python3 -B -m pytest tests/test_knn_classify.py tests/test_bound_feature_cache.py tests/test_within_titan_probing.py -q -ra -p no:cacheprovider"
+      ],
+      "date": "2026-11-21",
+      "execution_conditions": "Python 3.12.3, NumPy 2.4.4; offline_cpu.py denies IPv4/IPv6 sockets and hides GPUs. Numerical threads one, pytest plugin autoload/cache and bytecode disabled; temporary outputs outside checkout.",
+      "limits": "Float64 rounding can change close rankings and round large integers. Float64 copies and similarity batches use additional memory for float16/32. Bool, complex, object/string and wider floating types explicitly reject. Synthetic tests are bounded evidence, not an all-input numerical proof or historical rerun equivalence. Frozen producers retain epsilon arithmetic. Prior validation records remain exact history.",
+      "negative_controls": "Before correction, 51 public focused cases failed and 55 passed: actual positive-finite misranking, invalid original-norm ranges, scale/near-score errors and explicit dtype boundary assertions. All final focused suites pass.",
+      "result": {
+        "passed": 135,
+        "reported_warnings": 0,
+        "skipped": 0
+      },
+      "scope": "Synthetic offline CPU kNN, authenticated-cache and within-Titan caller tests; current maintenance prose source/diff/meaning/link checks. No model execution or historical feature reranking.",
+      "source_sha256": {
+        "SOFTWARE.md": "e0d3011d6cc64bfed4e5457c5cf2827a8f6a77498597210278002e8a9d2c6f20",
+        "tests/test_knn_classify.py": "e51c086b2b65a6947fbbb920ffa87648341396d4e4548436d8479f0ee90615a0",
+        "titansar/models/probing.py": "489eeabc0e31cf07e80a105b1daa9937ba25a1d346e1198bbed65b6a5a422dde"
+      },
+      "test_module_docstring_extension": {
+        "current_test_sha256": "e51c086b2b65a6947fbbb920ffa87648341396d4e4548436d8479f0ee90615a0",
+        "executable_AST_exact": true,
+        "method": "Parse both test modules, remove only the leading module docstring, compare complete AST dumps. No runtime rerun needed for this prose-only edit.",
+        "runtime_test_sha256": "ff2e735e9b316479162dfd7706085c6d2b6eb69acd4aa54793addc6448adf7fe"
+      }
+    }
+  ],
   "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
   "documentation_updates": [
     {
@@ -596,6 +743,173 @@
       "previous_manifest_sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245",
       "previous_sha256": null,
       "reason": "Check input authentication, complete joins, no-overwrite output and exact accepted counts; public CI supplies both bundled fixtures."
+    },
+    {
+      "change_kind": "input_validation_and_docstring_correction",
+      "date": "2026-11-21",
+      "new_sha256": "0d3bea5f342d642e2c6f189c5fc7d27cd4cbc0849db96d653d2094886382ae76",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "d6e4b09a6e74db1d85890a1ebd96ed0cfc595734d357aebd1828cd9a687080b0",
+      "previous_sha256": "f5a06e82bbb5d5ba3a730ba7672fe63b81c5001f35c38fe09589d683744cd839",
+      "reason": "Reject malformed, misaligned, unequal-width or nonfinite kNN feature inputs before normalization; preserve valid-input ranking, ties, k cap, empty-test results and metrics. Describe the existing real-weight environment flag parser accurately."
+    },
+    {
+      "change_kind": "regression_tests_extended",
+      "date": "2026-11-21",
+      "new_sha256": "e9340a644ba5f580498bbb3adb08d78826718824ae4a41c23c5dc2567187aa40",
+      "path": "tests/test_knn_classify.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "d6e4b09a6e74db1d85890a1ebd96ed0cfc595734d357aebd1828cd9a687080b0",
+      "previous_sha256": "741a46fcbc95f851dc1581242bc5bb50b18ee988fae32720749161c8f4242ef6",
+      "reason": "Add malformed-feature/label boundary failures and valid empty-test/zero-vector checks."
+    },
+    {
+      "change_kind": "cli_help_correction",
+      "date": "2026-11-21",
+      "new_sha256": "534edc5cb0085c9db735d3b6a7e69b101a835c3421a89da32abcc03a4d5da64f",
+      "path": "scripts/run_probing.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "d6e4b09a6e74db1d85890a1ebd96ed0cfc595734d357aebd1828cd9a687080b0",
+      "previous_sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd",
+      "reason": "Describe one worker per selected GPU with sequential assigned models; argument behavior and computation are unchanged."
+    },
+    {
+      "change_kind": "genuine_zero_row_normalization_repair",
+      "date": "2026-11-21",
+      "new_sha256": "5be65fcd49aef6efe62439b636f9bdda7dcd27ca8d6952dd32a63fe04c503179",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "78a5bdb59e365789d1d9de674923de8ea83abe157c9d842d89fe9e65800c77fa",
+      "previous_sha256": "0d3bea5f342d642e2c6f189c5fc7d27cd4cbc0849db96d653d2094886382ae76",
+      "reason": "Use denominator 1 only for genuinely all-zero feature rows; preserve nonzero-row arithmetic and existing ranking/voting/API. Focused float16 zero-reference/query/empty-query regressions demonstrate the correction."
+    },
+    {
+      "change_kind": "zero_row_regression_tests",
+      "date": "2026-11-21",
+      "new_sha256": "52cd6e50e545a80b66085da59cf36434695f4bf77e7c813d52236b9b67d0070d",
+      "path": "tests/test_knn_classify.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "78a5bdb59e365789d1d9de674923de8ea83abe157c9d842d89fe9e65800c77fa",
+      "previous_sha256": "e9340a644ba5f580498bbb3adb08d78826718824ae4a41c23c5dc2567187aa40",
+      "reason": "Use denominator 1 only for genuinely all-zero feature rows; preserve nonzero-row arithmetic and existing ranking/voting/API. Focused float16 zero-reference/query/empty-query regressions demonstrate the correction."
+    },
+    {
+      "change_kind": "nonzero_raw_norm_range_guard",
+      "date": "2026-11-21",
+      "new_sha256": "715e4e48a0685e00a8358fef6695e81b25533fd890826dad3ae8ee31e2f2ac86",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "de96deb6e6dc5bfbf3ea7abcf823143b30d15103348782b8b67dacc8859c04f7",
+      "previous_sha256": "5be65fcd49aef6efe62439b636f9bdda7dcd27ca8d6952dd32a63fe04c503179",
+      "reason": "Reject genuinely nonzero rows with nonpositive or nonfinite raw norms before epsilon and ranking. Preserve genuine zero handling and ordinary existing-dtype arithmetic, ranking, voting, k and API. Focused float16/32/64 tiny and large reference/query cases demonstrate explicit rejection."
+    },
+    {
+      "change_kind": "raw_norm_boundary_regression_tests",
+      "date": "2026-11-21",
+      "new_sha256": "bdffb5fef855cd0fa3f12744a19065e9ea573e33f6732458336c51e78258f4c9",
+      "path": "tests/test_knn_classify.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "de96deb6e6dc5bfbf3ea7abcf823143b30d15103348782b8b67dacc8859c04f7",
+      "previous_sha256": "52cd6e50e545a80b66085da59cf36434695f4bf77e7c813d52236b9b67d0070d",
+      "reason": "Reject genuinely nonzero rows with nonpositive or nonfinite raw norms before epsilon and ranking. Preserve genuine zero handling and ordinary existing-dtype arithmetic, ranking, voting, k and API. Focused float16/32/64 tiny and large reference/query cases demonstrate explicit rejection."
+    },
+    {
+      "change_kind": "current_knn_maintenance_contract_correction",
+      "date": "2026-11-21",
+      "new_sha256": "4a1a5b4194c1b599b502c07616505617b8a4a4f30e7c4a1aa4283dd017c8d42e",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "46a6e1a6ffc660634ebe9f36824e29edf06ad4b4b522354dd0fba7d51fdb8d2d",
+      "previous_sha256": "22ef0cae777fbf17e5e413f647a93df1dcfad7fa1479e30e1ff337615d832bec",
+      "reason": "Describe current validation and genuine-zero handling; explicitly retain the unresolved positive-finite-norm ranking defect caused by epsilon and dtype arithmetic. No numerical implementation or historical result change."
+    },
+    {
+      "change_kind": "current_cosine_correctness_and_contract",
+      "date": "2026-11-21",
+      "new_sha256": "489eeabc0e31cf07e80a105b1daa9937ba25a1d346e1198bbed65b6a5a422dde",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "fc1e416147d6f8da03bc22e220f3a5f79f6b82f1a9bca348a59748d58b17d395",
+      "previous_sha256": "715e4e48a0685e00a8358fef6695e81b25533fd890826dad3ae8ee31e2f2ac86",
+      "reason": "Correct current cosine normalization using float64 working copies and maximum-component scaling, without epsilon. Add explicit real dtype boundary and independent oracle/scale/extreme tests. Preserve zero rows, sorting, voting, k cap, batching and empty-query rules; floating rounding and memory change. Frozen source/results remain unchanged; no historical reranking impact proof."
+    },
+    {
+      "change_kind": "current_cosine_correctness_and_contract",
+      "date": "2026-11-21",
+      "new_sha256": "ff2e735e9b316479162dfd7706085c6d2b6eb69acd4aa54793addc6448adf7fe",
+      "path": "tests/test_knn_classify.py",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "fc1e416147d6f8da03bc22e220f3a5f79f6b82f1a9bca348a59748d58b17d395",
+      "previous_sha256": "bdffb5fef855cd0fa3f12744a19065e9ea573e33f6732458336c51e78258f4c9",
+      "reason": "Correct current cosine normalization using float64 working copies and maximum-component scaling, without epsilon. Add explicit real dtype boundary and independent oracle/scale/extreme tests. Preserve zero rows, sorting, voting, k cap, batching and empty-query rules; floating rounding and memory change. Frozen source/results remain unchanged; no historical reranking impact proof."
+    },
+    {
+      "change_kind": "current_cosine_correctness_and_contract",
+      "date": "2026-11-21",
+      "new_sha256": "e0d3011d6cc64bfed4e5457c5cf2827a8f6a77498597210278002e8a9d2c6f20",
+      "path": "SOFTWARE.md",
+      "previous_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+      "previous_manifest_sha256": "fc1e416147d6f8da03bc22e220f3a5f79f6b82f1a9bca348a59748d58b17d395",
+      "previous_sha256": "4a1a5b4194c1b599b502c07616505617b8a4a4f30e7c4a1aa4283dd017c8d42e",
+      "reason": "Correct current cosine normalization using float64 working copies and maximum-component scaling, without epsilon. Add explicit real dtype boundary and independent oracle/scale/extreme tests. Preserve zero rows, sorting, voting, k cap, batching and empty-query rules; floating rounding and memory change. Frozen source/results remain unchanged; no historical reranking impact proof."
+    },
+    {
+      "change_kind": "test_module_description_only",
+      "date": "2026-11-21",
+      "new_sha256": "e51c086b2b65a6947fbbb920ffa87648341396d4e4548436d8479f0ee90615a0",
+      "path": "tests/test_knn_classify.py",
+      "previous_manifest_sha256": "d8d5be56822bf5d5093b88e06e47b846dcc2c56905ca566a3c0b5c1f039180fc",
+      "previous_sha256": "ff2e735e9b316479162dfd7706085c6d2b6eb69acd4aa54793addc6448adf7fe",
+      "reason": "Describe synthetic cosine and input-contract checks without promising unchanged rankings. Only leading module docstring changed; executable test AST exact."
+    },
+    {
+      "change_kind": "current_bound_cache_strict_policy_preserving_default",
+      "date": "2026-11-21",
+      "new_sha256": "1b2b1e11cb1ee72de5da0fbd71e067ad1836de650411a4a46bc9349269d9b7cf",
+      "path": "titansar/models/probing.py",
+      "previous_sha256": "489eeabc0e31cf07e80a105b1daa9937ba25a1d346e1198bbed65b6a5a422dde",
+      "reason": "Allow the current Venus runner to reuse complete cache identity validation while preserving its explicit nonstrict weight policy. Default bound-cache strict=True stays unchanged. Hashes, companions, IDs and labels remain mandatory under either policy; frozen producers/results unchanged."
+    },
+    {
+      "change_kind": "current_bound_cache_strict_policy_preserving_default",
+      "date": "2026-11-21",
+      "new_sha256": "654f5b9e4825fbfa54058ced8a4849c9e807e188386b8bc919d23319335e0b0d",
+      "path": "tests/test_bound_feature_cache.py",
+      "previous_sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33",
+      "reason": "Allow the current Venus runner to reuse complete cache identity validation while preserving its explicit nonstrict weight policy. Default bound-cache strict=True stays unchanged. Hashes, companions, IDs and labels remain mandatory under either policy; frozen producers/results unchanged."
+    },
+    {
+      "change_kind": "documentation_clarification",
+      "date": "2026-11-21",
+      "new_sha256": "aba30a3a8ef64875b3503f9448df8bbc0182149edcb127d1d4196042f89cad82",
+      "path": "titansar/data/dataset.py",
+      "previous_sha256": "369d40c37730ae563cd44bdea249eb62176ab14352a044445a64d01cfc96ca3c",
+      "reason": "Clarify integer-label conversion and the optional -1 sentinel."
+    },
+    {
+      "change_kind": "documentation_clarification",
+      "date": "2026-11-21",
+      "new_sha256": "2208b9dc0cac664495c0b4cd975c3780133ccd99511766ad266614bcb65ec4b3",
+      "path": "titansar/reproducibility.py",
+      "previous_sha256": "65aa0a9cde7ca45c2486680de40536f1c748e2ea7c4fc9b33c1f33760639b6ec",
+      "reason": "Describe the temporary sibling file and destination replacement."
+    },
+    {
+      "change_kind": "documentation_clarification",
+      "date": "2026-11-21",
+      "new_sha256": "6f666de1c3c176ab4ae57357fea9ab1b8b09ed8c668b5df33d436d95d6cb4a58",
+      "path": "titansar/models/probing.py",
+      "previous_sha256": "1b2b1e11cb1ee72de5da0fbd71e067ad1836de650411a4a46bc9349269d9b7cf",
+      "reason": "Clarify the final backbone freezing scope and the strict cache metadata declaration."
+    },
+    {
+      "change_kind": "documentation_clarification",
+      "date": "2026-11-21",
+      "new_sha256": "55bd690c6634859c65e905dff9f690c608f444a909d7746f4cf325cffde3929f",
+      "path": "titansar/data/dataset.py",
+      "previous_sha256": "aba30a3a8ef64875b3503f9448df8bbc0182149edcb127d1d4196042f89cad82",
+      "reason": "Clarify the synthetic and unverified catalog opt-ins and distinguish metadata checks from authentication."
     }
   ],
   "excluded": [
@@ -626,7 +940,7 @@
     },
     "SOFTWARE.md": {
       "origin": "generated guide with current documentation and validation-contract updates",
-      "sha256": "22ef0cae777fbf17e5e413f647a93df1dcfad7fa1479e30e1ff337615d832bec"
+      "sha256": "e0d3011d6cc64bfed4e5457c5cf2827a8f6a77498597210278002e8a9d2c6f20"
     },
     "licenses/CROMA-LICENSE": {
       "origin": "generated",
@@ -642,7 +956,7 @@
     },
     "scripts/run_probing.py": {
       "origin": "committed source with docstring example and diagnostic-string corrections; computational structure unchanged after excluding docstrings and accounting for the documented diagnostic-text changes",
-      "sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd",
+      "sha256": "534edc5cb0085c9db735d3b6a7e69b101a835c3421a89da32abcc03a4d5da64f",
       "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
     },
     "scripts/summarize_crater_map_comparison.py": {
@@ -651,7 +965,7 @@
     },
     "tests/test_bound_feature_cache.py": {
       "origin": "verbatim committed blob",
-      "sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33",
+      "sha256": "654f5b9e4825fbfa54058ced8a4849c9e807e188386b8bc919d23319335e0b0d",
       "source_sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33"
     },
     "tests/test_crater_map_comparison.py": {
@@ -660,7 +974,7 @@
     },
     "tests/test_knn_classify.py": {
       "origin": "post-export kNN regression tests, including carried development coverage",
-      "sha256": "741a46fcbc95f851dc1581242bc5bb50b18ee988fae32720749161c8f4242ef6"
+      "sha256": "e51c086b2b65a6947fbbb920ffa87648341396d4e4548436d8479f0ee90615a0"
     },
     "tests/test_normalization_provenance.py": {
       "origin": "verbatim committed blob",
@@ -703,7 +1017,7 @@
     },
     "titansar/data/dataset.py": {
       "origin": "committed source with comment/docstring corrections; executable AST unchanged",
-      "sha256": "369d40c37730ae563cd44bdea249eb62176ab14352a044445a64d01cfc96ca3c",
+      "sha256": "55bd690c6634859c65e905dff9f690c608f444a909d7746f4cf325cffde3929f",
       "source_sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f"
     },
     "titansar/evaluation/__init__.py": {
@@ -733,12 +1047,12 @@
     },
     "titansar/models/probing.py": {
       "origin": "committed source with documented prose corrections and post-export kNN input validation; valid-input calculation retained",
-      "sha256": "f5a06e82bbb5d5ba3a730ba7672fe63b81c5001f35c38fe09589d683744cd839",
+      "sha256": "6f666de1c3c176ab4ae57357fea9ab1b8b09ed8c668b5df33d436d95d6cb4a58",
       "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {
       "origin": "committed source with an explanatory docstring revision; executable structure unchanged",
-      "sha256": "65aa0a9cde7ca45c2486680de40536f1c748e2ea7c4fc9b33c1f33760639b6ec",
+      "sha256": "2208b9dc0cac664495c0b4cd975c3780133ccd99511766ad266614bcb65ec4b3",
       "source_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
     }
   },

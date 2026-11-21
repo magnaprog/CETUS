@@ -5,7 +5,6 @@ Earth axes show degrees with varying extents, not equal-area or physical scale.
 """
 
 import argparse
-from collections import Counter
 import io
 import json
 from pathlib import Path

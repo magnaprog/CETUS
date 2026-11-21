@@ -593,7 +593,7 @@ def parse_args():
     # Multi-GPU options
     parser.add_argument(
         "--parallel", action="store_true",
-        help="Run models in parallel across multiple GPUs (one model per GPU).",
+        help="Run one worker per selected GPU; each worker runs its assigned models sequentially.",
     )
     parser.add_argument(
         "--gpu_ids", nargs="+", type=int, default=None,

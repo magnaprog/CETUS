@@ -199,7 +199,9 @@ The report retains the source and figure identities of its original analysis;
 ## Integrity and synthetic checks
 
 The [vector and sampling-context revision](presentation-vector-context-20261119.json)
-records the current renderer identities and expected outputs. The [earlier legend
+records the renderer identities and expected outputs for that visual revision.
+The [manifest](manifest.json) records current source identities and subsequent
+maintenance changes. The [earlier legend
 revision](presentation-retrieval-legend-20261119.json) preserves the preceding
 legend change and its output hashes. Scientific inputs and earlier producer
 references retain their original scope.
