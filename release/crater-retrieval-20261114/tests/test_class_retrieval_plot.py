@@ -129,7 +129,7 @@ def test_dense_class_artists_keep_every_endpoint_and_correct_label(tmp_path, inp
         assert actual["all_groups"]["point_count"] == len(curve["count"])
         assert actual["all_groups"]["x_sha256"] == p.base.coordinate_digest(curve["count"])
         assert actual["all_groups"]["y_sha256"] == p.base.coordinate_digest(curve["recall_percent"])
-        assert actual["all_groups"]["rasterized"] is True
+        assert actual["all_groups"]["rasterized"] is False
         assert actual["tp_increases"]["point_count"] == 0
         kind, _, arm, seed = curve["cell"]
         marker = next(m for a, s, m, _ in p.base.KEYS[kind] if (a, s) == (arm, seed))
@@ -142,6 +142,7 @@ def test_complete_cli_saves_all_classes_and_never_rescores(tmp_path, inputs, mon
     out = tmp_path / "rendered"
     p.main([*arguments(tmp_path, inputs), "--output", str(out)])
     complete = json.loads((out / "complete.json").read_text())
+    display = json.loads((out / "display.json").read_text())
     assert complete["curves_per_variant"] == 360 and complete["sheets_per_variant"] == 6
     assert len(complete["outputs"]) == 25
     for name, binding in complete["outputs"].items():
@@ -149,6 +150,14 @@ def test_complete_cli_saves_all_classes_and_never_rescores(tmp_path, inputs, mon
         assert (out / name).stat().st_size == binding["bytes"] > 0
     for name in p.CLASSES:
         for variant in ("cvpr", "full"):
+            sheet = display["sheets"][name][variant]
+            assert sheet["identity_spacing_pt"] == 36
+            assert len(sheet["artists"]) == 60
+            for curve in sheet["artists"]:
+                assert curve["tp_increase_group_indices"] == []
+                assert curve["identity_group_indices"]
+                assert curve["all_groups"]["rasterized"] is False
+                assert curve["state_identity"]["rasterized"] is False
             data = (out / f"{name}-retrieval-{variant}.pdf").read_bytes()
             assert data.startswith(b"%PDF") and str(tmp_path).encode() not in data
     with pytest.raises(ValueError, match="fresh"):

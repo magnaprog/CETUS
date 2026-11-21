@@ -279,7 +279,12 @@ def evaluate_linear_probe(
 ) -> dict:
     """Evaluate a trained linear probe.
 
-    Returns dict with macro_accuracy, per_class_accuracy, kappa, predictions.
+    The legacy keys ``per_class_accuracy`` and ``macro_accuracy`` contain class
+    recall and its unweighted mean over configured classes present in ``labels``.
+    Classes absent from ``labels`` receive NaN and are excluded from that mean.
+    The mean defaults to zero if every configured class is absent.
+    The result also contains Cohen's kappa, confusion matrices, predictions,
+    and class probabilities.
     """
     probe.eval()
     X = torch.tensor(features, dtype=torch.float32).to(device)
@@ -290,7 +295,7 @@ def evaluate_linear_probe(
         preds = logits.argmax(dim=1).cpu().numpy()
         probs = F.softmax(logits, dim=1).cpu().numpy()
 
-    # Per-class accuracy
+    # Recall for each configured class
     per_class_acc = []
     for c in range(num_classes):
         mask = y == c
@@ -299,7 +304,7 @@ def evaluate_linear_probe(
         else:
             per_class_acc.append(float("nan"))
 
-    # Macro accuracy (mean of per-class accuracies, excluding NaN)
+    # Mean recall over classes with test support
     valid_accs = [a for a in per_class_acc if not np.isnan(a)]
     macro_acc = float(np.mean(valid_accs)) if valid_accs else 0.0
 
@@ -427,7 +432,10 @@ def train_finetuned_model(
 
     Freezes all backbone parameters, then selectively unfreezes the last
     `unfreeze_blocks` transformer blocks. Trains with AdamW + cosine
-    annealing and optional mixed precision (AMP).
+    annealing and optional mixed precision (AMP). Runs the declared epoch loop
+    and restores the earliest maximum validation macro recall among epochs with
+    successful optimizer updates. Recall is averaged over classes present in
+    the validation labels; validation does not stop training early.
 
     Args:
         model: Foundation model wrapper (will be modified in-place).
@@ -436,7 +444,7 @@ def train_finetuned_model(
         num_classes: Number of terrain classes.
         unfreeze_blocks: Number of trailing transformer blocks to unfreeze.
         lr: Learning rate for AdamW.
-        epochs: Maximum training epochs.
+        epochs: Number of training epochs.
         class_weights: Optional per-class loss weights.
         device: CUDA device string.
         use_amp: Whether to use automatic mixed precision (GPU only).
@@ -445,11 +453,12 @@ def train_finetuned_model(
             The final batch or accumulation window can be shorter.
         init_probe: Optional LinearProbe supplied by the caller. It may be
             freshly initialized or previously trained.
-        return_history: Also return per-epoch loss and validation accuracy.
+        return_history: Also return per-epoch loss, validation macro recall,
+            optimizer-step counts, skipped AMP steps and loss scales.
 
     Returns:
         The fine-tuned model wrapper, trained probe head, and best validation
-        accuracy. If ``return_history`` is true, a fourth item contains the
+        macro recall. If ``return_history`` is true, a fourth item contains the
         per-epoch training history. After return, all backbone parameters are
         re-frozen.
     """

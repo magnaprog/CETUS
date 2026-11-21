@@ -255,7 +255,7 @@ def test_exact_artists_all_endpoints_and_only_tp_increases(tmp_path, ranking, va
         np.testing.assert_array_equal(emphasis.get_xdata(), x[selected])
         np.testing.assert_array_equal(emphasis.get_ydata(), y[selected])
         assert record["tp_increase_group_indices"] == selected.tolist()
-        assert background.get_rasterized() and not emphasis.get_rasterized()
+        assert not background.get_rasterized() and not emphasis.get_rasterized()
         assert emphasis.get_marker() == expected_markers[kind, arm, seed]
         assert background.get_color() == emphasis.get_color()
         for role, line in (("all_groups", background), ("tp_increases", emphasis)):
@@ -376,7 +376,7 @@ def test_display_sparse_identifiers_keep_actual_tie_endpoints(tmp_path, ranking,
         for line in (background, identity):
             assert line.get_linestyle() == "None" and line.get_markevery() is None
             assert not line.get_path().should_simplify
-        assert background.get_rasterized() and not identity.get_rasterized()
+        assert not background.get_rasterized() and not identity.get_rasterized()
         assert identity.get_markerfacecolor() == ("none" if arm == "scratch" else p.COLORS[arm])
         assert identity.get_markeredgecolor() == "#222222"
         if c["positives"] == 1:

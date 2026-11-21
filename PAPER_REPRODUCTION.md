@@ -100,7 +100,7 @@ The [ranking displays](release/crater-retrieval-20261114/README.md) show all 60 
 
 ### Displaying retrieved tile counts
 
-The [retrieval companion](release/crater-retrieval-20261114/README.md) renders recall against retrieved test-tile count for all six map classes. Equal scores enter together, with each region and model state shown separately. Every score group has an endpoint; the Craters sheets also emphasize groups that add positive labels. Dense overlap can obscure individual states in common classes. The count axis is logarithmic, and its area has no average-precision meaning.
+The [retrieval companion](release/crater-retrieval-20261114/README.md) renders recall against retrieved test-tile count for all six map classes. Equal scores enter together, with each region and model state shown separately. Every score group has an endpoint, and all six classes select state or seed identity symbols from existing endpoints using the same display-spacing rule. Dense overlap can obscure individual states. The count axis is logarithmic, and its area has no average-precision meaning.
 
 The CPU command reads saved curves and preserves the ranking and model choices. It produces both paper variants with bundled fonts. Retrieved tiles can show overlapping views of a landform, so the count describes images rather than independent geological objects.
 
@@ -108,7 +108,7 @@ The CPU command reads saved curves and preserves the ranking and model choices. 
 
 The same companion plots all 23,246 Titan test centers, the thirteen Earth collection sites and 398 original image windows, and the 2,945 unlabeled Venus centers. Titan colors identify modal map labels. Earth windows use the retained source-window polygons and their geometric centers. These describe nominal sampling geometry; terrain purity and valid SAR coverage throughout a window require separate evidence. Local Earth axes are scaled independently in longitude and latitude, so displayed shapes and areas are not metric comparisons. Venus symbols distinguish complete and partial image coverage. The displays describe sampled images, not independent geological objects or mapped surface area.
 
-The compact coordinate payload supports both paper styles without access to mission archives. Its source and population descriptions accompany the plotting commands in the companion guide.
+The compact coordinate payload supports both paper styles without access to mission archives. Its source and population descriptions accompany the plotting commands in the companion guide. These commands reproduce the companion's versioned sampling diagrams. The later SAR, ISS and relief backgrounds in the 20 November 2026 manuscript revision require the development repository's additional figure inputs and renderers; they are not bundled in this companion.
 
 ### Regional SGD variation
 
@@ -120,7 +120,7 @@ The [execution source](release/loss-source-20261110/README.md) compares two deno
 
 The [numerical companion](release/loss-normalization-20261110/README.md) supplies saved records from fifteen additional 100-epoch fits and fifteen fresh replays of the validation-selected states on validation and test images. All fifteen original and all fifteen additional runs have zero Craters true positives. Six-class macro F1, averaged over three seeds within each region and then equally over five regions, changes from 43.84% to 44.38%. Regional macro F1 means rise in three regions and fall in two. The companion retains all six classes, including false-positive counts.
 
-The learning rate is inherited from the original loss, and the study reuses the same five test regions. Seeds repeat training within regions; they do not add independent geographic samples. The original Craters F1 is zero, so its change cannot be negative. These results describe sensitivity under the stated settings and agreement with the SAR-informed map. The original initialization results remain primary.
+The study reuses the five test regions and the learning rate selected for the original loss. It therefore compares the loss denominators at that learning rate, rather than comparing separately tuned losses. Seeds repeat training within regions and do not add independent geographic samples. Because the original Craters F1 is zero, a nonnegative difference alone cannot show recovery; the true-positive and false-positive counts are needed to interpret it. The scores measure agreement with the SAR-informed map, and the original initialization results remain primary.
 
 Use Python 3.11 or later on Linux; reconstruction needs only the standard library. From the repository root:
 
@@ -168,9 +168,11 @@ The [source package](release/dofa-partial-source-20261112/README.md) contains th
 
 ## Image examples in the paper
 
-The full paper and CVPR supplement show seventeen examples from the original Earth, Titan and Venus collections. They were chosen from 134 candidates using coverage, contrast and visual inspection. Earth examples have at least 99.9% valid pixels; Titan and Venus examples have complete coverage. Titan examples also have modal map fractions of at least 80%. The Earth Labyrinths image shows Atacama channels, replacing the misnamed Wadi Rum example. One invalid pixel remains in the Earth Craters display and is masked in magenta with diagonal hatching. The plots preserve the underlying arrays and experiment labels; display choices do not change training inputs or scores. These illustrations are separate from the enlarged Titan catalog's examples chosen by median modal map fraction.
+The earlier full-paper and CVPR galleries contain seventeen examples from the original Earth, Titan and Venus collections, chosen from 134 candidates using coverage, contrast and visual inspection. The 20 November 2026 CVPR supplement retains those choices within an expanded gallery of thirty-four images: ten Earth, twelve Titan from the 11,371-tile catalog, and twelve unlabeled Venus images. Earth examples have at least 99.9% valid pixels; Titan and Venus examples have complete coverage. Titan examples also have modal map fractions of at least 80%. The original Earth Labyrinths choice shows Atacama channels, replacing the misnamed Wadi Rum example. The original Earth Craters choice retains one invalid pixel, masked in magenta with diagonal hatching.
 
-Figure inputs, rendering code and checks belong to the development repository. The paper's plots display folds 1 through 5 as described above. Earlier figures inside the result packages retain their original appearance and numbering.
+Each added Earth or Titan example is nearest its class's median catalog contrast among eligible images outside the original selection, with tile-ID tie breaking. Earth additions require a different site and exclude Wadi Rum, Arctic tundra and Icelandic sandur because of documented site concerns. The original Arctic tundra assignment remains unverified. The six additional Venus images are nearest six evenly spaced contrast quantiles from 0.1 to 0.9 among fully covered images outside the original selection. Those quantiles use linear interpolation, with tile-ID tie breaking and no repeated selections. Contrast is the standard deviation of Earth sigma0 in dB or Titan/Venus display DN. These illustrations preserve catalog assignments and are not a representative sample or independent geological validation. They remain separate from the enlarged Titan catalog's examples chosen by median modal map fraction.
+
+Figure inputs, rendering code and checks belong to the development repository. Display choices do not change training inputs or scores. The public plotting companion retains its earlier six Venus A–F markers; it does not supply the expanded A–L gallery or the later manuscript backgrounds. The paper's plots display folds 1 through 5 as described above. Earlier figures inside the result packages retain their original appearance and numbering.
 
 ## Software versions for the geographic evaluation
 

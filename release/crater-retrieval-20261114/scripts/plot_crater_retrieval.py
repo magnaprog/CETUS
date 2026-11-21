@@ -36,7 +36,8 @@ FIELDS = ("thresholds", "tp", "fp", "precision", "recall")
 COUNT_LIMIT = 6500
 ARCHIVE_LIMIT = 20 * 1024 * 1024
 MEMBER_LIMIT = COUNT_LIMIT * 8 + 512  # One bounded vector plus its NPY header.
-COLORS = {"random": "#B65E00", "scratch": "#B65E00", "pretrained": "#0072B2"}
+# Paul Tol's high-contrast scheme; shapes and fill also identify the states.
+COLORS = {"random": "#DDAA33", "scratch": "#DDAA33", "pretrained": "#004488"}
 DINO_KEYS = (("random", 42, "o", "Random 42"),
              ("random", 43, "s", "Random 43"),
              ("random", 44, "^", "Random 44"),
@@ -240,7 +241,7 @@ def draw_figure(curves, variant, *, class_name="Craters", dense=False):
         background, = ax.plot(x, y, linestyle="none", marker=marker if dense else ".",
                               markersize=1.1, markeredgewidth=0,
                               alpha=.65 if dense else .3, color=COLORS[arm],
-                              rasterized=True, clip_on=False, zorder=2)
+                              rasterized=False, clip_on=False, zorder=2)
         emphasis, = ax.plot(x[selected], y[selected], linestyle="none", marker=marker,
                             **state_marker_style(arm), alpha=.9,
                             color=COLORS[arm], rasterized=False, clip_on=False, zorder=3)
@@ -391,7 +392,7 @@ def main(argv=None):
         "x": "saved TP + FP, retrieved test tiles; common log scale 1..6500",
         "y": "100 * saved recall; linear percent, padded -5..105 to show 0/100 marks",
         "emphasis": "all and only TP increases; previous TP starts at zero",
-        "rendering": "All saved endpoints rasterized at 300 dpi; TP-increase markers vector. No observed connectors or thinning. Dashed uniform-order expectation is separate.",
+        "rendering": "All saved endpoints and TP-increase markers are vector objects. No observed connectors or thinning. Dashed uniform-order expectation is separate.",
         "coordinate_hash_encoding": "contiguous little-endian float64 scalar coordinates",
         "curves": [display_mapping(curve) for curve in curves], "variants": variants,
     })

@@ -1,8 +1,8 @@
 """Draw all six classes from accepted retrieval endpoints, without rescoring.
 
 Each class retains five regions and both model families. Every tied-score group
-is drawn; the five common classes add spaced vector identifiers over the
-complete rasterized point cloud. Craters retains every true-positive increment.
+is drawn as a vector point. All six classes use the same display spacing for
+larger symbols that identify encoder states or training seeds.
 """
 import argparse
 import hashlib
@@ -139,7 +139,7 @@ def main(argv=None):
         require(len(selected) == 60, "A class sheet is incomplete")
         sheets[name] = {}
         for variant in ("cvpr", "full"):
-            figure, evidence = base.draw_figure(selected, variant, class_name=name.title(), dense=c != 5)
+            figure, evidence = base.draw_figure(selected, variant, class_name=name.title(), dense=True)
             stem = f"{name}-retrieval-{variant}"
             with matplotlib.rc_context({"savefig.dpi": base.RASTER_DPI}):
                 base.roman.save_figure(figure, output / stem)
@@ -148,7 +148,7 @@ def main(argv=None):
             del figure
     write_completion(output / "display.json", {
         **binding, "schema_version": "class-retrieval-display-v1", "class_order": list(CLASSES),
-        "rendering": "All tied-score endpoints at 300 dpi. Classes 0..4 add vector identity markers at deterministic display spacing on existing endpoints; Craters keeps all TP-increase markers. No observed connectors or thinning. Dashed uniform-order expectation is separate.",
+        "rendering": "All tied-score endpoints are vector points. Every class adds identity markers at the same deterministic display spacing on existing endpoints. No observed connectors or thinning. Dashed uniform-order expectation is separate.",
         "curves": [{**base.display_mapping(c), "class_index": c["class_index"], "class": c["class"]}
                    for c in curves], "sheets": sheets})
     names.append("display.json")

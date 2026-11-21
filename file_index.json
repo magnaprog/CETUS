@@ -28,6 +28,18 @@
     "scope": "Expected training-label batch availability and saved-prediction joins to known map cells; CPU reproduction without model fitting."
   },
   "crater_retrieval_display": {
+    "current_presentation_revision": {
+      "path": "release/crater-retrieval-20261114/presentation-vector-context-20261119.json",
+      "sha256": "ec59b3a5c6e29ca68c61b522aa886289b1be5b3384952e5e70ae31bf2e8685bc"
+    },
+    "current_renderers": {
+      "plot_class_contrasts.py": "ecbd9babdfec33727ae02ba17a3693a4be2d0dea132c94d90425246471e3fee4",
+      "plot_class_ranking.py": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c",
+      "plot_class_retrieval.py": "106c5a187772cb040eb7b5c912e295a6728223293bce975d922b6565541f2b0b",
+      "plot_crater_retrieval.py": "0f05dae3750c3af9c4a2ab54b531f1c5bce700aefe71397a61489517c9185588",
+      "plot_dataset_geography.py": "43516b5be4446f48dce9daeb917c14e3066fbb1c4190e1029b18704fd9f2c891",
+      "plot_regional_errors.py": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
+    },
     "guide": "release/crater-retrieval-20261114/README.md",
     "input_guide": "release/class-ranking-20261111/README.md",
     "manifest": "release/crater-retrieval-20261114/manifest.json",
@@ -128,28 +140,28 @@
       "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
     },
     "FILES.md": {
-      "bytes": 11180,
-      "sha256": "22ceb417d9d40dfbc72e516c857c433211fe79713458585f4bb3a374d415502b"
+      "bytes": 11157,
+      "sha256": "11cc564a87bfb261b7f3a2551b2ca9a14f58c3bfb34f186e0a255d1ae7dc9076"
     },
     "LICENSE": {
       "bytes": 1066,
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 33962,
-      "sha256": "2f9995efb5f1eb03b2eb306d5878202ce5e9a548b5c6a851e1b0434e51cd46d2"
+      "bytes": 35531,
+      "sha256": "31c0c53472dde5b07048e4a06349b3a966a5397179aefc14eaa46d30573cebf1"
     },
     "README.md": {
-      "bytes": 9632,
-      "sha256": "d045d9a1c6ef86709f08b99dc9ae09f129b90825616fa01f4f5e140dd5fddfe1"
+      "bytes": 9640,
+      "sha256": "11cb965739aaef09a700258c3a1cb17443ecef8030f45b2f2c6128b3e46bb056"
     },
     "SOFTWARE.md": {
-      "bytes": 27607,
-      "sha256": "a6440851fd16219d6686d6419ba0ac62cf59762f3a411fc5a705d7e9b84149c0"
+      "bytes": 27561,
+      "sha256": "c4a3fd25887fa096b8e8deeb7275b353e031ca34cde7f52c037480d55de85178"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 40194,
-      "sha256": "3966ef5f7f2263156190aabd057057af2960cd32b7343128f8bc6b6d027bf7b3"
+      "bytes": 47580,
+      "sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -264,12 +276,12 @@
       "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 11030,
-      "sha256": "0848549729a1bfcdffb93a85180f31a881d85c3e365667e9830619846a81d598"
+      "bytes": 12397,
+      "sha256": "0bff0adeabf78d93aafd2335444c41ec507aece5b0efe8ae6fbc3b21af1741a8"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
-      "bytes": 4418,
-      "sha256": "ba0e1d3d8237ac97a77aacc87979f0e4f754e8ca4e557ba794323e8b129723be"
+      "bytes": 4636,
+      "sha256": "90a11a4155756a1bf19f504265f33d951569f0c69b04a71d8eebca188581575d"
     },
     "release/crater-retrieval-20261114/data/class-curves.npz": {
       "bytes": 21401700,
@@ -296,8 +308,8 @@
       "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
     },
     "release/crater-retrieval-20261114/manifest.json": {
-      "bytes": 24999,
-      "sha256": "236c758148670fb4cf3fa514a6da49ed4c47b4438b7df339ed65cf5a59bee6f6"
+      "bytes": 25430,
+      "sha256": "3797ae574020ac34b0894804ccf71f916ba344ba3ab1761bf00fae4a83be2096"
     },
     "release/crater-retrieval-20261114/paper/figure_data/geography/README.md": {
       "bytes": 2195,
@@ -355,6 +367,14 @@
       "bytes": 1196,
       "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
     },
+    "release/crater-retrieval-20261114/presentation-retrieval-legend-20261119.json": {
+      "bytes": 13241,
+      "sha256": "c45ddd13652b973e72c9da3092e2d8f8ed1bdd63e5a472e01bbd8bea80705e40"
+    },
+    "release/crater-retrieval-20261114/presentation-vector-context-20261119.json": {
+      "bytes": 11745,
+      "sha256": "ec59b3a5c6e29ca68c61b522aa886289b1be5b3384952e5e70ae31bf2e8685bc"
+    },
     "release/crater-retrieval-20261114/regional-errors.json": {
       "bytes": 172455,
       "sha256": "a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07"
@@ -392,16 +412,16 @@
       "sha256": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c"
     },
     "release/crater-retrieval-20261114/scripts/plot_class_retrieval.py": {
-      "bytes": 8681,
-      "sha256": "3ab23b4eae84878d2d976e1d3ed3acfe114c44e013558462df69dfc654b85ec2"
+      "bytes": 8636,
+      "sha256": "106c5a187772cb040eb7b5c912e295a6728223293bce975d922b6565541f2b0b"
     },
     "release/crater-retrieval-20261114/scripts/plot_crater_retrieval.py": {
-      "bytes": 22880,
-      "sha256": "9b8ae28fc750b7cba83e2e825a6597f09aaee18ab590c8ad3b5e593993f06071"
+      "bytes": 22948,
+      "sha256": "0f05dae3750c3af9c4a2ab54b531f1c5bce700aefe71397a61489517c9185588"
     },
     "release/crater-retrieval-20261114/scripts/plot_dataset_geography.py": {
-      "bytes": 26488,
-      "sha256": "84e05b4905699dc8889fec457a02e6695c3d534284083cf7bcfd64e37df760f9"
+      "bytes": 31428,
+      "sha256": "43516b5be4446f48dce9daeb917c14e3066fbb1c4190e1029b18704fd9f2c891"
     },
     "release/crater-retrieval-20261114/scripts/plot_regional_errors.py": {
       "bytes": 15899,
@@ -424,16 +444,16 @@
       "sha256": "8d6658d777dad883ac595c895bac713c56786e20f6ac67605d355dd398a675aa"
     },
     "release/crater-retrieval-20261114/tests/test_class_retrieval_plot.py": {
-      "bytes": 11341,
-      "sha256": "de4124db4f3bf620cb23387d268dee002912ae45a9a8ae5a22b71b92e2bc4e06"
+      "bytes": 11855,
+      "sha256": "68901e75f2b71d4ea4033236dd7e1e6bf462158a3a04fdb2eb3978edfd97ac5f"
     },
     "release/crater-retrieval-20261114/tests/test_crater_retrieval_plot.py": {
-      "bytes": 26513,
-      "sha256": "8d13d6bd1aa0e4317affdff0376267991934bc7ca1ead3680857f66e986e20e6"
+      "bytes": 26518,
+      "sha256": "c0fcce4ba7ade624b9eda8135c32e781a543bde4a91f80d5588106e23ebe3f27"
     },
     "release/crater-retrieval-20261114/tests/test_dataset_geography_plot.py": {
-      "bytes": 16553,
-      "sha256": "c39a2916c1ebdebd1851aa6292f3fd6bee656aaca9e4e741bf335283271d9a8a"
+      "bytes": 20434,
+      "sha256": "440eba97bd2a6a031244bf9c6efd35e968b34b7576d6f8e3a0597d90ffbe697b"
     },
     "release/crater-retrieval-20261114/tests/test_regional_errors_plot.py": {
       "bytes": 24813,
@@ -1916,8 +1936,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "bytes": 32248,
-      "sha256": "ddb116401e35b7be5735c8b99a698a83417f755fa61b6be2f7bbf91ac8110401"
+      "bytes": 33023,
+      "sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd"
     },
     "splits/earth_loso_arctic_thermokarst.json": {
       "bytes": 17905,
@@ -2041,7 +2061,7 @@
     },
     "titansar/evaluation/metrics.py": {
       "bytes": 14600,
-      "sha256": "e8d01a6d75959918f91141043164ba9b9d627a72d1ef68514e994770fcc491c8"
+      "sha256": "b0878457d740afbd0c95639daf54aa1617fb40c936b9d6876a54f4db152d084c"
     },
     "titansar/models/__init__.py": {
       "bytes": 46,
@@ -2053,15 +2073,15 @@
     },
     "titansar/models/foundation_models.py": {
       "bytes": 19869,
-      "sha256": "3ef0e1134f87c1215790cdf06d2cc4139062eee9eee8470e5449973b46cbf87e"
+      "sha256": "bdeb6386cc4d6edab6d8349e11062ad005e4a4006291702661bf5e88bc42c896"
     },
     "titansar/models/probing.py": {
-      "bytes": 25226,
-      "sha256": "e2fe1212c8b06a2e24235e3ef95cb5436861d1d925478ba78da6fbc0ecb8b0bb"
+      "bytes": 25890,
+      "sha256": "fd2fbcac4eb935ed13c990add24ded411a4df4430bd26b0bc42797630aa0798a"
     },
     "titansar/reproducibility.py": {
-      "bytes": 4648,
-      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+      "bytes": 4779,
+      "sha256": "65aa0a9cde7ca45c2486680de40536f1c748e2ea7c4fc9b33c1f33760639b6ec"
     }
   },
   "full_catalog_tile_arrays_included": false,

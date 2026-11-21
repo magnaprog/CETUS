@@ -1,4 +1,8 @@
-"""Immutable run manifests and cryptographic artifact binding."""
+"""Run manifests, input/output hashes and atomic JSON writes.
+
+Manifests start with input hashes and gain output hashes on completion.
+A failed run can leave its manifest in the started state.
+"""
 
 import hashlib
 import importlib.metadata

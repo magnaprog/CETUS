@@ -1,11 +1,8 @@
-"""Run foundation model probing experiments on TitanSAR.
+"""Extract encoder features and evaluate classifiers on TitanSAR tiles.
 
-This script:
-1. Loads the TitanSAR and Earth-analog datasets
-2. Extracts features from all tiles using each foundation model
-3. Runs linear probing and k-NN experiments
-4. Computes domain gap metrics
-5. Saves all results
+The default cross-domain mode loads Titan and Earth datasets, extracts features
+or reads bound feature caches, and evaluates Titan classification, Earth-to-Titan
+transfer and domain differences.
 
 Use --within_titan_only for Titan geographic evaluation without Earth inputs.
 It supports both --features_only and --cached_features_dir. Cached analysis
@@ -104,25 +101,35 @@ def run_single_model(
     cached_features_dir: str = None,
     within_titan_only: bool = False,
 ) -> dict:
-    """Run the full probing pipeline for a single foundation model.
+    """Extract features or evaluate one encoder's features for the selected scope.
 
-    This function is designed to be called in a separate process for multi-GPU
-    parallelism. It creates its own datasets, dataloaders, and model instance
-    so that nothing non-picklable crosses process boundaries.
+    Each worker creates its own datasets. Feature extraction also creates
+    loaders and an encoder; cached analysis reads the arrays without constructing
+    an encoder. Both paths need training images to reproduce normalization.
 
     Args:
         model_name: One of "dinov2", "dofa", "croma", "random_init".
-        device: CUDA device string, e.g. "cuda:0".
+        device: Torch device string, e.g. "cuda:0" or "cpu".
         titan_catalog: Path to Titan SAR catalog JSON.
-        earth_catalog: Path to Earth analog catalog JSON.
+        earth_catalog: Earth analog catalog JSON; unused in Titan-only mode.
+        titan_split_manifest: Catalog-bound Titan split file.
+        earth_split_manifest: Earth split file; required in cross-domain mode.
         output_dir: Directory to save features and results.
         batch_size: Batch size for feature extraction.
         seeds: List of random seeds for linear probe training.
         num_workers: Number of DataLoader workers.
+        allow_placeholder: Permit random substitutes for unavailable pretrained
+            encoders. The public reproduction recipe disables this option.
+        features_only: Save extracted features and return before classifier fitting.
+        cached_features_dir: Existing feature-cache root; mutually exclusive with
+            features_only.
+        within_titan_only: Omit Earth inputs, transfer and domain-gap calculations.
 
     Returns:
-        Results dict (JSON-serializable) with linear probe, k-NN, silhouette,
-        and domain gap metrics.
+        Extraction metadata in features-only mode. Otherwise, linear-probe,
+        k-NN and Titan silhouette results, plus Earth-transfer and domain-gap
+        results in cross-domain mode. The CLI converts NumPy and nonfinite
+        values before writing JSON.
     """
     if not within_titan_only and (not earth_catalog or not earth_split_manifest):
         raise ValueError("Earth catalog and split manifest are required for cross-domain probing")
