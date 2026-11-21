@@ -62,17 +62,12 @@ def load_feature_metadata(feat_dir, array_stem):
 
 
 def strict_real_weights_requested():
-    """True if TITANSAR_REQUIRE_REAL_WEIGHTS is set (1/true/yes).
-
-    Lets CPU analyses of cached features check that their metadata identifies
-    pretrained weights, or the intentional random baseline, through one shared
-    environment flag.
-    """
+    """Return whether TITANSAR_REQUIRE_REAL_WEIGHTS is 1, true or yes."""
     return os.environ.get("TITANSAR_REQUIRE_REAL_WEIGHTS", "").lower() in ("1", "true", "yes")
 
 
 def assert_cache_real_weights(feat_dir, array_stem, model_name, strict):
-    """In strict mode, refuse a cached feature array not proven from real weights.
+    """In strict mode, require metadata declaring pretrained or intentional-baseline weights.
 
     Validates the specific array's ``{array_stem}.meta.json``: the sidecar must
     cover this model and array, and ``weights_source`` must be ``pretrained``
@@ -135,9 +130,10 @@ def assert_cache_real_weights(feat_dir, array_stem, model_name, strict):
 
 def load_bound_feature_cache(
     feat_dir, array_stem, model_name, expected_provenance, expected_tile_labels,
+    *, strict=True,
 ):
     """Read a cache only when hashes, tile identities and labels match the task."""
-    assert_cache_real_weights(feat_dir, array_stem, model_name, strict=True)
+    assert_cache_real_weights(feat_dir, array_stem, model_name, strict=strict)
     meta = load_feature_metadata(feat_dir, array_stem)
     provenance = meta["provenance"]
     for key, expected in expected_provenance.items():
@@ -346,20 +342,50 @@ def knn_classify(
     Classes absent from ``test_labels`` receive NaN and are excluded from that
     mean, which defaults to zero if every configured class is absent.
 
-    Training arrays must be nonempty. The positive integer k is capped at
-    the number of training labels.
+    Features must be finite matrices with matching widths and aligned
+    one-dimensional labels. Training arrays must be nonempty. The positive
+    integer k is capped at the number of training rows. Features may use integer
+    or float16/32/64 dtypes. Normalization uses float64 working copies, scaling
+    each row by its largest absolute component before its Euclidean norm.
+    Zero rows have zero similarity to every row. No epsilon is added.
+
+    Float64 working arrays and similarities use more memory than float16/32.
+    Rounding can change close rankings; integers beyond float64's exact range
+    may lose precision. Complex, boolean, object and wider floats are rejected.
     """
     if isinstance(k, (bool, np.bool_)) or not isinstance(k, (int, np.integer)) or k <= 0:
         raise ValueError("k must be a positive integer")
+    if train_features.ndim != 2 or test_features.ndim != 2:
+        raise ValueError("kNN features must be two-dimensional")
+    if train_labels.ndim != 1 or test_labels.ndim != 1:
+        raise ValueError("kNN labels must be one-dimensional")
     if len(train_features) == 0 or len(train_labels) == 0:
         raise ValueError("kNN requires nonempty training features and labels")
+    if len(train_features) != len(train_labels) or len(test_features) != len(test_labels):
+        raise ValueError("kNN features and labels must have aligned rows")
+    if train_features.shape[1] != test_features.shape[1]:
+        raise ValueError("kNN training and test arrays must have the same feature width")
+    for features in (train_features, test_features):
+        if not (features.dtype.kind in "iu" or
+                (features.dtype.kind == "f" and features.dtype.itemsize <= 8)):
+            raise ValueError("kNN features must use integer or float16/32/64 dtypes")
+    if not np.isfinite(train_features).all() or not np.isfinite(test_features).all():
+        raise ValueError("kNN features must be finite")
 
     # Clamp k to training set size
     k = min(k, len(train_labels))
 
-    # Normalize features for cosine similarity
-    train_norm = train_features / (np.linalg.norm(train_features, axis=1, keepdims=True) + 1e-8)
-    test_norm = test_features / (np.linalg.norm(test_features, axis=1, keepdims=True) + 1e-8)
+    def normalize(features):
+        # Copy before scaling so callers may pass read-only arrays or views.
+        normalized = np.array(features, dtype=np.float64, copy=True)
+        scale = np.max(np.abs(normalized), axis=1, keepdims=True, initial=0.0)
+        np.divide(normalized, scale, out=normalized, where=scale != 0)
+        norm = np.linalg.norm(normalized, axis=1, keepdims=True)
+        np.divide(normalized, norm, out=normalized, where=norm != 0)
+        return normalized
+
+    train_norm = normalize(train_features)
+    test_norm = normalize(test_features)
 
     # Compute similarities in batches to manage memory
     batch_size = 512
@@ -649,7 +675,7 @@ def train_finetuned_model(
     if best_probe_state is not None:
         probe.load_state_dict(best_probe_state)
 
-    # --- Step 7: Re-freeze everything ---
+    # --- Step 7: Re-freeze backbone parameters ---
     for p in model.model.parameters():
         p.requires_grad = False
     model.model.eval()

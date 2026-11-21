@@ -37,7 +37,7 @@
       "plot_class_ranking.py": "6bac01cbfc89a651b469bab47add7f646ae4c2f3665b32092d554e7493fadd7c",
       "plot_class_retrieval.py": "106c5a187772cb040eb7b5c912e295a6728223293bce975d922b6565541f2b0b",
       "plot_crater_retrieval.py": "0f05dae3750c3af9c4a2ab54b531f1c5bce700aefe71397a61489517c9185588",
-      "plot_dataset_geography.py": "43516b5be4446f48dce9daeb917c14e3066fbb1c4190e1029b18704fd9f2c891",
+      "plot_dataset_geography.py": "5f27970fc48de2f5914329d2fbf61de7240a11e636b948cf400f1ed71376641d",
       "plot_regional_errors.py": "1fb82ae2e24457a41b27758bcf88e045ea91644019333a1fcdb8623701fd327f"
     },
     "guide": "release/crater-retrieval-20261114/README.md",
@@ -156,12 +156,12 @@
       "sha256": "11cb965739aaef09a700258c3a1cb17443ecef8030f45b2f2c6128b3e46bb056"
     },
     "SOFTWARE.md": {
-      "bytes": 28050,
-      "sha256": "22ef0cae777fbf17e5e413f647a93df1dcfad7fa1479e30e1ff337615d832bec"
+      "bytes": 29338,
+      "sha256": "e0d3011d6cc64bfed4e5457c5cf2827a8f6a77498597210278002e8a9d2c6f20"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 51264,
-      "sha256": "d6e4b09a6e74db1d85890a1ebd96ed0cfc595734d357aebd1828cd9a687080b0"
+      "bytes": 75251,
+      "sha256": "5cc71c95fe8f92dbad296a5a1d08400c7c9c64d47ed780fe677531a7e35080d1"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -276,12 +276,12 @@
       "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 12397,
-      "sha256": "0bff0adeabf78d93aafd2335444c41ec507aece5b0efe8ae6fbc3b21af1741a8"
+      "bytes": 12514,
+      "sha256": "c217b67c17db05fed443c545209897c1772573b840d9e19d4b9531ff6eb8f9d9"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
       "bytes": 4636,
-      "sha256": "90a11a4155756a1bf19f504265f33d951569f0c69b04a71d8eebca188581575d"
+      "sha256": "cd5cff7746b3c267f62d308c0104c91ce48ce7f8aacc0dde3cabd8de1a225735"
     },
     "release/crater-retrieval-20261114/data/class-curves.npz": {
       "bytes": 21401700,
@@ -308,8 +308,8 @@
       "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
     },
     "release/crater-retrieval-20261114/manifest.json": {
-      "bytes": 25430,
-      "sha256": "3797ae574020ac34b0894804ccf71f916ba344ba3ab1761bf00fae4a83be2096"
+      "bytes": 26996,
+      "sha256": "f032d1f7ba7e6d1d8d40653b7df2645acdcbcc2c5637023142591298b9b0c1a5"
     },
     "release/crater-retrieval-20261114/paper/figure_data/geography/README.md": {
       "bytes": 2195,
@@ -420,8 +420,8 @@
       "sha256": "0f05dae3750c3af9c4a2ab54b531f1c5bce700aefe71397a61489517c9185588"
     },
     "release/crater-retrieval-20261114/scripts/plot_dataset_geography.py": {
-      "bytes": 31428,
-      "sha256": "43516b5be4446f48dce9daeb917c14e3066fbb1c4190e1029b18704fd9f2c891"
+      "bytes": 31396,
+      "sha256": "5f27970fc48de2f5914329d2fbf61de7240a11e636b948cf400f1ed71376641d"
     },
     "release/crater-retrieval-20261114/scripts/plot_regional_errors.py": {
       "bytes": 15899,
@@ -1936,8 +1936,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "bytes": 33023,
-      "sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd"
+      "bytes": 33042,
+      "sha256": "534edc5cb0085c9db735d3b6a7e69b101a835c3421a89da32abcc03a4d5da64f"
     },
     "scripts/summarize_crater_map_comparison.py": {
       "bytes": 15451,
@@ -2020,16 +2020,16 @@
       "sha256": "b547d209c663b3b3b7bb59112f68191b8dfa400557c9fdb3d77a31d869d09890"
     },
     "tests/test_bound_feature_cache.py": {
-      "bytes": 1706,
-      "sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33"
+      "bytes": 2042,
+      "sha256": "654f5b9e4825fbfa54058ced8a4849c9e807e188386b8bc919d23319335e0b0d"
     },
     "tests/test_crater_map_comparison.py": {
       "bytes": 14839,
       "sha256": "5c3515f92c98fd728b956fec8493d75a1a8aa6da94cc5c8966ddd0c8b85bf106"
     },
     "tests/test_knn_classify.py": {
-      "bytes": 2647,
-      "sha256": "741a46fcbc95f851dc1581242bc5bb50b18ee988fae32720749161c8f4242ef6"
+      "bytes": 16193,
+      "sha256": "e51c086b2b65a6947fbbb920ffa87648341396d4e4548436d8479f0ee90615a0"
     },
     "tests/test_normalization_provenance.py": {
       "bytes": 3347,
@@ -2064,8 +2064,8 @@
       "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
     },
     "titansar/data/dataset.py": {
-      "bytes": 23528,
-      "sha256": "369d40c37730ae563cd44bdea249eb62176ab14352a044445a64d01cfc96ca3c"
+      "bytes": 23532,
+      "sha256": "55bd690c6634859c65e905dff9f690c608f444a909d7746f4cf325cffde3929f"
     },
     "titansar/evaluation/__init__.py": {
       "bytes": 53,
@@ -2088,12 +2088,12 @@
       "sha256": "bdeb6386cc4d6edab6d8349e11062ad005e4a4006291702661bf5e88bc42c896"
     },
     "titansar/models/probing.py": {
-      "bytes": 26601,
-      "sha256": "f5a06e82bbb5d5ba3a730ba7672fe63b81c5001f35c38fe09589d683744cd839"
+      "bytes": 28338,
+      "sha256": "6f666de1c3c176ab4ae57357fea9ab1b8b09ed8c668b5df33d436d95d6cb4a58"
     },
     "titansar/reproducibility.py": {
-      "bytes": 4779,
-      "sha256": "65aa0a9cde7ca45c2486680de40536f1c748e2ea7c4fc9b33c1f33760639b6ec"
+      "bytes": 4712,
+      "sha256": "2208b9dc0cac664495c0b4cd975c3780133ccd99511766ad266614bcb65ec4b3"
     }
   },
   "full_catalog_tile_arrays_included": false,

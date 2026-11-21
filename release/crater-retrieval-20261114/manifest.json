@@ -280,8 +280,8 @@
       "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "README.md": {
-      "bytes": 12397,
-      "sha256": "0bff0adeabf78d93aafd2335444c41ec507aece5b0efe8ae6fbc3b21af1741a8"
+      "bytes": 12514,
+      "sha256": "c217b67c17db05fed443c545209897c1772573b840d9e19d4b9531ff6eb8f9d9"
     },
     "data/class-curves.npz": {
       "bytes": 21401700,
@@ -416,8 +416,8 @@
       "sha256": "0f05dae3750c3af9c4a2ab54b531f1c5bce700aefe71397a61489517c9185588"
     },
     "scripts/plot_dataset_geography.py": {
-      "bytes": 31428,
-      "sha256": "43516b5be4446f48dce9daeb917c14e3066fbb1c4190e1029b18704fd9f2c891"
+      "bytes": 31396,
+      "sha256": "5f27970fc48de2f5914329d2fbf61de7240a11e636b948cf400f1ed71376641d"
     },
     "scripts/plot_regional_errors.py": {
       "bytes": 15899,
@@ -541,7 +541,7 @@
       },
       "scripts/plot_dataset_geography.py": {
         "path": "scripts/plot_dataset_geography.py",
-        "sha256": "43516b5be4446f48dce9daeb917c14e3066fbb1c4190e1029b18704fd9f2c891"
+        "sha256": "5f27970fc48de2f5914329d2fbf61de7240a11e636b948cf400f1ed71376641d"
       },
       "scripts/plot_regional_errors.py": {
         "path": "scripts/plot_regional_errors.py",
@@ -591,6 +591,32 @@
       "tests/test_crater_retrieval_plot.py": "Nine added synthetic cases check endpoint identity, singleton/tie behavior, uniform-order reference, legend and physical spacing.",
       "tests/test_dataset_geography_plot.py": "Existing public synthetic fixtures plus context authentication, source-part identity, geometry/style/transform/clip rejection and scientific-artist separation."
     },
+    "maintenance_updates": [
+      {
+        "base_cetus_commit": "a545475a4f02701c92fd42da455e12f1744dc059",
+        "changes": {
+          "README.md": {
+            "previous_sha256": "0bff0adeabf78d93aafd2335444c41ec507aece5b0efe8ae6fbc3b21af1741a8",
+            "reason": "Distinguish the dated visual revision from current source mappings and maintenance history.",
+            "sha256": "c217b67c17db05fed443c545209897c1772573b840d9e19d4b9531ff6eb8f9d9"
+          },
+          "scripts/plot_dataset_geography.py": {
+            "previous_sha256": "43516b5be4446f48dce9daeb917c14e3066fbb1c4190e1029b18704fd9f2c891",
+            "reason": "Remove only the unused collections.Counter import; all remaining source bytes and renderer calculations are unchanged.",
+            "sha256": "5f27970fc48de2f5914329d2fbf61de7240a11e636b948cf400f1ed71376641d"
+          }
+        },
+        "date": "2026-11-21",
+        "previous_manifest_sha256": "3797ae574020ac34b0894804ccf71f916ba344ba3ab1761bf00fae4a83be2096",
+        "validation": {
+          "command": "python -B -m pytest tests/test_dataset_geography_plot.py -q -p no:cacheprovider",
+          "passed": 77,
+          "reported_warnings": 0,
+          "scope": "Existing synthetic payload/artist tests under offline_cpu.py, with GPU hidden and external temporary outputs. Source comparison confirms one import deletion; historical expected figure bytes and all scientific inputs are retained. No production figure regeneration or new visual-equivalence claim.",
+          "skipped": 0
+        }
+      }
+    ],
     "new_files_identified_by_payload_hashes": [
       "scripts/plot_crater_retrieval.py",
       "tests/test_crater_retrieval_plot.py",

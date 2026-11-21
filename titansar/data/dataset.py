@@ -152,8 +152,8 @@ def _parse_label(value):
     """Coerce a label to a plain int, or raise TypeError for non-integer types.
 
     Rejects bool (an int subclass), float, str, and None. NumPy integers are
-    accepted and normalized. This prevents labels like 1.5, "2", or True from
-    passing a loose int() check and then crashing during integer indexing.
+    accepted and normalized. This prevents silent conversion of labels such as
+    1.5, "2", or True into integer class indices.
     """
     if isinstance(value, bool):
         raise TypeError("bool is not a valid label")
@@ -163,7 +163,7 @@ def _parse_label(value):
 
 
 def _validate_labels(entries, num_classes, allow_unlabeled=False):
-    """Raise if any entry has a non-integer or out-of-range label.
+    """Require integer labels in [0, num_classes), or -1 when allow_unlabeled is true.
 
     Defense-in-depth at load time: build_catalog validates at creation, but a
     hand-edited or legacy catalog could still carry a corrupt label (e.g. 99, 1.5,
@@ -482,9 +482,9 @@ class EarthAnalogDataset(Dataset):
             )
 
         # Provenance gate (review N1 / ERRATA #18): synthetic Earth tiles (Gaussian
-        # noise) silently contaminated a past experiment. Refuse synthetic catalogs,
-        # and require positive real-data provenance so an untagged catalog (e.g. a
-        # legacy synthetic one without the flag) cannot slip through either.
+        # noise) silently contaminated a past experiment. Synthetic catalogs require
+        # allow_synthetic; other catalogs require a recognized Sentinel-1 source type
+        # unless allow_unverified. These are metadata checks, not authentication.
         is_synthetic = bool(full_catalog.get("synthetic")) or \
             full_catalog.get("source_type") == "synthetic"
         if is_synthetic:

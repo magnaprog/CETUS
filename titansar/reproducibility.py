@@ -112,8 +112,8 @@ def start_run_manifest(output_dir, command, input_paths, require_clean_git=True)
 
 
 def _write_json_atomic(path: Path, payload: dict):
-    """Write JSON via a temporary file and rename, so a crash mid-write
-    cannot destroy an existing manifest (the run's only provenance record)."""
+    """Write JSON to a temporary sibling file, then replace
+    the destination."""
     tmp_path = path.with_suffix(path.suffix + ".tmp")
     tmp_path.write_text(json.dumps(payload, indent=2) + "\n")
     tmp_path.replace(path)
