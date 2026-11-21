@@ -16,7 +16,7 @@ Every sample is 128 by 128 pixels over a nominal 45 km by 45 km projected window
 
 The nineteen split files bind the matching catalog by SHA-256 and assign tile IDs to train, val, test, or selk_holdout. Preserve that catalog binding when locating an experiment.
 
-- `splits/titan_spatial_fold_0.json` through `splits/titan_spatial_fold_4.json`: five Titan spatial folds. A deterministic process assigns each roughly 250 km region to one fold while balancing class and sample counts. Adjacent regions have no exclusion buffer, so nearby tiles across fold boundaries may remain correlated. We set aside 65 tiles from Selk, so they are held out of every fold. Each run uses three folds for training, one for validation, and one for testing.
+- `splits/titan_spatial_fold_0.json` through `splits/titan_spatial_fold_4.json`: five Titan spatial folds. A deterministic process assigns each roughly 250 km region to one fold while balancing class and sample counts. Adjacent regions have no exclusion buffer, so nearby tiles across fold boundaries may remain correlated. The 65 Selk tiles are held out of every fold. Each run uses three folds for training, one for validation, and one for testing.
 - `splits/earth_transfer_grouped_validation.json`: Earth source set for transfer. Of the 398 tiles, 352 are used for transfer training. Earth validation holds out whole source products.
 - `splits/earth_loso_*.json`: 13 files named after the morphological analog sites. Each holds out one site. A separate MMD^2 check holds out one Earth source site at a time.
 

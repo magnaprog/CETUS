@@ -476,6 +476,76 @@
       "previous_manifest_sha256": "3966ef5f7f2263156190aabd057057af2960cd32b7343128f8bc6b6d027bf7b3",
       "previous_sha256": "e2fe1212c8b06a2e24235e3ef95cb5436861d1d925478ba78da6fbc0ecb8b0bb",
       "reason": "Clarify scientific terminology and the PDF-only supplementary decision; executable behavior and original producer identities are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-20",
+      "new_sha256": "11cc564a87bfb261b7f3a2551b2ca9a14f58c3bfb34f186e0a255d1ae7dc9076",
+      "path": "FILES.md",
+      "previous_cetus_commit": "a08869223680d4f197cdac252f759c53b79de8c4",
+      "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
+      "previous_sha256": "22ceb417d9d40dfbc72e516c857c433211fe79713458585f4bb3a374d415502b",
+      "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-20",
+      "new_sha256": "31c0c53472dde5b07048e4a06349b3a966a5397179aefc14eaa46d30573cebf1",
+      "path": "PAPER_REPRODUCTION.md",
+      "previous_cetus_commit": "a08869223680d4f197cdac252f759c53b79de8c4",
+      "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
+      "previous_sha256": "8b186cf619be558158b2c8514cd430d10df1360956537725b97fb1d7857cb9fc",
+      "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-20",
+      "new_sha256": "11cb965739aaef09a700258c3a1cb17443ecef8030f45b2f2c6128b3e46bb056",
+      "path": "README.md",
+      "previous_cetus_commit": "a08869223680d4f197cdac252f759c53b79de8c4",
+      "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
+      "previous_sha256": "33798187db0808c1fede41b9442019e30ae9eb40ced9ec18ce4808ef0c2e80df",
+      "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-20",
+      "new_sha256": "0bff0adeabf78d93aafd2335444c41ec507aece5b0efe8ae6fbc3b21af1741a8",
+      "path": "release/crater-retrieval-20261114/README.md",
+      "previous_cetus_commit": "a08869223680d4f197cdac252f759c53b79de8c4",
+      "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
+      "previous_sha256": "be5328837802802487131a134103289f9e3117a112ca4388869474569bc8eee4",
+      "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-20",
+      "new_sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd",
+      "path": "scripts/run_probing.py",
+      "previous_cetus_commit": "a08869223680d4f197cdac252f759c53b79de8c4",
+      "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
+      "previous_sha256": "ddb116401e35b7be5735c8b99a698a83417f755fa61b6be2f7bbf91ac8110401",
+      "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-20",
+      "new_sha256": "fd2fbcac4eb935ed13c990add24ded411a4df4430bd26b0bc42797630aa0798a",
+      "path": "titansar/models/probing.py",
+      "previous_cetus_commit": "a08869223680d4f197cdac252f759c53b79de8c4",
+      "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
+      "previous_sha256": "3b09221832a816e57cf445d54aca43a5a0695edd31c79341e84f800d901da7af",
+      "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
+    },
+    {
+      "change_kind": "editorial_documentation",
+      "date": "2026-11-20",
+      "new_sha256": "65aa0a9cde7ca45c2486680de40536f1c748e2ea7c4fc9b33c1f33760639b6ec",
+      "path": "titansar/reproducibility.py",
+      "previous_cetus_commit": "a08869223680d4f197cdac252f759c53b79de8c4",
+      "previous_manifest_sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59",
+      "previous_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804",
+      "reason": "Clarify current figure versions, reproduction routes and function descriptions. Original scientific producers, numerical results and executable statements are preserved."
     }
   ],
   "excluded": [
@@ -522,7 +592,7 @@
     },
     "scripts/run_probing.py": {
       "origin": "committed source with docstring example and diagnostic-string corrections; computational structure unchanged after excluding docstrings and accounting for the documented diagnostic-text changes",
-      "sha256": "ddb116401e35b7be5735c8b99a698a83417f755fa61b6be2f7bbf91ac8110401",
+      "sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd",
       "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
     },
     "tests/test_bound_feature_cache.py": {
@@ -601,12 +671,12 @@
     },
     "titansar/models/probing.py": {
       "origin": "committed source with comment/docstring and diagnostic-string corrections; computational structure unchanged after excluding docstrings and accounting for the documented diagnostic-text changes",
-      "sha256": "3b09221832a816e57cf445d54aca43a5a0695edd31c79341e84f800d901da7af",
+      "sha256": "fd2fbcac4eb935ed13c990add24ded411a4df4430bd26b0bc42797630aa0798a",
       "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
     },
     "titansar/reproducibility.py": {
-      "origin": "verbatim committed blob",
-      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804",
+      "origin": "committed source with an explanatory docstring revision; executable structure unchanged",
+      "sha256": "65aa0a9cde7ca45c2486680de40536f1c748e2ea7c4fc9b33c1f33760639b6ec",
       "source_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
     }
   },

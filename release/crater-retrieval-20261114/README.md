@@ -5,6 +5,12 @@ includes all six terrain classes, five geographic regions and both initializatio
 comparisons. The geography displays retain the current Titan test centers, the
 original Earth image population and all retained unlabeled Venus centers.
 
+The commands reproduce the displays identified by this package's manifest.
+The 20 November 2026 manuscript revision adds SAR, ISS and relief backgrounds and
+expands its image galleries. Those additional inputs and renderers remain in
+the development repository; this package retains its earlier sampling diagrams
+and six Venus A–F illustration markers. See the [figure-version guidance](../../PAPER_REPRODUCTION.md#image-examples-in-the-paper).
+
 ## Reproduce the 40 class and geography assets
 
 Use an existing Python 3.12.3 environment containing NumPy 2.4.4, Matplotlib
@@ -153,7 +159,8 @@ finite random ranking.
 ## Geographic variation and map mixtures
 
 The accompanying `regional-errors.json` is the unchanged analysis of the saved
-SGD classifier predictions. Recreate the regional SGD figure with:
+SGD classifier predictions. After the setup above, keep the same shell and
+companion working directory to recreate the regional SGD figure:
 
 ```sh
 python3.12 -B -m scripts.plot_regional_errors \

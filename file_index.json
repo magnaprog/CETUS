@@ -140,28 +140,28 @@
       "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
     },
     "FILES.md": {
-      "bytes": 11180,
-      "sha256": "22ceb417d9d40dfbc72e516c857c433211fe79713458585f4bb3a374d415502b"
+      "bytes": 11157,
+      "sha256": "11cc564a87bfb261b7f3a2551b2ca9a14f58c3bfb34f186e0a255d1ae7dc9076"
     },
     "LICENSE": {
       "bytes": 1066,
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "PAPER_REPRODUCTION.md": {
-      "bytes": 34154,
-      "sha256": "8b186cf619be558158b2c8514cd430d10df1360956537725b97fb1d7857cb9fc"
+      "bytes": 35531,
+      "sha256": "31c0c53472dde5b07048e4a06349b3a966a5397179aefc14eaa46d30573cebf1"
     },
     "README.md": {
-      "bytes": 9639,
-      "sha256": "33798187db0808c1fede41b9442019e30ae9eb40ced9ec18ce4808ef0c2e80df"
+      "bytes": 9640,
+      "sha256": "11cb965739aaef09a700258c3a1cb17443ecef8030f45b2f2c6128b3e46bb056"
     },
     "SOFTWARE.md": {
       "bytes": 27561,
       "sha256": "c4a3fd25887fa096b8e8deeb7275b353e031ca34cde7f52c037480d55de85178"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 42789,
-      "sha256": "ba87994bcbfe65d6da719ce16ead108d0831f4172751e09ca86716c7283edc59"
+      "bytes": 47580,
+      "sha256": "fc36b50de8f260621e25f83ed3e02d46e193b62c3ba211e03d909cfc0bc5a245"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -276,12 +276,12 @@
       "sha256": "979373723e13de31aecbe06232dc480de1c47543c23a90806a5f6e62c08eee9d"
     },
     "release/crater-retrieval-20261114/README.md": {
-      "bytes": 11876,
-      "sha256": "be5328837802802487131a134103289f9e3117a112ca4388869474569bc8eee4"
+      "bytes": 12397,
+      "sha256": "0bff0adeabf78d93aafd2335444c41ec507aece5b0efe8ae6fbc3b21af1741a8"
     },
     "release/crater-retrieval-20261114/SHA256SUMS": {
       "bytes": 4636,
-      "sha256": "e3dc392ac5223a3fa8cab59b08235931250f016f2f499e24d9b065c377e778dc"
+      "sha256": "90a11a4155756a1bf19f504265f33d951569f0c69b04a71d8eebca188581575d"
     },
     "release/crater-retrieval-20261114/data/class-curves.npz": {
       "bytes": 21401700,
@@ -309,7 +309,7 @@
     },
     "release/crater-retrieval-20261114/manifest.json": {
       "bytes": 25430,
-      "sha256": "703de007f18b77cc5b19c0bd622fefdf00e6c9fd49998cd61affed4dff64e09b"
+      "sha256": "3797ae574020ac34b0894804ccf71f916ba344ba3ab1761bf00fae4a83be2096"
     },
     "release/crater-retrieval-20261114/paper/figure_data/geography/README.md": {
       "bytes": 2195,
@@ -1936,8 +1936,8 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     "scripts/run_probing.py": {
-      "bytes": 32248,
-      "sha256": "ddb116401e35b7be5735c8b99a698a83417f755fa61b6be2f7bbf91ac8110401"
+      "bytes": 33023,
+      "sha256": "c67e96dd8ef65b9d8b40f56f0f7de63cc94d1384fa0cc078d22de2f37561d2fd"
     },
     "splits/earth_loso_arctic_thermokarst.json": {
       "bytes": 17905,
@@ -2076,12 +2076,12 @@
       "sha256": "bdeb6386cc4d6edab6d8349e11062ad005e4a4006291702661bf5e88bc42c896"
     },
     "titansar/models/probing.py": {
-      "bytes": 25559,
-      "sha256": "3b09221832a816e57cf445d54aca43a5a0695edd31c79341e84f800d901da7af"
+      "bytes": 25890,
+      "sha256": "fd2fbcac4eb935ed13c990add24ded411a4df4430bd26b0bc42797630aa0798a"
     },
     "titansar/reproducibility.py": {
-      "bytes": 4648,
-      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+      "bytes": 4779,
+      "sha256": "65aa0a9cde7ca45c2486680de40536f1c748e2ea7c4fc9b33c1f33760639b6ec"
     }
   },
   "full_catalog_tile_arrays_included": false,

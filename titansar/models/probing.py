@@ -432,7 +432,10 @@ def train_finetuned_model(
 
     Freezes all backbone parameters, then selectively unfreezes the last
     `unfreeze_blocks` transformer blocks. Trains with AdamW + cosine
-    annealing and optional mixed precision (AMP).
+    annealing and optional mixed precision (AMP). Runs the declared epoch loop
+    and restores the earliest maximum validation macro recall among epochs with
+    successful optimizer updates. Recall is averaged over classes present in
+    the validation labels; validation does not stop training early.
 
     Args:
         model: Foundation model wrapper (will be modified in-place).
@@ -441,7 +444,7 @@ def train_finetuned_model(
         num_classes: Number of terrain classes.
         unfreeze_blocks: Number of trailing transformer blocks to unfreeze.
         lr: Learning rate for AdamW.
-        epochs: Maximum training epochs.
+        epochs: Number of training epochs.
         class_weights: Optional per-class loss weights.
         device: CUDA device string.
         use_amp: Whether to use automatic mixed precision (GPU only).
@@ -450,11 +453,12 @@ def train_finetuned_model(
             The final batch or accumulation window can be shorter.
         init_probe: Optional LinearProbe supplied by the caller. It may be
             freshly initialized or previously trained.
-        return_history: Also return per-epoch loss and validation accuracy.
+        return_history: Also return per-epoch loss, validation macro recall,
+            optimizer-step counts, skipped AMP steps and loss scales.
 
     Returns:
         The fine-tuned model wrapper, trained probe head, and best validation
-        accuracy. If ``return_history`` is true, a fourth item contains the
+        macro recall. If ``return_history`` is true, a fourth item contains the
         per-epoch training history. After return, all backbone parameters are
         re-frozen.
     """
