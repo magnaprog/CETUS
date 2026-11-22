@@ -5,8 +5,8 @@ execution code available for inspection and preparation of new runs. It exports
 development revision `9089214a5a6134a088eed058b02df6e021fe80dc`, including its
 anonymous-input contract and output-directory protection. It contains all 23
 `titansar` files, nine selected scripts, eight test files, five split fixtures,
-source metadata, three guides and the required notices. The earlier CETUS root
-runner has a separate source identity and remains unchanged.
+source metadata, three guides and the required notices. This export did not modify the earlier CETUS root
+runner, which has a separate source identity.
 
 This source package omits imagery, feature caches, weights, trained states and
 historical machine-bound plans. All 23,380 current Titan images are available

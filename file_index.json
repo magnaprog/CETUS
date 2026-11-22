@@ -160,8 +160,8 @@
       "sha256": "e0d3011d6cc64bfed4e5457c5cf2827a8f6a77498597210278002e8a9d2c6f20"
     },
     "SOFTWARE_EXPORT.json": {
-      "bytes": 75251,
-      "sha256": "5cc71c95fe8f92dbad296a5a1d08400c7c9c64d47ed780fe677531a7e35080d1"
+      "bytes": 75372,
+      "sha256": "91fe9aca4686575d1f588cee09c99c07e2810328d1710f38d8b4e09d374a4d47"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -472,16 +472,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "release/current-source-20261109/README.md": {
-      "bytes": 9180,
-      "sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e"
+      "bytes": 9192,
+      "sha256": "fca7d91fb98fe80e6d182229a55ffe8458c87aa0642dcd77de12f3673f312cbe"
     },
     "release/current-source-20261109/SHA256SUMS": {
       "bytes": 5764,
-      "sha256": "a4e4939738c0f3b6f2e597dfb8e13207cb0ab421fa1a7e94877a8ec2ef4e2b96"
+      "sha256": "ffbba07051e35111504589d2a040175922c19603032ed917d4349dc5dfd73b18"
     },
     "release/current-source-20261109/SOURCE_EXPORT.json": {
-      "bytes": 57049,
-      "sha256": "5ccf4b4f9d55a9f1979fa5886ca50ef5a874fec98ba84e1b6bd4c26876bd3ce5"
+      "bytes": 57780,
+      "sha256": "27a82f2ea01f549d97bbcfedfe9cb0aa713b9767668b7928b3013d680aef85f1"
     },
     "release/current-source-20261109/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -521,7 +521,7 @@
     },
     "release/current-source-20261109/file_index.json": {
       "bytes": 8994,
-      "sha256": "3a8cd3fbc08c3bac66a0908a3cd87f01fc6114c3e4960f070631f7aaecc5c9d2"
+      "sha256": "5d398031dead03f49ae4dd652bac293f4e5ec16fb6ec8291cdc814a543807020"
     },
     "release/current-source-20261109/licenses/CROMA-LICENSE": {
       "bytes": 1071,

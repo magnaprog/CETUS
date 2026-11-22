@@ -326,6 +326,20 @@
       "previous_SOURCE_EXPORT_sha256": "bcd2db2bc7dc57fcaa6f752e5bf98eb306b50689fb0f86bc9951e84e6e030af4",
       "scientific_source_and_results_unchanged": true,
       "scope": "Correct current descriptions and reader routes while retaining scientific producers, preserved source snapshots, data, figures, parameters and numerical behavior."
+    },
+    {
+      "changed_files": [
+        {
+          "current_sha256": "fca7d91fb98fe80e6d182229a55ffe8458c87aa0642dcd77de12f3673f312cbe",
+          "path": "README.md",
+          "previous_sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e",
+          "reason": "Tie the unchanged-root statement to the export event; retain the separate root source identity."
+        }
+      ],
+      "date": "2026-11-22",
+      "previous_SOURCE_EXPORT_sha256": "5ccf4b4f9d55a9f1979fa5886ca50ef5a874fec98ba84e1b6bd4c26876bd3ce5",
+      "scientific_source_and_results_unchanged": true,
+      "scope": "One current wrapper sentence; exported code, scientific producers, results and dated validation records unchanged."
     }
   ],
   "entrypoints": [
@@ -380,11 +394,11 @@
       "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 9180,
-      "current_sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e",
+      "bytes": 9192,
+      "current_sha256": "fca7d91fb98fe80e6d182229a55ffe8458c87aa0642dcd77de12f3673f312cbe",
       "disposition": "generated_packaging",
       "purpose": "Public scope, access, provenance and validation documentation.",
-      "sha256": "89c3159f2867a159f49a6cc154e7c8e825978e6470ec452bbc240e8b64b1390e",
+      "sha256": "fca7d91fb98fe80e6d182229a55ffe8458c87aa0642dcd77de12f3673f312cbe",
       "source_commit": null
     },
     "THIRD_PARTY_NOTICES.md": {
