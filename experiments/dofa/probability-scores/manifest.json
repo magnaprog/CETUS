@@ -1,0 +1,37 @@
+{
+  "files": {
+    "LICENSE": {
+      "bytes": 1102,
+      "sha256": "5c944047ab4a1369edfa7de34b5de7e32bc133d054232151acddd1c198734273"
+    },
+    "NOTICE.md": {
+      "bytes": 1257,
+      "sha256": "68d2cc71f9dc732068944e328010e5f7572280d5e7fd3048e9c8dbbdc1e6768d"
+    },
+    "README.md": {
+      "bytes": 3386,
+      "sha256": "1137f25448b5ec51e1b3fe4da5000238e502920e5aa15ed0fc3c500b0c81ae6a"
+    },
+    "expected.json": {
+      "bytes": 81345,
+      "sha256": "3538b968d7adf61d7cb72b6de80d4db7f962d69b2a17d37b39303c0abbceb01c"
+    },
+    "provenance.json": {
+      "bytes": 19107,
+      "sha256": "5e4c43235a152031850624853dabd5c735062de23b14e148b3f7a384a87fd973"
+    },
+    "reconstruct.py": {
+      "bytes": 20540,
+      "sha256": "35ae1cbc6a53b9c8c6b110325669b1341aea2538bccb6e610dce6a2ba5d198d7"
+    },
+    "records.json.gz": {
+      "bytes": 13235321,
+      "sha256": "e9244419add6a017bca13dac78e7129a9f77f106d84230abd10faa45ae2553e5"
+    },
+    "test_reconstruct.py": {
+      "bytes": 32056,
+      "sha256": "a1f902ece0953fad974cb42bea131c5fb8046d752b918bf3285e1402c162721a"
+    }
+  },
+  "schema_version": "dofa-partial-scores-package-v1"
+}

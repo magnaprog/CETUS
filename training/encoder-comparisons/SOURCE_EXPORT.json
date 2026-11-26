@@ -1,0 +1,696 @@
+{
+  "counts": {
+    "generated_files_including_integrity": 6,
+    "guide_link_projections": 2,
+    "pinned_notices": 3,
+    "revised_upstream_python_files": 24,
+    "total_files": 60,
+    "upstream_paths": 51,
+    "upstream_paths_byte_identical": 24,
+    "upstream_python_files_unchanged": 16
+  },
+  "entrypoints": [
+    "scripts.run_model_followup",
+    "scripts.run_fitting_sensitivity",
+    "scripts.launch_fitting_sensitivity",
+    "scripts.analyze_model_followup",
+    "scripts.analyze_model_followup_coverage",
+    "scripts.analyze_sar_coverage"
+  ],
+  "exported_from": {
+    "commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+    "repository": "magnaprog/TitanSAR-dev",
+    "tree": "8e63b400ad214dd6c867879ca1c4701957bae501"
+  },
+  "external_test_fixture": {
+    "bytes": 49528151,
+    "included_in_package": false,
+    "sha256": "5169c9ec1a2e7ac8c5f78499064d2399b196225bb04423ac9a78795314a92dcc",
+    "source_relative_to_package": "../../experiments/encoder-comparisons/scientific-supplement.zip",
+    "temporary_test_destination": "fixtures/scientific-supplement.zip"
+  },
+  "files": {
+    "CONTRACTS.md": {
+      "bytes": 15216,
+      "current_sha256": "5ae7262f9de620bbc6d6c058e0f827cab88a4bc06f1db846353ddcead81c60e3",
+      "disposition": "revised_public_guide",
+      "purpose": "Public scope, access, provenance and validation documentation.",
+      "sha256": "5ae7262f9de620bbc6d6c058e0f827cab88a4bc06f1db846353ddcead81c60e3",
+      "source_commit": null
+    },
+    "DATA_LICENSES.md": {
+      "bytes": 1886,
+      "current_sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5",
+      "disposition": "unchanged_pinned_notice",
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5",
+      "source_bytes": 1886,
+      "source_commit": "1c043bca393a0ac94d0dbdc0e84d0ddf78f04711",
+      "source_path": "DATA_LICENSES.md",
+      "source_repository": "magnaprog/CETUS",
+      "source_sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "LICENSE": {
+      "bytes": 1066,
+      "current_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2",
+      "disposition": "unchanged_upstream",
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2",
+      "source_bytes": 1066,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "LICENSE",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "README.md": {
+      "bytes": 3130,
+      "current_sha256": "b03db58971ef69b97842f05d776005741c804e81041627b3964f377ba61ca110",
+      "disposition": "revised_public_guide",
+      "purpose": "Public scope, access, provenance and validation documentation.",
+      "sha256": "b03db58971ef69b97842f05d776005741c804e81041627b3964f377ba61ca110",
+      "source_commit": null
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "current_sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da",
+      "disposition": "unchanged_pinned_notice",
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da",
+      "source_bytes": 2457,
+      "source_commit": "1c043bca393a0ac94d0dbdc0e84d0ddf78f04711",
+      "source_path": "THIRD_PARTY_NOTICES.md",
+      "source_repository": "magnaprog/CETUS",
+      "source_sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "cetus_sar/__init__.py": {
+      "bytes": 95,
+      "current_sha256": "926cdee31edcfd2d0f14d02c5b08253e8c73443c21676908873841696fa72f32",
+      "disposition": "revised_public_source",
+      "sha256": "926cdee31edcfd2d0f14d02c5b08253e8c73443c21676908873841696fa72f32",
+      "source_bytes": 98,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/__init__.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "cetus_sar/configs/__init__.py": {
+      "bytes": 0,
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "unchanged_upstream",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/configs/__init__.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cetus_sar/configs/defaults.py": {
+      "bytes": 5371,
+      "current_sha256": "5052d6a3a42df6885770e1ccdc208b75a04d0da405a8f22865f9bcf2a60840f5",
+      "disposition": "revised_public_source",
+      "sha256": "5052d6a3a42df6885770e1ccdc208b75a04d0da405a8f22865f9bcf2a60840f5",
+      "source_bytes": 5380,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/configs/defaults.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
+    },
+    "cetus_sar/data/__init__.py": {
+      "bytes": 45,
+      "current_sha256": "32d8ec521a99faa91e56c0edf6070a9f09803abf10fc6922725e7b7baee00f92",
+      "disposition": "revised_public_source",
+      "sha256": "32d8ec521a99faa91e56c0edf6070a9f09803abf10fc6922725e7b7baee00f92",
+      "source_bytes": 48,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/data/__init__.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "cetus_sar/data/dataset.py": {
+      "bytes": 24736,
+      "current_sha256": "d4857ab18ee48e8336bc8e7fa5b46e5a0af0ee8a765e1a3607864dd3c1f0c2de",
+      "disposition": "revised_public_source",
+      "sha256": "d4857ab18ee48e8336bc8e7fa5b46e5a0af0ee8a765e1a3607864dd3c1f0c2de",
+      "source_bytes": 24742,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/data/dataset.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "68150c666fa3f18b0726a63944ae260a9668005fc804e034d642f2e37ad58fa0"
+    },
+    "cetus_sar/data/earth_analog.py": {
+      "bytes": 11547,
+      "current_sha256": "9a7d6cfb1c121a09a402078e8203ae40c1848e47bdb9048829a1947c38e0a453",
+      "disposition": "revised_public_source",
+      "sha256": "9a7d6cfb1c121a09a402078e8203ae40c1848e47bdb9048829a1947c38e0a453",
+      "source_bytes": 11552,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/data/earth_analog.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "caff7f98184968e1c03808d3797b6bf4e2831dd386a92964b4983a0a7d7702fb"
+    },
+    "cetus_sar/data/sar_processing.py": {
+      "bytes": 24494,
+      "current_sha256": "696b04b081fdce33abe5e6b7f5a3b481e58816b7505a64349169c6370c55eb78",
+      "disposition": "revised_public_source",
+      "sha256": "696b04b081fdce33abe5e6b7f5a3b481e58816b7505a64349169c6370c55eb78",
+      "source_bytes": 24513,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/data/sar_processing.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "2aa65b71cf3454eb140b6040412613dc73e06ee0fcdc68ff910f1a6d1b4b5e6f"
+    },
+    "cetus_sar/data/vims_processing.py": {
+      "bytes": 9689,
+      "current_sha256": "7e1eab41682e2078a04f3b2b58ae804c333399ea093f4a02ddacaa04e331da1a",
+      "disposition": "revised_public_source",
+      "sha256": "7e1eab41682e2078a04f3b2b58ae804c333399ea093f4a02ddacaa04e331da1a",
+      "source_bytes": 9692,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/data/vims_processing.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "c4dbdc178d4961b04abba4831a8f006f9725cc5f009062be2caa0112e40beb50"
+    },
+    "cetus_sar/evaluation/__init__.py": {
+      "bytes": 50,
+      "current_sha256": "341134f220495e83e09059d5f39241e523adff7031cd959e15d89e40fd4efc2f",
+      "disposition": "revised_public_source",
+      "sha256": "341134f220495e83e09059d5f39241e523adff7031cd959e15d89e40fd4efc2f",
+      "source_bytes": 53,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/evaluation/__init__.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de"
+    },
+    "cetus_sar/evaluation/anomaly_scoring.py": {
+      "bytes": 7968,
+      "current_sha256": "b8c15642553e0ecab05c155a982be004cfbe83f8b6a0cfae7b4fc3e8e12781f6",
+      "disposition": "revised_public_source",
+      "sha256": "b8c15642553e0ecab05c155a982be004cfbe83f8b6a0cfae7b4fc3e8e12781f6",
+      "source_bytes": 7970,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/evaluation/anomaly_scoring.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "de3c009c6570b3567c6679b44f69d0a9a499955a2d6c7f4e1bcc4e62bf8ecc8a"
+    },
+    "cetus_sar/evaluation/domain_adaptation.py": {
+      "bytes": 8307,
+      "current_sha256": "87d8c5a711205d0ab2584f030e010df6aaef22e438472bea953c0e8432d0067a",
+      "disposition": "revised_public_source",
+      "sha256": "87d8c5a711205d0ab2584f030e010df6aaef22e438472bea953c0e8432d0067a",
+      "source_bytes": 8310,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/evaluation/domain_adaptation.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "3c76ee7f471e6a1578a4c454ad0f500fdceaa4ab3362dca6c1717260a761a0b6"
+    },
+    "cetus_sar/evaluation/metrics.py": {
+      "bytes": 14469,
+      "current_sha256": "5cf2b36462c23c812b5b28f9f06a5854c79e0dbc3207f6156dcae47c25d2d884",
+      "disposition": "revised_public_source",
+      "sha256": "5cf2b36462c23c812b5b28f9f06a5854c79e0dbc3207f6156dcae47c25d2d884",
+      "source_bytes": 14472,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/evaluation/metrics.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "d8767548ebf359650cee10c34ac92962b06287794ad5000004afe219176c5485"
+    },
+    "cetus_sar/evaluation/physics_analysis.py": {
+      "bytes": 12846,
+      "current_sha256": "d840b3c03e9e0082100694bcf0a3a768335f8f0d47487a69984bfabcfd08b986",
+      "disposition": "revised_public_source",
+      "sha256": "d840b3c03e9e0082100694bcf0a3a768335f8f0d47487a69984bfabcfd08b986",
+      "source_bytes": 12849,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/evaluation/physics_analysis.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "aa46efd6ea8b3f7ffca7bc4d896d4e71142d3ca3c93b1afe56bde313ca7c5d6c"
+    },
+    "cetus_sar/models/__init__.py": {
+      "bytes": 43,
+      "current_sha256": "32c7f16ca95657ec47f812dcf593f710307a50c5e54d861ad9e0bab1ccb751df",
+      "disposition": "revised_public_source",
+      "sha256": "32c7f16ca95657ec47f812dcf593f710307a50c5e54d861ad9e0bab1ccb751df",
+      "source_bytes": 46,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/models/__init__.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "cetus_sar/models/baselines.py": {
+      "bytes": 6238,
+      "current_sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1",
+      "disposition": "unchanged_upstream",
+      "sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1",
+      "source_bytes": 6238,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/models/baselines.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1"
+    },
+    "cetus_sar/models/croma_model.py": {
+      "bytes": 14944,
+      "current_sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c",
+      "disposition": "unchanged_upstream",
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c",
+      "source_bytes": 14944,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/models/croma_model.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+    },
+    "cetus_sar/models/followup.py": {
+      "bytes": 10122,
+      "current_sha256": "54dcba5b9d57ca70a7b8a97a3083178fb716e10faf06aeadafa64fbe4b017c7e",
+      "disposition": "revised_public_source",
+      "sha256": "54dcba5b9d57ca70a7b8a97a3083178fb716e10faf06aeadafa64fbe4b017c7e",
+      "source_bytes": 10123,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/models/followup.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "8f6f986efcfd5b5d0f2f231ee50ad592824757a2b32937452cfc064f4aaa7d66"
+    },
+    "cetus_sar/models/foundation_models.py": {
+      "bytes": 20137,
+      "current_sha256": "a2cb87d6f436a2177ae367d603813d9f6aebcdecf490dc34124ab72451e75a23",
+      "disposition": "revised_public_source",
+      "sha256": "a2cb87d6f436a2177ae367d603813d9f6aebcdecf490dc34124ab72451e75a23",
+      "source_bytes": 19921,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/models/foundation_models.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "ae9bdfde05ff6ac955e4fa017762337d5ef4e6d40d421ffc89d31b50db077b14"
+    },
+    "cetus_sar/models/image_training.py": {
+      "bytes": 4669,
+      "current_sha256": "917c5b4f4c349b12699683d7e4dce28745a45a4b53a88c7eadbfb6941bf7435d",
+      "disposition": "revised_public_source",
+      "sha256": "917c5b4f4c349b12699683d7e4dce28745a45a4b53a88c7eadbfb6941bf7435d",
+      "source_bytes": 4667,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/models/image_training.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "3474ddf206feea2178da43d973dbfff84e22b7356c140cbc90a663e8d51ad917"
+    },
+    "cetus_sar/models/probing.py": {
+      "bytes": 25945,
+      "current_sha256": "eb6d5cab63b1d97a958dd6cdd1f31a4df7499bcf8040c60716dbb3c5808aa8ef",
+      "disposition": "revised_public_source",
+      "sha256": "eb6d5cab63b1d97a958dd6cdd1f31a4df7499bcf8040c60716dbb3c5808aa8ef",
+      "source_bytes": 26317,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/models/probing.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "75d270bf00e763530a9c686b60ce7ecef53e46d25caf5fec692a18199157e946"
+    },
+    "cetus_sar/physics/__init__.py": {
+      "bytes": 77,
+      "current_sha256": "238191d247d47f81397d61550b46a5419250ff52d5394012e47f5546f5f9dbf6",
+      "disposition": "unchanged_upstream",
+      "sha256": "238191d247d47f81397d61550b46a5419250ff52d5394012e47f5546f5f9dbf6",
+      "source_bytes": 77,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/physics/__init__.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "238191d247d47f81397d61550b46a5419250ff52d5394012e47f5546f5f9dbf6"
+    },
+    "cetus_sar/physics/remapping.py": {
+      "bytes": 12647,
+      "current_sha256": "d9e20057c239d2472e642e16066badee20ad16190aeb4d7b60b0cda4c210f775",
+      "disposition": "revised_public_source",
+      "sha256": "d9e20057c239d2472e642e16066badee20ad16190aeb4d7b60b0cda4c210f775",
+      "source_bytes": 12648,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/physics/remapping.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "ef9558c684f5307bb7c6143e29a1f2116f901ce16ead57c4de6d370be0eb49ae"
+    },
+    "cetus_sar/reproducibility.py": {
+      "bytes": 4578,
+      "current_sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05",
+      "disposition": "unchanged_upstream",
+      "sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05",
+      "source_bytes": 4578,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "titansar/reproducibility.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05"
+    },
+    "docs/DATA_ACCESS.md": {
+      "bytes": 2405,
+      "current_sha256": "167af406eced5930e6deb66958276b0c9b8d59b83ae769468fadb13940d2f627",
+      "disposition": "revised_public_guide",
+      "sha256": "167af406eced5930e6deb66958276b0c9b8d59b83ae769468fadb13940d2f627",
+      "source_bytes": 11113,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "3d505935e8b9e0fccbf84dc39b837aae04d75c62a672532575c60f63bce36170"
+    },
+    "docs/FITTING_SENSITIVITY.md": {
+      "bytes": 5615,
+      "current_sha256": "5401eea0c85ef35214bd7882a212e4776f21c8ac4b344e0040a3708f6dfe2fb3",
+      "disposition": "unchanged_upstream",
+      "sha256": "5401eea0c85ef35214bd7882a212e4776f21c8ac4b344e0040a3708f6dfe2fb3",
+      "source_bytes": 5615,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "docs/FITTING_SENSITIVITY.md",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "5401eea0c85ef35214bd7882a212e4776f21c8ac4b344e0040a3708f6dfe2fb3"
+    },
+    "docs/MODEL_FOLLOWUP.md": {
+      "bytes": 22918,
+      "current_sha256": "70463cd43b2732a38e957460f7da9bd8c4b727d1b870fa20eb2dcf5c598378d4",
+      "disposition": "revised_public_guide",
+      "sha256": "70463cd43b2732a38e957460f7da9bd8c4b727d1b870fa20eb2dcf5c598378d4",
+      "source_bytes": 28027,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "docs/MODEL_FOLLOWUP.md",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "960d0db42c4686c27ef1413b0b6e70f272f1658efe16e563d3a46b625b20d374"
+    },
+    "fixtures/original-splits/titan_contiguous_fold_0.json": {
+      "bytes": 710427,
+      "current_sha256": "1079b1c63588ee9af674184b7dd6937ef01d3a354c8773e8ee9caad4ab8cc388",
+      "disposition": "unchanged_upstream",
+      "sha256": "1079b1c63588ee9af674184b7dd6937ef01d3a354c8773e8ee9caad4ab8cc388",
+      "source_bytes": 710427,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "audit/gpu_execution/repaired_splits/titan_contiguous_fold_0.json",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "1079b1c63588ee9af674184b7dd6937ef01d3a354c8773e8ee9caad4ab8cc388"
+    },
+    "fixtures/original-splits/titan_contiguous_fold_1.json": {
+      "bytes": 715458,
+      "current_sha256": "f9bb93592f5bb9e111118f796c4cdc4e2478cb1ef18f1d61d7044525d0a820d2",
+      "disposition": "unchanged_upstream",
+      "sha256": "f9bb93592f5bb9e111118f796c4cdc4e2478cb1ef18f1d61d7044525d0a820d2",
+      "source_bytes": 715458,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "audit/gpu_execution/repaired_splits/titan_contiguous_fold_1.json",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "f9bb93592f5bb9e111118f796c4cdc4e2478cb1ef18f1d61d7044525d0a820d2"
+    },
+    "fixtures/original-splits/titan_contiguous_fold_2.json": {
+      "bytes": 713935,
+      "current_sha256": "7862dd95df2eed01d0252a7a37068ee780509d98dd9e0105e1930ad0ffa75610",
+      "disposition": "unchanged_upstream",
+      "sha256": "7862dd95df2eed01d0252a7a37068ee780509d98dd9e0105e1930ad0ffa75610",
+      "source_bytes": 713935,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "audit/gpu_execution/repaired_splits/titan_contiguous_fold_2.json",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "7862dd95df2eed01d0252a7a37068ee780509d98dd9e0105e1930ad0ffa75610"
+    },
+    "fixtures/original-splits/titan_contiguous_fold_3.json": {
+      "bytes": 711432,
+      "current_sha256": "8317384eb1945fc2af628e0051b8181637525d0412c2f2c1b38b7b2967fee9b6",
+      "disposition": "unchanged_upstream",
+      "sha256": "8317384eb1945fc2af628e0051b8181637525d0412c2f2c1b38b7b2967fee9b6",
+      "source_bytes": 711432,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "audit/gpu_execution/repaired_splits/titan_contiguous_fold_3.json",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "8317384eb1945fc2af628e0051b8181637525d0412c2f2c1b38b7b2967fee9b6"
+    },
+    "fixtures/original-splits/titan_contiguous_fold_4.json": {
+      "bytes": 704758,
+      "current_sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09",
+      "disposition": "unchanged_upstream",
+      "sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09",
+      "source_bytes": 704758,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "audit/gpu_execution/repaired_splits/titan_contiguous_fold_4.json",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "25e66ac42fd246d824fb957547e30d2e9f453dfd039130a4adf0b5cd0d796d09"
+    },
+    "licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "current_sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f",
+      "disposition": "unchanged_pinned_notice",
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f",
+      "source_bytes": 1071,
+      "source_commit": "1c043bca393a0ac94d0dbdc0e84d0ddf78f04711",
+      "source_path": "licenses/CROMA-LICENSE",
+      "source_repository": "magnaprog/CETUS",
+      "source_sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "pyproject.toml": {
+      "bytes": 1265,
+      "current_sha256": "45dad6530cf5b13af0573d8694b4fd25d69e08d5f756ae6e1be2cee30fa39aff",
+      "disposition": "revised_public_source",
+      "sha256": "45dad6530cf5b13af0573d8694b4fd25d69e08d5f756ae6e1be2cee30fa39aff",
+      "source_bytes": 1248,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "pyproject.toml",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "04093328c1fb403c43f29cd0f43f8c97dda602c24e15c3773c6062aab50d2470"
+    },
+    "requirements.txt": {
+      "bytes": 561,
+      "current_sha256": "1d33ac7b3e3df48dd50170e4c65fb83ffd9dd2295bca7822023ded2887283372",
+      "disposition": "unchanged_upstream",
+      "sha256": "1d33ac7b3e3df48dd50170e4c65fb83ffd9dd2295bca7822023ded2887283372",
+      "source_bytes": 561,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "requirements.txt",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "1d33ac7b3e3df48dd50170e4c65fb83ffd9dd2295bca7822023ded2887283372"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "generated_packaging",
+      "purpose": "Empty namespace initializer only; no upstream source pin.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_commit": null
+    },
+    "scripts/analyze_model_followup.py": {
+      "bytes": 41406,
+      "current_sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b",
+      "disposition": "unchanged_upstream",
+      "sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b",
+      "source_bytes": 41406,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/analyze_model_followup.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b"
+    },
+    "scripts/analyze_model_followup_coverage.py": {
+      "bytes": 16003,
+      "current_sha256": "fd6ff553ce588709bc21928afbc1ebdf218269fdec0c0dbe6e39c74959b6dd48",
+      "disposition": "unchanged_upstream",
+      "sha256": "fd6ff553ce588709bc21928afbc1ebdf218269fdec0c0dbe6e39c74959b6dd48",
+      "source_bytes": 16003,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/analyze_model_followup_coverage.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "fd6ff553ce588709bc21928afbc1ebdf218269fdec0c0dbe6e39c74959b6dd48"
+    },
+    "scripts/analyze_sar_coverage.py": {
+      "bytes": 9599,
+      "current_sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03",
+      "disposition": "unchanged_upstream",
+      "sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03",
+      "source_bytes": 9599,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/analyze_sar_coverage.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03"
+    },
+    "scripts/launch_fitting_sensitivity.py": {
+      "bytes": 7562,
+      "current_sha256": "c462e60dc6f11cddd0050cf47975d5b6eeab3fd95ccf173856b58948eee2feb4",
+      "disposition": "unchanged_upstream",
+      "sha256": "c462e60dc6f11cddd0050cf47975d5b6eeab3fd95ccf173856b58948eee2feb4",
+      "source_bytes": 7562,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/launch_fitting_sensitivity.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "c462e60dc6f11cddd0050cf47975d5b6eeab3fd95ccf173856b58948eee2feb4"
+    },
+    "scripts/model_followup_support.py": {
+      "bytes": 18374,
+      "current_sha256": "95e3976319dab7eab997b8d17b9bf6fd754d29bb2240ddc40f16410b3418e23b",
+      "disposition": "revised_public_source",
+      "sha256": "95e3976319dab7eab997b8d17b9bf6fd754d29bb2240ddc40f16410b3418e23b",
+      "source_bytes": 18359,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/model_followup_support.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "4f8ac453a0b4a87a421d2017ebcb35d06a35bb722a632e2685356bf5ab157712"
+    },
+    "scripts/run_finetuning.py": {
+      "bytes": 25624,
+      "current_sha256": "5db631f6ac7e9b0dce7d8effe861b26ac4702e6c392fadfc22be1b54fcc3071c",
+      "disposition": "revised_public_source",
+      "sha256": "5db631f6ac7e9b0dce7d8effe861b26ac4702e6c392fadfc22be1b54fcc3071c",
+      "source_bytes": 25658,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/run_finetuning.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+    },
+    "scripts/run_fitting_sensitivity.py": {
+      "bytes": 21022,
+      "current_sha256": "305862c19374d5c297ddf97a9a5c39daf9fd4d8ffa75dbeec9e148284c8400d7",
+      "disposition": "unchanged_upstream",
+      "sha256": "305862c19374d5c297ddf97a9a5c39daf9fd4d8ffa75dbeec9e148284c8400d7",
+      "source_bytes": 21022,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/run_fitting_sensitivity.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "305862c19374d5c297ddf97a9a5c39daf9fd4d8ffa75dbeec9e148284c8400d7"
+    },
+    "scripts/run_model_followup.py": {
+      "bytes": 28790,
+      "current_sha256": "b1315b067d2f419b3b4b13bc75d2dbf58b0f79678217028eee0b04f7b8c2b8eb",
+      "disposition": "revised_public_source",
+      "sha256": "b1315b067d2f419b3b4b13bc75d2dbf58b0f79678217028eee0b04f7b8c2b8eb",
+      "source_bytes": 28785,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/run_model_followup.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "65be05657150afb55ff8f05b2cf8d7601bbb080d43f4a8740ead69c9ddb6e7ca"
+    },
+    "scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "current_sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd",
+      "disposition": "unchanged_upstream",
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd",
+      "source_bytes": 24528,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "scripts/summarize_review_frozen.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "tests/__init__.py": {
+      "bytes": 0,
+      "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "disposition": "unchanged_upstream",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_bytes": 0,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/__init__.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/test_analyze_model_followup.py": {
+      "bytes": 26629,
+      "current_sha256": "3e384ada40d51b7e8724321694a2c72ddbfeb31d50e6d2d178cbc6a94a19e5c9",
+      "disposition": "unchanged_upstream",
+      "sha256": "3e384ada40d51b7e8724321694a2c72ddbfeb31d50e6d2d178cbc6a94a19e5c9",
+      "source_bytes": 26629,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/test_analyze_model_followup.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "3e384ada40d51b7e8724321694a2c72ddbfeb31d50e6d2d178cbc6a94a19e5c9"
+    },
+    "tests/test_anonymous_followup_inputs.py": {
+      "bytes": 6795,
+      "current_sha256": "047ec0ea272d8e88ea00d4dccebdba2e0ea847d336a67fa306376070c1f35556",
+      "disposition": "revised_public_test",
+      "sha256": "047ec0ea272d8e88ea00d4dccebdba2e0ea847d336a67fa306376070c1f35556",
+      "source_bytes": 6818,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/test_anonymous_followup_inputs.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "052dc08ce0870211d33e43aab5df5f71fa2c46fa82e482078f8823fc6ec07818"
+    },
+    "tests/test_fitting_launcher.py": {
+      "bytes": 18843,
+      "current_sha256": "22849e5091bb3e93161a540f1819b0d6246ffc33be6248f8be17ce12dfef8c0e",
+      "disposition": "unchanged_upstream",
+      "sha256": "22849e5091bb3e93161a540f1819b0d6246ffc33be6248f8be17ce12dfef8c0e",
+      "source_bytes": 18843,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/test_fitting_launcher.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "22849e5091bb3e93161a540f1819b0d6246ffc33be6248f8be17ce12dfef8c0e"
+    },
+    "tests/test_fitting_sensitivity.py": {
+      "bytes": 13855,
+      "current_sha256": "9639c22dcf83a2e3b9ad5f7a5777c6928869d6053bb0a2d55e6fab4e768100c1",
+      "disposition": "unchanged_upstream",
+      "sha256": "9639c22dcf83a2e3b9ad5f7a5777c6928869d6053bb0a2d55e6fab4e768100c1",
+      "source_bytes": 13855,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/test_fitting_sensitivity.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "9639c22dcf83a2e3b9ad5f7a5777c6928869d6053bb0a2d55e6fab4e768100c1"
+    },
+    "tests/test_model_followup.py": {
+      "bytes": 40289,
+      "current_sha256": "a1a93a7d6df392259cf56f260d375f9940844a3cba84f40c05cbd4e2ff56f02c",
+      "disposition": "revised_public_test",
+      "sha256": "a1a93a7d6df392259cf56f260d375f9940844a3cba84f40c05cbd4e2ff56f02c",
+      "source_bytes": 40297,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/test_model_followup.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "0f8ae7ce4e4e526ff58f01b94a7af0337ef2eb8408b4af7bacb106dabfb3fc96"
+    },
+    "tests/test_model_followup_coverage.py": {
+      "bytes": 19220,
+      "current_sha256": "74427a7663e29a160f6d9d0a43f18bb6d22f933eeb5393496f15f44b2c6ad20d",
+      "disposition": "unchanged_upstream",
+      "sha256": "74427a7663e29a160f6d9d0a43f18bb6d22f933eeb5393496f15f44b2c6ad20d",
+      "source_bytes": 19220,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/test_model_followup_coverage.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "74427a7663e29a160f6d9d0a43f18bb6d22f933eeb5393496f15f44b2c6ad20d"
+    },
+    "tests/test_model_followup_integration.py": {
+      "bytes": 6818,
+      "current_sha256": "5a1fcee8d253148260eaf7eced9e5eb1b0655a9220f6d9825688cdae6e995525",
+      "disposition": "revised_public_test",
+      "sha256": "5a1fcee8d253148260eaf7eced9e5eb1b0655a9220f6d9825688cdae6e995525",
+      "source_bytes": 6724,
+      "source_commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "source_path": "tests/test_model_followup_integration.py",
+      "source_repository": "magnaprog/TitanSAR-dev",
+      "source_sha256": "4d9f7efe49b3190026b39f69b476e89eaa7a6bc92895e7cd84a394138f3fca0a"
+    }
+  },
+  "generated_integrity_files": [
+    "SOURCE_EXPORT.json",
+    "file_index.json",
+    "SHA256SUMS"
+  ],
+  "historical_validator_limit": "Full-grid and coverage consumers retain original catalog/split/receipt/path guards; not a new anonymous-grid admission route.",
+  "integrity_policy": {
+    "checksums": "All files except SHA256SUMS, including file_index.json and SOURCE_EXPORT.json.",
+    "file_index": "All files except file_index.json and SHA256SUMS.",
+    "source_manifest": "files binds all payload files except this manifest, file_index.json and SHA256SUMS, avoiding self-reference."
+  },
+  "notice_source": {
+    "commit": "1c043bca393a0ac94d0dbdc0e84d0ddf78f04711",
+    "repository": "magnaprog/CETUS"
+  },
+  "omitted": [
+    "Full Titan images, feature caches, model weights and retained states",
+    "Private sealed protocols/plans and plan builders",
+    "Private GPU supervision, native-library receipt and retained-model inference harnesses",
+    "Upstream paper/display generator and private audits referenced by dated guides",
+    "Third-party official DINO source and dependency binaries"
+  ],
+  "package": "training/encoder-comparisons",
+  "previous_public_export": {
+    "bytes": 36160,
+    "public_commit": "f1a24417ebe6d0008a1c37be28964633466ea71e",
+    "sha256": "312441c92bde7045f0209dcb7237e3cc0089eb3aaeec39c7ac1094138b0d7b50"
+  },
+  "public_release": "v0.2.0",
+  "release_date": "2026-11-09",
+  "schema_version": "cetus-current-source-export-v1",
+  "scientific_producers": {
+    "later_30_saved_epoch100_evaluations": "93ac7868baf199782f1e43c745f68dbd28a2755b",
+    "original_80_cpu_fits": "56b3356a937021b91152de40a203ccc871db4c59",
+    "original_90_cell_initialization_study": "1f3fc8fe0e831777e3188d70caf2c5450b656333"
+  },
+  "source_relationship": "New job specifications bind the cetus_sar files supplied here. Origin records identify the separate source used in the original runs. The original coverage validator, both CPU fitting scripts, and the five original split fixtures retain their historical bindings.",
+  "validation_at_export": {
+    "models_or_scientific_fits_run": false,
+    "numerical_consumers_repeated": false,
+    "project_imports_run": false,
+    "runtime_validation": "Not executed at the initial source export",
+    "source_inspection_only": true,
+    "tests_run": false
+  }
+}

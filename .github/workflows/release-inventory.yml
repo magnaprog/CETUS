@@ -1,0 +1,11 @@
+name: Release inventory
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify tracked files and software inputs
+        run: python3 release/check_inventory.py

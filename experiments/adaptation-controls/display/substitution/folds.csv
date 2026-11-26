@@ -1,0 +1,361 @@
+recipe,model,metric,condition,units,fold,value
+lr,dinov2,precision,reference,percent,0,32.04831955569457
+lr,dinov2,precision,reference,percent,1,39.09047723363357
+lr,dinov2,precision,reference,percent,2,37.76521304243204
+lr,dinov2,precision,reference,percent,3,33.35863881839815
+lr,dinov2,precision,reference,percent,4,35.186215422155634
+lr,dinov2,precision,replacement,percent,0,32.9928805219255
+lr,dinov2,precision,replacement,percent,1,39.77181823004309
+lr,dinov2,precision,replacement,percent,2,36.71733467339877
+lr,dinov2,precision,replacement,percent,3,33.39745415639945
+lr,dinov2,precision,replacement,percent,4,35.773113616919886
+lr,dinov2,precision,difference,percentage points,0,0.9445609662309284
+lr,dinov2,precision,difference,percentage points,1,0.6813409964095185
+lr,dinov2,precision,difference,percentage points,2,-1.0478783690332727
+lr,dinov2,precision,difference,percentage points,3,0.03881533800129677
+lr,dinov2,precision,difference,percentage points,4,0.5868981947642515
+lr,dinov2,recall,reference,percent,0,39.167954679583865
+lr,dinov2,recall,reference,percent,1,43.513809266692746
+lr,dinov2,recall,reference,percent,2,45.88387440018266
+lr,dinov2,recall,reference,percent,3,39.1014729628087
+lr,dinov2,recall,reference,percent,4,47.569495150705194
+lr,dinov2,recall,replacement,percent,0,39.71477957530702
+lr,dinov2,recall,replacement,percent,1,44.58960209673714
+lr,dinov2,recall,replacement,percent,2,44.67043749307168
+lr,dinov2,recall,replacement,percent,3,39.73709891046706
+lr,dinov2,recall,replacement,percent,4,48.676757315366046
+lr,dinov2,recall,difference,percentage points,0,0.5468248957231525
+lr,dinov2,recall,difference,percentage points,1,1.0757928300443975
+lr,dinov2,recall,difference,percentage points,2,-1.2134369071109818
+lr,dinov2,recall,difference,percentage points,3,0.6356259476583581
+lr,dinov2,recall,difference,percentage points,4,1.107262164660855
+lr,dinov2,f1,reference,percent,0,33.449842720147856
+lr,dinov2,f1,reference,percent,1,40.101569371190976
+lr,dinov2,f1,reference,percent,2,38.145186099668365
+lr,dinov2,f1,reference,percent,3,34.48262071123851
+lr,dinov2,f1,reference,percent,4,37.862561034339315
+lr,dinov2,f1,replacement,percent,0,34.22400744102001
+lr,dinov2,f1,replacement,percent,1,41.00088535788231
+lr,dinov2,f1,replacement,percent,2,37.14602128168437
+lr,dinov2,f1,replacement,percent,3,34.78817594039503
+lr,dinov2,f1,replacement,percent,4,38.46715380564292
+lr,dinov2,f1,difference,percentage points,0,0.7741647208721447
+lr,dinov2,f1,difference,percentage points,1,0.8993159866913347
+lr,dinov2,f1,difference,percentage points,2,-0.9991648179839996
+lr,dinov2,f1,difference,percentage points,3,0.3055552291565178
+lr,dinov2,f1,difference,percentage points,4,0.6045927713036081
+lr,dofa,precision,reference,percent,0,32.59050017541989
+lr,dofa,precision,reference,percent,1,40.180967566856964
+lr,dofa,precision,reference,percent,2,35.04713950026101
+lr,dofa,precision,reference,percent,3,33.294648715106824
+lr,dofa,precision,reference,percent,4,35.08422904144146
+lr,dofa,precision,replacement,percent,0,33.96526624094351
+lr,dofa,precision,replacement,percent,1,41.36580182970125
+lr,dofa,precision,replacement,percent,2,35.01080339520127
+lr,dofa,precision,replacement,percent,3,33.79175852767262
+lr,dofa,precision,replacement,percent,4,34.828043497381884
+lr,dofa,precision,difference,percentage points,0,1.3747660655236138
+lr,dofa,precision,difference,percentage points,1,1.1848342628442865
+lr,dofa,precision,difference,percentage points,2,-0.03633610505973661
+lr,dofa,precision,difference,percentage points,3,0.4971098125657991
+lr,dofa,precision,difference,percentage points,4,-0.2561855440595784
+lr,dofa,recall,reference,percent,0,37.572217315117754
+lr,dofa,recall,reference,percent,1,44.40522649082187
+lr,dofa,recall,reference,percent,2,49.11796506819697
+lr,dofa,recall,reference,percent,3,37.41629776715074
+lr,dofa,recall,reference,percent,4,47.06626020316988
+lr,dofa,recall,replacement,percent,0,37.85720267447515
+lr,dofa,recall,replacement,percent,1,46.44633795047189
+lr,dofa,recall,replacement,percent,2,47.949205257612306
+lr,dofa,recall,replacement,percent,3,38.06124175054714
+lr,dofa,recall,replacement,percent,4,46.91307097705214
+lr,dofa,recall,difference,percentage points,0,0.28498535935739255
+lr,dofa,recall,difference,percentage points,1,2.04111145965003
+lr,dofa,recall,difference,percentage points,2,-1.1687598105846686
+lr,dofa,recall,difference,percentage points,3,0.6449439833963955
+lr,dofa,recall,difference,percentage points,4,-0.15318922611773922
+lr,dofa,f1,reference,percent,0,32.06494809418769
+lr,dofa,f1,reference,percent,1,40.89404513011078
+lr,dofa,f1,reference,percent,2,36.771663470070365
+lr,dofa,f1,reference,percent,3,33.021782120110096
+lr,dofa,f1,reference,percent,4,36.81653040499384
+lr,dofa,f1,replacement,percent,0,33.37921928816281
+lr,dofa,f1,replacement,percent,1,42.315860428032614
+lr,dofa,f1,replacement,percent,2,36.562508349181165
+lr,dofa,f1,replacement,percent,3,33.61051093942143
+lr,dofa,f1,replacement,percent,4,36.51413182493458
+lr,dofa,f1,difference,percentage points,0,1.3142711939751195
+lr,dofa,f1,difference,percentage points,1,1.4218152979218301
+lr,dofa,f1,difference,percentage points,2,-0.2091551208891984
+lr,dofa,f1,difference,percentage points,3,0.5887288193113349
+lr,dofa,f1,difference,percentage points,4,-0.3023985800592599
+lr,croma,precision,reference,percent,0,40.95945665435627
+lr,croma,precision,reference,percent,1,41.396154482871
+lr,croma,precision,reference,percent,2,36.65435159472045
+lr,croma,precision,reference,percent,3,35.46743408282144
+lr,croma,precision,reference,percent,4,37.81095549809271
+lr,croma,precision,replacement,percent,0,41.90564444235482
+lr,croma,precision,replacement,percent,1,42.515338935882035
+lr,croma,precision,replacement,percent,2,37.25319367533518
+lr,croma,precision,replacement,percent,3,35.65249333371231
+lr,croma,precision,replacement,percent,4,37.7072510540118
+lr,croma,precision,difference,percentage points,0,0.9461877879985481
+lr,croma,precision,difference,percentage points,1,1.1191844530110406
+lr,croma,precision,difference,percentage points,2,0.598842080614731
+lr,croma,precision,difference,percentage points,3,0.18505925089086217
+lr,croma,precision,difference,percentage points,4,-0.10370444408090984
+lr,croma,recall,reference,percent,0,47.97637828122365
+lr,croma,recall,reference,percent,1,43.65576012407277
+lr,croma,recall,reference,percent,2,51.38893022650252
+lr,croma,recall,reference,percent,3,39.4337094776116
+lr,croma,recall,reference,percent,4,53.70597851831157
+lr,croma,recall,replacement,percent,0,49.16030327351736
+lr,croma,recall,replacement,percent,1,45.68482401602143
+lr,croma,recall,replacement,percent,2,53.77352005141904
+lr,croma,recall,replacement,percent,3,39.77688096353672
+lr,croma,recall,replacement,percent,4,53.82574712126061
+lr,croma,recall,difference,percentage points,0,1.1839249922937056
+lr,croma,recall,difference,percentage points,1,2.029063891948657
+lr,croma,recall,difference,percentage points,2,2.3845898249165276
+lr,croma,recall,difference,percentage points,3,0.34317148592512003
+lr,croma,recall,difference,percentage points,4,0.11976860294904412
+lr,croma,f1,reference,percent,0,40.57379227736552
+lr,croma,f1,reference,percent,1,41.68058215216388
+lr,croma,f1,reference,percent,2,38.91019266984405
+lr,croma,f1,reference,percent,3,35.27750395659322
+lr,croma,f1,reference,percent,4,40.26287501605416
+lr,croma,f1,replacement,percent,0,41.54628969448112
+lr,croma,f1,replacement,percent,1,43.25324163920371
+lr,croma,f1,replacement,percent,2,39.60893891359169
+lr,croma,f1,replacement,percent,3,35.42680254823413
+lr,croma,f1,replacement,percent,4,40.27718706591069
+lr,croma,f1,difference,percentage points,0,0.9724974171155976
+lr,croma,f1,difference,percentage points,1,1.5726594870398292
+lr,croma,f1,difference,percentage points,2,0.6987462437476444
+lr,croma,f1,difference,percentage points,3,0.1492985916409062
+lr,croma,f1,difference,percentage points,4,0.014312049856529674
+lr,random_init,precision,reference,percent,0,32.913814345069085
+lr,random_init,precision,reference,percent,1,38.479116187779816
+lr,random_init,precision,reference,percent,2,26.57212693303289
+lr,random_init,precision,reference,percent,3,26.876114819786174
+lr,random_init,precision,reference,percent,4,29.174058324470458
+lr,random_init,precision,replacement,percent,0,32.69179502685996
+lr,random_init,precision,replacement,percent,1,38.59903463463653
+lr,random_init,precision,replacement,percent,2,26.872844491445115
+lr,random_init,precision,replacement,percent,3,27.354148029687597
+lr,random_init,precision,replacement,percent,4,28.73601822710582
+lr,random_init,precision,difference,percentage points,0,-0.22201931820913234
+lr,random_init,precision,difference,percentage points,1,0.11991844685671493
+lr,random_init,precision,difference,percentage points,2,0.30071755841222236
+lr,random_init,precision,difference,percentage points,3,0.47803320990142395
+lr,random_init,precision,difference,percentage points,4,-0.4380400973646392
+lr,random_init,recall,reference,percent,0,35.90278832545914
+lr,random_init,recall,reference,percent,1,34.14106470396995
+lr,random_init,recall,reference,percent,2,37.95463126395855
+lr,random_init,recall,reference,percent,3,28.434986589563145
+lr,random_init,recall,reference,percent,4,37.91333392605996
+lr,random_init,recall,replacement,percent,0,35.93278299342629
+lr,random_init,recall,replacement,percent,1,34.38169979526094
+lr,random_init,recall,replacement,percent,2,40.609148063752784
+lr,random_init,recall,replacement,percent,3,28.921364268081728
+lr,random_init,recall,replacement,percent,4,38.14357695337551
+lr,random_init,recall,difference,percentage points,0,0.029994667967148114
+lr,random_init,recall,difference,percentage points,1,0.2406350912909916
+lr,random_init,recall,difference,percentage points,2,2.6545167997942376
+lr,random_init,recall,difference,percentage points,3,0.4863776785185847
+lr,random_init,recall,difference,percentage points,4,0.23024302731554647
+lr,random_init,f1,reference,percent,0,29.40271888884873
+lr,random_init,f1,reference,percent,1,32.76470193325782
+lr,random_init,f1,reference,percent,2,26.200898163482645
+lr,random_init,f1,reference,percent,3,22.347829819693388
+lr,random_init,f1,reference,percent,4,25.667433582950576
+lr,random_init,f1,replacement,percent,0,29.69018943649021
+lr,random_init,f1,replacement,percent,1,33.03217427686757
+lr,random_init,f1,replacement,percent,2,26.753399797688875
+lr,random_init,f1,replacement,percent,3,22.84654889603282
+lr,random_init,f1,replacement,percent,4,25.290596191234755
+lr,random_init,f1,difference,percentage points,0,0.2874705476414774
+lr,random_init,f1,difference,percentage points,1,0.2674723436097537
+lr,random_init,f1,difference,percentage points,2,0.5525016342062317
+lr,random_init,f1,difference,percentage points,3,0.498719076339435
+lr,random_init,f1,difference,percentage points,4,-0.376837391715823
+sgd,dinov2,precision,reference,percent,0,31.228165510294854
+sgd,dinov2,precision,reference,percent,1,40.1176700935194
+sgd,dinov2,precision,reference,percent,2,38.33596485398152
+sgd,dinov2,precision,reference,percent,3,33.99859725826994
+sgd,dinov2,precision,reference,percent,4,36.427110894992325
+sgd,dinov2,precision,replacement,percent,0,32.098838092485515
+sgd,dinov2,precision,replacement,percent,1,40.97605078085766
+sgd,dinov2,precision,replacement,percent,2,37.90009412691376
+sgd,dinov2,precision,replacement,percent,3,33.986730910550385
+sgd,dinov2,precision,replacement,percent,4,36.88882303165016
+sgd,dinov2,precision,difference,percentage points,0,0.8706725821906625
+sgd,dinov2,precision,difference,percentage points,1,0.8583806873382616
+sgd,dinov2,precision,difference,percentage points,2,-0.4358707270677664
+sgd,dinov2,precision,difference,percentage points,3,-0.011866347719557968
+sgd,dinov2,precision,difference,percentage points,4,0.46171213665783806
+sgd,dinov2,recall,reference,percent,0,39.66167199750908
+sgd,dinov2,recall,reference,percent,1,46.62902323180445
+sgd,dinov2,recall,reference,percent,2,46.59564198603494
+sgd,dinov2,recall,reference,percent,3,40.80059260917246
+sgd,dinov2,recall,reference,percent,4,49.808604878848016
+sgd,dinov2,recall,replacement,percent,0,40.27548746599006
+sgd,dinov2,recall,replacement,percent,1,47.992250342628154
+sgd,dinov2,recall,replacement,percent,2,46.50877308393145
+sgd,dinov2,recall,replacement,percent,3,41.216028655555206
+sgd,dinov2,recall,replacement,percent,4,51.715589079638335
+sgd,dinov2,recall,difference,percentage points,0,0.6138154684809827
+sgd,dinov2,recall,difference,percentage points,1,1.363227110823706
+sgd,dinov2,recall,difference,percentage points,2,-0.08686890210348741
+sgd,dinov2,recall,difference,percentage points,3,0.41543604638274445
+sgd,dinov2,recall,difference,percentage points,4,1.9069842007903182
+sgd,dinov2,f1,reference,percent,0,32.895995110291715
+sgd,dinov2,f1,reference,percent,1,41.82684616592082
+sgd,dinov2,f1,reference,percent,2,39.451663877477216
+sgd,dinov2,f1,reference,percent,3,35.304267826340876
+sgd,dinov2,f1,reference,percent,4,39.06637320657709
+sgd,dinov2,f1,replacement,percent,0,33.73933555535298
+sgd,dinov2,f1,replacement,percent,1,43.07286301752416
+sgd,dinov2,f1,replacement,percent,2,39.01327755190559
+sgd,dinov2,f1,replacement,percent,3,35.42895074772435
+sgd,dinov2,f1,replacement,percent,4,39.64555962851225
+sgd,dinov2,f1,difference,percentage points,0,0.8433404450612636
+sgd,dinov2,f1,difference,percentage points,1,1.2460168516033487
+sgd,dinov2,f1,difference,percentage points,2,-0.43838632557162693
+sgd,dinov2,f1,difference,percentage points,3,0.12468292138347326
+sgd,dinov2,f1,difference,percentage points,4,0.5791864219351683
+sgd,dofa,precision,reference,percent,0,29.164247244179364
+sgd,dofa,precision,reference,percent,1,38.698463079522796
+sgd,dofa,precision,reference,percent,2,29.903261895956167
+sgd,dofa,precision,reference,percent,3,32.22122078923927
+sgd,dofa,precision,reference,percent,4,32.85893020615872
+sgd,dofa,precision,replacement,percent,0,29.51919336182396
+sgd,dofa,precision,replacement,percent,1,39.136392645419264
+sgd,dofa,precision,replacement,percent,2,30.25944113003406
+sgd,dofa,precision,replacement,percent,3,32.413244548990214
+sgd,dofa,precision,replacement,percent,4,32.73196335456487
+sgd,dofa,precision,difference,percentage points,0,0.3549461176445945
+sgd,dofa,precision,difference,percentage points,1,0.43792956589647214
+sgd,dofa,precision,difference,percentage points,2,0.3561792340778913
+sgd,dofa,precision,difference,percentage points,3,0.1920237597509422
+sgd,dofa,precision,difference,percentage points,4,-0.12696685159385157
+sgd,dofa,recall,reference,percent,0,38.94236451563318
+sgd,dofa,recall,reference,percent,1,57.09605069041397
+sgd,dofa,recall,reference,percent,2,47.18065834678898
+sgd,dofa,recall,reference,percent,3,38.10061454317402
+sgd,dofa,recall,reference,percent,4,44.948115588680146
+sgd,dofa,recall,replacement,percent,0,39.932626763997135
+sgd,dofa,recall,replacement,percent,1,59.895003377378465
+sgd,dofa,recall,replacement,percent,2,48.06300244981817
+sgd,dofa,recall,replacement,percent,3,38.41034217045796
+sgd,dofa,recall,replacement,percent,4,44.33267704806313
+sgd,dofa,recall,difference,percentage points,0,0.9902622483639545
+sgd,dofa,recall,difference,percentage points,1,2.7989526869644954
+sgd,dofa,recall,difference,percentage points,2,0.8823441030291923
+sgd,dofa,recall,difference,percentage points,3,0.30972762728394554
+sgd,dofa,recall,difference,percentage points,4,-0.6154385406170138
+sgd,dofa,f1,reference,percent,0,25.977202975352476
+sgd,dofa,f1,reference,percent,1,33.65696554354282
+sgd,dofa,f1,reference,percent,2,29.722621493956154
+sgd,dofa,f1,reference,percent,3,27.282642284552967
+sgd,dofa,f1,reference,percent,4,28.584994187581618
+sgd,dofa,f1,replacement,percent,0,26.5706771347963
+sgd,dofa,f1,replacement,percent,1,34.55540886479026
+sgd,dofa,f1,replacement,percent,2,30.22820085189154
+sgd,dofa,f1,replacement,percent,3,27.49756952508937
+sgd,dofa,f1,replacement,percent,4,28.590851575846166
+sgd,dofa,f1,difference,percentage points,0,0.5934741594438242
+sgd,dofa,f1,difference,percentage points,1,0.8984433212474441
+sgd,dofa,f1,difference,percentage points,2,0.5055793579353873
+sgd,dofa,f1,difference,percentage points,3,0.21492724053640555
+sgd,dofa,f1,difference,percentage points,4,0.005857388264546293
+sgd,croma,precision,reference,percent,0,35.44177629247128
+sgd,croma,precision,reference,percent,1,41.75432444983683
+sgd,croma,precision,reference,percent,2,32.96909616229412
+sgd,croma,precision,reference,percent,3,32.432057809034866
+sgd,croma,precision,reference,percent,4,36.676833402536005
+sgd,croma,precision,replacement,percent,0,35.86997445097517
+sgd,croma,precision,replacement,percent,1,41.71350438943719
+sgd,croma,precision,replacement,percent,2,32.8745614448835
+sgd,croma,precision,replacement,percent,3,32.314422732095025
+sgd,croma,precision,replacement,percent,4,36.994629542733605
+sgd,croma,precision,difference,percentage points,0,0.42819815850388965
+sgd,croma,precision,difference,percentage points,1,-0.040820060399643365
+sgd,croma,precision,difference,percentage points,2,-0.09453471741062147
+sgd,croma,precision,difference,percentage points,3,-0.1176350769398371
+sgd,croma,precision,difference,percentage points,4,0.31779614019759594
+sgd,croma,recall,reference,percent,0,45.81560711085421
+sgd,croma,recall,reference,percent,1,48.27125418269239
+sgd,croma,recall,reference,percent,2,54.00643154489602
+sgd,croma,recall,reference,percent,3,37.66555141342569
+sgd,croma,recall,reference,percent,4,56.492396287792225
+sgd,croma,recall,replacement,percent,0,46.81252630456182
+sgd,croma,recall,replacement,percent,1,48.45849537066606
+sgd,croma,recall,replacement,percent,2,53.93959114077648
+sgd,croma,recall,replacement,percent,3,37.616768047033844
+sgd,croma,recall,replacement,percent,4,57.50030409388067
+sgd,croma,recall,difference,percentage points,0,0.9969191937076072
+sgd,croma,recall,difference,percentage points,1,0.18724118797366907
+sgd,croma,recall,difference,percentage points,2,-0.06684040411953918
+sgd,croma,recall,difference,percentage points,3,-0.04878336639184688
+sgd,croma,recall,difference,percentage points,4,1.0079078060884483
+sgd,croma,f1,reference,percent,0,33.99131382357224
+sgd,croma,f1,reference,percent,1,41.03928805242797
+sgd,croma,f1,reference,percent,2,35.41492479515582
+sgd,croma,f1,reference,percent,3,29.7948830816516
+sgd,croma,f1,reference,percent,4,36.045477272157214
+sgd,croma,f1,replacement,percent,0,34.870266757099564
+sgd,croma,f1,replacement,percent,1,41.01267678342659
+sgd,croma,f1,replacement,percent,2,35.19587320504941
+sgd,croma,f1,replacement,percent,3,29.498360694121633
+sgd,croma,f1,replacement,percent,4,36.04989803833797
+sgd,croma,f1,difference,percentage points,0,0.8789529335273216
+sgd,croma,f1,difference,percentage points,1,-0.026611269001375337
+sgd,croma,f1,difference,percentage points,2,-0.21905159010641162
+sgd,croma,f1,difference,percentage points,3,-0.2965223875299683
+sgd,croma,f1,difference,percentage points,4,0.004420766180751601
+sgd,random_init,precision,reference,percent,0,7.593266449958295
+sgd,random_init,precision,reference,percent,1,6.581424653472687
+sgd,random_init,precision,reference,percent,2,8.271281244537668
+sgd,random_init,precision,reference,percent,3,3.0805953383880933
+sgd,random_init,precision,reference,percent,4,4.512265512265512
+sgd,random_init,precision,replacement,percent,0,6.060837887067396
+sgd,random_init,precision,replacement,percent,1,7.127418278852568
+sgd,random_init,precision,replacement,percent,2,7.247952265669548
+sgd,random_init,precision,replacement,percent,3,4.787700084245998
+sgd,random_init,precision,replacement,percent,4,8.194516594516594
+sgd,random_init,precision,difference,percentage points,0,-1.5324285628909
+sgd,random_init,precision,difference,percentage points,1,0.5459936253798814
+sgd,random_init,precision,difference,percentage points,2,-1.0233289788681197
+sgd,random_init,precision,difference,percentage points,3,1.7071047458579045
+sgd,random_init,precision,difference,percentage points,4,3.6822510822510828
+sgd,random_init,recall,reference,percent,0,16.657706093189965
+sgd,random_init,recall,reference,percent,1,16.666666666666664
+sgd,random_init,recall,reference,percent,2,16.666666666666664
+sgd,random_init,recall,reference,percent,3,16.666666666666664
+sgd,random_init,recall,reference,percent,4,16.666666666666664
+sgd,random_init,recall,replacement,percent,0,16.666666666666664
+sgd,random_init,recall,replacement,percent,1,16.666666666666664
+sgd,random_init,recall,replacement,percent,2,16.714378427382766
+sgd,random_init,recall,replacement,percent,3,16.666666666666664
+sgd,random_init,recall,replacement,percent,4,16.666666666666664
+sgd,random_init,recall,difference,percentage points,0,0.00896057347670176
+sgd,random_init,recall,difference,percentage points,1,0.0
+sgd,random_init,recall,difference,percentage points,2,0.04771176071609873
+sgd,random_init,recall,difference,percentage points,3,0.0
+sgd,random_init,recall,difference,percentage points,4,0.0
+sgd,random_init,f1,reference,percent,0,9.517745550900795
+sgd,random_init,f1,reference,percent,1,8.992840630798238
+sgd,random_init,f1,reference,percent,2,10.430263374835809
+sgd,random_init,f1,reference,percent,3,4.402999383028676
+sgd,random_init,f1,reference,percent,4,6.52054853042168
+sgd,random_init,f1,replacement,percent,0,7.864634505976495
+sgd,random_init,f1,replacement,percent,1,9.279864184076018
+sgd,random_init,f1,replacement,percent,2,9.148857199094557
+sgd,random_init,f1,replacement,percent,3,6.433931678194376
+sgd,random_init,f1,replacement,percent,4,10.267879051487952
+sgd,random_init,f1,difference,percentage points,0,-1.6531110449242992
+sgd,random_init,f1,difference,percentage points,1,0.2870235532777807
+sgd,random_init,f1,difference,percentage points,2,-1.281406175741251
+sgd,random_init,f1,difference,percentage points,3,2.0309322951656994
+sgd,random_init,f1,difference,percentage points,4,3.747330521066272

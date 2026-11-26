@@ -1,0 +1,17 @@
+# Observed distribution versions in the supplied local CPU validation environment.
+# Python 3.12.3; not a wheel/hash lock or a fresh-install verification.
+# Torch/torchvision local build suffixes and imported origins are in private receipts.
+# GPU execution requires its separately sealed runtime; nothing is installed here.
+torch==2.11.0
+torchvision==0.26.0
+numpy==2.4.4
+scipy==1.17.1
+scikit-learn==1.9.0
+pytest==9.0.3
+joblib==1.5.3
+threadpoolctl==3.6.0
+narwhals==2.28.0
+timm==1.0.31
+einops==0.8.2
+scikit-image==0.26.0
+PyWavelets==1.9.0

@@ -1,0 +1,433 @@
+{
+  "cli_flags": [
+    "--spec",
+    "--execute"
+  ],
+  "counts": {
+    "new_package_metadata_including_integrity": 6,
+    "preserved_notice_files": 4,
+    "public_packaging_initializer": 1,
+    "revised_public_source_files": 13,
+    "revised_public_test_helper_files": 3,
+    "total_files": 34,
+    "unchanged_development_source_files": 5,
+    "unchanged_development_test_helper_files": 1,
+    "unchanged_study_protocol": 1
+  },
+  "entrypoint": "scripts.run_model_followup",
+  "exported_from": {
+    "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+    "repository": "magnaprog/TitanSAR-dev",
+    "tree": "074aa5ba3b8ccce998ae8919f459ac26b1e3001e"
+  },
+  "files": {
+    "CONTRACTS.md": {
+      "bytes": 4482,
+      "origin": {
+        "byte_identical": false,
+        "role": "new package documentation or dependency metadata"
+      },
+      "sha256": "11a1d2d01c5e3e8d2fdab23784971f6452bf7a874d4518d28164e4be5b0e635e"
+    },
+    "DATA_LICENSES.md": {
+      "bytes": 1886,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3d819c4e763a6e393b32bc09a04e660df8160d93",
+        "path": "release/current-source-20261109/DATA_LICENSES.md",
+        "repository": "magnaprog/CETUS",
+        "role": "full preserved license/notice",
+        "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+      },
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "LICENSE": {
+      "bytes": 1066,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3d819c4e763a6e393b32bc09a04e660df8160d93",
+        "path": "release/current-source-20261109/LICENSE",
+        "repository": "magnaprog/CETUS",
+        "role": "full preserved license/notice",
+        "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+      },
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "README.md": {
+      "bytes": 2577,
+      "origin": {
+        "byte_identical": false,
+        "role": "new package documentation or dependency metadata"
+      },
+      "sha256": "0a95fba3f87701254438a8f78e71eb0e41ec7a6119c56796d2659892fef284c9"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3d819c4e763a6e393b32bc09a04e660df8160d93",
+        "path": "release/current-source-20261109/THIRD_PARTY_NOTICES.md",
+        "repository": "magnaprog/CETUS",
+        "role": "full preserved license/notice",
+        "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+      },
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "cetus_sar/__init__.py": {
+      "bytes": 95,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+      },
+      "sha256": "926cdee31edcfd2d0f14d02c5b08253e8c73443c21676908873841696fa72f32"
+    },
+    "cetus_sar/configs/__init__.py": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical": true,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/configs/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged execution source/static local import closure",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cetus_sar/configs/defaults.py": {
+      "bytes": 5371,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/configs/defaults.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
+      },
+      "sha256": "5052d6a3a42df6885770e1ccdc208b75a04d0da405a8f22865f9bcf2a60840f5"
+    },
+    "cetus_sar/data/__init__.py": {
+      "bytes": 45,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/data/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+      },
+      "sha256": "32d8ec521a99faa91e56c0edf6070a9f09803abf10fc6922725e7b7baee00f92"
+    },
+    "cetus_sar/data/dataset.py": {
+      "bytes": 24736,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/data/dataset.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "68150c666fa3f18b0726a63944ae260a9668005fc804e034d642f2e37ad58fa0"
+      },
+      "sha256": "d4857ab18ee48e8336bc8e7fa5b46e5a0af0ee8a765e1a3607864dd3c1f0c2de"
+    },
+    "cetus_sar/models/__init__.py": {
+      "bytes": 43,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/models/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+      },
+      "sha256": "32c7f16ca95657ec47f812dcf593f710307a50c5e54d861ad9e0bab1ccb751df"
+    },
+    "cetus_sar/models/baselines.py": {
+      "bytes": 6238,
+      "origin": {
+        "byte_identical": true,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/models/baselines.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged execution source/static local import closure",
+        "sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1"
+      },
+      "sha256": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1"
+    },
+    "cetus_sar/models/croma_model.py": {
+      "bytes": 14944,
+      "origin": {
+        "byte_identical": true,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/models/croma_model.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged execution source/static local import closure",
+        "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+      },
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+    },
+    "cetus_sar/models/followup.py": {
+      "bytes": 10122,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/models/followup.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "8f6f986efcfd5b5d0f2f231ee50ad592824757a2b32937452cfc064f4aaa7d66"
+      },
+      "sha256": "54dcba5b9d57ca70a7b8a97a3083178fb716e10faf06aeadafa64fbe4b017c7e"
+    },
+    "cetus_sar/models/foundation_models.py": {
+      "bytes": 20137,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/models/foundation_models.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "ae9bdfde05ff6ac955e4fa017762337d5ef4e6d40d421ffc89d31b50db077b14"
+      },
+      "sha256": "a2cb87d6f436a2177ae367d603813d9f6aebcdecf490dc34124ab72451e75a23"
+    },
+    "cetus_sar/models/image_training.py": {
+      "bytes": 7965,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/models/image_training.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "89ab7ca2091ab7763df7674610f89a82fab5082f7e368ce2e3d954f5f85aebfb"
+      },
+      "sha256": "8572eff468bd1c36a7df7f36bbac844a2dc94cb5e6f41447ff15523ff04bfaf5"
+    },
+    "cetus_sar/models/probing.py": {
+      "bytes": 25945,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/models/probing.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "75d270bf00e763530a9c686b60ce7ecef53e46d25caf5fec692a18199157e946"
+      },
+      "sha256": "eb6d5cab63b1d97a958dd6cdd1f31a4df7499bcf8040c60716dbb3c5808aa8ef"
+    },
+    "cetus_sar/reproducibility.py": {
+      "bytes": 4578,
+      "origin": {
+        "byte_identical": true,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "titansar/reproducibility.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged execution source/static local import closure",
+        "sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05"
+      },
+      "sha256": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05"
+    },
+    "docs/LOSS_NORMALIZATION_COMPARISON.md": {
+      "bytes": 5799,
+      "origin": {
+        "byte_identical": true,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "docs/LOSS_NORMALIZATION_COMPARISON.md",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged study protocol",
+        "sha256": "ecc7ce4873ac54944143793a9eab705e5ae9acc527c10abcba39aa84f0a38a19"
+      },
+      "sha256": "ecc7ce4873ac54944143793a9eab705e5ae9acc527c10abcba39aa84f0a38a19"
+    },
+    "licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3d819c4e763a6e393b32bc09a04e660df8160d93",
+        "path": "release/current-source-20261109/licenses/CROMA-LICENSE",
+        "repository": "magnaprog/CETUS",
+        "role": "full preserved license/notice",
+        "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+      },
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "requirements.txt": {
+      "bytes": 538,
+      "origin": {
+        "byte_identical": false,
+        "role": "new package documentation or dependency metadata"
+      },
+      "sha256": "1a7a023bd7d1a800b990e8e72264d628d85c73debc1b3caec955aaaddd451027"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3d819c4e763a6e393b32bc09a04e660df8160d93",
+        "path": "release/current-source-20261109/scripts/__init__.py",
+        "repository": "magnaprog/CETUS",
+        "role": "public packaging initializer, not an upstream 11033ff source file",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/loss_comparison.py": {
+      "bytes": 7697,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "scripts/loss_comparison.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "f8c4143671a8cb27b84adb1a5ce6accd5dd342965d6d7d6215e94bdbdef3c349"
+      },
+      "sha256": "dda78b5d68891b92dff479c7c9a0fb40990fb0244e8df294ed7715e7a2107e5f"
+    },
+    "scripts/model_followup_support.py": {
+      "bytes": 18620,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "scripts/model_followup_support.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "72a81fe57c0fdc4ee1796643234b080e4a6b34651f6db3c30d2b8ef31afe7527"
+      },
+      "sha256": "794ade8efdec15a2aa1b0993cd85240094206d91d6abb5a6fc124f518c1f80c8"
+    },
+    "scripts/run_finetuning.py": {
+      "bytes": 25624,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "scripts/run_finetuning.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+      },
+      "sha256": "5db631f6ac7e9b0dce7d8effe861b26ac4702e6c392fadfc22be1b54fcc3071c"
+    },
+    "scripts/run_model_followup.py": {
+      "bytes": 30309,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "scripts/run_model_followup.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public training module using the CETUS namespace.",
+        "sha256": "b1d0b2a19149937a6c0f88b3516d5c8b34505fbde0f7a7d869215e07f1a84fe6"
+      },
+      "sha256": "71e18b2bff5e115409215c81cebe749d666494b52dc522ac9ddf0db347bf84c5"
+    },
+    "scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "origin": {
+        "byte_identical": true,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "scripts/summarize_review_frozen.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged execution source/static local import closure",
+        "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+      },
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "tests/__init__.py": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical": true,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "tests/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged focused test/helper source",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/model_fixtures.py": {
+      "bytes": 3721,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "tests/test_model_followup.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public test or test fixture using the CETUS training API.",
+        "sha256": "0f8ae7ce4e4e526ff58f01b94a7af0337ef2eb8408b4af7bacb106dabfb3fc96"
+      },
+      "sha256": "50e67f2335f056f8af3a713772a47f4ab44fcb47ac5bb0ec3936b4a76947b505"
+    },
+    "tests/test_loss_comparison.py": {
+      "bytes": 16259,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "tests/test_loss_comparison.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public test or test fixture using the CETUS training API.",
+        "sha256": "0e6eebf909309db7d285cfcb895ad720d4dcfac812bec4a14f900275867adb2d"
+      },
+      "sha256": "9c5cca0d1ca98b2ccdf90c140a346a433ee4263a31d15ba7a170e8e7efcd727a"
+    },
+    "tests/test_population_loss.py": {
+      "bytes": 6309,
+      "origin": {
+        "byte_identical": false,
+        "commit": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b",
+        "path": "tests/test_population_loss.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public test or test fixture using the CETUS training API.",
+        "sha256": "bfdd2700006ff3dc2a6dc463f020016152021479d599d8eebee888510b16f141"
+      },
+      "sha256": "3bc50b911c2db9042b1e4af26b7813092a58b51d0e993deee7149d8300a8da08"
+    }
+  },
+  "focused_validation_contract": {
+    "helper_import_only": "tests/model_fixtures.py",
+    "modules": [
+      "tests/test_population_loss.py",
+      "tests/test_loss_comparison.py"
+    ],
+    "outcome_location": ".github/workflows/training.yml",
+    "scientific_execution_in_scope": false
+  },
+  "integrity_policy": {
+    "checksums": "All files except SHA256SUMS.",
+    "file_index": "All files except file_index.json and SHA256SUMS.",
+    "source_manifest": "All payload files except SOURCE_EXPORT.json, file_index.json and SHA256SUMS."
+  },
+  "omitted": [
+    "Model weights and all original/trained states",
+    "Scientific records and imagery",
+    "Private sealed plans, full control bundles and GPU supervision/replay harnesses",
+    "Unrelated project modules, scripts, fixtures, tests and manuscripts"
+  ],
+  "package": "training/loss-normalization",
+  "preserved_dated_export": "training/encoder-comparisons",
+  "previous_public_export": {
+    "bytes": 20823,
+    "public_commit": "f1a24417ebe6d0008a1c37be28964633466ea71e",
+    "sha256": "8ea4cf7fe5ca35ef896fd4b2f7299de1a07455d93fa9b3fd7257edbfb91b988b"
+  },
+  "public_release": "v0.2.0",
+  "runtime_source_files": {
+    "cetus_sar/configs/defaults.py": "5052d6a3a42df6885770e1ccdc208b75a04d0da405a8f22865f9bcf2a60840f5",
+    "cetus_sar/data/dataset.py": "d4857ab18ee48e8336bc8e7fa5b46e5a0af0ee8a765e1a3607864dd3c1f0c2de",
+    "cetus_sar/models/baselines.py": "156f0ddb0e9419cbdeef3e7cb9b11c17989248caf6457b7fd14870c705fb18c1",
+    "cetus_sar/models/followup.py": "54dcba5b9d57ca70a7b8a97a3083178fb716e10faf06aeadafa64fbe4b017c7e",
+    "cetus_sar/models/foundation_models.py": "a2cb87d6f436a2177ae367d603813d9f6aebcdecf490dc34124ab72451e75a23",
+    "cetus_sar/models/image_training.py": "8572eff468bd1c36a7df7f36bbac844a2dc94cb5e6f41447ff15523ff04bfaf5",
+    "cetus_sar/models/probing.py": "eb6d5cab63b1d97a958dd6cdd1f31a4df7499bcf8040c60716dbb3c5808aa8ef",
+    "cetus_sar/reproducibility.py": "b263b955c7d7186d5e95d95831efcd60e860185a22454cd8981457d5117f2a05",
+    "scripts/loss_comparison.py": "dda78b5d68891b92dff479c7c9a0fb40990fb0244e8df294ed7715e7a2107e5f",
+    "scripts/model_followup_support.py": "794ade8efdec15a2aa1b0993cd85240094206d91d6abb5a6fc124f518c1f80c8",
+    "scripts/run_finetuning.py": "5db631f6ac7e9b0dce7d8effe861b26ac4702e6c392fadfc22be1b54fcc3071c",
+    "scripts/run_model_followup.py": "71e18b2bff5e115409215c81cebe749d666494b52dc522ac9ddf0db347bf84c5"
+  },
+  "schema_version": "cetus-loss-source-export-v1",
+  "scientific_producers": {
+    "historical_control": "1f3fc8fe0e831777e3188d70caf2c5450b656333",
+    "loss_study": "11033ff9f6fb21db81b3cc91b18bff4f9a58d02b"
+  },
+  "status": "execution_source"
+}

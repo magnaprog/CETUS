@@ -1,0 +1,17 @@
+{
+  "artifact": "class-changes/class_changes.json",
+  "changes": [
+    {
+      "json_pointer": "/input/path",
+      "operation": "replace",
+      "original_value_sha256": "3fcb58cf6fc0d396d0642606a8ec3970e71b2977be4c3a68468726ef8d4a176f",
+      "path_base": "CETUS experiments directory",
+      "value": "adaptation-controls/results/adaptation.json"
+    }
+  ],
+  "preservation": "All other JSON fields and values, including numerical results, input digest, runtime, source and artifact hashes, are unchanged. The original local path is not published.",
+  "producer_commit": "0297c9a987f4e0ea919b3a40de0ae208103719e6",
+  "producer_sha256": "7e1576417d471c7369a4199bfe1a3d3459c75bacd0df8aeb4aa306823367ffdb",
+  "public_sha256": "089255de656355f33de6d0a08ea26de1b0f09f0339a73882127d03d59cdfc253",
+  "schema_version": 1
+}

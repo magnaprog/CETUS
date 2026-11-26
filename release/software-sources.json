@@ -1,0 +1,214 @@
+{
+  "builder_sha256": "d747a16839c35f80eb6d0fd682b4ae1e6c34789bb68a2400362a3662eeec81e3",
+  "current_validation": {
+    "commands": [
+      "env CETUS_CRATER_RESULTS=experiments/crater-training/results.json CETUS_PRIMARY_PREDICTIONS=experiments/regional-predictions/results/predictions.json.gz PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python3 -B .github/scripts/offline_cpu.py python3 -B -m pytest tests -q -ra -p no:cacheprovider"
+    ],
+    "date": "2026-11-25",
+    "execution_conditions": "Python 3.12.3, CPU only, network sockets denied, one numerical thread. Both fixture paths are relative to the repository root.",
+    "limits": "The root tests exercise synthetic feature extraction and the saved-result comparison. They do not train the scientific models or assess their accuracy.",
+    "result": {
+      "passed": 187,
+      "reported_warnings": 0,
+      "skipped": 0,
+      "subtests_passed": 44
+    },
+    "scope": "CPU classifier tests, including feature caching, model weight checks and comparison of the saved Craters predictions.",
+    "source_sha256": {
+      ".github/scripts/offline_cpu.py": "75ec94ade1ef27226b2b3a9f451591f8b0968a6345dc8cc7214a87d19ce7a55c",
+      "cetus_sar/__init__.py": "f077c107ff15b847f98d5cce2f7153892d34cf5830c1598eadb2010f0280e325",
+      "cetus_sar/configs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "cetus_sar/configs/defaults.py": "249a39b5e89a0a749b4e69eb6c71b79f1ecd0b35bfd7e791344cc67ea0b8f277",
+      "cetus_sar/data/__init__.py": "32d8ec521a99faa91e56c0edf6070a9f09803abf10fc6922725e7b7baee00f92",
+      "cetus_sar/data/dataset.py": "d105e66b2c26011b0cb6b15409d0b5150f62126ef356d1b2adea8e8ef2b82f13",
+      "cetus_sar/evaluation/__init__.py": "341134f220495e83e09059d5f39241e523adff7031cd959e15d89e40fd4efc2f",
+      "cetus_sar/evaluation/metrics.py": "f8e8991bce0cd76a999daff81dd6c2f2908ec64ff8c003eedad31490e717d844",
+      "cetus_sar/models/__init__.py": "32c7f16ca95657ec47f812dcf593f710307a50c5e54d861ad9e0bab1ccb751df",
+      "cetus_sar/models/croma_model.py": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c",
+      "cetus_sar/models/foundation_models.py": "3d46622a62486d13b48db04ec20c03cb26cde32ee43ef4d077aec2f87e7795d3",
+      "cetus_sar/models/probing.py": "60aaafa92766b70c66ad9de4cf258d0e3b2cf9a05243bffd327b0040705f6406",
+      "cetus_sar/reproducibility.py": "7b2d30bfe908103462fa0ccd2e29fbc86266a256b38d1ce7ac5a1deda0a474a1",
+      "pyproject.toml": "5e3b415a94e0f842f6031199fc5333463d001ac75cfe8231cf9d86f56f1a1d66",
+      "scripts/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scripts/run_probing.py": "e71007e2513b3fbcf892e753ba323e935badd56603eed5969bdca738c73200ac",
+      "scripts/summarize_crater_map_comparison.py": "8fc5501e8c2dcbfc966c5204d08d3c50e2a14140b2d63eecf7772c74e4d744ec",
+      "tests/test_bound_feature_cache.py": "d0567d5a3f5f5339f8fcb0faa41d816661f321788ddb5afdd092753af723bea4",
+      "tests/test_classifier_workflow.py": "dc0700d89ec66ddf98b23a6b9a22c4c1025b7dd0abcad86090e3449d3f13490f",
+      "tests/test_crater_map_comparison.py": "34ce6e81c00e452a0e819feeed33713b0342d1c61c6ccfc492167b9eb9805fb2",
+      "tests/test_knn_classify.py": "987ee67dcfcf0df8f373e54850f5e35de74d83d9705eb1e716dbdde0c8c61976",
+      "tests/test_normalization_provenance.py": "12e34d19551a23ac0f113e56eb3fabe4a039eed9622286e359931a56f6f2a8a9",
+      "tests/test_random_model_identity.py": "01bd8d3e3a9a553002a843848c6f0b45d1284b9b9f0c11218e6d7c4596cbea46",
+      "tests/test_run_manifest.py": "90c8e231b7c4a1e6e9a247adb97bcddf7ec8d24108ccfb81b985a002ab7fe2f0",
+      "tests/test_within_titan_probing.py": "e89ad7e735190c8b4f26c0811cd461e18b9635b315f855b4aea6ddc35465cb31"
+    }
+  },
+  "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
+  "development_source_repository": "magnaprog/TitanSAR-dev",
+  "distribution": "cetus-sar",
+  "excluded": [
+    "data and model weights",
+    "private audits and acceptance CLIs",
+    "classical baseline and adaptation CLIs",
+    "queue and remote administration",
+    "papers and archived releases",
+    "development exporter itself"
+  ],
+  "files": {
+    ".github/workflows/classifiers.yml": {
+      "origin": "Public CPU workflow for tests, source distribution, wheel and license checks.",
+      "sha256": "b01e68bfaefc2445f904981abb4032bb604940573b6dff5ad3befc79dfd98eee"
+    },
+    ".gitignore": {
+      "origin": "generated",
+      "sha256": "54c0160c2ad7df6b0d4b083111557c43d8f0afe5b6c2ce733855980ce39766b0"
+    },
+    "CITATION.cff": {
+      "origin": "Public citation for the CETUS arXiv preprint.",
+      "sha256": "18200d71d1b17dd36216244216e575630591cefa430c418fcd02202ea808900b"
+    },
+    "LICENSE": {
+      "origin": "verbatim committed blob",
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2",
+      "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "cetus_sar/__init__.py": {
+      "origin": "Adapted from the source blob identified by source_sha256.",
+      "sha256": "f077c107ff15b847f98d5cce2f7153892d34cf5830c1598eadb2010f0280e325",
+      "source_sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "cetus_sar/configs/__init__.py": {
+      "origin": "Matches the original source blob.",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "cetus_sar/configs/defaults.py": {
+      "origin": "Development configuration with a revised comment on the five-class Earth comparison.",
+      "sha256": "249a39b5e89a0a749b4e69eb6c71b79f1ecd0b35bfd7e791344cc67ea0b8f277",
+      "source_sha256": "8352fd3b4051afbfaa1ce01a25a9e5aab8fae9086fe783c020acd1ad5133a709"
+    },
+    "cetus_sar/data/__init__.py": {
+      "origin": "Adapted from the source blob identified by source_sha256.",
+      "sha256": "32d8ec521a99faa91e56c0edf6070a9f09803abf10fc6922725e7b7baee00f92",
+      "source_sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "cetus_sar/data/dataset.py": {
+      "origin": "The public version shares the catalog hash function and class-count and weight calculation across datasets.",
+      "sha256": "d105e66b2c26011b0cb6b15409d0b5150f62126ef356d1b2adea8e8ef2b82f13",
+      "source_sha256": "d492b146200879ac74fa95dd500034317bbb75a1cdeeb6bd7a8c3ab377d8232f"
+    },
+    "cetus_sar/evaluation/__init__.py": {
+      "origin": "Adapted from the source blob identified by source_sha256.",
+      "sha256": "341134f220495e83e09059d5f39241e523adff7031cd959e15d89e40fd4efc2f",
+      "source_sha256": "5729f2abdcf825fec9553590df07202311db48d716e65dc74113c31597ecb1de"
+    },
+    "cetus_sar/evaluation/metrics.py": {
+      "origin": "committed source with comment/docstring corrections; executable AST unchanged",
+      "sha256": "f8e8991bce0cd76a999daff81dd6c2f2908ec64ff8c003eedad31490e717d844",
+      "source_sha256": "515fb8f2dd72bcb43b7a54ccd77ecf036f76d950d1fac5f2c74ce587dc9be837"
+    },
+    "cetus_sar/models/__init__.py": {
+      "origin": "Adapted from the source blob identified by source_sha256.",
+      "sha256": "32c7f16ca95657ec47f812dcf593f710307a50c5e54d861ad9e0bab1ccb751df",
+      "source_sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "cetus_sar/models/croma_model.py": {
+      "origin": "Matches the original source blob.",
+      "sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c",
+      "source_sha256": "2150e42be5584fe890e3b76af0d818543c1406123692f4b000fefed24940a63c"
+    },
+    "cetus_sar/models/foundation_models.py": {
+      "origin": "The public encoder interface shares file hashing and the check for strict weight loading.",
+      "sha256": "3d46622a62486d13b48db04ec20c03cb26cde32ee43ef4d077aec2f87e7795d3",
+      "source_sha256": "5fe38fe3cbf9753a71d2368626b9f4b49e935e5f42eac0c4eeccca88da549c9d"
+    },
+    "cetus_sar/models/probing.py": {
+      "origin": "The public probing code validates cached features and uses the encoder interface's check for strict weight loading.",
+      "sha256": "60aaafa92766b70c66ad9de4cf258d0e3b2cf9a05243bffd327b0040705f6406",
+      "source_sha256": "b1f165102b835169db2ac3da264e0bd806379d877d0793367bf1feae1a47afdf"
+    },
+    "cetus_sar/reproducibility.py": {
+      "origin": "Development manifest helpers with streamed file hashing, exclusive temporary writes and atomic publication.",
+      "sha256": "7b2d30bfe908103462fa0ccd2e29fbc86266a256b38d1ce7ac5a1deda0a474a1",
+      "source_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+    },
+    "docs/classifiers.md": {
+      "origin": "Public guide to the Titan software, saved results and their dependencies.",
+      "sha256": "1f35d37a7d792f801969f376773d9ccea0d1b1edda436405d7b5c23342e77d9d"
+    },
+    "licenses/CROMA-LICENSE": {
+      "origin": "generated",
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "pyproject.toml": {
+      "origin": "Public package metadata with explicit project and CROMA license files.",
+      "sha256": "5e3b415a94e0f842f6031199fc5333463d001ac75cfe8231cf9d86f56f1a1d66"
+    },
+    "scripts/__init__.py": {
+      "origin": "generated",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/run_probing.py": {
+      "origin": "The public runner shares arguments across probe runs and uses the encoder interface's check for strict weight loading.",
+      "sha256": "e71007e2513b3fbcf892e753ba323e935badd56603eed5969bdca738c73200ac",
+      "source_sha256": "4acaaf2de15af661397a596438f03a59beb3c3b14b6e5271b5a5146d0fec41a5"
+    },
+    "scripts/summarize_crater_map_comparison.py": {
+      "origin": "Public standard-library summary of eight logistic regression feature sets with input checks and partial-write cleanup.",
+      "sha256": "8fc5501e8c2dcbfc966c5204d08d3c50e2a14140b2d63eecf7772c74e4d744ec"
+    },
+    "tests/test_bound_feature_cache.py": {
+      "origin": "Development tests extended for strict and nonstrict cache validation and rejected label types.",
+      "sha256": "d0567d5a3f5f5339f8fcb0faa41d816661f321788ddb5afdd092753af723bea4",
+      "source_sha256": "00c361a6b94218aa2a3bf4f6d84a094c8a9fe43e876072139b1939ad7e3eac33"
+    },
+    "tests/test_classifier_workflow.py": {
+      "origin": "generated",
+      "sha256": "dc0700d89ec66ddf98b23a6b9a22c4c1025b7dd0abcad86090e3449d3f13490f"
+    },
+    "tests/test_crater_map_comparison.py": {
+      "origin": "Public regression tests for the Craters summary, including write failures and retries.",
+      "sha256": "34ce6e81c00e452a0e819feeed33713b0342d1c61c6ccfc492167b9eb9805fb2"
+    },
+    "tests/test_knn_classify.py": {
+      "origin": "post-export kNN regression tests, including carried development coverage",
+      "sha256": "987ee67dcfcf0df8f373e54850f5e35de74d83d9705eb1e716dbdde0c8c61976"
+    },
+    "tests/test_normalization_provenance.py": {
+      "origin": "Adapted from the source blob identified by source_sha256.",
+      "sha256": "12e34d19551a23ac0f113e56eb3fabe4a039eed9622286e359931a56f6f2a8a9",
+      "source_sha256": "d82523e76752685e29b59ba0a2921a5adeffe87e78b5ecf67c2e4d733dc97290"
+    },
+    "tests/test_random_model_identity.py": {
+      "origin": "Adapted from the source blob identified by source_sha256.",
+      "sha256": "01bd8d3e3a9a553002a843848c6f0b45d1284b9b9f0c11218e6d7c4596cbea46",
+      "source_sha256": "599a6c8beef624f555a59f9b8bbdc054de9268f36a40de6abdf62641cf503367"
+    },
+    "tests/test_run_manifest.py": {
+      "origin": "Public regression tests for run manifest publication and retry.",
+      "sha256": "90c8e231b7c4a1e6e9a247adb97bcddf7ec8d24108ccfb81b985a002ab7fe2f0"
+    },
+    "tests/test_within_titan_probing.py": {
+      "origin": "Adapted from the source blob identified by source_sha256.",
+      "sha256": "e89ad7e735190c8b4f26c0811cd461e18b9635b315f855b4aea6ddc35465cb31",
+      "source_sha256": "808f882c78c51c3a22db87552b0beaa8fcc457abd3a937858f307db8f1ca7d34"
+    }
+  },
+  "import_package": "cetus_sar",
+  "metadata_source_sha256": {
+    "CITATION.cff": "c8d67c23a4d583f0d2a9e6be8436e569786c61094f8316e0597046ba09c38217",
+    "pyproject.toml": "69cabff57fbebbfffd17d16051a96225f4bee94bfaa5ec176578f800a83b77bc"
+  },
+  "schema_version": 2,
+  "scope": "Titan classifier software, feature extraction and saved-result comparisons.",
+  "source_manifest": {
+    "repository": "magnaprog/CETUS",
+    "scope": "Source identities, previous CPU validation and documentation records for the earlier public software export.",
+    "sha256": "110c52813b14c094592f9532af79fd9a8c82a7967f413bc2f95b1b7f6b9c8204",
+    "source_commit": "60682dc84c80910a25135252bec3c38e532cd812"
+  },
+  "upstream_croma_license": {
+    "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f",
+    "url": "https://raw.githubusercontent.com/antofuller/CROMA/814dcf58b7774150fa5370a9f432588219f11be1/LICENSE"
+  },
+  "version": "v0.2.0"
+}

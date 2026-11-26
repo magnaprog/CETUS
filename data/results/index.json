@@ -1,0 +1,59 @@
+{
+  "family_files": {
+    "baseline_results.json": {
+      "sha256": "9e518d551b9489c52d78d4993a7e01335773a2f01e6de7a881c443070661f25c"
+    },
+    "coral_results.json": {
+      "sha256": "a5d2e576c741e089d767db6fc7620a27d512db91978cc9c587138ad806b04cee"
+    },
+    "finetuning_results.json": {
+      "sha256": "bb6f958fa1d29eb37040231d603be4b384eba230e0b4750c2d483705af06048f"
+    },
+    "probing_cv_results.json": {
+      "sha256": "f45e7ec914cd79ff22f7c30e8011195e5ef91821f59d4b7e43b2404c48b52fa6"
+    },
+    "selk_relative_uncertainty_results.json": {
+      "sha256": "a45603b7d8107b23ba0df2be895449386d2504e7437bb0a22291a85303c34c5b"
+    },
+    "venus_domain_gap.json": {
+      "sha256": "11acbe92fd2a6275846c1ca0d28b26b8c4a8b45d05c8e95b135b8b7f62dd5ea9"
+    },
+    "label_efficiency_croma_results.json": {
+      "sha256": "069f61d7bae2ebbfc173bc63568632255926c443544aec411cc05186ec845730"
+    },
+    "label_efficiency_dinov2_results.json": {
+      "sha256": "8bb7252c735591bc5294c896c099dde5de6c39901516ac26d4c8df757931f46b"
+    },
+    "label_efficiency_dofa_results.json": {
+      "sha256": "b702ccd05371ff0fbb268d3935e05156593f046ef2f1443acb742f8825050c77"
+    },
+    "label_efficiency_random_init_results.json": {
+      "sha256": "daf48936103c244cc46d32f1ff5e37a8b6cabc39bbc3ea7f67a8c199796a7815"
+    },
+    "constrained_training_results.json": {
+      "sha256": "f5bba4e7f55343ab0327d8662508c60570c43b7710444c3780aaaa50eed3bb31"
+    },
+    "display_rendering_results.json": {
+      "sha256": "08526aad9569914fa8d2988d8dc8033b866384585a045017612d4bfcc8f58fdd"
+    },
+    "preprocessing_mmd_results.json": {
+      "sha256": "f8b8624dbc51c1b1d579decaa8198e11deba006845a237ba960ef6a66fdda1c0"
+    },
+    "quantization_results.json": {
+      "sha256": "83720e1e8e95bb7fc2f854ab712e9116d9821b7a442a400f56425c995a8105f6"
+    },
+    "smoothing_results.json": {
+      "sha256": "10d0e72493d2858277d5e00cfa12e79d5f39c777028c4b0fb61fa4c50ece9ed5"
+    },
+    "source_site_sensitivity_results.json": {
+      "sha256": "1bd5cc968257006f798dc5926a7cd419853bdec847bbd31db29e0dda12f486e6"
+    }
+  },
+  "protocol": {
+    "ci95": "two-sided Student-t interval over five fold estimates",
+    "fold_count": 5,
+    "primary_uncertainty_unit": "spatial fold",
+    "seed_role": "within-fold optimization replicate"
+  },
+  "schema_version": "1.0.0"
+}

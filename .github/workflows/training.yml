@@ -1,0 +1,249 @@
+name: Training code CPU tests
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  training-cpu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    env:
+      CUDA_VISIBLE_DEVICES: ""
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONNOUSERSITE: "1"
+      PYTHONPATH: ""
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      NUMEXPR_NUM_THREADS: "1"
+      XFORMERS_DISABLED: "1"
+      CUBLAS_WORKSPACE_CONFIG: ":4096:8"
+      NVIDIA_TF32_OVERRIDE: "0"
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify the encoder source and copy its test inputs
+        run: |
+          cd "$GITHUB_WORKSPACE/training/encoder-comparisons"
+          sha256sum -c SHA256SUMS
+          python -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import shutil
+
+          package = Path.cwd()
+          target = Path(os.environ['RUNNER_TEMP']) / 'cetus-training'
+          archive = package.parents[1] / 'experiments/encoder-comparisons/scientific-supplement.zip'
+          assert not target.exists()
+          assert archive.stat().st_size == 49528151
+          with archive.open('rb') as stream:
+              assert hashlib.file_digest(stream, 'sha256').hexdigest() == '5169c9ec1a2e7ac8c5f78499064d2399b196225bb04423ac9a78795314a92dcc'
+          manifest = json.loads((package / 'SOURCE_EXPORT.json').read_text())
+          assert manifest['exported_from']['commit'] == '9089214a5a6134a088eed058b02df6e021fe80dc'
+          shutil.copytree(package, target)
+          fixture = target / 'fixtures/scientific-supplement.zip'
+          fixture.parent.mkdir(parents=True, exist_ok=True)
+          shutil.copyfile(archive, fixture)
+          # The tests read the catalog and split records directly from the ZIP.
+          (Path(os.environ['RUNNER_TEMP']) / 'cetus-training-reports').mkdir()
+          PY
+
+      - name: Commit the external synthetic test fixture
+        working-directory: ${{ runner.temp }}/cetus-training
+        run: |
+          # The training code records a Git revision, including for this test fixture.
+          git init --initial-branch=synthetic-tests
+          git add -- .
+          git -c user.name='CETUS synthetic tests' \
+            -c user.email='cetus-synthetic-tests@example.invalid' \
+            -c commit.gpgsign=false commit \
+            -m 'Prepare encoder training test fixtures'
+          test -z "$(git status --porcelain=v1)"
+          git rev-parse HEAD > "$RUNNER_TEMP/cetus-training-reports/synthetic-git-head.txt"
+
+      - name: Install isolated CPU dependencies
+        run: |
+          python -m venv "$RUNNER_TEMP/cetus-training-venv"
+          SOURCE_PYTHON="$RUNNER_TEMP/cetus-training-venv/bin/python"
+          "$SOURCE_PYTHON" -m pip install 'torch>=2.11' torchvision \
+            --index-url https://download.pytorch.org/whl/cpu
+          "$SOURCE_PYTHON" -m pip install \
+            pytest numpy==2.4.4 matplotlib==3.10.9 \
+            scipy==1.17.1 scikit-learn==1.9.0 \
+            joblib==1.5.3 threadpoolctl==3.6.0 narwhals==2.28.0 \
+            typing_extensions timm einops scikit-image PyWavelets
+          "$SOURCE_PYTHON" -m pip check
+          "$SOURCE_PYTHON" -m pip freeze \
+            > "$RUNNER_TEMP/cetus-training-reports/pip-freeze.txt"
+
+      - name: Check which modules Python imported and record their versions
+        working-directory: ${{ runner.temp }}/cetus-training
+        run: |
+          unset PYTHONPATH TORCH_ALLOW_TF32_CUBLAS_OVERRIDE
+          unset CETUS_RUN_MODEL_INTEGRATION CETUS_RESNET18_CHECKPOINT CETUS_DINO_SOURCE_SPEC
+          unset TITANSAR_RUN_MODEL_INTEGRATION TITANSAR_RESNET18_CHECKPOINT TITANSAR_DINO_SOURCE_SPEC
+          "$RUNNER_TEMP/cetus-training-venv/bin/python" -B - <<'PY' \
+            > "$RUNNER_TEMP/cetus-training-reports/imports.json"
+          import importlib
+          import importlib.metadata
+          import json
+          import sys
+          from pathlib import Path
+
+          root = Path.cwd().resolve()
+          names = ['cetus_sar', 'scripts', 'tests',
+                   'scripts.run_model_followup', 'scripts.model_followup_support',
+                   'scripts.run_finetuning', 'scripts.summarize_review_frozen',
+                   'scripts.run_fitting_sensitivity', 'scripts.launch_fitting_sensitivity',
+                   'scripts.analyze_model_followup', 'scripts.analyze_model_followup_coverage',
+                   'scripts.analyze_sar_coverage']
+          origins = {}
+          for name in names:
+              module = importlib.import_module(name)
+              actual = Path(module.__file__).resolve()
+              stem = root.joinpath(*name.split('.'))
+              expected = stem / '__init__.py' if stem.is_dir() else stem.with_suffix('.py')
+              assert actual == expected.resolve(), (name, actual, expected)
+              origins[name] = str(actual)
+          from scripts import model_followup_support as support
+          source = json.loads(Path('SOURCE_EXPORT.json').read_text())
+          support.verify_source_imports({n: source['files'][n]['current_sha256']
+                                         for n in support.SOURCE_FILES})
+          import torch
+          assert torch.version.cuda is None, 'Expected CPU-only Torch wheels'
+          assert not torch.cuda.is_initialized()
+          versions = {name: importlib.metadata.version(name) for name in
+                      ['torch', 'torchvision', 'numpy', 'scipy', 'scikit-learn',
+                       'joblib', 'threadpoolctl', 'narwhals', 'typing_extensions', 'pytest']}
+          print(json.dumps({'python': sys.version, 'executable': sys.executable,
+                            'versions': versions, 'module_origins': origins,
+                            'cuda_initialized': False}, indent=2))
+          PY
+
+      - name: Test fitting and input checks on the CPU
+        working-directory: ${{ runner.temp }}/cetus-training
+        run: |
+          set -euo pipefail
+          unset PYTHONPATH TORCH_ALLOW_TF32_CUBLAS_OVERRIDE
+          unset CETUS_RUN_MODEL_INTEGRATION CETUS_RESNET18_CHECKPOINT CETUS_DINO_SOURCE_SPEC
+          unset TITANSAR_RUN_MODEL_INTEGRATION TITANSAR_RESNET18_CHECKPOINT TITANSAR_DINO_SOURCE_SPEC
+          export MPLCONFIGDIR="$RUNNER_TEMP/cetus-training-matplotlib"
+          "$RUNNER_TEMP/cetus-training-venv/bin/python" -B -m pytest \
+            tests/test_model_followup.py tests/test_anonymous_followup_inputs.py \
+            tests/test_model_followup_integration.py tests/test_analyze_model_followup.py \
+            tests/test_model_followup_coverage.py tests/test_fitting_sensitivity.py \
+            tests/test_fitting_launcher.py -q -ra \
+            --basetemp="$RUNNER_TEMP/cetus-training-test-tmp" \
+            -o cache_dir="$RUNNER_TEMP/cetus-training-pytest-cache" \
+            --junitxml="$RUNNER_TEMP/cetus-training-reports/focused-tests.xml" \
+            2>&1 | tee "$RUNNER_TEMP/cetus-training-reports/focused-tests.log"
+          # Three integration tests take additional pretrained weights.
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+          cd "$GITHUB_WORKSPACE/training/encoder-comparisons"
+          sha256sum -c SHA256SUMS
+
+      - name: Prepare the loss-comparison source fixture
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE/training/loss-normalization"
+          sha256sum -c SHA256SUMS
+          python -B - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import shutil
+
+          package = Path.cwd()
+          source = json.loads((package / 'SOURCE_EXPORT.json').read_text())
+          assert source['exported_from']['commit'] == '11033ff9f6fb21db81b3cc91b18bff4f9a58d02b'
+          target = Path(os.environ['RUNNER_TEMP']) / 'cetus-loss-source'
+          shutil.copytree(package, target)
+          (Path(os.environ['RUNNER_TEMP']) / 'cetus-training-reports/loss').mkdir()
+          (Path(os.environ['RUNNER_TEMP']) / 'cetus-loss-system-temp').mkdir()
+          PY
+          cd "$RUNNER_TEMP/cetus-loss-source"
+          git init --initial-branch=synthetic-tests
+          git add -- .
+          git -c user.name='CETUS synthetic tests' \
+            -c user.email='cetus-synthetic-tests@example.invalid' \
+            -c commit.gpgsign=false -c core.hooksPath=/dev/null commit \
+            -m 'Prepare loss comparison test fixtures'
+          test -z "$(git status --porcelain=v1)"
+          git rev-parse HEAD > "$RUNNER_TEMP/cetus-training-reports/loss/fixture-head.txt"
+
+      - name: Verify the loss implementation and run its CPU tests
+        working-directory: ${{ runner.temp }}/cetus-loss-source
+        env:
+          TMPDIR: ${{ runner.temp }}/cetus-loss-system-temp
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+        run: |
+          set -euo pipefail
+          unset PYTHONPATH PYTEST_ADDOPTS PYTEST_PLUGINS TORCH_ALLOW_TF32_CUBLAS_OVERRIDE
+          unset CETUS_RUN_MODEL_INTEGRATION CETUS_RESNET18_CHECKPOINT CETUS_DINO_SOURCE_SPEC
+          unset TITANSAR_RUN_MODEL_INTEGRATION TITANSAR_RESNET18_CHECKPOINT TITANSAR_DINO_SOURCE_SPEC
+          python -B "$GITHUB_WORKSPACE/.github/scripts/offline_cpu.py" \
+            "$RUNNER_TEMP/cetus-training-venv/bin/python" -B - <<'PY' \
+            2>&1 | tee "$RUNNER_TEMP/cetus-training-reports/loss/tests.log"
+          import hashlib
+          import importlib
+          import json
+          import os
+          from pathlib import Path
+
+          root = Path.cwd().resolve()
+          source = json.loads(Path('SOURCE_EXPORT.json').read_text())
+          origins = {}
+          for name, record in source['files'].items():
+              if not name.endswith('.py'):
+                  continue
+              module_name = name[:-3].replace('/', '.')
+              if module_name.endswith('.__init__'):
+                  module_name = module_name[:-9]
+              module = importlib.import_module(module_name)
+              actual = Path(module.__file__).resolve()
+              assert actual == root / name, (module_name, actual)
+              assert hashlib.sha256(actual.read_bytes()).hexdigest() == record['sha256'], name
+              origins[module_name] = {'path': str(actual), 'sha256': record['sha256']}
+          from scripts import model_followup_support as support
+          support.verify_source_imports(source['runtime_source_files'])
+          import torch
+          assert torch.version.cuda is None and not torch.cuda.is_initialized()
+          report = Path(os.environ['RUNNER_TEMP']) / 'cetus-training-reports/loss'
+          (report / 'imports.json').write_text(json.dumps({
+              'origins': origins, 'runtime': support.runtime_identity(),
+              'torch_build': torch.__version__, 'scope': 'Synthetic CPU source checks only'
+          }, indent=2) + '\n')
+          import pytest
+          raise SystemExit(pytest.main([
+              'tests/test_population_loss.py', 'tests/test_loss_comparison.py',
+              '-q', '-ra', '-p', 'no:cacheprovider',
+              '--basetemp', str(Path(os.environ['TMPDIR']) / 'pytest'),
+              '--junitxml', str(report / 'tests.xml')
+          ]))
+          PY
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+          cd "$GITHUB_WORKSPACE/training/loss-normalization"
+          sha256sum -c SHA256SUMS
+
+      - name: Preserve runtime and test reports, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: training-cpu-reports
+          path: ${{ runner.temp }}/cetus-training-reports/
+          if-no-files-found: warn

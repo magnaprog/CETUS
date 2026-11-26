@@ -1,0 +1,454 @@
+{
+  "counts": {
+    "exact_development_source_test_protocol_files": 17,
+    "exact_notice_files": 4,
+    "generated_files_including_integrity": 9,
+    "projected_guides": 2,
+    "revised_public_tests": 1,
+    "total_files": 33
+  },
+  "exported_from": {
+    "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+    "repository": "magnaprog/TitanSAR-dev",
+    "tree": "23d3ad90461b26afeea6342ddf25c015b55c5637"
+  },
+  "files": {
+    "CONTRACTS.md": {
+      "bytes": 7433,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "34512391243fc4cbb874d6ac1189405958659aff290c5b2f9e6c5f64392e97c6"
+    },
+    "DATA_LICENSES.md": {
+      "bytes": 1886,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "DATA_LICENSES.md",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 1886,
+        "source_sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+      },
+      "sha256": "dbbe6975f6a8ec1fc178784c8d05e4752fdfb3d10bfec0a292947f7ec71772b5"
+    },
+    "LICENSE": {
+      "bytes": 1066,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "LICENSE",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 1066,
+        "source_sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+      },
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "README.md": {
+      "bytes": 2310,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "e0ddb269191c8756a7793d5e413eceef70ef19a3322592035ae5abb36f0f2716"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 2457,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "THIRD_PARTY_NOTICES.md",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 2457,
+        "source_sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+      },
+      "sha256": "68e234e297315325760a89b4716e608fa90bdf0375c5508ed84f45ed751760da"
+    },
+    "contracts/historical-source-inventory.json": {
+      "bytes": 9678,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "1234b1b7b6ef1a26eaa4527235260b1f69a0f78d47c686d3941b53e40af2379a"
+    },
+    "contracts/training-contract-view.json": {
+      "bytes": 22447,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "47d90f8474123a3d262e64c864aa9332a9718ec286d583d2a5dc59b31b5d2d32"
+    },
+    "docs/DOFA_INPUT_REVIEW.md": {
+      "bytes": 5447,
+      "origin": {
+        "byte_identical": false,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "docs/DOFA_INPUT_REVIEW.md",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "explicit public guide projection",
+        "source_bytes": 5217,
+        "source_sha256": "3342429b3466b05a1f453a2727da52fd361e8e2d940695f5f52b204bb0f4b8d2"
+      },
+      "sha256": "dc60f937a347df1950779378960da7eda8da88d72dee01acf20c2f5b627e0fca"
+    },
+    "docs/DOFA_PARTIAL_BAND_PLAN.md": {
+      "bytes": 13866,
+      "origin": {
+        "byte_identical": false,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "docs/DOFA_PARTIAL_BAND_PLAN.md",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "explicit public guide projection",
+        "source_bytes": 13776,
+        "source_sha256": "fc5ab2b7917b609a6f07a386f035b9f76feb71647169412155b1c1a9c878aa3d"
+      },
+      "sha256": "11fdfaeac7aac24f1ce6b653125a3937b30f8ab9e852f01514dbd16e91ed589c"
+    },
+    "licenses/CROMA-LICENSE": {
+      "bytes": 1071,
+      "origin": {
+        "byte_identical": true,
+        "commit": "be6e72263e4bce6a8b47f714157cb82efd01aa86",
+        "path": "licenses/CROMA-LICENSE",
+        "repository": "magnaprog/CETUS",
+        "role": "preserved license/notice",
+        "source_bytes": 1071,
+        "source_sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+      },
+      "sha256": "5e91f8f44b4fe4139204b307d9853d156075386baff5720e4cb3bc7d5f46437f"
+    },
+    "reference-training/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json": {
+      "bytes": 15795,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 15795,
+        "source_sha256": "dd280f9b830acd8fba84a0603504c12ee39941b40fb89912a3e264002c8f44cb"
+      },
+      "sha256": "dd280f9b830acd8fba84a0603504c12ee39941b40fb89912a3e264002c8f44cb"
+    },
+    "reference-training/scripts/run_finetuning.py": {
+      "bytes": 25658,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "scripts/run_finetuning.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 25658,
+        "source_sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+      },
+      "sha256": "cf8a388e54f9686addb84da2256e7bcc3c8d904cf6e13e6057ce34700632c49c"
+    },
+    "reference-training/scripts/summarize_review_frozen.py": {
+      "bytes": 24528,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "scripts/summarize_review_frozen.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 24528,
+        "source_sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+      },
+      "sha256": "362730fe9b55b2359ee55fe90575cf58b9ba4ebb78f20d3c34bac9df2732f1cd"
+    },
+    "reference-training/tests/test_repaired_finetuning.py": {
+      "bytes": 16322,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "tests/test_repaired_finetuning.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 16322,
+        "source_sha256": "3d92d688ac5974c2ec4e4a784f324066eb13a2ed1a6f2e009b5aeb5c29fe4027"
+      },
+      "sha256": "3d92d688ac5974c2ec4e4a784f324066eb13a2ed1a6f2e009b5aeb5c29fe4027"
+    },
+    "reference-training/titansar/__init__.py": {
+      "bytes": 98,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 98,
+        "source_sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+      },
+      "sha256": "6f7305382b7c05bccbad01b0fa81ebbe7265d927497b9aa93476836c3106813f"
+    },
+    "reference-training/titansar/configs/__init__.py": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/configs/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 0,
+        "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "reference-training/titansar/configs/defaults.py": {
+      "bytes": 5136,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/configs/defaults.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 5136,
+        "source_sha256": "859262bfe4fd36fad1ca0c00ac4e2782ff25da3915564db027f79944673036ee"
+      },
+      "sha256": "859262bfe4fd36fad1ca0c00ac4e2782ff25da3915564db027f79944673036ee"
+    },
+    "reference-training/titansar/data/__init__.py": {
+      "bytes": 48,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/data/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 48,
+        "source_sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+      },
+      "sha256": "790e511e5b22f093d5a52287b2f7218aa3844c93fd356422e573815bedea0c59"
+    },
+    "reference-training/titansar/data/dataset.py": {
+      "bytes": 23632,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/data/dataset.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 23632,
+        "source_sha256": "a4e65852fe308a499e3265b9bd1ee652c4d2efa31f65eea8a0f9e055736cf747"
+      },
+      "sha256": "a4e65852fe308a499e3265b9bd1ee652c4d2efa31f65eea8a0f9e055736cf747"
+    },
+    "reference-training/titansar/models/__init__.py": {
+      "bytes": 46,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/__init__.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 46,
+        "source_sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+      },
+      "sha256": "1f14751db0b2bfb70592b7d28c4070636e6f9f1ba5aad208195136a418f7c220"
+    },
+    "reference-training/titansar/models/croma_model.py": {
+      "bytes": 14704,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/croma_model.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 14704,
+        "source_sha256": "b964e682a4d4086643918844c348a5c8160a12a5768cd6678286935a3a14acf2"
+      },
+      "sha256": "b964e682a4d4086643918844c348a5c8160a12a5768cd6678286935a3a14acf2"
+    },
+    "reference-training/titansar/models/foundation_models.py": {
+      "bytes": 19831,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/foundation_models.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 19831,
+        "source_sha256": "93514f0e93104387b54327717938ddf833c9527b4bf0f50ebfb079f592d986c8"
+      },
+      "sha256": "93514f0e93104387b54327717938ddf833c9527b4bf0f50ebfb079f592d986c8"
+    },
+    "reference-training/titansar/models/probing.py": {
+      "bytes": 25323,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/models/probing.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 25323,
+        "source_sha256": "b247e3e6f7ee4dbb94963d5925a1e111b65ef525209d57985be24a25be5d0b36"
+      },
+      "sha256": "b247e3e6f7ee4dbb94963d5925a1e111b65ef525209d57985be24a25be5d0b36"
+    },
+    "reference-training/titansar/reproducibility.py": {
+      "bytes": 4648,
+      "origin": {
+        "byte_identical": true,
+        "commit": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376",
+        "path": "titansar/reproducibility.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 4648,
+        "source_sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+      },
+      "sha256": "29f4fb679ae5f323178d6385176ce9ec0df9d8822dd78b71904343e27152b804"
+    },
+    "requirements.txt": {
+      "bytes": 699,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "37713c3abbc2c1f1e4059c2049fb2c74318e8281f07a5c414610625243caaaff"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical": false,
+        "role": "generated source-inspection metadata or packaging initializer"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/run_dofa_band_sensitivity.py": {
+      "bytes": 44299,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "scripts/run_dofa_band_sensitivity.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 44299,
+        "source_sha256": "998d877d4af302f29b2146755da198b27f934f2319091c6193e86c3e5fccc8c6"
+      },
+      "sha256": "998d877d4af302f29b2146755da198b27f934f2319091c6193e86c3e5fccc8c6"
+    },
+    "scripts/run_dofa_partial_band.py": {
+      "bytes": 35329,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "scripts/run_dofa_partial_band.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 35329,
+        "source_sha256": "fd9e7684336377c9a8a225afbe3eb86f13fb1485cc6f871ef344024dff149bfe"
+      },
+      "sha256": "fd9e7684336377c9a8a225afbe3eb86f13fb1485cc6f871ef344024dff149bfe"
+    },
+    "tests/test_dofa_band_sensitivity.py": {
+      "bytes": 22225,
+      "origin": {
+        "byte_identical": false,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "tests/test_dofa_band_sensitivity.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "Public test using the source and fixtures supplied in this package.",
+        "source_bytes": 22041,
+        "source_sha256": "668112cbce035280009b0003ed8925f67956d391e9483a4490e0af865315b8d0"
+      },
+      "sha256": "e1062a38417b8ed8cca0752efbdc25e3ffd0ca91c397dc775d86c3efe30e7137"
+    },
+    "tests/test_dofa_partial_band.py": {
+      "bytes": 27070,
+      "origin": {
+        "byte_identical": true,
+        "commit": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+        "path": "tests/test_dofa_partial_band.py",
+        "repository": "magnaprog/TitanSAR-dev",
+        "role": "unchanged source/test/protocol",
+        "source_bytes": 27070,
+        "source_sha256": "01ddc83ad1046cee8f3d4733e7a6291033c3b3b15b4bc03fe3af9d1814766499"
+      },
+      "sha256": "01ddc83ad1046cee8f3d4733e7a6291033c3b3b15b4bc03fe3af9d1814766499"
+    }
+  },
+  "import_routes": {
+    "current": [
+      "scripts/run_dofa_partial_band.py",
+      "scripts/run_dofa_band_sensitivity.py"
+    ],
+    "external_dynamic_modules": [
+      "dofa_v1",
+      "wave_dynamic_layer"
+    ],
+    "historical_root": "reference-training",
+    "historical_scientific_python_files": [
+      "scripts/run_finetuning.py",
+      "scripts/summarize_review_frozen.py",
+      "titansar/__init__.py",
+      "titansar/configs/__init__.py",
+      "titansar/configs/defaults.py",
+      "titansar/data/__init__.py",
+      "titansar/data/dataset.py",
+      "titansar/models/__init__.py",
+      "titansar/models/croma_model.py",
+      "titansar/models/foundation_models.py",
+      "titansar/models/probing.py",
+      "titansar/reproducibility.py"
+    ],
+    "historical_scripts_namespace": true,
+    "observed_runtime_imports": false
+  },
+  "integrity_policy": {
+    "file_index": "Every file except file_index.json and SHA256SUMS.",
+    "original_hashes": "Identify source bytes; projected files carry independent exported hashes.",
+    "sha256sums": "Every file except SHA256SUMS.",
+    "source_export_files": "All payload files except SOURCE_EXPORT.json, file_index.json and SHA256SUMS; self/forward records excluded."
+  },
+  "not_performed": [
+    "model or scientific execution",
+    "external access verification"
+  ],
+  "omitted": [
+    "49 historical inventory-gate Python files",
+    "original historical Git checkout",
+    "original executable contract and machine bindings",
+    "catalogs, imagery, features and reference result directories",
+    "pretrained weights, upstream source and selected states",
+    "external dispatch, collection and independent acceptance tools",
+    "current study result payloads and numerical reconstruction"
+  ],
+  "original_contract": {
+    "bytes": 43796,
+    "sha256": "7eecb0d70e467c222a501b96150c502ab606ec318a207569729426f354ee5d39"
+  },
+  "package": "training/dofa-finetuning",
+  "preserved_dated_export": {
+    "exported_from": "9089214a5a6134a088eed058b02df6e021fe80dc",
+    "path": "training/encoder-comparisons",
+    "role": "Separate initialization source export."
+  },
+  "previous_public_export": {
+    "bytes": 28442,
+    "public_commit": "f1a24417ebe6d0008a1c37be28964633466ea71e",
+    "sha256": "4b36d591f74084bf74d3e4952c157d077165e2067b50761103bc5fa167e5e4a2"
+  },
+  "public_release": "v0.2.0",
+  "schema": "cetus-dofa-partial-source-export-v1",
+  "scientific_sources": {
+    "current_consumer": "3a91cc7f19ab6c3f91b9015f5e9e09b97364aaf0",
+    "historical_frozen_reference": "6295af2bc35c8d8a2e47fc982b196809245f4550",
+    "historical_training": "ed2eb3ecd4722c22c0aff8b5370ac9a4b23e4376"
+  },
+  "scope": "Source inspection and preparation of separately specified runs; no result export or execution claim.",
+  "verification_scope": [
+    "committed-source byte identity",
+    "explicit guide and contract projections",
+    "static local-import routes",
+    "relative links and anchors",
+    "exact inventory and checksums",
+    "private-location/device/instruction disclosure scan"
+  ]
+}

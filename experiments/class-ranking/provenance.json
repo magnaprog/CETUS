@@ -1,0 +1,52 @@
+{
+  "analysis_source_commit": "0e4def2cb41139f6eeea2de31dd724f6694f0dbc",
+  "unchanged_source_files": {
+    "scripts/analyze_class_ranking.py": {
+      "sha256": "52f98cd9643fea928988b1f3d4159e8eda230955f152d1a2a38c1773ac096134",
+      "bytes": 25011,
+      "origin": "scripts/analyze_class_ranking.py"
+    },
+    "scripts/analyze_model_followup.py": {
+      "sha256": "5a38ad05f5ba136717ea3493f1a05d1437d2565fea95dad241d9295661b46f6b",
+      "bytes": 41406,
+      "origin": "scripts/analyze_model_followup.py"
+    },
+    "scripts/analyze_sar_coverage.py": {
+      "sha256": "47e63eb6a8293bef0cce041df34cc9283749360dd2e628ad1997f05c868e6a03",
+      "bytes": 9599,
+      "origin": "scripts/analyze_sar_coverage.py"
+    }
+  },
+  "packaging_files": "reconstruct.py and test_reconstruct.py add recipient-side integrity/comparison checks; accepted analysis and both helpers are unchanged.",
+  "original_analysis_contract_sha256": "5b09f7e27061a16e38b80969935e19b2990c8830de3c97088e4a400f3d615e4b",
+  "original_scientific_producer": "1f3fc8fe0e831777e3188d70caf2c5450b656333",
+  "input": {
+    "filename": "initialization-supplement.zip",
+    "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+    "bytes": 35858028,
+    "archive_code_executed": false
+  },
+  "accepted_outputs": {
+    "results.json": {
+      "sha256": "f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d",
+      "bytes": 415274
+    },
+    "craters-curves.npz": {
+      "sha256": "74f8fb2159edf44a7d95c7abb7f3aaa582b74fb2aaf1951222a1fa2cd09c63c4",
+      "bytes": 3208180
+    }
+  },
+  "prior_independent_check": {
+    "receipt_sha256": "3f3dfc79c5d54442d43cb583095ad6e28c64f4a7b45c0ea923625d68aecb5a88",
+    "status": "pass",
+    "class_rows": 360,
+    "craters_curves": 60,
+    "regional_rows": 140,
+    "contrasts": 70,
+    "geographic_rows": 42,
+    "max_scalar_error": 2.220446049250313e-16,
+    "all_curve_arrays_exact": true,
+    "scope": "Prior arithmetic check against original saved scores; not independent validation of this new packaging."
+  },
+  "recipient_reconstruction": "Run reconstruct.py to create a fresh local reconstruction-check.json. Original result execution/status fields are historical and preserved exactly."
+}

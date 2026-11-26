@@ -1,0 +1,116 @@
+# Source and execution contracts
+
+## Source layout
+
+The root `scripts/` and `tests/` contain the current runner and tests from
+`3a91cc7`. The runner uses `run_dofa_band_sensitivity.py` for file handling,
+runtime inspection and supervision; that helper's older pilot CLI is a separate
+workflow. `reference-training/` contains the original `ed2eb3e` training modules,
+including `scripts.run_finetuning` and `scripts.summarize_review_frozen`.
+[SOURCE_EXPORT.json](SOURCE_EXPORT.json) records full revisions, paths and hashes.
+
+The historical modules belong in a separate Python root. They include eight
+scientific files and four package initializers; CROMA is included because the
+original protocol requires its hash, although these fits do not use that branch.
+Historical `scripts/` is a namespace package with no initializer. The empty
+initializer in the current `scripts/` is a packaging addition. These are source
+trees without an installer. Six historical dependencies differ from the older
+`training/encoder-comparisons` export, so that export is not an interchangeable source.
+
+## Execution limits
+
+The original source check requires the exact historical Git commit and all
+**61** tracked Python files under `scripts/` and `titansar/`. This package supplies
+**12** of them; the [inventory](contracts/historical-source-inventory.json) lists
+their paths and the hashes and sizes of all 61. A source archive or a new local commit cannot satisfy
+that original check.
+
+The CLI exposes `check-plan`, `fit` and `replay`; `_fit-worker` and `_replay-worker`
+are supervised internal modes. `check-plan` verifies the executable contract's
+structure and source/reference bindings: the clean declared consumer and
+historical Git identities, declared interpreter, original catalog/protocol/tile
+inventory, upstream source and fold-reference records. It reports
+`scientific_preflight: false`; workers perform the subsequent raw-input,
+feature-cache, normalization, model and runtime checks. The supplied contract
+view cannot pass the original contract checks.
+
+Preflight checks complete file inventories, cache arrays and sidecars, all five
+reference heads, normalization and input identities. These references establish
+provenance; each current fit starts with a fresh head. The specified 50-fit
+design pairs both numeric inputs at each fold and seed, using the same initial
+encoder/head, runtime and physical GPU. Each fit has a separate selected-state
+replay. The two full-budget pilot fits belong to the 50-fit design; both fits
+and their replays need separate acceptance before the remaining 48 fits.
+The [recipe](docs/DOFA_PARTIAL_BAND_PLAN.md) gives training and selection details.
+
+The runner supervises one fit or replay. The three-queue dispatcher, outer
+invocation records, storage preflight, collection and independent acceptance
+tools are separate and omitted. Images, catalog/cache/reference payloads,
+pretrained weights, selected states and current result payloads are also absent.
+Replaying original checkpoints requires those states. Saved-prediction
+reconstruction is separate from training and checkpoint selection.
+
+## Public inputs
+
+The runner requires the original catalog and protocol identities recorded in
+the contract view. The [public processed images](../../experiments/encoder-comparisons/DATA_ACCESS.md#processed-titan-images)
+use a different anonymous catalog and matching splits. Their identities and the
+older followup runner's `anonymous-titan-v1` selector are documented in its
+[input contracts](../encoder-comparisons/CONTRACTS.md).
+This DOFA runner has no such selector; renaming files or pseudonymizing paths
+does not satisfy its original seals.
+
+For a new run, record the source and inputs in a new contract. Verify the
+ordered tile IDs or an explicit one-to-one mapping, the labels, image hashes,
+split membership and training-derived normalization. Changing IDs or order can alter
+normalization sampling and loader order.
+
+## Runtime and external assets
+
+[requirements.txt](requirements.txt) lists the helper's required package versions;
+it is not an installation lock or a verified available environment. The consumer
+also requires Python 3.12.3 and checks imported files, mapped native libraries,
+CUDA/cuDNN, physical devices, deterministic/precision settings and threads.
+A different CPU test environment does not establish those runtime bindings.
+
+The contract view identifies the pinned DOFA source files and the
+`DOFA_ViT_base_e100.pth` checkpoint; neither source nor weights are included.
+The pinned repository's [software license](https://github.com/zhu-xlab/DOFA/blob/73ff5c0721da322689ae890bed5b4efd78935f47/LICENSE)
+is MIT, copyright 2024 Zhitong Xiong. The externally hosted checkpoint's terms
+and the full dependency closure remain unestablished.
+
+## Metadata and verification
+
+[The contract view](contracts/training-contract-view.json) has a documentation-only
+schema and status. Its rules retain scientific policy, ordered cells and fold
+counts, device-index pairing, deadlines and source/input/initial-state hashes.
+Host paths become logical resources; physical UUIDs and lock locations are
+omitted. Historical bindings refer to the source inventory, and class
+order comes from the historical protocol. The view has its own digest; its
+original-contract hash identifies the omitted executable document. It cannot
+restore that document's machine bindings, approval or scientific acceptance.
+
+The [source manifest](SOURCE_EXPORT.json) records original file identities and public paths. Use `sha256sum -c SHA256SUMS` to check the package. The [CPU tests](README.md#check-the-source) exercise admission checks, simulated training histories and supervised subprocesses. Run the reference tests from `reference-training/` so its `scripts` and `titansar` modules resolve together. The historical run used the original checkout and the input and runtime bindings described above.
+
+## Earlier studies
+
+The supplied [historical protocol](reference-training/audit/REPAIRED_FINETUNING_PROTOCOL_2026-09-29.json)
+describes 75 fits across three models. The current consumer reuses its reference
+checks for the distinct paired 50-fit design. The [frozen-encoder comparison](../../experiments/dofa/frozen-encoder/README.md)
+uses the same encoder weights at both band inputs. The [initialization companion](../../experiments/encoder-comparisons/README.md)
+and [older source export](../encoder-comparisons/README.md)
+also retain separate identities. Scores in the dated input review belong to the
+earlier frozen-feature comparison, not the current partial-training study.
+
+The current comparison reuses previously studied test regions. Fold variation
+is descriptive, and seed repeats do not add independent regions. Scores measure
+agreement with a SAR-informed terrain map rather than independent geological
+accuracy. The physical Cassini interpretation of DOFA's numeric inputs remains
+unresolved; these comparisons do not establish a causal explanation.
+
+The training guide's original protocol-prose link leads to the exact JSON
+protocol above. The input review's two audit links lead to this section.
+Underlying investigation records and the earlier pilot/full
+frozen-feature guides (`DOFA_BAND_SENSITIVITY.md` and `DOFA_FULL_STUDY.md`) remain
+outside this package. Other external links are references, not a fresh access
+check; only the pinned software license has the new bounded source verification.

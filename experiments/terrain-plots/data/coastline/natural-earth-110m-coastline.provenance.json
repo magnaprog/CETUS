@@ -1,0 +1,80 @@
+{
+  "crs": {
+    "axes": [
+      "longitude",
+      "latitude"
+    ],
+    "units": "degrees",
+    "wkt": "GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.017453292519943295]]"
+  },
+  "decoding": {
+    "dateline": "Keep supplied parts separate. No adjacent longitude difference exceeds 180 degrees; no split or added vertex. One source longitude is 180.00000044181039; retain it and clip to the existing -180..180 axes.",
+    "independent_check": "Shapefile binary record/part headers and every coordinate decoded separately with struct; exact equality.",
+    "module_sha256": "884ed8ea1d4e26a3d0f362b131e448bbf1814b3c73a7d70a39971fa7d2dfe29c",
+    "reader": "pyshp",
+    "transformation": "All PolyLine records and parts in original order; exact binary64 coordinates serialized with Python JSON round-trip precision. No rounding, reprojection, simplification, joining or longitude wrap.",
+    "version": "3.0.12"
+  },
+  "geometry": {
+    "bytes": 204784,
+    "extent": [
+      -180.0,
+      -85.60903777459774,
+      180.00000044181039,
+      83.64513
+    ],
+    "file": "natural-earth-110m-coastline.json",
+    "maximum_adjacent_longitude_difference_deg": 9.031831662391454,
+    "parts": 134,
+    "parts_sha256": "c82eb6ed824d44ebf76ee2d63159666de7f391a86d816c2bb6a79d3baf397455",
+    "sha256": "42486ec096e813b675dd1fb9f7ef79de42f9a31600dea50f8550de3fca72eeaa",
+    "source_records": 134,
+    "vertices": 5128
+  },
+  "license": {
+    "attribution": "Coastline: Natural Earth 1:110m, v4.1.0",
+    "name": "Public domain",
+    "terms": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "verified_date": "2026-11-16"
+  },
+  "name": "Natural Earth 1:110m coastline",
+  "schema_version": 1,
+  "source": {
+    "archive_bytes": 85352,
+    "archive_sha256": "664449b39070027e882abb295974d182afec18ca21107273d17e9e8bf6f64817",
+    "members": {
+      "ne_110m_coastline.README.html": {
+        "bytes": 22376,
+        "sha256": "8c372267294c971f327b14d8c01016883cf05ddb8cc21c92a625b28ceaa2c3b7"
+      },
+      "ne_110m_coastline.VERSION.txt": {
+        "bytes": 7,
+        "sha256": "0874a8fe36effb87780f431845b5a7d85be657f2bd998ce8eeace717860d3b78"
+      },
+      "ne_110m_coastline.cpg": {
+        "bytes": 5,
+        "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824"
+      },
+      "ne_110m_coastline.dbf": {
+        "bytes": 3747,
+        "sha256": "ac7e59083a862bafc20b86d73595fdf2a7c0693a411cf3ba91910a5de9df9bc3"
+      },
+      "ne_110m_coastline.prj": {
+        "bytes": 147,
+        "sha256": "3259f0e55290a82b1350646f604e8a7ee1e2136c0320a40fad838ab40819fff8"
+      },
+      "ne_110m_coastline.shp": {
+        "bytes": 89652,
+        "sha256": "a1f8285d0e0a4858392cd78fc74fa3ee4cd9088947cf6e3693729dc852d70b60"
+      },
+      "ne_110m_coastline.shx": {
+        "bytes": 1172,
+        "sha256": "53d8c141edfb7e05c59feecc7bb64b0e22bc2e282dfa1024d20ae54c3ef7b01e"
+      }
+    },
+    "page": "https://www.naturalearthdata.com/downloads/110m-physical-vectors/110m-coastline/",
+    "url": "https://naturalearth.s3.amazonaws.com/110m_physical/ne_110m_coastline.zip"
+  },
+  "use": "Global Earth locator context only; no local shoreline measurement, SAR registration, valid-pixel coverage or terrain inference.",
+  "version": "4.1.0"
+}

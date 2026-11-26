@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: Please cite the CETUS arXiv preprint.
+title: CETUS
+type: software
+version: 0.2.0
+authors:
+- family-names: Lee
+  given-names: Kevin
+  orcid: https://orcid.org/0009-0004-0388-9260
+  affiliation: NASA Jet Propulsion Laboratory; University of California, Los Angeles
+repository-code: https://github.com/magnaprog/CETUS
+license: MIT
+keywords:
+- synthetic aperture radar
+- Titan
+- Cassini
+- foundation models
+- benchmark
+- planetary science
+preferred-citation:
+  type: article
+  title: 'CETUS: How Far Do Representations Trained on Earth Transfer to Cassini SAR of Titan?'
+  authors:
+  - family-names: Lee
+    given-names: Kevin
+    orcid: https://orcid.org/0009-0004-0388-9260
+  journal: arXiv
+  year: 2026
+  doi: 10.48550/arxiv.2610.07576
+  url: https://arxiv.org/abs/2610.07576

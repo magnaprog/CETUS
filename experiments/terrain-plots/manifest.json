@@ -1,0 +1,578 @@
+{
+  "display_context": {
+    "files": {
+      "data/coastline/README.md": {
+        "bytes": 1306,
+        "sha256": "909467ed3289fc90ec512360cd8b82c82838a53d946d99b852c84527c79052eb"
+      },
+      "data/coastline/natural-earth-110m-coastline.json": {
+        "bytes": 204784,
+        "sha256": "42486ec096e813b675dd1fb9f7ef79de42f9a31600dea50f8550de3fca72eeaa"
+      },
+      "data/coastline/natural-earth-110m-coastline.provenance.json": {
+        "bytes": 3354,
+        "sha256": "b699a720b64c7b836179ad6555f8b743d27c0a6b27180b2379356ce55f536fc1"
+      }
+    },
+    "kind": "natural-earth-110m-coastline",
+    "parts": 134,
+    "parts_sha256": "c82eb6ed824d44ebf76ee2d63159666de7f391a86d816c2bb6a79d3baf397455",
+    "use": "Global Earth locator orientation; separate from scientific sampling metadata.",
+    "version": "4.1.0",
+    "vertices": 5128
+  },
+  "entrypoint": "python3.12 -B -m scripts.plot_crater_retrieval",
+  "entrypoints": [
+    "python3.12 -B -m scripts.plot_crater_retrieval",
+    "python3.12 -B -m scripts.plot_class_ranking",
+    "python3.12 -B -m scripts.plot_class_contrasts",
+    "python3.12 -B -m scripts.plot_regional_errors",
+    "python3.12 -B -m scripts.plot_class_retrieval",
+    "python3.12 -B -m scripts.plot_dataset_geography"
+  ],
+  "expected_absolute_ap": {
+    "craters-ap-roman.pdf": {
+      "bytes": 18361,
+      "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
+    },
+    "craters-ap-roman.png": {
+      "bytes": 43749,
+      "sha256": "ffd039e488a995b3438adbf1367883c666649ded999563fddc0451fb58d65f1d"
+    },
+    "craters-ap-sans.pdf": {
+      "bytes": 17596,
+      "sha256": "682858833d19c418f8064c584c752a1b855533bd347ee13241a2f798970bf82b"
+    },
+    "craters-ap-sans.png": {
+      "bytes": 46446,
+      "sha256": "5296ba5ea987d93813ce3b5c0200d59198b8db2d7788477473e07fbc9dc82429"
+    }
+  },
+  "expected_class_contrasts": {
+    "class-contrasts-roman.pdf": {
+      "bytes": 15736,
+      "sha256": "37efdd0b86b518984b458bfe7f62f42ef3751646d8b2decf1c1877ed3be92b45"
+    },
+    "class-contrasts-roman.png": {
+      "bytes": 58345,
+      "sha256": "585b167a65279deaa7876bdcf95f6c37d85fc648ca0e94c15b25432e7c7bbdf5"
+    },
+    "class-contrasts-sans.pdf": {
+      "bytes": 15249,
+      "sha256": "6bf783e454203294670b9da3df12650cadc12a7a1aba39670630c55fb378e44f"
+    },
+    "class-contrasts-sans.png": {
+      "bytes": 63521,
+      "sha256": "f674cb70d0dda9a73f17a074e86b6f3d4863f112451d38199f9ac8ca2cdc1d10"
+    }
+  },
+  "expected_class_retrieval": {
+    "craters-retrieval-roman.pdf": {
+      "bytes": 1939561,
+      "sha256": "3d5791d396fab2a5674ed9dbea86f6d9356d3ddb10906769a9c26f2c9dba2b08"
+    },
+    "craters-retrieval-roman.png": {
+      "bytes": 218359,
+      "sha256": "00a9e8c998dc377416d94f207ce9de00ae9ccb8ba8073045f2ec0abfa09831b2"
+    },
+    "craters-retrieval-sans.pdf": {
+      "bytes": 1939058,
+      "sha256": "15f0ebedc5afcb0561338ce199646390d20069c92ff505b6b0f43163bc14a39d"
+    },
+    "craters-retrieval-sans.png": {
+      "bytes": 227285,
+      "sha256": "555e67623e9089b2d4212b9c18fa03d3cc6470d214743a9981f5ecf2440bc080"
+    },
+    "dunes-retrieval-roman.pdf": {
+      "bytes": 1987872,
+      "sha256": "4580007e3f5e3297e99239ea0f736e31d5260ae909faf52bc11db98cccd6da6a"
+    },
+    "dunes-retrieval-roman.png": {
+      "bytes": 225446,
+      "sha256": "4041a03a3731eaa49bf48fcee47a9b1baeb6b5bdc363a8133c0c0b6619f023ac"
+    },
+    "dunes-retrieval-sans.pdf": {
+      "bytes": 1987368,
+      "sha256": "9452fe621e882da6abbfc0a04815ed6c9bbb61247975db776616c5922323e6a1"
+    },
+    "dunes-retrieval-sans.png": {
+      "bytes": 233727,
+      "sha256": "47b0b305da17b9d775ffa2a19ee6b3979ebbc83cac551bf2bd4e865b1cdb7e6e"
+    },
+    "hummocky-retrieval-roman.pdf": {
+      "bytes": 1970844,
+      "sha256": "ac04e564e942b7307baafca58f64199978f88797f9b7fb2860a0c5cb21d8a00e"
+    },
+    "hummocky-retrieval-roman.png": {
+      "bytes": 227869,
+      "sha256": "2a4feaf3a91f1fd6f5ad584fdb65d48d1a0c61bba1d0a770da596a90808044c7"
+    },
+    "hummocky-retrieval-sans.pdf": {
+      "bytes": 1970384,
+      "sha256": "d2e13e6c24e23b851e95f0d9c8094c8149ddf09dbf0e4d4b939872a5967ae13c"
+    },
+    "hummocky-retrieval-sans.png": {
+      "bytes": 236867,
+      "sha256": "78215958c83c4bf19754e45801e33078b71e4a9ab53cfa0b72be28d67b1f98d8"
+    },
+    "labyrinths-retrieval-roman.pdf": {
+      "bytes": 1950819,
+      "sha256": "61904dadf98f22041ccced827df13f18bc513254301fd2b6e8afe4bcdae25f94"
+    },
+    "labyrinths-retrieval-roman.png": {
+      "bytes": 263432,
+      "sha256": "15bd7a5db153db30504b6178d08186f725094ba272cf22ad7b0ff5571d5c9f1d"
+    },
+    "labyrinths-retrieval-sans.pdf": {
+      "bytes": 1950387,
+      "sha256": "237877d91c24c237b61dacf83c27de65514faa4bff9451d5a9233d3644188476"
+    },
+    "labyrinths-retrieval-sans.png": {
+      "bytes": 271806,
+      "sha256": "21b32a23cb0f3d4db2eed91cac5634c6f3309c7eb0ca3c4cc589227ecfb305ad"
+    },
+    "lakes-retrieval-roman.pdf": {
+      "bytes": 1948237,
+      "sha256": "d63a6f4ccb63ccf23e0de25eac8cf324b3094753b23480b53d11ebb89d5ef27d"
+    },
+    "lakes-retrieval-roman.png": {
+      "bytes": 233550,
+      "sha256": "07af3cdc8317d7c4af60333c0bee8a0dee92301a097315119445705d97c5c952"
+    },
+    "lakes-retrieval-sans.pdf": {
+      "bytes": 1947734,
+      "sha256": "5069352e619ae11941f40e2f7b7d68f7ba797183219024d65382cae6af3c8108"
+    },
+    "lakes-retrieval-sans.png": {
+      "bytes": 242487,
+      "sha256": "87f43e6a23fd9b719ecb9a9206a4d50383ccced18eb0e45265ca1fd6afa86adc"
+    },
+    "plains-retrieval-roman.pdf": {
+      "bytes": 1973824,
+      "sha256": "f08523805743130b8c52eaa3337236f8614506a047d188565531a0d8594b1a09"
+    },
+    "plains-retrieval-roman.png": {
+      "bytes": 191551,
+      "sha256": "7ebe2ee7d276d10186b97daed276099364a514f4a8e7df8adda5d6732828c7a6"
+    },
+    "plains-retrieval-sans.pdf": {
+      "bytes": 1973284,
+      "sha256": "f01ed2756b19693c0789554b3ea1627b4d991f12b6f22e4ea5121b1d9329120d"
+    },
+    "plains-retrieval-sans.png": {
+      "bytes": 201622,
+      "sha256": "259fe7706460f8650d654d4a9a4027d64222cd5c8b63f500d8d069fa3323bac2"
+    }
+  },
+  "expected_dataset_geography": {
+    "roman": {
+      "earth-site-footprints.pdf": {
+        "bytes": 135744,
+        "sha256": "e4214dc1b8c82fc192dd0384c35c0528dd5bd38bb423c4f7b3e88e0a46a2cd9d"
+      },
+      "earth-site-footprints.png": {
+        "bytes": 213998,
+        "sha256": "4033922db60a5dcb6a7e41e3e73e47b2cb4a3e05a5f6ae4e66abfc66970b6a78"
+      },
+      "earth-site-locator.pdf": {
+        "bytes": 70372,
+        "sha256": "d11cdb3c679b8d66ca081c23633dcaeae5cbe2e726846827a37db28a1ba0f4b0"
+      },
+      "earth-site-locator.png": {
+        "bytes": 135998,
+        "sha256": "8f8ab25a1599e35e6711d9413a48bc0883798c277295302c45aa50e482214abb"
+      },
+      "titan-class-locations.pdf": {
+        "bytes": 236802,
+        "sha256": "2e2f94e3b49256cc0adaf667be5ec792cc37b38cefd7ee54b80cea90e5d50747"
+      },
+      "titan-class-locations.png": {
+        "bytes": 238533,
+        "sha256": "ee43b4ba391809e97ce98cec25be02c1047536262d51ca960295ef12a8726977"
+      },
+      "venus-sample-centers.pdf": {
+        "bytes": 23140,
+        "sha256": "9f771f9a00aed0451e1460611ec3837fcc9398ed1ba3275371896c7a18d1f565"
+      },
+      "venus-sample-centers.png": {
+        "bytes": 163915,
+        "sha256": "e9d82d8e40f599ce8cb33552a85b3d23026a4d61e14ae63730aea2a283f86888"
+      }
+    },
+    "sans": {
+      "earth-site-footprints.pdf": {
+        "bytes": 136228,
+        "sha256": "a90bce33715f9d298f2d72fe993d5100f2467b61d80815e0985d600d9c18359f"
+      },
+      "earth-site-footprints.png": {
+        "bytes": 218836,
+        "sha256": "aec3e7ca4d10995ce8cb1db0e379c79fdc45a8023cd4c927f36ad634276c0065"
+      },
+      "earth-site-locator.pdf": {
+        "bytes": 70500,
+        "sha256": "28361a9997e335aa4288f6f52dc6a557c072a74881a9ead42146c7793117ccf2"
+      },
+      "earth-site-locator.png": {
+        "bytes": 143400,
+        "sha256": "7bb743829c03568b2687ad6dad49c50e36b806e3976259d41be81ff289f67fb9"
+      },
+      "titan-class-locations.pdf": {
+        "bytes": 237008,
+        "sha256": "a8b02ab22fd29c3611913b5f018d42ad3998336a109f46aa44a7e5a92227b763"
+      },
+      "titan-class-locations.png": {
+        "bytes": 246422,
+        "sha256": "18273d49dba4fd6df24ce6b1505cd4d2c180075e8c0fa06a55d8beb1db0c955c"
+      },
+      "venus-sample-centers.pdf": {
+        "bytes": 20604,
+        "sha256": "a4d3af0127dc6aa602a13461f2868d3fd52e2e8a3b01c2a4663cad70a844a7ce"
+      },
+      "venus-sample-centers.png": {
+        "bytes": 167659,
+        "sha256": "baaa3147fa89764da82a60fbb1ae58bf8c4d6d772e720e838f0d7230880ad9dd"
+      }
+    }
+  },
+  "expected_figures": {
+    "crater-retrieval-roman.pdf": {
+      "bytes": 1950663,
+      "sha256": "d20e4430078fa584f78545b08e1333baf35cc9395139e13ed90dbc754eb25c7c"
+    },
+    "crater-retrieval-roman.png": {
+      "bytes": 280975,
+      "sha256": "7ce1a922d24b428d6c23c0a07cfee04deacedc7dce22ba9bc231d9063079a876"
+    },
+    "crater-retrieval-sans.pdf": {
+      "bytes": 1950180,
+      "sha256": "806fcb7fca92716728471b9fbeedbf4cb2c22c5375d1b9f51561fb9bb27fd474"
+    },
+    "crater-retrieval-sans.png": {
+      "bytes": 289718,
+      "sha256": "e0bb64594e7e7b771be3d53c069e02825edfdda63a1b79f85466e4e9d5950457"
+    }
+  },
+  "expected_regional_errors": {
+    "roman-regional-errors.pdf": {
+      "bytes": 26567,
+      "sha256": "01a6d4086171ca987532841a6a10d497afeaf299aed79bcd19d84625bc40c640"
+    },
+    "roman-regional-errors.png": {
+      "bytes": 173542,
+      "sha256": "5368ccb4c3f535b1bdb9dbe5ca6e537f3dc26ca9a58bb7ffea6ef07e5c9b0140"
+    },
+    "sans-regional-errors.pdf": {
+      "bytes": 26352,
+      "sha256": "11c1367220c1024f3842577c16c6458eb3c2642a835dd851270c68d4b72cab04"
+    },
+    "sans-regional-errors.png": {
+      "bytes": 183069,
+      "sha256": "ccd00ffd928ec2bfe30a3fc7912194cbfa188c0962395963e6f4ff78a93a34d9"
+    }
+  },
+  "files": {
+    "LICENSE": {
+      "bytes": 1066,
+      "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
+    },
+    "NOTICE.md": {
+      "bytes": 3211,
+      "sha256": "28f75a2c3b56cc6af1fa82bc7671e30e3fe35ba1ac8be688cf74e5ec70e48538"
+    },
+    "README.md": {
+      "bytes": 6998,
+      "sha256": "63ffa08689713a4d44bb3bdeee4bc993b57f4da5d95b5d7d965b94c60cd801f7"
+    },
+    "data/class-curves.npz": {
+      "bytes": 21401700,
+      "sha256": "f31fab61e09b81555119379d916ddce6c5ec88947c7126b92ea46aa4f0927e1c"
+    },
+    "data/class-retrieval.json": {
+      "bytes": 706344,
+      "sha256": "b03ce1da11d41c6b92b0e75b669f57d7f3db887dff840da6a808ea0d938c9de2"
+    },
+    "data/coastline/README.md": {
+      "bytes": 1306,
+      "sha256": "909467ed3289fc90ec512360cd8b82c82838a53d946d99b852c84527c79052eb"
+    },
+    "data/coastline/natural-earth-110m-coastline.json": {
+      "bytes": 204784,
+      "sha256": "42486ec096e813b675dd1fb9f7ef79de42f9a31600dea50f8550de3fca72eeaa"
+    },
+    "data/coastline/natural-earth-110m-coastline.provenance.json": {
+      "bytes": 3354,
+      "sha256": "b699a720b64c7b836179ad6555f8b743d27c0a6b27180b2379356ce55f536fc1"
+    },
+    "data/dataset-geography.json": {
+      "bytes": 1736087,
+      "sha256": "6619ff667273aaa0273bcab1614ef3dff1e6453f1d79309d350da13e5508591d"
+    },
+    "figures/craters-ap-caption.tex": {
+      "bytes": 809,
+      "sha256": "52d8dede0760680a8382c8e3968292fb53854da072528732bda9ecba63c300a4"
+    },
+    "figures/craters-ap-roman.pdf": {
+      "bytes": 18361,
+      "sha256": "0150e6068d345a378c54993364a919d0efb9cb3fe692bf8511bc5f3fa392460f"
+    },
+    "figures/craters-ap-sans.pdf": {
+      "bytes": 17596,
+      "sha256": "682858833d19c418f8064c584c752a1b855533bd347ee13241a2f798970bf82b"
+    },
+    "fonts/nimbus-roman/COPYING": {
+      "bytes": 34520,
+      "sha256": "57c8ff33c9c0cfc3ef00e650a1cc910d7ee479a8bc509f6c9209a7c2a11399d6"
+    },
+    "fonts/nimbus-roman/LICENSE": {
+      "bytes": 440,
+      "sha256": "772b1b47eead8722156abaed483154e1dd1137e7035290550cea6444192a2e3f"
+    },
+    "fonts/nimbus-roman/NimbusRoman-Bold.ttf": {
+      "bytes": 200040,
+      "sha256": "03a62d23942e51f48e42da30f0c50e008c67f0e5d6dacf739b5117c15a2e0bfd"
+    },
+    "fonts/nimbus-roman/NimbusRoman-BoldItalic.ttf": {
+      "bytes": 201916,
+      "sha256": "4b80d3617da875d4fa789bf4698417117cf2c52a9e678038b3b5f490736ce39c"
+    },
+    "fonts/nimbus-roman/NimbusRoman-Italic.ttf": {
+      "bytes": 204136,
+      "sha256": "b9111288e478cb36a23433df28a54aab49f9007663ddc877d35c7e0275724129"
+    },
+    "fonts/nimbus-roman/NimbusRoman-Regular.ttf": {
+      "bytes": 203180,
+      "sha256": "47dbff21ede6f3b8428ffe9f8c7c4ac5f1e3c1bc33cd987cfe42e99e0298c495"
+    },
+    "fonts/nimbus-roman/sources.json": {
+      "bytes": 1619,
+      "sha256": "e9fe437ec0fcc8e9a29658b7b33e549fb9fab5eddd7f98433c6f44d35de8aa8f"
+    },
+    "fonts/nimbus-sans/COPYING": {
+      "bytes": 34520,
+      "sha256": "57c8ff33c9c0cfc3ef00e650a1cc910d7ee479a8bc509f6c9209a7c2a11399d6"
+    },
+    "fonts/nimbus-sans/LICENSE": {
+      "bytes": 440,
+      "sha256": "772b1b47eead8722156abaed483154e1dd1137e7035290550cea6444192a2e3f"
+    },
+    "fonts/nimbus-sans/NimbusSans-Regular.ttf": {
+      "bytes": 181776,
+      "sha256": "df5d1ce7b86c2e74974008623612bae136123a35ba7885de8a0721b68258edbc"
+    },
+    "fonts/nimbus-sans/sources.json": {
+      "bytes": 1196,
+      "sha256": "d34706a4a9d759704fd48a0b57a35d936d8655ace790a8d5ea484f73dd76848b"
+    },
+    "regional-errors.json": {
+      "bytes": 172455,
+      "sha256": "a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07"
+    },
+    "requirements.txt": {
+      "bytes": 149,
+      "sha256": "e5816ffff907c8631e01579a24ffb31860fde314bcd67aba1fb8220f5128135f"
+    },
+    "scripts/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scripts/dataset_geography_payload.py": {
+      "bytes": 9599,
+      "sha256": "bef93b7e44b9f07ab29a34aeefde74354c538110d120765dee79bd44f5950c1b"
+    },
+    "scripts/display_io.py": {
+      "bytes": 2213,
+      "sha256": "534dad357422e0c5ee0c4dbc8f13ada582522ca8673a531b2aea4bc8766a6433"
+    },
+    "scripts/figure_style.py": {
+      "bytes": 3989,
+      "sha256": "6b0cedd706c7be390b5f6b5082cfbf430470699f6ed1d8e5ed00322c3f4c1f2e"
+    },
+    "scripts/plot_class_contrasts.py": {
+      "bytes": 11010,
+      "sha256": "6f4be5f0dd6d405b3c7fb1d0a2106284e5dd07c4255879ccb960b9434ce01c30"
+    },
+    "scripts/plot_class_ranking.py": {
+      "bytes": 21466,
+      "sha256": "c0d565422f6e22131a4f982e17f436b30e6083b52ab6c0e0eb07409ce5286f6e"
+    },
+    "scripts/plot_class_retrieval.py": {
+      "bytes": 8627,
+      "sha256": "99cf6e412a954b75914b209722fca7e267d868cc83950334b829f73e7adc9632"
+    },
+    "scripts/plot_crater_retrieval.py": {
+      "bytes": 22951,
+      "sha256": "850b60317325a1970efb590d4aa2f90a5411416a2e44667440367f3b671839af"
+    },
+    "scripts/plot_dataset_geography.py": {
+      "bytes": 31390,
+      "sha256": "4fa4fdb53424487831371567a86815ffff6f9032be049b3c9dddeecc60e5d13a"
+    },
+    "scripts/plot_regional_errors.py": {
+      "bytes": 15910,
+      "sha256": "5e1e5bbb3551148d4295e6245e09b3167b547891fe2bdd1cb269f7fba273bf4b"
+    },
+    "scripts/sans_figure_style.py": {
+      "bytes": 4855,
+      "sha256": "48ef515e852ac31590f7ed722ae8b5516b79aee994adafd6e3096c94bfa3be06"
+    },
+    "scripts/tex_table.py": {
+      "bytes": 326,
+      "sha256": "27569c91df2682f17fbf77e7057ebc60f2b16ee070437e23da2cd4e8fdcb005c"
+    },
+    "tests/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/test_class_contrasts_plot.py": {
+      "bytes": 13039,
+      "sha256": "f4b1b789e79e330e961fb0893943bf76b419da7fe14421c05889aeb0868329ea"
+    },
+    "tests/test_class_ranking_plot.py": {
+      "bytes": 15980,
+      "sha256": "9ad7b5ce7dc778a2ffa66c0125bd8c591575802d186dd129810c8d39302f64d2"
+    },
+    "tests/test_class_retrieval_plot.py": {
+      "bytes": 11857,
+      "sha256": "d0fa69bac18cad7f0c0a0951ae94b8015ff5360942580781f52b26dcb64d16b7"
+    },
+    "tests/test_crater_retrieval_plot.py": {
+      "bytes": 26527,
+      "sha256": "cc17dbdca38097ea67e4d4ace25f5b67e5b75b7ed55bf912d368b28c15bd53b4"
+    },
+    "tests/test_dataset_geography_plot.py": {
+      "bytes": 20438,
+      "sha256": "7f9117be2bfbe01c3f016a4fd28970885881bf0540774538edaca814f20f4ae3"
+    },
+    "tests/test_regional_errors_plot.py": {
+      "bytes": 24892,
+      "sha256": "0a36d4207c32c7e1812169b6f318de56b90e350a1b265bf11f874066c639c38f"
+    }
+  },
+  "inputs": {
+    "display_extension": {
+      "class_curves": {
+        "bytes": 21401700,
+        "path": "data/class-curves.npz",
+        "sha256": "f31fab61e09b81555119379d916ddce6c5ec88947c7126b92ea46aa4f0927e1c"
+      },
+      "class_retrieval": {
+        "bytes": 706344,
+        "path": "data/class-retrieval.json",
+        "sha256": "b03ce1da11d41c6b92b0e75b669f57d7f3db887dff840da6a808ea0d938c9de2"
+      },
+      "dataset_geography": {
+        "bytes": 1736087,
+        "path": "data/dataset-geography.json",
+        "sha256": "6619ff667273aaa0273bcab1614ef3dff1e6453f1d79309d350da13e5508591d"
+      }
+    },
+    "files": {
+      "craters-curves.npz": {
+        "bytes": 3208180,
+        "path": "experiments/class-ranking/craters-curves.npz",
+        "sha256": "74f8fb2159edf44a7d95c7abb7f3aaa582b74fb2aaf1951222a1fa2cd09c63c4"
+      },
+      "results.json": {
+        "bytes": 415274,
+        "path": "experiments/class-ranking/results.json",
+        "sha256": "f8d798aec2772253071cece9af84acebe7ba517af5a0c320082b1606b723b03d"
+      }
+    },
+    "ranking_source": {
+      "provenance": "experiments/class-ranking/provenance.json",
+      "release": "v0.2.0",
+      "repository": "magnaprog/CETUS"
+    },
+    "regional_errors": {
+      "bytes": 172455,
+      "path": "regional-errors.json",
+      "sha256": "a1cf71116346d44d7239d3736b6580fb9ea1d9c42a17fc1055e2422a6e22dd07"
+    }
+  },
+  "integrity_policy": {
+    "manifest": "Every payload file except manifest.json and SHA256SUMS.",
+    "sha256sums": "Every file except SHA256SUMS."
+  },
+  "schema": "crater-retrieval-package-v1",
+  "source": {
+    "current_source_mapping": {
+      "scripts/__init__.py": {
+        "path": "scripts/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "scripts/dataset_geography_payload.py": {
+        "path": "scripts/dataset_geography_payload.py",
+        "sha256": "bef93b7e44b9f07ab29a34aeefde74354c538110d120765dee79bd44f5950c1b"
+      },
+      "scripts/display_io.py": {
+        "path": "scripts/display_io.py",
+        "sha256": "534dad357422e0c5ee0c4dbc8f13ada582522ca8673a531b2aea4bc8766a6433"
+      },
+      "scripts/figure_style.py": {
+        "path": "scripts/figure_style.py",
+        "sha256": "6b0cedd706c7be390b5f6b5082cfbf430470699f6ed1d8e5ed00322c3f4c1f2e"
+      },
+      "scripts/plot_class_contrasts.py": {
+        "path": "scripts/plot_class_contrasts.py",
+        "sha256": "6f4be5f0dd6d405b3c7fb1d0a2106284e5dd07c4255879ccb960b9434ce01c30"
+      },
+      "scripts/plot_class_ranking.py": {
+        "path": "scripts/plot_class_ranking.py",
+        "sha256": "c0d565422f6e22131a4f982e17f436b30e6083b52ab6c0e0eb07409ce5286f6e"
+      },
+      "scripts/plot_class_retrieval.py": {
+        "path": "scripts/plot_class_retrieval.py",
+        "sha256": "99cf6e412a954b75914b209722fca7e267d868cc83950334b829f73e7adc9632"
+      },
+      "scripts/plot_crater_retrieval.py": {
+        "path": "scripts/plot_crater_retrieval.py",
+        "sha256": "850b60317325a1970efb590d4aa2f90a5411416a2e44667440367f3b671839af"
+      },
+      "scripts/plot_dataset_geography.py": {
+        "path": "scripts/plot_dataset_geography.py",
+        "sha256": "4fa4fdb53424487831371567a86815ffff6f9032be049b3c9dddeecc60e5d13a"
+      },
+      "scripts/plot_regional_errors.py": {
+        "path": "scripts/plot_regional_errors.py",
+        "sha256": "5e1e5bbb3551148d4295e6245e09b3167b547891fe2bdd1cb269f7fba273bf4b"
+      },
+      "scripts/sans_figure_style.py": {
+        "path": "scripts/sans_figure_style.py",
+        "sha256": "48ef515e852ac31590f7ed722ae8b5516b79aee994adafd6e3096c94bfa3be06"
+      },
+      "scripts/tex_table.py": {
+        "path": "scripts/tex_table.py",
+        "sha256": "27569c91df2682f17fbf77e7057ebc60f2b16ee070437e23da2cd4e8fdcb005c"
+      },
+      "tests/__init__.py": {
+        "path": "tests/__init__.py",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tests/test_class_contrasts_plot.py": {
+        "path": "tests/test_class_contrasts_plot.py",
+        "sha256": "f4b1b789e79e330e961fb0893943bf76b419da7fe14421c05889aeb0868329ea"
+      },
+      "tests/test_class_ranking_plot.py": {
+        "path": "tests/test_class_ranking_plot.py",
+        "sha256": "9ad7b5ce7dc778a2ffa66c0125bd8c591575802d186dd129810c8d39302f64d2"
+      },
+      "tests/test_class_retrieval_plot.py": {
+        "path": "tests/test_class_retrieval_plot.py",
+        "sha256": "d0fa69bac18cad7f0c0a0951ae94b8015ff5360942580781f52b26dcb64d16b7"
+      },
+      "tests/test_crater_retrieval_plot.py": {
+        "path": "tests/test_crater_retrieval_plot.py",
+        "sha256": "cc17dbdca38097ea67e4d4ace25f5b67e5b75b7ed55bf912d368b28c15bd53b4"
+      },
+      "tests/test_dataset_geography_plot.py": {
+        "path": "tests/test_dataset_geography_plot.py",
+        "sha256": "7f9117be2bfbe01c3f016a4fd28970885881bf0540774538edaca814f20f4ae3"
+      },
+      "tests/test_regional_errors_plot.py": {
+        "path": "tests/test_regional_errors_plot.py",
+        "sha256": "0a36d4207c32c7e1812169b6f318de56b90e350a1b265bf11f874066c639c38f"
+      }
+    },
+    "repository": "magnaprog/CETUS"
+  }
+}

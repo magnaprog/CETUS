@@ -1,0 +1,11 @@
+# Fitting models on Titan
+
+The [native runner](../docs/classifiers.md) extracts features once per encoder and region, fits linear classifiers by stochastic gradient descent, and evaluates cosine nearest neighbors. Choose it for these comparisons on fixed DINOv2, DOFA, CROMA or untrained ViT features. To recalculate metrics from existing predictions, choose the [experiment](../experiments/README.md).
+
+| What do you want to fit? | Implementation and prerequisites |
+| --- | --- |
+| Compare pretrained and random DINOv2 features with the same logistic classifier, train ResNet18 from either initialization, or vary scaling and regularization in logistic regression | [Encoder comparisons](encoder-comparisons/README.md). Image jobs need the processed Titan tiles, their geographic splits, the model assets and a job specification. The fitting study starts from the feature caches named in its protocol. [Input and model contracts](encoder-comparisons/CONTRACTS.md) |
+| Compare two denominators in class-weighted cross entropy | [ResNet18 loss normalization](loss-normalization/README.md). In addition to the images and job specification, training needs the matching control fit's initial, selected and final states. The [saved results](../experiments/loss-normalization/README.md) support a CPU check of all fifteen comparisons. |
+| Fine-tune the last two DOFA encoder blocks and classifier at band inputs 13.78 and 3.75 | [DOFA training and replay](dofa-finetuning/README.md). The execution contract binds the original source, checkpoint, data and runtime. The runner and reference training module have separate import roots. The [DOFA records](../experiments/dofa/README.md) support checking the fifty fits from their saved predictions. |
+
+Start in the chosen package directory. Its README specifies the Python environment and which local modules the runner must import. For the encoder comparison and loss-normalization runners, preparation checks the files named in the job specification. Inspect `ready` and `missing_prerequisites` before adding `--execute`. Use the [data access guide](../experiments/encoder-comparisons/DATA_ACCESS.md) to distinguish downloadable Titan images from the model assets and retained training states each experiment needs.

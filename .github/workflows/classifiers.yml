@@ -1,0 +1,52 @@
+name: Classifier library and wheel
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    env:
+      CUDA_VISIBLE_DEVICES: ""
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -e '.[test]'
+      - run: python -m pytest -q
+      - run: python -m scripts.run_probing --help
+      - name: Build the source distribution and a wheel from it
+        run: |
+          python -m pip install build
+          python -m build --outdir "$RUNNER_TEMP/dist"
+      - name: Check the installed library outside the checkout
+        working-directory: ${{ runner.temp }}
+        run: |
+          python -m pip install --no-deps --force-reinstall "$RUNNER_TEMP"/dist/*.whl
+          python -I - <<'PY'
+          import os
+          import sysconfig
+          from importlib.metadata import distribution
+          from pathlib import Path
+
+          import cetus_sar
+          from cetus_sar.evaluation.metrics import compute_mmd
+
+          source = Path(os.environ["GITHUB_WORKSPACE"])
+          installed = Path(sysconfig.get_path("purelib")) / "cetus_sar"
+          assert Path(cetus_sar.__file__).resolve() == installed / "__init__.py"
+          points = [[0.0], [1.0]]
+          assert compute_mmd(points, points, gamma=1.0) == 0.0
+          for path in (source / "cetus_sar").rglob("*.py"):
+              assert (installed / path.relative_to(source / "cetus_sar")).read_bytes() == path.read_bytes(), path
+
+          dist = distribution("cetus-sar")
+          for name in ("LICENSE", "licenses/CROMA-LICENSE"):
+              assert name in dist.metadata.get_all("License-File", [])
+              record, = [p for p in dist.files if str(p).endswith(".dist-info/licenses/" + name)]
+              assert dist.locate_file(record).read_bytes() == (source / name).read_bytes(), name
+          PY

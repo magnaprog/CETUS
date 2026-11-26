@@ -1,0 +1,232 @@
+{
+  "bundle_type": "scientific_results_and_source",
+  "code_included": true,
+  "finetuning_included": true,
+  "full_catalog_tile_arrays_included": false,
+  "packages": {
+    "adaptation_controls": {
+      "SHA256SUMS_sha256": "0915e639219a9a8230e00eccd5b788ad779d449107bf6191adbf5c79a090b0d1",
+      "path": "experiments/adaptation-controls"
+    },
+    "encoder_comparisons": {
+      "SHA256SUMS_sha256": "39f67cd49ce5ccd0e6746264eb97e38070b42a0a4df2ea0e104b824d21db20a7",
+      "accepted_source_revision": "9089214a5a6134a088eed058b02df6e021fe80dc",
+      "archives": {
+        "followup-supplement.zip": {
+          "archive_entries": 84,
+          "bytes": 4320495,
+          "copied_without_changes": false,
+          "original_archive_bytes": 4385713,
+          "original_archive_sha256": "6a6179b76278d7fac55924643a24133d9304deb8a77d1706316e1d171d775eaf",
+          "reconstruction_dependencies": [
+            {
+              "archive": "scientific-supplement.zip",
+              "consumer": "coverage/analyze_sar_coverage.py",
+              "scope": "Coverage only; map-vote replay is standalone.",
+              "sha256": "5169c9ec1a2e7ac8c5f78499064d2399b196225bb04423ac9a78795314a92dcc"
+            }
+          ],
+          "sha256": "7d8292c323da41e184af74b9f09d59528c70d8a5fc33d272145bf79dd176c611",
+          "uncompressed_bytes": 13085506
+        },
+        "initialization-supplement.zip": {
+          "archive_entries": 19,
+          "bytes": 35858028,
+          "copied_without_changes": true,
+          "lineage_dependencies": [
+            {
+              "archive": "scientific-supplement.zip",
+              "scope": "Preserved catalog and split bytes; this ZIP is not needed to run reconstruct.py.",
+              "sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d"
+            }
+          ],
+          "original_archive_bytes": 35858028,
+          "original_archive_sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+          "reconstruction_dependencies": [],
+          "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+          "uncompressed_bytes": 46445129
+        },
+        "reassessment-supplement.zip": {
+          "archive_entries": 54,
+          "bytes": 32559371,
+          "copied_without_changes": true,
+          "original_archive_bytes": 32559371,
+          "original_archive_sha256": "7c4a2f80e53b0c7834e526d10a4f334da40d376ba9a5c74f218505f6ec7c8dff",
+          "reconstruction_dependencies": [
+            {
+              "archive": "initialization-supplement.zip",
+              "consumer": "check.py",
+              "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486"
+            }
+          ],
+          "sha256": "7c4a2f80e53b0c7834e526d10a4f334da40d376ba9a5c74f218505f6ec7c8dff",
+          "uncompressed_bytes": 32881967
+        },
+        "scientific-supplement.zip": {
+          "archive_entries": 203,
+          "bytes": 49528151,
+          "copied_without_changes": false,
+          "original_archive_bytes": 49621594,
+          "original_archive_sha256": "67b6aa65be5bab9b7cbe83df90aafcf7b479117291562471652f59ed7f182a1d",
+          "reconstruction_dependencies": [],
+          "sha256": "5169c9ec1a2e7ac8c5f78499064d2399b196225bb04423ac9a78795314a92dcc",
+          "uncompressed_bytes": 63524018
+        }
+      },
+      "file_count": 11,
+      "path": "experiments/encoder-comparisons",
+      "previous_public_package": {
+        "SHA256SUMS_sha256": "6b714a373341e80cc0d38e186d9239eabbbf5d4d95d93abfa46bce169c647607",
+        "public_commit": "5b4368f4104927e3565f3b93c2e896898db1ab41"
+      },
+      "provenance": "experiments/encoder-comparisons/provenance.json",
+      "scope": "Reconstruct saved Titan results from four public archives.",
+      "totals": {
+        "archive_bytes": 122266045,
+        "archive_entries": 360,
+        "archives": 4,
+        "entry_count_note": "Entries overlap between archives; 360 is not a unique scientific-file count.",
+        "uncompressed_bytes": 155936620
+      }
+    },
+    "encoder_comparisons_training_source": {
+      "SHA256SUMS_sha256": "be4b7b4caf533fe2b535fd23d045a157c135496b3aa28725210f6067ca20d11c",
+      "SOURCE_EXPORT_sha256": "3dc15d44239e2b4a423f3c176323edd3caf95055ed5e1d8d35ad9798db188fd8",
+      "exported_from": {
+        "commit": "9089214a5a6134a088eed058b02df6e021fe80dc",
+        "repository": "magnaprog/TitanSAR-dev",
+        "tree": "8e63b400ad214dd6c867879ca1c4701957bae501"
+      },
+      "file_count": 60,
+      "manifest": "training/encoder-comparisons/SOURCE_EXPORT.json",
+      "path": "training/encoder-comparisons",
+      "previous_public_package": {
+        "SHA256SUMS_sha256": "569fbf54270e020b81491bbeb1d2b4707639ddd2c8739bcf0b7ddb8d62ec943e",
+        "SOURCE_EXPORT_sha256": "2febc5b1bf9921aefaed0190fe18aea13ce72b51e83e35960886e27bec23b0e3",
+        "public_commit": "d70f7008a8adfd0180d81babd412435399d85fd6"
+      },
+      "scientific_producers": {
+        "later_30_saved_epoch100_evaluations": "93ac7868baf199782f1e43c745f68dbd28a2755b",
+        "original_80_cpu_fits": "56b3356a937021b91152de40a203ccc871db4c59",
+        "original_90_cell_initialization_study": "1f3fc8fe0e831777e3188d70caf2c5450b656333"
+      },
+      "scope": "Encoder training source and CPU tests. The package guide lists the data and weights needed for training."
+    },
+    "longitude_benchmark": {
+      "SHA256SUMS_sha256": "d8409ba708e7df53d177ef75040701c990134e6eba85b8c25f760acc88804e84",
+      "path": "experiments/longitude-benchmark",
+      "source_benchmark_id": "TitanSAR-HiSAR-IMG-longitude-review-20260929"
+    },
+    "regional_predictions": {
+      "SHA256SUMS_sha256": "a261a921498661607573f9d7e5bea4e8ac1b5c3142e788c705dcfa24fdfd2f00",
+      "path": "experiments/regional-predictions"
+    },
+    "terrain_interpretation": {
+      "SHA256SUMS_sha256": "427caa16e1ba2cb0dc21a9d63693ebfef40bace42b95ed73fd54f25e64c20a68",
+      "path": "experiments/terrain-interpretation",
+      "previous_public_package": {
+        "SHA256SUMS_sha256": "a4eab0a2d502b0815c96581ea9c890103df5f413dd3500fab2e17d19fb7fed4b",
+        "public_commit": "c712044e7a4706d50a640670bb0e1852902403f8"
+      }
+    }
+  },
+  "processed_titan_image_asset": {
+    "archive": "titan-images.tar.zst",
+    "archive_bytes": 1312278780,
+    "archive_sha256": "3ea1c147af5dd6daf663da2d8bc1bdf1c822faf0d6b6764b77ce2a3361392aad",
+    "checksums": "release/titan-images/SHA256SUMS.release",
+    "checksums_sha256": "ce9046b70cd320e65a67d17539d0a4a640496b769bcfe28dfac63ae5bc181bfc",
+    "notice": "release/titan-images/RELEASE_NOTICE.md",
+    "notice_sha256": "9a3d4dd3096f89e1dfd52ee78a77b6cdee2b2a0b9a8ffcf73c56cb5d5c76eca3",
+    "source_archive": {
+      "bytes": 1312276696,
+      "notice_sha256": "3533daf077c42fcb6edbba24fdc433ebd761220fa97b2d1906cabf9589f73880",
+      "scope": "The earlier public collection supplied the original image arrays, catalog and split records.",
+      "sha256": "313a04c69460bbf8fcf4e70968c2202dac90e5ea42db5614084c01c7ab2149ef"
+    },
+    "tag": "v0.2.0",
+    "tile_count": 23380
+  },
+  "repository_status": "The repository contains image catalogs, geographic splits, fitted-model results, reconstruction code and model implementations. See release/inventory.json for the versioned data packages.",
+  "schema_version": "2.0.0",
+  "software": {
+    "development_source_commit": "0257a36197c51eda0a31768531ea26eef9887a6e",
+    "guide": "docs/classifiers.md",
+    "manifest": "release/software-sources.json",
+    "manifest_sha256": "3d510660d9528a11160a8f9c408fbe63f587f856ff89c73a287ab764f8e22a5d"
+  },
+  "source_manifest": {
+    "repository": "magnaprog/CETUS",
+    "scope": "Original catalog, result and tile export records and scientific package identities.",
+    "sha256": "f9d4674422620dcc7e2d862b039e77fc42b3c68a42a1a0d00ac0879a16d1b8af",
+    "source_commit": "60682dc84c80910a25135252bec3c38e532cd812"
+  },
+  "spatial_block_source_records": {
+    "catalogs": {
+      "earth": {
+        "filename": "earth_catalog.json",
+        "sha256": "6185fab2b731ef74d64216cf04dee563656030cb4ac66d6771d10413dccaf3df"
+      },
+      "titan": {
+        "filename": "titan_catalog.json",
+        "sha256": "6fe39b659d0840e15b062c95d405f3cd9b34790303a97fa8c8206528c6a3754d"
+      },
+      "venus": {
+        "filename": "venus_catalog.json",
+        "sha256": "b4bc10e58d4812c090ef4cabba45c75735430525aadaf34f6c84dce2257706b8"
+      }
+    },
+    "results": {
+      "aggregate_files": [
+        "baseline_results.json",
+        "coral_results.json",
+        "finetuning_results.json",
+        "probing_cv_results.json",
+        "label_efficiency_croma_results.json",
+        "label_efficiency_dinov2_results.json",
+        "label_efficiency_dofa_results.json",
+        "label_efficiency_random_init_results.json"
+      ],
+      "encoding": "Original aggregate JSON files are compacted for distribution. Added experiment files use indented JSON.",
+      "experiment_export": "Existing experiment records are grouped by analysis. Finite numerical values are preserved. In display_rendering_results.json, undefined Hummocky recall is stored as null. Each file lists its source filenames. Where an export selects part of a source object, its metadata identifies retained and omitted fields.",
+      "experiment_files": [
+        "constrained_training_results.json",
+        "display_rendering_results.json",
+        "quantization_results.json",
+        "smoothing_results.json",
+        "preprocessing_mmd_results.json",
+        "source_site_sensitivity_results.json"
+      ],
+      "index": "data/results/index.json",
+      "label_efficiency_split": [
+        "label_efficiency_croma_results.json",
+        "label_efficiency_dinov2_results.json",
+        "label_efficiency_dofa_results.json",
+        "label_efficiency_random_init_results.json"
+      ],
+      "max_file_bytes": 8000000,
+      "omission_scope": "omitted_per_tile_keys applies to aggregate_files, not the catalogs, Selk records, or added experiment files.",
+      "omitted_per_tile_keys": [
+        "labels",
+        "predictions",
+        "probabilities",
+        "tile_ids"
+      ],
+      "supplementary_result_files": [
+        "selk_relative_uncertainty_results.json",
+        "venus_domain_gap.json"
+      ]
+    },
+    "tiles": {
+      "included": false,
+      "integrity_fields": {
+        "earth": "sha256",
+        "titan": "tile_sha256",
+        "venus": "tile_sha256"
+      }
+    }
+  },
+  "tile_array_scope": "60 follow-up SAR inspection packets and 37 reassessment SAR/map excerpts; not asserted to be disjoint.",
+  "tile_arrays_included": true,
+  "version": "v0.2.0"
+}

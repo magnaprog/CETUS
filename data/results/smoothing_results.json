@@ -1,0 +1,899 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_description": "Gaussian smoothing of normalized Earth images at the output grid, with transfer and Earth validation macro recall.",
+  "source_filenames": [
+    "ml_croma.json",
+    "ml_dinov2.json",
+    "ml_dofa.json",
+    "texture_stats.json",
+    "sigma_match.json",
+    "exp_multilook.py",
+    "measure_texture.py",
+    "refine_sigma.py"
+  ],
+  "metadata": {
+    "accuracy": "Macro recall is averaged over the probe seeds and stored as a fraction. The records omit seed identifiers.",
+    "evaluation": "transfer_macro evaluates Titan test tiles restricted to Earth-supported classes; earth_val_macro evaluates Earth validation tiles.",
+    "smoothing": "Variant sigma values are Gaussian standard deviations in output-grid pixels, applied after normalization with nearest boundary handling. Smoothing follows grid formation; multilooking averages looks before grid formation.",
+    "texture": "lag1 averages horizontal and vertical lag-1 correlations; lapvar_norm is Laplacian variance divided by image variance. Both are dimensionless and mix scene texture with speckle. They do not estimate the equivalent number of looks.",
+    "texture_sampling": "texture_stats uses up to 250 training tiles per domain, with sampling seed 0. sigma_match uses up to 150 Earth training tiles with sampling seed 0. best_lag1 and best_lapvar select the closest tested sigma. The best_* fields select among sampled scales.",
+    "texture_selection": "earth and titan are retained from texture_stats.json. Its coarse sweep and matched_sigma are omitted. The sigma_match object contains all of sigma_match.json and supplies the finer sweep.",
+    "mmd": "mmd stores a single MMD^2 estimate. For the paper's repeated estimates, match model, variant, and fold to mmd_repeated in preprocessing_mmd_results.json.",
+    "baseline_feat_maxdiff": "Maximum absolute difference between re-extracted baseline features and cached baseline Earth training features.",
+    "row_key": [
+      "model",
+      "variant",
+      "fold"
+    ]
+  },
+  "records": [
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 0,
+      "transfer_macro": 0.3614187325707349,
+      "earth_val_macro": 0.40750000000000003,
+      "mmd": 0.4239425828456199,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.50",
+      "fold": 0,
+      "transfer_macro": 0.33438765630321604,
+      "earth_val_macro": 0.4,
+      "mmd": 0.30618052187802314,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65",
+      "fold": 0,
+      "transfer_macro": 0.33116442855057654,
+      "earth_val_macro": 0.4,
+      "mmd": 0.29142369181900585,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.75",
+      "fold": 0,
+      "transfer_macro": 0.18125577774534135,
+      "earth_val_macro": 0.4125,
+      "mmd": 0.3412171279372944,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth1.00",
+      "fold": 0,
+      "transfer_macro": 0.1567627596944485,
+      "earth_val_macro": 0.41000000000000003,
+      "mmd": 0.4105159565677122,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65+displaydn",
+      "fold": 0,
+      "transfer_macro": 0.35331010071522406,
+      "earth_val_macro": 0.41,
+      "mmd": 0.19309154854130073,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 1,
+      "transfer_macro": 0.32022922005247845,
+      "earth_val_macro": 0.40750000000000003,
+      "mmd": 0.4464727470334018,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.50",
+      "fold": 1,
+      "transfer_macro": 0.32270300317838874,
+      "earth_val_macro": 0.4,
+      "mmd": 0.31399412592289744,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65",
+      "fold": 1,
+      "transfer_macro": 0.35201584395732866,
+      "earth_val_macro": 0.4,
+      "mmd": 0.2781362311242873,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.75",
+      "fold": 1,
+      "transfer_macro": 0.17489897181533298,
+      "earth_val_macro": 0.4125,
+      "mmd": 0.3216509698412614,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth1.00",
+      "fold": 1,
+      "transfer_macro": 0.17863490012583796,
+      "earth_val_macro": 0.41000000000000003,
+      "mmd": 0.3970955234226684,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65+displaydn",
+      "fold": 1,
+      "transfer_macro": 0.3630510799192234,
+      "earth_val_macro": 0.41,
+      "mmd": 0.18079346106939398,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 2,
+      "transfer_macro": 0.27172237830439516,
+      "earth_val_macro": 0.40750000000000003,
+      "mmd": 0.44563352168078485,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.50",
+      "fold": 2,
+      "transfer_macro": 0.25981200350339895,
+      "earth_val_macro": 0.4,
+      "mmd": 0.31991366707229907,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65",
+      "fold": 2,
+      "transfer_macro": 0.18523168177306948,
+      "earth_val_macro": 0.4,
+      "mmd": 0.2856813963446526,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.75",
+      "fold": 2,
+      "transfer_macro": 0.2029157961979021,
+      "earth_val_macro": 0.4125,
+      "mmd": 0.3306661204114625,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth1.00",
+      "fold": 2,
+      "transfer_macro": 0.1839076645117424,
+      "earth_val_macro": 0.41000000000000003,
+      "mmd": 0.4138315197251128,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65+displaydn",
+      "fold": 2,
+      "transfer_macro": 0.18882330443651202,
+      "earth_val_macro": 0.41,
+      "mmd": 0.1888533519791512,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 3,
+      "transfer_macro": 0.3065561666232385,
+      "earth_val_macro": 0.40750000000000003,
+      "mmd": 0.440087906790639,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.50",
+      "fold": 3,
+      "transfer_macro": 0.32983011096537584,
+      "earth_val_macro": 0.4,
+      "mmd": 0.3129400109879168,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65",
+      "fold": 3,
+      "transfer_macro": 0.26691126592630793,
+      "earth_val_macro": 0.4,
+      "mmd": 0.28703638570670476,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.75",
+      "fold": 3,
+      "transfer_macro": 0.17254166809081456,
+      "earth_val_macro": 0.4125,
+      "mmd": 0.3367033610072607,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth1.00",
+      "fold": 3,
+      "transfer_macro": 0.16429787300505572,
+      "earth_val_macro": 0.41000000000000003,
+      "mmd": 0.41444928322070507,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65+displaydn",
+      "fold": 3,
+      "transfer_macro": 0.39170486231338086,
+      "earth_val_macro": 0.41,
+      "mmd": 0.18496305612711894,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 4,
+      "transfer_macro": 0.35596180254448656,
+      "earth_val_macro": 0.40750000000000003,
+      "mmd": 0.4192729134785329,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.50",
+      "fold": 4,
+      "transfer_macro": 0.34421127032846977,
+      "earth_val_macro": 0.4,
+      "mmd": 0.3012136696265755,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65",
+      "fold": 4,
+      "transfer_macro": 0.3288654457632466,
+      "earth_val_macro": 0.4,
+      "mmd": 0.29429833902607705,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.75",
+      "fold": 4,
+      "transfer_macro": 0.19551052344851952,
+      "earth_val_macro": 0.4125,
+      "mmd": 0.34855700218287033,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth1.00",
+      "fold": 4,
+      "transfer_macro": 0.18844067755886001,
+      "earth_val_macro": 0.41000000000000003,
+      "mmd": 0.4259710344681332,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "smooth0.65+displaydn",
+      "fold": 4,
+      "transfer_macro": 0.3798784490454191,
+      "earth_val_macro": 0.41,
+      "mmd": 0.18978948799699258,
+      "baseline_feat_maxdiff": 5.960464477539062e-07
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 0,
+      "transfer_macro": 0.2486418041161874,
+      "earth_val_macro": 0.7825,
+      "mmd": 0.1202992014634009,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.50",
+      "fold": 0,
+      "transfer_macro": 0.23621624580353232,
+      "earth_val_macro": 0.7575,
+      "mmd": 0.11473315801456085,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65",
+      "fold": 0,
+      "transfer_macro": 0.22577482605945604,
+      "earth_val_macro": 0.755,
+      "mmd": 0.08998495717562105,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.75",
+      "fold": 0,
+      "transfer_macro": 0.2296383739600058,
+      "earth_val_macro": 0.7233333333333334,
+      "mmd": 0.09167505711753099,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth1.00",
+      "fold": 0,
+      "transfer_macro": 0.21740244733128983,
+      "earth_val_macro": 0.6799999999999999,
+      "mmd": 0.11235213482008022,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65+displaydn",
+      "fold": 0,
+      "transfer_macro": 0.22677565318931542,
+      "earth_val_macro": 0.7525000000000001,
+      "mmd": 0.08599154489119665,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 1,
+      "transfer_macro": 0.24651310080220662,
+      "earth_val_macro": 0.7825,
+      "mmd": 0.113864336468804,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.50",
+      "fold": 1,
+      "transfer_macro": 0.2336931481035216,
+      "earth_val_macro": 0.7575,
+      "mmd": 0.10626181957683778,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65",
+      "fold": 1,
+      "transfer_macro": 0.2226165653359507,
+      "earth_val_macro": 0.755,
+      "mmd": 0.08288567806564417,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.75",
+      "fold": 1,
+      "transfer_macro": 0.21900874900759465,
+      "earth_val_macro": 0.7233333333333334,
+      "mmd": 0.08676984447104852,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth1.00",
+      "fold": 1,
+      "transfer_macro": 0.2156084575070456,
+      "earth_val_macro": 0.6799999999999999,
+      "mmd": 0.11031138358522874,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65+displaydn",
+      "fold": 1,
+      "transfer_macro": 0.21914667853567088,
+      "earth_val_macro": 0.7525000000000001,
+      "mmd": 0.07884929199873769,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 2,
+      "transfer_macro": 0.24782258064516127,
+      "earth_val_macro": 0.7825,
+      "mmd": 0.11535447266085541,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.50",
+      "fold": 2,
+      "transfer_macro": 0.23194898641794565,
+      "earth_val_macro": 0.7575,
+      "mmd": 0.1079460831376009,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65",
+      "fold": 2,
+      "transfer_macro": 0.21998692240627724,
+      "earth_val_macro": 0.755,
+      "mmd": 0.08173477680436303,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.75",
+      "fold": 2,
+      "transfer_macro": 0.2177644580063935,
+      "earth_val_macro": 0.7233333333333334,
+      "mmd": 0.08484422266673619,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth1.00",
+      "fold": 2,
+      "transfer_macro": 0.21060956117407734,
+      "earth_val_macro": 0.6799999999999999,
+      "mmd": 0.1111329075405435,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65+displaydn",
+      "fold": 2,
+      "transfer_macro": 0.21929453647195585,
+      "earth_val_macro": 0.7525000000000001,
+      "mmd": 0.07665751322314562,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 3,
+      "transfer_macro": 0.25673414031745373,
+      "earth_val_macro": 0.7825,
+      "mmd": 0.10683824069874548,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.50",
+      "fold": 3,
+      "transfer_macro": 0.23728092147075097,
+      "earth_val_macro": 0.7575,
+      "mmd": 0.09973650895016384,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65",
+      "fold": 3,
+      "transfer_macro": 0.22391925007095975,
+      "earth_val_macro": 0.755,
+      "mmd": 0.07246702097715119,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.75",
+      "fold": 3,
+      "transfer_macro": 0.22447612038334594,
+      "earth_val_macro": 0.7233333333333334,
+      "mmd": 0.07401388168819112,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth1.00",
+      "fold": 3,
+      "transfer_macro": 0.2190909366732202,
+      "earth_val_macro": 0.6799999999999999,
+      "mmd": 0.09861008838799101,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65+displaydn",
+      "fold": 3,
+      "transfer_macro": 0.2216143397576026,
+      "earth_val_macro": 0.7525000000000001,
+      "mmd": 0.06773426233406599,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 4,
+      "transfer_macro": 0.2542196951921702,
+      "earth_val_macro": 0.7825,
+      "mmd": 0.1113781469019568,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.50",
+      "fold": 4,
+      "transfer_macro": 0.2403477026141411,
+      "earth_val_macro": 0.7575,
+      "mmd": 0.10309096798450501,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65",
+      "fold": 4,
+      "transfer_macro": 0.23042753869430488,
+      "earth_val_macro": 0.755,
+      "mmd": 0.07644174500232859,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.75",
+      "fold": 4,
+      "transfer_macro": 0.22900553816031138,
+      "earth_val_macro": 0.7233333333333334,
+      "mmd": 0.07974448324170447,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth1.00",
+      "fold": 4,
+      "transfer_macro": 0.21713173324055873,
+      "earth_val_macro": 0.6799999999999999,
+      "mmd": 0.10704620329011971,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "smooth0.65+displaydn",
+      "fold": 4,
+      "transfer_macro": 0.22906350882302967,
+      "earth_val_macro": 0.7525000000000001,
+      "mmd": 0.07149901110714363,
+      "baseline_feat_maxdiff": 4.00543212890625e-05
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 0,
+      "transfer_macro": 0.25513912042549813,
+      "earth_val_macro": 0.5475,
+      "mmd": 0.18319933049628745,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.50",
+      "fold": 0,
+      "transfer_macro": 0.2656940272517522,
+      "earth_val_macro": 0.5315,
+      "mmd": 0.20879790535262932,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65",
+      "fold": 0,
+      "transfer_macro": 0.27860090216052463,
+      "earth_val_macro": 0.5185000000000001,
+      "mmd": 0.22993840274738953,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.75",
+      "fold": 0,
+      "transfer_macro": 0.27947972763612433,
+      "earth_val_macro": 0.512,
+      "mmd": 0.24234305411802748,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth1.00",
+      "fold": 0,
+      "transfer_macro": 0.28548128458644784,
+      "earth_val_macro": 0.495,
+      "mmd": 0.274338054838548,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65+displaydn",
+      "fold": 0,
+      "transfer_macro": 0.24083780188319284,
+      "earth_val_macro": 0.46749999999999997,
+      "mmd": 0.16681579544265324,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 1,
+      "transfer_macro": 0.252801803059644,
+      "earth_val_macro": 0.5475,
+      "mmd": 0.16369595705896522,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.50",
+      "fold": 1,
+      "transfer_macro": 0.24336385708464264,
+      "earth_val_macro": 0.5315,
+      "mmd": 0.18812778726702628,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65",
+      "fold": 1,
+      "transfer_macro": 0.23492957179991153,
+      "earth_val_macro": 0.5185000000000001,
+      "mmd": 0.20854465731961647,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.75",
+      "fold": 1,
+      "transfer_macro": 0.2346163984765571,
+      "earth_val_macro": 0.512,
+      "mmd": 0.22060912345388695,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth1.00",
+      "fold": 1,
+      "transfer_macro": 0.22849162160719128,
+      "earth_val_macro": 0.495,
+      "mmd": 0.2518728520123775,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65+displaydn",
+      "fold": 1,
+      "transfer_macro": 0.23487762539893847,
+      "earth_val_macro": 0.46749999999999997,
+      "mmd": 0.14790349588747131,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 2,
+      "transfer_macro": 0.27296608881207945,
+      "earth_val_macro": 0.5475,
+      "mmd": 0.18556806351383448,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.50",
+      "fold": 2,
+      "transfer_macro": 0.27239337519767387,
+      "earth_val_macro": 0.5315,
+      "mmd": 0.21334198537193838,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65",
+      "fold": 2,
+      "transfer_macro": 0.26833766245510776,
+      "earth_val_macro": 0.5185000000000001,
+      "mmd": 0.2358352590145366,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.75",
+      "fold": 2,
+      "transfer_macro": 0.2632324385458668,
+      "earth_val_macro": 0.512,
+      "mmd": 0.2489144849154532,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth1.00",
+      "fold": 2,
+      "transfer_macro": 0.24300746006769297,
+      "earth_val_macro": 0.495,
+      "mmd": 0.2824030073857421,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65+displaydn",
+      "fold": 2,
+      "transfer_macro": 0.2748478640748651,
+      "earth_val_macro": 0.46749999999999997,
+      "mmd": 0.1743030796762164,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 3,
+      "transfer_macro": 0.2436696670487793,
+      "earth_val_macro": 0.5475,
+      "mmd": 0.17779611673048,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.50",
+      "fold": 3,
+      "transfer_macro": 0.24282506899249015,
+      "earth_val_macro": 0.5315,
+      "mmd": 0.20612122652004283,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65",
+      "fold": 3,
+      "transfer_macro": 0.24583895830978125,
+      "earth_val_macro": 0.5185000000000001,
+      "mmd": 0.22906294941990446,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.75",
+      "fold": 3,
+      "transfer_macro": 0.2472913006244105,
+      "earth_val_macro": 0.512,
+      "mmd": 0.24241424454054417,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth1.00",
+      "fold": 3,
+      "transfer_macro": 0.24984261374556022,
+      "earth_val_macro": 0.495,
+      "mmd": 0.2766433588141226,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65+displaydn",
+      "fold": 3,
+      "transfer_macro": 0.24420320275066,
+      "earth_val_macro": 0.46749999999999997,
+      "mmd": 0.16452012784808823,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 4,
+      "transfer_macro": 0.24794984604166864,
+      "earth_val_macro": 0.5475,
+      "mmd": 0.17761997274811625,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.50",
+      "fold": 4,
+      "transfer_macro": 0.24758426886403298,
+      "earth_val_macro": 0.5315,
+      "mmd": 0.20268214984752353,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65",
+      "fold": 4,
+      "transfer_macro": 0.23674775008023388,
+      "earth_val_macro": 0.5185000000000001,
+      "mmd": 0.22350034738176883,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.75",
+      "fold": 4,
+      "transfer_macro": 0.23307356435296436,
+      "earth_val_macro": 0.512,
+      "mmd": 0.23577351689631698,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth1.00",
+      "fold": 4,
+      "transfer_macro": 0.22526785304929192,
+      "earth_val_macro": 0.495,
+      "mmd": 0.2674688652254291,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "smooth0.65+displaydn",
+      "fold": 4,
+      "transfer_macro": 0.2390234727919502,
+      "earth_val_macro": 0.46749999999999997,
+      "mmd": 0.15946114620890817,
+      "baseline_feat_maxdiff": 7.62939453125e-06
+    }
+  ],
+  "texture_stats": {
+    "earth": {
+      "lag1": {
+        "median": 0.31914253378398666,
+        "mean": 0.37330450328670806,
+        "p25": 0.17216601566526088,
+        "p75": 0.510739091447193
+      },
+      "lapvar_norm": {
+        "median": 13.174708843231201,
+        "mean": 12.229286781787872,
+        "p25": 9.305254220962524,
+        "p75": 16.24764060974121
+      },
+      "n_tiles": 250
+    },
+    "titan": {
+      "lag1": {
+        "median": 0.8225652790267617,
+        "mean": 0.8293278758815218,
+        "p25": 0.7690627469500485,
+        "p75": 0.8993144922367247
+      },
+      "lapvar_norm": {
+        "median": 1.6425396800041199,
+        "mean": 1.6269381178990006,
+        "p25": 0.8456100076436996,
+        "p75": 2.2839547991752625
+      },
+      "n_tiles": 250
+    }
+  },
+  "sigma_match": {
+    "targets": {
+      "lag1": 0.8225652790267617,
+      "lapvar_norm": 1.6425396800041199
+    },
+    "sweep": {
+      "0.55": {
+        "lag1": 0.727927476322094,
+        "lapvar_norm": 3.809358835220337
+      },
+      "0.6": {
+        "lag1": 0.7902813041280238,
+        "lapvar_norm": 2.6350139379501343
+      },
+      "0.65": {
+        "lag1": 0.8374692812329785,
+        "lapvar_norm": 1.825071632862091
+      },
+      "0.7": {
+        "lag1": 0.8692940115179959,
+        "lapvar_norm": 1.2796472907066345
+      }
+    },
+    "best_lag1": "0.65",
+    "best_lapvar": "0.65"
+  }
+}

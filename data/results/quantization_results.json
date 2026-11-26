@@ -1,0 +1,503 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_description": "Quantization-only Earth-to-Titan transfer controls with unchanged baseline normalization endpoints.",
+  "source_filenames": [
+    "quant_croma.json",
+    "quant_dinov2.json",
+    "quant_dofa.json",
+    "exp_quant.py"
+  ],
+  "metadata": {
+    "accuracy": "Macro recall is averaged over the probe seeds and stored as a fraction. The records omit seed identifiers.",
+    "variants": "baseline retains continuous normalized values; quant256, quant64, and quant16 round normalized [0,1] images to the indicated number of levels.",
+    "mmd": "mmd stores the mean of repeated MMD^2 estimates.",
+    "gate": "Maximum absolute difference between re-extracted baseline features and cached baseline Earth training features.",
+    "row_key": [
+      "model",
+      "variant",
+      "fold"
+    ]
+  },
+  "records": [
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 0,
+      "macro": 0.3614187325707349,
+      "mmd": 0.42530366815591303,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant256",
+      "fold": 0,
+      "macro": 0.3612475896718881,
+      "mmd": 0.4255551111176157,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant64",
+      "fold": 0,
+      "macro": 0.36161675719001196,
+      "mmd": 0.42647946309180496,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant16",
+      "fold": 0,
+      "macro": 0.3689504797609262,
+      "mmd": 0.442482513674685,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 1,
+      "macro": 0.32022922005247845,
+      "mmd": 0.4398806430080478,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant256",
+      "fold": 1,
+      "macro": 0.3218081457799219,
+      "mmd": 0.44014205906012305,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant64",
+      "fold": 1,
+      "macro": 0.32169476197300045,
+      "mmd": 0.441138039241773,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant16",
+      "fold": 1,
+      "macro": 0.33738086261806816,
+      "mmd": 0.45825687766623324,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 2,
+      "macro": 0.27172237830439516,
+      "mmd": 0.4316757379440822,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant256",
+      "fold": 2,
+      "macro": 0.2717587049536251,
+      "mmd": 0.4319164202054218,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant64",
+      "fold": 2,
+      "macro": 0.2717864639969045,
+      "mmd": 0.432846747041697,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant16",
+      "fold": 2,
+      "macro": 0.2784041579210591,
+      "mmd": 0.4488116846031247,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 3,
+      "macro": 0.3065561666232385,
+      "mmd": 0.4312910278925248,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant256",
+      "fold": 3,
+      "macro": 0.3063411128597976,
+      "mmd": 0.43151704067673985,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant64",
+      "fold": 3,
+      "macro": 0.30554960489274274,
+      "mmd": 0.4324457178872169,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant16",
+      "fold": 3,
+      "macro": 0.3098435247471477,
+      "mmd": 0.4482028341787624,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "baseline",
+      "fold": 4,
+      "macro": 0.35596180254448656,
+      "mmd": 0.425845071966738,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant256",
+      "fold": 4,
+      "macro": 0.3557102187681814,
+      "mmd": 0.42608579206682134,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant64",
+      "fold": 4,
+      "macro": 0.35617685630792745,
+      "mmd": 0.427033877130665,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "croma",
+      "variant": "quant16",
+      "fold": 4,
+      "macro": 0.36747726359446303,
+      "mmd": 0.443269957321154,
+      "gate": 5.960464477539062e-07
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 0,
+      "macro": 0.2486418041161874,
+      "mmd": 0.11922469477256907,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant256",
+      "fold": 0,
+      "macro": 0.24885418187125968,
+      "mmd": 0.11906773773529675,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant64",
+      "fold": 0,
+      "macro": 0.24904685447379943,
+      "mmd": 0.1188645483955261,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant16",
+      "fold": 0,
+      "macro": 0.25570415511117595,
+      "mmd": 0.11841705024054941,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 1,
+      "macro": 0.24651310080220662,
+      "mmd": 0.11808759477779651,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant256",
+      "fold": 1,
+      "macro": 0.24680635744573393,
+      "mmd": 0.11793149203575069,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant64",
+      "fold": 1,
+      "macro": 0.2470413993709432,
+      "mmd": 0.11766599052708178,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant16",
+      "fold": 1,
+      "macro": 0.24626915217360165,
+      "mmd": 0.11719188207115881,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 2,
+      "macro": 0.24782258064516127,
+      "mmd": 0.1105046554350499,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant256",
+      "fold": 2,
+      "macro": 0.24803618134263297,
+      "mmd": 0.11035651169225939,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant64",
+      "fold": 2,
+      "macro": 0.24780078465562333,
+      "mmd": 0.11007168086241047,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant16",
+      "fold": 2,
+      "macro": 0.25184248764893924,
+      "mmd": 0.10888204961064896,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 3,
+      "macro": 0.25673414031745373,
+      "mmd": 0.10562926553376153,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant256",
+      "fold": 3,
+      "macro": 0.2570105426573163,
+      "mmd": 0.10548307003621442,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant64",
+      "fold": 3,
+      "macro": 0.25594012832687146,
+      "mmd": 0.10521984907926087,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant16",
+      "fold": 3,
+      "macro": 0.25745204212901934,
+      "mmd": 0.10424619148217965,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "baseline",
+      "fold": 4,
+      "macro": 0.2542196951921702,
+      "mmd": 0.11437377737636391,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant256",
+      "fold": 4,
+      "macro": 0.25454021268045873,
+      "mmd": 0.1142247980035649,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant64",
+      "fold": 4,
+      "macro": 0.2536126955616506,
+      "mmd": 0.11398368407366219,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dinov2",
+      "variant": "quant16",
+      "fold": 4,
+      "macro": 0.26385192062374757,
+      "mmd": 0.11327240964707432,
+      "gate": 4.00543212890625e-05
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 0,
+      "macro": 0.25513912042549813,
+      "mmd": 0.1979951143670223,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant256",
+      "fold": 0,
+      "macro": 0.25521976558678844,
+      "mmd": 0.1983212507610916,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant64",
+      "fold": 0,
+      "macro": 0.25468261772516243,
+      "mmd": 0.1982750415356887,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant16",
+      "fold": 0,
+      "macro": 0.2561099032795827,
+      "mmd": 0.19810548273952322,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 1,
+      "macro": 0.252801803059644,
+      "mmd": 0.17046908064436553,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant256",
+      "fold": 1,
+      "macro": 0.2515578853756486,
+      "mmd": 0.17075443043935665,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant64",
+      "fold": 1,
+      "macro": 0.2528092618204285,
+      "mmd": 0.170666311378816,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant16",
+      "fold": 1,
+      "macro": 0.2535933757850893,
+      "mmd": 0.16984125278391268,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 2,
+      "macro": 0.27296608881207945,
+      "mmd": 0.1875909439685321,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant256",
+      "fold": 2,
+      "macro": 0.2729929705325096,
+      "mmd": 0.18789695832142733,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant64",
+      "fold": 2,
+      "macro": 0.2731716976467206,
+      "mmd": 0.18776676277199303,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant16",
+      "fold": 2,
+      "macro": 0.2721310008330475,
+      "mmd": 0.18683514567272763,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 3,
+      "macro": 0.2436696670487793,
+      "mmd": 0.17650527190853105,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant256",
+      "fold": 3,
+      "macro": 0.2436696670487793,
+      "mmd": 0.17678863763188435,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant64",
+      "fold": 3,
+      "macro": 0.24510427314928399,
+      "mmd": 0.17665170587639167,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant16",
+      "fold": 3,
+      "macro": 0.24615744459768657,
+      "mmd": 0.175437102683328,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "baseline",
+      "fold": 4,
+      "macro": 0.24794984604166864,
+      "mmd": 0.18399839791751071,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant256",
+      "fold": 4,
+      "macro": 0.24869058678240935,
+      "mmd": 0.18430898945645033,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant64",
+      "fold": 4,
+      "macro": 0.24812836979224512,
+      "mmd": 0.184245295204509,
+      "gate": 7.62939453125e-06
+    },
+    {
+      "model": "dofa",
+      "variant": "quant16",
+      "fold": 4,
+      "macro": 0.2521353777832697,
+      "mmd": 0.18385855733283962,
+      "gate": 7.62939453125e-06
+    }
+  ]
+}

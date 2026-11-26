@@ -1,0 +1,129 @@
+name: Reconstruct saved fits
+on: [push, pull_request]
+permissions:
+  contents: read
+
+jobs:
+  reconstruct:
+    name: ${{ matrix.experiment }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - experiment: class-ranking
+            output: class-ranking
+            needs_initialization: true
+            artifact: class-ranking-reconstruction
+          - experiment: loss-normalization
+            output: loss-comparison.json
+            needs_initialization: true
+            artifact: loss-comparison-reconstruction
+          - experiment: dofa/partial-training
+            output: dofa-partial.json
+            artifact: dofa-partial-reconstruction
+          - experiment: dofa/probability-scores
+            output: dofa-scores.json
+            artifact: dofa-scores-reconstruction
+    defaults:
+      run:
+        working-directory: experiments/${{ matrix.experiment }}
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONNOUSERSITE: "1"
+      CUDA_VISIBLE_DEVICES: ""
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - if: matrix.experiment == 'class-ranking'
+        run: |
+          python -m pip install --only-binary=:all: numpy==2.4.4
+      - name: Verify package and run tests
+        run: |
+          sha256sum -c SHA256SUMS
+          python -B -m unittest -v test_reconstruct
+      - name: Reconstruct the result
+        shell: bash
+        env:
+          NEEDS_INITIALIZATION: ${{ matrix.needs_initialization || false }}
+          OUTPUT: ${{ runner.temp }}/${{ matrix.output }}
+        run: |
+          inputs=()
+          if [[ "$NEEDS_INITIALIZATION" == true ]]; then
+            inputs+=(--initialization-zip "$GITHUB_WORKSPACE/experiments/encoder-comparisons/initialization-supplement.zip")
+          fi
+          python -B reconstruct.py "${inputs[@]}" --output "$OUTPUT"
+          sha256sum -c SHA256SUMS
+          test -z "$(git status --porcelain=v1)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ runner.temp }}/${{ matrix.output }}
+          if-no-files-found: warn
+
+  saved-prediction-reconstruction:
+    runs-on: ubuntu-24.04
+    env:
+      CUDA_VISIBLE_DEVICES: ""
+      PYTHONDONTWRITEBYTECODE: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      NUMEXPR_NUM_THREADS: "1"
+      MPLBACKEND: Agg
+      # Native export identity also verified by the completed independent rebuild.
+      ACCEPTANCE_SHA: 7734c1be30d721f6f0e4a40de58b3c08ba47ab67b94073fe9950748ac60b6711
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.3"
+      - name: Install pinned CPU reconstruction dependencies
+        run: |
+          python -c 'import sys; assert sys.version_info[:3] == (3, 12, 3)'
+          python -m venv "$RUNNER_TEMP/cetus-reconstruction-venv"
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -m pip install \
+            --only-binary=:all: --require-hashes \
+            -r experiments/adaptation-controls/code/requirements.txt
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -m pip check
+      - name: Verify and rebuild saved prediction package
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/cetus-matplotlib
+          TMPDIR: ${{ runner.temp }}/cetus-temporary
+        run: |
+          [[ "$ACCEPTANCE_SHA" =~ ^[0-9a-f]{64}$ ]]
+          mkdir -p "$MPLCONFIGDIR" "$TMPDIR"
+          PACKAGE="$GITHUB_WORKSPACE/experiments/adaptation-controls"
+          cd "$PACKAGE/code"
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -B \
+            -m scripts.verify_repaired_adaptation_release \
+            --package "$PACKAGE" \
+            --frozen-package "$PACKAGE/../longitude-benchmark" \
+            --auxiliary-package "$PACKAGE/../regional-predictions" \
+            --acceptance-sha256 "$ACCEPTANCE_SHA" \
+            --output "$RUNNER_TEMP/cetus-rebuilt-package"
+      - name: Reconstruct terrain interpretation results
+        env:
+          MPLCONFIGDIR: ${{ runner.temp }}/cetus-interpretation-matplotlib
+          TMPDIR: ${{ runner.temp }}/cetus-interpretation-temporary
+        run: |
+          mkdir -p "$MPLCONFIGDIR" "$TMPDIR"
+          PACKAGE="$GITHUB_WORKSPACE/experiments/terrain-interpretation"
+          cd "$PACKAGE/code"
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -B \
+            verify_reconstruction.py --experiments-root "$PACKAGE/.." \
+            --output "$RUNNER_TEMP/cetus-interpretation-rebuilt"
+      - name: Reconstruct classifier fits, coverage and initialization results
+        run: |
+          "$RUNNER_TEMP/cetus-reconstruction-venv/bin/python" -B \
+            experiments/encoder-comparisons/reconstruct.py \
+            --output "$RUNNER_TEMP/cetus-followup-reconstruction"

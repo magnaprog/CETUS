@@ -1,0 +1,297 @@
+{
+  "schema": "class-ranking-reproduction-contract-v1",
+  "scope": "Offline reproduction of accepted saved-score arithmetic; no model execution or refitting.",
+  "input": {
+    "filename": "initialization-supplement.zip",
+    "sha256": "ada744e9278f4fbac5f5f953b5688132ad0b080b35cff32ed23b7f02c3192486",
+    "bytes": 35858028,
+    "archive_code_executed": false
+  },
+  "populations": {
+    "catalog_tiles": 23380,
+    "distinct_test_tiles": 23246,
+    "class_order": [
+      "plains",
+      "dunes",
+      "hummocky",
+      "labyrinths",
+      "lakes",
+      "craters"
+    ],
+    "fold_counts": [
+      {
+        "test": {
+          "class_counts": [
+            2486,
+            492,
+            372,
+            51,
+            251,
+            8
+          ],
+          "total": 3660
+        },
+        "train": {
+          "class_counts": [
+            9700,
+            2363,
+            1962,
+            314,
+            141,
+            123
+          ],
+          "total": 14603
+        },
+        "val": {
+          "class_counts": [
+            2763,
+            1051,
+            345,
+            91,
+            91,
+            1
+          ],
+          "total": 4342
+        }
+      },
+      {
+        "test": {
+          "class_counts": [
+            2842,
+            1065,
+            380,
+            109,
+            100,
+            1
+          ],
+          "total": 4497
+        },
+        "train": {
+          "class_counts": [
+            8277,
+            1671,
+            1934,
+            187,
+            358,
+            115
+          ],
+          "total": 12542
+        },
+        "val": {
+          "class_counts": [
+            3729,
+            1130,
+            382,
+            156,
+            9,
+            14
+          ],
+          "total": 5420
+        }
+      },
+      {
+        "test": {
+          "class_counts": [
+            3956,
+            1164,
+            403,
+            175,
+            9,
+            14
+          ],
+          "total": 5721
+        },
+        "train": {
+          "class_counts": [
+            8171,
+            2383,
+            1174,
+            188,
+            375,
+            57
+          ],
+          "total": 12348
+        },
+        "val": {
+          "class_counts": [
+            2755,
+            305,
+            1125,
+            88,
+            97,
+            59
+          ],
+          "total": 4429
+        }
+      },
+      {
+        "test": {
+          "class_counts": [
+            2992,
+            349,
+            1142,
+            102,
+            102,
+            61
+          ],
+          "total": 4748
+        },
+        "train": {
+          "class_counts": [
+            8882,
+            2672,
+            1103,
+            320,
+            350,
+            23
+          ],
+          "total": 13350
+        },
+        "val": {
+          "class_counts": [
+            3034,
+            858,
+            443,
+            55,
+            28,
+            48
+          ],
+          "total": 4466
+        }
+      },
+      {
+        "test": {
+          "class_counts": [
+            3130,
+            888,
+            460,
+            61,
+            33,
+            48
+          ],
+          "total": 4620
+        },
+        "train": {
+          "class_counts": [
+            9600,
+            2538,
+            1875,
+            363,
+            192,
+            76
+          ],
+          "total": 14644
+        },
+        "val": {
+          "class_counts": [
+            2340,
+            486,
+            334,
+            44,
+            241,
+            8
+          ],
+          "total": 3453
+        }
+      }
+    ],
+    "role": "all original test-role tiles including partial SAR coverage",
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "display_regions": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "validated_input_cells": 90,
+    "scored_test_cells": 60
+  },
+  "models": {
+    "dino_c1": {
+      "architecture": "matched DINOv2 ViT-B/14",
+      "random_encoder_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "pretrained_encoder_seed_metadata": 42,
+      "pretrained_states": 1,
+      "classifier": "original training-standardized balanced C=1 logistic regression; saved probabilities only"
+    },
+    "final": {
+      "architecture": "ResNet18",
+      "initializations": [
+        "scratch",
+        "pretrained"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "loss": "original batch sum of class weights denominator",
+      "selection": "Keep original validation-selected epoch and per-fold/per-initialization LR; validate original tuning seed100, rates1e-4/1e-3/1e-2 and earliest maximum unrounded validation macro F1; lower LR resolves exact rate ties."
+    }
+  },
+  "metric": {
+    "scores": "saved class probability column, exact recorded numeric values; no logits, rounding, calibration or score pooling",
+    "class_target": "one vs rest",
+    "tie_rule": "descending exact score groups; consume whole tie groups",
+    "AP": "sum over distinct score groups of (new positives / total positives) * cumulative precision",
+    "interpolation": "none",
+    "no_positive_labels": "null AP and recall, explicit reason; not present in this primary grid",
+    "all_positive": "AP=1",
+    "reference": "K/N is the all-tied prevalence reference, not the exact finite-sample expected random AP",
+    "threshold_selection": false,
+    "curve_arrays": [
+      "thresholds",
+      "tp",
+      "fp",
+      "precision",
+      "recall"
+    ],
+    "curves": "all60 Craters curves, at all observed score groups; no added display endpoints"
+  },
+  "aggregation": {
+    "macro": "mean over all six class AP values in each cell; null if any undefined",
+    "regional": "seed means within each arm and fold; one pretrained DINO state versus five random states",
+    "contrasts": "pretrained minus baseline; CNN paired by seed, DINO one pretrained AP minus five-random-state mean",
+    "geographic": "equal mean over five regions, sample SD with ddof=1; no pooled score vectors",
+    "undefined": "null propagates; no silent class, seed or region omission",
+    "rows": {
+      "class": 360,
+      "regional": 140,
+      "contrasts": 70,
+      "geographic": 42
+    }
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "2.4.4",
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "acceptance": {
+    "scientific_result": "exact equality to packaged results.json after excluding only execution metadata",
+    "curves": "all300 arrays: same keys,dtype,shape,values",
+    "required_receipt": "reconstruction-check.json status reconstruction_verified"
+  },
+  "limits": [
+    "Exploratory analysis after inspection of multiclass errors and reused test regions.",
+    "Scores measure agreement with SAR-informed map labels, not independent geological detection or calibration.",
+    "Seeds are repeated training or initial states, not additional independent geographic regions.",
+    "Craters test counts8,1,14,61,48; the singleton region is sensitive to one positive rank and ties.",
+    "This package neither reruns model inference nor tests optimization adequacy, causal pretraining effects, alternate losses or epoch100 states."
+  ]
+}
