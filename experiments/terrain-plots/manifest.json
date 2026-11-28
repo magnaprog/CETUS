@@ -276,12 +276,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "NOTICE.md": {
-      "bytes": 3211,
-      "sha256": "28f75a2c3b56cc6af1fa82bc7671e30e3fe35ba1ac8be688cf74e5ec70e48538"
+      "bytes": 3423,
+      "sha256": "2ab96bc3125b778e3fc44b69c23d1e35fde99148b0c306ae2c84185b9816d87e"
     },
     "README.md": {
-      "bytes": 6998,
-      "sha256": "63ffa08689713a4d44bb3bdeee4bc993b57f4da5d95b5d7d965b94c60cd801f7"
+      "bytes": 7117,
+      "sha256": "e037376a48d8126bb0f6f3a6deca9fc8bf82e68f37ae0cb2bece15d7d389b80d"
     },
     "data/class-curves.npz": {
       "bytes": 21401700,
