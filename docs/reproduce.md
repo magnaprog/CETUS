@@ -4,20 +4,7 @@ Start with a result you can check from the saved labels and predictions. The pop
 
 ## Craters training and map composition
 
-From the repository root, run this comparison with Python's standard library. It creates a fresh output directory and prints the table for eight logistic classifiers.
-
-```sh
-cetus_check=$(mktemp -d)
-python3 -I -B scripts/summarize_crater_map_comparison.py \
-  --crater-results experiments/crater-training/results.json \
-  --predictions experiments/regional-predictions/results/predictions.json.gz \
-  --output-dir "$cetus_check/craters"
-cat "$cetus_check/craters/crater-map-primary-lr.tex"
-```
-
-The table separates three counts. The first counts correct predictions among 39 test tiles where every known cell carries Craters, both before and after restricting cells to those with all four corresponding SAR samples valid. The other two pool all 23,246 test tiles. For example, CROMA correctly predicts Craters for 7 of the 132 modal Craters tiles and predicts Craters for 477 of the 23,114 tiles with other modal labels. The neighboring `results.json` supplies the counts by region and feature set.
-
-The [Craters training analysis](../experiments/crater-training/README.md) estimates how often a shuffled training batch can contain a Craters tile. Training counts bound the average normalized Craters coefficient in the loss when every optimizer step has equal weight. Measuring the Craters contribution to the gradient would also require per-example gradients. The same analysis compares predictions from 30 ResNet18 fits and five logistic classifiers on pretrained DINOv2 features with the map cells in each test tile.
+The [Craters experiment guide](../experiments/crater-training/README.md#compare-logistic-classifiers-on-craters) gives a standard-library command to compare eight logistic classifiers. It also explains how to reconstruct the training-batch estimates and map composition of test tiles from the initialization archive and terrain grids.
 
 ## Choosing an experiment
 

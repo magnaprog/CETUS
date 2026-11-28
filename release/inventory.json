@@ -94,8 +94,8 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 2198,
-      "sha256": "52f33abec1670309c0943a2d9041113c3238c52790227ffb68d0cc37763a739b"
+      "bytes": 2621,
+      "sha256": "0dd7177f2ce9115ea3e860da1e3a211dfbd97b45bee767dbc81d5d9f2de926fa"
     },
     "cetus_sar/__init__.py": {
       "bytes": 94,
@@ -314,12 +314,12 @@
       "sha256": "b1e37b4c7af9c5113be142d526cc9b40573b35bd955ba8c40ced21ff7ab29145"
     },
     "docs/reproduce.md": {
-      "bytes": 16436,
-      "sha256": "6c55faf9d6c38de9f937cbc7cc6b98d6200643ce1a7616de9d5432028c35e022"
+      "bytes": 15250,
+      "sha256": "e202455b7220c170584ec3fa08eb0bbde47770330a94eacc6b8f1d54f0858f45"
     },
     "experiments/README.md": {
-      "bytes": 3194,
-      "sha256": "3603a51e1563a7b12ff98ec1f320c23af7403de51017b73ca6643df33cd355e5"
+      "bytes": 3202,
+      "sha256": "026ac8d23ebf693b428cbaef7de64a7f0149f38ddb4486d16e5cddd364195c88"
     },
     "experiments/adaptation-controls/README.md": {
       "bytes": 3998,
@@ -586,8 +586,8 @@
       "sha256": "290e73f4743b88862d8dd0278bf441ecb44fc052dddd0ae370e56bacf3ef4162"
     },
     "experiments/crater-training/README.md": {
-      "bytes": 3879,
-      "sha256": "6ef3a94b25ef45a7a2876ed899fe1ae82cef4e097f4df7cd315784710623ce47"
+      "bytes": 5089,
+      "sha256": "2aef2c0639c28a44a57dfd50d12f06c325aefd891630adb3f0facbacd259c021"
     },
     "experiments/crater-training/analyze_crater_training.py": {
       "bytes": 16306,
@@ -1318,8 +1318,8 @@
       "sha256": "5e3b415a94e0f842f6031199fc5333463d001ac75cfe8231cf9d86f56f1a1d66"
     },
     "release/README.md": {
-      "bytes": 1559,
-      "sha256": "8da1fd67fb9293ee363307eb7e66eb0f2241452c3a14156fda92e2c40306994f"
+      "bytes": 2065,
+      "sha256": "bb6f10aaeecab37a1567615df6469ff70d33d8ea4fc4551d7c2897a4cd5c8b82"
     },
     "release/check_inventory.py": {
       "bytes": 6912,
