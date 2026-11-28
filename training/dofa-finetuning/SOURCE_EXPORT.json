@@ -48,12 +48,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "README.md": {
-      "bytes": 2310,
+      "bytes": 2998,
       "origin": {
         "byte_identical": false,
         "role": "generated source-inspection metadata or packaging initializer"
       },
-      "sha256": "e0ddb269191c8756a7793d5e413eceef70ef19a3322592035ae5abb36f0f2716"
+      "sha256": "dd8498207fd7285feb74c6f948ed3e0481185caeb804a4dec193998f723e2306"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,

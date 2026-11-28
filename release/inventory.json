@@ -1418,16 +1418,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "training/dofa-finetuning/README.md": {
-      "bytes": 2310,
-      "sha256": "e0ddb269191c8756a7793d5e413eceef70ef19a3322592035ae5abb36f0f2716"
+      "bytes": 2998,
+      "sha256": "dd8498207fd7285feb74c6f948ed3e0481185caeb804a4dec193998f723e2306"
     },
     "training/dofa-finetuning/SHA256SUMS": {
       "bytes": 3247,
-      "sha256": "837e0ed3ab4db1621b7c9eeb62d9821b66f33758390b785f6941d22ace5394ac"
+      "sha256": "be9ab88d3960c169c99ae514af09cf8c69323e9e1071a12772e82735835e80ea"
     },
     "training/dofa-finetuning/SOURCE_EXPORT.json": {
       "bytes": 18361,
-      "sha256": "1483543ab3ddb23905d23d9a2d3e5f4c64d3312b930d7aaac87d8f6d83627c0f"
+      "sha256": "ff39294257d065f011a2ef0aeb3fce3197bf6165f94d090043c89272351ce322"
     },
     "training/dofa-finetuning/THIRD_PARTY_NOTICES.md": {
       "bytes": 2457,
@@ -1451,7 +1451,7 @@
     },
     "training/dofa-finetuning/file_index.json": {
       "bytes": 4903,
-      "sha256": "9bd22007dae9c49aabde84ce1776fbbb0b6fa702029ca7e24940f4f8c8733f10"
+      "sha256": "2e6b87bffa82fad3e11362a04bb09fc60492e1f57d89ce2c672cf5af23a63878"
     },
     "training/dofa-finetuning/licenses/CROMA-LICENSE": {
       "bytes": 1071,
