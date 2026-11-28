@@ -34,13 +34,13 @@ Laboratory and USGS Astrogeology Science Center. Terrain labels derive from
 Lopes et al. (2020) and Ashley Schoenfeld's *Titan Global Map Shapefiles*, version
 1, licensed CC BY 4.0. The displayed labels describe modal map classes.
 
-Earth metadata retains nominal Sentinel-1 source-window outlines and geometric
-centers for the original 398 images. Preserve the required notice:
+Earth metadata gives the outlines and geometric centers of 398 image windows
+extracted from Sentinel-1 radar scenes. Preserve the required notice:
 "Contains modified Copernicus Sentinel data 2026."
 The underlying processing used calibrated sigma0 and terrain correction; the
 repository's notices retain the Copernicus DEM GLO-30/WorldDEM-30 terms and the
-recorded limits on exact collection/tile versions. Nominal outlines are not
-SAR-valid masks or terrain annotations.
+recorded limits on exact collection/tile versions. Each outline traces the full
+image window, including any pixels without valid radar measurements. Terrain labels describe the intended terrain at each site.
 
 The Earth locator also includes the Natural Earth 1:110m coastline, version
 4.1.0, in the public domain. Its [source record](data/coastline/README.md)
@@ -56,6 +56,6 @@ Saunders et al. (1992), following the existing source-data notice. The 2,945
 samples are unlabeled; their six illustration markers do not assign terrain.
 
 This companion distributes derived ranking arrays and sampling metadata,
-including nominal Earth window geometry. It includes no original image pixels,
-geological terrain-map geometry or model weights. The MIT software license does
+including the boundaries of the Earth image windows. It includes no original
+image pixels, geological terrain-map geometry or model weights. The MIT software license does
 not replace source-data, font or upstream-model terms.

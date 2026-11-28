@@ -167,20 +167,20 @@
   "expected_dataset_geography": {
     "roman": {
       "earth-site-footprints.pdf": {
-        "bytes": 135744,
-        "sha256": "e4214dc1b8c82fc192dd0384c35c0528dd5bd38bb423c4f7b3e88e0a46a2cd9d"
+        "bytes": 135494,
+        "sha256": "a7e69d7e7abbd826569b03bb4763aaf56fa0f67b89c16969c341f7a91c448249"
       },
       "earth-site-footprints.png": {
-        "bytes": 213998,
-        "sha256": "4033922db60a5dcb6a7e41e3e73e47b2cb4a3e05a5f6ae4e66abfc66970b6a78"
+        "bytes": 213737,
+        "sha256": "122c6ecf59673b2d37452d5c906147d94379fa06f69634a149e7ff869617043b"
       },
       "earth-site-locator.pdf": {
-        "bytes": 70372,
-        "sha256": "d11cdb3c679b8d66ca081c23633dcaeae5cbe2e726846827a37db28a1ba0f4b0"
+        "bytes": 70309,
+        "sha256": "a6b7feef24bad45ebf25b6a5c13f0964e1cba1d8529bedd6e231c9867aec713e"
       },
       "earth-site-locator.png": {
-        "bytes": 135998,
-        "sha256": "8f8ab25a1599e35e6711d9413a48bc0883798c277295302c45aa50e482214abb"
+        "bytes": 141925,
+        "sha256": "fa890e72a745b40ad5228ae3a45f0f19a9229e9b43fe168e3f339be4b844259e"
       },
       "titan-class-locations.pdf": {
         "bytes": 236802,
@@ -201,20 +201,20 @@
     },
     "sans": {
       "earth-site-footprints.pdf": {
-        "bytes": 136228,
-        "sha256": "a90bce33715f9d298f2d72fe993d5100f2467b61d80815e0985d600d9c18359f"
+        "bytes": 135966,
+        "sha256": "98b33142403aabfacc4a9a215c83bebe04e65a89c2a645710590736734d665ae"
       },
       "earth-site-footprints.png": {
-        "bytes": 218836,
-        "sha256": "aec3e7ca4d10995ce8cb1db0e379c79fdc45a8023cd4c927f36ad634276c0065"
+        "bytes": 220021,
+        "sha256": "c3a1842c3bbc26bbda130cd896516a4db6331bc11522d260546187840089df29"
       },
       "earth-site-locator.pdf": {
-        "bytes": 70500,
-        "sha256": "28361a9997e335aa4288f6f52dc6a557c072a74881a9ead42146c7793117ccf2"
+        "bytes": 70365,
+        "sha256": "88abe5fc8a7315a67ef80a86c269ec108350fb6eca3a652e88f20c52f39ecacd"
       },
       "earth-site-locator.png": {
-        "bytes": 143400,
-        "sha256": "7bb743829c03568b2687ad6dad49c50e36b806e3976259d41be81ff289f67fb9"
+        "bytes": 150628,
+        "sha256": "bf2cc779958eedfe641e9708c181a1f2e8663c1db513a7b2295c296235f9e13e"
       },
       "titan-class-locations.pdf": {
         "bytes": 237008,
@@ -276,12 +276,12 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "NOTICE.md": {
-      "bytes": 3423,
-      "sha256": "2ab96bc3125b778e3fc44b69c23d1e35fde99148b0c306ae2c84185b9816d87e"
+      "bytes": 3528,
+      "sha256": "1de888415774e93b7a13d9d0db3f21115513e302cc82c30102704a05fe2398d5"
     },
     "README.md": {
-      "bytes": 7117,
-      "sha256": "e037376a48d8126bb0f6f3a6deca9fc8bf82e68f37ae0cb2bece15d7d389b80d"
+      "bytes": 7181,
+      "sha256": "f561a8843512e4f16e8b8df639c28d0433c107424adf1dda6ca402e911adad7e"
     },
     "data/class-curves.npz": {
       "bytes": 21401700,
@@ -404,8 +404,8 @@
       "sha256": "850b60317325a1970efb590d4aa2f90a5411416a2e44667440367f3b671839af"
     },
     "scripts/plot_dataset_geography.py": {
-      "bytes": 31390,
-      "sha256": "4fa4fdb53424487831371567a86815ffff6f9032be049b3c9dddeecc60e5d13a"
+      "bytes": 31507,
+      "sha256": "40858774c33fc918c899e47c7fd8de6d60ba016ac99bcd8a4532bb890f67b161"
     },
     "scripts/plot_regional_errors.py": {
       "bytes": 15910,
@@ -530,7 +530,7 @@
       },
       "scripts/plot_dataset_geography.py": {
         "path": "scripts/plot_dataset_geography.py",
-        "sha256": "4fa4fdb53424487831371567a86815ffff6f9032be049b3c9dddeecc60e5d13a"
+        "sha256": "40858774c33fc918c899e47c7fd8de6d60ba016ac99bcd8a4532bb890f67b161"
       },
       "scripts/plot_regional_errors.py": {
         "path": "scripts/plot_regional_errors.py",

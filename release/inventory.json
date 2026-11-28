@@ -146,8 +146,8 @@
       "sha256": "7b2d30bfe908103462fa0ccd2e29fbc86266a256b38d1ce7ac5a1deda0a474a1"
     },
     "data/README.md": {
-      "bytes": 9787,
-      "sha256": "8b868cc91acd137cf74ae1870988e1c8f450c0062f80c2cdce91af5cd2872d1e"
+      "bytes": 9807,
+      "sha256": "efb2189d11065509e86fe922212ef233fed439eb03beb8e271f409032a990150"
     },
     "data/catalogs/earth_catalog.json": {
       "bytes": 250886,
@@ -310,12 +310,12 @@
       "sha256": "1f35d37a7d792f801969f376773d9ccea0d1b1edda436405d7b5c23342e77d9d"
     },
     "docs/corrections.md": {
-      "bytes": 4489,
-      "sha256": "b1e37b4c7af9c5113be142d526cc9b40573b35bd955ba8c40ced21ff7ab29145"
+      "bytes": 4560,
+      "sha256": "cd20a4ea14b511df0afac159cffa7f9e4f6b2cf33eeebc70b17256375b34a8c7"
     },
     "docs/reproduce.md": {
-      "bytes": 15250,
-      "sha256": "e202455b7220c170584ec3fa08eb0bbde47770330a94eacc6b8f1d54f0858f45"
+      "bytes": 15401,
+      "sha256": "127070adb07095b28d668cd65ff320389987ce117b444e81c36486ea83a1eb68"
     },
     "experiments/README.md": {
       "bytes": 3202,
@@ -1122,16 +1122,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "experiments/terrain-plots/NOTICE.md": {
-      "bytes": 3423,
-      "sha256": "2ab96bc3125b778e3fc44b69c23d1e35fde99148b0c306ae2c84185b9816d87e"
+      "bytes": 3528,
+      "sha256": "1de888415774e93b7a13d9d0db3f21115513e302cc82c30102704a05fe2398d5"
     },
     "experiments/terrain-plots/README.md": {
-      "bytes": 7117,
-      "sha256": "e037376a48d8126bb0f6f3a6deca9fc8bf82e68f37ae0cb2bece15d7d389b80d"
+      "bytes": 7181,
+      "sha256": "f561a8843512e4f16e8b8df639c28d0433c107424adf1dda6ca402e911adad7e"
     },
     "experiments/terrain-plots/SHA256SUMS": {
       "bytes": 4304,
-      "sha256": "2557c374c90707b9084d6b8785e744c9f44a678432ecba2b4dc6048b4616f470"
+      "sha256": "2836495c56f301f5265fbccb69f3c8b4fecbfc074d549c1fd0fd04398c3796ef"
     },
     "experiments/terrain-plots/data/class-curves.npz": {
       "bytes": 21401700,
@@ -1215,7 +1215,7 @@
     },
     "experiments/terrain-plots/manifest.json": {
       "bytes": 21759,
-      "sha256": "8911f91d65e857e3ba9ee87de3dac5ed93656405c2135a68a7627f6ea9bb0ed1"
+      "sha256": "393a5443a71271a88ceb356cbe54bb7b3672419ef6677de46a1d3957050ce298"
     },
     "experiments/terrain-plots/regional-errors.json": {
       "bytes": 172455,
@@ -1258,8 +1258,8 @@
       "sha256": "850b60317325a1970efb590d4aa2f90a5411416a2e44667440367f3b671839af"
     },
     "experiments/terrain-plots/scripts/plot_dataset_geography.py": {
-      "bytes": 31390,
-      "sha256": "4fa4fdb53424487831371567a86815ffff6f9032be049b3c9dddeecc60e5d13a"
+      "bytes": 31507,
+      "sha256": "40858774c33fc918c899e47c7fd8de6d60ba016ac99bcd8a4532bb890f67b161"
     },
     "experiments/terrain-plots/scripts/plot_regional_errors.py": {
       "bytes": 15910,
@@ -1990,13 +1990,13 @@
       "plot_class_ranking.py": "c0d565422f6e22131a4f982e17f436b30e6083b52ab6c0e0eb07409ce5286f6e",
       "plot_class_retrieval.py": "99cf6e412a954b75914b209722fca7e267d868cc83950334b829f73e7adc9632",
       "plot_crater_retrieval.py": "850b60317325a1970efb590d4aa2f90a5411416a2e44667440367f3b671839af",
-      "plot_dataset_geography.py": "4fa4fdb53424487831371567a86815ffff6f9032be049b3c9dddeecc60e5d13a",
+      "plot_dataset_geography.py": "40858774c33fc918c899e47c7fd8de6d60ba016ac99bcd8a4532bb890f67b161",
       "plot_regional_errors.py": "5e1e5bbb3551148d4295e6245e09b3167b547891fe2bdd1cb269f7fba273bf4b"
     },
     "guide": "experiments/terrain-plots/README.md",
     "input_guide": "experiments/class-ranking/README.md",
     "manifest": "experiments/terrain-plots/manifest.json",
-    "manifest_sha256": "8911f91d65e857e3ba9ee87de3dac5ed93656405c2135a68a7627f6ea9bb0ed1",
+    "manifest_sha256": "393a5443a71271a88ceb356cbe54bb7b3672419ef6677de46a1d3957050ce298",
     "plotting_source_commit": "71982c7eeb0585dfc43aba5fe0629f2197c4850f",
     "scope": "Regional AP differences for all six classes, absolute Craters AP, retrieval curves for all six classes, regional SGD variation and map-mixture summaries, and Titan/Earth/Venus sampling displays. Saved predictions and accepted geographic records; no model execution."
   },

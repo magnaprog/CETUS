@@ -20,7 +20,7 @@ Region 1 through Region 5 correspond to fold IDs 0 through 4. Region 2 has one C
 
 ### Earth preprocessing and training-count checks
 
-The [Earth split](../data/splits/earth_transfer_grouped_validation.json) assigns 352 of 398 images to training, including 16 images acquired in Egypt and cataloged as Wadi Rum. Compare the [Earth-trained classifiers](../data/results/probing_cv_results.json) with the [uniformly sampled and stratified Titan training subsets](../data/results/constrained_training_results.json) of 352 tiles. This matches the training total across domains. Per-class counts can differ. The linear classifiers output six scores. Transfer recall covers the five classes represented in Earth training. Earth training pixels set the Earth dB scale, and the full Titan training fold sets the display-intensity limits for both classifiers' Titan test images. The [site-omission and preprocessing records](../data/README.md#additional-experiment-records) show how the site sample, smoothing, quantization and rendering affect the transfer measurements.
+The [Earth split](../data/splits/earth_transfer_grouped_validation.json) assigns 352 of the 398 image windows to training, including the 16 from Egypt cataloged as Wadi Rum. Compare the [Earth-trained classifiers](../data/results/probing_cv_results.json) with the [uniformly sampled and stratified Titan training subsets](../data/results/constrained_training_results.json) of 352 tiles. This matches the training total across domains. Per-class counts can differ. The linear classifiers output six scores. Transfer recall covers the five classes represented in Earth training. Earth training pixels set the Earth dB scale, and the full Titan training fold sets the display-intensity limits for both classifiers' Titan test images. The [site-omission and preprocessing records](../data/README.md#additional-experiment-records) show how the site sample, smoothing, quantization and rendering affect the transfer measurements.
 
 ## Classifier implementations and source inputs
 
@@ -60,7 +60,7 @@ The [retrieval plots](../experiments/terrain-plots/README.md#reading-the-ranking
 
 ### Geographic sampling displays
 
-The [sampling maps](../experiments/terrain-plots/README.md#reading-the-maps) show 23,246 Titan test centers, 398 Earth windows at 13 sites, and 2,945 Venus centers. Titan colors denote modal classes. Earth footprints show sampling geometry, with longitude and latitude scaled separately. Measurements of physical area, terrain purity or radar coverage need additional information. The Venus map identifies complete and partial coverage and six examples A–F.
+The [sampling maps](../experiments/terrain-plots/README.md#reading-the-maps) show 23,246 Titan test centers, 398 Earth image windows at 13 sites, and 2,945 Venus centers. Titan colors denote modal classes. Each Earth outline traces a full image window extracted from a Sentinel-1 radar scene, including any pixels without valid radar measurements. The site plots scale longitude and latitude independently, so their apparent areas do not measure physical area. A site label gives the intended terrain class for its windows. The Venus map identifies complete and partial coverage and six examples A–F.
 
 ### Regional SGD variation
 
@@ -90,7 +90,7 @@ The [partial-training comparison](../experiments/dofa/partial-training/README.md
 | MMD estimates | `compute_mmd` returns squared MMD; `compute_mmd_repeated` summarizes those values. Its `ci95` field contains empirical subsampling quantiles, not a parametric confidence interval for population squared MMD. |
 | Fallback geographic split | `assign_split` first reduces longitude modulo 360 and checks the Selk holdout. Outside that holdout, west [180, 360) is training; east [0, 180) is validation at absolute latitude at most 30 degrees and test above 30 degrees. Published evaluations use their bound external manifests. |
 | Probe fitting and checkpoint selection | `train_linear_probe` uses caller-supplied class weights when present and otherwise unweighted cross-entropy. `train_finetuned_model` runs the declared epoch loop and restores its validation-selected state; validation does not stop the loop early. |
-| Earth image patches | `tile_earth_analog` uses `tile_size` for both square-patch dimensions and strides; 128 pixels is the default. |
+| Earth image windows | `tile_earth_analog` extracts square windows with side length and stride both set to `tile_size` (128 pixels by default). |
 
 ## Citations, data terms and availability
 
