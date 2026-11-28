@@ -314,8 +314,8 @@
       "sha256": "b1e37b4c7af9c5113be142d526cc9b40573b35bd955ba8c40ced21ff7ab29145"
     },
     "docs/reproduce.md": {
-      "bytes": 16331,
-      "sha256": "ebd7c13dbb60b14ec7c5978f6b5074f10b784f31d14c3f76c23868a35efd76aa"
+      "bytes": 16436,
+      "sha256": "6c55faf9d6c38de9f937cbc7cc6b98d6200643ce1a7616de9d5432028c35e022"
     },
     "experiments/README.md": {
       "bytes": 3194,
@@ -1122,16 +1122,16 @@
       "sha256": "622cf2a66f430f141034e9c7838788880311e08c007d97e79ec8e947b422f5a2"
     },
     "experiments/terrain-plots/NOTICE.md": {
-      "bytes": 3211,
-      "sha256": "28f75a2c3b56cc6af1fa82bc7671e30e3fe35ba1ac8be688cf74e5ec70e48538"
+      "bytes": 3423,
+      "sha256": "2ab96bc3125b778e3fc44b69c23d1e35fde99148b0c306ae2c84185b9816d87e"
     },
     "experiments/terrain-plots/README.md": {
-      "bytes": 6998,
-      "sha256": "63ffa08689713a4d44bb3bdeee4bc993b57f4da5d95b5d7d965b94c60cd801f7"
+      "bytes": 7117,
+      "sha256": "e037376a48d8126bb0f6f3a6deca9fc8bf82e68f37ae0cb2bece15d7d389b80d"
     },
     "experiments/terrain-plots/SHA256SUMS": {
       "bytes": 4304,
-      "sha256": "327e2df4a5d361effbbafca7741db10f9e9e49b32af81098168ef3b0aa28c72e"
+      "sha256": "2557c374c90707b9084d6b8785e744c9f44a678432ecba2b4dc6048b4616f470"
     },
     "experiments/terrain-plots/data/class-curves.npz": {
       "bytes": 21401700,
@@ -1215,7 +1215,7 @@
     },
     "experiments/terrain-plots/manifest.json": {
       "bytes": 21759,
-      "sha256": "3c27f25b1cd2348e8fdd654e493a2ea10a8d613d99e00bd46ee42e077359c4ee"
+      "sha256": "8911f91d65e857e3ba9ee87de3dac5ed93656405c2135a68a7627f6ea9bb0ed1"
     },
     "experiments/terrain-plots/regional-errors.json": {
       "bytes": 172455,
@@ -1996,7 +1996,7 @@
     "guide": "experiments/terrain-plots/README.md",
     "input_guide": "experiments/class-ranking/README.md",
     "manifest": "experiments/terrain-plots/manifest.json",
-    "manifest_sha256": "3c27f25b1cd2348e8fdd654e493a2ea10a8d613d99e00bd46ee42e077359c4ee",
+    "manifest_sha256": "8911f91d65e857e3ba9ee87de3dac5ed93656405c2135a68a7627f6ea9bb0ed1",
     "plotting_source_commit": "71982c7eeb0585dfc43aba5fe0629f2197c4850f",
     "scope": "Regional AP differences for all six classes, absolute Craters AP, retrieval curves for all six classes, regional SGD variation and map-mixture summaries, and Titan/Earth/Venus sampling displays. Saved predictions and accepted geographic records; no model execution."
   },

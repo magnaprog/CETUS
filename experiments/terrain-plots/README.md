@@ -3,8 +3,8 @@
 These CPU scripts plot the saved terrain rankings for six classes in five Titan
 regions. They also show regional classification errors and the locations of
 the Titan, Earth and Venus samples. The sampling diagrams use coordinates and
-window outlines. For the image galleries and radar backgrounds, see the
-[paper reproduction guide](../../docs/reproduce.md).
+window outlines. The [Titan example sheet](../terrain-interpretation/examples/repaired_examples.pdf)
+pairs seven radar images with their most frequent map class.
 
 ## Plot the six classes and four sampling maps
 
@@ -72,9 +72,10 @@ Test tiles can overlap, and all seeds in a region share the same test images.
   points show all test centers in each panel. Lines mark the 72-degree sectors.
 - `earth-site-locator` shows 398 images at 13 sites, including 352 training and
   46 validation images. The coastline comes from Natural Earth at 1:110m.
-- `earth-site-footprints` shows the source-window outlines, including overlaps,
-  holes and gaps in radar coverage within a window. Independent longitude and
-  latitude scales can distort shapes. Site counts include overlapping images.
+- `earth-site-footprints` shows the outlines of training and validation windows
+  and where they overlap. Each outline traces the whole window, including any areas
+  without radar measurements. Each panel scales longitude and latitude
+  independently, which can distort shapes. Site counts include overlapping images.
 - `venus-sample-centers` shows 2,945 unlabeled images. Of these, 2,526 have
   complete radar coverage and 419 have partial coverage. Letters A–F identify
   six examples.

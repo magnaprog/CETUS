@@ -47,8 +47,11 @@ The Earth locator also includes the Natural Earth 1:110m coastline, version
 retains the upstream attribution and terms. This generalized outline supplies
 global context separately from the scientific sampling metadata.
 
-Venus metadata retains centers and pixel-validity fractions from the Magellan
-SAR FMAP right-look global mosaic. Credit NASA/JPL, the Magellan mission and
+The [Venus catalog](../../data/catalogs/venus_catalog.json) gives the image
+centers and valid pixel fractions for tiles from a Magellan FMAP mosaic.
+The [data guide](../../data/README.md#catalogs) identifies the right-look
+global mosaic as the reference product. The exact mosaic file that supplied
+the pixels is unverified. Credit NASA/JPL, the Magellan mission and
 Saunders et al. (1992), following the existing source-data notice. The 2,945
 samples are unlabeled; their six illustration markers do not assign terrain.
 
