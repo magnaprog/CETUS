@@ -10,9 +10,9 @@ The longitude-sector evaluation also changed the geographic split. Its five cont
 
 ## Earth source sites
 
-Sixteen training tiles cataloged as `wadi_rum` came from Egypt. Their assigned Labyrinths label still needs verification. Default plans for future acquisitions omit Wadi Rum pending a verified site boundary and landform annotation. Shoreline checks place 42 Arctic Plains footprints entirely offshore. Two Iceland overlays put most of the examined footprint over the ocean. Interpreting water or sea ice requires evidence for the acquisition date. Twenty-one Earth validation footprints overlap training footprints. The training-count comparisons retain the site labels, so their interpretation depends on those labels and the split. Expert annotation and separation by source site would address different uncertainties.
+Sixteen training tiles cataloged as `wadi_rum` came from Egypt. Their assigned Labyrinths label still needs verification. Default plans for future acquisitions omit Wadi Rum pending a verified site boundary and landform annotation. The shoreline map shows no land in 42 Arctic training windows labeled Plains. Global and national shoreline maps both place most of one Icelandic Plains window over the ocean. Interpreting water or sea ice requires evidence for the acquisition date. Twenty-one Earth validation windows overlap at least one training window. The training-count comparisons retain the site labels, so their interpretation depends on those labels and the split. Expert annotation and separation by source site would address different uncertainties.
 
-The updated Earth preparation code corrects a half-source-pixel offset in the tile center and records the source window. The catalog retains the coordinates used for the reported experiments. The offset is too small to explain the offshore locations.
+The updated Earth preparation code corrects a half-source-pixel offset in the tile center and records the image window extracted from the source scene. The catalog retains the coordinates used for the reported experiments. The offset is too small to explain the offshore locations.
 
 ## DOFA inputs and encoder training
 

@@ -17,7 +17,7 @@ Each tile covers a target square of 45 km in its source projection on a grid of 
 | Catalog | Images and labels |
 | --- | --- |
 | [Titan](catalogs/titan_catalog.json) | 11,371 Cassini SAR/HiSAR tiles. The mosaic stores logarithmically stretched, 8-bit display digital numbers (`hisar_log_dn`). Recovering physical backscatter requires separate calibration data. The map of Lopes et al. supplies six labels in index order: Plains, Dunes, Hummocky, Labyrinths, Lakes and Craters. The map draws partly on the same radar observations. |
-| [Earth](catalogs/earth_catalog.json) | 398 tiles at 13 sites. Of 39 Sentinel-1 source products with VV and VH channels, 29 contributed tiles. CETUS took VV (vertical transmit and receive) and calibrated it to linear sigma0. Each tile inherits its site's intended terrain class. Terrain within the footprints needs independent verification. Earth has training examples for five classes, with Hummocky absent. |
+| [Earth](catalogs/earth_catalog.json) | 398 image windows at 13 sites. Of 39 Sentinel-1 radar products with VV and VH channels, 29 supplied the windows. CETUS took VV (vertical transmit and receive) and calibrated it to linear sigma0. Each window inherits its site's intended terrain class. The terrain inside each window needs independent verification. Earth has training examples for five classes, with Hummocky absent. |
 | [Venus](catalogs/venus_catalog.json) | 2,945 tiles from a Magellan FMAP radar-brightness display mosaic. The catalog records −1 for missing terrain labels. The right-look global mosaic is the product reference. The exact full mosaic file used to generate these tiles has not been verified. These images enter comparisons of feature distributions. |
 
 ### Splits
@@ -25,7 +25,7 @@ Each tile covers a target square of 45 km in its source projection on a grid of 
 Each of the 19 split files identifies its catalog by SHA-256. Keep those catalog bytes when checking tile membership.
 
 - **Titan.** The five `titan_spatial_fold_*.json` files assign geographic blocks of roughly 250 km to folds while balancing class and sample counts. Each run trains on three folds, validates on one and tests on one. All folds reserve the same 65 Selk images. Adjacent blocks have no exclusion buffer, so nearby tiles across fold boundaries can remain correlated.
-- **Earth transfer.** The [grouped split](splits/earth_transfer_grouped_validation.json) assigns 352 images to training and 46 to validation, holding out entire source products.
+- **Earth transfer.** The [grouped split](splits/earth_transfer_grouped_validation.json) assigns 352 image windows to training and 46 to validation, holding out entire source products.
 - **Earth sites.** Each of the 13 `earth_loso_*.json` files holds out one site. The transfer-recall and feature-distribution analyses that omit sites have separate result files below.
 
 ### Results

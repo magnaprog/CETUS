@@ -37,8 +37,8 @@ ROLE_LABELS = {"train": "Training", "val": "Validation"}
 TITAN_CONTEXT_KIND = "titan-test-centers"
 TITAN_CONTEXT_NOTE = ("Gray: all 23,246 test-image centers; color: the named class.\n"
                       "Lines mark the five longitude sectors. Centers do not show continuous SAR coverage.")
-EARTH_FOOTPRINT_NOTE = ("Horizontal: longitude; vertical: latitude (degrees). Each panel has its own scale.\n"
-                        "398 nominal image windows; shape and area are distorted. Terrain classes remain unverified.")
+EARTH_FOOTPRINT_NOTE = ("Longitude runs horizontally and latitude vertically. Separate scales in degrees distort shape and area.\n"
+                        "Outlines trace 398 Sentinel-1 image windows. Terrain within each window needs verification.")
 CONTEXT_DIR = Path(__file__).resolve().parents[1] / "data/coastline"
 COASTLINE_SHA256 = "42486ec096e813b675dd1fb9f7ef79de42f9a31600dea50f8550de3fca72eeaa"
 COASTLINE_PROVENANCE_SHA256 = "b699a720b64c7b836179ad6555f8b743d27c0a6b27180b2379356ce55f536fc1"
@@ -250,8 +250,9 @@ def earth_locator(payload):
         cell.set_linewidth(.3); cell.set_edgecolor(".8")
         if row == 0:
             cell.set_facecolor(".94")
-    figure.text(.5, .035, "398 images: 352 train / 46 validation. Haughton: 0 images; Hummocky absent.\n"
-                 "Intended site labels are unverified within footprints; Egyptian images remain in this population.", ha="center")
+    figure.text(.5, .035, "Of 398 image windows, 352 enter training and 46 enter validation. Haughton contributed none.\n"
+                 "The sample includes the windows from Egypt. No site represents Hummocky.\n"
+                 "Each window inherits its site label. Terrain within the window needs verification.", ha="center")
     return figure
 
 

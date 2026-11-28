@@ -1,6 +1,6 @@
 # Experiments
 
-Each experiment includes saved results and a way to check them. For a first check on CPU, [count Craters predictions](../docs/reproduce.md#craters-training-and-map-composition). To repeat a fit on images, see the [training implementations](../training/README.md).
+Each experiment includes saved results and a way to check them. For a first check on CPU, [count Craters predictions](crater-training/README.md#compare-logistic-classifiers-on-craters). To repeat a fit on images, see the [training implementations](../training/README.md).
 
 ## Which classifiers recover the mapped terrain?
 
